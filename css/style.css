@@ -246,3 +246,17 @@ tbody th:hover {
   cursor: pointer;
 }
 tbody th:hover .prop-name { color: var(--accent); }
+
+/* Column header — philosopher summary active state */
+thead th.col-active {
+  background: #dbeafe;
+}
+thead th.col-active .th-name   { color: var(--accent); }
+thead th.col-active .th-culture { color: #1d4ed8; }
+
+/* Column header hover hint */
+thead th:not(:first-child):hover {
+  background: #eff6ff;
+  cursor: pointer;
+}
+thead th:not(:first-child):hover .th-name { color: var(--accent); }

@@ -28,23 +28,23 @@
 
 <div class="main-wide">
 
-  <p class="article-tip"><strong>↗ Click any cell</strong> to read a philosopher's view. <strong>Click a property label</strong> (left column) to see the synthesis across all ten philosophers. Escape to close.</p>
+  <p class="article-tip"><strong>↗ Click any cell</strong> to read a philosopher's view on one property. <strong>Click a property label</strong> (left column) for the cross-tradition synthesis. <strong>Click a philosopher's name</strong> (top row) for their complete God-concept. Escape to close.</p>
 
   <div class="table-scroll">
     <table id="main-table">
       <thead>
         <tr>
           <th><div class="th-inner"><span class="corner-label"><strong>Property ↓ · Philosopher →</strong>10 × 10</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Chinese / Taoist</span><span class="th-dates">~6th c. BCE</span><span class="th-name">Laozi</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Greek</span><span class="th-dates">428–348 BCE</span><span class="th-name">Plato</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Indian / Buddhist</span><span class="th-dates">~150–250 CE</span><span class="th-name">Nagarjuna</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Greco-Roman</span><span class="th-dates">204–270 CE</span><span class="th-name">Plotinus</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Indian / Advaita</span><span class="th-dates">788–820 CE</span><span class="th-name">Shankara</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Jewish / Andalusian</span><span class="th-dates">1138–1204 CE</span><span class="th-name">Maimonides</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Islamic / Sufi</span><span class="th-dates">1165–1240 CE</span><span class="th-name">Ibn Arabi</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">Jewish-Dutch</span><span class="th-dates">1632–1677 CE</span><span class="th-name">Spinoza</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">German</span><span class="th-dates">1724–1804 CE</span><span class="th-name">Kant</span></div></th>
-          <th><div class="th-inner"><span class="th-culture">British / Process</span><span class="th-dates">1861–1947 CE</span><span class="th-name">Whitehead</span></div></th>
+          <th id="col-hdr-0" style="cursor:pointer" title="Click to see Laozi's complete God-concept"><div class="th-inner"><span class="th-culture">Chinese / Taoist</span><span class="th-dates">~6th c. BCE</span><span class="th-name">Laozi</span></div></th>
+          <th id="col-hdr-1" style="cursor:pointer" title="Click to see Plato's complete God-concept"><div class="th-inner"><span class="th-culture">Greek</span><span class="th-dates">428–348 BCE</span><span class="th-name">Plato</span></div></th>
+          <th id="col-hdr-2" style="cursor:pointer" title="Click to see Nagarjuna's complete God-concept"><div class="th-inner"><span class="th-culture">Indian / Buddhist</span><span class="th-dates">~150–250 CE</span><span class="th-name">Nagarjuna</span></div></th>
+          <th id="col-hdr-3" style="cursor:pointer" title="Click to see Plotinus's complete God-concept"><div class="th-inner"><span class="th-culture">Greco-Roman</span><span class="th-dates">204–270 CE</span><span class="th-name">Plotinus</span></div></th>
+          <th id="col-hdr-4" style="cursor:pointer" title="Click to see Shankara's complete God-concept"><div class="th-inner"><span class="th-culture">Indian / Advaita</span><span class="th-dates">788–820 CE</span><span class="th-name">Shankara</span></div></th>
+          <th id="col-hdr-5" style="cursor:pointer" title="Click to see Maimonides's complete God-concept"><div class="th-inner"><span class="th-culture">Jewish / Andalusian</span><span class="th-dates">1138–1204 CE</span><span class="th-name">Maimonides</span></div></th>
+          <th id="col-hdr-6" style="cursor:pointer" title="Click to see Ibn Arabi's complete God-concept"><div class="th-inner"><span class="th-culture">Islamic / Sufi</span><span class="th-dates">1165–1240 CE</span><span class="th-name">Ibn Arabi</span></div></th>
+          <th id="col-hdr-7" style="cursor:pointer" title="Click to see Spinoza's complete God-concept"><div class="th-inner"><span class="th-culture">Jewish-Dutch</span><span class="th-dates">1632–1677 CE</span><span class="th-name">Spinoza</span></div></th>
+          <th id="col-hdr-8" style="cursor:pointer" title="Click to see Kant's complete God-concept"><div class="th-inner"><span class="th-culture">German</span><span class="th-dates">1724–1804 CE</span><span class="th-name">Kant</span></div></th>
+          <th id="col-hdr-9" style="cursor:pointer" title="Click to see Whitehead's complete God-concept"><div class="th-inner"><span class="th-culture">British / Process</span><span class="th-dates">1861–1947 CE</span><span class="th-name">Whitehead</span></div></th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -290,9 +290,70 @@ const RS = [
   }
 ];
 
+// Column synthesis — one entry per philosopher
+// summarises their complete God-concept across all ten properties
+const CS = [
+  // 0 — LAOZI
+  {
+    s:"The Tao: an impersonal, wordless ground that asks only for alignment",
+    l:"<p><strong>What God is:</strong> The Tao is not a being, not a creator, not a person — it is the formless, inexhaustible ground from which all things arise spontaneously. It cannot be named, cannot be described, and cannot be approached by deliberate effort.</p><p><strong>How it relates to the world:</strong> The world arises from the Tao not by creation but by natural overflow — the way warmth radiates from a fire. The Tao is simultaneously prior to everything (transcendent) and present in everything (immanent), with no contradiction between the two.</p><p><strong>Causality and time:</strong> The Tao causes nothing in the ordinary sense — things arise from it by <em>ziran</em> (self-so, spontaneous naturalness). It is eternal, existing before heaven and earth, untouched by the flow of time.</p><p><strong>How it can be known:</strong> It cannot be known by thinking or naming. Any description falsifies. The only path is stillness and emptying — the Tao reveals itself when the mind stops grasping.</p><p><strong>Value and the soul:</strong> The Tao is the source of natural harmony, not of moral commandments. The soul's relationship to it is not union or identity but alignment — moving with the great current rather than against it, like water finding its level.</p><p><strong>The single idea:</strong> The Tao is the Way — not a destination to reach, not a being to worship, but the very structure of effortless, wordless existence that underlies and pervades all things and asks only to be followed.</p>"
+  },
+  // 1 — PLATO
+  {
+    s:"The Form of the Good: the silent summit that makes truth, beauty, and the world possible",
+    l:"<p><strong>What God is:</strong> Plato gives us two divine figures: the <em>Demiurge</em>, a rational craftsman who orders pre-existing matter by looking to eternal Forms, and the <em>Form of the Good</em>, the impersonal summit of all reality that \"surpasses being in dignity and power.\" The Demiurge is the active, personal presence; the Good is the distant, silent condition of all existence.</p><p><strong>How it relates to the world:</strong> The Demiurge does not create from nothing — he finds pre-existing chaotic matter and imposes rational order on it. The world is the best possible given the intractable nature of matter. It is primarily transcendent: the highest realities are eternal, unchanging Forms inaccessible to the senses.</p><p><strong>Causality and time:</strong> The Demiurge is the rational efficient cause of the cosmos. Time itself is his creation — \"a moving image of eternity.\" The Forms, including the Good, are absolutely atemporal.</p><p><strong>How it can be known:</strong> The Good can be known, but only through decades of rigorous philosophical training — the long ascent from shadows to the blinding vision of the Good itself. Language can point but strains; myths and images supplement argument at the summit.</p><p><strong>Value and the soul:</strong> The Good is the ultimate source of all truth, beauty, and goodness. The soul is immortal and naturally akin to the Forms; philosophical life is its gradual return home to the realm of the eternal.</p><p><strong>The single idea:</strong> God is the rational ground of all order — both the craftsman who shapes the world and the impersonal Form toward which all good things aspire and from which all intelligibility flows.</p>"
+  },
+  // 2 — NAGARJUNA
+  {
+    s:"Emptiness: the dissolution of every God-concept, including this one",
+    l:"<p><strong>What God is:</strong> There is no God. The ultimate reality in Nagarjuna's Madhyamaka philosophy is <em>Śūnyatā</em> — Emptiness — which means that all phenomena, without exception, lack inherent, independent, self-sufficient existence. This includes any putative God. Emptiness is not itself a thing; it is the emptiness of all things of inherent existence.</p><p><strong>How it relates to the world:</strong> The world arises through <em>pratītyasamutpāda</em> — dependent origination. Everything arises in dependence on other things; nothing arises from a first, self-sufficient cause. There is no creator, no emanator, no sustainer. The world simply arises as it does, dependently, with no ground beneath it.</p><p><strong>Causality and time:</strong> Causation itself is empty of inherent existence — it is a conventional description of dependent co-arising, not a metaphysical relation. Time is conventionally real but ultimately empty. Neither eternal God nor eternal time exists.</p><p><strong>How it can be known:</strong> All language ultimately fails at the ultimate level — including the word 'emptiness' itself. The only knowing adequate to the ultimate is <em>prajñā</em>: non-conceptual wisdom that dissolves the subject-object distinction entirely.</p><p><strong>Value and the soul:</strong> Ethics is grounded in compassion and interdependence, not divine command. There is no permanent soul — only a stream of dependently arisen events. Liberation is not union with God but the recognition that the self seeking liberation was always already empty of inherent existence.</p><p><strong>The single idea:</strong> Nagarjuna does not offer a reconceived God — he dissolves every God-concept by showing that any inherently existing ground, however refined, cannot survive rigorous philosophical analysis. The question of God dissolves along with the self that asked it.</p>"
+  },
+  // 3 — PLOTINUS
+  {
+    s:"The One: the absolute beyond being, from which all existence overflows by necessity",
+    l:"<p><strong>What God is:</strong> The One is not a being — it is beyond being, prior to being, the source from which being flows. It is also beyond thought, because thought requires a split between thinker and thought, and the One admits no internal distinctions whatsoever. It is absolutely simple, absolutely one, the archetype of all unity.</p><p><strong>How it relates to the world:</strong> The world does not arise because the One chooses to create it. It arises by necessary <em>emanation</em> — like light from the sun, the One overflows into existence without effort, loss, or intention. From it flows the Divine Intellect, from that the World Soul, from that the material cosmos. Each level is less unified, less real, less perfect than the one above.</p><p><strong>Causality and time:</strong> The One causes by superabundant overflow, not by deliberate act. It is entirely outside time — time is a product of the World Soul's movement away from the timeless Intellect.</p><p><strong>How it can be known:</strong> The One cannot be known by the intellect, which requires a subject-object split the One cannot sustain. It can only be reached through <em>henosis</em> — mystical union, the soul's total self-abandonment into identity with the One. Any positive description falsifies.</p><p><strong>Value and the soul:</strong> The One is identified with the Good — the source of all goodness, beauty, and value. Evil is not a thing but an absence. The soul has never fully left the One; the spiritual life is the return inward and upward until all distinction between the soul and its source disappears.</p><p><strong>The single idea:</strong> Everything that exists flows necessarily from a single, absolute, nameless source — and the soul's deepest longing is the recognition that it has always been at home there.</p>"
+  },
+  // 4 — SHANKARA
+  {
+    s:"Brahman: the only reality, of which the world and the soul are superimpositions",
+    l:"<p><strong>What God is:</strong> Brahman — pure Being, pure Consciousness, pure Bliss (<em>Sat-Chit-Ananda</em>) — is the only reality. It is not a being among others; it is the non-dual ground from which everything appears to arise. What we call the world is a superimposition on Brahman, like a snake imagined in a rope — real enough to frighten, but not ultimately there.</p><p><strong>How it relates to the world:</strong> The world is not truly created by Brahman and does not truly exist apart from it. The relationship is one of apparent transformation (<em>vivartavada</em>): Brahman appears as the world under the influence of cosmic ignorance (<em>maya</em>), as a dreamer appears to inhabit a dream-world. Remove the ignorance and only Brahman remains, unchanged.</p><p><strong>Causality and time:</strong> Within the conventional framework, Brahman is both the material and efficient cause of the world. But this causation is ultimately part of maya — nothing truly arises, nothing truly causes. Time itself is part of the superimposition; Brahman is absolutely timeless.</p><p><strong>How it can be known:</strong> Not through positive description — the Upanishadic method is <em>neti neti</em> (\"not this, not this\"), systematically negating every attribute until the mind falls silent. Liberation comes through <em>jnana</em>: direct, non-dual recognition of identity with Brahman — \"I am Brahman.\"</p><p><strong>Value and the soul:</strong> Moral distinctions belong to the conventional realm of maya. At the highest level, Brahman is beyond good and evil. The individual soul (<em>Atman</em>) is numerically identical to Brahman — <em>Tat tvam asi</em>, \"That thou art.\" Liberation is not a journey toward God but the recognition of an identity that was always the case.</p><p><strong>The single idea:</strong> There is only one reality. What you call the world is Brahman misread; what you call yourself is Brahman forgotten. Liberation is simply remembering what you have always been.</p>"
+  },
+  // 5 — MAIMONIDES
+  {
+    s:"Necessary Being: the radically transcendent God who can only be described by what He is not",
+    l:"<p><strong>What God is:</strong> God is the necessary existent — the being whose non-existence is impossible. Everything else is contingent; God alone exists necessarily, with essence and existence perfectly identical. God is absolutely simple: no parts, no multiple attributes, no internal complexity of any kind.</p><p><strong>How it relates to the world:</strong> God creates the world ex nihilo by free will. God is radically transcendent: utterly unlike anything in creation, not located in space or time. God's immanence is expressed only through His <em>actions</em> in the world — the regularities of nature, the governance of the cosmos — never through direct ontological presence.</p><p><strong>Causality and time:</strong> God is not merely the first cause of motion but the cause of <em>esse</em> — being itself. Everything that exists depends on God's continuous sustaining activity at every moment. God is absolutely eternal: outside time, outside temporal succession entirely.</p><p><strong>How it can be known:</strong> God cannot be described by positive predicates. To say \"God is wise\" introduces a distinction between God and wisdom that violates divine simplicity. The only correct theological speech is negative: God is <em>not</em> ignorant, not weak, not evil. Silence, approached by accumulated negations, is the closest we can come.</p><p><strong>Value and the soul:</strong> God's goodness is analogical, not categorical. The ethical life is modeled on imitating God's actions, not on sharing His properties. The soul's highest achievement is intellectual perfection — becoming most like the divine intellect. Immortality belongs to the perfected intellect.</p><p><strong>The single idea:</strong> God is the one being who simply <em>is</em> — necessarily, simply, eternally — and who cannot be captured by any positive human language, only approached by the patient removal of every false description.</p>"
+  },
+  // 6 — IBN ARABI
+  {
+    s:"Wahdat al-Wujud: there is only one Being, and everything is its self-disclosure",
+    l:"<p><strong>What God is:</strong> God is <em>al-Wujud al-Mutlaq</em> — Absolute Being. There is strictly only one existence: God's existence. Everything else is a self-disclosure (<em>tajalli</em>) of this one Being — a momentary showing of the Absolute in the mirror of the possible. The divine Essence (<em>Dhat</em>) transcends all names and attributes; God's personal face is expressed only through the infinite divine Names.</p><p><strong>How it relates to the world:</strong> The world is God's necessary self-disclosure — the Hidden Treasure that loved to be known and created the world as a mirror to behold its own infinite nature. Creation is not a free act but the necessary expression of God's self-love and self-knowledge. Every creature is a divine Name made manifest.</p><p><strong>Causality and time:</strong> God's self-love is the cause — not efficient causation but the overflow of infinite being. All things exist eternally as archetypes (<em>a'yan thabita</em>) in God's self-knowledge before they are disclosed in external existence. God is beyond time; time belongs to the world of manifestation.</p><p><strong>How it can be known:</strong> Through the heart (<em>qalb</em>), polished by spiritual practice until it becomes a pure mirror. Neither pure negative theology nor pure affirmative theology is adequate — the greatest mystics hold both simultaneously, affirming and denying every divine attribute at once.</p><p><strong>Value and the soul:</strong> Ethics flows from recognizing God in all things — to harm another is to harm a face of God. The soul's journey is the unveiling of its own divine face, the recognition that it was always already a self-disclosure of the Absolute. The Perfect Human (<em>al-Insan al-Kamil</em>) is the being in whom all divine Names are fully present.</p><p><strong>The single idea:</strong> There is only one Being. The universe is God's love made visible. The soul's deepest identity is already divine — it has only to recognize what it has always been.</p>"
+  },
+  // 7 — SPINOZA
+  {
+    s:"Deus sive Natura: God and Nature are identical — the infinite, impersonal, necessary whole",
+    l:"<p><strong>What God is:</strong> God and Nature are identical (<em>Deus sive Natura</em>). There is only one substance — infinite, eternal, self-causing — of which everything else is a temporary, finite mode. God is not the creator of the world; God <em>is</em> the world, seen under infinite aspects. God has no mind, no will, no emotions — these are human projections born of ignorance of real causes.</p><p><strong>How it relates to the world:</strong> God is the immanent cause of all things — not a cause that stands outside its effects but a cause that produces effects within itself. The world is constantly being produced by God's infinite nature, within God, as God. There is no transcendence: no beyond, no outside, no withdrawal.</p><p><strong>Causality and time:</strong> Everything that exists follows from God's nature with strict logical necessity — as necessarily as the properties of a triangle follow from its definition. There is no contingency anywhere. God is eternal — genuinely outside time. All things seen <em>sub specie aeternitatis</em> (under the aspect of eternity) are seen as they are in God.</p><p><strong>How it can be known:</strong> God is fully and adequately knowable through reason alone. The <em>Ethics</em> itself is the attempt to demonstrate God's nature geometrically. No revelation, no mysticism required — only the rigorous operation of the intellect.</p><p><strong>Value and the soul:</strong> Good and evil are human constructions relative to human needs, not features of God's nature. The highest human good is the <em>amor intellectualis Dei</em> — the intellectual love of God, in which the mind recognizes its own nature as a mode of God's infinite intellect and experiences a profound, eternal joy. There is no separation to overcome — only recognition to achieve.</p><p><strong>The single idea:</strong> God is the whole — infinite, necessary, impersonal, and fully rational. To understand anything adequately is to understand it as it eternally is in God. To understand God is to understand oneself.</p>"
+  },
+  // 8 — KANT
+  {
+    s:"The moral postulate: God cannot be known — but morality cannot do without Him",
+    l:"<p><strong>What God is:</strong> God is not, for Kant, an object of theoretical knowledge. The three classic proofs for God's existence (ontological, cosmological, teleological) all fail under critical scrutiny. What God is, positively, is a <em>postulate of pure practical reason</em> — a concept that must be presupposed if the moral life is to be coherent. God is required not by metaphysics but by morality.</p><p><strong>How it relates to the world:</strong> In the <em>Critique of Judgment</em>, Kant argues that we are compelled to view nature <em>as if</em> it were designed by an intelligent creator — not because we can prove it was, but because we cannot make sense of organic life without thinking in terms of purpose and design. God as creator is a regulative idea, not a constitutive one.</p><p><strong>Causality and time:</strong> The category of causality applies only within possible experience. To apply it to the world as a whole, or to posit a cause outside the world, is a misuse of the category. God's relationship to time is permanently inaccessible — time is a form of human inner intuition and does not apply to things outside experience.</p><p><strong>How it can be known:</strong> God cannot be known theoretically. This is Kant's most famous contribution to the philosophy of religion: he found it necessary to deny theoretical knowledge of God in order to make room for moral faith. What we can say about God is strictly limited to what morality requires — and even that is a postulate, not a proof.</p><p><strong>Value and the soul:</strong> God is the guarantor of the moral order — the being who can ensure that virtue is ultimately rewarded with happiness (the <em>summum bonum</em>). Critically, goodness is <em>prior</em> to God: the moral law is not derived from God's commands but is binding on God and humans alike. The soul's immortality is also a moral postulate — we need infinite time to approach perfect virtue.</p><p><strong>The single idea:</strong> God is the great limit — the concept at the edge of human reason where theoretical knowledge ends and moral faith begins. Not a being we can describe, but a necessity we cannot do without.</p>"
+  },
+  // 9 — WHITEHEAD
+  {
+    s:"The dipolar God: the fellow-sufferer who lures the world toward beauty and receives everything back",
+    l:"<p><strong>What God is:</strong> God is a unique <em>actual entity</em> — irreducibly dipolar. The <em>primordial nature</em> is God's eternal vision of all pure possibilities, the ground of all novelty and value. The <em>consequent nature</em> is God's ongoing, living reception of every actual experience in the universe as it unfolds. God is neither a being above all beings nor Being itself — but a unique participant in the process of the universe.</p><p><strong>How it relates to the world:</strong> God and the world are mutually creative. It is as true to say the world creates God as that God creates the world. God provides each moment of the universe with an initial aim — a lure toward beauty and value — and the universe freely responds. Those responses flow back into God's consequent nature, enriching God's experience. This is a genuine two-way relationship.</p><p><strong>Causality and time:</strong> God acts as a <em>final cause</em>, not an efficient cause. God lures, never coerces. God has no coercive power — this is Whitehead's answer to the problem of evil. The primordial nature is eternal; the consequent nature is genuinely temporal — God grows as the world grows. God is the ultimate repository of all that has been: nothing genuinely lived is lost.</p><p><strong>How it can be known:</strong> Through rigorous philosophical reason, but also through aesthetic experience — beauty, harmony, and intensity are direct encounters with what God is luring the world toward. All traditional divine attributes must be reconceived: omnipotence becomes infinite persuasion; omniscience becomes perfect reception of all actuality.</p><p><strong>Value and the soul:</strong> God is the ground of all value — not just moral goodness but beauty, truth, intensity of experience, and adventure. The soul does not merely move toward God; it gives to God. Every experience of joy, suffering, creativity, or love is received and permanently preserved in God's consequent nature. Nothing genuinely lived is ever lost.</p><p><strong>The single idea:</strong> God is the great companion — the being who offers each creature the best possible version of itself, receives every experience back into permanent memory, and grows richer as the world grows richer. God and the world need each other.</p>"
+  }
+];
+
 // Build table
 const tbody = document.getElementById('tbody');
 let ap = -1, ah = -1, synthMode = false;
+
+// Wire up philosopher column header clicks
+PH.forEach((ph, pj) => {
+  const hdr = document.getElementById('col-hdr-'+pj);
+  if (hdr) hdr.addEventListener('click', () => openColSynth(pj));
+});
 
 PR.forEach((prop, pi) => {
   const tr = document.createElement('tr');
@@ -320,11 +381,25 @@ const overlay = document.getElementById('overlay');
 function clearActive() {
   document.querySelectorAll('.cell-btn.active').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('tbody th.row-active').forEach(t => t.classList.remove('row-active'));
+  document.querySelectorAll('thead th.col-active').forEach(t => t.classList.remove('col-active'));
+}
+
+function openColSynth(pj) {
+  clearActive(); synthMode = true; ap = -1; ah = pj;
+  document.getElementById('col-hdr-'+pj).classList.add('col-active');
+  const ph = PH[pj], r = CS[pj];
+  document.getElementById('p-prop').textContent  = ph.n;
+  document.getElementById('p-name').textContent  = ph.d + ' · ' + ph.c;
+  document.getElementById('p-meta').textContent  = 'Complete God-concept across all ten properties';
+  document.getElementById('p-short').textContent = r.s;
+  document.getElementById('p-long').innerHTML    = r.l;
+  document.getElementById('btn-prev').disabled   = pj <= 0;
+  document.getElementById('btn-next').disabled   = pj >= PH.length - 1;
+  panel.classList.add('open'); overlay.classList.add('visible'); panel.scrollTop = 0;
 }
 
 function openSynth(pi) {
   clearActive(); synthMode = true; ap = pi; ah = -1;
-  // highlight the row header
   tbody.querySelectorAll('th')[pi].classList.add('row-active');
   const prop = PR[pi], r = RS[pi];
   document.getElementById('p-prop').textContent  = prop.name;
@@ -358,13 +433,25 @@ function closePanel() {
 
 document.getElementById('panel-close').addEventListener('click', closePanel);
 overlay.addEventListener('click', closePanel);
-document.getElementById('btn-prev').addEventListener('click', () => { if (!synthMode && ah > 0) openPanel(ap, ah-1); });
-document.getElementById('btn-next').addEventListener('click', () => { if (!synthMode && ah < PH.length-1) openPanel(ap, ah+1); });
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (synthMode && ap === -1 && ah > 0) { openColSynth(ah-1); return; }
+  if (!synthMode && ah > 0) openPanel(ap, ah-1);
+});
+document.getElementById('btn-next').addEventListener('click', () => {
+  if (synthMode && ap === -1 && ah < PH.length-1) { openColSynth(ah+1); return; }
+  if (!synthMode && ah < PH.length-1) openPanel(ap, ah+1);
+});
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closePanel(); return; }
   if (!panel.classList.contains('open')) return;
-  if (synthMode) return; // no arrow navigation in synthesis mode
+  // col-synth mode: allow left/right to browse philosophers
+  if (synthMode && ap === -1) {
+    if (e.key === 'ArrowLeft'  && ah > 0)           { e.preventDefault(); openColSynth(ah-1); }
+    if (e.key === 'ArrowRight' && ah < PH.length-1) { e.preventDefault(); openColSynth(ah+1); }
+    return;
+  }
+  if (synthMode) return;
   if (e.key === 'ArrowLeft'  && ah > 0)           { e.preventDefault(); openPanel(ap, ah-1); }
   if (e.key === 'ArrowRight' && ah < PH.length-1) { e.preventDefault(); openPanel(ap, ah+1); }
   if (e.key === 'ArrowUp'    && ap > 0)           { e.preventDefault(); openPanel(ap-1, ah); }
