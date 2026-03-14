@@ -120,6 +120,7 @@ a:hover{text-decoration:underline}
 /* TABLE */
 .table-scroll{
   overflow-x:auto;-webkit-overflow-scrolling:touch;
+  width:fit-content;max-width:100%;
   border:1px solid var(--border);border-radius:var(--r);
   background:var(--surface);box-shadow:var(--sh-sm);margin-bottom:12px;
 }
