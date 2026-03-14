@@ -164,8 +164,16 @@ tbody th{
 td{border-bottom:1px solid var(--border);border-right:1px solid var(--border);padding:0;vertical-align:top;width:148px;min-width:148px}
 td:last-child{border-right:none}
 tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
-tbody tr:nth-child(even) td{background:var(--surface-2)}
-tbody tr:nth-child(odd)  td{background:var(--surface)}
+tbody tr:nth-child(1) td,tbody tr:nth-child(2) td,tbody tr:nth-child(3) td{background:#ffffff}
+tbody tr:nth-child(1) th,tbody tr:nth-child(2) th,tbody tr:nth-child(3) th{background:#f8f9fa}
+tbody tr:nth-child(4) td,tbody tr:nth-child(5) td{background:#f1f3f5}
+tbody tr:nth-child(4) th,tbody tr:nth-child(5) th{background:#e9ecef}
+tbody tr:nth-child(6) td,tbody tr:nth-child(7) td{background:#ffffff}
+tbody tr:nth-child(6) th,tbody tr:nth-child(7) th{background:#f8f9fa}
+tbody tr:nth-child(8) td{background:#f1f3f5}
+tbody tr:nth-child(8) th{background:#e9ecef}
+tbody tr:nth-child(9) td,tbody tr:nth-child(10) td{background:#ffffff}
+tbody tr:nth-child(9) th,tbody tr:nth-child(10) th{background:#f8f9fa}
 
 .cell-btn{
   display:block;width:100%;min-height:72px;height:100%;
