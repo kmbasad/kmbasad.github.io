@@ -231,3 +231,18 @@ tbody tr:nth-child(odd)  td{background:var(--surface)}
   .home-hero{padding:28px 24px}
   #panel{width:100%;right:-100%}
 }
+
+/* Row header — synthesis active state */
+tbody th.row-active {
+  background: #dbeafe;
+  border-right-color: var(--accent);
+}
+tbody th.row-active .prop-name { color: var(--accent); }
+tbody th.row-active .prop-num  { color: var(--accent); }
+
+/* Row header hover hint */
+tbody th:hover {
+  background: #eff6ff;
+  cursor: pointer;
+}
+tbody th:hover .prop-name { color: var(--accent); }

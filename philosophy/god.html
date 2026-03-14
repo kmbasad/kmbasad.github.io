@@ -28,7 +28,7 @@
 
 <div class="main-wide">
 
-  <p class="article-tip"><strong>↗ Click any cell</strong> to read the full elaboration. Arrow keys: ← → move between philosophers, ↑ ↓ between properties. Escape to close.</p>
+  <p class="article-tip"><strong>↗ Click any cell</strong> to read a philosopher's view. <strong>Click a property label</strong> (left column) to see the synthesis across all ten philosophers. Escape to close.</p>
 
   <div class="table-scroll">
     <table id="main-table">
@@ -235,14 +235,72 @@ const D = [
 ]
 ];
 
+// Row synthesis — one entry per property row
+// Clicking the row header opens this instead of an individual philosopher cell
+const RS = [
+  // I — Ontological Status
+  {
+    s:"The Context of all Contexts — God as the ground of being itself",
+    l:"<p>Across ten very different traditions, the dominant answer to \"what kind of thing is God?\" is the same: God is not a thing at all. Laozi's Tao, Plotinus's One, Shankara's Brahman, Ibn Arabi's <em>al-Wujud</em>, and Spinoza's single Substance all converge on the idea that God is the non-dual substrate in which anything can exist at all. God is not the largest object in the universe — God is the condition that makes \"universe\" possible.</p><p>Plato and Whitehead are partial exceptions: both introduce a more particularized divine actor (the Demiurge; the dipolar actual entity) who works <em>within</em> existence rather than being the ground of it. And Nagarjuna dissolves the question entirely — his Emptiness is not a substrate but the absence of any fixed substrate. Yet even these outliers point toward the same horizon: God is not a being among beings but the field in which being becomes possible.</p><p>The single idea uniting the dominant set: <strong>God is the Context of all Contexts</strong> — the prior, inexhaustible ground from which every particular thing emerges and on which it depends, but which is itself dependent on nothing.</p>"
+  },
+  // II — Personhood & Will
+  {
+    s:"Indifferent Spontaneity — the Absolute does not choose, it simply overflows",
+    l:"<p>The most striking convergence across the table is the near-universal rejection of a God who <em>deliberates</em>. Laozi, Nagarjuna, Plotinus, Shankara, Spinoza, and Ibn Arabi all arrive — from entirely different directions — at the conclusion that personality, will, and intention are human projections that cannot be applied to the Absolute without diminishing it.</p><p>The reasoning differs but the conclusion is shared: a God who chooses would be a God with unfulfilled desires; a God with emotions would be a God subject to change; a God who plans would be a God limited by what it does not yet have. The Absolute, by definition, lacks nothing and therefore wills nothing in the ordinary sense.</p><p>Maimonides and Kant retain personal language but hollow it out — for Maimonides, personality is analogical at best; for Kant, it is a moral postulate, not a metaphysical description. Only in Whitehead does something like genuine responsiveness survive, and even he insists God does not coerce but lures.</p><p>The dominant idea: <strong>Indifferent Spontaneity</strong> — the Absolute acts not from choice but from the sheer necessity of what it is, the way the sun radiates not because it decides to but because that is what a sun does.</p>"
+  },
+  // III — Unity & Simplicity
+  {
+    s:"Singularity of Essence — any internal division would make God dependent on its parts",
+    l:"<p>On no property is the consensus more overwhelming: God is absolutely one and without internal complexity. From Plotinus's rigorous proof that the One cannot even think without splitting into thinker and thought, to Maimonides's argument that multiple divine attributes would make God composite and therefore contingent, to Shankara's insistence that Advaita (non-duality) is the only adequate description of Brahman — the logic is the same everywhere.</p><p>Internal complexity implies dependence. If God were composed of parts — wisdom-stuff plus power-stuff plus being-stuff — then God would depend on those parts, and something more fundamental than God would exist. But if God is the ground of all existence, nothing can be more fundamental. Therefore God has no parts. God's power, wisdom, goodness, and being are not three things held together — they are one reality approached from three angles by a finite mind that cannot see the whole at once.</p><p>Whitehead alone dissents, and consciously: his dipolar God (primordial nature + consequent nature) is his answer to the problem of a God who can be genuinely affected by the world. He pays divine simplicity as the price for divine relationality.</p><p>The dominant idea: <strong>Singularity of Essence</strong> — God's being is irreducibly one, and what we call God's attributes are our limited names for a single, undivided reality.</p>"
+  },
+  // IV — Relation to the World
+  {
+    s:"The Mirror of the Absolute — the world is God turned outward, not a separate product",
+    l:"<p>The dominant set — Plotinus, Shankara, Ibn Arabi, and Spinoza — does not describe the world as something God made, as a craftsman makes a chair. The world is something God <em>is</em>, or something God necessarily becomes when its infinite nature finds expression. Plotinus calls this emanation; Shankara calls it apparent transformation (<em>vivartavada</em>); Ibn Arabi calls it self-disclosure (<em>tajalli</em>); Spinoza calls it the totality of modes.</p><p>What unites them is the rejection of a gap between God and world. The world is not a foreign product that God chose to create and could have chosen not to. It is the natural overflow of an infinite source — as inevitable as the light from the sun, as natural as the waves on the ocean.</p><p>Plato and Maimonides hold onto intentional creation (the Demiurge orders pre-existing matter; God creates ex nihilo by free will), and Whitehead insists on mutual creativity between God and world. Nagarjuna dissolves the entire question. But the center of gravity remains: <strong>the world is the Mirror of the Absolute</strong> — God expressing, disclosing, or extending itself outward into the multiplicity of finite forms.</p>"
+  },
+  // V — Transcendence & Immanence
+  {
+    s:"Non-dual Presence — God is the depth of the world, not its distant neighbor",
+    l:"<p>The most philosophically sophisticated answer in the table is the refusal to choose between \"God is beyond the world\" and \"God is in the world.\" Ibn Arabi holds <em>tanzih</em> (transcendence) and <em>tashbih</em> (immanence) simultaneously and insists that dropping either one falsifies the whole. Shankara says Brahman transcends the world precisely because it <em>is</em> the world, with nothing left over. Plotinus says the One is the most transcendent thing imaginable and the most intimate ground of every existent thing — these are not contradictions but descriptions of the same dependency relation from two directions.</p><p>Spinoza collapses transcendence entirely — God simply is the cosmos, with no beyond. Kant collapses immanence entirely — God is permanently beyond all possible experience. But these represent the two poles of a spectrum whose center of gravity is paradoxical co-presence.</p><p>The dominant idea: <strong>Non-dual Presence</strong> — God is not located outside the world looking in, nor dissolved into the world without remainder, but is the very depth of the world, more intimate to each thing than that thing is to itself, yet never exhausted by any finite expression of it.</p>"
+  },
+  // VI — Causality
+  {
+    s:"The Uncaused Cause of Causality — God radiates rather than constructs",
+    l:"<p>The dominant set replaces the image of God as craftsman (who deliberately builds) with God as sun (which radiates by nature). Laozi's <em>ziran</em> (spontaneous self-arising), Plotinus's emanation, Spinoza's logical necessity, and Shankara's dream-causation all share the same structure: the world does not follow from God because God decided to act, but because what God is necessarily and effortlessly expresses itself.</p><p>This is not randomness — it is the deepest kind of order. A mathematical truth does not choose to be true; it is true by the necessity of its own nature. Similarly, the world does not arise because God issued a decree, but because infinite being cannot be contained within itself. The Absolute overflows.</p><p>Plato's Demiurge and Whitehead's persuasive lure retain more intentional causation. Maimonides argues for God as the cause of <em>esse</em> (being itself), continuous and sustaining. But the center of gravity is <strong>effortless radiation</strong> — God as the uncaused cause from which causality itself derives, acting not by effort but by the sheer superabundance of what it is.</p>"
+  },
+  // VII — Eternity & Time
+  {
+    s:"The Still Point — God is the timeless frame in which the film of time is projected",
+    l:"<p>The overwhelming consensus is that God does not exist <em>in</em> time — God is not everlasting (lasting through all time) but eternal (entirely outside the dimension of before-and-after). Maimonides is definitive on this: God has no temporal succession whatsoever. Shankara dissolves time itself into maya. Spinoza draws the distinction between duration (the mode of finite things) and eternity (God's mode of existence). Plotinus locates time as a product of the World Soul's movement away from the timeless Intellect.</p><p>The implication is striking: God does not experience the past as gone or the future as not-yet-arrived. All of time is, to God, a single simultaneous presence — what Plotinus calls the eternal now, what Spinoza calls <em>sub specie aeternitatis</em> (under the aspect of eternity).</p><p>Whitehead alone allows God a genuinely temporal dimension — the consequent nature grows in real time as the world unfolds. This is the price he pays for a God who can genuinely receive and respond to the world's events. But the dominant image remains: <strong>the Still Point</strong> — God as the unchanging frame within which the changing world moves, untouched by the passing of time yet present to every moment of it.</p>"
+  },
+  // VIII — Knowability & Language
+  {
+    s:"The Sovereignty of Silence — God is known when the intellect reaches its limit and stops",
+    l:"<p>Across nearly every tradition in the table, the conclusion is the same: ordinary language and ordinary thought cannot reach God. Laozi opens his text by announcing that the Tao which can be named is not the eternal Tao. Maimonides spends an entire book showing why every positive predicate applied to God is secretly a category error. Nagarjuna shows that even the word 'emptiness' is empty. Kant proves, by systematic critique, that the theoretical intellect cannot establish anything about God at all.</p><p>The reasons differ: Laozi's God escapes language by being prior to all distinctions. Maimonides's God escapes language because divine simplicity cannot be carved into predicate and subject. Nagarjuna's ultimate reality escapes language because language requires inherent essences that do not exist. Kant's God escapes language because the categories of the understanding apply only within possible experience.</p><p>What all share is the recognition that silence — or negation — is more accurate than speech. The Absolute is not merely difficult to describe; it is structurally beyond the reach of any predicate. The dominant idea: <strong>the Sovereignty of Silence</strong> — God is approached not by piling up descriptions but by stripping them away, until the mind arrives at a knowing that transcends knowing.</p>"
+  },
+  // IX — Moral & Value Nature
+  {
+    s:"Cosmic Integrity — God is the ground of harmony and beauty, not a moral judge",
+    l:"<p>The dominant set moves the ground of ethics from commandment to ontology. Spinoza's God is indifferent to human moral categories but is the necessary ground from which the highest human joy — the intellectual love of God — arises. Plotinus's One is identified with the Good but in a cosmic, not a moralistic sense: evil is not a violation of God's commands but an absence of being, a falling away from fullness. Laozi's Tao is the source of natural harmony — not a moral code but the very structure of what flows well. Whitehead's God is the ground of beauty and value, where the good life is the aesthetically rich life.</p><p>Even Shankara, who places ethics firmly within maya (conventional reality), insists that liberation — the highest good — is the recognition of Brahman, not the reward for obedience.</p><p>Kant stands as the great exception: for him, God is precisely and primarily the guarantor of the moral order, the being who ensures that virtue is ultimately rewarded. But notably, even Kant insists that goodness is <em>prior</em> to God — the moral law is not derived from God's commands but is binding on God and humans alike.</p><p>The dominant idea: <strong>Cosmic Integrity</strong> — God is not a judge who issues verdicts, but the very order, harmony, and beauty that makes a well-lived life possible. What is moral flows from what is real, and what is real is God.</p>"
+  },
+  // X — Relation to the Soul
+  {
+    s:"The End of Separation — the soul's deepest nature was never truly apart from the divine",
+    l:"<p>The most remarkable convergence in the entire table: from China, India, the Islamic world, and ancient Greece, the dominant answer to \"what is the soul's relationship to God?\" is some form of <em>identity or return</em>. Shankara's Atman is numerically identical to Brahman — the soul is not approaching God; it is God temporarily obscured by ignorance. Plotinus's soul has never fully left the One; mystical union is the soul's recognition of what was always the case. Ibn Arabi's Perfect Human is the being in whom all of God's Names are fully present — the soul's journey is the unveiling of its own divine face.</p><p>Even where identity is denied — Maimonides keeps the soul at an intellectual distance; Kant keeps it at a moral distance — the direction of travel is the same: the soul's highest achievement is its greatest approximation to the divine nature. Distance decreases; separation thins.</p><p>Whitehead offers the most reciprocal account: the soul not only moves toward God but gives something to God — every genuine experience is received and preserved in God's consequent nature. Nothing truly lived is lost.</p><p>The dominant idea: <strong>the End of Separation</strong> — the soul's journey is not toward a foreign destination but toward the recognition of its own deepest nature. What the soul seeks has always been what the soul is. The distance was never real; only the forgetting was.</p>"
+  }
+];
+
 // Build table
 const tbody = document.getElementById('tbody');
-let ap = -1, ah = -1;
+let ap = -1, ah = -1, synthMode = false;
 
 PR.forEach((prop, pi) => {
   const tr = document.createElement('tr');
   const th = document.createElement('th');
+  th.style.cursor = 'pointer';
+  th.title = 'Click to see the dominant view across all philosophers on this property';
   th.innerHTML = '<span class="prop-num">'+prop.num+'</span><span class="prop-name">'+prop.name+'</span><span class="prop-desc">'+prop.desc+'</span>';
+  th.addEventListener('click', () => openSynth(pi));
   tr.appendChild(th);
   PH.forEach((ph, pj) => {
     const td = document.createElement('td');
@@ -259,10 +317,28 @@ PR.forEach((prop, pi) => {
 const panel   = document.getElementById('panel');
 const overlay = document.getElementById('overlay');
 
-function clearActive() { document.querySelectorAll('.cell-btn.active').forEach(b => b.classList.remove('active')); }
+function clearActive() {
+  document.querySelectorAll('.cell-btn.active').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('tbody th.row-active').forEach(t => t.classList.remove('row-active'));
+}
+
+function openSynth(pi) {
+  clearActive(); synthMode = true; ap = pi; ah = -1;
+  // highlight the row header
+  tbody.querySelectorAll('th')[pi].classList.add('row-active');
+  const prop = PR[pi], r = RS[pi];
+  document.getElementById('p-prop').textContent  = prop.name;
+  document.getElementById('p-name').textContent  = 'Synthesis across all ten philosophers';
+  document.getElementById('p-meta').textContent  = 'Dominant view · ' + prop.desc;
+  document.getElementById('p-short').textContent = r.s;
+  document.getElementById('p-long').innerHTML    = r.l;
+  document.getElementById('btn-prev').disabled   = true;
+  document.getElementById('btn-next').disabled   = true;
+  panel.classList.add('open'); overlay.classList.add('visible'); panel.scrollTop = 0;
+}
 
 function openPanel(pi, pj) {
-  clearActive(); ap = pi; ah = pj;
+  clearActive(); synthMode = false; ap = pi; ah = pj;
   document.querySelector('.cell-btn[data-pi="'+pi+'"][data-pj="'+pj+'"]').classList.add('active');
   const prop = PR[pi], ph = PH[pj], d = D[pj][pi];
   document.getElementById('p-prop').textContent  = prop.name;
@@ -276,18 +352,19 @@ function openPanel(pi, pj) {
 }
 
 function closePanel() {
-  clearActive(); ap = -1; ah = -1;
+  clearActive(); synthMode = false; ap = -1; ah = -1;
   panel.classList.remove('open'); overlay.classList.remove('visible');
 }
 
 document.getElementById('panel-close').addEventListener('click', closePanel);
 overlay.addEventListener('click', closePanel);
-document.getElementById('btn-prev').addEventListener('click', () => { if (ah > 0) openPanel(ap, ah-1); });
-document.getElementById('btn-next').addEventListener('click', () => { if (ah < PH.length-1) openPanel(ap, ah+1); });
+document.getElementById('btn-prev').addEventListener('click', () => { if (!synthMode && ah > 0) openPanel(ap, ah-1); });
+document.getElementById('btn-next').addEventListener('click', () => { if (!synthMode && ah < PH.length-1) openPanel(ap, ah+1); });
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closePanel(); return; }
   if (!panel.classList.contains('open')) return;
+  if (synthMode) return; // no arrow navigation in synthesis mode
   if (e.key === 'ArrowLeft'  && ah > 0)           { e.preventDefault(); openPanel(ap, ah-1); }
   if (e.key === 'ArrowRight' && ah < PH.length-1) { e.preventDefault(); openPanel(ap, ah+1); }
   if (e.key === 'ArrowUp'    && ap > 0)           { e.preventDefault(); openPanel(ap-1, ah); }
