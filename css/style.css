@@ -119,6 +119,8 @@ a:hover{text-decoration:underline}
 
 /* TABLE */
 .table-scroll{
+  display:block;
+  width:fit-content;max-width:100%;
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   border:1px solid var(--border);border-radius:var(--r);
   background:var(--surface);box-shadow:var(--sh-sm);margin-bottom:12px;
