@@ -863,39 +863,27 @@ thead th:not(:first-child):hover .th-name {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   WRITING SYSTEM — essays, poems, and all long-form prose across the site
+   WRITING SYSTEM
    ═══════════════════════════════════════════════════════════════════════════
 
-   Layout model
-   ────────────
-   .writing-col   Centred column, max 660px wide, full-width on mobile.
-                  Use this as the outer wrapper for any writing section.
-                  Handles all horizontal centering and page-edge padding.
+   .writing-col    Centred column, max 850px, auto margins.
+   .writing-stack  Vertical flex stack of cards.
+   .essay          Prose card.
+   .poem           Verse card.
+   .piece-label    Tiny uppercase tag shared by both card types.
+   .piece-title    Title shared by both card types.
+   .essay-body     Paragraph body inside an essay card.
+   .poem-body      Verse body inside a poem card.
+   .stanza         One stanza block.
 
-   Cards
-   ─────
-   .essay         Prose card  — white surface, generous padding, serif body.
-   .poem          Verse card  — same surface, slightly tighter, normal verse.
-
-   Both cards share identical chrome (border, radius, shadow) and identical
-   header anatomy (.piece-label / .piece-title). The only difference is the
-   body typography.
-
-   Typography inside cards
-   ───────────────────────
-   .essay-body p  Body paragraphs: 16px / 1.82 leading, comfortable measure.
-   .poem-body     Verse container: 15px / 2.0 leading, normal.
-   .stanza        One stanza block; bottom margin creates the stanza gap.
-
-   Shared header elements (same class on both .essay and .poem)
-   ─────────────────────────────────────────────────────────────
-   .piece-label   Tiny uppercase tag: ESSAY · POEM · SONNET · REFLECTION …
-   .piece-title   Large title of the piece.
-
-   Stack
-   ─────
-   .writing-stack Flex column, gap between successive cards.
-                  Always place inside .writing-col.                          */
+   Breakpoints
+   ───────────
+   ≥ 901px   Desktop: centred column with breathing room, card padding
+             36–40px, essay text 16px.
+   768–900px Portrait tablet: column fills the screen, side padding 16px,
+             cards flush to column edges, border-radius kept.
+   ≤ 767px   Phone: column is 100vw, zero side padding, cards are
+             full-bleed strips with no radius/shadow/side borders.          */
 
 /* ── Centred column ─────────────────────────────────────────────────────── */
 .writing-col {
@@ -922,7 +910,6 @@ thead th:not(:first-child):hover .th-name {
   border-radius: var(--r);
   box-shadow: var(--sh-sm);
   overflow: hidden;
-  /* keeps border-radius clean */
 }
 
 /* ── Shared header anatomy ─────────────────────────────────────────────── */
@@ -990,11 +977,50 @@ thead th:not(:first-child):hover .th-name {
   margin-bottom: 0;
 }
 
-/* ── Responsive ─────────────────────────────────────────────────────────── */
-@media (max-width: 700px) {
+/* ── Portrait tablet: 768px – 900px ─────────────────────────────────────── */
+@media (max-width: 900px) and (min-width: 768px) {
   .writing-col {
+    max-width: 100%;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .essay {
+    padding: 28px 28px 32px;
+  }
+
+  .poem {
+    padding: 26px 28px 30px;
+  }
+
+  .essay-body p {
+    font-size: 15px;
+  }
+
+  .piece-title {
+    font-size: 18px;
+  }
+}
+
+/* ── Phone: ≤ 767px ─────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .writing-col {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .writing-stack {
+    gap: 2px;
+  }
+
+  /* Full-bleed strips — no rounded corners, no side borders, no shadow */
+  .essay,
+  .poem {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
   }
 
   .essay {
@@ -1021,5 +1047,11 @@ thead th:not(:first-child):hover .th-name {
 
   .essay-body p {
     font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .poem-body {
+    font-size: 14px;
+    line-height: 1.9;
   }
 }
