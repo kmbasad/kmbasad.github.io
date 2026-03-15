@@ -27,6 +27,8 @@
 </div>
 
 <div class="main-wide">
+  <h2 style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-.01em">God through Revelation: Prophets &amp; Sacred Poets</h2>
+  <p class="article-intro">Ten philosophers across different parts of the world — ten properties of the divine across 2,500 years.</p>
   <p class="article-tip"><strong>↗ Click any cell</strong> to read a philosopher's view on one property. <strong>Click a property label</strong> (left column) for the cross-tradition synthesis. <strong>Click a philosopher's name</strong> (top row) for their complete God-concept. Escape to close.</p>
 
   <div class="table-scroll">
@@ -53,10 +55,10 @@
   <p class="article-legend">I–III: what God <em>is</em> · IV–V: relation to the <em>world</em> · VI–VII: <em>causality and time</em> · VIII: <em>knowability and language</em> · IX–X: <em>value and the soul</em></p>
 </div>
 
-<div id="overlay"></div>
-<div id="panel">
+<div class="table-overlay" id="overlay"></div>
+<div class="table-panel" id="panel">
   <div class="panel-bar"></div>
-  <button id="panel-close" title="Close">✕</button>
+  <button class="panel-close-btn" id="panel-close" title="Close">✕</button>
   <div class="panel-head">
     <div class="panel-label">Property</div>
     <div class="panel-prop" id="p-prop"></div>
@@ -626,10 +628,10 @@ document.addEventListener('keydown', e => {
   <p class="article-legend">I–III: nature of God · IV–V: God and the <em>world</em> · VI–VII: <em>moral demand and judgment</em> · VIII: <em>love and suffering</em> · IX–X: <em>salvation and the soul</em></p>
 </div>
 
-<div id="overlay2"></div>
-<div id="panel2">
+<div class="table-overlay" id="overlay2"></div>
+<div class="table-panel" id="panel2">
   <div class="panel-bar"></div>
-  <button id="panel2-close" title="Close">✕</button>
+  <button class="panel-close-btn" id="panel2-close" title="Close">✕</button>
   <div class="panel-head">
     <div class="panel-label">Property</div>
     <div class="panel-prop" id="p2-prop"></div>
@@ -855,11 +857,11 @@ const overlay2=document.getElementById('overlay2');
 function clearActive2(){
   document.querySelectorAll('[data-pi2].active').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('#tbody2 th.row-active').forEach(t=>t.classList.remove('row-active'));
-  document.querySelectorAll('thead th.col-active2').forEach(t=>t.classList.remove('col-active2'));
+  document.querySelectorAll('#table2 thead th.col-active').forEach(t=>t.classList.remove('col-active'));
 }
 function openColSynth2(pj){
   clearActive2(); synthMode2=true; ap2=-1; ah2=pj;
-  document.getElementById('p2-col-hdr-'+pj).classList.add('col-active2');
+  document.getElementById('p2-col-hdr-'+pj).classList.add('col-active');
   const ph=PH2[pj],r=CS2[pj];
   document.getElementById('p2-prop').textContent=ph.n;
   document.getElementById('p2-name').textContent=ph.d+' · '+ph.c;

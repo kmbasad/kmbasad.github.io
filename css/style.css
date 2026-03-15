@@ -192,24 +192,24 @@ tbody tr:nth-child(9) th,tbody tr:nth-child(10) th{background:#f8f9fa}
 .cell-btn.active::after{opacity:1;color:var(--accent)}
 
 /* PANEL + OVERLAY */
-#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:90;backdrop-filter:blur(2px)}
-#overlay.visible{display:block}
-#panel{
+.table-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:90;backdrop-filter:blur(2px)}
+.table-overlay.visible{display:block}
+.table-panel{
   position:fixed;top:0;right:-480px;width:448px;height:100vh;
   background:var(--surface);border-left:1px solid var(--border);
   box-shadow:-6px 0 32px rgba(0,0,0,.12);z-index:100;
   overflow-y:auto;transition:right .28s ease;display:flex;flex-direction:column;
 }
-#panel.open{right:0}
+.table-panel.open{right:0}
 .panel-bar{height:3px;background:var(--accent);flex-shrink:0}
-#panel-close{
+.panel-close-btn{
   position:absolute;top:12px;right:12px;background:var(--surface-3);
   border:1px solid var(--border);color:var(--text-3);font-size:13px;
   width:28px;height:28px;border-radius:var(--r-sm);cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   font-family:inherit;transition:background .12s,color .12s;z-index:2;
 }
-#panel-close:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-2)}
+.panel-close-btn:hover{background:var(--surface-2);color:var(--text);border-color:var(--border-2)}
 .panel-head{padding:20px 20px 16px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--surface-2)}
 .panel-label{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--text-4);text-transform:uppercase;margin-bottom:5px}
 .panel-prop{font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.25}
@@ -237,7 +237,7 @@ tbody tr:nth-child(9) th,tbody tr:nth-child(10) th{background:#f8f9fa}
 @media(max-width:640px){
   .nav-inner,.page-header-inner,.main{padding-left:16px;padding-right:16px}
   .home-hero{padding:28px 24px}
-  #panel{width:100%;right:-100%}
+  .table-panel{width:100%;right:-100%}
 }
 
 /* Row header — synthesis active state */
@@ -269,9 +269,6 @@ thead th:not(:first-child):hover {
 }
 thead th:not(:first-child):hover .th-name { color: var(--accent); }
 
-/* Second table column header active state */
-thead th.col-active2 {
-  background: #dbeafe;
-}
-thead th.col-active2 .th-name    { color: var(--accent); }
-thead th.col-active2 .th-culture { color: #1d4ed8; }
+/* col-active2 now uses .col-active — see above */
+
+/* panel2/overlay2 now use .table-panel/.table-overlay classes */
