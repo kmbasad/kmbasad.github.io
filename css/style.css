@@ -2253,3 +2253,73 @@ thead th:not(:first-child):hover .th-name {
     box-shadow: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSLITERATION TOOLTIP
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.has-tooltip {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  /* Adds a very subtle dotted underline to indicate it's interactive */
+  border-bottom: 1px dotted rgba(156, 163, 175, 0.6);
+}
+
+.has-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  /* Positions it above the text */
+  right: 0;
+  /* Aligns with the right side (RTL) */
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: var(--text);
+  /* Dark background */
+  color: var(--surface);
+  /* White text */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateY(4px);
+  z-index: 100;
+  direction: ltr;
+  /* Forces the Latin text to be Left-to-Right */
+  text-align: left;
+  pointer-events: none;
+  /* Prevents tooltip from blocking other clicks */
+}
+
+/* A tiny arrow pointing down to the word */
+.has-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 16px;
+  margin-bottom: 2px;
+  border: 6px solid transparent;
+  border-top-color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateY(4px);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Triggers on mouse hover (desktop) and touch/click (mobile) */
+.has-tooltip:hover::after,
+.has-tooltip:active::after,
+.has-tooltip:hover::before,
+.has-tooltip:active::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
