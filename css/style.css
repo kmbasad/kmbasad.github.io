@@ -875,7 +875,7 @@ thead th:not(:first-child):hover .th-name {
    Cards
    ─────
    .essay         Prose card  — white surface, generous padding, serif body.
-   .poem          Verse card  — same surface, slightly tighter, italic verse.
+   .poem          Verse card  — same surface, slightly tighter, normal verse.
 
    Both cards share identical chrome (border, radius, shadow) and identical
    header anatomy (.piece-label / .piece-title). The only difference is the
@@ -884,7 +884,7 @@ thead th:not(:first-child):hover .th-name {
    Typography inside cards
    ───────────────────────
    .essay-body p  Body paragraphs: 16px / 1.82 leading, comfortable measure.
-   .poem-body     Verse container: 15px / 2.0 leading, italic.
+   .poem-body     Verse container: 15px / 2.0 leading, normal.
    .stanza        One stanza block; bottom margin creates the stanza gap.
 
    Shared header elements (same class on both .essay and .poem)
@@ -979,7 +979,6 @@ thead th:not(:first-child):hover .th-name {
   font-size: 15px;
   line-height: 2.0;
   color: var(--text-2);
-  font-style: italic;
 }
 
 .poem-body .stanza {
