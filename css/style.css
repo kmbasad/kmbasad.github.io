@@ -268,3 +268,10 @@ thead th:not(:first-child):hover {
   cursor: pointer;
 }
 thead th:not(:first-child):hover .th-name { color: var(--accent); }
+
+/* Second table column header active state */
+thead th.col-active2 {
+  background: #dbeafe;
+}
+thead th.col-active2 .th-name    { color: var(--accent); }
+thead th.col-active2 .th-culture { color: #1d4ed8; }
