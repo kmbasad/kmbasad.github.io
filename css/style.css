@@ -374,10 +374,12 @@ thead th:not(:first-child):hover .th-name { color: var(--accent); }
   line-height: 1.9;
   color: var(--text-2);
   font-style: italic;
+  white-space: pre-line;
 }
 
 .poem-body .stanza {
   display: block;
   margin-bottom: 1.1em;
+  white-space: pre-line;
 }
 .poem-body .stanza:last-child { margin-bottom: 0; }
