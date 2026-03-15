@@ -1055,3 +1055,183 @@ thead th:not(:first-child):hover .th-name {
     line-height: 1.9;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSLATION PAGE
+   ═══════════════════════════════════════════════════════════════════════════
+
+   .trans-page         Page wrapper — narrow centred column for reading.
+   .trans-header       Page title block above the ghazal list.
+   .trans-ghazal       One ghazal section (label + table).
+   .trans-label        Small uppercase number label above the table.
+   .trans-wrap         Scroll container — overflow-x on small screens.
+   .trans-table        The bilingual table itself.
+   .trans-bn           Bangla (left) cell — no line wrap, scroll right.
+   .trans-fa           Persian (right) cell — RTL, no line wrap.
+
+   Row borders are suppressed between verses so each ghazal reads as a
+   continuous poem block; only the outer border of the table is shown.      */
+
+.trans-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 28px 80px;
+}
+
+.trans-header {
+  margin-bottom: 36px;
+}
+
+.trans-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.01em;
+  margin-bottom: 4px;
+}
+
+.trans-header p {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+/* ── Individual ghazal block ─────────────────────────────────────────────── */
+.trans-ghazal {
+  margin-bottom: 44px;
+}
+
+.trans-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 6px;
+}
+
+/* ── Scroll wrapper ──────────────────────────────────────────────────────── */
+.trans-wrap {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--sh-sm);
+}
+
+/* ── Table ───────────────────────────────────────────────────────────────── */
+.trans-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+}
+
+/* Column header row */
+.trans-table thead th {
+  background: var(--surface-3);
+  border-bottom: 1px solid var(--border-2);
+  border-right: none;
+  padding: 7px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  width: 50%;
+  min-width: 0;
+  vertical-align: middle;
+}
+
+.trans-table thead th:first-child {
+  border-right: 1px solid var(--border);
+  width: 50%;
+  min-width: 0;
+}
+
+/* Override the generic thead th widths set by the comparison-table rules */
+.trans-table thead th,
+.trans-table thead th:first-child {
+  width: 50%;
+  min-width: 0;
+}
+
+.trans-fa-head {
+  text-align: right;
+  direction: rtl;
+}
+
+/* ── Body rows — no row borders (continuous poem effect) ─────────────────── */
+.trans-table tbody tr td {
+  border-bottom: none;
+  border-right: none;
+  padding: 2px 16px;
+  vertical-align: top;
+}
+
+/* Separator between the two columns */
+.trans-bn {
+  border-right: 1px solid var(--border) !important;
+  white-space: nowrap;
+  font-family: 'Noto Serif Bengali', Georgia, serif;
+  font-size: 0.94rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  background: var(--surface);
+}
+
+.trans-fa {
+  direction: rtl;
+  text-align: right;
+  white-space: nowrap;
+  font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+/* First row — tiny top breathing room */
+.trans-table tbody tr:first-child td {
+  padding-top: 10px;
+}
+
+/* Last row — bottom breathing room */
+.trans-table tbody tr:last-child td {
+  padding-bottom: 10px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) and (min-width: 768px) {
+  .trans-page {
+    padding: 32px 16px 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .trans-page {
+    padding: 28px 0 56px;
+  }
+
+  .trans-header {
+    padding: 0 16px;
+    margin-bottom: 28px;
+  }
+
+  .trans-ghazal {
+    margin-bottom: 32px;
+  }
+
+  .trans-label {
+    padding: 0 16px;
+  }
+
+  /* Full-bleed on phones — no radius, no side borders */
+  .trans-wrap {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
