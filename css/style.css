@@ -2323,3 +2323,6 @@ thead th:not(:first-child):hover .th-name {
   visibility: visible;
   transform: translateY(0);
 }
+h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .piece-title, .trans-header h1 {
+  text-align: center;
+}
