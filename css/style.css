@@ -116,7 +116,10 @@ a:hover {
 /* PAGE HEADER */
 .page-header {
   background: var(--surface);
-  border-bottom: 1px solid var(--border)
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .page-header-inner {
@@ -165,6 +168,71 @@ a:hover {
 
 .main-wide {
   padding: 28px 28px 72px
+}
+
+/* TOC DROPDOWN */
+.toc-wrapper {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.toc-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.toc-wrapper:hover .toc-label {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border-color: var(--border-2);
+}
+
+.toc-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 8px 0;
+  min-width: 200px;
+  box-shadow: var(--sh);
+  z-index: 101;
+}
+
+.toc-wrapper:hover .toc-dropdown {
+  display: block;
+}
+
+.toc-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-dropdown li a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: var(--text-2);
+  transition: background 0.15s, color 0.15s;
+}
+
+.toc-dropdown li a:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 /* HOME */
