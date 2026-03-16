@@ -290,14 +290,7 @@ a:hover {
   margin-bottom: 8px
 }
 
-.section-card h3 a {
-  color: inherit
-}
 
-.section-card h3 a:hover {
-  color: var(--accent);
-  text-decoration: none
-}
 
 .section-card h3 .arr {
   color: var(--text-4);
