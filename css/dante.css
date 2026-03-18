@@ -171,6 +171,15 @@
 /* Bangla words use the same .w highlight rules as IT/EN */
 
 /* ── Responsive ───────────────────────────────────────── */
+
+/* Always render all 3 columns — never collapse to a single column.
+   The wrapper's overflow-x: auto handles horizontal scrolling on
+   narrow screens. min-width keeps the table wider than any phone
+   viewport so columns stay side-by-side without line-breaking. */
+.dante-table {
+  min-width: 640px;
+}
+
 @media (max-width: 900px) {
   .dante-table {
     font-size: 0.83rem;
@@ -178,63 +187,5 @@
 
   .dante-table td {
     padding: 0.12rem 0.45rem;
-  }
-}
-
-@media (max-width: 650px) {
-
-  /* Collapse to two visual lines per row: BN on top, IT+EN below */
-  .dante-table,
-  .dante-table thead,
-  .dante-table tbody,
-  .dante-table tr,
-  .dante-table td,
-  .dante-table th {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .dante-table thead {
-    display: none;
-  }
-
-  .dante-table td.bn {
-    border-right: none;
-    border-bottom: none;
-    padding-bottom: 0;
-    font-size: 0.92rem;
-  }
-
-  .dante-table td.it {
-    border-right: none;
-    padding-top: 0.1rem;
-    padding-bottom: 0;
-    font-size: 0.82rem;
-    color: #666;
-  }
-
-  .dante-table td.en {
-    border-right: none;
-    padding-top: 0.05rem;
-    font-size: 0.82rem;
-    color: #888;
-  }
-
-  .dante-table td.ln-col {
-    text-align: left;
-    font-size: 0.65rem;
-    padding-top: 0;
-    padding-bottom: 0.5rem;
-    color: #ddd;
-  }
-
-  .dante-table tr.tercet-start td:first-child {
-    border-top: 1px solid #eee;
-    padding-top: 0.75rem;
-  }
-
-  .dante-table tr.tercet-start td:not(:first-child) {
-    border-top: none;
   }
 }
