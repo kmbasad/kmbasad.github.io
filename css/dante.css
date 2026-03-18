@@ -1,6 +1,6 @@
 /* =========================================================
-   dante.css  —  Dante bilingual table styles
-   Complements the site's main style.css
+   dante.css  —  Dante bilingual (3-language) table styles
+   Columns: Bangla | Italian | English | line-number
    ========================================================= */
 
 /* ── Legend ───────────────────────────────────────────── */
@@ -42,11 +42,29 @@
   border-collapse: collapse;
   font-size: 0.92rem;
   line-height: 1.65;
+  table-layout: fixed;
 }
 
-/* Thead */
+/* ── Column widths ────────────────────────────────────── */
+.dante-table .col-bangla {
+  width: 30%;
+}
+
+.dante-table .col-italian {
+  width: 28%;
+}
+
+.dante-table .col-english {
+  width: 35%;
+}
+
+.dante-table .col-lnum {
+  width: 7%;
+}
+
+/* ── Thead ────────────────────────────────────────────── */
 .dante-table thead th {
-  padding: 0.55rem 1rem 0.55rem 0.5rem;
+  padding: 0.55rem 0.7rem 0.55rem 0.5rem;
   text-align: left;
   font-size: 0.72rem;
   font-weight: 600;
@@ -56,12 +74,8 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
-.dante-table thead .col-italian {
-  width: 48%;
-}
-
-.dante-table thead .col-english {
-  width: 52%;
+.dante-table thead .col-lnum {
+  text-align: right;
 }
 
 .col-note {
@@ -71,13 +85,13 @@
   color: #bbb;
 }
 
-/* ── Rows ─────────────────────────────────────────────── */
+/* ── Rows & cells ─────────────────────────────────────── */
 .dante-table td {
-  padding: 0.15rem 1rem 0.15rem 0.5rem;
+  padding: 0.14rem 0.7rem 0.14rem 0.5rem;
   vertical-align: top;
 }
 
-/* Tercet spacing: blank-ish border above first row of each tercet */
+/* Tercet gap: thin rule above first row of each tercet */
 .dante-table tr.tercet-start td {
   padding-top: 0.75rem;
   border-top: 1px solid #f0f0f0;
@@ -85,6 +99,15 @@
 
 .dante-table tbody tr:first-child.tercet-start td {
   border-top: none;
+}
+
+/* ── Bangla column ────────────────────────────────────── */
+.dante-table td.bn {
+  font-family: "Noto Sans Bengali", "Kalpurush", "SolaimanLipi",
+    "Siyam Rupali", sans-serif;
+  color: #2a2a2a;
+  border-right: 1px solid #ebebeb;
+  line-height: 1.7;
 }
 
 /* ── Italian column ───────────────────────────────────── */
@@ -99,44 +122,43 @@
 .dante-table td.en {
   color: #3a3a3a;
   font-family: Georgia, "Times New Roman", serif;
+  border-right: 1px solid #f0f0f0;
 }
 
-/* ── Line numbers ─────────────────────────────────────── */
-.ln {
-  display: inline-block;
-  min-width: 2em;
-  color: #bbb;
+/* ── Line-number column ───────────────────────────────── */
+.dante-table td.ln-col {
+  text-align: right;
+  color: #c0c0c0;
   font-size: 0.72rem;
-  font-style: normal;
-  margin-right: 0.3em;
-  vertical-align: baseline;
-  user-select: none;
   font-family: system-ui, sans-serif;
+  user-select: none;
+  padding-right: 0.5rem;
+  white-space: nowrap;
 }
 
 /* ── Word spans ───────────────────────────────────────── */
 .w {
   display: inline;
   border-radius: 2px;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition: background-color 0.1s ease, color 0.1s ease;
   cursor: default;
   padding: 0 1px;
 }
 
-/* Line-level highlight (same tercet, matching line) */
+/* Soft line-level highlight */
 .w.line-highlight {
   background-color: #f5f0e0;
   color: #1a1a1a;
 }
 
-/* Word-level highlight (direct word map) */
+/* Word-level match */
 .w.word-highlight {
   background-color: #ffe8a0;
   color: #1a1a1a;
   border-radius: 3px;
 }
 
-/* The hovered word itself */
+/* The hovered / clicked source word */
 .w.source-word {
   background-color: #ffd166;
   color: #111;
@@ -144,54 +166,82 @@
   cursor: pointer;
 }
 
+/* Bangla line highlight (whole-line, no word spans) */
+.bn.line-highlight,
+.bn.word-highlight,
+.bn.source-cell {
+  background-color: #f5f0e0;
+}
+
+.bn.source-cell {
+  background-color: #fff0c0;
+}
+
 /* ── Responsive ───────────────────────────────────────── */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .dante-table {
     font-size: 0.83rem;
   }
-  .dante-table thead th {
-    padding: 0.45rem 0.4rem;
-  }
+
   .dante-table td {
-    padding: 0.12rem 0.4rem;
-  }
-  .ln {
-    min-width: 1.6em;
-    font-size: 0.65rem;
+    padding: 0.12rem 0.45rem;
   }
 }
 
-@media (max-width: 480px) {
-  /* Stack columns on very small screens */
+@media (max-width: 650px) {
+
+  /* Collapse to two visual lines per row: BN on top, IT+EN below */
   .dante-table,
-  .dante-table tbody,
   .dante-table thead,
+  .dante-table tbody,
   .dante-table tr,
   .dante-table td,
   .dante-table th {
     display: block;
     width: 100%;
+    box-sizing: border-box;
   }
+
   .dante-table thead {
     display: none;
   }
-  .dante-table td.it {
+
+  .dante-table td.bn {
     border-right: none;
     border-bottom: none;
     padding-bottom: 0;
+    font-size: 0.92rem;
   }
-  .dante-table td.en {
+
+  .dante-table td.it {
+    border-right: none;
     padding-top: 0.1rem;
-    padding-bottom: 0.5rem;
-    color: #555;
-    font-style: normal;
+    padding-bottom: 0;
+    font-size: 0.82rem;
+    color: #666;
   }
+
+  .dante-table td.en {
+    border-right: none;
+    padding-top: 0.05rem;
+    font-size: 0.82rem;
+    color: #888;
+  }
+
+  .dante-table td.ln-col {
+    text-align: left;
+    font-size: 0.65rem;
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    color: #ddd;
+  }
+
   .dante-table tr.tercet-start td:first-child {
     border-top: 1px solid #eee;
     padding-top: 0.75rem;
   }
+
   .dante-table tr.tercet-start td:not(:first-child) {
     border-top: none;
-    padding-top: 0;
   }
 }
