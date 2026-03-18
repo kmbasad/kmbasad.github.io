@@ -353,27 +353,36 @@
   if (!table) return;
 
   let pinned = false;
+  let lastTarget = null;  // track what we last highlighted to avoid redundant clears
 
   table.addEventListener("mouseover", function (e) {
     if (pinned) return;
 
-    // Bangla td hover
+    // Bangla td — e.target could be the td itself or a text node wrapper
     const bnTd = e.target.closest("td.bn");
-    if (bnTd) { applyBnHighlight(bnTd); return; }
+    if (bnTd) {
+      if (lastTarget !== bnTd) { lastTarget = bnTd; applyBnHighlight(bnTd); }
+      return;
+    }
 
-    // Word span hover in IT or EN
+    // Word span in IT or EN
     const span = e.target.closest(".w");
-    if (!span) return;
-    const isIt = !!span.closest("td.it");
-    applyHighlight(span, span.dataset.w, isIt);
+    if (span) {
+      if (lastTarget !== span) {
+        lastTarget = span;
+        const isIt = !!span.closest("td.it");
+        applyHighlight(span, span.dataset.w, isIt);
+      }
+      return;
+    }
+
+    // Hovering over something else in the table (padding, ln-col, etc.)
+    if (lastTarget) { lastTarget = null; clearAll(); }
   });
 
-  table.addEventListener("mouseout", function (e) {
-    if (pinned) return;
-    // Only clear if truly leaving the row / table area
-    const leaving = e.target.closest("td.bn, .w");
-    if (!leaving) return;
-    if (!leaving.contains(e.relatedTarget)) clearAll();
+  // Use mouseleave on the whole table to clear when cursor exits
+  table.addEventListener("mouseleave", function () {
+    if (!pinned) { lastTarget = null; clearAll(); }
   });
 
   table.addEventListener("click", function (e) {
@@ -381,26 +390,26 @@
     const bnTd = e.target.closest("td.bn");
     if (bnTd) {
       if (pinned && bnTd.classList.contains("source-cell")) {
-        pinned = false; clearAll(); return;
+        pinned = false; lastTarget = null; clearAll(); return;
       }
-      applyBnHighlight(bnTd); pinned = true; return;
+      applyBnHighlight(bnTd); pinned = true; lastTarget = bnTd; return;
     }
 
     // Word span click
     const span = e.target.closest(".w");
     if (!span) {
-      pinned = false; clearAll(); return;
+      pinned = false; lastTarget = null; clearAll(); return;
     }
     if (pinned && span.classList.contains("source-word")) {
-      pinned = false; clearAll(); return;
+      pinned = false; lastTarget = null; clearAll(); return;
     }
     const isIt = !!span.closest("td.it");
     applyHighlight(span, span.dataset.w, isIt);
-    pinned = true;
+    pinned = true; lastTarget = span;
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { pinned = false; clearAll(); }
+    if (e.key === "Escape") { pinned = false; lastTarget = null; clearAll(); }
   });
 
 })();
