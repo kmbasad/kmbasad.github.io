@@ -168,14 +168,7 @@
   cursor: pointer;
 }
 
-/* Bangla line highlight (whole-cell, no word spans) */
-td.bn.line-highlight {
-  background-color: #f5f0e0 !important;
-}
-
-td.bn.source-cell {
-  background-color: #fff0c0 !important;
-}
+/* Bangla words use the same .w highlight rules as IT/EN */
 
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 900px) {

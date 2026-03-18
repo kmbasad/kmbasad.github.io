@@ -1,21 +1,15 @@
 /**
- * dante.js  —  3-language cross-highlighting for Bangla / Italian / English
+ * dante.js  —  3-language cross-highlighting: Bangla / Italian / English
  *
- * Hover or click any word in the Italian or English column:
- *   • The source word glows gold (source-word)
- *   • Mapped words in the other worded columns glow amber (word-highlight)
- *   • Unmapped words fall back to soft line-highlight
- *   • The ENTIRE corresponding Bangla td gets highlighted (no word spans there)
- *
- * Hovering the Bangla column highlights the whole corresponding IT + EN line.
- *
- * Click to pin; click again / Escape to unpin.
+ * Every column has word-level <span class="w" data-w="..."> markup.
+ * Hovering/clicking any word highlights corresponding words in all 3 columns.
+ * Click to pin, click again or Escape to unpin.
  */
 
 (function () {
   "use strict";
 
-  /* ── Word-level mapping: Italian data-w → English data-w[] ─────── */
+  /* ── IT → EN word mapping ─────────────────────────────────────────── */
   const IT_TO_EN = {
     "nel": ["when"],
     "mezzo": ["half"],
@@ -228,20 +222,663 @@
     "e_io_li_tenni_dietro": ["and_i_moved_on_behind_him"],
   };
 
-  /* Build reverse map EN → IT[] automatically */
+  /* Build reverse EN → IT[] */
   const EN_TO_IT = {};
-  for (const [itKey, enKeys] of Object.entries(IT_TO_EN)) {
-    for (const enKey of enKeys) {
-      if (!EN_TO_IT[enKey]) EN_TO_IT[enKey] = [];
-      EN_TO_IT[enKey].push(itKey);
-    }
+  for (const [k, vs] of Object.entries(IT_TO_EN)) {
+    for (const v of vs) { (EN_TO_IT[v] = EN_TO_IT[v] || []).push(k); }
   }
 
-  /* ── Cache DOM elements ──────────────────────────────────────────── */
+  /* ── IT → BN word mapping ─────────────────────────────────────────── */
+  const IT_TO_BN = {
+    "nel": ["bn_L1_2"],
+    "mezzo": ["bn_L1_2"],
+    "cammin": ["bn_L1_2"],
+    "nostra": ["bn_L1_0"],
+    "vita": ["bn_L1_1"],
+    "mi": ["bn_L2_0", "bn_L2_1"],
+    "ritrovai": ["bn_L2_1"],
+    "selva": ["bn_L2_2", "bn_L2_3"],
+    "oscura": ["bn_L2_2"],
+    "diritta": ["bn_L3_3"],
+    "via": ["bn_L3_4"],
+    "smarrita": ["bn_L3_1", "bn_L3_2"],
+    "ahi": ["bn_L4_0"],
+    "dura": ["bn_L4_6"],
+    "cosa": ["bn_L4_2"],
+    "selva2": ["bn_L5_1"],
+    "selvaggia": ["bn_L5_5"],
+    "aspra": ["bn_L5_3", "bn_L5_4"],
+    "forte": ["bn_L5_5"],
+    "pensier": ["bn_L6_1"],
+    "rinova": ["bn_L6_2", "bn_L6_3", "bn_L6_4"],
+    "paura6": ["bn_L6_5"],
+    "amara": ["bn_L7_2"],
+    "morte": ["bn_L7_1"],
+    "del_ben": ["bn_L8_2"],
+    "trattar": ["bn_L8_4"],
+    "diro": ["bn_L9_0", "bn_L9_1", "bn_L9_2"],
+    "io_non": ["bn_L10_3", "bn_L10_4"],
+    "ridir": ["bn_L10_2"],
+    "vintrai": ["bn_L10_0", "bn_L10_1"],
+    "pien": ["bn_L11_3"],
+    "di_sonno": ["bn_L11_2"],
+    "tant_era": ["bn_L11_0"],
+    "verace": ["bn_L12_4"],
+    "via12": ["bn_L12_5"],
+    "abbandonai": ["bn_L12_1", "bn_L12_2"],
+    "al_pie": ["bn_L13_3", "bn_L13_4"],
+    "dun_colle": ["bn_L13_3"],
+    "valle": ["bn_L14_3"],
+    "terminava": ["bn_L14_4"],
+    "di_paura": ["bn_L15_5"],
+    "il_cor": ["bn_L15_2"],
+    "guardai": ["bn_L16_1", "bn_L16_2"],
+    "in_alto": ["bn_L16_0"],
+    "spalle": ["bn_L16_4"],
+    "vestite": ["bn_L17_1", "bn_L17_2", "bn_L17_3"],
+    "de_raggi": ["bn_L17_5"],
+    "del_pianeta": ["bn_L17_4"],
+    "dritto": ["bn_L18_3"],
+    "altrui": ["bn_L18_2"],
+    "allor": ["bn_L19_0"],
+    "paura19": ["bn_L19_5"],
+    "queta": ["bn_L19_1", "bn_L19_2", "bn_L19_3"],
+    "che_nel_lago": ["bn_L20_3"],
+    "del_cor": ["bn_L20_2"],
+    "la_notte": ["bn_L21_0"],
+    "chi_passai": ["bn_L21_2"],
+    "pieta": ["bn_L21_3"],
+    "lena": ["bn_L22_1"],
+    "affannata": ["bn_L22_2", "bn_L22_3"],
+    "del_pelago": ["bn_L23_2"],
+    "a_la_riva": ["bn_L23_3", "bn_L23_4"],
+    "si_volge": ["bn_L24_4"],
+    "a_lacqua": ["bn_L24_1"],
+    "perigliosa": ["bn_L24_0"],
+    "lanimo": ["bn_L25_4"],
+    "fuggiva": ["bn_L25_3"],
+    "a_retro": ["bn_L26_0", "bn_L26_1"],
+    "a_rimirar": ["bn_L26_2", "bn_L26_3"],
+    "lo_passo": ["bn_L26_5"],
+    "persona": ["bn_L27_2"],
+    "viva": ["bn_L27_3"],
+    "lascio": ["bn_L27_4", "bn_L27_5"],
+    "posato": ["bn_L28_3", "bn_L28_4"],
+    "il_corpo": ["bn_L28_1"],
+    "lasso": ["bn_L28_0"],
+    "ripresi": ["bn_L29_3", "bn_L29_4", "bn_L29_5"],
+    "piaggia": ["bn_L29_1"],
+    "diserta": ["bn_L29_0"],
+    "il_pie_fermo": ["bn_L30_0", "bn_L30_1"],
+    "sempre_era": ["bn_L30_4"],
+    "ed_ecco": ["bn_L31_0"],
+    "al_cominciar": ["bn_L31_1", "bn_L31_2", "bn_L31_3", "bn_L31_4", "bn_L31_5"],
+    "una_lonza": ["bn_L32_4"],
+    "leggera": ["bn_L32_3"],
+    "e_presta": ["bn_L32_2"],
+    "macolato": ["bn_L33_3", "bn_L33_4", "bn_L33_5"],
+    "che_di_pel": ["bn_L33_1", "bn_L33_2"],
+    "mi_si_partia": ["bn_L34_2", "bn_L34_3"],
+    "dinanzi": ["bn_L34_4"],
+    "mpediva": ["bn_L35_2", "bn_L35_3"],
+    "tanto": ["bn_L35_4"],
+    "ritornar": ["bn_L36_2", "bn_L36_3"],
+    "piu_volte": ["bn_L36_1"],
+    "temp_era": ["bn_L37_0", "bn_L37_1", "bn_L37_2"],
+    "del_mattino": ["bn_L37_3"],
+    "e_il_sol": ["bn_L38_0"],
+    "montava": ["bn_L38_1"],
+    "con_quelle_stelle": ["bn_L38_5"],
+    "cheran": ["bn_L39_0"],
+    "lamor_divino": ["bn_L39_4", "bn_L40_1"],
+    "mosse_di_prima": ["bn_L40_2", "bn_L40_3"],
+    "di_quella_fiera": ["bn_L42_0"],
+    "dolce": ["bn_L43_0"],
+    "stagione": ["bn_L43_1"],
+    "che_paura44": ["bn_L44_2"],
+    "dun_leone": ["bn_L45_5"],
+    "la_vista": ["bn_L45_2"],
+    "questi_parea": ["bn_L46_0", "bn_L46_1", "bn_L46_2"],
+    "me_venisse": ["bn_L46_3"],
+    "con_la_test_alta": ["bn_L47_0", "bn_L47_1"],
+    "fame": ["bn_L47_3", "bn_L47_4"],
+    "rabbiosa": ["bn_L47_5"],
+    "ne_tremesse": ["bn_L48_1", "bn_L48_2", "bn_L48_3"],
+    "laere": ["bn_L48_1"],
+    "ed_una_lupa": ["bn_L49_4"],
+    "magrezza": ["bn_L50_0", "bn_L50_1"],
+    "brame": ["bn_L50_2", "bn_L50_3", "bn_L50_4"],
+    "viver_grame": ["bn_L51_1", "bn_L51_2"],
+    "gravezza": ["bn_L52_3", "bn_L52_4", "bn_L52_5"],
+    "con_la_paura53": ["bn_L53_0", "bn_L53_1", "bn_L53_2"],
+    "chio_perdei": ["bn_L54_2", "bn_L54_3"],
+    "la_speranza": ["bn_L54_2"],
+    "acquista": ["bn_L55_4"],
+    "volontieri": ["bn_L55_1"],
+    "il_tempo": ["bn_L56_2"],
+    "che_perder": ["bn_L56_1"],
+    "piange": ["bn_L57_4"],
+    "la_bestia_sanza_pace": ["bn_L58_1", "bn_L58_2"],
+    "a_poco_a_poco": ["bn_L59_0", "bn_L59_1", "bn_L59_2"],
+    "mi_ripigneva": ["bn_L60_0", "bn_L60_1"],
+    "sol_tace": ["bn_L60_3"],
+    "mentre_chi_rovinava": ["bn_L61_0", "bn_L61_1"],
+    "dinanzi_a_li_occhi": ["bn_L62_0", "bn_L62_1"],
+    "mi_si_fu_offerto": ["bn_L62_2", "bn_L62_3", "bn_L62_4"],
+    "chi_per_lungo_silenzio": ["bn_L63_1"],
+    "fioco": ["bn_L63_4"],
+    "gran_diserto": ["bn_L64_2"],
+    "vidi": ["bn_L64_3", "bn_L64_4"],
+    "miserere_di_me": ["bn_L65_0", "bn_L65_1", "bn_L65_2"],
+    "gridai_a_lui": ["bn_L65_3"],
+    "od_ombra": ["bn_L66_0"],
+    "od_omo_certo": ["bn_L66_2"],
+    "rispuosemi_non_omo": ["bn_L67_0", "bn_L67_1"],
+    "omo_gia_fui": ["bn_L67_4"],
+    "e_li_parenti": ["bn_L68_1", "bn_L68_2"],
+    "miei_furon_lombardi": ["bn_L68_3"],
+    "mantoani_per_patria": ["bn_L69_4"],
+    "nacqui_sub_iulio": ["bn_L70_0", "bn_L70_1"],
+    "fosse_tardi": ["bn_L70_3"],
+    "e_vissi_a_roma": ["bn_L71_0"],
+    "sotto_il_buono_augusto": ["bn_L71_2"],
+    "falsi_e_bugiardi": ["bn_L72_0", "bn_L72_1"],
+    "poeta_fui": ["bn_L73_1"],
+    "e_cantai": ["bn_L73_2"],
+    "figliuol_danchise": ["bn_L74_0"],
+    "che_venne_di_troia": ["bn_L74_3", "bn_L74_4"],
+    "ilion_fu_combusto": ["bn_L75_2", "bn_L75_3"],
+    "a_tanta_noia": ["bn_L76_5"],
+    "ritorni": ["bn_L76_3", "bn_L76_4"],
+    "il_dilettoso_monte": ["bn_L77_4"],
+    "sali": ["bn_L77_1", "bn_L77_2"],
+    "e_cagion_di_tutta_gioia": ["bn_L78_1", "bn_L78_2"],
+    "or_se_tu_quel_virgilio": ["bn_L79_2"],
+    "si_largo_fiume": ["bn_L80_2"],
+    "con_vergognosa_fronte": ["bn_L81_1", "bn_L81_2", "bn_L81_3"],
+    "o_de_li_altri_poeti": ["bn_L82_1", "bn_L82_2"],
+    "onore_e_lume": ["bn_L82_3", "bn_L82_4"],
+    "vagliami_il_lungo_studio": ["bn_L83_0"],
+    "e_il_grande_amore": ["bn_L83_1"],
+    "lo_tuo_volume": ["bn_L84_0", "bn_L84_1"],
+    "tu_se_lo_mio_maestro": ["bn_L85_2"],
+    "e_il_mio_autore": ["bn_L85_4"],
+    "tu_se_solo_colui": ["bn_L86_0"],
+    "da_cu_io_tolsi": ["bn_L86_3", "bn_L86_4", "bn_L86_5"],
+    "lo_bello_stilo": ["bn_L87_4"],
+    "vedi_la_bestia": ["bn_L88_2", "bn_L88_3"],
+    "famoso_saggio": ["bn_L88_4"],
+    "aiutami_da_lei": ["bn_L89_0", "bn_L89_1", "bn_L89_2"],
+    "chella_mi_fa_tremar": ["bn_L90_0", "bn_L90_1", "bn_L90_2"],
+    "le_vene_e_i_polsi": ["bn_L90_3"],
+    "a_te_convien_tenere": ["bn_L91_0"],
+    "altro_viaggio": ["bn_L91_2", "bn_L91_3", "bn_L91_4"],
+    "che_lagrimar_mi_vide": ["bn_L92_1", "bn_L92_2"],
+    "se_vuo_campar": ["bn_L93_0"],
+    "d_esto_loco_selvaggio": ["bn_L93_1", "bn_L93_2", "bn_L93_3"],
+    "che_questa_bestia": ["bn_L94_0"],
+    "per_la_qual_tu_gride": ["bn_L94_2"],
+    "non_lascia_altrui_passar": ["bn_L95_1", "bn_L95_2", "bn_L95_3"],
+    "che_luccide": ["bn_L96_0"],
+    "si_malvagia_e_ria": ["bn_L97_3", "bn_L97_4"],
+    "la_bramosa_voglia": ["bn_L98_2", "bn_L98_3"],
+    "ha_piu_fame_che_pria": ["bn_L99_3", "bn_L99_4"],
+    "molti_son_li_animali": ["bn_L100_0", "bn_L100_1"],
+    "infin_che_il_veltro": ["bn_L101_4"],
+    "verra_che_la_fara": ["bn_L102_0", "bn_L102_1"],
+    "morir_con_doglia": ["bn_L102_3"],
+    "questi_non_cibera_terra": ["bn_L103_0", "bn_L103_1"],
+    "ma_sapienza": ["bn_L104_0"],
+    "amore104": ["bn_L104_1"],
+    "e_virtute": ["bn_L104_3"],
+    "sara_tra_feltro_e_feltro": ["bn_L105_0", "bn_L105_1"],
+    "di_quella_umile_italia": ["bn_L106_3"],
+    "per_cui_mori": ["bn_L107_1", "bn_L107_2"],
+    "la_vergine_cammilla": ["bn_L107_3"],
+    "eurialo_e_turno": ["bn_L108_0", "bn_L108_1", "bn_L108_2"],
+    "questi_la_cacceera": ["bn_L109_3", "bn_L109_4"],
+    "ne_lo_nferno": ["bn_L110_3"],
+    "la_onde_nvidia_prima": ["bn_L111_1"],
+    "dipartilla": ["bn_L111_2", "bn_L111_3", "bn_L111_4"],
+    "ond_io_per_lo_tuo_me": ["bn_L112_0", "bn_L112_1", "bn_L112_2"],
+    "che_tu_mi_segui": ["bn_L113_0", "bn_L113_1"],
+    "e_io_saro_tua_guida": ["bn_L113_2", "bn_L113_3", "bn_L113_4"],
+    "per_loco_etterno": ["bn_L114_4"],
+    "ove_udirai_le_disperate": ["bn_L115_0", "bn_L115_1"],
+    "strida": ["bn_L115_3"],
+    "vedrai_li_antichi_spiriti": ["bn_L116_0", "bn_L116_1", "bn_L116_2"],
+    "dolenti": ["bn_L116_3"],
+    "cha_la_seconda_morte": ["bn_L117_0", "bn_L117_1"],
+    "ciascun_grida": ["bn_L117_3"],
+    "che_son_contenti": ["bn_L118_3"],
+    "nel_foco": ["bn_L119_0"],
+    "perche_speran": ["bn_L119_1", "bn_L119_2"],
+    "a_le_beate_genti": ["bn_L120_2"],
+    "se_tu_vorrai_salire": ["bn_L121_1", "bn_L121_2"],
+    "anima": ["bn_L122_4"],
+    "piu_di_me_degna": ["bn_L122_2", "bn_L122_3"],
+    "con_lei_ti_lascero": ["bn_L123_0", "bn_L123_1", "bn_L123_2"],
+    "nel_mio_partire": ["bn_L123_3", "bn_L123_4"],
+    "che_quello_imperador": ["bn_L124_2"],
+    "che_la_su_regna": ["bn_L124_1"],
+    "perch_i_fu_ribellante": ["bn_L125_1", "bn_L125_2"],
+    "a_la_sua_legge": ["bn_L125_0"],
+    "per_me_si_vegna": ["bn_L126_1"],
+    "in_tutte_parti_impera": ["bn_L127_2", "bn_L127_3"],
+    "e_quivi_regge": ["bn_L127_0"],
+    "quivi_e_la_sua_citta": ["bn_L128_1"],
+    "e_lalto_seggio": ["bn_L128_3"],
+    "oh_felice_colui": ["bn_L129_2"],
+    "cu_ivi_elegge": ["bn_L129_0"],
+    "e_io_a_lui_poeta": ["bn_L130_2"],
+    "per_quello_dio": ["bn_L131_3"],
+    "che_tu_non_conoscesti": ["bn_L131_1", "bn_L131_2"],
+    "accio_chio_fugga": ["bn_L132_4"],
+    "questo_male_e_peggio": ["bn_L132_1", "bn_L132_2"],
+    "che_tu_mi_meni": ["bn_L133_0", "bn_L133_1", "bn_L133_2"],
+    "la_porta_di_san_pietro": ["bn_L134_2", "bn_L134_3"],
+    "e_color_cui_tu_fai": ["bn_L135_3"],
+    "cotanto_mesti": ["bn_L135_3"],
+    "allor_si_mosse": ["bn_L136_1", "bn_L136_2"],
+    "e_io_li_tenni_dietro": ["bn_L136_3", "bn_L136_4"]
+  };
 
-  // .w spans by column and data-w key
-  const itWords = {};   // key → [span, ...]
-  const enWords = {};
+  /* Build reverse BN → IT[] */
+  const BN_TO_IT = {
+    "bn_L1_2": ["nel", "mezzo", "cammin"],
+    "bn_L1_0": ["nostra"],
+    "bn_L1_1": ["vita"],
+    "bn_L2_0": ["mi"],
+    "bn_L2_1": ["mi", "ritrovai"],
+    "bn_L2_2": ["selva", "oscura"],
+    "bn_L2_3": ["selva"],
+    "bn_L3_3": ["diritta"],
+    "bn_L3_4": ["via"],
+    "bn_L3_1": ["smarrita"],
+    "bn_L3_2": ["smarrita"],
+    "bn_L4_0": ["ahi"],
+    "bn_L4_6": ["dura"],
+    "bn_L4_2": ["cosa"],
+    "bn_L5_1": ["selva2"],
+    "bn_L5_5": ["selvaggia", "forte"],
+    "bn_L5_3": ["aspra"],
+    "bn_L5_4": ["aspra"],
+    "bn_L6_1": ["pensier"],
+    "bn_L6_2": ["rinova"],
+    "bn_L6_3": ["rinova"],
+    "bn_L6_4": ["rinova"],
+    "bn_L6_5": ["paura6"],
+    "bn_L7_2": ["amara"],
+    "bn_L7_1": ["morte"],
+    "bn_L8_2": ["del_ben"],
+    "bn_L8_4": ["trattar"],
+    "bn_L9_0": ["diro"],
+    "bn_L9_1": ["diro"],
+    "bn_L9_2": ["diro"],
+    "bn_L10_3": ["io_non"],
+    "bn_L10_4": ["io_non"],
+    "bn_L10_2": ["ridir"],
+    "bn_L10_0": ["vintrai"],
+    "bn_L10_1": ["vintrai"],
+    "bn_L11_3": ["pien"],
+    "bn_L11_2": ["di_sonno"],
+    "bn_L11_0": ["tant_era"],
+    "bn_L12_4": ["verace"],
+    "bn_L12_5": ["via12"],
+    "bn_L12_1": ["abbandonai"],
+    "bn_L12_2": ["abbandonai"],
+    "bn_L13_3": ["al_pie", "dun_colle"],
+    "bn_L13_4": ["al_pie"],
+    "bn_L14_3": ["valle"],
+    "bn_L14_4": ["terminava"],
+    "bn_L15_5": ["di_paura"],
+    "bn_L15_2": ["il_cor"],
+    "bn_L16_1": ["guardai"],
+    "bn_L16_2": ["guardai"],
+    "bn_L16_0": ["in_alto"],
+    "bn_L16_4": ["spalle"],
+    "bn_L17_1": ["vestite"],
+    "bn_L17_2": ["vestite"],
+    "bn_L17_3": ["vestite"],
+    "bn_L17_5": ["de_raggi"],
+    "bn_L17_4": ["del_pianeta"],
+    "bn_L18_3": ["dritto"],
+    "bn_L18_2": ["altrui"],
+    "bn_L19_0": ["allor"],
+    "bn_L19_5": ["paura19"],
+    "bn_L19_1": ["queta"],
+    "bn_L19_2": ["queta"],
+    "bn_L19_3": ["queta"],
+    "bn_L20_3": ["che_nel_lago"],
+    "bn_L20_2": ["del_cor"],
+    "bn_L21_0": ["la_notte"],
+    "bn_L21_2": ["chi_passai"],
+    "bn_L21_3": ["pieta"],
+    "bn_L22_1": ["lena"],
+    "bn_L22_2": ["affannata"],
+    "bn_L22_3": ["affannata"],
+    "bn_L23_2": ["del_pelago"],
+    "bn_L23_3": ["a_la_riva"],
+    "bn_L23_4": ["a_la_riva"],
+    "bn_L24_4": ["si_volge"],
+    "bn_L24_1": ["a_lacqua"],
+    "bn_L24_0": ["perigliosa"],
+    "bn_L25_4": ["lanimo"],
+    "bn_L25_3": ["fuggiva"],
+    "bn_L26_0": ["a_retro"],
+    "bn_L26_1": ["a_retro"],
+    "bn_L26_2": ["a_rimirar"],
+    "bn_L26_3": ["a_rimirar"],
+    "bn_L26_5": ["lo_passo"],
+    "bn_L27_2": ["persona"],
+    "bn_L27_3": ["viva"],
+    "bn_L27_4": ["lascio"],
+    "bn_L27_5": ["lascio"],
+    "bn_L28_3": ["posato"],
+    "bn_L28_4": ["posato"],
+    "bn_L28_1": ["il_corpo"],
+    "bn_L28_0": ["lasso"],
+    "bn_L29_3": ["ripresi"],
+    "bn_L29_4": ["ripresi"],
+    "bn_L29_5": ["ripresi"],
+    "bn_L29_1": ["piaggia"],
+    "bn_L29_0": ["diserta"],
+    "bn_L30_0": ["il_pie_fermo"],
+    "bn_L30_1": ["il_pie_fermo"],
+    "bn_L30_4": ["sempre_era"],
+    "bn_L31_0": ["ed_ecco"],
+    "bn_L31_1": ["al_cominciar"],
+    "bn_L31_2": ["al_cominciar"],
+    "bn_L31_3": ["al_cominciar"],
+    "bn_L31_4": ["al_cominciar"],
+    "bn_L31_5": ["al_cominciar"],
+    "bn_L32_4": ["una_lonza"],
+    "bn_L32_3": ["leggera"],
+    "bn_L32_2": ["e_presta"],
+    "bn_L33_3": ["macolato"],
+    "bn_L33_4": ["macolato"],
+    "bn_L33_5": ["macolato"],
+    "bn_L33_1": ["che_di_pel"],
+    "bn_L33_2": ["che_di_pel"],
+    "bn_L34_2": ["mi_si_partia"],
+    "bn_L34_3": ["mi_si_partia"],
+    "bn_L34_4": ["dinanzi"],
+    "bn_L35_2": ["mpediva"],
+    "bn_L35_3": ["mpediva"],
+    "bn_L35_4": ["tanto"],
+    "bn_L36_2": ["ritornar"],
+    "bn_L36_3": ["ritornar"],
+    "bn_L36_1": ["piu_volte"],
+    "bn_L37_0": ["temp_era"],
+    "bn_L37_1": ["temp_era"],
+    "bn_L37_2": ["temp_era"],
+    "bn_L37_3": ["del_mattino"],
+    "bn_L38_0": ["e_il_sol"],
+    "bn_L38_1": ["montava"],
+    "bn_L38_5": ["con_quelle_stelle"],
+    "bn_L39_0": ["cheran"],
+    "bn_L39_4": ["lamor_divino"],
+    "bn_L40_1": ["lamor_divino"],
+    "bn_L40_2": ["mosse_di_prima"],
+    "bn_L40_3": ["mosse_di_prima"],
+    "bn_L42_0": ["di_quella_fiera"],
+    "bn_L43_0": ["dolce"],
+    "bn_L43_1": ["stagione"],
+    "bn_L44_2": ["che_paura44"],
+    "bn_L45_5": ["dun_leone"],
+    "bn_L45_2": ["la_vista"],
+    "bn_L46_0": ["questi_parea"],
+    "bn_L46_1": ["questi_parea"],
+    "bn_L46_2": ["questi_parea"],
+    "bn_L46_3": ["me_venisse"],
+    "bn_L47_0": ["con_la_test_alta"],
+    "bn_L47_1": ["con_la_test_alta"],
+    "bn_L47_3": ["fame"],
+    "bn_L47_4": ["fame"],
+    "bn_L47_5": ["rabbiosa"],
+    "bn_L48_1": ["ne_tremesse", "laere"],
+    "bn_L48_2": ["ne_tremesse"],
+    "bn_L48_3": ["ne_tremesse"],
+    "bn_L49_4": ["ed_una_lupa"],
+    "bn_L50_0": ["magrezza"],
+    "bn_L50_1": ["magrezza"],
+    "bn_L50_2": ["brame"],
+    "bn_L50_3": ["brame"],
+    "bn_L50_4": ["brame"],
+    "bn_L51_1": ["viver_grame"],
+    "bn_L51_2": ["viver_grame"],
+    "bn_L52_3": ["gravezza"],
+    "bn_L52_4": ["gravezza"],
+    "bn_L52_5": ["gravezza"],
+    "bn_L53_0": ["con_la_paura53"],
+    "bn_L53_1": ["con_la_paura53"],
+    "bn_L53_2": ["con_la_paura53"],
+    "bn_L54_2": ["chio_perdei", "la_speranza"],
+    "bn_L54_3": ["chio_perdei"],
+    "bn_L55_4": ["acquista"],
+    "bn_L55_1": ["volontieri"],
+    "bn_L56_2": ["il_tempo"],
+    "bn_L56_1": ["che_perder"],
+    "bn_L57_4": ["piange"],
+    "bn_L58_1": ["la_bestia_sanza_pace"],
+    "bn_L58_2": ["la_bestia_sanza_pace"],
+    "bn_L59_0": ["a_poco_a_poco"],
+    "bn_L59_1": ["a_poco_a_poco"],
+    "bn_L59_2": ["a_poco_a_poco"],
+    "bn_L60_0": ["mi_ripigneva"],
+    "bn_L60_1": ["mi_ripigneva"],
+    "bn_L60_3": ["sol_tace"],
+    "bn_L61_0": ["mentre_chi_rovinava"],
+    "bn_L61_1": ["mentre_chi_rovinava"],
+    "bn_L62_0": ["dinanzi_a_li_occhi"],
+    "bn_L62_1": ["dinanzi_a_li_occhi"],
+    "bn_L62_2": ["mi_si_fu_offerto"],
+    "bn_L62_3": ["mi_si_fu_offerto"],
+    "bn_L62_4": ["mi_si_fu_offerto"],
+    "bn_L63_1": ["chi_per_lungo_silenzio"],
+    "bn_L63_4": ["fioco"],
+    "bn_L64_2": ["gran_diserto"],
+    "bn_L64_3": ["vidi"],
+    "bn_L64_4": ["vidi"],
+    "bn_L65_0": ["miserere_di_me"],
+    "bn_L65_1": ["miserere_di_me"],
+    "bn_L65_2": ["miserere_di_me"],
+    "bn_L65_3": ["gridai_a_lui"],
+    "bn_L66_0": ["od_ombra"],
+    "bn_L66_2": ["od_omo_certo"],
+    "bn_L67_0": ["rispuosemi_non_omo"],
+    "bn_L67_1": ["rispuosemi_non_omo"],
+    "bn_L67_4": ["omo_gia_fui"],
+    "bn_L68_1": ["e_li_parenti"],
+    "bn_L68_2": ["e_li_parenti"],
+    "bn_L68_3": ["miei_furon_lombardi"],
+    "bn_L69_4": ["mantoani_per_patria"],
+    "bn_L70_0": ["nacqui_sub_iulio"],
+    "bn_L70_1": ["nacqui_sub_iulio"],
+    "bn_L70_3": ["fosse_tardi"],
+    "bn_L71_0": ["e_vissi_a_roma"],
+    "bn_L71_2": ["sotto_il_buono_augusto"],
+    "bn_L72_0": ["falsi_e_bugiardi"],
+    "bn_L72_1": ["falsi_e_bugiardi"],
+    "bn_L73_1": ["poeta_fui"],
+    "bn_L73_2": ["e_cantai"],
+    "bn_L74_0": ["figliuol_danchise"],
+    "bn_L74_3": ["che_venne_di_troia"],
+    "bn_L74_4": ["che_venne_di_troia"],
+    "bn_L75_2": ["ilion_fu_combusto"],
+    "bn_L75_3": ["ilion_fu_combusto"],
+    "bn_L76_5": ["a_tanta_noia"],
+    "bn_L76_3": ["ritorni"],
+    "bn_L76_4": ["ritorni"],
+    "bn_L77_4": ["il_dilettoso_monte"],
+    "bn_L77_1": ["sali"],
+    "bn_L77_2": ["sali"],
+    "bn_L78_1": ["e_cagion_di_tutta_gioia"],
+    "bn_L78_2": ["e_cagion_di_tutta_gioia"],
+    "bn_L79_2": ["or_se_tu_quel_virgilio"],
+    "bn_L80_2": ["si_largo_fiume"],
+    "bn_L81_1": ["con_vergognosa_fronte"],
+    "bn_L81_2": ["con_vergognosa_fronte"],
+    "bn_L81_3": ["con_vergognosa_fronte"],
+    "bn_L82_1": ["o_de_li_altri_poeti"],
+    "bn_L82_2": ["o_de_li_altri_poeti"],
+    "bn_L82_3": ["onore_e_lume"],
+    "bn_L82_4": ["onore_e_lume"],
+    "bn_L83_0": ["vagliami_il_lungo_studio"],
+    "bn_L83_1": ["e_il_grande_amore"],
+    "bn_L84_0": ["lo_tuo_volume"],
+    "bn_L84_1": ["lo_tuo_volume"],
+    "bn_L85_2": ["tu_se_lo_mio_maestro"],
+    "bn_L85_4": ["e_il_mio_autore"],
+    "bn_L86_0": ["tu_se_solo_colui"],
+    "bn_L86_3": ["da_cu_io_tolsi"],
+    "bn_L86_4": ["da_cu_io_tolsi"],
+    "bn_L86_5": ["da_cu_io_tolsi"],
+    "bn_L87_4": ["lo_bello_stilo"],
+    "bn_L88_2": ["vedi_la_bestia"],
+    "bn_L88_3": ["vedi_la_bestia"],
+    "bn_L88_4": ["famoso_saggio"],
+    "bn_L89_0": ["aiutami_da_lei"],
+    "bn_L89_1": ["aiutami_da_lei"],
+    "bn_L89_2": ["aiutami_da_lei"],
+    "bn_L90_0": ["chella_mi_fa_tremar"],
+    "bn_L90_1": ["chella_mi_fa_tremar"],
+    "bn_L90_2": ["chella_mi_fa_tremar"],
+    "bn_L90_3": ["le_vene_e_i_polsi"],
+    "bn_L91_0": ["a_te_convien_tenere"],
+    "bn_L91_2": ["altro_viaggio"],
+    "bn_L91_3": ["altro_viaggio"],
+    "bn_L91_4": ["altro_viaggio"],
+    "bn_L92_1": ["che_lagrimar_mi_vide"],
+    "bn_L92_2": ["che_lagrimar_mi_vide"],
+    "bn_L93_0": ["se_vuo_campar"],
+    "bn_L93_1": ["d_esto_loco_selvaggio"],
+    "bn_L93_2": ["d_esto_loco_selvaggio"],
+    "bn_L93_3": ["d_esto_loco_selvaggio"],
+    "bn_L94_0": ["che_questa_bestia"],
+    "bn_L94_2": ["per_la_qual_tu_gride"],
+    "bn_L95_1": ["non_lascia_altrui_passar"],
+    "bn_L95_2": ["non_lascia_altrui_passar"],
+    "bn_L95_3": ["non_lascia_altrui_passar"],
+    "bn_L96_0": ["che_luccide"],
+    "bn_L97_3": ["si_malvagia_e_ria"],
+    "bn_L97_4": ["si_malvagia_e_ria"],
+    "bn_L98_2": ["la_bramosa_voglia"],
+    "bn_L98_3": ["la_bramosa_voglia"],
+    "bn_L99_3": ["ha_piu_fame_che_pria"],
+    "bn_L99_4": ["ha_piu_fame_che_pria"],
+    "bn_L100_0": ["molti_son_li_animali"],
+    "bn_L100_1": ["molti_son_li_animali"],
+    "bn_L101_4": ["infin_che_il_veltro"],
+    "bn_L102_0": ["verra_che_la_fara"],
+    "bn_L102_1": ["verra_che_la_fara"],
+    "bn_L102_3": ["morir_con_doglia"],
+    "bn_L103_0": ["questi_non_cibera_terra"],
+    "bn_L103_1": ["questi_non_cibera_terra"],
+    "bn_L104_0": ["ma_sapienza"],
+    "bn_L104_1": ["amore104"],
+    "bn_L104_3": ["e_virtute"],
+    "bn_L105_0": ["sara_tra_feltro_e_feltro"],
+    "bn_L105_1": ["sara_tra_feltro_e_feltro"],
+    "bn_L106_3": ["di_quella_umile_italia"],
+    "bn_L107_1": ["per_cui_mori"],
+    "bn_L107_2": ["per_cui_mori"],
+    "bn_L107_3": ["la_vergine_cammilla"],
+    "bn_L108_0": ["eurialo_e_turno"],
+    "bn_L108_1": ["eurialo_e_turno"],
+    "bn_L108_2": ["eurialo_e_turno"],
+    "bn_L109_3": ["questi_la_cacceera"],
+    "bn_L109_4": ["questi_la_cacceera"],
+    "bn_L110_3": ["ne_lo_nferno"],
+    "bn_L111_1": ["la_onde_nvidia_prima"],
+    "bn_L111_2": ["dipartilla"],
+    "bn_L111_3": ["dipartilla"],
+    "bn_L111_4": ["dipartilla"],
+    "bn_L112_0": ["ond_io_per_lo_tuo_me"],
+    "bn_L112_1": ["ond_io_per_lo_tuo_me"],
+    "bn_L112_2": ["ond_io_per_lo_tuo_me"],
+    "bn_L113_0": ["che_tu_mi_segui"],
+    "bn_L113_1": ["che_tu_mi_segui"],
+    "bn_L113_2": ["e_io_saro_tua_guida"],
+    "bn_L113_3": ["e_io_saro_tua_guida"],
+    "bn_L113_4": ["e_io_saro_tua_guida"],
+    "bn_L114_4": ["per_loco_etterno"],
+    "bn_L115_0": ["ove_udirai_le_disperate"],
+    "bn_L115_1": ["ove_udirai_le_disperate"],
+    "bn_L115_3": ["strida"],
+    "bn_L116_0": ["vedrai_li_antichi_spiriti"],
+    "bn_L116_1": ["vedrai_li_antichi_spiriti"],
+    "bn_L116_2": ["vedrai_li_antichi_spiriti"],
+    "bn_L116_3": ["dolenti"],
+    "bn_L117_0": ["cha_la_seconda_morte"],
+    "bn_L117_1": ["cha_la_seconda_morte"],
+    "bn_L117_3": ["ciascun_grida"],
+    "bn_L118_3": ["che_son_contenti"],
+    "bn_L119_0": ["nel_foco"],
+    "bn_L119_1": ["perche_speran"],
+    "bn_L119_2": ["perche_speran"],
+    "bn_L120_2": ["a_le_beate_genti"],
+    "bn_L121_1": ["se_tu_vorrai_salire"],
+    "bn_L121_2": ["se_tu_vorrai_salire"],
+    "bn_L122_4": ["anima"],
+    "bn_L122_2": ["piu_di_me_degna"],
+    "bn_L122_3": ["piu_di_me_degna"],
+    "bn_L123_0": ["con_lei_ti_lascero"],
+    "bn_L123_1": ["con_lei_ti_lascero"],
+    "bn_L123_2": ["con_lei_ti_lascero"],
+    "bn_L123_3": ["nel_mio_partire"],
+    "bn_L123_4": ["nel_mio_partire"],
+    "bn_L124_2": ["che_quello_imperador"],
+    "bn_L124_1": ["che_la_su_regna"],
+    "bn_L125_1": ["perch_i_fu_ribellante"],
+    "bn_L125_2": ["perch_i_fu_ribellante"],
+    "bn_L125_0": ["a_la_sua_legge"],
+    "bn_L126_1": ["per_me_si_vegna"],
+    "bn_L127_2": ["in_tutte_parti_impera"],
+    "bn_L127_3": ["in_tutte_parti_impera"],
+    "bn_L127_0": ["e_quivi_regge"],
+    "bn_L128_1": ["quivi_e_la_sua_citta"],
+    "bn_L128_3": ["e_lalto_seggio"],
+    "bn_L129_2": ["oh_felice_colui"],
+    "bn_L129_0": ["cu_ivi_elegge"],
+    "bn_L130_2": ["e_io_a_lui_poeta"],
+    "bn_L131_3": ["per_quello_dio"],
+    "bn_L131_1": ["che_tu_non_conoscesti"],
+    "bn_L131_2": ["che_tu_non_conoscesti"],
+    "bn_L132_4": ["accio_chio_fugga"],
+    "bn_L132_1": ["questo_male_e_peggio"],
+    "bn_L132_2": ["questo_male_e_peggio"],
+    "bn_L133_0": ["che_tu_mi_meni"],
+    "bn_L133_1": ["che_tu_mi_meni"],
+    "bn_L133_2": ["che_tu_mi_meni"],
+    "bn_L134_2": ["la_porta_di_san_pietro"],
+    "bn_L134_3": ["la_porta_di_san_pietro"],
+    "bn_L135_3": ["e_color_cui_tu_fai", "cotanto_mesti"],
+    "bn_L136_1": ["allor_si_mosse"],
+    "bn_L136_2": ["allor_si_mosse"],
+    "bn_L136_3": ["e_io_li_tenni_dietro"],
+    "bn_L136_4": ["e_io_li_tenni_dietro"]
+  };
+
+  /* ── Build BN → EN via IT bridge ─────────────────────────────────── */
+  // For a BN key, find IT keys, then find EN keys from those
+  function bnToEn(bnKey) {
+    const itKeys = BN_TO_IT[bnKey] || [];
+    const enKeys = [];
+    for (const itKey of itKeys) {
+      for (const enKey of (IT_TO_EN[itKey] || [])) {
+        if (!enKeys.includes(enKey)) enKeys.push(enKey);
+      }
+    }
+    return enKeys;
+  }
+
+  /* ── Cache DOM elements ───────────────────────────────────────────── */
+  const bnWords = {}, itWords = {}, enWords = {};
+  document.querySelectorAll("td.bn .w").forEach(s => {
+    const k = s.dataset.w; if (!k) return;
+    (bnWords[k] = bnWords[k] || []).push(s);
+  });
   document.querySelectorAll("td.it .w").forEach(s => {
     const k = s.dataset.w; if (!k) return;
     (itWords[k] = itWords[k] || []).push(s);
@@ -251,9 +888,12 @@
     (enWords[k] = enWords[k] || []).push(s);
   });
 
-  // All .w spans by line number, per column
-  const itLines = {};   // lineNum → [span, ...]
-  const enLines = {};
+  // Line-level caches
+  const bnLines = {}, itLines = {}, enLines = {};
+  document.querySelectorAll("td.bn").forEach(td => {
+    const ln = td.dataset.line; if (!ln) return;
+    bnLines[ln] = Array.from(td.querySelectorAll(".w"));
+  });
   document.querySelectorAll("td.it").forEach(td => {
     const ln = td.dataset.line; if (!ln) return;
     itLines[ln] = Array.from(td.querySelectorAll(".w"));
@@ -263,148 +903,115 @@
     enLines[ln] = Array.from(td.querySelectorAll(".w"));
   });
 
-  // Bangla tds by line number
-  const bnTds = {};     // lineNum → td element
-  document.querySelectorAll("td.bn").forEach(td => {
-    const ln = td.dataset.line; if (!ln) return;
-    bnTds[ln] = td;
-  });
+  /* ── Highlight classes ────────────────────────────────────────────── */
+  const CLS_SOURCE = "source-word";
+  const CLS_WORD = "word-highlight";
+  const CLS_LINE = "line-highlight";
 
-  /* ── Clear helpers ───────────────────────────────────────────────── */
   function clearAll() {
-    document.querySelectorAll(".w.source-word, .w.word-highlight, .w.line-highlight")
-      .forEach(s => s.classList.remove("source-word", "word-highlight", "line-highlight"));
-    document.querySelectorAll("td.bn.source-cell, td.bn.line-highlight")
-      .forEach(td => td.classList.remove("source-cell", "line-highlight"));
+    document.querySelectorAll(`.${CLS_SOURCE},.${CLS_WORD},.${CLS_LINE}`)
+      .forEach(s => s.classList.remove(CLS_SOURCE, CLS_WORD, CLS_LINE));
   }
 
-  /* ── Highlight Bangla td for a given line ────────────────────────── */
-  function highlightBn(lineNum, strong) {
-    const td = bnTds[String(lineNum)];
-    if (!td) return;
-    td.classList.add(strong ? "source-cell" : "line-highlight");
-  }
-
-  /* ── Main highlight logic ────────────────────────────────────────── */
-  /**
-   * @param {HTMLElement} sourceSpan  - hovered .w span
-   * @param {string}      wordKey     - its data-w
-   * @param {boolean}     isItalian   - which column it's in
-   */
-  function applyHighlight(sourceSpan, wordKey, isItalian) {
-    clearAll();
-    sourceSpan.classList.add("source-word");
-
-    const parentTd = sourceSpan.closest("td");
-    const lineNum = parentTd ? parentTd.dataset.line : null;
-
-    // Always highlight the corresponding Bangla line
-    if (lineNum) highlightBn(lineNum, true);
-
-    if (isItalian) {
-      const targets = IT_TO_EN[wordKey];
-      if (targets && targets.length) {
-        targets.forEach(k => (enWords[k] || []).forEach(s => s.classList.add("word-highlight")));
-        // Also soft-highlight any EN words on the same line that weren't directly mapped
-        if (lineNum && enLines[lineNum]) {
-          enLines[lineNum].forEach(s => {
-            if (!s.classList.contains("word-highlight"))
-              s.classList.add("line-highlight");
-          });
+  /* ── Highlight words in a column, with fallback to whole line ──────
+     matched: array of data-w keys that have direct word-level matches
+     lineSpans: all spans on that line (for fallback)
+  */
+  function highlightCol(matchedKeys, wordMap, lineSpans, matchClass, fallbackClass) {
+    if (matchedKeys.length > 0) {
+      const matched = new Set();
+      for (const k of matchedKeys) {
+        for (const s of (wordMap[k] || [])) {
+          s.classList.add(matchClass);
+          matched.add(s);
         }
-      } else {
-        // Full line fallback for EN
-        if (lineNum && enLines[lineNum])
-          enLines[lineNum].forEach(s => s.classList.add("line-highlight"));
+      }
+      // Soft-highlight remaining words on the same line
+      for (const s of lineSpans) {
+        if (!matched.has(s)) s.classList.add(fallbackClass);
       }
     } else {
-      // English → Italian
-      const targets = EN_TO_IT[wordKey];
-      if (targets && targets.length) {
-        targets.forEach(k => (itWords[k] || []).forEach(s => s.classList.add("word-highlight")));
-        if (lineNum && itLines[lineNum]) {
-          itLines[lineNum].forEach(s => {
-            if (!s.classList.contains("word-highlight"))
-              s.classList.add("line-highlight");
-          });
-        }
-      } else {
-        if (lineNum && itLines[lineNum])
-          itLines[lineNum].forEach(s => s.classList.add("line-highlight"));
-      }
+      // Full line fallback
+      for (const s of lineSpans) s.classList.add(fallbackClass);
     }
   }
 
-  /**
-   * Called when hovering the Bangla column — highlight entire IT + EN line
-   */
-  function applyBnHighlight(bnTd) {
+  /* ── Main highlight ────────────────────────────────────────────────── */
+  function applyHighlight(sourceSpan, wordKey, col) {
     clearAll();
-    const lineNum = bnTd.dataset.line;
-    bnTd.classList.add("source-cell");
-    if (lineNum) {
-      (itLines[lineNum] || []).forEach(s => s.classList.add("line-highlight"));
-      (enLines[lineNum] || []).forEach(s => s.classList.add("line-highlight"));
+    sourceSpan.classList.add(CLS_SOURCE);
+
+    const lineNum = sourceSpan.closest("td").dataset.line;
+    const bnLine = bnLines[lineNum] || [];
+    const itLine = itLines[lineNum] || [];
+    const enLine = enLines[lineNum] || [];
+
+    if (col === "it") {
+      const enKeys = IT_TO_EN[wordKey] || [];
+      const bnKeys = IT_TO_BN[wordKey] || [];
+      highlightCol(enKeys, enWords, enLine, CLS_WORD, CLS_LINE);
+      highlightCol(bnKeys, bnWords, bnLine, CLS_WORD, CLS_LINE);
+
+    } else if (col === "en") {
+      const itKeys = EN_TO_IT[wordKey] || [];
+      // Collect BN keys via IT bridge
+      const bnKeys = [];
+      for (const itk of itKeys) {
+        for (const bk of (IT_TO_BN[itk] || [])) {
+          if (!bnKeys.includes(bk)) bnKeys.push(bk);
+        }
+      }
+      highlightCol(itKeys, itWords, itLine, CLS_WORD, CLS_LINE);
+      highlightCol(bnKeys, bnWords, bnLine, CLS_WORD, CLS_LINE);
+
+    } else if (col === "bn") {
+      const itKeys = BN_TO_IT[wordKey] || [];
+      const enKeys = bnToEn(wordKey);
+      highlightCol(itKeys, itWords, itLine, CLS_WORD, CLS_LINE);
+      highlightCol(enKeys, enWords, enLine, CLS_WORD, CLS_LINE);
     }
   }
 
-  /* ── Event delegation ────────────────────────────────────────────── */
+  /* ── Event delegation ─────────────────────────────────────────────── */
   const table = document.getElementById("dante-table");
   if (!table) return;
 
   let pinned = false;
-  let lastTarget = null;  // track what we last highlighted to avoid redundant clears
+  let lastTarget = null;
+
+  function colOf(span) {
+    if (span.closest("td.bn")) return "bn";
+    if (span.closest("td.it")) return "it";
+    if (span.closest("td.en")) return "en";
+    return null;
+  }
 
   table.addEventListener("mouseover", function (e) {
     if (pinned) return;
-
-    // Bangla td — e.target could be the td itself or a text node wrapper
-    const bnTd = e.target.closest("td.bn");
-    if (bnTd) {
-      if (lastTarget !== bnTd) { lastTarget = bnTd; applyBnHighlight(bnTd); }
-      return;
-    }
-
-    // Word span in IT or EN
     const span = e.target.closest(".w");
     if (span) {
       if (lastTarget !== span) {
         lastTarget = span;
-        const isIt = !!span.closest("td.it");
-        applyHighlight(span, span.dataset.w, isIt);
+        const col = colOf(span);
+        if (col) applyHighlight(span, span.dataset.w, col);
       }
       return;
     }
-
-    // Hovering over something else in the table (padding, ln-col, etc.)
     if (lastTarget) { lastTarget = null; clearAll(); }
   });
 
-  // Use mouseleave on the whole table to clear when cursor exits
   table.addEventListener("mouseleave", function () {
     if (!pinned) { lastTarget = null; clearAll(); }
   });
 
   table.addEventListener("click", function (e) {
-    // Bangla td click
-    const bnTd = e.target.closest("td.bn");
-    if (bnTd) {
-      if (pinned && bnTd.classList.contains("source-cell")) {
-        pinned = false; lastTarget = null; clearAll(); return;
-      }
-      applyBnHighlight(bnTd); pinned = true; lastTarget = bnTd; return;
-    }
-
-    // Word span click
     const span = e.target.closest(".w");
-    if (!span) {
+    if (!span) { pinned = false; lastTarget = null; clearAll(); return; }
+    if (pinned && span.classList.contains(CLS_SOURCE)) {
       pinned = false; lastTarget = null; clearAll(); return;
     }
-    if (pinned && span.classList.contains("source-word")) {
-      pinned = false; lastTarget = null; clearAll(); return;
-    }
-    const isIt = !!span.closest("td.it");
-    applyHighlight(span, span.dataset.w, isIt);
+    const col = colOf(span);
+    if (col) applyHighlight(span, span.dataset.w, col);
     pinned = true; lastTarget = span;
   });
 
