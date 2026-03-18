@@ -362,19 +362,39 @@ const pName=document.getElementById('p-name');
 const pLong=document.getElementById('p-long');
 const btnP=document.getElementById('btn-prev');
 const btnN=document.getElementById('btn-next');
-let SEQ=[],si=0;
+let SEQ=[],si=0,currentFilm=null;
 
-function openPanel(seq,i,label){SEQ=seq;si=i;pLabel.textContent=label||'Film';render();panel.classList.add('open');overlay.classList.add('visible');panel.scrollTop=0;}
+const CONCEPTS=['fall','cosmos','flesh','retrib','eros','gaze','anagnorisis','hierophany','beauty','salvation'];
+
+function openPanel(seq,i,label,film){SEQ=seq;si=i;currentFilm=film||null;pLabel.textContent=label||'Film';render();panel.classList.add('open');overlay.classList.add('visible');panel.scrollTop=0;}
 function render(){const e=SEQ[si];pProp.textContent=e.h;pName.textContent=e.k;pLong.innerHTML=e.b;btnP.disabled=(si===0);btnN.disabled=(si===SEQ.length-1);}
-function closePanel(){panel.classList.remove('open');overlay.classList.remove('visible');}
+function closePanel(){panel.classList.remove('open');overlay.classList.remove('visible');currentFilm=null;}
 
 document.getElementById('panel-close').onclick=closePanel;
 overlay.addEventListener('click',closePanel);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
+document.addEventListener('keydown',e=>{
+  if(!panel.classList.contains('open'))return;
+  if(e.key==='Escape'){closePanel();return;}
+  if(e.key==='ArrowLeft'&&si>0){e.preventDefault();si--;render();panel.scrollTop=0;}
+  if(e.key==='ArrowRight'&&si<SEQ.length-1){e.preventDefault();si++;render();panel.scrollTop=0;}
+  if(currentFilm){
+    const fi=FILMS.indexOf(currentFilm);
+    if(e.key==='ArrowUp'&&fi>0){
+      e.preventDefault();
+      currentFilm=FILMS[fi-1];
+      SEQ=CONCEPTS.map(c=>c+'-'+currentFilm).map(k=>({k:D[k].k,h:D[k].h,b:D[k].b}));
+      render();panel.scrollTop=0;
+    }
+    if(e.key==='ArrowDown'&&fi<FILMS.length-1){
+      e.preventDefault();
+      currentFilm=FILMS[fi+1];
+      SEQ=CONCEPTS.map(c=>c+'-'+currentFilm).map(k=>({k:D[k].k,h:D[k].h,b:D[k].b}));
+      render();panel.scrollTop=0;
+    }
+  }
+});
 btnP.onclick=()=>{if(si>0){si--;render();panel.scrollTop=0;}};
 btnN.onclick=()=>{if(si<SEQ.length-1){si++;render();panel.scrollTop=0;}};
-
-const CONCEPTS=['fall','cosmos','flesh','retrib','eros','gaze','anagnorisis','hierophany','beauty','salvation'];
 
 document.getElementById('cw-table').addEventListener('click',e=>{
   const cell=e.target.closest('[data-key]');
@@ -384,10 +404,9 @@ document.getElementById('cw-table').addEventListener('click',e=>{
     const key=cell.dataset.key;
     if(!D[key])return;
     const film=key.split('-')[1];
-    const allKeys=CONCEPTS.map(c=>c+'-'+film);
-    const entries=allKeys.filter(k=>D[k]).map(k=>({k:D[k].k,h:D[k].h,b:D[k].b}));
+    const entries=CONCEPTS.map(c=>c+'-'+film).map(k=>({k:D[k].k,h:D[k].h,b:D[k].b}));
     const idx=CONCEPTS.indexOf(key.split('-')[0]);
-    openPanel(entries,idx<0?0:idx,'Concept');
+    openPanel(entries,idx<0?0:idx,'Concept',film);
   } else if(rh){
     const row=rh.dataset.row;
     if(COL[row])openPanel([COL[row]],0,'Film');
