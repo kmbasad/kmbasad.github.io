@@ -767,6 +767,9 @@ tbody tr:nth-child(10) th {
   line-height: 1.5;
 }
 
+
+.panel-meta:empty,
+.panel-short:empty { display: none; }
 .panel-long {
   font-size: 15px;
   line-height: 1.77;
