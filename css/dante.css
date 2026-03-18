@@ -1,0 +1,197 @@
+/* =========================================================
+   dante.css  —  Dante bilingual table styles
+   Complements the site's main style.css
+   ========================================================= */
+
+/* ── Legend ───────────────────────────────────────────── */
+.dante-legend {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.78rem;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+
+.legend-hint {
+  font-style: italic;
+}
+
+/* ── Page header ──────────────────────────────────────── */
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem 0;
+  letter-spacing: -0.01em;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: #888;
+  margin: 0 0 2rem 0;
+  font-weight: 400;
+}
+
+/* ── Wrapper ──────────────────────────────────────────── */
+.dante-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* ── Table ────────────────────────────────────────────── */
+.dante-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* Thead */
+.dante-table thead th {
+  padding: 0.55rem 1rem 0.55rem 0.5rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #999;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dante-table thead .col-italian {
+  width: 48%;
+}
+
+.dante-table thead .col-english {
+  width: 52%;
+}
+
+.col-note {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #bbb;
+}
+
+/* ── Rows ─────────────────────────────────────────────── */
+.dante-table td {
+  padding: 0.15rem 1rem 0.15rem 0.5rem;
+  vertical-align: top;
+}
+
+/* Tercet spacing: blank-ish border above first row of each tercet */
+.dante-table tr.tercet-start td {
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.dante-table tbody tr:first-child.tercet-start td {
+  border-top: none;
+}
+
+/* ── Italian column ───────────────────────────────────── */
+.dante-table td.it {
+  font-style: italic;
+  color: #2a2a2a;
+  font-family: Georgia, "Times New Roman", serif;
+  border-right: 1px solid #ebebeb;
+}
+
+/* ── English column ───────────────────────────────────── */
+.dante-table td.en {
+  color: #3a3a3a;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ── Line numbers ─────────────────────────────────────── */
+.ln {
+  display: inline-block;
+  min-width: 2em;
+  color: #bbb;
+  font-size: 0.72rem;
+  font-style: normal;
+  margin-right: 0.3em;
+  vertical-align: baseline;
+  user-select: none;
+  font-family: system-ui, sans-serif;
+}
+
+/* ── Word spans ───────────────────────────────────────── */
+.w {
+  display: inline;
+  border-radius: 2px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  cursor: default;
+  padding: 0 1px;
+}
+
+/* Line-level highlight (same tercet, matching line) */
+.w.line-highlight {
+  background-color: #f5f0e0;
+  color: #1a1a1a;
+}
+
+/* Word-level highlight (direct word map) */
+.w.word-highlight {
+  background-color: #ffe8a0;
+  color: #1a1a1a;
+  border-radius: 3px;
+}
+
+/* The hovered word itself */
+.w.source-word {
+  background-color: #ffd166;
+  color: #111;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 767px) {
+  .dante-table {
+    font-size: 0.83rem;
+  }
+  .dante-table thead th {
+    padding: 0.45rem 0.4rem;
+  }
+  .dante-table td {
+    padding: 0.12rem 0.4rem;
+  }
+  .ln {
+    min-width: 1.6em;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack columns on very small screens */
+  .dante-table,
+  .dante-table tbody,
+  .dante-table thead,
+  .dante-table tr,
+  .dante-table td,
+  .dante-table th {
+    display: block;
+    width: 100%;
+  }
+  .dante-table thead {
+    display: none;
+  }
+  .dante-table td.it {
+    border-right: none;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .dante-table td.en {
+    padding-top: 0.1rem;
+    padding-bottom: 0.5rem;
+    color: #555;
+    font-style: normal;
+  }
+  .dante-table tr.tercet-start td:first-child {
+    border-top: 1px solid #eee;
+    padding-top: 0.75rem;
+  }
+  .dante-table tr.tercet-start td:not(:first-child) {
+    border-top: none;
+    padding-top: 0;
+  }
+}
