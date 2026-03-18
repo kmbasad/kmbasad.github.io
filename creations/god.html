@@ -834,8 +834,8 @@
       document.getElementById('p-meta').textContent = 'Dominant view · ' + prop.desc;
       document.getElementById('p-short').textContent = r.s;
       document.getElementById('p-long').innerHTML = r.l;
-      document.getElementById('btn-prev').disabled = true;
-      document.getElementById('btn-next').disabled = true;
+      document.getElementById('btn-prev').disabled = pi <= 0;
+      document.getElementById('btn-next').disabled = pi >= PR.length - 1;
       panel.classList.add('open'); overlay.classList.add('visible'); panel.scrollTop = 0;
     }
 
@@ -862,10 +862,12 @@
     overlay.addEventListener('click', closePanel);
     document.getElementById('btn-prev').addEventListener('click', () => {
       if (synthMode && ap === -1 && ah > 0) { openColSynth(ah - 1); return; }
+      if (synthMode && ap > 0 && ah === -1) { openSynth(ap - 1); return; }
       if (!synthMode && ah > 0) openPanel(ap, ah - 1);
     });
     document.getElementById('btn-next').addEventListener('click', () => {
       if (synthMode && ap === -1 && ah < PH.length - 1) { openColSynth(ah + 1); return; }
+      if (synthMode && ap < PR.length - 1 && ah === -1) { openSynth(ap + 1); return; }
       if (!synthMode && ah < PH.length - 1) openPanel(ap, ah + 1);
     });
 
@@ -877,7 +879,11 @@
         if (e.key === 'ArrowRight' && ah < PH.length - 1) { e.preventDefault(); openColSynth(ah + 1); }
         return;
       }
-      if (synthMode) return;
+      if (synthMode) {
+        if (e.key === 'ArrowUp' && ap > 0) { e.preventDefault(); openSynth(ap - 1); }
+        if (e.key === 'ArrowDown' && ap < PR.length - 1) { e.preventDefault(); openSynth(ap + 1); }
+        return;
+      }
       if (e.key === 'ArrowLeft' && ah > 0) { e.preventDefault(); openPanel(ap, ah - 1); }
       if (e.key === 'ArrowRight' && ah < PH.length - 1) { e.preventDefault(); openPanel(ap, ah + 1); }
       if (e.key === 'ArrowUp' && ap > 0) { e.preventDefault(); openPanel(ap - 1, ah); }
@@ -1208,8 +1214,8 @@
       document.getElementById('p2-meta').textContent = 'Dominant vision · ' + prop.desc;
       document.getElementById('p2-short').textContent = r.s;
       document.getElementById('p2-long').innerHTML = r.l;
-      document.getElementById('p2-btn-prev').disabled = true;
-      document.getElementById('p2-btn-next').disabled = true;
+      document.getElementById('p2-btn-prev').disabled = pi <= 0;
+      document.getElementById('p2-btn-next').disabled = pi >= PR2.length - 1;
       panel2.classList.add('open'); overlay2.classList.add('visible'); panel2.scrollTop = 0;
     }
     function openPanel2(pi, pj) {
@@ -1233,10 +1239,12 @@
     overlay2.addEventListener('click', closePanel2);
     document.getElementById('p2-btn-prev').addEventListener('click', () => {
       if (synthMode2 && ap2 === -1 && ah2 > 0) { openColSynth2(ah2 - 1); return; }
+      if (synthMode2 && ap2 > 0 && ah2 === -1) { openSynth2(ap2 - 1); return; }
       if (!synthMode2 && ah2 > 0) openPanel2(ap2, ah2 - 1);
     });
     document.getElementById('p2-btn-next').addEventListener('click', () => {
       if (synthMode2 && ap2 === -1 && ah2 < PH2.length - 1) { openColSynth2(ah2 + 1); return; }
+      if (synthMode2 && ap2 < PR2.length - 1 && ah2 === -1) { openSynth2(ap2 + 1); return; }
       if (!synthMode2 && ah2 < PH2.length - 1) openPanel2(ap2, ah2 + 1);
     });
     document.addEventListener('keydown', e => {
@@ -1247,7 +1255,11 @@
         if (e.key === 'ArrowRight' && ah2 < PH2.length - 1) { e.preventDefault(); openColSynth2(ah2 + 1); }
         return;
       }
-      if (synthMode2) return;
+      if (synthMode2) {
+        if (e.key === 'ArrowUp' && ap2 > 0) { e.preventDefault(); openSynth2(ap2 - 1); }
+        if (e.key === 'ArrowDown' && ap2 < PR2.length - 1) { e.preventDefault(); openSynth2(ap2 + 1); }
+        return;
+      }
       if (e.key === 'ArrowLeft' && ah2 > 0) { e.preventDefault(); openPanel2(ap2, ah2 - 1); }
       if (e.key === 'ArrowRight' && ah2 < PH2.length - 1) { e.preventDefault(); openPanel2(ap2, ah2 + 1); }
       if (e.key === 'ArrowUp' && ap2 > 0) { e.preventDefault(); openPanel2(ap2 - 1, ah2); }
