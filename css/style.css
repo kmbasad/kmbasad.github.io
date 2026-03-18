@@ -497,7 +497,7 @@ thead th:first-child .th-inner {
 
 /* Property column */
 tbody th {
-  background: var(--surface-2);
+  background: var(--surface-3);
   padding: 10px 13px;
   border-right: 2px solid var(--border-2);
   border-bottom: 1px solid var(--border);
@@ -551,54 +551,9 @@ tbody tr:last-child th {
   border-bottom: none
 }
 
-tbody tr:nth-child(1) td,
-tbody tr:nth-child(2) td,
-tbody tr:nth-child(3) td {
-  background: #ffffff
-}
-
-tbody tr:nth-child(1) th,
-tbody tr:nth-child(2) th,
-tbody tr:nth-child(3) th {
-  background: #f8f9fa
-}
-
-tbody tr:nth-child(4) td,
-tbody tr:nth-child(5) td {
-  background: #f1f3f5
-}
-
-tbody tr:nth-child(4) th,
-tbody tr:nth-child(5) th {
-  background: #e9ecef
-}
-
-tbody tr:nth-child(6) td,
-tbody tr:nth-child(7) td {
-  background: #ffffff
-}
-
-tbody tr:nth-child(6) th,
-tbody tr:nth-child(7) th {
-  background: #f8f9fa
-}
-
-tbody tr:nth-child(8) td {
-  background: #f1f3f5
-}
-
-tbody tr:nth-child(8) th {
-  background: #e9ecef
-}
-
-tbody tr:nth-child(9) td,
-tbody tr:nth-child(10) td {
-  background: #ffffff
-}
-
-tbody tr:nth-child(9) th,
-tbody tr:nth-child(10) th {
-  background: #f8f9fa
+/* All data cells share one uniform off-white */
+tbody td {
+  background: var(--surface-2);
 }
 
 .cell-btn {
@@ -1574,7 +1529,7 @@ thead th:first-child .th-inner {
 
 /* Property column */
 tbody th {
-  background: var(--surface-2);
+  background: var(--surface-3);
   padding: 10px 13px;
   border-right: 2px solid var(--border-2);
   border-bottom: 1px solid var(--border);
@@ -1628,54 +1583,9 @@ tbody tr:last-child th {
   border-bottom: none
 }
 
-tbody tr:nth-child(1) td,
-tbody tr:nth-child(2) td,
-tbody tr:nth-child(3) td {
-  background: #ffffff
-}
-
-tbody tr:nth-child(1) th,
-tbody tr:nth-child(2) th,
-tbody tr:nth-child(3) th {
-  background: #f8f9fa
-}
-
-tbody tr:nth-child(4) td,
-tbody tr:nth-child(5) td {
-  background: #f1f3f5
-}
-
-tbody tr:nth-child(4) th,
-tbody tr:nth-child(5) th {
-  background: #e9ecef
-}
-
-tbody tr:nth-child(6) td,
-tbody tr:nth-child(7) td {
-  background: #ffffff
-}
-
-tbody tr:nth-child(6) th,
-tbody tr:nth-child(7) th {
-  background: #f8f9fa
-}
-
-tbody tr:nth-child(8) td {
-  background: #f1f3f5
-}
-
-tbody tr:nth-child(8) th {
-  background: #e9ecef
-}
-
-tbody tr:nth-child(9) td,
-tbody tr:nth-child(10) td {
-  background: #ffffff
-}
-
-tbody tr:nth-child(9) th,
-tbody tr:nth-child(10) th {
-  background: #f8f9fa
+/* All data cells share one uniform off-white */
+tbody td {
+  background: var(--surface-2);
 }
 
 .cell-btn {
@@ -2261,6 +2171,7 @@ thead th:not(:first-child):hover .th-name {
   padding: 8px 16px;
   /* Increased vertical padding slightly to separate verses well */
   vertical-align: top;
+  background: var(--surface-2);
 }
 
 /* Bangla Column */
@@ -2272,7 +2183,6 @@ thead th:not(:first-child):hover .th-name {
   font-size: 0.94rem;
   line-height: 1.85;
   color: var(--text-2);
-  background: var(--surface);
 }
 
 /* Persian Column */
@@ -2285,7 +2195,6 @@ thead th:not(:first-child):hover .th-name {
   font-size: 1.02rem;
   line-height: 1.85;
   color: var(--text-2);
-  background: var(--surface-2);
 }
 
 .trans-table tbody tr:first-child td {
