@@ -1,219 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chan-wook — Khan Muhammad Bin Asad</title>
-<link rel="stylesheet" href="../assets/style.css">
-<style>
-.matrix-outer{width:100vw;position:relative;left:50%;transform:translateX(-50%);overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.5rem 0 .5rem}
-.mx{border-collapse:collapse;font-size:.8rem;min-width:980px;table-layout:fixed}
-.mx th,.mx td{border:1px solid var(--rule,#d0ccc4);padding:.5rem .55rem;vertical-align:top;line-height:1.35}
-.mx .corner{background:var(--bg,#faf9f7);font-size:.68rem;color:var(--muted,#999);font-style:italic;width:80px;min-width:80px}
-.mx .ch{background:var(--bg,#faf9f7);text-align:center;cursor:pointer;width:90px;min-width:90px;transition:background .15s}
-.mx .ch:hover{background:var(--hover,#f0ece4)}
-.ch .origin{display:block;font-size:.62rem;color:var(--muted,#999);font-style:italic}
-.ch .yr{display:block;font-size:.62rem;color:var(--muted,#999);margin-bottom:.15rem}
-.ch .title{display:block;font-weight:600;font-size:.76rem;line-height:1.2}
-.mx .rh{background:var(--bg,#faf9f7);cursor:pointer;white-space:nowrap;font-weight:600;transition:background .15s}
-.mx .rh:hover{background:var(--hover,#f0ece4)}
-.rh .num{display:block;font-size:.62rem;color:var(--muted,#999);font-weight:400;margin-bottom:.08rem}
-.mx td.cell{cursor:pointer;font-size:.76rem;color:var(--body,#333);transition:background .12s}
-.mx td.cell:hover{background:var(--hover,#f0ece4)}
-.mx-cap{font-size:.72rem;color:var(--muted,#999);font-style:italic;margin:.5rem 0 2.5rem;text-align:center}
-.modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.45);align-items:center;justify-content:center}
-.modal.open{display:flex}
-.mbox{background:var(--bg,#faf9f7);max-width:640px;width:calc(100% - 2rem);max-height:85vh;overflow-y:auto;padding:2rem 2.2rem 1.5rem;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.2)}
-.mcl{position:absolute;top:.9rem;right:1.1rem;background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--muted,#999);padding:0;line-height:1}
-.mcl:hover{color:var(--body,#333)}
-.mkick{font-size:.72rem;color:var(--muted,#999);font-style:italic;margin-bottom:.2rem}
-.mhead{font-size:1.05rem;font-weight:700;margin:0 0 1rem;line-height:1.3}
-.mbody{font-size:.88rem;line-height:1.72;color:var(--body,#333)}
-.mbody p{margin:0 0 .85rem}
-.mbody p:last-child{margin:0}
-.mnav{display:flex;justify-content:space-between;margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--rule,#d0ccc4)}
-.mnav button{background:none;border:none;cursor:pointer;color:var(--muted,#999);padding:0;font-size:.78rem}
-.mnav button:hover{color:var(--body,#333)}
-.mnav button:disabled{opacity:.22;cursor:default}
-@media(max-width:767px){.mbox{padding:1.5rem 1.1rem 1.2rem}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chan-wook — KMBA</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-<nav>
-  <a href="../index.html">KMBA</a>
-  <ul>
-    <li><a href="../creations/index.html">Creations</a></li>
-    <li><a href="../translations/index.html">Translations</a></li>
-    <li><a href="index.html">Visions</a></li>
-  </ul>
-</nav>
-<main class="writing-col">
-<h1>Chan-wook</h1>
-<p>Ten feature films across twenty-five years &#8212; ten concepts drawn from theology, philosophy, and aesthetics.</p>
-<p><strong>&#8599; Click any cell</strong> to read a film&#8217;s treatment of one concept. <strong>Click a concept label</strong> (left column) for the cross-film synthesis. <strong>Click a film title</strong> (top row) for its complete reading. Escape to close.</p>
-<div class="matrix-outer">
-<table class="mx">
-<thead><tr>
-  <th class="corner">Concept &#8595; &#183; Film &#8594;<br>10 &#215; 10</th>
-  <th class="ch" data-col="jsa"><span class="origin">Korean</span><span class="yr">2000</span><span class="title">Joint Security Area</span></th>
-  <th class="ch" data-col="sfmv"><span class="origin">Korean</span><span class="yr">2002</span><span class="title">Sympathy for Mr. Vengeance</span></th>
-  <th class="ch" data-col="oldboy"><span class="origin">Korean</span><span class="yr">2003</span><span class="title">Oldboy</span></th>
-  <th class="ch" data-col="ladyv"><span class="origin">Korean</span><span class="yr">2005</span><span class="title">Lady Vengeance</span></th>
-  <th class="ch" data-col="cyborg"><span class="origin">Korean</span><span class="yr">2006</span><span class="title">I&#8217;m a Cyborg But That&#8217;s OK</span></th>
-  <th class="ch" data-col="thirst"><span class="origin">Korean</span><span class="yr">2009</span><span class="title">Thirst</span></th>
-  <th class="ch" data-col="stoker"><span class="origin">English</span><span class="yr">2013</span><span class="title">Stoker</span></th>
-  <th class="ch" data-col="handmaiden"><span class="origin">Korean</span><span class="yr">2016</span><span class="title">The Handmaiden</span></th>
-  <th class="ch" data-col="dtl"><span class="origin">Korean</span><span class="yr">2022</span><span class="title">Decision to Leave</span></th>
-  <th class="ch" data-col="noc"><span class="origin">Korean</span><span class="yr">2025</span><span class="title">No Other Choice</span></th>
-</tr></thead>
-<tbody>
-<tr>
-  <td class="rh" data-row="fall"><span class="num">I</span>Fall</td>
-  <td class="cell" data-key="fall-jsa">The border, not the man</td>
-  <td class="cell" data-key="fall-sfmv">Class traps the deaf</td>
-  <td class="cell" data-key="fall-oldboy">A schoolboy&#8217;s whisper</td>
-  <td class="cell" data-key="fall-ladyv">Innocent, coerced, corrupted</td>
-  <td class="cell" data-key="fall-cyborg">Loss becomes machine-self</td>
-  <td class="cell" data-key="fall-thirst">Sanctity summons its opposite</td>
-  <td class="cell" data-key="fall-stoker">The kept brother, the hidden garden</td>
-  <td class="cell" data-key="fall-handmaiden">The manuscript, the trained child</td>
-  <td class="cell" data-key="fall-dtl">The mountain&#8217;s first body</td>
-  <td class="cell" data-key="fall-noc">Twenty-five years, then a list</td>
-</tr>
-<tr>
-  <td class="rh" data-row="cosmos"><span class="num">II</span>Cosmos</td>
-  <td class="cell" data-key="cosmos-jsa">Institutional fate &#8212; no gods</td>
-  <td class="cell" data-key="cosmos-sfmv">Indifferent causation</td>
-  <td class="cell" data-key="cosmos-oldboy">A human designs the theodicy</td>
-  <td class="cell" data-key="cosmos-ladyv">Karma tending toward community</td>
-  <td class="cell" data-key="cosmos-cyborg">A gentle animism</td>
-  <td class="cell" data-key="cosmos-thirst">Two cosmoses, one body</td>
-  <td class="cell" data-key="cosmos-stoker">Darwin&#8217;s Gothic</td>
-  <td class="cell" data-key="cosmos-handmaiden">Women overturn the order</td>
-  <td class="cell" data-key="cosmos-dtl">The Tao flows</td>
-  <td class="cell" data-key="cosmos-noc">Confucian loyalty, secular fate</td>
-</tr>
-<tr>
-  <td class="rh" data-row="flesh"><span class="num">III</span>Flesh</td>
-  <td class="cell" data-key="flesh-jsa">Uniformed; contraband warmth</td>
-  <td class="cell" data-key="flesh-sfmv">The body as economic precarity</td>
-  <td class="cell" data-key="flesh-oldboy">Instrument of unknowing defilement</td>
-  <td class="cell" data-key="flesh-ladyv">Performed, then rewritten</td>
-  <td class="cell" data-key="flesh-cyborg">Wires instead of veins</td>
-  <td class="cell" data-key="flesh-thirst">Eucharist inverted</td>
-  <td class="cell" data-key="flesh-stoker">Hereditary unfolding</td>
-  <td class="cell" data-key="flesh-handmaiden">Property becoming sovereignty</td>
-  <td class="cell" data-key="flesh-dtl">Tending toward dissolution</td>
-  <td class="cell" data-key="flesh-noc">Labour&#8217;s archive in the body</td>
-</tr>
-<tr>
-  <td class="rh" data-row="retrib"><span class="num">IV</span>Retribution</td>
-  <td class="cell" data-key="retrib-jsa">Institutional erasure, not justice</td>
-  <td class="cell" data-key="retrib-sfmv">Perfect law, total ruin</td>
-  <td class="cell" data-key="retrib-oldboy">Omnipotent design, hollow architect</td>
-  <td class="cell" data-key="retrib-ladyv">Collective rite, incomplete healing</td>
-  <td class="cell" data-key="retrib-cyborg">Love displaces justice</td>
-  <td class="cell" data-key="retrib-thirst">Self-directed sacramental offering</td>
-  <td class="cell" data-key="retrib-stoker">Predation, not justice</td>
-  <td class="cell" data-key="retrib-handmaiden">Punishment as poetic inversion</td>
-  <td class="cell" data-key="retrib-dtl">Love and justice annihilate each other</td>
-  <td class="cell" data-key="retrib-noc">Refusal as the highest act</td>
-</tr>
-<tr>
-  <td class="rh" data-row="eros"><span class="num">V</span>Eros</td>
-  <td class="cell" data-key="eros-jsa">Forbidden brotherhood</td>
-  <td class="cell" data-key="eros-sfmv">Grief has swallowed desire</td>
-  <td class="cell" data-key="eros-oldboy">Love that was engineered</td>
-  <td class="cell" data-key="eros-ladyv">Penance as maternal eros</td>
-  <td class="cell" data-key="eros-cyborg">Tenderness between the broken</td>
-  <td class="cell" data-key="eros-thirst">Consecrated lust</td>
-  <td class="cell" data-key="eros-stoker">Desire as predatory becoming</td>
-  <td class="cell" data-key="eros-handmaiden">Eros liberates</td>
-  <td class="cell" data-key="eros-dtl">The incomplete consummation</td>
-  <td class="cell" data-key="eros-noc">Conjugal warmth</td>
-</tr>
-<tr>
-  <td class="rh" data-row="gaze"><span class="num">VI</span>Gaze</td>
-  <td class="cell" data-key="gaze-jsa">Forensic versus recognition</td>
-  <td class="cell" data-key="gaze-sfmv">The averted eye</td>
-  <td class="cell" data-key="gaze-oldboy">The watched without consent</td>
-  <td class="cell" data-key="gaze-ladyv">Performance, then witness</td>
-  <td class="cell" data-key="gaze-cyborg">Delusional sensors</td>
-  <td class="cell" data-key="gaze-thirst">Confessor become predator</td>
-  <td class="cell" data-key="gaze-stoker">The hyper-perceiving predator</td>
-  <td class="cell" data-key="gaze-handmaiden">Colonial gaze, then decolonised</td>
-  <td class="cell" data-key="gaze-dtl">Investigative gaze, becoming erotic</td>
-  <td class="cell" data-key="gaze-noc">Paternal archive</td>
-</tr>
-<tr>
-  <td class="rh" data-row="anagnorisis"><span class="num">VII</span>Anagnorisis</td>
-  <td class="cell" data-key="anagnorisis-jsa">Arrived too late, useless</td>
-  <td class="cell" data-key="anagnorisis-sfmv">Knowing while killing</td>
-  <td class="cell" data-key="anagnorisis-oldboy">Knowledge that must be erased</td>
-  <td class="cell" data-key="anagnorisis-ladyv">Distributed among the bereaved</td>
-  <td class="cell" data-key="anagnorisis-cyborg">Love in place of knowledge</td>
-  <td class="cell" data-key="anagnorisis-thirst">The cost of his holiness</td>
-  <td class="cell" data-key="anagnorisis-stoker">Recognising oneself in the mirror</td>
-  <td class="cell" data-key="anagnorisis-handmaiden">Double, structural, mutual</td>
-  <td class="cell" data-key="anagnorisis-dtl">The case he finally closes</td>
-  <td class="cell" data-key="anagnorisis-noc">The father&#8217;s secret, carried forward</td>
-</tr>
-<tr>
-  <td class="rh" data-row="hierophany"><span class="num">VIII</span>Hierophany</td>
-  <td class="cell" data-key="hierophany-jsa">Lamplight at the guardhouse</td>
-  <td class="cell" data-key="hierophany-sfmv">The river burial</td>
-  <td class="cell" data-key="hierophany-oldboy">The corridor: secular passion</td>
-  <td class="cell" data-key="hierophany-ladyv">White tofu pressed to the face</td>
-  <td class="cell" data-key="hierophany-cyborg">The ward as sanctuary</td>
-  <td class="cell" data-key="hierophany-thirst">Resurrection as irruption</td>
-  <td class="cell" data-key="hierophany-stoker">The greenhouse killing</td>
-  <td class="cell" data-key="hierophany-handmaiden">The library at night</td>
-  <td class="cell" data-key="hierophany-dtl">The mountain</td>
-  <td class="cell" data-key="hierophany-noc">The factory floor</td>
-</tr>
-<tr>
-  <td class="rh" data-row="beauty"><span class="num">IX</span>Beauty</td>
-  <td class="cell" data-key="beauty-jsa">Wintry elegy</td>
-  <td class="cell" data-key="beauty-sfmv">Solidarity through austerity</td>
-  <td class="cell" data-key="beauty-oldboy">Beauty implicates the viewer</td>
-  <td class="cell" data-key="beauty-ladyv">Form as theological argument</td>
-  <td class="cell" data-key="beauty-cyborg">Empathy in pastels</td>
-  <td class="cell" data-key="beauty-thirst">Liturgical horror</td>
-  <td class="cell" data-key="beauty-stoker">Surface that conceals and implicates</td>
-  <td class="cell" data-key="beauty-handmaiden">Colonial beauty decolonised</td>
-  <td class="cell" data-key="beauty-dtl">Beauty refuses consolation</td>
-  <td class="cell" data-key="beauty-noc">The ordinary as sacred form</td>
-</tr>
-<tr>
-  <td class="rh" data-row="salvation"><span class="num">X</span>Salvation</td>
-  <td class="cell" data-key="salvation-jsa">Witness without remedy</td>
-  <td class="cell" data-key="salvation-sfmv">None &#8212; pure severance</td>
-  <td class="cell" data-key="salvation-oldboy">Chosen ignorance as mercy</td>
-  <td class="cell" data-key="salvation-ladyv">Obligation completed, not healed</td>
-  <td class="cell" data-key="salvation-cyborg">Pastoral care</td>
-  <td class="cell" data-key="salvation-thirst">Sacramental self-destruction</td>
-  <td class="cell" data-key="salvation-stoker">Becoming, not redemption</td>
-  <td class="cell" data-key="salvation-handmaiden">Escape achieved</td>
-  <td class="cell" data-key="salvation-dtl">Self-annihilation as gift</td>
-  <td class="cell" data-key="salvation-noc">Dignity recovered in refusal</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="mx-cap">I&#8211;III: origin and structure &#183; IV&#8211;VI: desire, justice, vision &#183; VII&#8211;VIII: knowledge and the sacred &#183; IX&#8211;X: form and finality</p>
-</main>
-<div class="modal" id="modal" role="dialog" aria-modal="true">
-  <div class="mbox">
-    <button class="mcl" id="modal-close">&#x2715;</button>
-    <div class="mkick" id="modal-kicker"></div>
-    <div class="mhead" id="modal-heading"></div>
-    <div class="mbody" id="modal-body"></div>
-    <div class="mnav">
-      <button id="modal-prev">&#8592; Prev</button>
-      <button id="modal-next">Next &#8594;</button>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-brand"><a href="../index.html">KMBA</a></span>
+      <ul class="nav-links">
+        <li><a href="../creations/index.html">Creations</a></li>
+        <li><a href="../translations/index.html">Translations</a></li>
+        <li><a href="index.html" class="active">Visions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>Chan-wook</h1>
     </div>
   </div>
-</div>
+
+  <div class="page-section">
+    <p class="section-intro">Ten feature films across twenty-five years — ten concepts drawn from theology, philosophy, and aesthetics.</p>
+    <p><strong>↗ Click any cell</strong> to read a film's treatment of one concept. <strong>Click a concept label</strong> (left column) for the cross-film synthesis. <strong>Click a film title</strong> (top row) for its complete reading. Escape to close.</p>
+
+    <div class="table-scroll">
+    <table id="cw-table">
+    <thead><tr>
+      <th>
+        <div class="th-inner"><span class="corner-label"><strong>Concept ↓ · Film →</strong>10 × 10</span></div>
+      </th>
+      <th data-col="jsa" style="cursor:pointer" title="Click to see Joint Security Area's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2000</span><span class="th-name">Joint Security Area</span></div>
+      </th>
+      <th data-col="sfmv" style="cursor:pointer" title="Click to see Sympathy for Mr. Vengeance's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2002</span><span class="th-name">Sympathy for Mr. Vengeance</span></div>
+      </th>
+      <th data-col="oldboy" style="cursor:pointer" title="Click to see Oldboy's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2003</span><span class="th-name">Oldboy</span></div>
+      </th>
+      <th data-col="ladyv" style="cursor:pointer" title="Click to see Lady Vengeance's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2005</span><span class="th-name">Lady Vengeance</span></div>
+      </th>
+      <th data-col="cyborg" style="cursor:pointer" title="Click to see I'm a Cyborg's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2006</span><span class="th-name">I'm a Cyborg But That's OK</span></div>
+      </th>
+      <th data-col="thirst" style="cursor:pointer" title="Click to see Thirst's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2009</span><span class="th-name">Thirst</span></div>
+      </th>
+      <th data-col="stoker" style="cursor:pointer" title="Click to see Stoker's complete reading">
+        <div class="th-inner"><span class="th-culture">English</span><span class="th-dates">2013</span><span class="th-name">Stoker</span></div>
+      </th>
+      <th data-col="handmaiden" style="cursor:pointer" title="Click to see The Handmaiden's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2016</span><span class="th-name">The Handmaiden</span></div>
+      </th>
+      <th data-col="dtl" style="cursor:pointer" title="Click to see Decision to Leave's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2022</span><span class="th-name">Decision to Leave</span></div>
+      </th>
+      <th data-col="noc" style="cursor:pointer" title="Click to see No Other Choice's complete reading">
+        <div class="th-inner"><span class="th-culture">Korean</span><span class="th-dates">2025</span><span class="th-name">No Other Choice</span></div>
+      </th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <th data-row="fall"><span class="prop-num">I</span><span class="prop-name">Fall</span></th>
+      <td data-key="fall-jsa"><button class="cell-btn">The border, not the man</button></td>
+      <td data-key="fall-sfmv"><button class="cell-btn">Class traps the deaf</button></td>
+      <td data-key="fall-oldboy"><button class="cell-btn">A schoolboy's whisper</button></td>
+      <td data-key="fall-ladyv"><button class="cell-btn">Innocent, coerced, corrupted</button></td>
+      <td data-key="fall-cyborg"><button class="cell-btn">Loss becomes machine-self</button></td>
+      <td data-key="fall-thirst"><button class="cell-btn">Sanctity summons its opposite</button></td>
+      <td data-key="fall-stoker"><button class="cell-btn">The kept brother, the hidden garden</button></td>
+      <td data-key="fall-handmaiden"><button class="cell-btn">The manuscript, the trained child</button></td>
+      <td data-key="fall-dtl"><button class="cell-btn">The mountain's first body</button></td>
+      <td data-key="fall-noc"><button class="cell-btn">Twenty-five years, then a list</button></td>
+    </tr>
+    <tr>
+      <th data-row="cosmos"><span class="prop-num">II</span><span class="prop-name">Cosmos</span></th>
+      <td data-key="cosmos-jsa"><button class="cell-btn">Institutional fate — no gods</button></td>
+      <td data-key="cosmos-sfmv"><button class="cell-btn">Indifferent causation</button></td>
+      <td data-key="cosmos-oldboy"><button class="cell-btn">A human designs the theodicy</button></td>
+      <td data-key="cosmos-ladyv"><button class="cell-btn">Karma tending toward community</button></td>
+      <td data-key="cosmos-cyborg"><button class="cell-btn">A gentle animism</button></td>
+      <td data-key="cosmos-thirst"><button class="cell-btn">Two cosmoses, one body</button></td>
+      <td data-key="cosmos-stoker"><button class="cell-btn">Darwin's Gothic</button></td>
+      <td data-key="cosmos-handmaiden"><button class="cell-btn">Women overturn the order</button></td>
+      <td data-key="cosmos-dtl"><button class="cell-btn">The Tao flows</button></td>
+      <td data-key="cosmos-noc"><button class="cell-btn">Confucian loyalty, secular fate</button></td>
+    </tr>
+    <tr>
+      <th data-row="flesh"><span class="prop-num">III</span><span class="prop-name">Flesh</span></th>
+      <td data-key="flesh-jsa"><button class="cell-btn">Uniformed; contraband warmth</button></td>
+      <td data-key="flesh-sfmv"><button class="cell-btn">The body as economic precarity</button></td>
+      <td data-key="flesh-oldboy"><button class="cell-btn">Instrument of unknowing defilement</button></td>
+      <td data-key="flesh-ladyv"><button class="cell-btn">Performed, then rewritten</button></td>
+      <td data-key="flesh-cyborg"><button class="cell-btn">Wires instead of veins</button></td>
+      <td data-key="flesh-thirst"><button class="cell-btn">Eucharist inverted</button></td>
+      <td data-key="flesh-stoker"><button class="cell-btn">Hereditary unfolding</button></td>
+      <td data-key="flesh-handmaiden"><button class="cell-btn">Property becoming sovereignty</button></td>
+      <td data-key="flesh-dtl"><button class="cell-btn">Tending toward dissolution</button></td>
+      <td data-key="flesh-noc"><button class="cell-btn">Labour's archive in the body</button></td>
+    </tr>
+    <tr>
+      <th data-row="retrib"><span class="prop-num">IV</span><span class="prop-name">Retribution</span></th>
+      <td data-key="retrib-jsa"><button class="cell-btn">Institutional erasure, not justice</button></td>
+      <td data-key="retrib-sfmv"><button class="cell-btn">Perfect law, total ruin</button></td>
+      <td data-key="retrib-oldboy"><button class="cell-btn">Omnipotent design, hollow architect</button></td>
+      <td data-key="retrib-ladyv"><button class="cell-btn">Collective rite, incomplete healing</button></td>
+      <td data-key="retrib-cyborg"><button class="cell-btn">Love displaces justice</button></td>
+      <td data-key="retrib-thirst"><button class="cell-btn">Self-directed sacramental offering</button></td>
+      <td data-key="retrib-stoker"><button class="cell-btn">Predation, not justice</button></td>
+      <td data-key="retrib-handmaiden"><button class="cell-btn">Punishment as poetic inversion</button></td>
+      <td data-key="retrib-dtl"><button class="cell-btn">Love and justice annihilate each other</button></td>
+      <td data-key="retrib-noc"><button class="cell-btn">Refusal as the highest act</button></td>
+    </tr>
+    <tr>
+      <th data-row="eros"><span class="prop-num">V</span><span class="prop-name">Eros</span></th>
+      <td data-key="eros-jsa"><button class="cell-btn">Forbidden brotherhood</button></td>
+      <td data-key="eros-sfmv"><button class="cell-btn">Grief has swallowed desire</button></td>
+      <td data-key="eros-oldboy"><button class="cell-btn">Love that was engineered</button></td>
+      <td data-key="eros-ladyv"><button class="cell-btn">Penance as maternal eros</button></td>
+      <td data-key="eros-cyborg"><button class="cell-btn">Tenderness between the broken</button></td>
+      <td data-key="eros-thirst"><button class="cell-btn">Consecrated lust</button></td>
+      <td data-key="eros-stoker"><button class="cell-btn">Desire as predatory becoming</button></td>
+      <td data-key="eros-handmaiden"><button class="cell-btn">Eros liberates</button></td>
+      <td data-key="eros-dtl"><button class="cell-btn">The incomplete consummation</button></td>
+      <td data-key="eros-noc"><button class="cell-btn">Conjugal warmth</button></td>
+    </tr>
+    <tr>
+      <th data-row="gaze"><span class="prop-num">VI</span><span class="prop-name">Gaze</span></th>
+      <td data-key="gaze-jsa"><button class="cell-btn">Forensic versus recognition</button></td>
+      <td data-key="gaze-sfmv"><button class="cell-btn">The averted eye</button></td>
+      <td data-key="gaze-oldboy"><button class="cell-btn">The watched without consent</button></td>
+      <td data-key="gaze-ladyv"><button class="cell-btn">Performance, then witness</button></td>
+      <td data-key="gaze-cyborg"><button class="cell-btn">Delusional sensors</button></td>
+      <td data-key="gaze-thirst"><button class="cell-btn">Confessor become predator</button></td>
+      <td data-key="gaze-stoker"><button class="cell-btn">The hyper-perceiving predator</button></td>
+      <td data-key="gaze-handmaiden"><button class="cell-btn">Colonial gaze, then decolonised</button></td>
+      <td data-key="gaze-dtl"><button class="cell-btn">Investigative gaze, becoming erotic</button></td>
+      <td data-key="gaze-noc"><button class="cell-btn">Paternal archive</button></td>
+    </tr>
+    <tr>
+      <th data-row="anagnorisis"><span class="prop-num">VII</span><span class="prop-name">Anagnorisis</span></th>
+      <td data-key="anagnorisis-jsa"><button class="cell-btn">Arrived too late, useless</button></td>
+      <td data-key="anagnorisis-sfmv"><button class="cell-btn">Knowing while killing</button></td>
+      <td data-key="anagnorisis-oldboy"><button class="cell-btn">Knowledge that must be erased</button></td>
+      <td data-key="anagnorisis-ladyv"><button class="cell-btn">Distributed among the bereaved</button></td>
+      <td data-key="anagnorisis-cyborg"><button class="cell-btn">Love in place of knowledge</button></td>
+      <td data-key="anagnorisis-thirst"><button class="cell-btn">The cost of his holiness</button></td>
+      <td data-key="anagnorisis-stoker"><button class="cell-btn">Recognising oneself in the mirror</button></td>
+      <td data-key="anagnorisis-handmaiden"><button class="cell-btn">Double, structural, mutual</button></td>
+      <td data-key="anagnorisis-dtl"><button class="cell-btn">The case he finally closes</button></td>
+      <td data-key="anagnorisis-noc"><button class="cell-btn">The father's secret, carried forward</button></td>
+    </tr>
+    <tr>
+      <th data-row="hierophany"><span class="prop-num">VIII</span><span class="prop-name">Hierophany</span></th>
+      <td data-key="hierophany-jsa"><button class="cell-btn">Lamplight at the guardhouse</button></td>
+      <td data-key="hierophany-sfmv"><button class="cell-btn">The river burial</button></td>
+      <td data-key="hierophany-oldboy"><button class="cell-btn">The corridor: secular passion</button></td>
+      <td data-key="hierophany-ladyv"><button class="cell-btn">White tofu pressed to the face</button></td>
+      <td data-key="hierophany-cyborg"><button class="cell-btn">The ward as sanctuary</button></td>
+      <td data-key="hierophany-thirst"><button class="cell-btn">Resurrection as irruption</button></td>
+      <td data-key="hierophany-stoker"><button class="cell-btn">The greenhouse killing</button></td>
+      <td data-key="hierophany-handmaiden"><button class="cell-btn">The library at night</button></td>
+      <td data-key="hierophany-dtl"><button class="cell-btn">The mountain</button></td>
+      <td data-key="hierophany-noc"><button class="cell-btn">The factory floor</button></td>
+    </tr>
+    <tr>
+      <th data-row="beauty"><span class="prop-num">IX</span><span class="prop-name">Beauty</span></th>
+      <td data-key="beauty-jsa"><button class="cell-btn">Wintry elegy</button></td>
+      <td data-key="beauty-sfmv"><button class="cell-btn">Solidarity through austerity</button></td>
+      <td data-key="beauty-oldboy"><button class="cell-btn">Beauty implicates the viewer</button></td>
+      <td data-key="beauty-ladyv"><button class="cell-btn">Form as theological argument</button></td>
+      <td data-key="beauty-cyborg"><button class="cell-btn">Empathy in pastels</button></td>
+      <td data-key="beauty-thirst"><button class="cell-btn">Liturgical horror</button></td>
+      <td data-key="beauty-stoker"><button class="cell-btn">Surface that conceals and implicates</button></td>
+      <td data-key="beauty-handmaiden"><button class="cell-btn">Colonial beauty decolonised</button></td>
+      <td data-key="beauty-dtl"><button class="cell-btn">Beauty refuses consolation</button></td>
+      <td data-key="beauty-noc"><button class="cell-btn">The ordinary as sacred form</button></td>
+    </tr>
+    <tr>
+      <th data-row="salvation"><span class="prop-num">X</span><span class="prop-name">Salvation</span></th>
+      <td data-key="salvation-jsa"><button class="cell-btn">Witness without remedy</button></td>
+      <td data-key="salvation-sfmv"><button class="cell-btn">None — pure severance</button></td>
+      <td data-key="salvation-oldboy"><button class="cell-btn">Chosen ignorance as mercy</button></td>
+      <td data-key="salvation-ladyv"><button class="cell-btn">Obligation completed, not healed</button></td>
+      <td data-key="salvation-cyborg"><button class="cell-btn">Pastoral care</button></td>
+      <td data-key="salvation-thirst"><button class="cell-btn">Sacramental self-destruction</button></td>
+      <td data-key="salvation-stoker"><button class="cell-btn">Becoming, not redemption</button></td>
+      <td data-key="salvation-handmaiden"><button class="cell-btn">Escape achieved</button></td>
+      <td data-key="salvation-dtl"><button class="cell-btn">Self-annihilation as gift</button></td>
+      <td data-key="salvation-noc"><button class="cell-btn">Dignity recovered in refusal</button></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+
+    <p class="article-legend">I–III: origin and structure · IV–VI: desire, justice, vision · VII–VIII: knowledge and the sacred · IX–X: form and finality</p>
+  </div>
+  <div class="table-overlay" id="overlay"></div>
+  <div class="table-panel" id="panel">
+    <div class="panel-bar"></div>
+    <button class="panel-close-btn" id="panel-close" title="Close">✕</button>
+    <div class="panel-head">
+      <div class="panel-label" id="p-label">Film</div>
+      <div class="panel-prop" id="p-prop"></div>
+      <div class="panel-name" id="p-name"></div>
+    </div>
+    <div class="panel-body">
+      <div class="panel-long" id="p-long"></div>
+    </div>
+    <div class="panel-nav">
+      <button id="btn-prev">← Prev</button>
+      <button id="btn-next">Next →</button>
+    </div>
+  </div>
 <script>
 const FILMS=['jsa','sfmv','oldboy','ladyv','cyborg','thirst','stoker','handmaiden','dtl','noc'];
 
@@ -346,28 +354,30 @@ const ROW = {
 'salvation':{k:'Concept X',h:'Salvation — across ten films',b:'<p>Chan-wook’s soteriological spectrum runs from absolute denial (<em>Sympathy</em>) through secular-political witness (<em>JSA</em>) through chosen ignorance (<em>Oldboy</em>) through communal-ambiguous obligation (<em>Lady Vengeance</em>) through pastoral care (<em>Cyborg</em>) through sacramental self-destruction (<em>Thirst</em>) through amoral self-becoming (<em>Stoker</em>) through concrete escape (<em>The Handmaiden</em>) through self-annihilation as gift (<em>Decision to Leave</em>) through secular dignity in refusal (<em>No Other Choice</em>). The range is extraordinary: no two salvations are alike.</p><p>What the matrix reveals is that Chan-wook is obsessed with the soteriological question — what, if anything, can save? — while consistently refusing easy answers. The salvation that arrives is almost never the salvation that was sought. Grace, when it appears, tends to be oblique: it comes through the pastoral patience of a psychiatric ward, through two women with matching schemes, through the refusal of a list, through the decision to let the tide take what needs to go. It never arrives through the channels that were designed to produce it.</p>'},
 };
 
-const modal=document.getElementById('modal');
-const kicker=document.getElementById('modal-kicker');
-const heading=document.getElementById('modal-heading');
-const body=document.getElementById('modal-body');
-const btnP=document.getElementById('modal-prev');
-const btnN=document.getElementById('modal-next');
+const panel=document.getElementById('panel');
+const overlay=document.getElementById('overlay');
+const pLabel=document.getElementById('p-label');
+const pProp=document.getElementById('p-prop');
+const pName=document.getElementById('p-name');
+const pLong=document.getElementById('p-long');
+const btnP=document.getElementById('btn-prev');
+const btnN=document.getElementById('btn-next');
 let SEQ=[],si=0;
 
-function open(seq,i){SEQ=seq;si=i;render();modal.classList.add('open');document.getElementById('modal-box')||document.querySelector('.mbox').scrollTop=0;}
-function render(){const e=SEQ[si];kicker.textContent=e.k;heading.textContent=e.h;body.innerHTML=e.b;btnP.disabled=(si===0);btnN.disabled=(si===SEQ.length-1);document.querySelector('.mbox').scrollTop=0;}
-function close(){modal.classList.remove('open');}
+function openPanel(seq,i,label){SEQ=seq;si=i;pLabel.textContent=label||'Film';render();panel.classList.add('open');overlay.classList.add('visible');panel.scrollTop=0;}
+function render(){const e=SEQ[si];pProp.textContent=e.h;pName.textContent=e.k;pLong.innerHTML=e.b;btnP.disabled=(si===0);btnN.disabled=(si===SEQ.length-1);}
+function closePanel(){panel.classList.remove('open');overlay.classList.remove('visible');}
 
-document.getElementById('modal-close').onclick=close;
-modal.addEventListener('click',e=>{if(e.target===modal)close();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-btnP.onclick=()=>{if(si>0){si--;render();}};
-btnN.onclick=()=>{if(si<SEQ.length-1){si++;render();}};
+document.getElementById('panel-close').onclick=closePanel;
+overlay.addEventListener('click',closePanel);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
+btnP.onclick=()=>{if(si>0){si--;render();panel.scrollTop=0;}};
+btnN.onclick=()=>{if(si<SEQ.length-1){si++;render();panel.scrollTop=0;}};
 
-document.querySelector('.mx').addEventListener('click',e=>{
-  const cell=e.target.closest('.cell');
-  const rh=e.target.closest('.rh');
-  const ch=e.target.closest('.ch');
+document.getElementById('cw-table').addEventListener('click',e=>{
+  const cell=e.target.closest('[data-key]');
+  const rh=e.target.closest('tbody th[data-row]');
+  const ch=e.target.closest('thead th[data-col]');
   if(cell){
     const key=cell.dataset.key;
     if(!D[key])return;
@@ -375,13 +385,13 @@ document.querySelector('.mx').addEventListener('click',e=>{
     const allKeys=FILMS.map(fid=>concept+'-'+fid);
     const entries=allKeys.filter(k=>D[k]).map(k=>({k:D[k].k,h:D[k].h,b:D[k].b}));
     const idx=allKeys.filter(k=>D[k]).indexOf(key);
-    open(entries,idx<0?0:idx);
+    openPanel(entries,idx<0?0:idx,'Film');
   } else if(rh){
     const row=rh.dataset.row;
-    if(ROW[row])open([ROW[row]],0);
+    if(ROW[row])openPanel([ROW[row]],0,'Concept');
   } else if(ch){
     const col=ch.dataset.col;
-    if(COL[col])open([COL[col]],0);
+    if(COL[col])openPanel([COL[col]],0,'Film');
   }
 });
 </script>
