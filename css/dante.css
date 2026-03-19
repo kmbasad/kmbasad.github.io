@@ -1,76 +1,77 @@
 /* =========================================================
-   dante.css  —  Dante bilingual (3-language) table styles
+   dante.css  —  Dante trilingual table  (modern · elegant)
    Columns: Bangla | Italian | English | line-number
    ========================================================= */
 
 /* ── Legend ───────────────────────────────────────────── */
 .dante-legend {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.6rem 0;
   font-size: 0.78rem;
-  color: #888;
+  color: #9ca3af;
   letter-spacing: 0.02em;
 }
 
 .legend-hint {
   font-style: italic;
+  opacity: 0.85;
 }
 
 /* ── Page header ──────────────────────────────────────── */
 .page-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0 0 0.15rem 0;
-  letter-spacing: -0.01em;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.1rem 0;
+  letter-spacing: -0.02em;
+  color: #1a1a2e;
 }
 
 .page-subtitle {
   font-size: 1rem;
-  color: #888;
+  color: #9ca3af;
   margin: 0 0 2rem 0;
   font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
 }
 
 /* ── Wrapper ──────────────────────────────────────────── */
 .dante-table-wrap {
   width: 100%;
   overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 /* ── Table ────────────────────────────────────────────── */
 .dante-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.92rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 /* ── Column widths ────────────────────────────────────── */
-.dante-table .col-bangla {
-  width: 34%;
-}
-
-.dante-table .col-italian {
-  width: 26%;
-}
-
-.dante-table .col-english {
-  width: 34%;
-}
-
-.dante-table .col-lnum {
-  width: 6%;
-}
+.dante-table .col-bangla  { width: 34%; }
+.dante-table .col-italian { width: 26%; }
+.dante-table .col-english { width: 34%; }
+.dante-table .col-lnum   { width: 6%; }
 
 /* ── Thead ────────────────────────────────────────────── */
 .dante-table thead th {
-  padding: 0.55rem 0.7rem 0.55rem 0.5rem;
+  padding: 0.75rem 0.8rem 0.65rem;
   text-align: left;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: #999;
-  border-bottom: 1px solid #e0e0e0;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  background: #f8f9fb;
+  border-bottom: 2px solid #e5e7eb;
 }
 
 .dante-table thead .col-lnum {
@@ -81,19 +82,28 @@
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
-  color: #bbb;
+  color: #c0c5ce;
+  margin-left: 2px;
 }
 
 /* ── Rows & cells ─────────────────────────────────────── */
 .dante-table td {
-  padding: 0.14rem 0.7rem 0.14rem 0.5rem;
+  padding: 0.25rem 0.8rem 0.25rem 0.7rem;
   vertical-align: top;
 }
 
-/* Tercet gap: thin rule above first row of each tercet */
+.dante-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.dante-table tbody tr:hover {
+  background-color: #f8fafd;
+}
+
+/* Tercet gap */
 .dante-table tr.tercet-start td {
-  padding-top: 0.75rem;
-  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f1f3;
 }
 
 .dante-table tbody tr:first-child.tercet-start td {
@@ -104,88 +114,92 @@
 .dante-table td.bn {
   font-family: "Noto Sans Bengali", "Kalpurush", "SolaimanLipi",
     "Siyam Rupali", sans-serif;
-  color: #2a2a2a;
-  border-right: 1px solid #ebebeb;
-  line-height: 1.7;
+  color: #1e293b;
+  border-right: 1px solid #f0f1f3;
+  line-height: 1.75;
   white-space: nowrap;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.15s ease;
 }
 
 /* ── Italian column ───────────────────────────────────── */
 .dante-table td.it {
-  color: #2a2a2a;
-  font-family: Georgia, "Times New Roman", serif;
-  border-right: 1px solid #ebebeb;
+  color: #334155;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 0.95em;
+  border-right: 1px solid #f0f1f3;
   white-space: nowrap;
 }
 
 /* ── English column ───────────────────────────────────── */
 .dante-table td.en {
-  color: #3a3a3a;
-  font-family: Georgia, "Times New Roman", serif;
-  border-right: 1px solid #f0f0f0;
+  color: #475569;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 0.95em;
+  border-right: 1px solid #f5f5f7;
   white-space: nowrap;
 }
 
 /* ── Line-number column ───────────────────────────────── */
 .dante-table td.ln-col {
   text-align: right;
-  color: #c0c0c0;
-  font-size: 0.72rem;
-  font-family: system-ui, sans-serif;
+  color: #d1d5db;
+  font-size: 0.7rem;
+  font-family: "SF Mono", "Cascadia Code", "Fira Code", monospace;
+  font-weight: 500;
   user-select: none;
-  padding-right: 0.5rem;
+  padding-right: 0.7rem;
   white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 
 /* ── Word spans ───────────────────────────────────────── */
 .w {
   display: inline;
-  border-radius: 2px;
-  transition: background-color 0.1s ease, color 0.1s ease;
+  border-radius: 3px;
+  transition: background-color 0.18s ease, color 0.18s ease,
+              box-shadow 0.18s ease;
   cursor: default;
-  padding: 0 1px;
+  padding: 1px 2px;
 }
 
 /* Soft line-level highlight */
 .w.line-highlight {
-  background-color: #f5f0e0;
+  background-color: #fef9ef;
   color: #1a1a1a;
 }
 
 /* Word-level match */
 .w.word-highlight {
-  background-color: #ffe8a0;
+  background-color: #fde68a;
   color: #1a1a1a;
   border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(253, 230, 138, 0.5);
 }
 
 /* The hovered / clicked source word */
 .w.source-word {
-  background-color: #ffd166;
+  background-color: #fbbf24;
   color: #111;
   border-radius: 3px;
   cursor: pointer;
+  box-shadow: 0 1px 4px rgba(251, 191, 36, 0.35);
 }
 
-/* Bangla words use the same .w highlight rules as IT/EN */
-
 /* ── Responsive ───────────────────────────────────────── */
-
-/* Always render all 3 columns — never collapse to a single column.
-   The wrapper's overflow-x: auto handles horizontal scrolling on
-   narrow screens. min-width keeps the table wider than any phone
-   viewport so columns stay side-by-side without line-breaking. */
 .dante-table {
   min-width: 640px;
 }
 
 @media (max-width: 900px) {
   .dante-table {
-    font-size: 0.83rem;
+    font-size: 0.82rem;
   }
 
   .dante-table td {
-    padding: 0.12rem 0.45rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .dante-table-wrap {
+    border-radius: 8px;
   }
 }
