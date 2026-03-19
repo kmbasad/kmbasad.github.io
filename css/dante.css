@@ -113,7 +113,6 @@
 
 /* ── Italian column ───────────────────────────────────── */
 .dante-table td.it {
-  font-style: italic;
   color: #2a2a2a;
   font-family: Georgia, "Times New Roman", serif;
   border-right: 1px solid #ebebeb;
