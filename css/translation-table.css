@@ -6,8 +6,7 @@
 /* ── Legend ───────────────────────────────────────────── */
 .tt-legend {
   margin: 0 0 1.6rem 0;
-  font-size: 0.78rem;
-  color: #9ca3af;
+  color: var(--text-4, #9ca3af);
   letter-spacing: 0.02em;
 }
 
@@ -16,41 +15,21 @@
   opacity: 0.85;
 }
 
-/* ── Page header ──────────────────────────────────────── */
-.page-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin: 0 0 0.1rem 0;
-  letter-spacing: -0.02em;
-  color: #1a1a2e;
-}
-
-.page-subtitle {
-  font-size: 0.82rem;
-  color: #9ca3af;
-  margin: 0 0 2rem 0;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 /* ── Wrapper ──────────────────────────────────────────── */
 .tt-wrap {
   width: 100%;
   overflow-x: auto;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  background: #ffffff;
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 4px 16px rgba(0, 0, 0, 0.03);
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.06));
+  border-radius: var(--r, 8px);
+  background: var(--surface, #ffffff);
+  box-shadow: var(--sh-sm, 0 1px 3px rgba(0, 0, 0, 0.04));
 }
 
 /* ── Table ────────────────────────────────────────────── */
 .tt-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
   line-height: 1.7;
 }
 
@@ -64,13 +43,19 @@
 .tt-table thead th {
   padding: 0.75rem 0.8rem 0.65rem;
   text-align: left;
-  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #6b7280;
-  background: #f8f9fb;
-  border-bottom: 2px solid #e5e7eb;
+  color: var(--text-4, #6b7280);
+  background: var(--surface-3, #f8f9fb);
+  border-right: 1px solid var(--border, #e5e7eb);
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+}
+
+.tt-table thead th:last-child {
+  border-right: none;
 }
 
 .tt-table thead .col-lnum {
@@ -87,8 +72,16 @@
 
 /* ── Rows & cells ─────────────────────────────────────── */
 .tt-table td {
-  padding: 0.25rem 0.8rem 0.25rem 0.7rem;
+  padding: 0.1rem 0.8rem;
   vertical-align: top;
+  border-right: 1px solid var(--border, #e5e7eb);
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+}
+
+.tt-table td:last-child {
+  border-right: none;
 }
 
 .tt-table tbody tr {
@@ -96,25 +89,34 @@
 }
 
 .tt-table tbody tr:hover {
-  background-color: #f8fafd;
+  background-color: var(--surface-2, #f8fafd);
 }
 
-/* Tercet gap */
+/* ── Terzina spacing (Inferno / terza rima) ──────────── */
+/* Minimal padding within a terzina — lines sit tight */
+/* Space between terzinas via .tercet-start */
 .tt-table tr.tercet-start td {
   padding-top: 1rem;
-  border-top: 1px solid #f0f1f3;
 }
 
 .tt-table tbody tr:first-child.tercet-start td {
-  border-top: none;
+  padding-top: 0.1rem;
+}
+
+/* ── Couplet spacing (Hafez / ghazal) ────────────────── */
+/* Each <tr> is one couplet (two lines joined by <br>).
+   Moderate padding between rows = visible gap between couplets.
+   Line-height controls the minimal space within a couplet. */
+.trans-ghazal .tt-table td {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
 }
 
 /* ── Bangla column ────────────────────────────────────── */
 .tt-table td.bn {
   font-family: "Noto Sans Bengali", "Kalpurush", "SolaimanLipi",
     "Siyam Rupali", sans-serif;
-  color: #1e293b;
-  border-right: 1px solid #f0f1f3;
+  color: var(--text, #1e293b);
   line-height: 1.75;
   white-space: nowrap;
   transition: background-color 0.15s ease;
@@ -122,28 +124,37 @@
 
 /* ── Italian column ───────────────────────────────────── */
 .tt-table td.it {
-  color: #334155;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 0.95em;
-  border-right: 1px solid #f0f1f3;
+  color: var(--text-2, #334155);
   white-space: nowrap;
+}
+
+/* ── Persian column ───────────────────────────────────── */
+.tt-table td.fa {
+  color: var(--text-2, #334155);
+  font-family: "Noto Naskh Arabic", "Scheherazade New", "Traditional Arabic", serif;
+  direction: rtl;
+  text-align: right;
+  white-space: nowrap;
+  line-height: 2;
 }
 
 /* ── English column ───────────────────────────────────── */
 .tt-table td.en {
-  color: #475569;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 0.95em;
-  border-right: 1px solid #f5f5f7;
+  color: var(--text-2, #475569);
+  white-space: nowrap;
+}
+
+/* ── Transliteration column ───────────────────────────── */
+.tt-table td.tl {
+  color: var(--text-3, #64748b);
+  font-style: italic;
   white-space: nowrap;
 }
 
 /* ── Line-number column ───────────────────────────────── */
 .tt-table td.ln-col {
   text-align: right;
-  color: #d1d5db;
-  font-size: 0.7rem;
-  font-family: "SF Mono", "Cascadia Code", "Fira Code", monospace;
+  color: var(--text-4, #d1d5db);
   font-weight: 500;
   user-select: none;
   padding-right: 0.7rem;
@@ -185,17 +196,14 @@
 }
 
 /* ── Responsive ───────────────────────────────────────── */
-.tt-table {
-  min-width: 640px;
-}
-
 @media (max-width: 900px) {
-  .tt-table {
-    font-size: 0.82rem;
+  .tt-table td {
+    padding: 0.1rem 0.45rem;
   }
 
-  .tt-table td {
-    padding: 0.15rem 0.45rem;
+  .trans-ghazal .tt-table td {
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
   }
 
   .tt-wrap {

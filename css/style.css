@@ -132,14 +132,22 @@ a:hover {
   gap: 12px;
 }
 
+.page-header-inner {
+  justify-content: space-between;
+}
+
+/* Breadcrumb — trail on the left, last item is the page title */
 .breadcrumb {
-  font-size: 12px;
-  color: var(--text-4);
-  white-space: nowrap
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .breadcrumb a {
-  color: var(--text-3)
+  font-size: 12px;
+  color: var(--text-3);
 }
 
 .breadcrumb a:hover {
@@ -147,16 +155,25 @@ a:hover {
   text-decoration: none
 }
 
-.breadcrumb span {
-  margin: 0 5px;
-  color: var(--text-4)
+.breadcrumb .sep {
+  margin: 0 7px;
+  color: var(--text-4);
+  font-size: 12px;
 }
 
-.page-header-inner h1 {
-  font-size: 18px;
+/* Last breadcrumb item = current page title, shown prominently */
+.breadcrumb-current {
+  font-size: 17px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.01em;
+}
+
+.breadcrumb-sub {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 400;
+  margin-left: 6px;
 }
 
 /* MAIN */
@@ -2089,6 +2106,10 @@ thead th:not(:first-child):hover .th-name {
   padding: 40px 28px 80px;
 }
 
+.trans-page.wide {
+  max-width: none;
+}
+
 .trans-header {
   margin-bottom: 36px;
 }
@@ -2111,7 +2132,6 @@ thead th:not(:first-child):hover .th-name {
 }
 
 .trans-label {
-  font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -2139,10 +2159,7 @@ thead th:not(:first-child):hover .th-name {
 
 .trans-table thead th {
   background: var(--surface-3);
-  border-bottom: 1px solid var(--border-2);
-  border-right: none;
   padding: 7px 16px;
-  font-size: 10px;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -2150,10 +2167,14 @@ thead th:not(:first-child):hover .th-name {
   width: 50%;
   min-width: 0;
   vertical-align: middle;
+  border-right: 1px solid var(--border);
+}
+
+.trans-table thead th:last-child {
+  border-right: none;
 }
 
 .trans-table thead th:first-child {
-  border-right: 1px solid var(--border);
   width: 50%;
   min-width: 0;
   text-align: left;
@@ -2164,23 +2185,23 @@ thead th:not(:first-child):hover .th-name {
   direction: rtl;
 }
 
-/* Rows inside tbody have NO bottom borders, giving a continuous vertical read */
+/* Rows inside tbody have NO row borders — column borders only */
 .trans-table tbody tr td {
   border-bottom: none;
-  border-right: none;
+  border-right: 1px solid var(--border);
   padding: 8px 16px;
-  /* Increased vertical padding slightly to separate verses well */
   vertical-align: top;
   background: var(--surface-2);
 }
 
+.trans-table tbody tr td:last-child {
+  border-right: none;
+}
+
 /* Bangla Column */
 .trans-bn {
-  border-right: 1px solid var(--border) !important;
   white-space: nowrap;
-  /* Ensures lines never break */
   font-family: 'Noto Serif Bengali', Georgia, serif;
-  font-size: 0.94rem;
   line-height: 1.85;
   color: var(--text-2);
 }
@@ -2190,9 +2211,7 @@ thead th:not(:first-child):hover .th-name {
   direction: rtl;
   text-align: right;
   white-space: nowrap;
-  /* Ensures lines never break */
   font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', Georgia, serif;
-  font-size: 1.02rem;
   line-height: 1.85;
   color: var(--text-2);
 }
