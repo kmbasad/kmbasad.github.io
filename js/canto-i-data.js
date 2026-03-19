@@ -1,16 +1,13 @@
 /**
- * dante.js  —  3-language cross-highlighting: Bangla / Italian / English
+ * canto-i-data.js  —  Word mappings for Dante's Inferno, Canto I
  *
- * Every column has word-level <span class="w" data-w="..."> markup.
- * Hovering/clicking any word highlights corresponding words in all 3 columns.
- * Click to pin, click again or Escape to unpin.
+ * Sets window.TT_MAPPINGS for use by translation-table.js
+ * LANG1 = Italian (Petrocchi), BN = Bangla (KMBA), EN = English (Mandelbaum)
  */
+window.TT_MAPPINGS = {
+  lang1Class: "it",
 
-(function () {
-  "use strict";
-
-  /* ── IT → EN word mapping ─────────────────────────────────────────── */
-  const IT_TO_EN = {
+  LANG1_TO_EN: {
     "nel": ["when"],
     "mezzo": ["half"],
     "cammin": ["journeyed"],
@@ -219,17 +216,10 @@
     "e_color_cui_tu_fai": ["and_those_whom_you_describe"],
     "cotanto_mesti": ["as_sorrowful"],
     "allor_si_mosse": ["then_he_set_out"],
-    "e_io_li_tenni_dietro": ["and_i_moved_on_behind_him"],
-  };
+    "e_io_li_tenni_dietro": ["and_i_moved_on_behind_him"]
+  },
 
-  /* Build reverse EN → IT[] */
-  const EN_TO_IT = {};
-  for (const [k, vs] of Object.entries(IT_TO_EN)) {
-    for (const v of vs) { (EN_TO_IT[v] = EN_TO_IT[v] || []).push(k); }
-  }
-
-  /* ── IT → BN word mapping ─────────────────────────────────────────── */
-  const IT_TO_BN = {
+  LANG1_TO_BN: {
     "nel": ["bn_L1_2"],
     "mezzo": ["bn_L1_2"],
     "cammin": ["bn_L1_2"],
@@ -481,10 +471,9 @@
     "cotanto_mesti": ["bn_L135_3"],
     "allor_si_mosse": ["bn_L136_1", "bn_L136_2"],
     "e_io_li_tenni_dietro": ["bn_L136_3", "bn_L136_4"]
-  };
+  },
 
-  /* Build reverse BN → IT[] */
-  const BN_TO_IT = {
+  BN_TO_LANG1: {
     "bn_L1_2": ["nel", "mezzo", "cammin"],
     "bn_L1_0": ["nostra"],
     "bn_L1_1": ["vita"],
@@ -858,165 +847,5 @@
     "bn_L136_2": ["allor_si_mosse"],
     "bn_L136_3": ["e_io_li_tenni_dietro"],
     "bn_L136_4": ["e_io_li_tenni_dietro"]
-  };
-
-  /* ── Build BN → EN via IT bridge ─────────────────────────────────── */
-  // For a BN key, find IT keys, then find EN keys from those
-  function bnToEn(bnKey) {
-    const itKeys = BN_TO_IT[bnKey] || [];
-    const enKeys = [];
-    for (const itKey of itKeys) {
-      for (const enKey of (IT_TO_EN[itKey] || [])) {
-        if (!enKeys.includes(enKey)) enKeys.push(enKey);
-      }
-    }
-    return enKeys;
   }
-
-  /* ── Cache DOM elements ───────────────────────────────────────────── */
-  const bnWords = {}, itWords = {}, enWords = {};
-  document.querySelectorAll("td.bn .w").forEach(s => {
-    const k = s.dataset.w; if (!k) return;
-    (bnWords[k] = bnWords[k] || []).push(s);
-  });
-  document.querySelectorAll("td.it .w").forEach(s => {
-    const k = s.dataset.w; if (!k) return;
-    (itWords[k] = itWords[k] || []).push(s);
-  });
-  document.querySelectorAll("td.en .w").forEach(s => {
-    const k = s.dataset.w; if (!k) return;
-    (enWords[k] = enWords[k] || []).push(s);
-  });
-
-  // Line-level caches
-  const bnLines = {}, itLines = {}, enLines = {};
-  document.querySelectorAll("td.bn").forEach(td => {
-    const ln = td.dataset.line; if (!ln) return;
-    bnLines[ln] = Array.from(td.querySelectorAll(".w"));
-  });
-  document.querySelectorAll("td.it").forEach(td => {
-    const ln = td.dataset.line; if (!ln) return;
-    itLines[ln] = Array.from(td.querySelectorAll(".w"));
-  });
-  document.querySelectorAll("td.en").forEach(td => {
-    const ln = td.dataset.line; if (!ln) return;
-    enLines[ln] = Array.from(td.querySelectorAll(".w"));
-  });
-
-  /* ── Highlight classes ────────────────────────────────────────────── */
-  const CLS_SOURCE = "source-word";
-  const CLS_WORD = "word-highlight";
-  const CLS_LINE = "line-highlight";
-
-  function clearAll() {
-    document.querySelectorAll(`.${CLS_SOURCE},.${CLS_WORD},.${CLS_LINE}`)
-      .forEach(s => s.classList.remove(CLS_SOURCE, CLS_WORD, CLS_LINE));
-  }
-
-  /* ── Highlight words in a column, with fallback to whole line ──────
-     matched: array of data-w keys that have direct word-level matches
-     lineSpans: all spans on that line (for fallback)
-  */
-  function highlightCol(matchedKeys, wordMap, lineSpans, matchClass, fallbackClass) {
-    if (matchedKeys.length > 0) {
-      const matched = new Set();
-      for (const k of matchedKeys) {
-        for (const s of (wordMap[k] || [])) {
-          s.classList.add(matchClass);
-          matched.add(s);
-        }
-      }
-      // Soft-highlight remaining words on the same line
-      for (const s of lineSpans) {
-        if (!matched.has(s)) s.classList.add(fallbackClass);
-      }
-    } else {
-      // Full line fallback
-      for (const s of lineSpans) s.classList.add(fallbackClass);
-    }
-  }
-
-  /* ── Main highlight ────────────────────────────────────────────────── */
-  function applyHighlight(sourceSpan, wordKey, col) {
-    clearAll();
-    sourceSpan.classList.add(CLS_SOURCE);
-
-    const lineNum = sourceSpan.closest("td").dataset.line;
-    const bnLine = bnLines[lineNum] || [];
-    const itLine = itLines[lineNum] || [];
-    const enLine = enLines[lineNum] || [];
-
-    if (col === "it") {
-      const enKeys = IT_TO_EN[wordKey] || [];
-      const bnKeys = IT_TO_BN[wordKey] || [];
-      highlightCol(enKeys, enWords, enLine, CLS_WORD, CLS_LINE);
-      highlightCol(bnKeys, bnWords, bnLine, CLS_WORD, CLS_LINE);
-
-    } else if (col === "en") {
-      const itKeys = EN_TO_IT[wordKey] || [];
-      // Collect BN keys via IT bridge
-      const bnKeys = [];
-      for (const itk of itKeys) {
-        for (const bk of (IT_TO_BN[itk] || [])) {
-          if (!bnKeys.includes(bk)) bnKeys.push(bk);
-        }
-      }
-      highlightCol(itKeys, itWords, itLine, CLS_WORD, CLS_LINE);
-      highlightCol(bnKeys, bnWords, bnLine, CLS_WORD, CLS_LINE);
-
-    } else if (col === "bn") {
-      const itKeys = BN_TO_IT[wordKey] || [];
-      const enKeys = bnToEn(wordKey);
-      highlightCol(itKeys, itWords, itLine, CLS_WORD, CLS_LINE);
-      highlightCol(enKeys, enWords, enLine, CLS_WORD, CLS_LINE);
-    }
-  }
-
-  /* ── Event delegation ─────────────────────────────────────────────── */
-  const table = document.getElementById("dante-table");
-  if (!table) return;
-
-  let pinned = false;
-  let lastTarget = null;
-
-  function colOf(span) {
-    if (span.closest("td.bn")) return "bn";
-    if (span.closest("td.it")) return "it";
-    if (span.closest("td.en")) return "en";
-    return null;
-  }
-
-  table.addEventListener("mouseover", function (e) {
-    if (pinned) return;
-    const span = e.target.closest(".w");
-    if (span) {
-      if (lastTarget !== span) {
-        lastTarget = span;
-        const col = colOf(span);
-        if (col) applyHighlight(span, span.dataset.w, col);
-      }
-      return;
-    }
-    if (lastTarget) { lastTarget = null; clearAll(); }
-  });
-
-  table.addEventListener("mouseleave", function () {
-    if (!pinned) { lastTarget = null; clearAll(); }
-  });
-
-  table.addEventListener("click", function (e) {
-    const span = e.target.closest(".w");
-    if (!span) { pinned = false; lastTarget = null; clearAll(); return; }
-    if (pinned && span.classList.contains(CLS_SOURCE)) {
-      pinned = false; lastTarget = null; clearAll(); return;
-    }
-    const col = colOf(span);
-    if (col) applyHighlight(span, span.dataset.w, col);
-    pinned = true; lastTarget = span;
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { pinned = false; lastTarget = null; clearAll(); }
-  });
-
-})();
+};

@@ -1,10 +1,10 @@
 /* =========================================================
-   dante.css  —  Dante trilingual table  (modern · elegant)
-   Columns: Bangla | Italian | English | line-number
+   translation-table.css  —  Generic translation table styles
+   Supports 2, 3, or 4 column layouts (bn + other langs + line-num)
    ========================================================= */
 
 /* ── Legend ───────────────────────────────────────────── */
-.dante-legend {
+.tt-legend {
   margin: 0 0 1.6rem 0;
   font-size: 0.78rem;
   color: #9ca3af;
@@ -26,17 +26,16 @@
 }
 
 .page-subtitle {
-  font-size: 1rem;
+  font-size: 0.82rem;
   color: #9ca3af;
   margin: 0 0 2rem 0;
   font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-size: 0.82rem;
 }
 
 /* ── Wrapper ──────────────────────────────────────────── */
-.dante-table-wrap {
+.tt-wrap {
   width: 100%;
   overflow-x: auto;
   border-radius: 12px;
@@ -48,7 +47,7 @@
 }
 
 /* ── Table ────────────────────────────────────────────── */
-.dante-table {
+.tt-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
@@ -56,13 +55,13 @@
 }
 
 /* ── Column widths ────────────────────────────────────── */
-.dante-table .col-bangla  { width: 34%; }
-.dante-table .col-italian { width: 26%; }
-.dante-table .col-english { width: 34%; }
-.dante-table .col-lnum   { width: 6%; }
+.tt-table .col-bangla  { width: 34%; }
+.tt-table .col-italian { width: 26%; }
+.tt-table .col-english { width: 34%; }
+.tt-table .col-lnum   { width: 6%; }
 
 /* ── Thead ────────────────────────────────────────────── */
-.dante-table thead th {
+.tt-table thead th {
   padding: 0.75rem 0.8rem 0.65rem;
   text-align: left;
   font-size: 0.68rem;
@@ -74,7 +73,7 @@
   border-bottom: 2px solid #e5e7eb;
 }
 
-.dante-table thead .col-lnum {
+.tt-table thead .col-lnum {
   text-align: right;
 }
 
@@ -87,31 +86,31 @@
 }
 
 /* ── Rows & cells ─────────────────────────────────────── */
-.dante-table td {
+.tt-table td {
   padding: 0.25rem 0.8rem 0.25rem 0.7rem;
   vertical-align: top;
 }
 
-.dante-table tbody tr {
+.tt-table tbody tr {
   transition: background-color 0.15s ease;
 }
 
-.dante-table tbody tr:hover {
+.tt-table tbody tr:hover {
   background-color: #f8fafd;
 }
 
 /* Tercet gap */
-.dante-table tr.tercet-start td {
+.tt-table tr.tercet-start td {
   padding-top: 1rem;
   border-top: 1px solid #f0f1f3;
 }
 
-.dante-table tbody tr:first-child.tercet-start td {
+.tt-table tbody tr:first-child.tercet-start td {
   border-top: none;
 }
 
 /* ── Bangla column ────────────────────────────────────── */
-.dante-table td.bn {
+.tt-table td.bn {
   font-family: "Noto Sans Bengali", "Kalpurush", "SolaimanLipi",
     "Siyam Rupali", sans-serif;
   color: #1e293b;
@@ -122,7 +121,7 @@
 }
 
 /* ── Italian column ───────────────────────────────────── */
-.dante-table td.it {
+.tt-table td.it {
   color: #334155;
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: 0.95em;
@@ -131,7 +130,7 @@
 }
 
 /* ── English column ───────────────────────────────────── */
-.dante-table td.en {
+.tt-table td.en {
   color: #475569;
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: 0.95em;
@@ -140,7 +139,7 @@
 }
 
 /* ── Line-number column ───────────────────────────────── */
-.dante-table td.ln-col {
+.tt-table td.ln-col {
   text-align: right;
   color: #d1d5db;
   font-size: 0.7rem;
@@ -186,20 +185,20 @@
 }
 
 /* ── Responsive ───────────────────────────────────────── */
-.dante-table {
+.tt-table {
   min-width: 640px;
 }
 
 @media (max-width: 900px) {
-  .dante-table {
+  .tt-table {
     font-size: 0.82rem;
   }
 
-  .dante-table td {
+  .tt-table td {
     padding: 0.15rem 0.45rem;
   }
 
-  .dante-table-wrap {
+  .tt-wrap {
     border-radius: 8px;
   }
 }
