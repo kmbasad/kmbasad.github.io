@@ -33,11 +33,15 @@
   line-height: 1.7;
 }
 
-/* ── Column widths ────────────────────────────────────── */
+/* ── Column widths — Inferno (bn + it + en + lnum) ───── */
 .tt-table .col-bangla  { width: 34%; }
 .tt-table .col-italian { width: 26%; }
-.tt-table .col-english { width: 34%; }
-.tt-table .col-lnum   { width: 6%; }
+.tt-table .col-english { width: 32%; }
+.tt-table .col-lnum    { width: 1px; white-space: nowrap; }
+
+/* ── Column widths — Prathama (bn + fa + tl + lnum) ──── */
+.tt-table .col-persian { width: 24%; }
+.tt-table .col-tl      { width: 36%; }
 
 /* ── Thead ────────────────────────────────────────────── */
 .tt-table thead th {
@@ -58,8 +62,10 @@
   border-right: none;
 }
 
-.tt-table thead .col-lnum {
-  text-align: right;
+.tt-table thead th.col-lnum {
+  text-align: left;
+  padding-left:  0.15rem;
+  padding-right: 0.15rem;
 }
 
 .col-note {
@@ -103,13 +109,22 @@
   padding-top: 0.1rem;
 }
 
-/* ── Couplet spacing (Hafez / ghazal) ────────────────── */
-/* Each <tr> is one couplet (two lines joined by <br>).
-   Moderate padding between rows = visible gap between couplets.
-   Line-height controls the minimal space within a couplet. */
-.trans-ghazal .tt-table td {
-  padding-top: 0.55rem;
-  padding-bottom: 0.55rem;
+/* ── Ghazal spacing ───────────────────────────────────── */
+/* Each <tr> is one couplet (two misras joined by <br>).
+   data-ghazal is present on every ghazal row.
+   .ghazal-start marks the first couplet of each ghazal —
+   extra top padding creates a visible gap between ghazals. */
+.tt-table tr[data-ghazal] td {
+  padding-top:    0.25rem;   /* small gap between couplets */
+  padding-bottom: 0.25rem;
+}
+
+.tt-table tr.ghazal-start td {
+  padding-top: 2.5rem;       /* large gap before each new ghazal */
+}
+
+.tt-table tbody tr:first-child.ghazal-start td {
+  padding-top: 0.25rem;      /* no extra gap at very top */
 }
 
 /* ── Bangla column ────────────────────────────────────── */
@@ -151,15 +166,21 @@
   white-space: nowrap;
 }
 
-/* ── Line-number column ───────────────────────────────── */
+/* ── Line/ghazal-number column ────────────────────────── */
 .tt-table td.ln-col {
-  text-align: right;
+  text-align: left;
   color: var(--text-4, #d1d5db);
   font-weight: 500;
   user-select: none;
-  padding-right: 0.7rem;
   white-space: nowrap;
   letter-spacing: -0.02em;
+  padding-left:  0.15rem;
+  padding-right: 0.15rem;
+}
+
+/* Pull the Bangla column's right padding in to close the gap */
+.tt-table td.bn {
+  padding-right: 0.3rem;
 }
 
 /* ── Word spans ───────────────────────────────────────── */
@@ -201,9 +222,17 @@
     padding: 0.1rem 0.45rem;
   }
 
-  .trans-ghazal .tt-table td {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+  .tt-table tr[data-ghazal] td {
+    padding-top:    0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .tt-table tr.ghazal-start td {
+    padding-top: 1.1rem;
+  }
+
+  .tt-table tbody tr:first-child.ghazal-start td {
+    padding-top: 0.2rem;
   }
 
   .tt-wrap {

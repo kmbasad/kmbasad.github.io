@@ -1,0 +1,108 @@
+/* parallel.css — parallel reader columns
+   Nav, page-header, and breadcrumb come from style.css.
+   This file handles only the two-column reading layout.
+*/
+
+/* ── Two-column parallel body ──────────────────────────── */
+.parallel-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  height: calc(100vh - 148px);
+  border-top: 1px solid #e4e4e4;
+  overflow: hidden;
+}
+.parallel-col {
+  overflow-y: scroll;
+  padding: 2rem 2.4rem 5rem;
+  position: relative;
+}
+.parallel-col.col-bn {
+  border-right: 1px solid #e4e4e4;
+  direction: ltr;
+  font-family: 'Noto Serif Bengali', 'Kalpurush', Georgia, serif;
+  font-size: 1.06rem;
+  line-height: 2.05;
+  color: #1a1a1a;
+}
+.parallel-col.col-ar {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Scheherazade New', 'Amiri', 'Traditional Arabic', 'Noto Naskh Arabic', serif;
+  font-size: 1.28rem;
+  line-height: 2.2;
+  color: #1a1a1a;
+}
+
+/* ── Segments ──────────────────────────────────────────── */
+.seg {
+  padding: 0.55rem 0;
+  border-radius: 3px;
+  transition: background 0.18s ease;
+}
+.seg + .seg { border-top: 1px dotted #ebebeb; }
+.seg.seg-title { padding: 1rem 0 0.5rem; }
+.seg.seg-title + .seg { border-top: none; }
+
+.seg h2 {
+  font-size: 1.22rem;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 0.15rem;
+}
+.seg h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+  color: #333;
+}
+.col-ar .seg h2 { font-size: 1.62rem; font-weight: 600; font-style: normal; }
+.col-ar .seg h3 { font-size: 1.18rem; font-weight: 600; }
+
+.seg ul { list-style: none; padding: 0; margin: 0.3rem 0; }
+.col-bn .seg ul { padding-left: 0.2rem; }
+.col-ar .seg ul { padding-right: 0.2rem; }
+.seg li { padding: 0.22rem 0; line-height: 1.85; }
+.col-ar .seg li { font-size: 1.06rem; }
+
+/* ── Word spans ────────────────────────────────────────── */
+.w {
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 0 1px;
+  transition: background 0.12s, color 0.12s;
+}
+.w:hover { background: #fff3cd; }
+.w.active-src { background: #ffe066; color: #1a1a1a; }
+.w.active-tgt { background: #ffe066; color: #1a1a1a; }
+.seg.seg-lit { background: #fffbea; }
+
+/* ── Footnote markers ──────────────────────────────────── */
+.fn {
+  font-size: 0.62em;
+  vertical-align: super;
+  line-height: 1;
+  color: #aaa;
+  margin: 0 1px;
+}
+
+/* Underlines for chapter titles */
+.col-ar u { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Scrollbars ────────────────────────────────────────── */
+.parallel-col::-webkit-scrollbar { width: 4px; }
+.parallel-col::-webkit-scrollbar-track { background: transparent; }
+.parallel-col::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+.parallel-col:hover::-webkit-scrollbar-thumb { background: #bbb; }
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .parallel-body { grid-template-columns: 1fr; height: auto; overflow: visible; }
+  .parallel-col { overflow-y: visible; height: auto; border-right: none !important; }
+  .parallel-col.col-ar { border-top: 2px solid #e4e4e4; padding-top: 1.5rem; }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .parallel-col { padding: 1.4rem 1.5rem 4rem; }
+  .col-bn { font-size: 0.97rem; }
+  .col-ar { font-size: 1.15rem; }
+}
