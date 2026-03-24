@@ -1,0 +1,494 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MATRIX — table grid, cells, panel, overlay, page sections
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.article-legend {
+  font-size: 12px;
+  color: var(--text-4);
+  text-align: center;
+  padding: 10px 0 28px
+}
+
+/* TABLE */
+.table-scroll {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--sh-sm);
+  margin-bottom: 12px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%
+}
+
+/* Header row — NOT sticky (fixes row-1 visibility bug) */
+thead th {
+  background: var(--surface-3);
+  border-bottom: 2px solid var(--border-2);
+  border-right: 1px solid var(--border);
+  vertical-align: bottom;
+  padding: 0;
+  width: 148px;
+  min-width: 148px;
+}
+
+thead th:first-child {
+  background: var(--surface-3);
+  width: 174px;
+  min-width: 174px;
+  border-right: 2px solid var(--border-2);
+}
+
+.th-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 8px 10px;
+  gap: 2px;
+  text-align: center;
+  min-height: 82px;
+  position: relative;
+}
+
+thead th:first-child .th-inner {
+  align-items: flex-start;
+  text-align: left;
+  padding: 12px 14px 10px;
+  min-height: unset;
+}
+
+.th-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: normal;
+  word-break: break-word
+}
+
+.th-dates {
+  font-size: 10.5px;
+  color: var(--text-3);
+  white-space: normal
+}
+
+.th-culture {
+  font-size: 10px;
+  color: var(--accent);
+  white-space: normal
+}
+
+.corner-label {
+  font-size: 11.5px;
+  color: var(--text-3);
+  line-height: 1.4
+}
+
+.corner-label strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-4);
+  margin-bottom: 3px
+}
+
+/* Property column */
+tbody th {
+  background: var(--surface-3);
+  padding: 10px 13px;
+  border-right: 2px solid var(--border-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  width: 174px;
+  min-width: 174px;
+  position: relative;
+}
+
+.prop-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+  line-height: 1.4
+}
+
+.prop-desc {
+  font-size: 11px;
+  color: var(--text-4);
+  display: block;
+  margin-top: 3px;
+  line-height: 1.3;
+  font-style: italic
+}
+
+/* Data cells */
+td {
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 0;
+  vertical-align: top;
+  width: 148px;
+  min-width: 148px
+}
+
+td:last-child {
+  border-right: none
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: none
+}
+
+/* All data cells share one uniform off-white */
+tbody td {
+  background: var(--surface-2);
+}
+
+.cell-btn {
+  display: block;
+  width: 100%;
+  min-height: 72px;
+  height: 100%;
+  padding: 9px 10px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.45;
+  transition: background .1s;
+  position: relative;
+}
+
+.cell-btn::after {
+  content: '↗';
+  position: absolute;
+  bottom: 5px;
+  right: 7px;
+  font-size: 9px;
+  color: var(--text-4);
+  opacity: 0;
+  transition: opacity .1s;
+}
+
+.cell-btn:hover {
+  background: var(--accent-light);
+  color: var(--text)
+}
+
+.cell-btn:hover::after {
+  opacity: 1
+}
+
+.cell-btn.active {
+  background: #dbeafe;
+  color: #1e40af
+}
+
+.cell-btn.active::after {
+  opacity: 1;
+  color: var(--accent)
+}
+
+/* ── Cell / header numbering ─────────────────────────────────────────────── */
+
+.cell-num {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--text-3);
+  pointer-events: none;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.th-num {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--text-3);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+tbody th .th-num {
+  top: 3px;
+  right: 4px;
+}
+
+/* PANEL + OVERLAY */
+.table-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .25);
+  z-index: 90;
+  backdrop-filter: blur(2px)
+}
+
+.table-overlay.visible {
+  display: block
+}
+
+.table-panel {
+  position: fixed;
+  top: 0;
+  right: -480px;
+  width: 448px;
+  height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  box-shadow: -6px 0 32px rgba(0, 0, 0, .12);
+  z-index: 100;
+  overflow-y: auto;
+  transition: right .28s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-panel.open {
+  right: 0
+}
+
+.panel-bar {
+  height: 3px;
+  background: var(--accent);
+  flex-shrink: 0
+}
+
+.panel-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  font-size: 13px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: background .12s, color .12s;
+  z-index: 2;
+}
+
+.panel-close-btn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--border-2)
+}
+
+.panel-head {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface-2)
+}
+
+.panel-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--text-4);
+  text-transform: uppercase;
+  margin-bottom: 5px
+}
+
+.panel-prop {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.25
+}
+
+.panel-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent)
+}
+
+.panel-meta {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px
+}
+
+.panel-body {
+  padding: 18px 20px 40px;
+  flex: 1
+}
+
+.panel-short {
+  font-size: 12.5px;
+  color: var(--text-2);
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.panel-meta:empty,
+.panel-short:empty { display: none; }
+.panel-long {
+  font-size: 15px;
+  line-height: 1.77;
+  color: var(--text)
+}
+
+.panel-long p {
+  margin-bottom: 13px
+}
+
+.panel-long p:last-child {
+  margin-bottom: 0
+}
+
+.panel-long em {
+  font-style: italic;
+  color: var(--accent)
+}
+
+.panel-nav {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface-2)
+}
+
+.panel-nav button {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  color: var(--text-2);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all .12s;
+}
+
+.panel-nav button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light)
+}
+
+.panel-nav button:disabled {
+  opacity: .3;
+  cursor: default
+}
+
+@media(max-width:640px) {
+  .table-panel {
+    width: 100%;
+    right: -100%
+  }
+}
+
+/* Row header — synthesis active state */
+tbody th.row-active {
+  background: #dbeafe;
+  border-right-color: var(--accent);
+}
+
+tbody th.row-active .prop-name {
+  color: var(--accent);
+}
+
+
+/* Row header hover hint */
+tbody th:hover {
+  background: #eff6ff;
+  cursor: pointer;
+}
+
+tbody th:hover .prop-name {
+  color: var(--accent);
+}
+
+/* Column header — philosopher summary active state */
+thead th.col-active {
+  background: #dbeafe;
+}
+
+thead th.col-active .th-name {
+  color: var(--accent);
+}
+
+thead th.col-active .th-culture {
+  color: #1d4ed8;
+}
+
+/* Column header hover hint */
+thead th:not(:first-child):hover {
+  background: #eff6ff;
+  cursor: pointer;
+}
+
+thead th:not(:first-child):hover .th-name {
+  color: var(--accent);
+}
+
+/* ── PAGE SECTIONS ───────────────────────────────────────────────────────── */
+
+.page-section {
+  padding: 36px 28px 52px;
+  border-top: 3px solid var(--border);
+}
+
+.page-section:first-of-type {
+  border-top: none;
+}
+
+.page-section+.page-section {
+  margin-top: 0;
+}
+
+.section-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.01em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.section-intro {
+  font-size: 14px;
+  color: var(--text-3);
+  margin: 0 auto 20px auto;
+  max-width: 900px;
+}
