@@ -2,195 +2,252 @@
   'use strict';
 
   // ── Lightweight-markup → HTML converter ────────────────────────────────
-  // Converts *word* → <em>word</em> and wraps bare text in <p> tags.
-  // Only applied to externally loaded JSON (inline JSON already has HTML).
   function markupToHtml(text) {
-    if (!text) return text;
-    // If text already contains <p> tags, assume it's already HTML
+    if (!text) return '';
     if (text.indexOf('<p>') !== -1) return text;
-    // Convert *…* to <em>…</em>, **…** to <strong>…</strong>
     var html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    // Split on double newlines into paragraphs
     html = html.split(/\n\n+/).map(function (p) { return '<p>' + p.trim() + '</p>'; }).join('');
     return html;
   }
 
-  // Apply markupToHtml to all text fields in config loaded from external JSON
-  function convertMarkup(cfg) {
-    function convertItem(item) {
-      if (item.l) item.l = markupToHtml(item.l);
-      if (item.b) item.b = markupToHtml(item.b);
+  // ── TSV parser (handles quoted cells with embedded newlines) ───────────
+  function parseTSV(text) {
+    var rows = [];
+    var currentRow = [];
+    var currentCell = '';
+    var inQuotes = false;
+
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      var nextC = text[i + 1] || '';
+
+      if (inQuotes) {
+        if (c === '"') {
+          if (nextC === '"') {
+            currentCell += '"';
+            i++;
+          } else {
+            inQuotes = false;
+          }
+        } else {
+          currentCell += c;
+        }
+      } else {
+        if (c === '"') {
+          inQuotes = true;
+        } else if (c === '\t') {
+          currentRow.push(currentCell);
+          currentCell = '';
+        } else if (c === '\r' && nextC === '\n') {
+          currentRow.push(currentCell);
+          rows.push(currentRow);
+          currentRow = [];
+          currentCell = '';
+          i++;
+        } else if (c === '\n') {
+          currentRow.push(currentCell);
+          rows.push(currentRow);
+          currentRow = [];
+          currentCell = '';
+        } else {
+          currentCell += c;
+        }
+      }
     }
-    if (cfg.cells) {
-      cfg.cells.forEach(function (row) {
-        row.forEach(convertItem);
-      });
+    if (currentCell !== '' || currentRow.length > 0) {
+      currentRow.push(currentCell);
+      rows.push(currentRow);
     }
-    if (cfg.rowSynths) {
-      cfg.rowSynths.forEach(convertItem);
-    }
-    if (cfg.colSynths) {
-      cfg.colSynths.forEach(convertItem);
-    }
-    return cfg;
+    return rows.filter(function (r) { return r.length > 1 || r[0].trim() !== ''; });
   }
 
-  function initTable(cfg) {
-    var table   = document.getElementById(cfg.tableId);
-    var panel   = document.getElementById(cfg.panelId);
-    var overlay = document.getElementById(cfg.overlayId);
-    var btnPrev = document.getElementById(cfg.prevId);
-    var btnNext = document.getElementById(cfg.nextId);
-    var nRows = cfg.rows.length;
-    var nCols = cfg.cols.length;
+  // ── Unique ID generator for multi-table pages ─────────────────────────
+  var _idSeq = 0;
+  function uid(base) { return 'mx-' + base + '-' + (_idSeq++); }
+
+  // ── Build full matrix from TSV and mount into a container ─────────────
+  function buildMatrix(mountId, tsvText) {
+    var mount = document.getElementById(mountId);
+    if (!mount) return;
+
+    var tsv   = parseTSV(tsvText);
+    var nRows = tsv.length - 1;
+    var nCols = tsv[0].length - 1;
+
+    // Parse corner cell (row 0, col 0)
+    var cornerParts = tsv[0][0].split('\n');
+    var cornerLabel = cornerParts[0] || '';
+    var cornerSize  = cornerParts[1] || '';
+
+    // Generate unique IDs
+    var ids = {
+      table:   uid('table'),
+      panel:   uid('panel'),
+      overlay: uid('overlay'),
+      close:   uid('close'),
+      prev:    uid('prev'),
+      next:    uid('next'),
+      pLabel:  uid('label'),
+      pProp:   uid('prop'),
+      pName:   uid('name'),
+      pMeta:   uid('meta'),
+      pShort:  uid('short'),
+      pLong:   uid('long')
+    };
+
+    // ── Build table ──────────────────────────────────────────────────────
+    var scroll = document.createElement('div');
+    scroll.className = 'table-scroll';
+
+    var table = document.createElement('table');
+    table.id = ids.table;
+
+    // thead
+    var thead = document.createElement('thead');
+    var htr = document.createElement('tr');
+
+    // Corner th
+    var cornerTh = document.createElement('th');
+    cornerTh.innerHTML = '<div class="th-inner"><span class="corner-label"><strong>' +
+      cornerLabel + '</strong>' + cornerSize + '</span></div>';
+    htr.appendChild(cornerTh);
+
+    // Column headers
+    for (var ci = 0; ci < nCols; ci++) {
+      var colParts = tsv[0][ci + 1].split('\n\n');
+      var th = document.createElement('th');
+      th.style.cursor = 'pointer';
+      var inner = '<div class="th-inner">';
+      inner += '<span class="th-num">' + ci + '</span>';
+      if (colParts[2]) inner += '<span class="th-culture">' + colParts[2] + '</span>';
+      if (colParts[1]) inner += '<span class="th-dates">' + colParts[1] + '</span>';
+      inner += '<span class="th-name">' + (colParts[0] || '') + '</span>';
+      inner += '</div>';
+      th.innerHTML = inner;
+      htr.appendChild(th);
+    }
+    thead.appendChild(htr);
+    table.appendChild(thead);
+
+    // tbody
+    var tbody = document.createElement('tbody');
+    for (var ri = 0; ri < nRows; ri++) {
+      var tr = document.createElement('tr');
+
+      // Row header
+      var rowTh = document.createElement('th');
+      rowTh.style.cursor = 'pointer';
+      var rowParts = tsv[ri + 1][0].split('\n\n');
+      rowTh.innerHTML =
+        '<span class="th-num">' + ri + '</span>' +
+        '<span class="prop-name">' + (rowParts[0] || '') + '</span>' +
+        (rowParts[1] ? '<span class="prop-desc">' + rowParts[1] + '</span>' : '');
+      tr.appendChild(rowTh);
+
+      // Data cells
+      for (var ci2 = 0; ci2 < nCols; ci2++) {
+        var td = document.createElement('td');
+        var btn = document.createElement('button');
+        btn.className = 'cell-btn';
+
+        var numSpan = document.createElement('span');
+        numSpan.className = 'cell-num';
+        numSpan.textContent = ri + '' + ci2;
+        btn.appendChild(numSpan);
+
+        var cellParts = tsv[ri + 1][ci2 + 1].split('\n\n');
+        btn.appendChild(document.createTextNode(cellParts[0] ? cellParts[0].split('\n')[0] : ''));
+        btn.dataset.ri = ri;
+        btn.dataset.ci = ci2;
+        td.appendChild(btn);
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    scroll.appendChild(table);
+    mount.appendChild(scroll);
+
+    // ── Build overlay + panel ────────────────────────────────────────────
+    var overlay = document.createElement('div');
+    overlay.className = 'table-overlay';
+    overlay.id = ids.overlay;
+
+    var panel = document.createElement('div');
+    panel.className = 'table-panel';
+    panel.id = ids.panel;
+    panel.innerHTML =
+      '<div class="panel-bar"></div>' +
+      '<button class="panel-close-btn" id="' + ids.close + '" title="Close">&#x2715;</button>' +
+      '<div class="panel-head">' +
+        '<div class="panel-label" id="' + ids.pLabel + '"></div>' +
+        '<div class="panel-prop" id="' + ids.pProp + '"></div>' +
+        '<div class="panel-name" id="' + ids.pName + '"></div>' +
+        '<div class="panel-meta" id="' + ids.pMeta + '"></div>' +
+      '</div>' +
+      '<div class="panel-body">' +
+        '<div class="panel-short" id="' + ids.pShort + '"></div>' +
+        '<div class="panel-long" id="' + ids.pLong + '"></div>' +
+      '</div>' +
+      '<div class="panel-nav">' +
+        '<button id="' + ids.prev + '">&#8592; Prev</button>' +
+        '<button id="' + ids.next + '">Next &#8594;</button>' +
+      '</div>';
+
+    mount.appendChild(overlay);
+    mount.appendChild(panel);
+
+    // ── Wire interactions ────────────────────────────────────────────────
+    var btnPrev = document.getElementById(ids.prev);
+    var btnNext = document.getElementById(ids.next);
     var ap = -1, ah = -1, synthMode = false;
 
-    // ── Build tbody rows (god-style: dynamic rows) ───────────────────────────
-    if (cfg.tbodyId) {
-      var tbody = document.getElementById(cfg.tbodyId);
-      cfg.rows.forEach(function (row, ri) {
-        var tr = document.createElement('tr');
-        var th = document.createElement('th');
-        th.style.cursor = 'pointer';
-        th.title = cfg.rowTitle || 'Click for synthesis';
-        th.innerHTML =
-          '<span class="th-num">' + ri + '</span>' +
-          '<span class="prop-name">' + row.name + '</span>' +
-          '<span class="prop-desc">' + row.desc + '</span>';
-        th.addEventListener('click', (function (ri) { return function () { openRowSynth(ri); }; })(ri));
-        tr.appendChild(th);
-        cfg.cols.forEach(function (col, ci) {
-          var td = document.createElement('td');
-          var b  = document.createElement('button');
-          b.className = 'cell-btn';
-          var numSpan = document.createElement('span');
-          numSpan.className = 'cell-num';
-          numSpan.textContent = ri + '' + ci;
-          b.appendChild(numSpan);
-          b.appendChild(document.createTextNode(cfg.cells[ri][ci].s));
-          b.dataset.ri = ri;
-          b.dataset.ci = ci;
-          b.addEventListener('click', (function (ri, ci) { return function () { openCell(ri, ci); }; })(ri, ci));
-          td.appendChild(b);
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-      });
+    function set(id, val, html) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (html) el.innerHTML = val || '';
+      else el.textContent = val || '';
     }
 
-    // ── Wire column headers + add numbering ───────────────────────────────────
-    cfg.cols.forEach(function (col, ci) {
-      var hdr = cfg.colHdrPrefix
-        ? document.getElementById(cfg.colHdrPrefix + ci)
-        : table.querySelector('thead th[' + cfg.colHdrAttr + '="' + col.key + '"]');
-      if (hdr) {
-        hdr.style.cursor = 'pointer';
-        hdr.addEventListener('click', (function (ci) { return function () { openColSynth(ci); }; })(ci));
-        // Add column number
-        var inner = hdr.querySelector('.th-inner');
-        if (inner && !inner.querySelector('.th-num')) {
-          var num = document.createElement('span');
-          num.className = 'th-num';
-          num.textContent = ci;
-          inner.insertBefore(num, inner.firstChild);
-        }
-      }
-    });
-
-    // ── Wire pre-built row headers (chan-wook-style) ─────────────────────────
-    if (cfg.rowHdrAttr) {
-      var rowThs = table.querySelectorAll('tbody th[' + cfg.rowHdrAttr + ']');
-      rowThs.forEach(function (th, ri) {
-        th.style.cursor = 'pointer';
-        th.addEventListener('click', (function (ri) { return function () { openRowSynth(ri); }; })(ri));
-        // Add row number
-        if (!th.querySelector('.th-num')) {
-          var num = document.createElement('span');
-          num.className = 'th-num';
-          num.textContent = ri;
-          th.insertBefore(num, th.firstChild);
-        }
-      });
-      // Add cell numbers to pre-built cells
-      var trs = table.querySelectorAll('tbody tr');
-      trs.forEach(function (tr, ri) {
-        var btns = tr.querySelectorAll('.cell-btn');
-        btns.forEach(function (btn, ci) {
-          if (!btn.querySelector('.cell-num')) {
-            var num = document.createElement('span');
-            num.className = 'cell-num';
-            num.textContent = ri + '' + ci;
-            btn.insertBefore(num, btn.firstChild);
-          }
-        });
-      });
-      table.addEventListener('click', function (e) {
-        var cell = e.target.closest('[' + cfg.cellKeyAttr + ']');
-        if (!cell) return;
-        var key = cell.getAttribute(cfg.cellKeyAttr);
-        if (!key) return;
-        var dash = key.indexOf('-');
-        var colKey = key.slice(0, dash);
-        var rowKey = key.slice(dash + 1);
-        var ri = cfg.rows.findIndex(function (r) { return r.key === rowKey; });
-        var ci = cfg.cols.findIndex(function (c) { return c.key === colKey; });
-        if (ri >= 0 && ci >= 0) openCell(ri, ci);
-      });
-    }
-
-    // ── Content builder ──────────────────────────────────────────────────────
     function content(type, ri, ci) {
-      if (cfg.labelId) {
-        // chan-wook style: cells/synths have {h, k, b}
-        var e, lbl;
-        if (type === 'cell') { e = cfg.cells[ri][ci]; lbl = cfg.labelCell || 'Concept'; }
-        else if (type === 'row') { e = cfg.rowSynths[ri]; lbl = cfg.labelRow || 'Film'; }
-        else { e = cfg.colSynths[ci]; lbl = cfg.labelCell || 'Concept'; }
-        return { label: lbl, prop: e.h, name: e.k, long: e.b };
+      var rP = ri >= 0 ? tsv[ri + 1][0].split('\n\n') : [];
+      var cP = ci >= 0 ? tsv[0][ci + 1].split('\n\n') : [];
+
+      if (type === 'cell') {
+        var cellParts = tsv[ri + 1][ci + 1].split('\n\n');
+        return {
+          prop: rP[0] || '', name: cP[0] || '',
+          meta: (cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''),
+          short: cellParts[0] || '',
+          long: markupToHtml(cellParts.slice(1).join('\n\n'))
+        };
+      } else if (type === 'row') {
+        return {
+          prop: rP[0] || '',
+          name: 'Synthesis across all ten',
+          meta: rP[1] || '',
+          short: rP[2] || '',
+          long: markupToHtml(rP.slice(3).join('\n\n'))
+        };
       } else {
-        // god style: cells have {s, l}, synths have {s, l}
-        if (type === 'cell') {
-          var e = cfg.cells[ri][ci];
-          return {
-            prop: cfg.rows[ri].name, name: cfg.cols[ci].n,
-            meta: cfg.cols[ci].d + ' \u00b7 ' + cfg.cols[ci].c,
-            short: e.s, long: e.l
-          };
-        } else if (type === 'row') {
-          var e = cfg.rowSynths[ri];
-          return {
-            prop: cfg.rows[ri].name,
-            name: cfg.rowSynthName || 'Synthesis',
-            meta: (cfg.rowSynthMetaPrefix || '') + cfg.rows[ri].desc,
-            short: e.s, long: e.l
-          };
-        } else {
-          var e = cfg.colSynths[ci];
-          return {
-            prop: cfg.cols[ci].n,
-            name: cfg.cols[ci].d + ' \u00b7 ' + cfg.cols[ci].c,
-            meta: cfg.colSynthMeta || '',
-            short: e.s, long: e.l
-          };
-        }
+        return {
+          prop: cP[0] || '',
+          name: (cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''),
+          meta: '',
+          short: cP[3] || '',
+          long: markupToHtml(cP.slice(4).join('\n\n'))
+        };
       }
     }
 
-    // ── Panel helpers ────────────────────────────────────────────────────────
     function setPanel(c) {
-      function set(id, val, html) {
-        var el = id && document.getElementById(id);
-        if (!el) return;
-        if (html) el.innerHTML = val || '';
-        else el.textContent = val || '';
-      }
-      set(cfg.labelId, c.label);
-      set(cfg.propId,  c.prop);
-      set(cfg.nameId,  c.name);
-      set(cfg.metaId,  c.meta);
-      set(cfg.shortId, c.short);
-      set(cfg.longId,  c.long, true);
+      set(ids.pLabel, c.label || '');
+      set(ids.pProp, c.prop);
+      set(ids.pName, c.name);
+      set(ids.pMeta, c.meta);
+      set(ids.pShort, c.short);
+      set(ids.pLong, c.long, true);
     }
 
     function clearActive() {
@@ -205,10 +262,8 @@
 
     function openColSynth(ci) {
       clearActive(); synthMode = true; ap = -1; ah = ci;
-      var hdr = cfg.colHdrPrefix
-        ? document.getElementById(cfg.colHdrPrefix + ci)
-        : table.querySelector('thead th[' + cfg.colHdrAttr + '="' + cfg.cols[ci].key + '"]');
-      if (hdr) hdr.classList.add('col-active');
+      var headers = table.querySelectorAll('thead th:not(:first-child)');
+      if (ci < headers.length) headers[ci].classList.add('col-active');
       setPanel(content('col', -1, ci));
       btnPrev.disabled = ci <= 0;
       btnNext.disabled = ci >= nCols - 1;
@@ -226,14 +281,8 @@
 
     function openCell(ri, ci) {
       clearActive(); synthMode = false; ap = ri; ah = ci;
-      if (cfg.rowHdrAttr) {
-        var key = cfg.cols[ci].key + '-' + cfg.rows[ri].key;
-        var cell = table.querySelector('[' + cfg.cellKeyAttr + '="' + key + '"] .cell-btn');
-        if (cell) cell.classList.add('active');
-      } else {
-        var btn = table.querySelector('.cell-btn[data-ri="' + ri + '"][data-ci="' + ci + '"]');
-        if (btn) btn.classList.add('active');
-      }
+      var btn = table.querySelector('.cell-btn[data-ri="' + ri + '"][data-ci="' + ci + '"]');
+      if (btn) btn.classList.add('active');
       setPanel(content('cell', ri, ci));
       btnPrev.disabled = ci <= 0;
       btnNext.disabled = ci >= nCols - 1;
@@ -245,7 +294,22 @@
       panel.classList.remove('open'); overlay.classList.remove('visible');
     }
 
-    document.getElementById(cfg.closeId).addEventListener('click', closePanel);
+    // Wire click handlers
+    table.querySelectorAll('thead th:not(:first-child)').forEach(function (hdr, ci) {
+      hdr.addEventListener('click', (function (ci) { return function () { openColSynth(ci); }; })(ci));
+    });
+
+    table.querySelectorAll('tbody th').forEach(function (th, ri) {
+      th.addEventListener('click', (function (ri) { return function () { openRowSynth(ri); }; })(ri));
+    });
+
+    table.querySelectorAll('.cell-btn').forEach(function (btn) {
+      var ri = parseInt(btn.dataset.ri);
+      var ci = parseInt(btn.dataset.ci);
+      btn.addEventListener('click', (function (ri, ci) { return function () { openCell(ri, ci); }; })(ri, ci));
+    });
+
+    document.getElementById(ids.close).addEventListener('click', closePanel);
     overlay.addEventListener('click', closePanel);
 
     btnPrev.addEventListener('click', function () {
@@ -279,42 +343,38 @@
     });
   }
 
-  // ── Markdown → HTML converter (for essay) ─────────────────────────────────
-  // Converts *word* → <em>, **word** → <strong>, blank-line-separated → <p>
+  // ── Markdown → HTML converter (for essay) ─────────────────────────────
   function mdToHtml(md) {
-    var paragraphs = md.split(/\n{2,}/);
-    return paragraphs
+    return md.split(/\n{2,}/)
       .filter(function (p) { return p.trim(); })
       .map(function (p) {
         var h = p.trim();
-        // **…** → <strong>…</strong>  (must come before single *)
         h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-        // *…* → <em>…</em>
         h = h.replace(/\*(.+?)\*/g, '<em>$1</em>');
         return '<p>' + h + '</p>';
       })
       .join('\n');
   }
 
-  // ── Auto-discover and initialise all tables on the page ──────────────────
+  // ── Auto-discover and initialise ──────────────────────────────────────
 
-  // Check for external data source (single JSON — consciousness, chan-wook, etc.)
-  if (window.MATRIX_DATA_SRC) {
-    fetch(window.MATRIX_DATA_SRC)
-      .then(function (res) { return res.json(); })
-      .then(function (cfg) { initTable(convertMarkup(cfg)); });
+  // Single matrix: MATRIX_CONFIG = { src: 'file.tsv', mountId: 'id' }
+  if (window.MATRIX_CONFIG) {
+    fetch(window.MATRIX_CONFIG.src)
+      .then(function (res) { return res.text(); })
+      .then(function (tsvText) { buildMatrix(window.MATRIX_CONFIG.mountId, tsvText); });
   }
 
-  // Check for GOD_DATA array (god page — multiple external JSON files)
+  // Multiple matrices: GOD_DATA = [{ src: 'file.tsv', mountId: 'id' }, ...]
   if (window.GOD_DATA) {
     window.GOD_DATA.forEach(function (entry) {
       fetch(entry.src)
-        .then(function (res) { return res.json(); })
-        .then(function (cfg) { initTable(convertMarkup(cfg)); });
+        .then(function (res) { return res.text(); })
+        .then(function (tsvText) { buildMatrix(entry.mountId, tsvText); });
     });
   }
 
-  // Check for GOD_ESSAY_SRC (god page — external markdown essay)
+  // Essay markdown: GOD_ESSAY_SRC = 'file.md'
   if (window.GOD_ESSAY_SRC) {
     fetch(window.GOD_ESSAY_SRC)
       .then(function (res) { return res.text(); })
@@ -323,10 +383,5 @@
         if (el) el.innerHTML = mdToHtml(md);
       });
   }
-
-  // Fall back to inline <script type="application/json" data-table> blocks
-  document.querySelectorAll('script[type="application/json"][data-table]').forEach(function (el) {
-    initTable(JSON.parse(el.textContent));
-  });
 
 }());

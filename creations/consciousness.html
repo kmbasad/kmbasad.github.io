@@ -50,59 +50,7 @@
         a property label</strong> (left column) for the cross-tradition synthesis. <strong>Click a thinker's
         name</strong> (top row) for their complete account of consciousness. Escape to close.</p>
 
-    <div class="table-scroll">
-      <table id="main-table">
-        <thead>
-          <tr>
-            <th>
-              <div class="th-inner"><span class="corner-label"><strong>Property ↓ · Thinker →</strong>10 × 10</span>
-              </div>
-            </th>
-            <th id="col-hdr-0" title="Click to see Patanjali's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">Indian / Yoga</span><span class="th-dates">~2nd c.
-                  BCE</span><span class="th-name">Patanjali</span></div>
-            </th>
-            <th id="col-hdr-1" title="Click to see Vasubandhu's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">Indian / Buddhist</span><span class="th-dates">4th–5th c.
-                  CE</span><span class="th-name">Vasubandhu</span></div>
-            </th>
-            <th id="col-hdr-2" title="Click to see Xuanzang's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">Chinese / Buddhist</span><span class="th-dates">602–664
-                  CE</span><span class="th-name">Xuanzang</span></div>
-            </th>
-            <th id="col-hdr-3" title="Click to see Abhinavagupta's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">Kashmiri / Shaiva</span><span class="th-dates">~950–1016
-                  CE</span><span class="th-name">Abhinavagupta</span></div>
-            </th>
-            <th id="col-hdr-4" title="Click to see Ibn Sina's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">Persian / Islamic</span><span class="th-dates">980–1037
-                  CE</span><span class="th-name">Ibn Sīnā</span></div>
-            </th>
-            <th id="col-hdr-5" title="Click to see Leibniz's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">German</span><span class="th-dates">1646–1716
-                  CE</span><span class="th-name">Leibniz</span></div>
-            </th>
-            <th id="col-hdr-6" title="Click to see William James's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">American</span><span class="th-dates">1842–1910
-                  CE</span><span class="th-name">William James</span></div>
-            </th>
-            <th id="col-hdr-7" title="Click to see Husserl's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">German / Czech</span><span class="th-dates">1859–1938
-                  CE</span><span class="th-name">Husserl</span></div>
-            </th>
-            <th id="col-hdr-8" title="Click to see Edelman's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">American</span><span class="th-dates">1929–2014
-                  CE</span><span class="th-name">Edelman</span></div>
-            </th>
-            <th id="col-hdr-9" title="Click to see Chalmers's complete account of consciousness">
-              <div class="th-inner"><span class="th-culture">Australian / American</span><span class="th-dates">1966–
-                  CE</span><span class="th-name">Chalmers</span></div>
-            </th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-    </div>
+    <div id="matrix-mount"></div>
 
     <p class="article-legend">I–II: what consciousness <em>is</em> · III–IV: its <em>structure and self</em> · V–VI:
       <em>time and body</em> · VII–VIII: <em>other minds and intentionality</em> · IX–X: <em>explanation and ultimate
@@ -110,27 +58,14 @@
     </p>
   </div>
 
-  <div class="table-overlay" id="overlay"></div>
-  <div class="table-panel" id="panel">
-    <div class="panel-bar"></div>
-    <button class="panel-close-btn" id="panel-close" title="Close">✕</button>
-    <div class="panel-head">
-      <div class="panel-label">Property</div>
-      <div class="panel-prop" id="p-prop"></div>
-      <div class="panel-name" id="p-name"></div>
-      <div class="panel-meta" id="p-meta"></div>
-    </div>
-    <div class="panel-body">
-      <div class="panel-short" id="p-short"></div>
-      <div class="panel-long" id="p-long"></div>
-    </div>
-    <div class="panel-nav">
-      <button id="btn-prev">← Prev</button>
-      <button id="btn-next">Next →</button>
-    </div>
-  </div>
 
-  <script>window.MATRIX_DATA_SRC = 'consciousness.json';</script>
+
+  <script>
+  window.MATRIX_CONFIG = {
+    src: 'consciousness.tsv',
+    mountId: 'matrix-mount'
+  };
+  </script>
   <script src="../js/matrix.js"></script>
 
 </body>
