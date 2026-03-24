@@ -120,8 +120,12 @@
       th.style.cursor = 'pointer';
       var inner = '<div class="th-inner">';
       inner += '<span class="th-num">' + ci + '</span>';
-      if (colParts[2]) inner += '<span class="th-culture">' + colParts[2] + '</span>';
-      if (colParts[1]) inner += '<span class="th-dates">' + colParts[1] + '</span>';
+      // Only show dates/culture if parts[1] contains digits (e.g. "980–1037 CE", "~2nd c. BCE").
+      // Chan-wook synth titles have no digits ("Fall — across ten films") — suppress them.
+      var hasDates   = colParts[1] && /\d/.test(colParts[1]);
+      var hasCulture = hasDates && colParts[2] && !/\d/.test(colParts[2]);
+      if (hasCulture) inner += '<span class="th-culture">' + colParts[2] + '</span>';
+      if (hasDates)   inner += '<span class="th-dates">'   + colParts[1] + '</span>';
       inner += '<span class="th-name">' + (colParts[0] || '') + '</span>';
       inner += '</div>';
       th.innerHTML = inner;
@@ -214,30 +218,57 @@
       var rP = ri >= 0 ? tsv[ri + 1][0].split('\n\n') : [];
       var cP = ci >= 0 ? tsv[0][ci + 1].split('\n\n') : [];
 
+      // Detect col format: if parts[1] and parts[2] are both short (< 25 chars),
+      // it's consciousness/god style (dates + culture + synth_title + body).
+      // Otherwise it's simple style (synth_title + body).
+      // Detect col format: dates fields always contain digits (e.g. "980–1037 CE", "~2nd c. BCE").
+      // Chan-wook synth titles don't ("Fall — across ten films"). Use digit presence as discriminator.
+      var colFull = cP[1] && /\d/.test(cP[1]);
+
       if (type === 'cell') {
         var cellParts = tsv[ri + 1][ci + 1].split('\n\n');
+        // meta: for full-format cols use dates · culture; for simple use row part[1] (e.g. year)
+        var meta = colFull
+          ? ((cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''))
+          : (rP[1] || '');
         return {
           prop: rP[0] || '', name: cP[0] || '',
-          meta: (cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''),
+          meta: meta,
           short: cellParts[0] || '',
           long: markupToHtml(cellParts.slice(1).join('\n\n'))
         };
       } else if (type === 'row') {
+        // Detect row format: if parts[2] is a short synth title (< 80 chars), use consciousness style.
+        // Otherwise (chan-wook: parts[2] is the synopsis body), start long from parts[2].
+        var rowHasShort = rP[2] && rP[2].length < 80;
         return {
           prop: rP[0] || '',
-          name: 'Synthesis across all ten',
+          name: 'Synthesis across all',
           meta: rP[1] || '',
-          short: rP[2] || '',
-          long: markupToHtml(rP.slice(3).join('\n\n'))
+          short: rowHasShort ? rP[2] : '',
+          long: markupToHtml(rP.slice(rowHasShort ? 3 : 2).join('\n\n'))
         };
       } else {
-        return {
-          prop: cP[0] || '',
-          name: (cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''),
-          meta: '',
-          short: cP[3] || '',
-          long: markupToHtml(cP.slice(4).join('\n\n'))
-        };
+        // col synth
+        if (colFull) {
+          // consciousness/god: parts[1]=dates, parts[2]=culture, parts[3]=synth_title, parts[4+]=body
+          return {
+            prop: cP[0] || '',
+            name: (cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''),
+            meta: '',
+            short: cP[3] || '',
+            long: markupToHtml(cP.slice(4).join('\n\n'))
+          };
+        } else {
+          // simple: parts[0]=name, parts[1]=synth_title, parts[2+]=body
+          return {
+            prop: cP[0] || '',
+            name: cP[1] || cP[0] || '',
+            meta: '',
+            short: '',
+            long: markupToHtml(cP.slice(2).join('\n\n'))
+          };
+        }
       }
     }
 
