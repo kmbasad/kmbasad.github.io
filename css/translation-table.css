@@ -17,7 +17,9 @@
 
 /* ── Wrapper ──────────────────────────────────────────── */
 .tt-wrap {
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border, rgba(0, 0, 0, 0.06));
@@ -28,20 +30,14 @@
 
 /* ── Table ────────────────────────────────────────────── */
 .tt-table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
   line-height: 1.7;
 }
 
 /* ── Column widths — Inferno (bn + it + en + lnum) ───── */
-.tt-table .col-bangla  { width: 34%; }
-.tt-table .col-italian { width: 26%; }
-.tt-table .col-english { width: 32%; }
-.tt-table .col-lnum    { width: 1px; white-space: nowrap; }
-
-/* ── Column widths — Prathama (bn + fa + tl + lnum) ──── */
-.tt-table .col-persian { width: 24%; }
-.tt-table .col-tl      { width: 36%; }
+/* Column widths removed to allow natural fit-to-content logic */
+.tt-table .col-lnum { width: 1px; white-space: nowrap; }
 
 /* ── Thead ────────────────────────────────────────────── */
 .tt-table thead th {

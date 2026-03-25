@@ -143,11 +143,38 @@
   }
 
   /* ══════════════════════════════════════════════════════════════════
+   * HEAD builder  — build <thead> faithfully from TSV line 0
+   * ══════════════════════════════════════════════════════════════════ */
+  function buildHead(line, type) {
+    if (!line) return;
+    var thead = document.querySelector('.tt-table thead');
+    if (!thead) { console.warn('tsv-loader: .tt-table thead not found'); return; }
+
+    var cols = line.split('\t');
+    // For headers, use 'col-lnum' to match translation-table.css specific styles
+    var classes = type === 'ghazal' ? ['bn', 'col-lnum', 'fa', 'tl'] : ['bn', 'col-lnum', 'it', 'en'];
+    
+    var tr = document.createElement('tr');
+    for (var i = 0; i < cols.length; i++) {
+        var th  = document.createElement('th');
+        th.className = classes[i] || '';
+        th.textContent = (cols[i] || '').trim();
+        tr.appendChild(th);
+    }
+    
+    thead.innerHTML = '';
+    thead.appendChild(tr);
+    console.log('tsv-loader: built header faithfully from TSV:', line);
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
    * GHAZAL builder  — single table, one <tr> per couplet
    * ══════════════════════════════════════════════════════════════════ */
   function buildGhazal(lines, cfg) {
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) { console.warn('tsv-loader: .tt-table tbody not found'); return; }
+
+    if (lines.length > 0) buildHead(lines[0], 'ghazal');
 
     function toBn(n) {
       return String(n).replace(/\d/g, function (d) {
@@ -217,6 +244,8 @@
   function buildTercet(lines) {
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) { console.warn('tsv-loader: .tt-table tbody not found'); return; }
+
+    if (lines.length > 0) buildHead(lines[0], 'tercet');
 
     function toBn(n) {
       return String(n).replace(/\d/g, function (d) {
