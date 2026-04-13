@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiarostami, Abbas &#8212; KMBA</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/matrix.css">
+  <script defer src="/js/nav.js"></script>
+</head>
+
+<body>
+<div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <a href="/visions/">Visions</a>
+        <span class="sep">/</span>
+        <span class="breadcrumb-current">Kiarostami, Abbas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <p class="section-intro">Ten films across thirty-five years &#8212; a cross-film synthesis of Abbas Kiarostami's 
+      cinematic universe through ten recurring concepts.</p>
+    <p><strong>&#8599; Click any cell</strong> to read a film&#8217;s treatment of one concept. <strong>Click a concept
+        label</strong> (top row) for the cross-film synthesis. <strong>Click a film title</strong> (left column) for its
+      synopsis and reading. Escape to close.</p>
+
+    <div id="matrix-mount"></div>
+
+    <p class="article-legend">The Report (1977) &#183; Where Is the Friend's House? (1987) &#183; Close-Up (1990) &#183; And Life Goes On (1992) &#183; Through the Olive Trees (1994) &#183; Taste of Cherry (1997) &#183; The Wind Will Carry Us (1999) &#183; Ten (2002) &#183; Certified Copy (2010) &#183; Like Someone in Love (2012)</p>
+  </div>
+
+  <script>
+  window.MATRIX_CONFIG = {
+    src: 'kiarostami.tsv',
+    mountId: 'matrix-mount'
+  };
+  </script>
+  <script src="/js/matrix.js"></script>
+
+</body>
+
+</html>
