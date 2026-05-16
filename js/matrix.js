@@ -107,21 +107,17 @@
       pBody:     uid('body')
     };
 
-    // ── Fullscreen container + toolbar ──────────────────────────────────
+    // ── Container ────────────────────────────────────────────────────────
     var container = document.createElement('div');
     container.className = 'matrix-container';
     container.id = ids.container;
 
-    var toolbar = document.createElement('div');
-    toolbar.className = 'matrix-toolbar';
-
+    // fsBtn lives inside the corner cell — built here, injected below
     var fsBtn = document.createElement('button');
     fsBtn.className = 'matrix-fs-btn';
     fsBtn.id = ids.fsBtn;
     fsBtn.title = 'Full screen (Esc to exit)';
-    fsBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg><span>Full screen</span>';
-    toolbar.appendChild(fsBtn);
-    container.appendChild(toolbar);
+    fsBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg><span>Full screen</span>';
 
     // ── Build table ──────────────────────────────────────────────────────
     var scroll = document.createElement('div');
@@ -134,10 +130,16 @@
     var thead = document.createElement('thead');
     var htr = document.createElement('tr');
 
-    // Corner th
+    // Corner th — contains the label + the fullscreen button
     var cornerTh = document.createElement('th');
-    cornerTh.innerHTML = '<div class="th-inner"><span class="corner-label"><strong>' +
-      cornerLabel + '</strong>' + cornerSize + '</span></div>';
+    var cornerInner = document.createElement('div');
+    cornerInner.className = 'th-inner';
+    var cornerSpan = document.createElement('span');
+    cornerSpan.className = 'corner-label';
+    cornerSpan.innerHTML = '<strong>' + cornerLabel + '</strong>' + cornerSize;
+    cornerInner.appendChild(cornerSpan);
+    cornerInner.appendChild(fsBtn);
+    cornerTh.appendChild(cornerInner);
     htr.appendChild(cornerTh);
 
     // Column headers
@@ -447,6 +449,8 @@
     function enterPseudoFS() {
       if (window.innerWidth < 768) return;
       container.classList.add('is-fullscreen');
+      // Prevent page scroll while fullscreen is active
+      document.body.style.overflow = 'hidden';
       updateFsBtn(true);
       // Double rAF: first frame applies CSS, second reads settled dimensions
       requestAnimationFrame(function () {
@@ -458,6 +462,7 @@
       container.classList.remove('is-fullscreen');
       container.style.removeProperty('--fs-cell-w');
       container.style.removeProperty('--fs-cell-h');
+      document.body.style.overflow = '';
       updateFsBtn(false);
     }
 
