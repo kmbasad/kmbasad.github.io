@@ -9,6 +9,71 @@
   padding: 10px 0 28px
 }
 
+/* ── Matrix container + fullscreen ──────────────────────────────────────── */
+.matrix-container {
+  position: relative;
+}
+
+.matrix-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.matrix-fs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-3);
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+
+.matrix-fs-btn:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent-mid);
+}
+
+/* Native fullscreen state — both the pseudo-class and the JS class for
+   browsers that don't fire fullscreenchange reliably */
+.matrix-container:fullscreen,
+.matrix-container:-webkit-full-screen,
+.matrix-container.is-fullscreen {
+  background: var(--bg);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Give the table room to fill the screen */
+.matrix-container:fullscreen .table-scroll,
+.matrix-container:-webkit-full-screen .table-scroll,
+.matrix-container.is-fullscreen .table-scroll {
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 0;
+  max-height: calc(100vh - 80px);
+}
+
+/* Keep overlay and panel correctly anchored inside fullscreen container */
+.matrix-container:fullscreen .table-overlay,
+.matrix-container:-webkit-full-screen .table-overlay,
+.matrix-container.is-fullscreen .table-overlay,
+.matrix-container:fullscreen .table-panel,
+.matrix-container:-webkit-full-screen .table-panel,
+.matrix-container.is-fullscreen .table-panel {
+  position: fixed;
+}
+
 /* ── TABLE ───────────────────────────────────────────────────────────────── */
 .table-scroll {
   display: block;

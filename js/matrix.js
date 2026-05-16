@@ -89,21 +89,39 @@
 
     // Generate unique IDs
     var ids = {
-      table:   uid('table'),
-      panel:   uid('panel'),
-      overlay: uid('overlay'),
-      close:   uid('close'),
-      prev:    uid('prev'),
-      next:    uid('next'),
-      pLabel:  uid('label'),
-      pProp:   uid('prop'),
-      pName:   uid('name'),
-      pMeta:   uid('meta'),
-      pShort:  uid('short'),
-      pLong:   uid('long'),
-      pHead:   uid('head'),
-      pBody:   uid('body')
+      table:     uid('table'),
+      container: uid('container'),
+      fsBtn:     uid('fsbtn'),
+      panel:     uid('panel'),
+      overlay:   uid('overlay'),
+      close:     uid('close'),
+      prev:      uid('prev'),
+      next:      uid('next'),
+      pLabel:    uid('label'),
+      pProp:     uid('prop'),
+      pName:     uid('name'),
+      pMeta:     uid('meta'),
+      pShort:    uid('short'),
+      pLong:     uid('long'),
+      pHead:     uid('head'),
+      pBody:     uid('body')
     };
+
+    // ── Fullscreen container + toolbar ──────────────────────────────────
+    var container = document.createElement('div');
+    container.className = 'matrix-container';
+    container.id = ids.container;
+
+    var toolbar = document.createElement('div');
+    toolbar.className = 'matrix-toolbar';
+
+    var fsBtn = document.createElement('button');
+    fsBtn.className = 'matrix-fs-btn';
+    fsBtn.id = ids.fsBtn;
+    fsBtn.title = 'Full screen (Esc to exit)';
+    fsBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg><span>Full screen</span>';
+    toolbar.appendChild(fsBtn);
+    container.appendChild(toolbar);
 
     // ── Build table ──────────────────────────────────────────────────────
     var scroll = document.createElement('div');
@@ -182,9 +200,9 @@
     }
     table.appendChild(tbody);
     scroll.appendChild(table);
-    mount.appendChild(scroll);
+    container.appendChild(scroll);
 
-    // ── Build overlay + panel ────────────────────────────────────────────
+    // ── Build overlay + panel (inside container so fixed coords work in fullscreen) ──
     var overlay = document.createElement('div');
     overlay.className = 'table-overlay';
     overlay.id = ids.overlay;
@@ -210,8 +228,9 @@
         '<button id="' + ids.next + '">Next &#8594;</button>' +
       '</div>';
 
-    mount.appendChild(overlay);
-    mount.appendChild(panel);
+    container.appendChild(overlay);
+    container.appendChild(panel);
+    mount.appendChild(container);
 
     // ── Wire interactions ────────────────────────────────────────────────
     var btnPrev = document.getElementById(ids.prev);
@@ -385,8 +404,10 @@
     });
 
     document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) {
+        closePanel(); return;
+      }
       if (!panel.classList.contains('open')) return;
-      if (e.key === 'Escape') { closePanel(); return; }
       if (synthMode && ap === -1) {
         if (e.key === 'ArrowLeft'  && ah > 0)         { e.preventDefault(); openColSynth(ah - 1); }
         if (e.key === 'ArrowRight' && ah < nCols - 1) { e.preventDefault(); openColSynth(ah + 1); }
@@ -401,6 +422,44 @@
       if (e.key === 'ArrowRight' && ah < nCols - 1)   { e.preventDefault(); openCell(ap, ah + 1); }
       if (e.key === 'ArrowUp'    && ap > 0)           { e.preventDefault(); openCell(ap - 1, ah); }
       if (e.key === 'ArrowDown'  && ap < nRows - 1)   { e.preventDefault(); openCell(ap + 1, ah); }
+    });
+
+    // ── Fullscreen ───────────────────────────────────────────────────────
+    function isFullscreen() {
+      return !!(document.fullscreenElement || document.webkitFullscreenElement);
+    }
+
+    function enterFullscreen() {
+      var el = container;
+      if (el.requestFullscreen)       el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    }
+
+    function exitFullscreen() {
+      if (document.exitFullscreen)       document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+
+    function updateFsBtn(active) {
+      if (active) {
+        fsBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 1v4H1M9 1v4h4M1 9h4v4M13 9H9v4"/></svg><span>Exit full screen</span>';
+        fsBtn.title = 'Exit full screen (Esc)';
+      } else {
+        fsBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg><span>Full screen</span>';
+        fsBtn.title = 'Full screen (Esc to exit)';
+      }
+    }
+
+    fsBtn.addEventListener('click', function () {
+      if (isFullscreen()) exitFullscreen(); else enterFullscreen();
+    });
+
+    ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (evt) {
+      document.addEventListener(evt, function () {
+        var active = isFullscreen();
+        updateFsBtn(active);
+        container.classList.toggle('is-fullscreen', active);
+      });
     });
   }
 
