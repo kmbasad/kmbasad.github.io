@@ -1373,3 +1373,90 @@ a:hover {
 h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .section-intro, .piece-title, .trans-header h1 {
   text-align: center;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEME SYSTEM — DARK MODE + INTERACTIVE VARS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Matrix / cell interactive color vars (defined here so dark mode can override) */
+:root {
+  --cell-active-bg: #dbeafe;
+  --cell-active-text: #1e40af;
+  --cell-active-accent: #2563eb;
+  --cell-hover-bg: #eff6ff;
+  --cell-cross-bg: #f0f7ff;
+}
+
+/* Dark mode — override every surface/text/accent variable */
+[data-theme="dark"] {
+  --accent: #58a6ff;
+  --accent-light: #0d1f36;
+  --accent-mid: #1f4e8c;
+  --text: #e6edf3;
+  --text-2: #c9d1d9;
+  --text-3: #8b949e;
+  --text-4: #6e7681;
+  --surface: #0d1117;
+  --surface-2: #161b22;
+  --surface-3: #21262d;
+  --border: #30363d;
+  --border-2: #484f58;
+  --bg: #090c10;
+  --sh-sm: 0 1px 3px rgba(0, 0, 0, .5), 0 1px 2px rgba(0, 0, 0, .35);
+  --sh: 0 4px 16px rgba(0, 0, 0, .6), 0 1px 4px rgba(0, 0, 0, .4);
+  --cell-active-bg: #0d2340;
+  --cell-active-text: #79b8ff;
+  --cell-active-accent: #58a6ff;
+  --cell-hover-bg: #0d1a2e;
+  --cell-cross-bg: #101c2e;
+}
+
+/* Smooth theme transition on key elements */
+html,
+body,
+.nav,
+.page-header,
+.table-scroll,
+.table-panel,
+.home-hero,
+.section-card,
+.listing-box,
+.essay,
+.poem {
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease,
+              box-shadow .3s ease;
+}
+
+/* ── Nav right side (links + theme toggle) ─────────────────────────────────── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Theme toggle button */
+.nav-theme-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, .15);
+  color: var(--nav-text);
+  border-radius: var(--r-sm);
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, color .15s, border-color .15s;
+  flex-shrink: 0;
+}
+.nav-theme-btn:hover {
+  background: rgba(255, 255, 255, .1);
+  color: var(--nav-hover);
+  border-color: rgba(255, 255, 255, .3);
+}
+
+/* Sun icon in light mode, moon icon in dark mode (CSS content) */
+[data-theme="light"] .nav-theme-btn::before { content: '☀'; }
+[data-theme="dark"]  .nav-theme-btn::before { content: '☾'; }

@@ -66,6 +66,13 @@
   var _idSeq = 0;
   function uid(base) { return 'mx-' + base + '-' + (_idSeq++); }
 
+  // ── Animate refresh: remove class, force reflow, re-add ───────────────
+  function animateRefresh(el) {
+    el.classList.remove('panel-refresh');
+    void el.offsetWidth;
+    el.classList.add('panel-refresh');
+  }
+
   // ── Build full matrix from TSV and mount into a container ─────────────
   function buildMatrix(mountId, tsvText) {
     var mount = document.getElementById(mountId);
@@ -93,7 +100,9 @@
       pName:   uid('name'),
       pMeta:   uid('meta'),
       pShort:  uid('short'),
-      pLong:   uid('long')
+      pLong:   uid('long'),
+      pHead:   uid('head'),
+      pBody:   uid('body')
     };
 
     // ── Build table ──────────────────────────────────────────────────────
@@ -120,8 +129,6 @@
       th.style.cursor = 'pointer';
       var inner = '<div class="th-inner">';
       inner += '<span class="th-num">' + ci + '</span>';
-      // Only show dates/culture if parts[1] contains digits (e.g. "980–1037 CE", "~2nd c. BCE").
-      // Chan-wook synth titles have no digits ("Fall — across ten films") — suppress them.
       var hasDates   = colParts[1] && /\d/.test(colParts[1]);
       var hasCulture = hasDates && colParts[2] && !/\d/.test(colParts[2]);
       if (hasCulture) inner += '<span class="th-culture">' + colParts[2] + '</span>';
@@ -155,6 +162,10 @@
         var btn = document.createElement('button');
         btn.className = 'cell-btn';
 
+        // Staggered entrance animation delay
+        var delayMs = ri * 28 + ci2 * 7;
+        btn.style.animationDelay = delayMs + 'ms';
+
         var numSpan = document.createElement('span');
         numSpan.className = 'cell-num';
         numSpan.textContent = ri + '' + ci2;
@@ -184,13 +195,13 @@
     panel.innerHTML =
       '<div class="panel-bar"></div>' +
       '<button class="panel-close-btn" id="' + ids.close + '" title="Close">&#x2715;</button>' +
-      '<div class="panel-head">' +
+      '<div class="panel-head" id="' + ids.pHead + '">' +
         '<div class="panel-label" id="' + ids.pLabel + '"></div>' +
         '<div class="panel-prop" id="' + ids.pProp + '"></div>' +
         '<div class="panel-name" id="' + ids.pName + '"></div>' +
         '<div class="panel-meta" id="' + ids.pMeta + '"></div>' +
       '</div>' +
-      '<div class="panel-body">' +
+      '<div class="panel-body" id="' + ids.pBody + '">' +
         '<div class="panel-short" id="' + ids.pShort + '"></div>' +
         '<div class="panel-long" id="' + ids.pLong + '"></div>' +
       '</div>' +
@@ -205,7 +216,13 @@
     // ── Wire interactions ────────────────────────────────────────────────
     var btnPrev = document.getElementById(ids.prev);
     var btnNext = document.getElementById(ids.next);
+    var pHead   = document.getElementById(ids.pHead);
+    var pBody   = document.getElementById(ids.pBody);
     var ap = -1, ah = -1, synthMode = false;
+
+    // Cached header node lists for cross-highlight
+    var colHeaders = table.querySelectorAll('thead th:not(:first-child)');
+    var rowHeaders = table.querySelectorAll('tbody th');
 
     function set(id, val, html) {
       var el = document.getElementById(id);
@@ -218,18 +235,12 @@
       var rP = ri >= 0 ? tsv[ri + 1][0].split('\n\n') : [];
       var cP = ci >= 0 ? tsv[0][ci + 1].split('\n\n') : [];
 
-      // Detect col format: if parts[1] and parts[2] are both short (< 25 chars),
-      // it's consciousness/god style (dates + culture + synth_title + body).
-      // Otherwise it's simple style (synth_title + body).
-      // Detect col format: dates fields always contain digits (e.g. "980–1037 CE", "~2nd c. BCE").
-      // Chan-wook synth titles don't ("Fall — across ten films"). Use digit presence as discriminator.
       var colFull = cP[1] && /\d/.test(cP[1]);
 
       if (type === 'cell') {
         var cellParts = tsv[ri + 1][ci + 1].split('\n\n');
-        // meta: for full-format cols use dates · culture; for simple use row part[1] (e.g. year)
         var meta = colFull
-          ? ((cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''))
+          ? ((cP[1] || '') + (cP[2] ? ' · ' + cP[2] : ''))
           : (rP[1] || '');
         return {
           prop: rP[0] || '', name: cP[0] || '',
@@ -238,8 +249,6 @@
           long: markupToHtml(cellParts.slice(1).join('\n\n'))
         };
       } else if (type === 'row') {
-        // Detect row format: if parts[2] is a short synth title (< 80 chars), use consciousness style.
-        // Otherwise (chan-wook: parts[2] is the synopsis body), start long from parts[2].
         var rowHasShort = rP[2] && rP[2].length < 80;
         return {
           prop: rP[0] || '',
@@ -249,18 +258,15 @@
           long: markupToHtml(rP.slice(rowHasShort ? 3 : 2).join('\n\n'))
         };
       } else {
-        // col synth
         if (colFull) {
-          // consciousness/god: parts[1]=dates, parts[2]=culture, parts[3]=synth_title, parts[4+]=body
           return {
             prop: cP[0] || '',
-            name: (cP[1] || '') + (cP[2] ? ' \u00b7 ' + cP[2] : ''),
+            name: (cP[1] || '') + (cP[2] ? ' · ' + cP[2] : ''),
             meta: '',
             short: cP[3] || '',
             long: markupToHtml(cP.slice(4).join('\n\n'))
           };
         } else {
-          // simple: parts[0]=name, parts[1]=synth_title, parts[2+]=body
           return {
             prop: cP[0] || '',
             name: cP[1] || cP[0] || '',
@@ -273,6 +279,10 @@
     }
 
     function setPanel(c) {
+      // Trigger fade-in animation on head and body
+      animateRefresh(pHead);
+      animateRefresh(pBody);
+
       set(ids.pLabel, c.label || '');
       set(ids.pProp, c.prop);
       set(ids.pName, c.name);
@@ -287,14 +297,18 @@
       table.querySelectorAll('thead th.col-active').forEach(function (t) { t.classList.remove('col-active'); });
     }
 
+    function clearCross() {
+      table.querySelectorAll('tbody th.row-cross').forEach(function (t) { t.classList.remove('row-cross'); });
+      table.querySelectorAll('thead th.col-cross').forEach(function (t) { t.classList.remove('col-cross'); });
+    }
+
     function openSlide() {
       panel.classList.add('open'); overlay.classList.add('visible'); panel.scrollTop = 0;
     }
 
     function openColSynth(ci) {
       clearActive(); synthMode = true; ap = -1; ah = ci;
-      var headers = table.querySelectorAll('thead th:not(:first-child)');
-      if (ci < headers.length) headers[ci].classList.add('col-active');
+      if (ci < colHeaders.length) colHeaders[ci].classList.add('col-active');
       setPanel(content('col', -1, ci));
       btnPrev.disabled = ci <= 0;
       btnNext.disabled = ci >= nCols - 1;
@@ -303,7 +317,7 @@
 
     function openRowSynth(ri) {
       clearActive(); synthMode = true; ap = ri; ah = -1;
-      table.querySelectorAll('tbody th')[ri].classList.add('row-active');
+      rowHeaders[ri].classList.add('row-active');
       setPanel(content('row', ri, -1));
       btnPrev.disabled = ri <= 0;
       btnNext.disabled = ri >= nRows - 1;
@@ -325,12 +339,28 @@
       panel.classList.remove('open'); overlay.classList.remove('visible');
     }
 
-    // Wire click handlers
-    table.querySelectorAll('thead th:not(:first-child)').forEach(function (hdr, ci) {
+    // ── Cross-highlight on cell hover ────────────────────────────────────
+    table.querySelectorAll('.cell-btn').forEach(function (btn) {
+      var ri = parseInt(btn.dataset.ri);
+      var ci = parseInt(btn.dataset.ci);
+
+      btn.addEventListener('mouseenter', function () {
+        clearCross();
+        if (ri < rowHeaders.length) rowHeaders[ri].classList.add('row-cross');
+        if (ci < colHeaders.length) colHeaders[ci].classList.add('col-cross');
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        clearCross();
+      });
+    });
+
+    // ── Click handlers ───────────────────────────────────────────────────
+    colHeaders.forEach(function (hdr, ci) {
       hdr.addEventListener('click', (function (ci) { return function () { openColSynth(ci); }; })(ci));
     });
 
-    table.querySelectorAll('tbody th').forEach(function (th, ri) {
+    rowHeaders.forEach(function (th, ri) {
       th.addEventListener('click', (function (ri) { return function () { openRowSynth(ri); }; })(ri));
     });
 
