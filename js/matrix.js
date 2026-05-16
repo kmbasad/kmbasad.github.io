@@ -429,14 +429,40 @@
       return !!(document.fullscreenElement || document.webkitFullscreenElement);
     }
 
+    function resizeForFullscreen() {
+      // Only rescale on laptop / large-tablet screens
+      if (window.innerWidth < 768) return;
+
+      var padH = 40;  // 2 × 20px horizontal padding inside container
+      var padV = 32;  // top + bottom padding
+      var toolbarH = toolbar.offsetHeight || 30;
+      var theadH   = (table.querySelector('thead') || {}).offsetHeight || 82;
+      var rowHeaderW = 174; // matches CSS tbody th / thead th:first-child width
+
+      var availW = window.innerWidth  - padH;
+      var availH = window.innerHeight - toolbarH - padV;
+
+      var colW = Math.max(100, Math.floor((availW - rowHeaderW) / nCols));
+      var rowH = Math.max(52,  Math.floor((availH - theadH)     / nRows));
+
+      container.style.setProperty('--fs-cell-w', colW + 'px');
+      container.style.setProperty('--fs-cell-h', rowH + 'px');
+    }
+
+    function resetFsSizes() {
+      container.style.removeProperty('--fs-cell-w');
+      container.style.removeProperty('--fs-cell-h');
+    }
+
     function enterFullscreen() {
+      if (window.innerWidth < 768) return; // no fullscreen on phones
       var el = container;
-      if (el.requestFullscreen)       el.requestFullscreen();
+      if (el.requestFullscreen)            el.requestFullscreen();
       else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
     }
 
     function exitFullscreen() {
-      if (document.exitFullscreen)       document.exitFullscreen();
+      if (document.exitFullscreen)            document.exitFullscreen();
       else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
     }
 
@@ -459,7 +485,21 @@
         var active = isFullscreen();
         updateFsBtn(active);
         container.classList.toggle('is-fullscreen', active);
+        if (active) {
+          // Double rAF ensures the browser has fully applied the fullscreen
+          // layout before we read dimensions
+          requestAnimationFrame(function () {
+            requestAnimationFrame(resizeForFullscreen);
+          });
+        } else {
+          resetFsSizes();
+        }
       });
+    });
+
+    // Re-calculate if the window is resized while in fullscreen
+    window.addEventListener('resize', function () {
+      if (isFullscreen()) resizeForFullscreen();
     });
   }
 

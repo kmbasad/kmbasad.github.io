@@ -42,8 +42,12 @@
   border-color: var(--accent-mid);
 }
 
-/* Native fullscreen state — both the pseudo-class and the JS class for
-   browsers that don't fire fullscreenchange reliably */
+/* Hide fullscreen button on phones */
+@media (max-width: 767px) {
+  .matrix-toolbar { display: none; }
+}
+
+/* ── Fullscreen container ──────────────────────────────────────────────── */
 .matrix-container:fullscreen,
 .matrix-container:-webkit-full-screen,
 .matrix-container.is-fullscreen {
@@ -54,17 +58,44 @@
   overflow: hidden;
 }
 
-/* Give the table room to fill the screen */
+/* Table scroll fills all remaining vertical space, no artificial cap */
 .matrix-container:fullscreen .table-scroll,
 .matrix-container:-webkit-full-screen .table-scroll,
 .matrix-container.is-fullscreen .table-scroll {
   flex: 1;
   overflow: auto;
   margin-bottom: 0;
-  max-height: calc(100vh - 80px);
+  max-height: none;
 }
 
-/* Keep overlay and panel correctly anchored inside fullscreen container */
+/* Switch to fixed layout so JS-set widths are respected exactly */
+.matrix-container:fullscreen table,
+.matrix-container:-webkit-full-screen table,
+.matrix-container.is-fullscreen table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Cell dimensions driven by JS custom properties --fs-cell-w / --fs-cell-h */
+.matrix-container:fullscreen td,
+.matrix-container:-webkit-full-screen td,
+.matrix-container.is-fullscreen td,
+.matrix-container:fullscreen thead th:not(:first-child),
+.matrix-container:-webkit-full-screen thead th:not(:first-child),
+.matrix-container.is-fullscreen thead th:not(:first-child) {
+  width: var(--fs-cell-w, 148px);
+  min-width: unset;
+}
+
+.matrix-container:fullscreen .cell-btn,
+.matrix-container:-webkit-full-screen .cell-btn,
+.matrix-container.is-fullscreen .cell-btn {
+  min-height: var(--fs-cell-h, 72px);
+  height: var(--fs-cell-h, 72px);
+  padding: 6px 8px 14px;
+}
+
+/* Keep overlay and panel correctly anchored inside the fullscreen element */
 .matrix-container:fullscreen .table-overlay,
 .matrix-container:-webkit-full-screen .table-overlay,
 .matrix-container.is-fullscreen .table-overlay,
