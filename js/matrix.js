@@ -403,9 +403,12 @@
       if (!synthMode && ah < nCols - 1)             { openCell(ap, ah + 1); }
     });
 
+    // ── Keyboard: ESC closes panel first, then exits pseudo-fullscreen ───
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && panel.classList.contains('open')) {
-        closePanel(); return;
+      if (e.key === 'Escape') {
+        if (panel.classList.contains('open')) { closePanel(); return; }
+        if (container.classList.contains('is-fullscreen')) { exitPseudoFS(); return; }
+        return;
       }
       if (!panel.classList.contains('open')) return;
       if (synthMode && ap === -1) {
@@ -424,46 +427,38 @@
       if (e.key === 'ArrowDown'  && ap < nRows - 1)   { e.preventDefault(); openCell(ap + 1, ah); }
     });
 
-    // ── Fullscreen ───────────────────────────────────────────────────────
-    function isFullscreen() {
-      return !!(document.fullscreenElement || document.webkitFullscreenElement);
-    }
-
+    // ── Pseudo-fullscreen (position:fixed, no native API) ─────────────────
     function resizeForFullscreen() {
-      // Only rescale on laptop / large-tablet screens
       if (window.innerWidth < 768) return;
+      // Read the scroll container's actual rendered dimensions — this is the
+      // ground truth after CSS has laid out the flex column.
+      var scrollW  = scroll.clientWidth;
+      var scrollH  = scroll.clientHeight;
+      var theadH   = table.querySelector('thead').offsetHeight || 82;
+      var rowHeaderW = 174;
 
-      var padH = 40;  // 2 × 20px horizontal padding inside container
-      var padV = 32;  // top + bottom padding
-      var toolbarH = toolbar.offsetHeight || 30;
-      var theadH   = (table.querySelector('thead') || {}).offsetHeight || 82;
-      var rowHeaderW = 174; // matches CSS tbody th / thead th:first-child width
-
-      var availW = window.innerWidth  - padH;
-      var availH = window.innerHeight - toolbarH - padV;
-
-      var colW = Math.max(100, Math.floor((availW - rowHeaderW) / nCols));
-      var rowH = Math.max(52,  Math.floor((availH - theadH)     / nRows));
+      var colW = Math.max(100, Math.floor((scrollW - rowHeaderW) / nCols));
+      var rowH = Math.max(52,  Math.floor((scrollH - theadH)     / nRows));
 
       container.style.setProperty('--fs-cell-w', colW + 'px');
       container.style.setProperty('--fs-cell-h', rowH + 'px');
     }
 
-    function resetFsSizes() {
+    function enterPseudoFS() {
+      if (window.innerWidth < 768) return;
+      container.classList.add('is-fullscreen');
+      updateFsBtn(true);
+      // Double rAF: first frame applies CSS, second reads settled dimensions
+      requestAnimationFrame(function () {
+        requestAnimationFrame(resizeForFullscreen);
+      });
+    }
+
+    function exitPseudoFS() {
+      container.classList.remove('is-fullscreen');
       container.style.removeProperty('--fs-cell-w');
       container.style.removeProperty('--fs-cell-h');
-    }
-
-    function enterFullscreen() {
-      if (window.innerWidth < 768) return; // no fullscreen on phones
-      var el = container;
-      if (el.requestFullscreen)            el.requestFullscreen();
-      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-    }
-
-    function exitFullscreen() {
-      if (document.exitFullscreen)            document.exitFullscreen();
-      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      updateFsBtn(false);
     }
 
     function updateFsBtn(active) {
@@ -477,29 +472,14 @@
     }
 
     fsBtn.addEventListener('click', function () {
-      if (isFullscreen()) exitFullscreen(); else enterFullscreen();
+      if (container.classList.contains('is-fullscreen')) exitPseudoFS();
+      else enterPseudoFS();
     });
 
-    ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (evt) {
-      document.addEventListener(evt, function () {
-        var active = isFullscreen();
-        updateFsBtn(active);
-        container.classList.toggle('is-fullscreen', active);
-        if (active) {
-          // Double rAF ensures the browser has fully applied the fullscreen
-          // layout before we read dimensions
-          requestAnimationFrame(function () {
-            requestAnimationFrame(resizeForFullscreen);
-          });
-        } else {
-          resetFsSizes();
-        }
-      });
-    });
-
-    // Re-calculate if the window is resized while in fullscreen
     window.addEventListener('resize', function () {
-      if (isFullscreen()) resizeForFullscreen();
+      if (container.classList.contains('is-fullscreen')) {
+        requestAnimationFrame(resizeForFullscreen);
+      }
     });
   }
 

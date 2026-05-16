@@ -47,10 +47,12 @@
   .matrix-toolbar { display: none; }
 }
 
-/* ── Fullscreen container ──────────────────────────────────────────────── */
-.matrix-container:fullscreen,
-.matrix-container:-webkit-full-screen,
+/* ── Pseudo-fullscreen (.is-fullscreen class toggled by JS) ──────────────
+   Uses position:fixed so we own the ESC key — no browser native API.     */
 .matrix-container.is-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
   background: var(--bg);
   padding: 16px 20px;
   display: flex;
@@ -58,51 +60,41 @@
   overflow: hidden;
 }
 
-/* Table scroll fills all remaining vertical space, no artificial cap */
-.matrix-container:fullscreen .table-scroll,
-.matrix-container:-webkit-full-screen .table-scroll,
+/* Table scroll fills remaining vertical space exactly */
 .matrix-container.is-fullscreen .table-scroll {
   flex: 1;
-  overflow: auto;
+  overflow: hidden;   /* no scrollbars — cells are sized to fit precisely */
   margin-bottom: 0;
   max-height: none;
+  border: none;       /* remove 2px box so clientWidth/Height are exact */
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Switch to fixed layout so JS-set widths are respected exactly */
-.matrix-container:fullscreen table,
-.matrix-container:-webkit-full-screen table,
+/* Fixed layout so --fs-cell-w is authoritative */
 .matrix-container.is-fullscreen table {
   table-layout: fixed;
   width: 100%;
 }
 
-/* Cell dimensions driven by JS custom properties --fs-cell-w / --fs-cell-h */
-.matrix-container:fullscreen td,
-.matrix-container:-webkit-full-screen td,
+/* Column + row dimensions driven by JS-set custom properties */
 .matrix-container.is-fullscreen td,
-.matrix-container:fullscreen thead th:not(:first-child),
-.matrix-container:-webkit-full-screen thead th:not(:first-child),
 .matrix-container.is-fullscreen thead th:not(:first-child) {
   width: var(--fs-cell-w, 148px);
   min-width: unset;
 }
 
-.matrix-container:fullscreen .cell-btn,
-.matrix-container:-webkit-full-screen .cell-btn,
 .matrix-container.is-fullscreen .cell-btn {
   min-height: var(--fs-cell-h, 72px);
   height: var(--fs-cell-h, 72px);
   padding: 6px 8px 14px;
 }
 
-/* Keep overlay and panel correctly anchored inside the fullscreen element */
-.matrix-container:fullscreen .table-overlay,
-.matrix-container:-webkit-full-screen .table-overlay,
+/* Overlay and panel are absolute inside the fixed container
+   (same visual result as fixed-within-viewport, but z-index is local) */
 .matrix-container.is-fullscreen .table-overlay,
-.matrix-container:fullscreen .table-panel,
-.matrix-container:-webkit-full-screen .table-panel,
 .matrix-container.is-fullscreen .table-panel {
-  position: fixed;
+  position: absolute;
 }
 
 /* ── TABLE ───────────────────────────────────────────────────────────────── */
