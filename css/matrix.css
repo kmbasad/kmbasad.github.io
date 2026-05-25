@@ -96,7 +96,8 @@
 /* ── TABLE ───────────────────────────────────────────────────────────────── */
 .table-scroll {
   display: block;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border);
