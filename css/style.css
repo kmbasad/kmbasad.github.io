@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
 *,
 *::before,
@@ -474,13 +474,20 @@ a:hover {
 }
 
 /* ── Shared card chrome ─────────────────────────────────────────────────── */
-.essay,
 .poem {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r);
   box-shadow: var(--sh-sm);
   overflow: hidden;
+}
+
+.essay {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
 }
 
 /* ── Shared header anatomy ─────────────────────────────────────────────── */
@@ -505,24 +512,54 @@ a:hover {
 
 /* ── Essay card ─────────────────────────────────────────────────────────── */
 .essay {
-  padding: 36px 40px 40px;
+  padding: 0;
 }
 
 .essay-body {
-  margin-top: 24px;
-  border-top: 1px solid var(--border);
-  padding-top: 24px;
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
 }
 
 .essay-body p {
-  font-size: 16px;
-  line-height: 1.82;
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.9;
   color: var(--text-2);
-  margin-bottom: 1.2em;
+  margin-bottom: 1.8em;
+  letter-spacing: 0.008em;
 }
 
 .essay-body p:last-child {
   margin-bottom: 0;
+}
+
+.essay-body > p:first-child {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.84;
+}
+
+.essay-body > p:first-child::first-letter {
+  float: left;
+  font-size: 4.1em;
+  line-height: 0.78;
+  font-weight: 400;
+  padding-right: 0.07em;
+  padding-top: 0.05em;
+  color: var(--text);
+}
+
+.essay-body strong {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.essay-body em {
+  font-style: italic;
+  color: var(--text-3);
 }
 
 /* ── Poem card ──────────────────────────────────────────────────────────── */
@@ -557,7 +594,7 @@ a:hover {
   }
 
   .essay {
-    padding: 28px 28px 32px;
+    /* no box padding to adjust */
   }
 
   .poem {
@@ -565,7 +602,7 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .piece-title {
@@ -586,7 +623,6 @@ a:hover {
   }
 
   /* Full-bleed strips — no rounded corners, no side borders, no shadow */
-  .essay,
   .poem {
     border-radius: 0;
     border-left: none;
@@ -595,7 +631,7 @@ a:hover {
   }
 
   .essay {
-    padding: 24px 20px 28px;
+    padding: 0 20px;
   }
 
   .poem {
@@ -603,8 +639,8 @@ a:hover {
   }
 
   .essay-body {
-    margin-top: 18px;
-    padding-top: 18px;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .poem-body {
@@ -617,8 +653,8 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 15px;
-    line-height: 1.75;
+    font-size: 15.5px;
+    line-height: 1.85;
   }
 
   .poem-body {
@@ -996,13 +1032,20 @@ a:hover {
   gap: 36px;
 }
 
-.essay,
 .poem {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r);
   box-shadow: var(--sh-sm);
   overflow: hidden;
+}
+
+.essay {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .piece-label {
@@ -1025,24 +1068,54 @@ a:hover {
 }
 
 .essay {
-  padding: 36px 40px 40px;
+  padding: 0;
 }
 
 .essay-body {
-  margin-top: 24px;
-  border-top: 1px solid var(--border);
-  padding-top: 24px;
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
 }
 
 .essay-body p {
-  font-size: 16px;
-  line-height: 1.82;
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.9;
   color: var(--text-2);
-  margin-bottom: 1.2em;
+  margin-bottom: 1.8em;
+  letter-spacing: 0.008em;
 }
 
 .essay-body p:last-child {
   margin-bottom: 0;
+}
+
+.essay-body > p:first-child {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.84;
+}
+
+.essay-body > p:first-child::first-letter {
+  float: left;
+  font-size: 4.1em;
+  line-height: 0.78;
+  font-weight: 400;
+  padding-right: 0.07em;
+  padding-top: 0.05em;
+  color: var(--text);
+}
+
+.essay-body strong {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.essay-body em {
+  font-style: italic;
+  color: var(--text-3);
 }
 
 .poem {
@@ -1075,7 +1148,7 @@ a:hover {
   }
 
   .essay {
-    padding: 28px 28px 32px;
+    /* no box padding to adjust */
   }
 
   .poem {
@@ -1083,7 +1156,7 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .piece-title {
@@ -1102,7 +1175,6 @@ a:hover {
     gap: 2px;
   }
 
-  .essay,
   .poem {
     border-radius: 0;
     border-left: none;
@@ -1111,7 +1183,7 @@ a:hover {
   }
 
   .essay {
-    padding: 24px 20px 28px;
+    padding: 0 20px;
   }
 
   .poem {
@@ -1119,8 +1191,8 @@ a:hover {
   }
 
   .essay-body {
-    margin-top: 18px;
-    padding-top: 18px;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .poem-body {
@@ -1133,8 +1205,8 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 15px;
-    line-height: 1.75;
+    font-size: 15.5px;
+    line-height: 1.85;
   }
 
   .poem-body {
