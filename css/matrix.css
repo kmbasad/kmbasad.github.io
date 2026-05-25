@@ -3,10 +3,20 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .article-legend {
-  font-size: 12px;
-  color: var(--text-4);
+  font-size: 14px;
+  color: var(--text-3);
   text-align: center;
-  padding: 10px 0 28px
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 0 32px;
+}
+
+.article-legend::before {
+  content: "Trellis:\00A0";
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text-2);
 }
 
 /* ── Matrix container + fullscreen ──────────────────────────────────────── */
