@@ -108,6 +108,8 @@
   display: block;
   width: fit-content;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border);
