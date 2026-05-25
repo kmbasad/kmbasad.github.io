@@ -519,9 +519,10 @@
     });
   }
 
-  // Essay markdown: GOD_ESSAY_SRC = 'file.md'
-  if (window.GOD_ESSAY_SRC) {
-    fetch(window.GOD_ESSAY_SRC)
+  // Essay markdown: ESSAY_SRC = 'file.md'  (GOD_ESSAY_SRC accepted for compat)
+  var essaySrc = window.ESSAY_SRC || window.GOD_ESSAY_SRC;
+  if (essaySrc) {
+    fetch(essaySrc)
       .then(function (res) { return res.text(); })
       .then(function (md) {
         var el = document.getElementById('essay-body');

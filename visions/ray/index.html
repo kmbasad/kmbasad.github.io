@@ -7,21 +7,53 @@
   <title>Ray, Satyajit &#8212; KMBA</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/matrix.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@300;400;500&display=swap" rel="stylesheet">
   <script defer src="/js/nav.js"></script>
+  <style>
+    .essay-bn .section-title,
+    .essay-bn .section-intro {
+      font-family: 'Noto Serif Bengali', serif;
+    }
+    .essay-bn .section-title {
+      font-weight: 300;
+    }
+    .essay-bn .essay-body p {
+      font-family: 'Noto Serif Bengali', serif;
+      font-weight: 400;
+      line-height: 2.0;
+    }
+    .essay-bn .essay-body > p:first-child::first-letter {
+      float: none;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+      padding: 0;
+      color: inherit;
+    }
+  </style>
 </head>
 
 <body>
-<div class="page-header">
+  <div class="page-header">
     <div class="page-header-inner">
       <div class="breadcrumb">
         <a href="/visions/">Visions</a>
         <span class="sep">/</span>
         <span class="breadcrumb-current">Ray, Satyajit</span>
       </div>
+      <div class="toc-wrapper">
+        <span class="toc-label">TOC ▾</span>
+        <div class="toc-dropdown">
+          <ul>
+            <li><a href="#trellis">Trellis: Films</a></li>
+            <li><a href="#essay">Essay</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="page-section">
+  <div class="page-section" id="trellis">
     <div id="matrix-mount"></div>
 
     <p class="article-legend">Ten films across thirty-six years &#8212; Satyajit Ray&#8217;s cinematic life read through
@@ -30,14 +62,27 @@
       the cross-film synthesis. Click a film title for its synopsis and reading. Press Escape to close a panel.</p>
   </div>
 
+  <div class="page-section essay-bn" id="essay">
+    <div class="section-title">সত্যজিতের নদী</div>
+    <p class="section-intro">দশটি ছবি, দশটি মুহূর্ত — একটি পাঠ</p>
+
+    <div class="writing-col">
+      <div class="writing-stack">
+        <div class="essay">
+          <div class="essay-body" id="essay-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
   window.MATRIX_CONFIG = {
     src: 'data.tsv',
     mountId: 'matrix-mount'
   };
+  window.ESSAY_SRC = 'ray-essay.md';
   </script>
   <script src="/js/matrix.js"></script>
-
 </body>
 
 </html>
