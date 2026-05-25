@@ -340,6 +340,45 @@ tbody th .th-num {
   right: 4px;
 }
 
+/* ── Row striping ────────────────────────────────────────────────────────── */
+tbody tr:nth-child(even) td {
+  background: var(--surface);
+}
+
+/* ── Diagonal cells ──────────────────────────────────────────────────────── */
+/* Diagonal = thinker × their defining property — always the meaningful cell */
+td.is-diagonal {
+  background: var(--diag-bg);
+}
+
+td.is-diagonal .cell-btn {
+  box-shadow: inset 0 2.5px 0 var(--diag-accent);
+}
+
+td.is-diagonal .cell-num {
+  color: var(--diag-accent);
+  opacity: 0.75;
+  font-size: 9px;
+}
+
+td.is-diagonal .cell-btn:hover {
+  background: var(--diag-hover-bg);
+  box-shadow: inset 0 2.5px 0 var(--diag-accent), inset 0 0 0 1.5px var(--diag-border);
+  color: var(--text);
+}
+
+td.is-diagonal .cell-btn.active {
+  box-shadow: inset 0 2.5px 0 var(--diag-accent), inset 0 0 0 2px var(--cell-active-accent);
+}
+
+/* Amber panel bar when a diagonal cell is open */
+.table-panel.panel-diagonal .panel-bar {
+  background: linear-gradient(90deg, var(--diag-accent), rgba(254, 243, 199, 0.6));
+}
+[data-theme="dark"] .table-panel.panel-diagonal .panel-bar {
+  background: linear-gradient(90deg, var(--diag-accent), rgba(120, 80, 10, 0.4));
+}
+
 /* ── Cross-highlight: row header + col header highlight on cell hover ─────── */
 tbody th.row-cross {
   background: var(--cell-cross-bg);

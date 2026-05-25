@@ -195,6 +195,10 @@
         btn.appendChild(document.createTextNode(cellParts[0] ? cellParts[0].split('\n')[0] : ''));
         btn.dataset.ri = ri;
         btn.dataset.ci = ci2;
+        if (ri === ci2) {
+          td.classList.add('is-diagonal');
+          numSpan.textContent = '◆';
+        }
         td.appendChild(btn);
         tr.appendChild(td);
       }
@@ -329,6 +333,7 @@
 
     function openColSynth(ci) {
       clearActive(); synthMode = true; ap = -1; ah = ci;
+      panel.classList.remove('panel-diagonal');
       if (ci < colHeaders.length) colHeaders[ci].classList.add('col-active');
       setPanel(content('col', -1, ci));
       btnPrev.disabled = ci <= 0;
@@ -338,6 +343,7 @@
 
     function openRowSynth(ri) {
       clearActive(); synthMode = true; ap = ri; ah = -1;
+      panel.classList.remove('panel-diagonal');
       rowHeaders[ri].classList.add('row-active');
       setPanel(content('row', ri, -1));
       btnPrev.disabled = ri <= 0;
@@ -347,6 +353,7 @@
 
     function openCell(ri, ci) {
       clearActive(); synthMode = false; ap = ri; ah = ci;
+      panel.classList.toggle('panel-diagonal', ri === ci);
       var btn = table.querySelector('.cell-btn[data-ri="' + ri + '"][data-ci="' + ci + '"]');
       if (btn) btn.classList.add('active');
       setPanel(content('cell', ri, ci));
@@ -357,7 +364,7 @@
 
     function closePanel() {
       clearActive(); synthMode = false; ap = -1; ah = -1;
-      panel.classList.remove('open'); overlay.classList.remove('visible');
+      panel.classList.remove('open', 'panel-diagonal'); overlay.classList.remove('visible');
     }
 
     // ── Cross-highlight on cell hover ────────────────────────────────────
