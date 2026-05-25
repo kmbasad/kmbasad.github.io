@@ -488,17 +488,51 @@
     });
   }
 
-  // ── Markdown → HTML converter (for essay) ─────────────────────────────
-  function mdToHtml(md) {
-    return md.split(/\n{2,}/)
-      .filter(function (p) { return p.trim(); })
-      .map(function (p) {
-        var h = p.trim();
-        h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-        h = h.replace(/\*(.+?)\*/g, '<em>$1</em>');
-        return '<p>' + h + '</p>';
-      })
-      .join('\n');
+  // ── Markdown essay renderer ────────────────────────────────────────────
+  // Format:
+  //   # Title          ← becomes .section-title
+  //   Subtitle text    ← first block after title becomes .section-intro
+  //   (blank line)
+  //   Body paragraph… ← rest become <p> inside .essay-body
+  //
+  // Title and subtitle are optional; any block can be omitted.
+  function renderEssay(md, mount) {
+    var blocks = md.split(/\n{2,}/)
+      .map(function (b) { return b.trim(); })
+      .filter(Boolean);
+
+    if (!blocks.length) return;
+
+    var title = '', intro = '', i = 0;
+
+    if (blocks[i] && blocks[i].charAt(0) === '#') {
+      title = blocks[i].replace(/^#+\s*/, '');
+      i++;
+    }
+    if (i < blocks.length && blocks[i].charAt(0) !== '#') {
+      intro = blocks[i];
+      i++;
+    }
+
+    function inlineMarkup(s) {
+      return s
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>');
+    }
+
+    var html = '';
+    if (title) html += '<div class="section-title">' + title + '</div>\n';
+    if (intro) html += '<p class="section-intro">' + inlineMarkup(intro) + '</p>\n';
+
+    var bodyParts = blocks.slice(i).map(function (p) {
+      return '<p>' + inlineMarkup(p) + '</p>';
+    }).join('\n');
+
+    html += '<div class="writing-col"><div class="writing-stack"><div class="essay">'
+          + '<div class="essay-body">' + bodyParts + '</div>'
+          + '</div></div></div>';
+
+    mount.innerHTML = html;
   }
 
   // ── Auto-discover and initialise ──────────────────────────────────────
@@ -525,8 +559,8 @@
     fetch(essaySrc)
       .then(function (res) { return res.text(); })
       .then(function (md) {
-        var el = document.getElementById('essay-body');
-        if (el) el.innerHTML = mdToHtml(md);
+        var mount = document.getElementById('essay-mount');
+        if (mount) renderEssay(md, mount);
       });
   }
 
