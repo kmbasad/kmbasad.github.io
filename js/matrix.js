@@ -197,7 +197,6 @@
         btn.dataset.ci = ci2;
         if (ri === ci2) {
           td.classList.add('is-diagonal');
-          numSpan.textContent = '◆';
         }
         td.appendChild(btn);
         tr.appendChild(td);

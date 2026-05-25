@@ -1449,10 +1449,10 @@ h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .section-intro, .piece
   --cell-active-accent: #2563eb;
   --cell-hover-bg: #eff6ff;
   --cell-cross-bg: #f0f7ff;
-  --diag-bg: rgba(217, 119, 6, 0.055);
-  --diag-hover-bg: rgba(217, 119, 6, 0.13);
+  --diag-bg: rgba(217, 119, 6, 0.09);
+  --diag-hover-bg: rgba(217, 119, 6, 0.17);
   --diag-accent: #b45309;
-  --diag-border: rgba(217, 119, 6, 0.32);
+  --diag-border: rgba(217, 119, 6, 0.38);
 }
 
 /* Dark mode — override every surface/text/accent variable */
@@ -1477,10 +1477,10 @@ h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .section-intro, .piece
   --cell-active-accent: #58a6ff;
   --cell-hover-bg: #0d1a2e;
   --cell-cross-bg: #101c2e;
-  --diag-bg: rgba(251, 191, 36, 0.06);
-  --diag-hover-bg: rgba(251, 191, 36, 0.14);
+  --diag-bg: rgba(251, 191, 36, 0.1);
+  --diag-hover-bg: rgba(251, 191, 36, 0.19);
   --diag-accent: #fbbf24;
-  --diag-border: rgba(251, 191, 36, 0.28);
+  --diag-border: rgba(251, 191, 36, 0.35);
 }
 
 /* Smooth theme transition on key elements */
