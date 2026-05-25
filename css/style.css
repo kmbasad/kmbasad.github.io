@@ -523,21 +523,16 @@ a:hover {
 
 .essay-body p {
   font-family: 'Spectral', Georgia, 'Times New Roman', serif;
-  font-size: 18px;
-  line-height: 1.9;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.88;
   color: var(--text-2);
   margin-bottom: 1.8em;
-  letter-spacing: 0.008em;
+  letter-spacing: 0.01em;
 }
 
 .essay-body p:last-child {
   margin-bottom: 0;
-}
-
-.essay-body > p:first-child {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.84;
 }
 
 .essay-body > p:first-child::first-letter {
@@ -602,7 +597,7 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .piece-title {
@@ -653,7 +648,7 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 15.5px;
+    font-size: 17px;
     line-height: 1.85;
   }
 
@@ -1079,21 +1074,16 @@ a:hover {
 
 .essay-body p {
   font-family: 'Spectral', Georgia, 'Times New Roman', serif;
-  font-size: 18px;
-  line-height: 1.9;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.88;
   color: var(--text-2);
   margin-bottom: 1.8em;
-  letter-spacing: 0.008em;
+  letter-spacing: 0.01em;
 }
 
 .essay-body p:last-child {
   margin-bottom: 0;
-}
-
-.essay-body > p:first-child {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.84;
 }
 
 .essay-body > p:first-child::first-letter {
@@ -1156,7 +1146,7 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .piece-title {
@@ -1205,7 +1195,7 @@ a:hover {
   }
 
   .essay-body p {
-    font-size: 15.5px;
+    font-size: 17px;
     line-height: 1.85;
   }
 
