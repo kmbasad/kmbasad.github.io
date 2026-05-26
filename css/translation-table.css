@@ -1,12 +1,50 @@
 /* =========================================================
    translation-table.css  —  Generic translation table styles
    Supports 2, 3, or 4 column layouts (bn + other langs + line-num)
+   Immersive parchment palette consonant with trellis-flora.
    ========================================================= */
+
+/* ── Parchment palette (light) ────────────────────────── */
+:root {
+  --tt-paper:        #f7ecd0;   /* warm cream — the page itself */
+  --tt-paper-edge:   #e7d4a8;   /* tinted edge / inner shadow */
+  --tt-frame:        rgba(120, 85, 35, 0.28);   /* warm amber border */
+  --tt-frame-soft:   rgba(120, 85, 35, 0.14);
+  --tt-rule:         rgba(154, 108, 50, 0.22);  /* between-tercet rule */
+  --tt-rule-strong:  rgba(154, 108, 50, 0.42);  /* between-ghazal rule */
+  --tt-ink-bn:       #2a2014;
+  --tt-ink-source:   #3a2a18;
+  --tt-ink-soft:     #6b5638;
+  --tt-ink-tl:       #7a6446;
+  --tt-lnum:         #b87a2a;   /* marginalia gold */
+  --tt-hover:        rgba(180, 130, 50, 0.06);
+  --tt-col-bn:       rgba(255, 250, 232, 0.42);  /* faintest cream cast */
+  --tt-col-source:   rgba(216, 174, 130, 0.10);  /* faint amber cast */
+  --tt-col-en:       rgba(120, 85, 35, 0.04);    /* faintest umber cast */
+}
+
+[data-theme="dark"] {
+  --tt-paper:        #1a1d28;
+  --tt-paper-edge:   #0f1219;
+  --tt-frame:        rgba(220, 195, 140, 0.22);
+  --tt-frame-soft:   rgba(220, 195, 140, 0.10);
+  --tt-rule:         rgba(220, 195, 140, 0.16);
+  --tt-rule-strong:  rgba(220, 195, 140, 0.30);
+  --tt-ink-bn:       #ece4cf;
+  --tt-ink-source:   #d8cdb1;
+  --tt-ink-soft:     #a89b7c;
+  --tt-ink-tl:       #8e8266;
+  --tt-lnum:         #e0b870;
+  --tt-hover:        rgba(220, 195, 140, 0.06);
+  --tt-col-bn:       rgba(220, 200, 150, 0.04);
+  --tt-col-source:   rgba(220, 195, 140, 0.05);
+  --tt-col-en:       rgba(220, 195, 140, 0.03);
+}
 
 /* ── Legend ───────────────────────────────────────────── */
 .tt-legend {
   margin: 0 0 1.6rem 0;
-  color: var(--text-4, #9ca3af);
+  color: var(--tt-ink-soft);
   letter-spacing: 0.02em;
 }
 
@@ -15,18 +53,49 @@
   opacity: 0.85;
 }
 
-/* ── Wrapper ──────────────────────────────────────────── */
+/* ── Wrapper — the page of parchment ──────────────────── */
 .tt-wrap {
   width: fit-content;
   max-width: 100%;
   margin: 0 auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--border, rgba(0, 0, 0, 0.06));
-  border-radius: var(--r, 8px);
-  background: var(--surface, #ffffff);
-  box-shadow: var(--sh-sm, 0 1px 3px rgba(0, 0, 0, 0.04));
+  border: 1px solid var(--tt-frame);
+  border-radius: 6px;
+  /* Aged-paper feel: warm cream centre, slightly tinted toward the edges */
+  background:
+    radial-gradient(ellipse 120% 90% at 50% 50%,
+      var(--tt-paper) 0%,
+      var(--tt-paper) 55%,
+      var(--tt-paper-edge) 100%),
+    var(--tt-paper);
+  /* Soft inner shadow gives the paper a framed depth */
+  box-shadow:
+    inset 0 0 24px rgba(120, 85, 35, 0.10),
+    inset 0 1px 0 rgba(255, 248, 224, 0.5),
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 28px -10px rgba(120, 85, 35, 0.18);
+  position: relative;
 }
+
+/* Faint vertical fibre texture (subtle, almost imperceptible) */
+.tt-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 3px,
+    rgba(120, 85, 35, 0.018) 3px,
+    rgba(120, 85, 35, 0.018) 4px
+  );
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.tt-table { position: relative; z-index: 1; }
 
 /* ── Table ────────────────────────────────────────────── */
 .tt-table {
@@ -41,15 +110,18 @@
 
 /* ── Thead ────────────────────────────────────────────── */
 .tt-table thead th {
-  padding: 0.75rem 0.8rem 0.65rem;
+  padding: 0.85rem 0.9rem 0.7rem;
   text-align: left;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-4, #6b7280);
-  background: var(--surface-3, #f8f9fb);
-  border-right: 1px solid var(--border, #e5e7eb);
-  border-bottom: none;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--tt-ink-soft);
+  background: linear-gradient(to bottom,
+    rgba(154, 108, 50, 0.07) 0%,
+    rgba(154, 108, 50, 0.02) 100%);
+  border-right: 1px solid var(--tt-frame-soft);
+  border-bottom: 1px solid var(--tt-frame);
   border-top: none;
   border-left: none;
 }
@@ -74,9 +146,9 @@
 
 /* ── Rows & cells ─────────────────────────────────────── */
 .tt-table td {
-  padding: 0.1rem 0.8rem;
+  padding: 0.15rem 0.9rem;
   vertical-align: top;
-  border-right: 1px solid var(--border, #e5e7eb);
+  border-right: 1px solid var(--tt-frame-soft);
   border-bottom: none;
   border-top: none;
   border-left: none;
@@ -86,23 +158,36 @@
   border-right: none;
 }
 
+/* Subtle per-column wash — like watermarks beneath the ink */
+.tt-table td.bn       { background-color: var(--tt-col-bn); }
+.tt-table td.it,
+.tt-table td.fa       { background-color: var(--tt-col-source); }
+.tt-table td.en       { background-color: var(--tt-col-en); }
+
 .tt-table tbody tr {
   transition: background-color 0.15s ease;
 }
 
-.tt-table tbody tr:hover {
-  background-color: var(--surface-2, #f8fafd);
+.tt-table tbody tr:hover td,
+.tt-table tbody tr:hover td.bn,
+.tt-table tbody tr:hover td.it,
+.tt-table tbody tr:hover td.fa,
+.tt-table tbody tr:hover td.en,
+.tt-table tbody tr:hover td.tl {
+  background-color: var(--tt-hover);
 }
 
 /* ── Terzina spacing (Inferno / terza rima) ──────────── */
-/* Minimal padding within a terzina — lines sit tight */
-/* Space between terzinas via .tercet-start */
+/* Minimal padding within a terzina — lines sit tight.
+   A faint amber rule above each new tercet replaces plain whitespace. */
 .tt-table tr.tercet-start td {
-  padding-top: 1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--tt-rule);
 }
 
 .tt-table tbody tr:first-child.tercet-start td {
-  padding-top: 0.1rem;
+  padding-top: 0.15rem;
+  border-top: none;
 }
 
 /* ── Ghazal spacing ───────────────────────────────────── */
@@ -117,31 +202,35 @@
 
 .tt-table tr.ghazal-start td {
   padding-top: 2.5rem;       /* large gap before each new ghazal */
+  border-top: 1px solid var(--tt-rule-strong);
 }
 
 .tt-table tbody tr:first-child.ghazal-start td {
   padding-top: 0.25rem;      /* no extra gap at very top */
+  border-top: none;
 }
 
 /* ── Bangla column ────────────────────────────────────── */
 .tt-table td.bn {
   font-family: "Noto Sans Bengali", "Kalpurush", "SolaimanLipi",
     "Siyam Rupali", sans-serif;
-  color: var(--text, #1e293b);
+  color: var(--tt-ink-bn);
   line-height: 1.75;
   white-space: nowrap;
   transition: background-color 0.15s ease;
 }
 
-/* ── Italian column ───────────────────────────────────── */
+/* ── Italian / Latin column ───────────────────────────── */
 .tt-table td.it {
-  color: var(--text-2, #334155);
+  color: var(--tt-ink-source);
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-style: italic;
   white-space: nowrap;
 }
 
 /* ── Persian column ───────────────────────────────────── */
 .tt-table td.fa {
-  color: var(--text-2, #334155);
+  color: var(--tt-ink-source);
   font-family: "Noto Naskh Arabic", "Scheherazade New", "Traditional Arabic", serif;
   direction: rtl;
   text-align: right;
@@ -151,27 +240,30 @@
 
 /* ── English column ───────────────────────────────────── */
 .tt-table td.en {
-  color: var(--text-2, #475569);
+  color: var(--tt-ink-soft);
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   white-space: nowrap;
 }
 
 /* ── Transliteration column ───────────────────────────── */
 .tt-table td.tl {
-  color: var(--text-3, #64748b);
+  color: var(--tt-ink-tl);
   font-style: italic;
   white-space: nowrap;
 }
 
-/* ── Line/ghazal-number column ────────────────────────── */
+/* ── Line/ghazal-number column — marginalia gold ──────── */
 .tt-table td.ln-col {
   text-align: left;
-  color: var(--text-4, #d1d5db);
-  font-weight: 500;
+  color: var(--tt-lnum);
+  font-weight: 600;
+  font-variant-numeric: oldstyle-nums;
   user-select: none;
   white-space: nowrap;
   letter-spacing: -0.02em;
-  padding-left:  0.15rem;
-  padding-right: 0.15rem;
+  padding-left:  0.2rem;
+  padding-right: 0.2rem;
+  opacity: 0.85;
 }
 
 /* Pull the Bangla column's right padding in to close the gap */

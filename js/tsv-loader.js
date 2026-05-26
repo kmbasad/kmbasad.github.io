@@ -247,6 +247,12 @@
 
     if (lines.length > 0) buildHead(lines[0], 'tercet');
 
+    // Column count comes from the header row — drives whether we emit the
+    // 4th (English/gloss) cell. Source pages with only 3 cols (e.g. Latin
+    // Metamorphoses) won't get a phantom empty column.
+    var headerCols = lines[0] ? lines[0].split('\t').length : 4;
+    var hasEn = headerCols >= 4;
+
     function toBn(n) {
       return String(n).replace(/\d/g, function (d) {
         return '০১২৩৪৫৬৭৮৯'[d];
@@ -261,8 +267,8 @@
       var cols  = lines[i].split('\t');
       var bn    = (cols[0] || '').trim();
       var lnum  = (cols[1] || '').trim();
-      var col1  = (cols[2] || '').trim();   // Italian
-      var col2  = (cols[3] || '').trim();   // English
+      var col1  = (cols[2] || '').trim();   // Source language
+      var col2  = (cols[3] || '').trim();   // English/gloss (may be absent)
       var blank = !bn && !lnum && !col1 && !col2;
 
       if (blank) { nextIsStart = true; continue; }
@@ -281,7 +287,9 @@
       html += '<td class="bn"     data-line="' + lnum + '">' + bn        + '</td>';
       html += '<td class="ln-col" data-line="' + lnum + '">' + lnDisplay + '</td>';
       html += '<td class="it"     data-line="' + lnum + '">' + col1      + '</td>';
-      html += '<td class="en"     data-line="' + lnum + '">' + col2      + '</td>';
+      if (hasEn) {
+        html += '<td class="en"   data-line="' + lnum + '">' + col2      + '</td>';
+      }
       html += '</tr>';
     }
 
