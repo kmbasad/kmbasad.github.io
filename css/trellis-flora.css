@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRELLIS FLORA — woven-trellis layer
+   ═══════════════════════════════════════════════════════════════════════════
+   The vine lives BEHIND the cells (z-index 0). Cells are slightly
+   translucent so the woven trellis reads as a botanical ground beneath the
+   matrix. Headers blend in as part of the same lattice.                    */
+
+/* ── Ink palette ── */
+:root {
+  --flora-ink:        rgba(50, 32, 10, 0.78);
+  --flora-ink-mid:    rgba(50, 32, 10, 0.62);
+  --flora-ink-soft:   rgba(50, 32, 10, 0.46);
+  --flora-ink-faint:  rgba(50, 32, 10, 0.28);
+  --flora-leaf-fill:  rgba(50, 32, 10, 0.10);
+  --flora-flower:     rgba(154, 52, 18, 0.80);
+  --flora-flower-2:   rgba(180, 83, 9,  0.62);
+  --flora-flower-eye: rgba(50, 32, 10, 0.85);
+
+  /* Cell surface — translucent so the vine reads as ground layer */
+  --flora-cell-alpha:        0.56;
+  --flora-cell-surface:      rgba(251, 244, 224, var(--flora-cell-alpha));
+  --flora-diag-surface:      rgba(216, 174, 130, var(--flora-cell-alpha));
+}
+
+[data-theme="dark"] {
+  --flora-ink:        rgba(220, 220, 250, 0.84);
+  --flora-ink-mid:    rgba(220, 220, 250, 0.60);
+  --flora-ink-soft:   rgba(220, 220, 250, 0.40);
+  --flora-ink-faint:  rgba(220, 220, 250, 0.20);
+  --flora-leaf-fill:  rgba(220, 220, 250, 0.12);
+  --flora-flower:     rgba(252, 211, 77, 0.84);
+  --flora-flower-2:   rgba(217, 119, 6,  0.65);
+  --flora-flower-eye: rgba(220, 220, 250, 0.88);
+
+  --flora-cell-alpha:        0.50;
+  --flora-cell-surface:      rgba(14, 19, 32,  var(--flora-cell-alpha));
+  --flora-diag-surface:      rgba(40, 28, 16,  var(--flora-cell-alpha));
+}
+
+/* ── Cells: translucent foreground panels above the SVG ── */
+.matrix-container[data-flora] tbody td,
+.matrix-container[data-flora] tbody th,
+.matrix-container[data-flora] thead th,
+.matrix-container[data-flora] .corner-th {
+  position: relative;
+  z-index: 1;
+  background-color: var(--flora-cell-surface);
+}
+
+/* Diagonal cells keep their amber tint, also translucent */
+.matrix-container[data-flora] tbody tr td.is-diagonal {
+  background-color: var(--flora-diag-surface);
+}
+
+/* Row striping turned off so the surface is continuous */
+.matrix-container[data-flora] tbody tr:nth-child(even) td {
+  background-color: var(--flora-cell-surface);
+}
+.matrix-container[data-flora] tbody tr:nth-child(even) td.is-diagonal {
+  background-color: var(--flora-diag-surface);
+}
+
+/* Hover and active states stay translucent in the same family */
+.matrix-container[data-flora] .cell-btn.active {
+  background-color: rgba(185, 28, 28, 0.14);
+}
+.matrix-container[data-flora] .cell-btn:hover {
+  background-color: rgba(185, 28, 28, 0.07);
+}
+
+/* ── The SVG vine — drawn BEHIND cells ── */
+.matrix-container .trellis-flora-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+/* ── Stem thicknesses, from heaviest to lightest ── */
+/* Main diagonal vine — thick, dominant */
+.matrix-container .trellis-flora-svg .flora-stem {
+  fill: none;
+  stroke: var(--flora-ink);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Row + column branches — medium, clearly thicker than borders */
+.matrix-container .trellis-flora-svg .flora-branch {
+  fill: none;
+  stroke: var(--flora-ink-mid);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Cell stemlets — thin, leading flora into each cell */
+.matrix-container .trellis-flora-svg .flora-stemlet {
+  fill: none;
+  stroke: var(--flora-ink-soft);
+  stroke-width: 0.85;
+  stroke-linecap: round;
+}
+
+/* ── Leaves ── */
+.matrix-container .trellis-flora-svg .flora-leaf {
+  fill: var(--flora-leaf-fill);
+  stroke: var(--flora-ink);
+  stroke-width: 0.75;
+  stroke-linejoin: round;
+}
+
+.matrix-container .trellis-flora-svg .flora-leaf-small {
+  fill: var(--flora-leaf-fill);
+  stroke: var(--flora-ink-soft);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+
+.matrix-container .trellis-flora-svg .flora-vein {
+  fill: none;
+  stroke: var(--flora-ink-soft);
+  stroke-width: 0.4;
+  stroke-linecap: round;
+}
+
+/* ── Flowers ── */
+.matrix-container .trellis-flora-svg .flora-flower ellipse {
+  fill: var(--flora-flower);
+  stroke: var(--flora-ink);
+  stroke-width: 0.45;
+}
+.matrix-container .trellis-flora-svg .flora-flower-eye {
+  fill: var(--flora-flower-eye);
+  stroke: none;
+}
+.matrix-container .trellis-flora-svg .flora-bud {
+  fill: var(--flora-flower-2);
+  stroke: var(--flora-ink);
+  stroke-width: 0.4;
+}
+
+/* Every 3rd flower in the flowers layer picks up the secondary tone */
+.matrix-container .trellis-flora-svg .flora-flowers > .flora-flower-wrap:nth-child(3n) .flora-flower ellipse {
+  fill: var(--flora-flower-2);
+}
+
+/* ── Pegs ── */
+.matrix-container .trellis-flora-svg .flora-peg {
+  fill: var(--flora-ink-soft);
+  stroke: none;
+}
+
+/* ── Print ── */
+@media print {
+  .matrix-container[data-flora] tbody td,
+  .matrix-container[data-flora] tbody th,
+  .matrix-container[data-flora] thead th,
+  .matrix-container[data-flora] .corner-th {
+    background-color: rgba(251, 244, 224, 0.94);
+  }
+  .matrix-container .trellis-flora-svg .flora-flower ellipse {
+    fill: rgba(0, 0, 0, 0.6);
+  }
+}

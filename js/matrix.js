@@ -1,6 +1,26 @@
 (function () {
   'use strict';
 
+  // ── Auto-load the trellis flora layer ──
+  // Side-effect: drop the woven-trellis stylesheet + JS into the page so
+  // every matrix on the site picks up flora. Opt-out per mount with
+  // data-flora="off". (Safe to omit if you've already linked them by hand.)
+  (function loadFlora() {
+    var head = document.head;
+    if (!document.querySelector('link[href="/css/trellis-flora.css"]')) {
+      var l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = '/css/trellis-flora.css';
+      head.appendChild(l);
+    }
+    if (!document.querySelector('script[src="/js/trellis-flora.js"]')) {
+      var s = document.createElement('script');
+      s.src = '/js/trellis-flora.js';
+      s.defer = true;
+      head.appendChild(s);
+    }
+  }());
+
   // ── Lightweight-markup → HTML converter ────────────────────────────────
   function markupToHtml(text) {
     if (!text) return '';
