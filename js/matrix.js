@@ -11,6 +11,146 @@
     return html;
   }
 
+  // ── Markdown parser ────────────────────────────────────────────────────
+  // Produces the same 2D-array shape as parseTSV so buildMatrix doesn't care.
+  // Format:
+  //   axes:
+  //     rows: <RowDim>
+  //     cols: <ColDim>
+  //
+  //   ## Columns
+  //   ### Col N · Name
+  //   (optional)  dates: ...
+  //   (optional)  culture: ...
+  //   (optional)  short: ...
+  //   (paragraphs)  long synthesis
+  //
+  //   ## Rows
+  //   ### Row N · Name
+  //   (optional)  desc: ...
+  //   (optional)  short: ...
+  //   (paragraphs)  long synthesis
+  //
+  //   ## Cells
+  //   ### NN · Short label
+  //   (paragraphs)  long
+  function parseMarkdown(text) {
+    var lines = text.split('\n');
+
+    // Axes — find any "axes:" block and read its rows: / cols: keys
+    var rowAxis = 'Row', colAxis = 'Col';
+    for (var i = 0; i < lines.length; i++) {
+      if (lines[i].trim() === 'axes:') {
+        for (var j = i + 1; j < Math.min(i + 6, lines.length); j++) {
+          var m = lines[j].match(/^\s+(rows|cols)\s*:\s*(.+?)\s*$/);
+          if (!m) break;
+          if (m[1] === 'rows') rowAxis = m[2];
+          else                 colAxis = m[2];
+        }
+        break;
+      }
+    }
+
+    // Bucket content by `## Section` heading
+    var sections = {}, sec = null, buf = [];
+    for (var k = 0; k < lines.length; k++) {
+      var sm = lines[k].match(/^##\s+(.+?)\s*$/);
+      if (sm) {
+        if (sec) sections[sec] = buf.join('\n');
+        sec = sm[1].toLowerCase();
+        buf = [];
+      } else if (sec) {
+        buf.push(lines[k]);
+      }
+    }
+    if (sec) sections[sec] = buf.join('\n');
+
+    // Pull `### <id> · <name>` items out of a section.
+    // headingRegex captures id (group 1) and the rest after the dot (group 2).
+    function parseItems(secText, headingRegex) {
+      if (!secText) return [];
+      var blocks = secText.split(/^###\s+/m).slice(1);
+      var out = [];
+      blocks.forEach(function (block) {
+        var nl = block.indexOf('\n');
+        var heading = (nl >= 0 ? block.substring(0, nl) : block).trim();
+        var body    = (nl >= 0 ? block.substring(nl + 1) : '').trim();
+
+        var hm = heading.match(headingRegex);
+        if (!hm) return;
+        var id   = hm[1];
+        var name = (hm[2] || '').trim();
+
+        // Body: leading "key: value" lines are metadata; rest is long content.
+        var bls = body.split('\n');
+        var meta = {};
+        var p = 0;
+        while (p < bls.length) {
+          var bl = bls[p];
+          if (bl.trim() === '') { p++; continue; }
+          var mm = bl.match(/^(dates|culture|short|desc)\s*:\s*(.+?)\s*$/);
+          if (!mm) break;
+          meta[mm[1]] = mm[2];
+          p++;
+        }
+        var longText = bls.slice(p).join('\n').trim();
+        out.push({ id: id, name: name, meta: meta, long: longText });
+      });
+      return out;
+    }
+
+    var cols  = parseItems(sections['columns'] || '', /^Col\s+(\d+)\s*[·\-—]\s*(.*)$/i);
+    var rowsP = parseItems(sections['rows']    || '', /^Row\s+(\d+)\s*[·\-—]\s*(.*)$/i);
+    var cells = parseItems(sections['cells']   || '', /^(\d+)\s*[·\-—]\s*(.*)$/);
+
+    var byId = {};
+    cells.forEach(function (c) { byId[c.id] = c; });
+
+    // Assemble into the 2D array shape that parseTSV produces
+    var nRows = rowsP.length;
+    var nCols = cols.length;
+    var grid = [];
+
+    // Corner cell  +  column headers
+    var topRow = [rowAxis + '\n\n' + colAxis];
+    cols.forEach(function (col) {
+      var parts = [col.name];
+      // col format expected by buildMatrix: name\n\ndates\n\nculture\n\nshort\n\nlong
+      if (col.meta.dates || col.meta.culture || col.meta.short || col.long) {
+        parts.push(col.meta.dates   || '');
+        parts.push(col.meta.culture || '');
+        parts.push(col.meta.short   || '');
+        if (col.long) parts.push(col.long);
+      }
+      topRow.push(parts.join('\n\n'));
+    });
+    grid.push(topRow);
+
+    // Data rows
+    for (var r = 0; r < nRows; r++) {
+      var row = rowsP[r];
+      var line = [];
+      // row format expected by buildMatrix: name\n\ndesc\n\nshort\n\nlong
+      var rparts = [row.name];
+      if (row.meta.desc || row.meta.short || row.long) {
+        rparts.push(row.meta.desc || '');
+        if (row.meta.short) rparts.push(row.meta.short);
+        if (row.long)       rparts.push(row.long);
+      }
+      line.push(rparts.join('\n\n'));
+
+      for (var c = 0; c < nCols; c++) {
+        var key = '' + r + c;
+        var cell = byId[key];
+        var short = cell ? cell.name : '';
+        var long  = cell ? cell.long : '';
+        line.push(short + (long ? '\n\n' + long : ''));
+      }
+      grid.push(line);
+    }
+    return grid;
+  }
+
   // ── TSV parser (handles quoted cells with embedded newlines) ───────────
   function parseTSV(text) {
     var rows = [];
@@ -73,19 +213,38 @@
     el.classList.add('panel-refresh');
   }
 
-  // ── Build full matrix from TSV and mount into a container ─────────────
-  function buildMatrix(mountId, tsvText) {
+  // ── Parse markdown OR TSV depending on file extension / content shape ──
+  function parseSource(src, text) {
+    var looksMd = /\.md$/i.test(src || '') || /^\s*#/.test(text);
+    return looksMd ? parseMarkdown(text) : parseTSV(text);
+  }
+
+  // ── Build full matrix from a 2D grid and mount into a container ────────
+  function buildMatrix(mountId, tsv) {
     var mount = document.getElementById(mountId);
     if (!mount) return;
+    if (!tsv || !tsv.length) return;
 
-    var tsv   = parseTSV(tsvText);
     var nRows = tsv.length - 1;
     var nCols = tsv[0].length - 1;
 
-    // Parse corner cell (row 0, col 0)
-    var cornerParts = tsv[0][0].split('\n');
-    var cornerLabel = cornerParts[0] || '';
-    var cornerSize  = cornerParts[1] || '';
+    // Parse corner cell (row 0, col 0) into row + column dimension labels.
+    // Supports two TSV formats:
+    //   "Row ↓ · Col →"   (legacy, single line)
+    //   "Row\n\nCol"      (preferred — each label on its own line)
+    function parseCornerLabels(text) {
+      var t = (text || '').trim();
+      // Legacy arrow format
+      var m = t.match(/^(.+?)\s*↓\s*[·•\-]\s*(.+?)\s*→/);
+      if (m) return { row: m[1].trim(), col: m[2].trim() };
+      // Block-split format (anything separated by blank line or single newline)
+      var parts = t.split(/\n+/).map(function (s) { return s.trim(); }).filter(Boolean);
+      // Strip an embedded size hint like "10 × 10" from the list
+      parts = parts.filter(function (p) { return !/^\d+\s*[×x]\s*\d+$/.test(p); });
+      if (parts.length >= 2) return { row: parts[0], col: parts[1] };
+      return { row: parts[0] || 'Row', col: 'Col' };
+    }
+    var cornerLabels = parseCornerLabels(tsv[0][0]);
 
     // Generate unique IDs
     var ids = {
@@ -112,12 +271,14 @@
     container.className = 'matrix-container';
     container.id = ids.container;
 
-    // fsBtn lives inside the corner cell — built here, injected below
+    // fsBtn lives inside the corner cell — built here, injected below.
+    // Icon-only (no text) so the corner cell stays clean.
     var fsBtn = document.createElement('button');
     fsBtn.className = 'matrix-fs-btn';
     fsBtn.id = ids.fsBtn;
     fsBtn.title = 'Full screen (Esc to exit)';
-    fsBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg><span>Full screen</span>';
+    fsBtn.setAttribute('aria-label', 'Full screen');
+    fsBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg>';
 
     // ── Build table ──────────────────────────────────────────────────────
     var scroll = document.createElement('div');
@@ -130,15 +291,21 @@
     var thead = document.createElement('thead');
     var htr = document.createElement('tr');
 
-    // Corner th — contains the label + the fullscreen button
+    // Corner th — fullscreen icon at top-left, row label at bottom-edge,
+    // column label at right-edge. Nothing else.
     var cornerTh = document.createElement('th');
+    cornerTh.className = 'corner-th';
     var cornerInner = document.createElement('div');
-    cornerInner.className = 'th-inner';
-    var cornerSpan = document.createElement('span');
-    cornerSpan.className = 'corner-label';
-    cornerSpan.innerHTML = '<strong>' + cornerLabel + '</strong>' + cornerSize;
-    cornerInner.appendChild(cornerSpan);
+    cornerInner.className = 'corner-inner';
     cornerInner.appendChild(fsBtn);
+    var colLbl = document.createElement('span');
+    colLbl.className = 'corner-col-label';
+    colLbl.textContent = cornerLabels.col + ' →';
+    cornerInner.appendChild(colLbl);
+    var rowLbl = document.createElement('span');
+    rowLbl.className = 'corner-row-label';
+    rowLbl.textContent = cornerLabels.row + ' ↓';
+    cornerInner.appendChild(rowLbl);
     cornerTh.appendChild(cornerInner);
     htr.appendChild(cornerTh);
 
@@ -474,11 +641,13 @@
 
     function updateFsBtn(active) {
       if (active) {
-        fsBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 1v4H1M9 1v4h4M1 9h4v4M13 9H9v4"/></svg><span>Exit full screen</span>';
+        fsBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 1v4H1M9 1v4h4M1 9h4v4M13 9H9v4"/></svg>';
         fsBtn.title = 'Exit full screen (Esc)';
+        fsBtn.setAttribute('aria-label', 'Exit full screen');
       } else {
-        fsBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg><span>Full screen</span>';
+        fsBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg>';
         fsBtn.title = 'Full screen (Esc to exit)';
+        fsBtn.setAttribute('aria-label', 'Full screen');
       }
     }
 
@@ -543,19 +712,21 @@
 
   // ── Auto-discover and initialise ──────────────────────────────────────
 
-  // Single matrix: MATRIX_CONFIG = { src: 'file.tsv', mountId: 'id' }
-  if (window.MATRIX_CONFIG) {
-    fetch(window.MATRIX_CONFIG.src)
+  function loadAndBuild(src, mountId) {
+    fetch(src)
       .then(function (res) { return res.text(); })
-      .then(function (tsvText) { buildMatrix(window.MATRIX_CONFIG.mountId, tsvText); });
+      .then(function (text) { buildMatrix(mountId, parseSource(src, text)); });
   }
 
-  // Multiple matrices: GOD_DATA = [{ src: 'file.tsv', mountId: 'id' }, ...]
+  // Single matrix: MATRIX_CONFIG = { src: 'file.md', mountId: 'id' }
+  if (window.MATRIX_CONFIG) {
+    loadAndBuild(window.MATRIX_CONFIG.src, window.MATRIX_CONFIG.mountId);
+  }
+
+  // Multiple matrices: GOD_DATA = [{ src: 'file.md', mountId: 'id' }, ...]
   if (window.GOD_DATA) {
     window.GOD_DATA.forEach(function (entry) {
-      fetch(entry.src)
-        .then(function (res) { return res.text(); })
-        .then(function (tsvText) { buildMatrix(entry.mountId, tsvText); });
+      loadAndBuild(entry.src, entry.mountId);
     });
   }
 

@@ -43,24 +43,27 @@ All paths are absolute (`/css/style.css`, `/js/nav.js`) so the server must serve
 
 - **`js/translation-table.js`** — adds interactive word-correspondence highlighting to any `.tt-table`. Wraps tokens in `<span class="w" data-w="KEY">` and highlights matches on hover/click. Uses punctuation-anchored proportional alignment (not character-level DP) because cross-script pairs have no character similarity.
 
-- **`js/matrix.js`** — renders interactive grid matrices from TSV data. Two initialization modes:
+- **`js/matrix.js`** — renders interactive grid matrices. Despite the `.md` extension, matrix source files are tab-separated trellis tables (see "Matrix cell format" below); the extension is just a convention so editors apply markdown highlighting to the rich cell bodies. Two initialization modes:
   ```js
   // Single matrix:
-  window.MATRIX_CONFIG = { src: 'file.tsv', mountId: 'id' };
+  window.MATRIX_CONFIG = { src: 'file.md', mountId: 'id' };
 
-  // Multiple matrices + optional markdown essay on one page:
+  // Multiple matrices on one page:
   window.GOD_DATA = [
-    { src: 'god-philosophers.tsv', mountId: 'god-philosophers-mount' },
-    { src: 'god-prophets.tsv',     mountId: 'god-prophets-mount' }
+    { src: 'god-philosophers.md', mountId: 'god-philosophers-mount' },
+    { src: 'god-prophets.md',     mountId: 'god-prophets-mount' }
   ];
-  window.GOD_ESSAY_SRC = 'god-essay.md';  // rendered into #essay-body
+
+  // Optional essay rendered into <div id="essay-mount">:
+  window.ESSAY_SRC = 'file.md';   // GOD_ESSAY_SRC is accepted as a legacy alias
   ```
+  The essay markdown's first heading becomes the page title/subtitle; remaining paragraphs render inside `.essay-body`.
 
 - **`js/parallel.js`** — parallel reading layout (used by the parallel CSS).
 
-### Matrix TSV cell format
+### Matrix cell format
 
-Within any cell, `\n\n` separates logical sections. Column/row headers are richer than plain text:
+The matrix source file (`.md` by convention, tab-separated content) follows the layout below. Within any cell, `\n\n` separates logical sections. Column/row headers are richer than plain text:
 
 - **Corner cell** (row 0, col 0): `Label\nSize` — a `\n` (not `\n\n`) separates display label from size hint (e.g. `Property ↓ · Thinker →\n10 × 10`).
 - **Column header** (row 0, col N+1): `name\n\ndates\n\nculture\n\nshort\n\nlong` — `name` is always first; if the second part contains digits it's treated as dates; third part (no digits) is culture. Panel shows short + long as essay body.
@@ -78,8 +81,11 @@ Within any cell, `\n\n` separates logical sections. Column/row headers are riche
 
 TSV files live alongside their `index.html`. They are fetched at runtime — not bundled.
 
-**Scripts** (note: hardcoded paths inside may need updating):
+Older matrix pages still have a sibling `.tsv` alongside the `.md`; the `.md` is the live source loaded by `matrix.js`. Translation pages still use `.tsv`.
+
+**Scripts** (one-off, paths hardcoded — read before running):
 - `scripts/json_to_tsv.py` — converts a structured JSON source file to matrix TSV format.
+- `scripts/tsv_to_md.py` — converts a trellis TSV into the `.md` form that `matrix.js` loads (each cell becomes a heading section so Ctrl+F works on the raw file).
 - `scripts/update_tsv_corners.py` — rewrites the corner cell (row 0, col 0) of specified TSV files.
 
 ### Page patterns
@@ -93,5 +99,9 @@ TSV files live alongside their `index.html`. They are fetched at runtime — not
 ## Adding new content
 
 - **New translation**: create a folder under `translations/`, add `index.html` following an existing translation page, place the `.tsv` alongside it, set `window.TSV_CONFIG` inline.
-- **New matrix creation or vision**: place `.tsv` in the creation/vision folder, set `window.MATRIX_CONFIG` (or `GOD_DATA` for multiple matrices), load `matrix.js`.
+- **New matrix creation or vision**: place the trellis `.md` in the creation/vision folder, set `window.MATRIX_CONFIG` (or `GOD_DATA` for multiple matrices) plus an optional `window.ESSAY_SRC`, load `matrix.js`.
 - **New section listing**: update the parent `index.html` listing using `.listing-box > .listing-item` structure.
+
+## Working notes
+
+The `knb/` directory holds source PDFs and working notes for upcoming pieces. It is untracked (no `.gitignore` entry — just never committed) and is not linked from the live site. Treat it as scratch input, not publishable content, and don't `git add` it without asking.

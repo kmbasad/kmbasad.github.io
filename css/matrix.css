@@ -103,7 +103,7 @@
   position: absolute;
 }
 
-/* ── TABLE ───────────────────────────────────────────────────────────────── */
+/* ── TABLE — blends with the page bg, individual cells carry the structure ── */
 .table-scroll {
   display: block;
   width: fit-content;
@@ -112,11 +112,27 @@
   margin-right: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  background: var(--surface);
-  box-shadow: var(--sh-sm);
+  border: none;
+  border-radius: 0;
+  background: transparent;
   margin-bottom: 12px;
+  position: relative;
+}
+
+/* Accent rule at the top of every trellis — gives the grid its own identity */
+.table-scroll::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    var(--accent) 0%,
+    var(--accent-mid) 40%,
+    transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 table {
@@ -124,11 +140,13 @@ table {
   width: 100%
 }
 
-/* Header row */
+/* Column header row */
 thead th {
   background: var(--surface-3);
-  border-bottom: 2px solid var(--border-2);
+  border-top: 1px solid var(--border-2);
+  border-bottom: 1px solid var(--border-2);
   border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
   vertical-align: bottom;
   padding: 0;
   width: 148px;
@@ -136,11 +154,82 @@ thead th {
   transition: background .18s ease;
 }
 
-thead th:first-child {
+thead th:first-child,
+.corner-th {
   background: var(--surface-3);
   width: 174px;
   min-width: 174px;
-  border-right: 2px solid var(--border-2);
+  border-right: 1px solid var(--border-2);
+  vertical-align: top;
+  padding: 0;
+}
+
+thead th:not(:first-child):not(:last-child) {
+  border-left: none;
+}
+
+/* ── Corner cell — axis legend + fullscreen ──────────────────────────────── */
+.corner-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 82px;
+}
+
+/* Fullscreen toggle — icon-only, anchored at top-left */
+.corner-th .matrix-fs-btn {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  margin: 0;
+  padding: 4px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  gap: 0;
+}
+
+.corner-th .matrix-fs-btn svg {
+  width: 11px;
+  height: 11px;
+  display: block;
+}
+
+/* Row-name label — sits just above the bottom border */
+.corner-row-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  text-align: center;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  padding: 0 6px;
+}
+
+/* Column-name label — sits just left of the right border */
+.corner-col-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 .th-inner {
@@ -183,25 +272,13 @@ thead th:first-child .th-inner {
   white-space: normal
 }
 
-.corner-label {
-  font-size: 11.5px;
-  color: var(--text-3);
-  line-height: 1.4
-}
 
-.corner-label strong {
-  display: block;
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--text-4);
-  margin-bottom: 3px
-}
-
-/* Property column */
+/* Property column (row headers) */
 tbody th {
   background: var(--surface-3);
   padding: 10px 13px;
-  border-right: 2px solid var(--border-2);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border-2);
   border-bottom: 1px solid var(--border);
   vertical-align: top;
   width: 174px;
@@ -228,27 +305,27 @@ tbody th {
   font-style: italic
 }
 
-/* Data cells */
+/* Data cells — every side bordered so first/last rows look consistent */
 td {
   border-bottom: 1px solid var(--border);
   border-right: 1px solid var(--border);
   padding: 0;
   vertical-align: top;
   width: 148px;
-  min-width: 148px
+  min-width: 148px;
 }
 
 td:last-child {
-  border-right: none
+  border-right: 1px solid var(--border);
 }
 
 tbody tr:last-child td,
 tbody tr:last-child th {
-  border-bottom: none
+  border-bottom: 1px solid var(--border-2);
 }
 
 tbody td {
-  background: var(--surface-2);
+  background: var(--surface);
   transition: background .15s ease;
 }
 
@@ -340,9 +417,9 @@ tbody th .th-num {
   right: 4px;
 }
 
-/* ── Row striping ────────────────────────────────────────────────────────── */
+/* ── Row striping — more distinct in both themes ─────────────────────────── */
 tbody tr:nth-child(even) td {
-  background: var(--surface);
+  background: var(--surface-2);
 }
 
 /* ── Diagonal cells ──────────────────────────────────────────────────────── */
@@ -638,12 +715,13 @@ thead th:not(:first-child):hover .th-name {
 /* ── PAGE SECTIONS ───────────────────────────────────────────────────────── */
 
 .page-section {
-  padding: 36px 28px 52px;
-  border-top: 3px solid var(--border);
+  padding: 56px 28px 56px;
+  border-top: 1px solid var(--border);
 }
 
 .page-section:first-of-type {
   border-top: none;
+  padding-top: 40px;
 }
 
 .page-section+.page-section {

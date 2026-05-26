@@ -72,9 +72,125 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectNav);
-  } else {
+  // ── Auto-TOC ───────────────────────────────────────────────────────────────
+  // Every internal page gets a TOC dropdown in the page-header.
+  // If a manual TOC is already present in the HTML, it's preserved.
+  function formatLabel(id) {
+    return id.replace(/[-_]+/g, ' ').replace(/\b\w/g, function (c) {
+      return c.toUpperCase();
+    });
+  }
+
+  function collectTOCEntries() {
+    var entries = [];
+
+    // 1. Sections explicitly marked as .page-section[id]
+    var sections = document.querySelectorAll('.page-section[id]');
+    if (sections.length) {
+      sections.forEach(function (sec) {
+        var title = sec.querySelector('.section-title');
+        var label = (title && title.textContent.trim()) ||
+                    sec.getAttribute('data-toc-label') ||
+                    formatLabel(sec.id);
+        entries.push({ href: '#' + sec.id, label: label });
+      });
+      return entries;
+    }
+
+    // 2. A bare matrix mount (no surrounding page-section)
+    var mount = document.getElementById('matrix-mount');
+    if (mount) {
+      if (!mount.id) mount.id = 'trellis';
+      entries.push({ href: '#' + mount.id, label: 'Trellis' });
+      return entries;
+    }
+
+    // 3. A listing of articles
+    var listing = document.querySelector('.listing-box');
+    if (listing) {
+      if (!listing.id) listing.id = 'articles';
+      entries.push({ href: '#' + listing.id, label: 'Articles' });
+      return entries;
+    }
+
+    // 4. A translation table
+    var trans = document.querySelector('.trans-page, .tt-wrap');
+    if (trans) {
+      if (!trans.id) trans.id = 'text';
+      entries.push({ href: '#' + trans.id, label: 'Text' });
+      return entries;
+    }
+
+    return entries;
+  }
+
+  function injectTOC() {
+    var headerInner = document.querySelector('.page-header-inner');
+    if (!headerInner) return;
+    if (headerInner.querySelector('.toc-wrapper')) return;
+
+    var entries = collectTOCEntries();
+    if (!entries.length) return;
+
+    var toc = document.createElement('div');
+    toc.className = 'toc-wrapper';
+    var listHtml = entries.map(function (e) {
+      return '<li><a href="' + e.href + '">' + e.label + '</a></li>';
+    }).join('');
+    toc.innerHTML =
+      '<span class="toc-label">TOC ▾</span>' +
+      '<div class="toc-dropdown"><ul>' + listHtml + '</ul></div>';
+    headerInner.appendChild(toc);
+  }
+
+  // Some pages render sections asynchronously (matrix.js). Re-run injection
+  // a moment later so labels can pick up live section-titles, but only if
+  // we haven't already produced a TOC.
+  function tryLateTOCRefresh() {
+    var wrap = document.querySelector('.page-header-inner .toc-wrapper');
+    if (!wrap) { injectTOC(); return; }
+    // Refresh labels from rendered section-titles
+    var sections = document.querySelectorAll('.page-section[id]');
+    if (!sections.length) return;
+    var links = wrap.querySelectorAll('.toc-dropdown li a');
+    sections.forEach(function (sec, i) {
+      var title = sec.querySelector('.section-title');
+      if (title && links[i]) {
+        links[i].textContent = title.textContent.trim();
+      }
+    });
+  }
+
+  // ── Sticky shrinking page-header ───────────────────────────────────────────
+  function setupStickyHeader() {
+    var header = document.querySelector('.page-header');
+    if (!header) return;
+    var threshold = 16;
+    var stuck = false;
+    function onScroll() {
+      var s = window.scrollY > threshold;
+      if (s !== stuck) {
+        stuck = s;
+        header.classList.toggle('is-sticky', s);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // ── Boot ───────────────────────────────────────────────────────────────────
+  function boot() {
     injectNav();
+    injectTOC();
+    setupStickyHeader();
+    // After matrix.js / essay renderers have had a tick to render
+    setTimeout(tryLateTOCRefresh, 400);
+    setTimeout(tryLateTOCRefresh, 1500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
   }
 }());

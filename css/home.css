@@ -6,18 +6,63 @@ body.home-page {
   display: flex;
   flex-direction: column;
   margin: 0;
-  background: #090b14;
+  background: var(--bg);
 }
 
-[data-theme="light"] body.home-page {
-  background: #f5f0e8;
-}
-
-/* ── Nav override ─────────────────────────────────────────────────────────── */
+/* ── Nav override — no border on the immersive home, sits over the canvas ── */
 
 body.home-page > .nav {
   position: relative;
   z-index: 10;
+  border-bottom: none;
+}
+
+body.home-page .nav-brand,
+body.home-page .nav-links a,
+body.home-page .nav-theme-btn {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.home-page .nav-brand a:hover,
+body.home-page .nav-links a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.home-page .nav-links a.active {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.home-page .nav-theme-btn {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.home-page .nav-theme-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="light"] body.home-page .nav-brand,
+[data-theme="light"] body.home-page .nav-links a,
+[data-theme="light"] body.home-page .nav-theme-btn {
+  color: rgba(40, 30, 14, 0.55);
+}
+
+[data-theme="light"] body.home-page .nav-brand a:hover,
+[data-theme="light"] body.home-page .nav-links a:hover {
+  color: rgba(40, 30, 14, 0.95);
+}
+
+[data-theme="light"] body.home-page .nav-links a.active {
+  color: rgba(40, 30, 14, 0.9);
+}
+
+[data-theme="light"] body.home-page .nav-theme-btn {
+  border-color: rgba(40, 30, 14, 0.15);
+}
+
+[data-theme="light"] body.home-page .nav-theme-btn:hover {
+  color: rgba(40, 30, 14, 0.95);
+  border-color: rgba(40, 30, 14, 0.3);
 }
 
 /* ── Starfield canvas ─────────────────────────────────────────────────────── */
@@ -62,7 +107,7 @@ body.home-page > .nav {
 [data-theme="light"] .home-stage::before {
   background: radial-gradient(ellipse 80% 80% at 50% 40%,
     transparent 30%,
-    rgba(220, 210, 195, 0.4) 100%
+    rgba(180, 150, 100, 0.45) 100%
   );
 }
 
