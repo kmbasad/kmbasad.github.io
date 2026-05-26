@@ -53,6 +53,10 @@ body:not(.home-page)::before {
     transparent 0%,
     rgba(38, 28, 12, 0.05) 100%
   );
+  /* Promote to its own compositor layer so the fixed gradient doesn't
+     repaint on every scroll frame — main source of scroll jank. */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 [data-theme="dark"] body:not(.home-page)::before {
@@ -139,7 +143,14 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  transition: background-color .3s ease, backdrop-filter .3s ease;
+  /* Transition background-color only — animating backdrop-filter triggers
+     per-frame full repaints and is the single largest cause of scroll jank
+     here. The blur switches on/off instantly when .is-sticky toggles. */
+  transition: background-color .25s ease;
+  /* Promote to its own compositor layer so sticky shifts and blur don't
+     force the whole page to repaint. */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .page-header.is-sticky {

@@ -167,15 +167,23 @@
     if (!header) return;
     var threshold = 16;
     var stuck = false;
-    function onScroll() {
+    var ticking = false;
+    function update() {
+      ticking = false;
       var s = window.scrollY > threshold;
       if (s !== stuck) {
         stuck = s;
         header.classList.toggle('is-sticky', s);
       }
     }
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    update();
   }
 
   // ── Boot ───────────────────────────────────────────────────────────────────
