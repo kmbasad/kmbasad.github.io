@@ -671,10 +671,53 @@
       }
     }
 
+    // ── Native Fullscreen API helpers (real OS-level fullscreen) ──────────
+    function nativeFsElement() {
+      return document.fullscreenElement || document.webkitFullscreenElement || null;
+    }
+    function requestNativeFs(el) {
+      var req = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (req) {
+        try {
+          var p = req.call(el);
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        } catch (e) { /* fall back silently to pseudo-FS only */ }
+      }
+    }
+    function exitNativeFs() {
+      var ex = document.exitFullscreen || document.webkitExitFullscreen;
+      if (ex && nativeFsElement()) {
+        try {
+          var p = ex.call(document);
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        } catch (e) {}
+      }
+    }
+
     fsBtn.addEventListener('click', function () {
-      if (container.classList.contains('is-fullscreen')) exitPseudoFS();
-      else enterPseudoFS();
+      if (container.classList.contains('is-fullscreen')) {
+        exitNativeFs();
+        exitPseudoFS();
+      } else {
+        enterPseudoFS();
+        requestNativeFs(container);
+      }
     });
+
+    // If the user exits native fullscreen (Esc, F11, browser UI), drop our
+    // pseudo-fullscreen layout too so the page returns cleanly.
+    function onFsChange() {
+      if (!nativeFsElement() && container.classList.contains('is-fullscreen')) {
+        exitPseudoFS();
+      } else if (nativeFsElement() === container) {
+        // Native FS just enabled — re-measure after the viewport settles.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(resizeForFullscreen);
+        });
+      }
+    }
+    document.addEventListener('fullscreenchange', onFsChange);
+    document.addEventListener('webkitfullscreenchange', onFsChange);
 
     window.addEventListener('resize', function () {
       if (container.classList.contains('is-fullscreen')) {

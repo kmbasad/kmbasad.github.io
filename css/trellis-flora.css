@@ -20,6 +20,9 @@
   --flora-cell-alpha:        0.56;
   --flora-cell-surface:      rgba(251, 244, 224, var(--flora-cell-alpha));
   --flora-diag-surface:      rgba(216, 174, 130, var(--flora-cell-alpha));
+  /* Header surface — muted sage-stone, a different hue family from the warm cream
+     cells and amber diagonal so headers read as their own material */
+  --flora-header-surface:    rgba(190, 195, 175, 0.36);
 }
 
 [data-theme="dark"] {
@@ -35,6 +38,7 @@
   --flora-cell-alpha:        0.50;
   --flora-cell-surface:      rgba(14, 19, 32,  var(--flora-cell-alpha));
   --flora-diag-surface:      rgba(40, 28, 16,  var(--flora-cell-alpha));
+  --flora-header-surface:    rgba(26, 32, 48,  0.58);
 }
 
 /* ── Cells: translucent foreground panels above the SVG ── */
@@ -45,6 +49,13 @@
   position: relative;
   z-index: 1;
   background-color: var(--flora-cell-surface);
+}
+
+/* Headers — row, column, and corner — sit a touch deeper than the 100 data cells */
+.matrix-container[data-flora] thead th,
+.matrix-container[data-flora] tbody th,
+.matrix-container[data-flora] .corner-th {
+  background-color: var(--flora-header-surface);
 }
 
 /* Diagonal cells keep their amber tint, also translucent */
