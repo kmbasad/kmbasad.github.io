@@ -1,0 +1,759 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MATRIX — table grid, cells, panel, overlay, page sections
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.article-legend {
+  font-size: 14px;
+  color: var(--text-3);
+  text-align: center;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 16px 0 32px;
+}
+
+.article-legend::before {
+  content: "Trellis:\00A0";
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+/* ── Matrix container + fullscreen ──────────────────────────────────────── */
+.matrix-container {
+  position: relative;
+}
+
+.matrix-fs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 3px 7px;
+  font-size: 10.5px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-4);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+  white-space: nowrap;
+}
+
+.matrix-fs-btn:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent-mid);
+}
+
+/* Hide fullscreen button on phones */
+@media (max-width: 767px) {
+  .matrix-fs-btn { display: none; }
+}
+
+/* ── Pseudo-fullscreen (.is-fullscreen class toggled by JS) ──────────────
+   Uses position:fixed so we own the ESC key — no browser native API.     */
+.matrix-container.is-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: var(--bg);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Table scroll fills remaining vertical space exactly */
+.matrix-container.is-fullscreen .table-scroll {
+  flex: 1;
+  overflow: hidden;   /* no scrollbars — cells are sized to fit precisely */
+  margin-bottom: 0;
+  max-height: none;
+  border: none;       /* remove 2px box so clientWidth/Height are exact */
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Fixed layout so --fs-cell-w is authoritative */
+.matrix-container.is-fullscreen table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Column + row dimensions driven by JS-set custom properties */
+.matrix-container.is-fullscreen td,
+.matrix-container.is-fullscreen thead th:not(:first-child) {
+  width: var(--fs-cell-w, 148px);
+  min-width: unset;
+}
+
+.matrix-container.is-fullscreen .cell-btn {
+  min-height: var(--fs-cell-h, 72px);
+  height: var(--fs-cell-h, 72px);
+  padding: 6px 8px 14px;
+}
+
+/* Overlay and panel are absolute inside the fixed container
+   (same visual result as fixed-within-viewport, but z-index is local) */
+.matrix-container.is-fullscreen .table-overlay,
+.matrix-container.is-fullscreen .table-panel {
+  position: absolute;
+}
+
+/* ── TABLE — blends with the page bg, individual cells carry the structure ── */
+.table-scroll {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+/* Accent rule at the top of every trellis — gives the grid its own identity */
+.table-scroll::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    var(--accent) 0%,
+    var(--accent-mid) 40%,
+    transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%
+}
+
+/* Column header row */
+thead th {
+  background: var(--surface-3);
+  border-top: 1px solid var(--border-2);
+  border-bottom: 1px solid var(--border-2);
+  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  vertical-align: bottom;
+  padding: 0;
+  width: 148px;
+  min-width: 148px;
+  transition: background .18s ease;
+}
+
+thead th:first-child,
+.corner-th {
+  background: var(--surface-3);
+  width: 174px;
+  min-width: 174px;
+  border-right: 1px solid var(--border-2);
+  vertical-align: top;
+  padding: 0;
+}
+
+thead th:not(:first-child):not(:last-child) {
+  border-left: none;
+}
+
+/* ── Corner cell — axis legend + fullscreen ──────────────────────────────── */
+.corner-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 82px;
+}
+
+/* Fullscreen toggle — icon-only, anchored at top-left */
+.corner-th .matrix-fs-btn {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  margin: 0;
+  padding: 4px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  gap: 0;
+}
+
+.corner-th .matrix-fs-btn svg {
+  width: 11px;
+  height: 11px;
+  display: block;
+}
+
+/* Row-name label — sits just above the bottom border */
+.corner-row-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  text-align: center;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  padding: 0 6px;
+}
+
+/* Column-name label — sits just left of the right border */
+.corner-col-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.th-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 8px 10px;
+  gap: 2px;
+  text-align: center;
+  min-height: 82px;
+  position: relative;
+}
+
+thead th:first-child .th-inner {
+  align-items: flex-start;
+  text-align: left;
+  padding: 12px 14px 10px;
+  min-height: unset;
+}
+
+.th-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: normal;
+  word-break: break-word;
+  transition: color .18s ease;
+}
+
+.th-dates {
+  font-size: 10.5px;
+  color: var(--text-3);
+  white-space: normal
+}
+
+.th-culture {
+  font-size: 10px;
+  color: var(--accent);
+  white-space: normal
+}
+
+
+/* Property column (row headers) */
+tbody th {
+  background: var(--surface-3);
+  padding: 10px 13px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  width: 174px;
+  min-width: 174px;
+  position: relative;
+  transition: background .18s ease;
+}
+
+.prop-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+  line-height: 1.4;
+  transition: color .18s ease;
+}
+
+.prop-desc {
+  font-size: 11px;
+  color: var(--text-4);
+  display: block;
+  margin-top: 3px;
+  line-height: 1.3;
+  font-style: italic
+}
+
+/* Data cells — every side bordered so first/last rows look consistent */
+td {
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 0;
+  vertical-align: top;
+  width: 148px;
+  min-width: 148px;
+}
+
+td:last-child {
+  border-right: 1px solid var(--border);
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: 1px solid var(--border-2);
+}
+
+tbody td {
+  background: var(--surface);
+  transition: background .15s ease;
+}
+
+/* ── Cell button ─────────────────────────────────────────────────────────── */
+@keyframes cellEntrance {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.cell-btn {
+  display: block;
+  width: 100%;
+  min-height: 72px;
+  height: 100%;
+  padding: 9px 10px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.45;
+  transition: background .15s ease, box-shadow .15s ease, color .15s ease;
+  position: relative;
+  animation: cellEntrance .35s ease backwards;
+}
+
+.cell-btn::after {
+  content: '↗';
+  position: absolute;
+  bottom: 5px;
+  right: 7px;
+  font-size: 9px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.cell-btn:hover {
+  background: var(--cell-hover-bg);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1.5px var(--accent-mid);
+}
+
+.cell-btn:hover::after {
+  opacity: 1
+}
+
+.cell-btn.active {
+  background: var(--cell-active-bg);
+  color: var(--cell-active-text);
+  box-shadow: inset 0 0 0 2px var(--cell-active-accent);
+}
+
+.cell-btn.active::after {
+  opacity: 1;
+  color: var(--cell-active-accent);
+}
+
+/* ── Cell / header numbering ─────────────────────────────────────────────── */
+.cell-num {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--text-3);
+  pointer-events: none;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  opacity: .55;
+}
+
+.th-num {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--text-3);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  opacity: .55;
+}
+
+tbody th .th-num {
+  top: 3px;
+  right: 4px;
+}
+
+/* ── Row striping — more distinct in both themes ─────────────────────────── */
+tbody tr:nth-child(even) td {
+  background: var(--surface-2);
+}
+
+/* ── Diagonal cells ──────────────────────────────────────────────────────── */
+/* Thinker × their defining property — always the structurally meaningful cell.
+   Specificity must exceed tbody tr:nth-child(even) td (0,1,3)              */
+tbody tr td.is-diagonal {
+  background: var(--diag-bg);
+}
+
+tbody tr td.is-diagonal .cell-btn {
+  box-shadow: inset 0 3px 0 var(--diag-accent);
+}
+
+tbody tr td.is-diagonal .cell-num {
+  color: var(--diag-accent);
+  opacity: 0.8;
+}
+
+tbody tr td.is-diagonal .cell-btn:hover {
+  background: var(--diag-hover-bg);
+  box-shadow: inset 0 3px 0 var(--diag-accent), inset 0 0 0 1.5px var(--diag-border);
+  color: var(--text);
+}
+
+tbody tr td.is-diagonal .cell-btn.active {
+  box-shadow: inset 0 3px 0 var(--diag-accent), inset 0 0 0 2px var(--cell-active-accent);
+}
+
+/* Amber panel bar when a diagonal cell is open */
+.table-panel.panel-diagonal .panel-bar {
+  background: linear-gradient(90deg, var(--diag-accent), rgba(254, 243, 199, 0.5));
+}
+[data-theme="dark"] .table-panel.panel-diagonal .panel-bar {
+  background: linear-gradient(90deg, var(--diag-accent), rgba(120, 78, 8, 0.35));
+}
+
+/* ── Cross-highlight: row header + col header highlight on cell hover ─────── */
+tbody th.row-cross {
+  background: var(--cell-cross-bg);
+}
+tbody th.row-cross .prop-name {
+  color: var(--accent);
+}
+thead th.col-cross {
+  background: var(--cell-cross-bg);
+}
+thead th.col-cross .th-name {
+  color: var(--accent);
+}
+
+/* ── Active states (clicked row / col header) ────────────────────────────── */
+tbody th.row-active {
+  background: var(--cell-active-bg);
+  border-right-color: var(--accent);
+}
+tbody th.row-active .prop-name {
+  color: var(--accent);
+}
+
+thead th.col-active {
+  background: var(--cell-active-bg);
+}
+thead th.col-active .th-name {
+  color: var(--accent);
+}
+thead th.col-active .th-culture {
+  color: var(--cell-active-text);
+}
+
+/* ── Header hover hints ──────────────────────────────────────────────────── */
+tbody th:hover {
+  background: var(--cell-cross-bg);
+  cursor: pointer;
+}
+tbody th:hover .prop-name {
+  color: var(--accent);
+}
+
+thead th:not(:first-child):hover {
+  background: var(--cell-cross-bg);
+  cursor: pointer;
+}
+thead th:not(:first-child):hover .th-name {
+  color: var(--accent);
+}
+
+/* ── PANEL + OVERLAY ─────────────────────────────────────────────────────── */
+.table-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  z-index: 90;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+[data-theme="dark"] .table-overlay {
+  background: rgba(0, 0, 0, .6);
+}
+
+.table-overlay.visible {
+  display: block
+}
+
+.table-panel {
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 460px;
+  height: 100vh;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, .16);
+  z-index: 100;
+  overflow-y: auto;
+  transition: right .3s cubic-bezier(.22,.68,0,1.2);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .table-panel {
+  box-shadow: -8px 0 48px rgba(0, 0, 0, .7);
+}
+
+.table-panel.open {
+  right: 0
+}
+
+/* Accent bar at top */
+.panel-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+  flex-shrink: 0;
+  transition: background .3s ease;
+}
+
+.panel-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  font-size: 13px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: background .12s, color .12s, border-color .12s;
+  z-index: 2;
+}
+
+.panel-close-btn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--border-2)
+}
+
+.panel-head {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface-2)
+}
+
+.panel-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--text-4);
+  text-transform: uppercase;
+  margin-bottom: 5px
+}
+
+.panel-prop {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.25
+}
+
+.panel-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent)
+}
+
+.panel-meta {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px
+}
+
+/* ── Panel body with fade animation on content change ────────────────────── */
+@keyframes panelContentIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panel-body {
+  padding: 18px 20px 40px;
+  flex: 1;
+}
+
+.panel-body.panel-refresh {
+  animation: panelContentIn .22s ease forwards;
+}
+
+.panel-head.panel-refresh {
+  animation: panelContentIn .18s ease forwards;
+}
+
+.panel-short {
+  font-size: 12.5px;
+  color: var(--text-2);
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.panel-meta:empty,
+.panel-short:empty { display: none; }
+
+.panel-long {
+  font-size: 15px;
+  line-height: 1.77;
+  color: var(--text)
+}
+
+.panel-long p {
+  margin-bottom: 13px
+}
+
+.panel-long p:last-child {
+  margin-bottom: 0
+}
+
+.panel-long em {
+  font-style: italic;
+  color: var(--accent)
+}
+
+.panel-nav {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface-2)
+}
+
+.panel-nav button {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  color: var(--text-2);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.panel-nav button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light)
+}
+
+.panel-nav button:disabled {
+  opacity: .3;
+  cursor: default
+}
+
+@media(max-width:640px) {
+  .table-panel {
+    width: 100%;
+    right: -100%
+  }
+}
+
+/* ── PAGE SECTIONS ───────────────────────────────────────────────────────── */
+
+.page-section {
+  padding: 56px 28px 56px;
+  border-top: 1px solid var(--border);
+}
+
+.page-section:first-of-type {
+  border-top: none;
+  padding-top: 40px;
+}
+
+.page-section+.page-section {
+  margin-top: 0;
+}
+
+.section-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-size: clamp(26px, 3.8vw, 40px);
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-3);
+  margin: 0 auto 32px auto;
+  max-width: 900px;
+  letter-spacing: 0.01em;
+}

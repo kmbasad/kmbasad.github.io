@@ -1,0 +1,1121 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Tiro+Bangla:ital@0;1&family=Noto+Serif+Bengali:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%
+}
+
+:root {
+  /* ── Temple & Saffron — DAY (warm sand, terracotta-saffron, deep teal) ── */
+  --accent: #c2531f;            /* terracotta-saffron */
+  --accent-2: #1f6f6a;          /* deep teal — secondary */
+  --accent-light: rgba(194, 83, 31, 0.10);
+  --accent-mid: rgba(194, 83, 31, 0.34);
+  --text: #241a14;
+  --text-2: #4a3729;
+  --text-3: #7c6552;
+  --text-4: #a98e72;
+  --surface: #f8f0e6;
+  --surface-2: #eddcc9;
+  --surface-3: #e2ceb5;
+  --border: rgba(74, 45, 22, 0.16);
+  --border-2: rgba(74, 45, 22, 0.30);
+  --bg: #f1e7dd;
+  --r: 8px;
+  --r-sm: 4px;
+  --sh-sm: 0 1px 2px rgba(74, 45, 22, .07), 0 1px 1px rgba(74, 45, 22, .05);
+  --sh: 0 6px 24px rgba(74, 45, 22, .13), 0 1px 3px rgba(74, 45, 22, .07);
+  /* Type system */
+  --display-font: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --serif-font: 'Spectral', Georgia, 'Times New Roman', serif;
+  --ui-font: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Unified Bangla stack — Tiro Bangla (designed for literary reading) as
+     primary; Noto Serif Bengali covers weights Tiro lacks; system fonts last. */
+  --bn-font: 'Tiro Bangla', 'Noto Serif Bengali', 'Kalpurush', 'SolaimanLipi', 'Siyam Rupali', Georgia, serif;
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.24s;
+  --dur-slow: 0.42s;
+  /* Tracking for uppercase micro-labels */
+  --ls-label: 0.14em;
+}
+
+body {
+  font-family: var(--ui-font);
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Candlelit depth on every inner page — a warm glow from the top edge and a
+   soft vignette toward the corners. The home page paints its own starfield. */
+body:not(.home-page)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -8%,
+      rgba(194, 83, 31, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 120% 80% at 50% 50%,
+      transparent 55%, rgba(74, 40, 18, 0.06) 100%);
+  /* Own compositor layer so the fixed gradient doesn't repaint on scroll. */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+[data-theme="dark"] body:not(.home-page)::before {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -8%,
+      rgba(224, 145, 63, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 120% 85% at 50% 50%,
+      transparent 45%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* Fine film grain — candlelit texture, kept low enough not to muddy text. */
+body:not(.home-page)::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  transform: translateZ(0);
+}
+
+[data-theme="dark"] body:not(.home-page)::after {
+  opacity: 0.06;
+}
+
+/* Links — an underline that grows in on hover instead of the default rule */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size var(--dur) var(--ease), color var(--dur) ease, opacity var(--dur) ease;
+}
+
+a:hover {
+  background-size: 100% 1px;
+}
+
+/* Structural links carry their own hover affordance — opt out of the reveal */
+.nav-brand a,
+.nav-links a,
+.listing-item,
+.home-section,
+.toc-dropdown li a,
+.home-meta a,
+.home-license a {
+  background-image: none;
+}
+
+/* Modern, accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* NAV — blends with the page background; no separate band */
+.nav {
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-brand a {
+  color: inherit;
+}
+
+.nav-brand a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  display: block;
+  padding: 8px 11px 9px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  transition: color var(--dur) ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  bottom: 4px;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur) var(--ease);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* PAGE HEADER — blends with the page, sticks and shrinks on scroll */
+.page-header {
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  /* Transition background-color only — animating backdrop-filter triggers
+     per-frame full repaints and is the single largest cause of scroll jank
+     here. The blur switches on/off instantly when .is-sticky toggles. */
+  transition: background-color .25s ease;
+  /* Promote to its own compositor layer so sticky shifts and blur don't
+     force the whole page to repaint. */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.page-header.is-sticky {
+  background: rgba(241, 231, 221, 0.85);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+[data-theme="dark"] .page-header.is-sticky {
+  background: rgba(19, 13, 11, 0.85);
+}
+
+.page-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: height .25s ease;
+}
+
+.page-header.is-sticky .page-header-inner {
+  height: 48px;
+}
+
+.breadcrumb,
+.breadcrumb-current,
+.toc-label {
+  transition: font-size .25s ease;
+}
+
+.page-header.is-sticky .breadcrumb-current {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.page-header.is-sticky .breadcrumb a,
+.page-header.is-sticky .breadcrumb .sep {
+  font-size: 10.5px;
+}
+
+.page-header.is-sticky .toc-label {
+  font-size: 10.5px;
+  padding: 4px 10px;
+}
+
+/* Breadcrumb — trail on the left, last item is the page title */
+.breadcrumb {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.breadcrumb a {
+  font-size: 11.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.breadcrumb .sep {
+  margin: 0 8px;
+  color: var(--text-4);
+  font-size: 11.5px;
+}
+
+/* Last breadcrumb item = current page title, shown prominently */
+.breadcrumb-current {
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-size: clamp(22px, 2.6vw, 27px);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.016em;
+}
+
+.breadcrumb-sub {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 400;
+  margin-left: 8px;
+  font-style: italic;
+}
+
+/* MAIN */
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 36px 28px 80px
+}
+
+.main-wide {
+  padding: 28px 28px 72px
+}
+
+/* TOC DROPDOWN */
+.toc-wrapper {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.toc-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--r-sm);
+  background: transparent;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.toc-wrapper:hover .toc-label {
+  color: var(--text);
+  border-color: var(--border-2);
+}
+
+.toc-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 8px 0;
+  min-width: 220px;
+  box-shadow: var(--sh);
+  z-index: 101;
+}
+
+.toc-wrapper:hover .toc-dropdown {
+  display: block;
+}
+
+.toc-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.toc-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-dropdown li a {
+  display: block;
+  padding: 9px 20px;
+  font-size: 13px;
+  color: var(--text-2);
+  transition: background 0.15s, color 0.15s;
+}
+
+.toc-dropdown li a:hover {
+  background: var(--surface-2);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* LISTING — open gallery, no card chrome, typography-driven */
+.listing-box {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  border-top: 1px solid var(--border);
+}
+
+.listing-item {
+  display: block;
+  padding: 18px 14px 18px 6px;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+  text-decoration: none;
+  transition: padding-left var(--dur) var(--ease), background-color var(--dur) ease;
+  position: relative;
+}
+
+.listing-item::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width .25s ease;
+}
+
+.listing-item:hover {
+  text-decoration: none;
+  padding-left: 28px;
+  background: linear-gradient(90deg, var(--accent-light), transparent 65%);
+}
+
+.listing-item:hover::before {
+  width: 18px;
+}
+
+.listing-item .title {
+  display: block;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-size: clamp(18px, 2.1vw, 23px);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.014em;
+  line-height: 1.28;
+  transition: color var(--dur) ease;
+}
+
+.listing-item:hover .title {
+  color: var(--accent);
+}
+
+.listing-item .desc {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 2px;
+  font-style: italic;
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+}
+
+.listing-item .tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  border-radius: 20px;
+  padding: 3px 11px;
+}
+
+/* PLACEHOLDER */
+.placeholder {
+  background: var(--surface);
+  border: 1px dashed var(--border-2);
+  border-radius: var(--r);
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-4);
+  font-size: 14px;
+}
+
+/* ARTICLE */
+.article-intro {
+  font-size: 14px;
+  color: var(--text-3);
+  margin-bottom: 14px
+}
+
+.article-tip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-3);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-mid);
+  border-radius: var(--r-sm);
+  padding: 8px 14px;
+  margin-bottom: 20px;
+}
+
+.article-tip strong {
+  color: var(--accent)
+}
+
+@media(max-width:640px) {
+
+  .nav-inner,
+  .page-header-inner,
+  .main {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+
+  .home-hero {
+    padding: 28px 24px
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WRITING SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════
+
+   .writing-col    Centred column, max 850px, auto margins.
+   .writing-stack  Vertical flex stack of cards.
+   .essay          Prose card.
+   .poem           Verse card.
+   .piece-label    Tiny uppercase tag shared by both card types.
+   .piece-title    Title shared by both card types.
+   .essay-body     Paragraph body inside an essay card.
+   .poem-body      Verse body inside a poem card.
+   .stanza         One stanza block.
+
+   Breakpoints
+   ───────────
+   ≥ 901px   Desktop: centred column with breathing room, card padding
+             36–40px, essay text 16px.
+   768–900px Portrait tablet: column fills the screen, side padding 16px,
+             cards flush to column edges, border-radius kept.
+   ≤ 767px   Phone: column is 100vw, zero side padding, cards are
+             full-bleed strips with no radius/shadow/side borders.          */
+
+/* ── Centred column ─────────────────────────────────────────────────────── */
+.writing-col {
+  width: 100%;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* ── Stack ──────────────────────────────────────────────────────────────── */
+.writing-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ── Shared card chrome ─────────────────────────────────────────────────── */
+.poem {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--sh-sm);
+  overflow: hidden;
+}
+
+.essay {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* ── Shared header anatomy ─────────────────────────────────────────────── */
+.piece-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 10px;
+}
+
+.piece-title {
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  margin-bottom: 0;
+}
+
+/* ── Essay card ─────────────────────────────────────────────────────────── */
+.essay {
+  padding: 0;
+}
+
+.essay-body {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.essay-body p {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.88;
+  color: var(--text-2);
+  margin-bottom: 1.8em;
+  letter-spacing: 0.01em;
+}
+
+.essay-body p:last-child {
+  margin-bottom: 0;
+}
+
+.essay-body > p:first-child::first-letter {
+  float: left;
+  font-size: 4.1em;
+  line-height: 0.78;
+  font-weight: 400;
+  padding-right: 0.07em;
+  padding-top: 0.05em;
+  color: var(--text);
+}
+
+.essay-body strong {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.essay-body em {
+  font-style: italic;
+  color: var(--text-3);
+}
+
+/* ── Bangla essay / section — applies the unified Bangla face anywhere
+   .essay-bn is the wrapper. Use on any page with Bangla prose body. ─── */
+.essay-bn,
+.essay-bn .section-title,
+.essay-bn .section-intro,
+.essay-bn .essay-body,
+.essay-bn .essay-body p,
+.essay-bn .essay-body strong,
+.essay-bn .essay-body em {
+  font-family: var(--bn-font);
+}
+
+/* ── Poem card ──────────────────────────────────────────────────────────── */
+.poem {
+  padding: 32px 40px 36px;
+}
+
+.poem-body {
+  margin-top: 22px;
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  font-size: 15px;
+  line-height: 2.0;
+  color: var(--text-2);
+}
+
+.poem-body .stanza {
+  display: block;
+  margin-bottom: 1.15em;
+}
+
+.poem-body .stanza:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Portrait tablet: 768px – 900px ─────────────────────────────────────── */
+@media (max-width: 900px) and (min-width: 768px) {
+  .writing-col {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .essay {
+    /* no box padding to adjust */
+  }
+
+  .poem {
+    padding: 26px 28px 30px;
+  }
+
+  .essay-body p {
+    font-size: 18px;
+  }
+
+  .piece-title {
+    font-size: 18px;
+  }
+}
+
+/* ── Phone: ≤ 767px ─────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .writing-col {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .writing-stack {
+    gap: 2px;
+  }
+
+  /* Full-bleed strips — no rounded corners, no side borders, no shadow */
+  .poem {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .essay {
+    padding: 0 20px;
+  }
+
+  .poem {
+    padding: 22px 20px 26px;
+  }
+
+  .essay-body {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .poem-body {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .piece-title {
+    font-size: 17px;
+  }
+
+  .essay-body p {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .poem-body {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSLATION PAGE
+   ═══════════════════════════════════════════════════════════════════════════
+
+   .trans-page         Page wrapper — narrow centred column for reading.
+   .trans-header       Page title block above the ghazal list.
+   .trans-ghazal       One ghazal section (label + table).
+   .trans-label        Small uppercase number label above the table.
+   .trans-wrap         Scroll container — overflow-x on small screens.
+   .trans-table        The bilingual table itself.
+   .trans-bn           Bangla (left) cell — no line wrap, scroll right.
+   .trans-fa           Persian (right) cell — RTL, no line wrap.
+
+   Row borders are suppressed between verses so each ghazal reads as a
+   continuous poem block; only the outer border of the table is shown.      */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSLATION PAGE (UPDATED)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.trans-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 28px 80px;
+}
+
+.trans-page.wide {
+  max-width: none;
+}
+
+.trans-header {
+  margin-bottom: 36px;
+}
+
+.trans-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.01em;
+  margin-bottom: 4px;
+}
+
+.trans-header p {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.trans-ghazal {
+  margin-bottom: 44px;
+}
+
+.trans-label {
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 6px;
+}
+
+/* Enables horizontal scrolling on small screens without breaking words */
+.trans-wrap {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--sh-sm);
+}
+
+.trans-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+}
+
+.trans-table thead th {
+  background: var(--surface-3);
+  padding: 7px 16px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  width: 50%;
+  min-width: 0;
+  vertical-align: middle;
+  border-right: 1px solid var(--border);
+}
+
+.trans-table thead th:last-child {
+  border-right: none;
+}
+
+.trans-table thead th:first-child {
+  width: 50%;
+  min-width: 0;
+  text-align: left;
+}
+
+.trans-fa-head {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Rows inside tbody have NO row borders — column borders only */
+.trans-table tbody tr td {
+  border-bottom: none;
+  border-right: 1px solid var(--border);
+  padding: 8px 16px;
+  vertical-align: top;
+  background: var(--surface-2);
+}
+
+.trans-table tbody tr td:last-child {
+  border-right: none;
+}
+
+/* Bangla Column */
+.trans-bn {
+  white-space: nowrap;
+  font-family: var(--bn-font);
+  line-height: 1.95;
+  color: var(--text-2);
+}
+
+/* Persian Column */
+.trans-fa {
+  direction: rtl;
+  text-align: right;
+  white-space: nowrap;
+  font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', Georgia, serif;
+  line-height: 1.85;
+  color: var(--text-2);
+}
+
+.trans-table tbody tr:first-child td {
+  padding-top: 14px;
+}
+
+.trans-table tbody tr:last-child td {
+  padding-bottom: 14px;
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+  .trans-page {
+    padding: 32px 16px 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .trans-page {
+    padding: 28px 0 56px;
+  }
+
+  .trans-header {
+    padding: 0 16px;
+    margin-bottom: 28px;
+  }
+
+  .trans-ghazal {
+    margin-bottom: 32px;
+  }
+
+  .trans-label {
+    padding: 0 16px;
+  }
+
+  .trans-wrap {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSLITERATION TOOLTIP
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.has-tooltip {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  /* Adds a very subtle dotted underline to indicate it's interactive */
+  border-bottom: 1px dotted rgba(156, 163, 175, 0.6);
+}
+
+.has-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  /* Positions it above the text */
+  right: 0;
+  /* Aligns with the right side (RTL) */
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: var(--text);
+  /* Dark background */
+  color: var(--surface);
+  /* White text */
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateY(4px);
+  z-index: 100;
+  direction: ltr;
+  /* Forces the Latin text to be Left-to-Right */
+  text-align: left;
+  pointer-events: none;
+  /* Prevents tooltip from blocking other clicks */
+}
+
+/* A tiny arrow pointing down to the word */
+.has-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 16px;
+  margin-bottom: 2px;
+  border: 6px solid transparent;
+  border-top-color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateY(4px);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Triggers on mouse hover (desktop) and touch/click (mobile) */
+.has-tooltip:hover::after,
+.has-tooltip:active::after,
+.has-tooltip:hover::before,
+.has-tooltip:active::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .section-intro, .piece-title, .trans-header h1 {
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEME SYSTEM — DARK MODE + INTERACTIVE VARS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Matrix / cell interactive color vars (defined here so dark mode can override) */
+:root {
+  --cell-active-bg: rgba(194, 83, 31, 0.16);
+  --cell-active-text: #9a3f1c;
+  --cell-active-accent: #c2531f;
+  --cell-hover-bg: rgba(194, 83, 31, 0.08);
+  --cell-cross-bg: rgba(194, 83, 31, 0.05);
+  --diag-bg: rgba(31, 111, 106, 0.15);
+  --diag-hover-bg: rgba(31, 111, 106, 0.24);
+  --diag-accent: #1f6f6a;
+  --diag-border: rgba(31, 111, 106, 0.50);
+}
+
+/* ── Temple & Saffron — NIGHT (oxblood-black, glowing saffron, jade teal) ── */
+[data-theme="dark"] {
+  --accent: #e0913f;            /* saffron, brightened for the dark */
+  --accent-2: #3fb0a3;          /* jade teal — secondary */
+  --accent-light: rgba(224, 145, 63, 0.13);
+  --accent-mid: rgba(224, 145, 63, 0.40);
+  --text: #efe2d6;
+  --text-2: #cdb9a6;
+  --text-3: #9a8472;
+  --text-4: #6e5b4c;
+  --surface: #1d1511;
+  --surface-2: #271b15;
+  --surface-3: #33231b;
+  --border: rgba(240, 220, 200, 0.12);
+  --border-2: rgba(240, 220, 200, 0.24);
+  --bg: #130d0b;
+  --sh-sm: 0 1px 3px rgba(0, 0, 0, .55), 0 1px 2px rgba(0, 0, 0, .4);
+  --sh: 0 4px 18px rgba(0, 0, 0, .65), 0 1px 4px rgba(0, 0, 0, .45);
+  --cell-active-bg: rgba(224, 145, 63, 0.18);
+  --cell-active-text: #f2c089;
+  --cell-active-accent: #e0913f;
+  --cell-hover-bg: rgba(224, 145, 63, 0.09);
+  --cell-cross-bg: rgba(224, 145, 63, 0.06);
+  --diag-bg: rgba(63, 176, 163, 0.14);
+  --diag-hover-bg: rgba(63, 176, 163, 0.24);
+  --diag-accent: #3fb0a3;
+  --diag-border: rgba(63, 176, 163, 0.45);
+}
+
+/* Smooth theme transition on key elements */
+html,
+body,
+.nav,
+.page-header,
+.table-scroll,
+.table-panel,
+.listing-box,
+.essay,
+.poem {
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease,
+              box-shadow .3s ease;
+}
+
+/* ── Nav right side (links + theme toggle) ─────────────────────────────────── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Theme toggle button — blends with nav, no separate chrome */
+.nav-theme-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  border-radius: var(--r-sm);
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, color .15s, border-color .15s;
+  flex-shrink: 0;
+}
+.nav-theme-btn:hover {
+  color: var(--text);
+  border-color: var(--border-2);
+}
+
+/* Sun icon in light mode, moon icon in dark mode (CSS content) */
+[data-theme="light"] .nav-theme-btn::before { content: '☀'; }
+[data-theme="dark"]  .nav-theme-btn::before { content: '☾'; }

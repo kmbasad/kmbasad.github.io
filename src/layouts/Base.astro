@@ -1,0 +1,86 @@
+---
+// Shared shell for every page. Replaces the old nav.js DOM injection with a
+// real server-rendered nav. Per-page engine config + scripts go in the `head`
+// slot (so window.*_CONFIG can be set before an engine script loads, exactly
+// as the legacy pages did).
+interface Props {
+  title?: string;
+  description?: string;
+  section?: 'panthea' | 'canon' | 'translations' | 'trellises' | '';
+  bodyClass?: string;
+  styles?: string[]; // extra stylesheet hrefs (e.g. /css/matrix.css)
+}
+
+const {
+  title = 'KMBA',
+  description = 'Khan Muhammad Bin Asad — Panthea, Canon, Translations, Trellises.',
+  section = '',
+  bodyClass = '',
+  styles = [],
+} = Astro.props;
+
+const links = [
+  { href: '/panthea/', label: 'Panthea', key: 'panthea' },
+  { href: '/canon/', label: 'Canon', key: 'canon' },
+  { href: '/translations/', label: 'Translations', key: 'translations' },
+  { href: '/trellises/', label: 'Trellises', key: 'trellises' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Apply theme before paint to avoid a flash of the wrong mode -->
+    <script is:inline>
+      try {
+        var _t = localStorage.getItem('kmba-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', _t);
+      } catch (e) {}
+    </script>
+
+    <!-- Bengali-forward typography (the work is written in Bangla) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    {styles.map((href) => <link rel="stylesheet" href={href} />)}
+
+    <script is:inline defer src="/js/site.js"></script>
+
+    <slot name="head" />
+  </head>
+
+  <body class={bodyClass}>
+    <nav class="nav">
+      <div class="nav-inner">
+        <span class="nav-brand"><a href="/">KMBA</a></span>
+        <div class="nav-right">
+          <ul class="nav-links">
+            {
+              links.map((l) => (
+                <li>
+                  <a href={l.href} class={section === l.key ? 'active' : undefined}>
+                    {l.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <button class="nav-theme-btn" id="nav-theme-btn" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Kiarostami, Abbas — KMBA" section="trellises" styles={['/css/matrix.css']}>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <a href="/trellises/">Trellises</a>
+        <span class="sep">/</span>
+        <span class="breadcrumb-current">Kiarostami, Abbas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div id="matrix-mount"></div>
+    <p class="article-legend">
+      Ten films across thirty-five years, read through ten recurring concepts in Abbas
+      Kiarostami’s cinema. Click any cell to read a film’s treatment of one concept. Click a
+      concept label in the top row for the cross-film synthesis. Click a film title in the left
+      column for its synopsis and reading. Press Escape to close a panel.
+    </p>
+  </div>
+
+  <script is:inline>
+    window.MATRIX_CONFIG = { src: 'kiarostami.md', mountId: 'matrix-mount' };
+  </script>
+  <script is:inline src="/js/matrix.js"></script>
+</Base>

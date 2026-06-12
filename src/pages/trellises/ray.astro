@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Ray, Satyajit — KMBA" section="trellises" styles={['/css/matrix.css']}>
+  <Fragment slot="head">
+    <!-- Bangla essay block — runtime-injected by matrix.js, so the rules must be global -->
+    <style is:global>
+      .essay-bn .section-title { font-weight: 300; }
+      .essay-bn .essay-body p { font-weight: 400; line-height: 2.0; }
+      .essay-bn .essay-body > p:first-child::first-letter {
+        float: none; font-size: inherit; line-height: inherit;
+        font-weight: inherit; padding: 0; color: inherit;
+      }
+    </style>
+  </Fragment>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <a href="/trellises/">Trellises</a>
+        <span class="sep">/</span>
+        <span class="breadcrumb-current">Ray, Satyajit</span>
+      </div>
+      <div class="toc-wrapper">
+        <span class="toc-label">TOC ▾</span>
+        <div class="toc-dropdown">
+          <ul>
+            <li><a href="#trellis">Trellis: Films</a></li>
+            <li><a href="#essay">Essay</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-section" id="trellis">
+    <div id="matrix-mount"></div>
+    <p class="article-legend">
+      Ten films across thirty-six years — Satyajit Ray’s cinematic life read through ten
+      allegorical events. The films are stages of a single river; the events are qualities
+      dissolved in its water, one dominant at each stage. Click any cell to read a film’s
+      treatment of one event. Click an event label for the cross-film synthesis. Click a film
+      title for its synopsis and reading. Press Escape to close a panel.
+    </p>
+  </div>
+
+  <div class="page-section essay-bn" id="essay">
+    <div id="essay-mount"></div>
+  </div>
+
+  <script is:inline>
+    window.MATRIX_CONFIG = { src: 'data.md', mountId: 'matrix-mount' };
+    window.ESSAY_SRC = 'ray-essay.md';
+  </script>
+  <script is:inline src="/js/matrix.js"></script>
+</Base>
