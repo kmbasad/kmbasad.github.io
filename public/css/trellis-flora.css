@@ -5,39 +5,42 @@
    translucent so the woven trellis reads as a botanical ground beneath the
    matrix. Headers blend in as part of the same lattice.                    */
 
-/* ── Ink palette ── */
+/* ── Ink palette ──
+   The flora is a GROUND, not a foreground: it must read as a faint woven
+   watermark beneath the cells, never compete with the text. Inks are kept
+   low-contrast and the cell surfaces fairly opaque so legibility wins.     */
 :root {
-  --flora-ink:        rgba(74, 40, 18, 0.74);
-  --flora-ink-mid:    rgba(74, 40, 18, 0.58);
-  --flora-ink-soft:   rgba(74, 40, 18, 0.42);
-  --flora-ink-faint:  rgba(74, 40, 18, 0.26);
-  --flora-leaf-fill:  rgba(74, 40, 18, 0.10);
-  --flora-flower:     rgba(194, 83, 31, 0.80);
-  --flora-flower-2:   rgba(176, 92, 28, 0.62);
-  --flora-flower-eye: rgba(74, 40, 18, 0.85);
+  --flora-ink:        rgba(74, 40, 18, 0.44);
+  --flora-ink-mid:    rgba(74, 40, 18, 0.30);
+  --flora-ink-soft:   rgba(74, 40, 18, 0.20);
+  --flora-ink-faint:  rgba(74, 40, 18, 0.13);
+  --flora-leaf-fill:  rgba(74, 40, 18, 0.06);
+  --flora-flower:     rgba(194, 83, 31, 0.52);
+  --flora-flower-2:   rgba(176, 92, 28, 0.40);
+  --flora-flower-eye: rgba(74, 40, 18, 0.55);
 
-  /* Cell surface — translucent so the vine reads as ground layer */
-  --flora-cell-alpha:        0.56;
+  /* Cell surface — opaque enough to keep the vine a watermark, not a layer */
+  --flora-cell-alpha:        0.74;
   --flora-cell-surface:      rgba(248, 240, 230, var(--flora-cell-alpha));
   --flora-diag-surface:      rgba(226, 206, 181, var(--flora-cell-alpha));
   /* Header surface — warm stone, its own material against the sand cells */
-  --flora-header-surface:    rgba(198, 188, 168, 0.36);
+  --flora-header-surface:    rgba(198, 188, 168, 0.42);
 }
 
 [data-theme="dark"] {
-  --flora-ink:        rgba(240, 224, 206, 0.80);
-  --flora-ink-mid:    rgba(240, 224, 206, 0.56);
-  --flora-ink-soft:   rgba(240, 224, 206, 0.38);
-  --flora-ink-faint:  rgba(240, 224, 206, 0.20);
-  --flora-leaf-fill:  rgba(240, 224, 206, 0.12);
-  --flora-flower:     rgba(224, 145, 63, 0.85);
-  --flora-flower-2:   rgba(200, 110, 40, 0.62);
-  --flora-flower-eye: rgba(240, 224, 206, 0.85);
+  --flora-ink:        rgba(240, 224, 206, 0.26);
+  --flora-ink-mid:    rgba(240, 224, 206, 0.17);
+  --flora-ink-soft:   rgba(240, 224, 206, 0.11);
+  --flora-ink-faint:  rgba(240, 224, 206, 0.07);
+  --flora-leaf-fill:  rgba(240, 224, 206, 0.05);
+  --flora-flower:     rgba(224, 145, 63, 0.40);
+  --flora-flower-2:   rgba(200, 110, 40, 0.30);
+  --flora-flower-eye: rgba(240, 224, 206, 0.40);
 
-  --flora-cell-alpha:        0.50;
+  --flora-cell-alpha:        0.80;
   --flora-cell-surface:      rgba(29, 21, 17,  var(--flora-cell-alpha));
   --flora-diag-surface:      rgba(45, 30, 22,  var(--flora-cell-alpha));
-  --flora-header-surface:    rgba(40, 28, 22,  0.58);
+  --flora-header-surface:    rgba(40, 28, 22,  0.66);
 }
 
 /* ── Cells: translucent foreground panels above the SVG ── */
@@ -89,20 +92,20 @@
 }
 
 /* ── Stem thicknesses, from heaviest to lightest ── */
-/* Main diagonal vine — thick, dominant */
+/* Main diagonal vine — the spine; present but quiet */
 .matrix-container .trellis-flora-svg .flora-stem {
   fill: none;
   stroke: var(--flora-ink);
-  stroke-width: 6;
+  stroke-width: 3.4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* Row + column branches — medium, clearly thicker than borders */
+/* Row + column branches — finer than the spine */
 .matrix-container .trellis-flora-svg .flora-branch {
   fill: none;
   stroke: var(--flora-ink-mid);
-  stroke-width: 3;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }

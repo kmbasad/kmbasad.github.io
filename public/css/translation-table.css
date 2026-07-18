@@ -101,7 +101,7 @@
 .tt-table {
   width: auto;
   border-collapse: collapse;
-  line-height: 1.7;
+  line-height: 1.45;
 }
 
 /* ── Column widths — Inferno (bn + it + en + lnum) ───── */
@@ -138,9 +138,9 @@
 }
 
 .tt-table thead th.col-lnum {
-  text-align: left;
-  padding-left:  0.15rem;
-  padding-right: 0.15rem;
+  text-align: right;
+  padding-left:  0.6rem;
+  padding-right: 0.55rem;
 }
 
 .col-note {
@@ -153,7 +153,7 @@
 
 /* ── Rows & cells ─────────────────────────────────────── */
 .tt-table td {
-  padding: 0.15rem 0.9rem;
+  padding: 0.06rem 0.9rem;
   vertical-align: top;
   border-right: 1px solid var(--tt-frame-soft);
   border-bottom: none;
@@ -193,16 +193,13 @@
 }
 
 /* ── Terzina spacing (Inferno / terza rima) ──────────── */
-/* Minimal padding within a terzina — lines sit tight.
-   A faint amber rule above each new tercet replaces plain whitespace. */
+/* Lines within a terzina sit tight; ample air between terzinas. */
 .tt-table tr.tercet-start td {
-  padding-top: 1.1rem;
-  border-top: 1px solid var(--tt-rule);
+  padding-top: 1.8rem;
 }
 
 .tt-table tbody tr:first-child.tercet-start td {
-  padding-top: 0.15rem;
-  border-top: none;
+  padding-top: 0.1rem;
 }
 
 /* ── Ghazal spacing ───────────────────────────────────── */
@@ -211,17 +208,16 @@
    .ghazal-start marks the first couplet of each ghazal —
    extra top padding creates a visible gap between ghazals. */
 .tt-table tr[data-ghazal] td {
-  padding-top:    0.25rem;   /* small gap between couplets */
-  padding-bottom: 0.25rem;
+  padding-top:    0.1rem;
+  padding-bottom: 0.1rem;
 }
 
 .tt-table tr.ghazal-start td {
-  padding-top: 2.5rem;       /* large gap before each new ghazal */
-  border-top: 1px solid var(--tt-rule-strong);
+  padding-top: 2rem;
 }
 
 .tt-table tbody tr:first-child.ghazal-start td {
-  padding-top: 0.25rem;      /* no extra gap at very top */
+  padding-top: 0.1rem;
   border-top: none;
 }
 
@@ -229,7 +225,7 @@
 .tt-table td.bn {
   font-family: var(--bn-font);
   color: var(--tt-ink-bn);
-  line-height: 1.9;
+  line-height: 1.5;
   white-space: nowrap;
   transition: background-color 0.15s ease;
 }
@@ -249,7 +245,7 @@
   direction: rtl;
   text-align: right;
   white-space: nowrap;
-  line-height: 2;
+  line-height: 1.6;
 }
 
 /* ── English column ───────────────────────────────────── */
@@ -266,25 +262,25 @@
   white-space: nowrap;
 }
 
-/* ── Line/ghazal-number column — marginalia gold (Bangla numerals) ─── */
-.tt-table td.ln-col {
-  text-align: left;
-  font-family: var(--bn-font);
+/* ── Line/ghazal-number column — small English numerals as a slim
+   marginal rule at the row's end (column 3). Muted marginalia gold. */
+.tt-table td.ln-col,
+.tt-table th.col-lnum {
+  text-align: right;
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   color: var(--tt-lnum);
-  font-weight: 600;
-  font-variant-numeric: oldstyle-nums;
+  font-size: 0.72rem;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
   user-select: none;
   white-space: nowrap;
-  letter-spacing: -0.02em;
-  padding-left:  0.2rem;
-  padding-right: 0.2rem;
-  opacity: 0.85;
+  letter-spacing: 0.02em;
+  padding-left:  0.6rem;
+  padding-right: 0.55rem;
+  opacity: 0.8;
 }
 
-/* Pull the Bangla column's right padding in to close the gap */
-.tt-table td.bn {
-  padding-right: 0.3rem;
-}
+.tt-table td.ln-col { vertical-align: baseline; }
 
 /* ── Word spans ───────────────────────────────────────── */
 .w {
@@ -294,12 +290,6 @@
               box-shadow 0.18s ease;
   cursor: default;
   padding: 1px 2px;
-}
-
-/* Soft line-level highlight */
-.w.line-highlight {
-  background-color: #fef9ef;
-  color: #1a1a1a;
 }
 
 /* Word-level match */
@@ -345,26 +335,41 @@
   white-space: normal;
 }
 
-/* ── Section heading row — Bangla and English in their own columns,
-   left-aligned to match verse rows so each title begins exactly where
-   its verses do. The row stays distinguishable through the amber band
-   and rules above/below, not through alignment or extra padding. */
-.tt-table tr.tt-section td {
-  font-weight: 500;
-  vertical-align: top;
-  text-align: left;
-  padding: 0.55rem 0.9rem 0.5rem;
-  background-color: rgba(154, 108, 50, 0.08);
-  border-top: 1px solid var(--tt-rule-strong);
-  border-bottom: 1px solid var(--tt-rule);
-  border-right: none;
-  letter-spacing: 0.02em;
-  line-height: 1.9;
+/* ── Chapter title row — the work's section title, set once at the very
+   top of the chapter. Large, centred, the most prominent line on the page. */
+.tt-table tr.tt-title td {
+  font-family: var(--bn-font);
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.35;
   color: var(--tt-ink-bn);
-  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem 1.6rem;
+  border-bottom: 2px solid var(--tt-rule-strong);
   white-space: normal;
 }
 
+/* ── Section heading row — much more prominent than a verse: larger,
+   bolder, generous air above, a gold rule and a tinted band so each new
+   section reads as a clear chapter break in the continuous verse. */
+.tt-table tr.tt-section td {
+  font-family: var(--bn-font);
+  font-weight: 700;
+  vertical-align: baseline;
+  text-align: left;
+  padding: 2.6rem 0.9rem 0.9rem;
+  background-color: transparent;
+  border-top: none;
+  border-bottom: 2px solid var(--tt-frame);
+  border-right: none;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  color: var(--tt-lnum);
+  font-size: 1.28rem;
+  white-space: normal;
+}
+
+/* The Bangla heading itself sits in a centred band spanning the row. */
 .tt-table tr.tt-section td.bn {
   font-family: var(--bn-font);
 }
@@ -373,12 +378,18 @@
 .tt-table tr.tt-section td.en {
   font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   font-style: italic;
-  color: var(--tt-ink-source);
+  font-weight: 500;
+  color: var(--tt-ink-soft);
+  font-size: 1rem;
+  vertical-align: baseline;
 }
 
-.tt-table tbody tr:first-child.tt-section td {
-  border-top: none;
-  padding-top: 0.6rem;
+.tt-table tr.tt-section td.ln-col { border-bottom: 2px solid var(--tt-frame); }
+
+.tt-table tbody tr:first-child.tt-section td,
+.tt-table tr.tt-title + tr.tt-section td,
+.tt-table tr.tt-title ~ tr.tt-section:first-of-type td {
+  padding-top: 1.4rem;
 }
 
 /* ── Prosody / chondo marker row — small italic caption, left-aligned
@@ -410,23 +421,44 @@
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 900px) {
   .tt-table td {
-    padding: 0.1rem 0.45rem;
+    padding: 0.06rem 0.45rem;
   }
 
   .tt-table tr[data-ghazal] td {
-    padding-top:    0.2rem;
-    padding-bottom: 0.2rem;
+    padding-top:    0.1rem;
+    padding-bottom: 0.1rem;
   }
 
   .tt-table tr.ghazal-start td {
-    padding-top: 1.1rem;
+    padding-top: 1.4rem;
   }
 
   .tt-table tbody tr:first-child.ghazal-start td {
-    padding-top: 0.2rem;
+    padding-top: 0.1rem;
   }
 
   .tt-wrap {
     border-radius: 8px;
+  }
+}
+
+/* ── Mobile: Bangla only ──────────────────────────────── */
+@media (max-width: 640px) {
+  .tt-table td.it,
+  .tt-table td.fa,
+  .tt-table td.en,
+  .tt-table td.tl,
+  .tt-table td.ln-col,
+  .tt-table th.it,
+  .tt-table th.fa,
+  .tt-table th.en,
+  .tt-table th.tl,
+  .tt-table th.col-lnum {
+    display: none;
+  }
+
+  .tt-table td:last-child,
+  .tt-table th:last-child {
+    border-right: none;
   }
 }

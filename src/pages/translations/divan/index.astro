@@ -1,22 +1,20 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import { translationWorks } from '../../../data/translation-works.js';
+
+const work = translationWorks.find((w) => w.slug === 'divan')!;
 ---
 
-<Base title="Hafez's Divan — KMBA" section="translations">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <a href="/translations/">Translations</a>
-        <span class="sep">/</span>
-        <span class="breadcrumb-current">Hafez's Divan</span>
-      </div>
-    </div>
-  </div>
+<Base title="Hafez's Divan — KMBA" section="translations"
+  navTitle="দিওয়ান" navParentHref="/translations/" navParentLabel="অনুবাদ"
+>
 
-  <div class="trans-page">
+  <div class="main">
+    <h1 class="work-title">{work.title}</h1>
+
     <div class="listing-box">
       <a href="/translations/divan/prathama/" class="listing-item">
-        <span class="title">Prathama: Ghazals 1 to 33</span>
+        <span class="title">প্রথমা: গজল ১ থেকে ৩৩</span>
       </a>
     </div>
   </div>

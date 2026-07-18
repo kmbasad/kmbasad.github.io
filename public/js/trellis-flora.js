@@ -356,8 +356,8 @@
   //    vine border, curling inward to a random target inside the cell, with
   //    a leaf/flower/bud at the target.                                    */
   function drawCellFlora(stemParent, leafParent, flowerParent, cell, r, c) {
-    // 2–5 flora per cell so the trellis feels lush
-    const nFlora = 2 + Math.floor(noise(r * 2.7, c * 3.1) * 3.6);
+    // 0–2 flora per cell — sparse, so the foliage accents rather than clutters
+    const nFlora = Math.floor(noise(r * 2.7, c * 3.1) * 2.9);
 
     // Safe region for endpoints inside the cell:
     //   Cell padding is 9px L/R top, 18px bottom; text wraps over the upper

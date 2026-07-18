@@ -2,7 +2,13 @@
 import Base from '../../../layouts/Base.astro';
 ---
 
-<Base title="Ghazals 1-33 — Hafez" section="translations" styles={['/css/translation-table.css']}>
+<Base
+  title="Ghazals 1–33 — Hafez"
+  section="translations"
+  bodyClass="book-page"
+  styles={['/css/translation-table.css', '/css/book.css']}
+  navTitle="প্রথমা · গজল ১–৩৩" navParentHref="/translations/divan/" navParentLabel="দিওয়ান"
+>
   <Fragment slot="head">
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
@@ -10,49 +16,30 @@ import Base from '../../../layouts/Base.astro';
     />
   </Fragment>
 
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <a href="/translations/">Translations</a>
-        <span class="sep">/</span>
-        <a href="/translations/divan/">Hafez's Divan</a>
-        <span class="sep">/</span>
-        <span class="breadcrumb-current">Prathama</span>
-        <span class="breadcrumb-sub">Ghazals 1–33</span>
-      </div>
-      <div class="toc-wrapper">
-        <span class="toc-label">TOC ▾</span>
-        <div class="toc-dropdown">
-          <ul>
-            <li><a href="#g1">Ghazals 1–3</a></li>
-            <li><a href="#g4">Ghazals 4–6</a></li>
-            <li><a href="#g7">Ghazals 7–9</a></li>
-            <li><a href="#g10">Ghazals 10–12</a></li>
-            <li><a href="#g13">Ghazals 13–15</a></li>
-            <li><a href="#g16">Ghazals 16–18</a></li>
-            <li><a href="#g19">Ghazals 19–21</a></li>
-            <li><a href="#g22">Ghazals 22–24</a></li>
-            <li><a href="#g25">Ghazals 25–27</a></li>
-            <li><a href="#g28">Ghazals 28–30</a></li>
-            <li><a href="#g31">Ghazals 31–33</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="book-layout">
+    <!-- Left: image panel — book.js populates from TRANS_CONFIG.images -->
+    <div class="book-img-panel" aria-hidden="true"></div>
 
-  <div class="trans-page wide">
-    <div class="tt-wrap">
-      <table class="tt-table">
-        <thead><tr></tr></thead>
-        <tbody></tbody>
-      </table>
+    <!-- Right: scrollable text -->
+    <div class="book-text-panel">
+      <div class="book-text-body">
+        <table class="tt-table">
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <script is:inline>
-    window.TSV_CONFIG = { src: 'prathama.tsv', type: 'ghazal', dictSrc: 'prathama-words.tsv' };
+    window.TRANS_CONFIG = {
+      src:         'prathama.md',
+      dict:        'prathama-words.md',
+      tocGroupSize: 3,
+      images:      ['img/prathama-01.jpg'],
+      toc:         '/translations/divan/'
+    };
   </script>
-  <script is:inline src="/js/tsv-loader.js"></script>
+  <script is:inline src="/js/md-loader.js"></script>
   <script is:inline src="/js/translation-table.js"></script>
+  <script is:inline src="/js/book.js"></script>
 </Base>

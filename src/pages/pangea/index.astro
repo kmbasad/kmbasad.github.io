@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import { pangeaWorks } from '../../data/pangea-works.js';
+---
+
+<Base title="Pangea — KMBA" section="pangea">
+
+  <div class="main">
+    <h1 class="work-title">প্যাঞ্জিয়া</h1>
+    <div class="listing-box">
+      {pangeaWorks.map((w) => (
+        <a class="listing-item" href={`/pangea/${w.slug}/`}>
+          <span class="title">{w.title}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

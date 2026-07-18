@@ -1,0 +1,90 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { alaolChapters } from '../../../data/alaol-chapters.js';
+
+export function getStaticPaths() {
+  return alaolChapters.map((c, i) => ({
+    params: { chapter: c.slug },
+    props: {
+      en:    c.en,
+      bn:    c.bn,
+      hasEn: c.hasEn,
+      prev:  i > 0                        ? alaolChapters[i - 1] : null,
+      next:  i < alaolChapters.length - 1 ? alaolChapters[i + 1] : null,
+    },
+  }));
+}
+
+const { chapter }                   = Astro.params;
+const { en, bn, hasEn, prev, next } = Astro.props;
+---
+
+<Base
+  title={`${en} — Alaol's Sapta Paykar — KMBA`}
+  section="pangea"
+  styles={['/css/translation-table.css', '/css/book.css']}
+  navTitle={bn}
+  navParentHref="/pangea/alaol-sapta-paykar/"
+  navParentLabel="সপ্ত পয়কর"
+>
+  <Fragment slot="head">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </Fragment>
+
+  <div class="pangea-page">
+    <table class="tt-table">
+      <tbody></tbody>
+    </table>
+
+    <div class="book-nav">
+      {prev
+        ? <a href={`/pangea/alaol-sapta-paykar/${prev.slug}/`} class="book-nav-btn book-nav-prev">
+            <span class="book-nav-arrow" aria-hidden="true">←</span>&nbsp;{prev.bn}
+          </a>
+        : <span class="book-nav-btn book-nav-disabled" aria-hidden="true">←</span>
+      }
+      <a href="/pangea/alaol-sapta-paykar/" class="book-nav-btn book-nav-toc">সপ্ত পয়কর</a>
+      {next
+        ? <a href={`/pangea/alaol-sapta-paykar/${next.slug}/`} class="book-nav-btn book-nav-next">
+            {next.bn}&nbsp;<span class="book-nav-arrow" aria-hidden="true">→</span>
+          </a>
+        : <span class="book-nav-btn book-nav-disabled" aria-hidden="true">→</span>
+      }
+    </div>
+  </div>
+
+  <!-- Centred, narrow reading column; blended table (transparent cells, no
+       parchment frame) so the colour, font, and feel match the translation
+       pages — only the side-by-side image panel is absent here. -->
+  <style is:global>
+    .pangea-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 24px 64px;
+    }
+    .pangea-page .tt-table {
+      margin-inline: auto;
+    }
+    .pangea-page .tt-table thead { display: none; }
+    .pangea-page .tt-table td {
+      background: transparent !important;
+      border-right: none;
+    }
+    .pangea-page .book-nav {
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+    @media (max-width: 640px) {
+      .pangea-page { padding: 20px 14px 48px; }
+    }
+  </style>
+
+  <script is:inline define:vars={{ src: `${chapter}.md`, noSource: !hasEn }}>
+    window.TRANS_CONFIG = noSource ? { src, noSource: true } : { src };
+  </script>
+  <script is:inline src="/js/md-loader.js"></script>
+  <script is:inline src="/js/translation-table.js"></script>
+</Base>

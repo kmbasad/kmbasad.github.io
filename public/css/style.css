@@ -39,7 +39,7 @@ html {
   --ui-font: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   /* Unified Bangla stack — Tiro Bangla (designed for literary reading) as
      primary; Noto Serif Bengali covers weights Tiro lacks; system fonts last. */
-  --bn-font: 'Tiro Bangla', 'Noto Serif Bengali', 'Kalpurush', 'SolaimanLipi', 'Siyam Rupali', Georgia, serif;
+  --bn-font: 'Noto Serif Bengali', 'Tiro Bangla', 'Kalpurush', 'SolaimanLipi', Georgia, serif;
   /* Motion */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -119,11 +119,10 @@ a:hover {
 }
 
 /* Structural links carry their own hover affordance — opt out of the reveal */
-.nav-brand a,
 .nav-links a,
+.nav-parent,
 .listing-item,
 .home-section,
-.toc-dropdown li a,
 .home-meta a,
 .home-license a {
   background-image: none;
@@ -138,52 +137,41 @@ a:hover {
 
 /* NAV — blends with the page background; no separate band */
 .nav {
-  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.2) blur(14px);
+  -webkit-backdrop-filter: saturate(1.2) blur(14px);
   border-bottom: 1px solid var(--border);
 }
 
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
-  height: 56px;
+  padding: 0 24px;
+  height: 52px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.nav-brand {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.nav-brand a {
-  color: inherit;
-}
-
-.nav-brand a:hover {
-  color: var(--accent);
-  text-decoration: none;
+  gap: 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a {
   position: relative;
   display: block;
-  padding: 8px 11px 9px;
-  font-size: 12px;
+  padding: 7px 10px 8px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+  font-family: var(--bn-font);
+  letter-spacing: 0.04em;
   color: var(--text-3);
   transition: color var(--dur) ease;
 }
@@ -191,8 +179,8 @@ a:hover {
 .nav-links a::after {
   content: '';
   position: absolute;
-  left: 11px;
-  right: 11px;
+  left: 10px;
+  right: 10px;
   bottom: 4px;
   height: 1.5px;
   background: var(--accent);
@@ -214,202 +202,76 @@ a:hover {
   color: var(--accent);
 }
 
-/* PAGE HEADER — blends with the page, sticks and shrinks on scroll */
-.page-header {
-  background: transparent;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  /* Transition background-color only — animating backdrop-filter triggers
-     per-frame full repaints and is the single largest cause of scroll jank
-     here. The blur switches on/off instantly when .is-sticky toggles. */
-  transition: background-color .25s ease;
-  /* Promote to its own compositor layer so sticky shifts and blur don't
-     force the whole page to repaint. */
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-.page-header.is-sticky {
-  background: rgba(241, 231, 221, 0.85);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-}
-
-[data-theme="dark"] .page-header.is-sticky {
-  background: rgba(19, 13, 11, 0.85);
-}
-
-.page-header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 28px;
-  height: 84px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  transition: height .25s ease;
-}
-
-.page-header.is-sticky .page-header-inner {
-  height: 48px;
-}
-
-.breadcrumb,
-.breadcrumb-current,
-.toc-label {
-  transition: font-size .25s ease;
-}
-
-.page-header.is-sticky .breadcrumb-current {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.page-header.is-sticky .breadcrumb a,
-.page-header.is-sticky .breadcrumb .sep {
-  font-size: 10.5px;
-}
-
-.page-header.is-sticky .toc-label {
-  font-size: 10.5px;
-  padding: 4px 10px;
-}
-
-/* Breadcrumb — trail on the left, last item is the page title */
-.breadcrumb {
-  display: flex;
-  align-items: baseline;
-  gap: 0;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-}
-
-.breadcrumb a {
-  font-size: 11.5px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-
-.breadcrumb a:hover {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.breadcrumb .sep {
-  margin: 0 8px;
-  color: var(--text-4);
-  font-size: 11.5px;
-}
-
-/* Last breadcrumb item = current page title, shown prominently */
-.breadcrumb-current {
-  font-family: var(--display-font);
-  font-optical-sizing: auto;
-  font-size: clamp(22px, 2.6vw, 27px);
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: -0.016em;
-}
-
-.breadcrumb-sub {
-  font-size: 12px;
-  color: var(--text-3);
-  font-weight: 400;
-  margin-left: 8px;
-  font-style: italic;
-}
-
-/* MAIN */
-.main {
+/* PAGE INTRO — title block at the top of each page's content area */
+.page-intro {
   max-width: 860px;
   margin: 0 auto;
-  padding: 36px 28px 80px
+  padding: 52px 28px 32px;
 }
 
-.main-wide {
-  padding: 28px 28px 72px
-}
-
-/* TOC DROPDOWN */
-.toc-wrapper {
-  position: relative;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-.toc-label {
-  font-size: 11.5px;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  cursor: pointer;
-  padding: 6px 12px;
-  border-radius: var(--r-sm);
-  background: transparent;
-  border: 1px solid var(--border);
-  transition: all 0.2s;
-}
-
-.toc-wrapper:hover .toc-label {
+.page-intro h1 {
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 400;
   color: var(--text);
-  border-color: var(--border-2);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-align: left;
+  margin-bottom: 0;
 }
 
-.toc-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 8px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 8px 0;
-  min-width: 220px;
-  box-shadow: var(--sh);
-  z-index: 101;
+/* Muted breadcrumb-lite trail above the title */
+.page-super {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 12px;
 }
 
-.toc-wrapper:hover .toc-dropdown {
-  display: block;
-}
-
-.toc-dropdown::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 0;
-  right: 0;
-  height: 10px;
-}
-
-.toc-dropdown ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.toc-dropdown li a {
-  display: block;
-  padding: 9px 20px;
-  font-size: 13px;
-  color: var(--text-2);
-  transition: background 0.15s, color 0.15s;
-}
-
-.toc-dropdown li a:hover {
-  background: var(--surface-2);
-  color: var(--accent);
+.page-super a {
+  color: var(--text-4);
+  background-image: none;
   text-decoration: none;
+}
+
+.page-super a:hover {
+  color: var(--accent);
+}
+
+.page-super .sep {
+  margin: 0 5px;
+  opacity: 0.5;
+}
+
+/* Italic subtitle below the title */
+.page-sub {
+  font-size: 15px;
+  color: var(--text-3);
+  font-style: italic;
+  margin-top: 8px;
+  font-family: var(--serif-font);
+}
+
+/* MAIN — section index pages (Panthea / Pangea / Translations / Trellises) */
+.main {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 72px 28px 60px;
 }
 
 /* LISTING — open gallery, no card chrome, typography-driven */
+.listing-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin: 0 0 0.6rem 6px;
+}
+
 .listing-box {
   background: transparent;
   border: none;
@@ -421,7 +283,7 @@ a:hover {
 
 .listing-item {
   display: block;
-  padding: 18px 14px 18px 6px;
+  padding: 10px 14px 10px 6px;
   border-bottom: 1px solid var(--border);
   color: inherit;
   text-decoration: none;
@@ -453,13 +315,12 @@ a:hover {
 
 .listing-item .title {
   display: block;
-  font-family: var(--display-font);
-  font-optical-sizing: auto;
+  font-family: var(--bn-font);
   font-size: clamp(18px, 2.1vw, 23px);
   font-weight: 400;
   color: var(--text);
-  letter-spacing: -0.014em;
-  line-height: 1.28;
+  letter-spacing: 0;
+  line-height: 1.4;
   transition: color var(--dur) ease;
 }
 
@@ -527,7 +388,6 @@ a:hover {
 @media(max-width:640px) {
 
   .nav-inner,
-  .page-header-inner,
   .main {
     padding-left: 16px;
     padding-right: 16px
@@ -1077,7 +937,6 @@ h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .section-intro, .piece
 html,
 body,
 .nav,
-.page-header,
 .table-scroll,
 .table-panel,
 .listing-box,
@@ -1087,11 +946,53 @@ body,
               box-shadow .3s ease;
 }
 
-/* ── Nav right side (links + theme toggle) ─────────────────────────────────── */
+/* ── Nav right side: page context + theme toggle ────────────────────────────── */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* Current-page breadcrumb: Parent › Title */
+.nav-page-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--bn-font);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 320px;
+  color: var(--text-3);
+}
+
+.nav-parent {
+  color: var(--text-4);
+  text-decoration: none;
+  transition: color var(--dur) ease;
+  font-weight: 400;
+}
+
+.nav-parent:hover { color: var(--accent); }
+
+.nav-sep {
+  color: var(--text-4);
+  opacity: 0.55;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.nav-cur {
+  color: var(--text-2);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .nav-page-info { display: none; }
 }
 
 /* Theme toggle button — blends with nav, no separate chrome */
@@ -1119,3 +1020,199 @@ body,
 /* Sun icon in light mode, moon icon in dark mode (CSS content) */
 [data-theme="light"] .nav-theme-btn::before { content: '☀'; }
 [data-theme="dark"]  .nav-theme-btn::before { content: '☾'; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOC RAIL — fixed right rail, centred vertically.
+   Collapsed to a column of horizontal dash markers; on hover/focus-within
+   the whole panel expands to show labelled links with frosted-glass chrome.
+   Scroll-spy marks past sections and highlights the active one.
+   Hidden below 78 rem where there is no room beside the content column.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.toc {
+  position: fixed;
+  top: 50%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  z-index: 200;
+  display: none;
+  flex-direction: column;
+  max-height: 82vh;
+  overflow: hidden;
+  font-family: var(--ui-font);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, box-shadow 0.2s ease,
+              padding 0.2s ease, border-color 0.2s ease;
+}
+
+@media (min-width: 78rem) {
+  .toc { display: flex; }
+}
+
+.toc__title {
+  align-self: flex-end;
+  margin: 0 0.25rem 0.5rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-3);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+
+.toc__item { margin: 0; }
+
+.toc__link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding: 0.16rem 0.25rem;
+  border-radius: var(--r-sm);
+  color: var(--text-3);
+  text-decoration: none;
+}
+
+.toc__label {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  opacity: 0;
+  transition: max-width 0.24s ease, opacity 0.18s ease, color 0.15s ease;
+}
+
+.toc__marker {
+  flex: none;
+  width: 1.1rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border-2);
+  transition: width 0.18s ease, background 0.15s ease;
+}
+
+.toc__link.is-past .toc__marker {
+  background: color-mix(in srgb, var(--accent) 42%, var(--border-2));
+}
+
+.toc__link.is-active .toc__marker {
+  width: 1.7rem;
+  background: var(--accent);
+}
+
+.toc__link.is-active .toc__label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Expand on hover / keyboard focus */
+.toc:hover,
+.toc:focus-within {
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  backdrop-filter: saturate(1.2) blur(10px);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px);
+  border-color: var(--border);
+  border-radius: calc(var(--r) + 4px);
+  padding: 0.7rem 0.85rem;
+  box-shadow: var(--sh);
+}
+
+.toc:hover .toc__title,
+.toc:focus-within .toc__title { opacity: 1; }
+
+.toc:hover .toc__label,
+.toc:focus-within .toc__label { max-width: 13rem; opacity: 1; }
+
+.toc__link:hover { color: var(--text); }
+.toc__link:hover .toc__label { color: var(--text); }
+.toc__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .toc, .toc__label, .toc__marker { transition: none; }
+}
+
+/* ── Divine Comedy index ─────────────────────────────────────────────────── */
+.work-title {
+  font-family: var(--bn-font);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 2.8rem;
+  text-align: left;
+}
+
+.page-section .work-title {
+  text-align: center;
+}
+
+.dc-canticles {
+  display: flex;
+  flex-direction: column;
+}
+
+.dc-canticle {
+  padding: 2.2rem 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.dc-canticle:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.dc-canticle-label {
+  font-family: var(--bn-font);
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.canto-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding-bottom: 2rem;
+}
+
+.canto-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.8rem;
+  font-family: var(--bn-font);
+  font-size: 0.95rem;
+  font-weight: 400;
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  background-image: none;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  transition: background 0.14s ease, border-color 0.14s ease;
+}
+
+a.canto-num:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.canto-num--off {
+  color: var(--text-4);
+  opacity: 0.3;
+  cursor: default;
+  border-color: transparent;
+}

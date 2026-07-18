@@ -1,29 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { translationWorks } from '../../data/translation-works.js';
 ---
 
 <Base title="Translations — KMBA" section="translations">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <span class="breadcrumb-current">Translations</span>
-      </div>
-    </div>
-  </div>
 
   <div class="main">
+    <h1 class="work-title">অনুবাদ</h1>
     <div class="listing-box">
-      <!-- ARTICLES_START -->
-      <a class="listing-item" href="/translations/divine-comedy/">
-        <span class="title">Dante's Divine Comedy</span>
-      </a>
-      <a class="listing-item" href="/translations/divan/">
-        <span class="title">Hafez's Divan</span>
-      </a>
-      <a class="listing-item" href="/translations/metamorphoses/">
-        <span class="title">Ovid's Metamorphoses</span>
-      </a>
-      <!-- ARTICLES_END -->
+      {translationWorks.map((w) => (
+        <a class="listing-item" href={`/translations/${w.slug}/`}>
+          <span class="title">{w.title}</span>
+        </a>
+      ))}
     </div>
   </div>
 </Base>

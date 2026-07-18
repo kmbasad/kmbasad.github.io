@@ -1,0 +1,35 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { alaolChapters } from '../../../data/alaol-chapters.js';
+import { pangeaWorks } from '../../../data/pangea-works.js';
+
+const work = pangeaWorks.find((w) => w.slug === 'alaol-sapta-paykar')!;
+---
+
+<Base title="Alaol's Sapta Paykar — KMBA" section="pangea"
+  navTitle="সপ্ত পয়কর" navParentHref="/pangea/" navParentLabel="প্যাঞ্জিয়া"
+>
+  <Fragment slot="head">
+    <style is:global>
+      .alaol-listing .listing-item .title { font-family: var(--bn-font); letter-spacing: 0; }
+      .alaol-listing .listing-item .desc {
+        letter-spacing: 0.04em; text-transform: uppercase; font-style: normal;
+      }
+    </style>
+  </Fragment>
+
+  <div class="main">
+    <h1 class="work-title">{work.title}</h1>
+
+    <div class="listing-box alaol-listing">
+      {
+        alaolChapters.map((c) => (
+          <a class="listing-item" href={`/pangea/alaol-sapta-paykar/${c.slug}/`}>
+            <span class="title">{c.bn}</span>
+            <span class="desc">{c.en}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Base>

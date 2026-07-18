@@ -1,0 +1,271 @@
+/* =========================================================================
+   book.css — Two-sided book layout for translation pages
+   Desktop: left image panel (full height, pannable/zoomable) +
+            right scrollable text panel, split 50/50.
+   Mobile:  text first, image slider below.
+   ========================================================================= */
+
+
+/* ── Desktop: book view ──────────────────────────────────────────────────── */
+@media (min-width: 900px) {
+  body.book-page {
+    overflow: hidden;
+  }
+
+  .book-layout {
+    display: flex;
+    height: calc(100vh - 52px); /* 56px = .nav-inner height */
+    overflow: hidden;
+  }
+
+  /* ── Left: image panel ─────────────────────────────────────── */
+  .book-img-panel {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    cursor: grab;
+  }
+
+  .book-img-panel.is-dragging {
+    cursor: grabbing;
+  }
+
+  /* Images: JS sets position/transform; hidden until fitted */
+  .book-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+    height: auto;
+    transform-origin: 0 0;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-drag: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+  }
+
+  .book-img.book-img--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ── Right: text panel ─────────────────────────────────────── */
+  .book-text-panel {
+    flex: 1;
+    overflow: auto;
+  }
+
+  .book-text-body {
+    padding: 1rem 1.4rem 0;
+  }
+
+  /* Table fills the panel width; long lines create horizontal scroll */
+  .book-text-body .tt-table {
+    min-width: 100%;
+  }
+}
+
+/* ── Mobile: stacked layout ─────────────────────────────────────────────── */
+@media (max-width: 899px) {
+  .book-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .book-text-panel {
+    order: 1;
+  }
+
+  /* Image slider sits below the text */
+  .book-img-panel {
+    order: 2;
+    position: relative;
+    overflow: hidden;
+    height: min(65vw, 320px);
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+
+  .book-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    /* Override any JS-set transform */
+    transform: none !important;
+  }
+
+  .book-img.book-img--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .book-text-body {
+    padding: 0.8rem 1rem 0;
+  }
+}
+
+/* ── Table blending — transparent cells, no column dividers ─────────────── */
+.book-text-body .tt-table thead { display: none; }
+
+.book-text-body .tt-table td {
+  background: transparent !important;
+  border-right: none;
+}
+
+/* ── Bottom page navigation ─────────────────────────────────────────────── */
+.book-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 1.5rem 2rem;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.book-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  font-size: 10.5px;
+  font-family: var(--ui-font);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  text-decoration: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.book-nav-btn:not(.book-nav-disabled):hover {
+  color: var(--text-2);
+  border-color: var(--border);
+}
+
+.book-nav-disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.book-nav-toc { color: var(--text-3); }
+
+.book-nav-arrow {
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* ── Slider arrows ───────────────────────────────────────────────────────── */
+.book-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.18s ease, background 0.18s ease, transform 0.18s ease;
+  box-shadow: var(--sh-sm);
+}
+
+.book-arrow:hover { opacity: 1; }
+
+.book-arrow--prev {
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.book-arrow--next {
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+.book-arrow--prev:hover { transform: translateY(-50%) translateX(-1px); }
+.book-arrow--next:hover { transform: translateY(-50%) translateX(1px); }
+
+/* ── Dots ───────────────────────────────────────────────────────────────── */
+.book-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.book-dot {
+  width: 6px;
+  height: 6px;
+  border: none;
+  border-radius: 50%;
+  background: var(--text);
+  opacity: 0.3;
+  cursor: pointer;
+  padding: 0;
+  pointer-events: all;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.book-dot.book-dot--active {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+/* ── Zoom hint (desktop only) ─────────────────────────────────────────────
+   Subtle "scroll to zoom" label that fades out after a few seconds.          */
+.book-zoom-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  font-size: 0.68rem;
+  font-family: var(--ui-font);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 4px 8px;
+  border-radius: var(--r-sm);
+  opacity: 0;
+  pointer-events: none;
+  animation: hint-fade 3s ease 1.2s 1 forwards;
+  z-index: 20;
+}
+
+@keyframes hint-fade {
+  0%   { opacity: 0; }
+  15%  { opacity: 0.7; }
+  75%  { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 899px) {
+  .book-zoom-hint { display: none; }
+}

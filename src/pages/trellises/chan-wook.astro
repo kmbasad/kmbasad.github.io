@@ -2,29 +2,21 @@
 import Base from '../../layouts/Base.astro';
 ---
 
-<Base title="Chan-wook, Park — KMBA" section="trellises" styles={['/css/matrix.css']}>
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <a href="/trellises/">Trellises</a>
-        <span class="sep">/</span>
-        <span class="breadcrumb-current">Chan-wook, Park</span>
-      </div>
-    </div>
-  </div>
+<Base title="Chan-wook, Park — KMBA" section="trellises" styles={['/css/trellis.css']}
+  navTitle="পাক চান-উক" navParentHref="/trellises/" navParentLabel="মাচা"
+>
 
   <div class="page-section">
-    <div id="matrix-mount"></div>
-    <p class="article-legend">
-      Ten feature films across twenty-five years, read through ten concepts drawn from theology,
-      philosophy, and aesthetics. Click any cell to read a film’s treatment of one concept. Click
-      a concept label in the top row for the cross-film synthesis. Click a film title in the left
-      column for its synopsis and reading. Press Escape to close a panel.
-    </p>
+    <h1 class="work-title">পাক চান-উক</h1>
+    <div id="trellis-mount"></div>
   </div>
 
+  <section class="trellis-essay">
+    <div id="essay-mount"></div>
+  </section>
+
   <script is:inline>
-    window.MATRIX_CONFIG = { src: 'chan-wook.md', mountId: 'matrix-mount' };
+    window.TRELLIS_CONFIG = { data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' };
   </script>
-  <script is:inline src="/js/matrix.js"></script>
+  <script is:inline src="/js/trellis.js"></script>
 </Base>

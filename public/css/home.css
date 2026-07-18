@@ -150,11 +150,10 @@ body.home-page .nav-theme-btn:hover {
 /* ── Name ─────────────────────────────────────────────────────────────────── */
 
 .home-name {
-  font-family: var(--display-font);
-  font-optical-sizing: auto;
+  font-family: var(--bn-font);
   font-size: clamp(28px, 5.2vw, 58px);
   font-weight: 600;
-  letter-spacing: -0.018em;
+  letter-spacing: -0.01em;
   line-height: 1.04;
   margin: 0 0 18px;
   color: rgba(244, 234, 220, 0.94);
@@ -167,9 +166,8 @@ body.home-page .nav-theme-btn:hover {
 /* ── Tagline ──────────────────────────────────────────────────────────────── */
 
 .home-tagline {
-  font-family: var(--serif-font);
+  font-family: var(--bn-font);
   font-size: clamp(13.5px, 1.6vw, 18px);
-  font-style: italic;
   font-weight: 300;
   color: rgba(244, 234, 220, 0.46);
   margin: 0;
@@ -235,13 +233,12 @@ body.home-page .nav-theme-btn:hover {
 }
 
 .home-section-label {
-  font-family: var(--display-font);
-  font-optical-sizing: auto;
+  font-family: var(--bn-font);
   font-size: clamp(15px, 1.9vw, 21px);
   font-weight: 500;
   color: rgba(244, 234, 220, 0.85);
   display: block;
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
 }
 
 [data-theme="light"] .home-section-label {
@@ -249,15 +246,15 @@ body.home-page .nav-theme-btn:hover {
 }
 
 .home-section-sub {
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.24);
+  font-family: var(--bn-font);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.42);
   display: block;
-  text-transform: uppercase;
 }
 
 [data-theme="light"] .home-section-sub {
-  color: rgba(50, 42, 32, 0.3);
+  color: rgba(50, 42, 32, 0.52);
 }
 
 /* ── Meta links ───────────────────────────────────────────────────────────── */

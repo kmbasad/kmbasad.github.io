@@ -1,29 +1,38 @@
 ---
-// Shared shell for every page. Replaces the old nav.js DOM injection with a
-// real server-rendered nav. Per-page engine config + scripts go in the `head`
-// slot (so window.*_CONFIG can be set before an engine script loads, exactly
-// as the legacy pages did).
 interface Props {
   title?: string;
   description?: string;
-  section?: 'panthea' | 'canon' | 'translations' | 'trellises' | '';
+  section?: 'panthea' | 'pangea' | 'translations' | 'trellises' | '';
   bodyClass?: string;
-  styles?: string[]; // extra stylesheet hrefs (e.g. /css/matrix.css)
+  styles?: string[];
+  navTitle?: string;            // page name shown on the right of the nav bar
+  navParentHref?: string;       // breadcrumb parent URL
+  navParentLabel?: string;      // breadcrumb parent label
+  navGrandParentHref?: string;  // optional grandparent URL
+  navGrandParentLabel?: string; // optional grandparent label
 }
 
 const {
   title = 'KMBA',
-  description = 'Khan Muhammad Bin Asad — Panthea, Canon, Translations, Trellises.',
+  description = 'Khan Muhammad Bin Asad — Panthea, Pangea, Translations, Trellises.',
   section = '',
   bodyClass = '',
   styles = [],
+  navTitle = '',
+  navParentHref = '',
+  navParentLabel = '',
+  navGrandParentHref = '',
+  navGrandParentLabel = '',
 } = Astro.props;
 
+const isHome = Astro.url.pathname === '/';
+
 const links = [
-  { href: '/panthea/', label: 'Panthea', key: 'panthea' },
-  { href: '/canon/', label: 'Canon', key: 'canon' },
-  { href: '/translations/', label: 'Translations', key: 'translations' },
-  { href: '/trellises/', label: 'Trellises', key: 'trellises' },
+  { href: '/',             label: 'হোম',         active: isHome },
+  { href: '/panthea/',     label: 'প্যান্থিয়া',  active: section === 'panthea' },
+  { href: '/pangea/',      label: 'প্যাঞ্জিয়া',  active: section === 'pangea' },
+  { href: '/translations/',label: 'অনুবাদ',      active: section === 'translations' },
+  { href: '/trellises/',   label: 'মাচা',        active: section === 'trellises' },
 ];
 ---
 
@@ -63,21 +72,38 @@ const links = [
   <body class={bodyClass}>
     <nav class="nav">
       <div class="nav-inner">
-        <span class="nav-brand"><a href="/">KMBA</a></span>
+
+        <!-- Left: all navigation links including home -->
+        <ul class="nav-links">
+          {links.map((l) => (
+            <li>
+              <a href={l.href} class={l.active ? 'active' : undefined}>{l.label}</a>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Right: current page context + theme toggle -->
         <div class="nav-right">
-          <ul class="nav-links">
-            {
-              links.map((l) => (
-                <li>
-                  <a href={l.href} class={section === l.key ? 'active' : undefined}>
-                    {l.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+          {navTitle && (
+            <div class="nav-page-info">
+              {navGrandParentHref && navGrandParentLabel && (
+                <a class="nav-parent" href={navGrandParentHref}>{navGrandParentLabel}</a>
+              )}
+              {navGrandParentHref && navGrandParentLabel && (
+                <span class="nav-sep" aria-hidden="true">›</span>
+              )}
+              {navParentHref && navParentLabel && (
+                <a class="nav-parent" href={navParentHref}>{navParentLabel}</a>
+              )}
+              {navParentHref && navParentLabel && (
+                <span class="nav-sep" aria-hidden="true">›</span>
+              )}
+              <span class="nav-cur">{navTitle}</span>
+            </div>
+          )}
           <button class="nav-theme-btn" id="nav-theme-btn" aria-label="Toggle theme"></button>
         </div>
+
       </div>
     </nav>
 

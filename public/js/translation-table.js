@@ -271,30 +271,27 @@
    * Phase 2 — Highlighting (hover / click / pin)
    * ═══════════════════════════════════════════════════════════════════ */
 
-  var CLS_SRC = "source-word", CLS_WORD = "word-highlight", CLS_LINE = "line-highlight";
+  var CLS_SRC = "source-word", CLS_WORD = "word-highlight";
 
-  // Cache spans by key and by line
-  var byKey = {}, byLine = {};
+  // Cache spans by key
+  var byKey = {};
   document.querySelectorAll(".tt-table .w").forEach(function (s) {
     var k = s.dataset.w; if (!k) return;
     (byKey[k] = byKey[k] || []).push(s);
-    var ln = (s.closest("td") || {}).dataset;
-    if (ln && ln.line) (byLine[ln.line] = byLine[ln.line] || []).push(s);
   });
 
   function clearAll() {
-    document.querySelectorAll("." + CLS_SRC + ",." + CLS_WORD + ",." + CLS_LINE)
-      .forEach(function (s) { s.classList.remove(CLS_SRC, CLS_WORD, CLS_LINE); });
+    document.querySelectorAll("." + CLS_SRC + ",." + CLS_WORD)
+      .forEach(function (s) { s.classList.remove(CLS_SRC, CLS_WORD); });
   }
 
+  // Highlight only the hovered word and its cross-column matches —
+  // not the rest of the line.
   function highlight(src) {
     clearAll();
     src.classList.add(CLS_SRC);
     var key = src.dataset.w;
-    var ln = (src.closest("td") || {}).dataset && src.closest("td").dataset.line;
-    var matched = new Set([src]);
-    (byKey[key] || []).forEach(function (s) { if (s !== src) { s.classList.add(CLS_WORD); matched.add(s); } });
-    (byLine[ln] || []).forEach(function (s) { if (!matched.has(s)) s.classList.add(CLS_LINE); });
+    (byKey[key] || []).forEach(function (s) { if (s !== src) s.classList.add(CLS_WORD); });
   }
 
   /* ── Event delegation ─────────────────────────────────────────────── */

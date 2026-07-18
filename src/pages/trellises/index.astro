@@ -3,33 +3,48 @@ import Base from '../../layouts/Base.astro';
 ---
 
 <Base title="Trellises — KMBA" section="trellises">
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <span class="breadcrumb-current">Trellises</span>
-      </div>
-    </div>
-  </div>
 
   <div class="main">
+    <h1 class="work-title">মাচা</h1>
+    <p class="macha-cue">
+      প্রতিটা মাচা একটা ছক: সবার উপরের সারিতে দশটা বিষয় এবং সবার বামের কলামে দশটা বৈশিষ্ট্য। যেকোনো ঘরে ক্লিক করলে একটা বিষয় ধরা পড়ে একটা নির্দিষ্ট বৈশিষ্ট্যের মধ্য দিয়ে; বাম কলামের কোনো বৈশিষ্ট্যে ক্লিক করলে সব বিষয় জুড়ে তার সমন্বিত পাঠ, উপরের সারির কোনো বিষয়ে ক্লিক করলে সব বৈশিষ্ট্য জুড়ে তার সম্পূর্ণ পাঠ। প্যানেল বন্ধ করতে এস্কেপ। 
+    </p>
     <div class="listing-box">
       <!-- ARTICLES_START -->
+      <a class="listing-item" href="/trellises/kiarostami/">
+        <span class="title">আব্বাস কিয়ারোস্তামি</span>
+      </a>
       <a class="listing-item" href="/trellises/god/">
-        <span class="title">God</span>
+        <span class="title">গড</span>
       </a>
       <a class="listing-item" href="/trellises/consciousness/">
-        <span class="title">Consciousness</span>
-      </a>
-      <a class="listing-item" href="/trellises/ray/">
-        <span class="title">Satyajit Ray</span>
-      </a>
-      <a class="listing-item" href="/trellises/kiarostami/">
-        <span class="title">Abbas Kiarostami</span>
+        <span class="title">চেতনা</span>
       </a>
       <a class="listing-item" href="/trellises/chan-wook/">
-        <span class="title">Park Chan-wook</span>
+        <span class="title">পাক চান-উক</span>
+      </a>
+      <a class="listing-item" href="/trellises/ray/">
+        <span class="title">সত্যজিৎ রায়</span>
       </a>
       <!-- ARTICLES_END -->
     </div>
   </div>
+
+  <style>
+    .macha-cue {
+      font-family: var(--bn-font);
+      /* Reach wider than the listing box below by breaking symmetrically
+         past the .main content padding. */
+      margin: 0 -80px 1.8rem;
+      text-align: center;
+      line-height: 1.95;
+      font-size: 0.95rem;
+      color: var(--text-3);
+    }
+
+    /* On narrower viewports the break-out would overflow — keep it in flow. */
+    @media (max-width: 820px) {
+      .macha-cue { margin-left: 0; margin-right: 0; }
+    }
+  </style>
 </Base>

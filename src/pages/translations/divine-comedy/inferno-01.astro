@@ -2,7 +2,15 @@
 import Base from '../../../layouts/Base.astro';
 ---
 
-<Base title="Inferno I — KMBA" section="translations" styles={['/css/translation-table.css']}>
+<Base
+  title="Inferno I — KMBA"
+  section="translations"
+  bodyClass="book-page"
+  styles={['/css/translation-table.css', '/css/book.css']}
+  navTitle="কান্ত ১"
+  navGrandParentHref="/translations/divine-comedy/" navGrandParentLabel="ডিভাইন কমেডি"
+  navParentHref="/translations/divine-comedy/" navParentLabel="দোজখ"
+>
   <Fragment slot="head">
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
@@ -10,31 +18,35 @@ import Base from '../../../layouts/Base.astro';
     />
   </Fragment>
 
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <a href="/translations/">Translations</a>
-        <span class="sep">/</span>
-        <a href="/translations/divine-comedy/">Dante's Divine Comedy</a>
-        <span class="sep">/</span>
-        <span class="breadcrumb-current">Inferno</span>
-        <span class="breadcrumb-sub">Canto I</span>
+  <div class="book-layout">
+    <!-- Left: image panel — book.js populates from TRANS_CONFIG.images -->
+    <div class="book-img-panel" aria-hidden="true"></div>
+
+    <!-- Right: scrollable text -->
+    <div class="book-text-panel">
+      <div class="book-text-body">
+        <table class="tt-table">
+          <tbody></tbody>
+        </table>
       </div>
     </div>
   </div>
 
-  <div class="trans-page wide">
-    <div class="tt-wrap">
-      <table class="tt-table">
-        <thead><tr></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-
   <script is:inline>
-    window.TSV_CONFIG = { src: 'inferno-01.tsv', type: 'tercet', dictSrc: 'inferno-01-words.tsv' };
+    window.TRANS_CONFIG = {
+      src:    'inferno-01.md',
+      dict:   'inferno-01-words.md',
+      images: [
+        { light: 'img/c01-1-color.webp', dark: 'img/c01-1.webp' },
+        { light: 'img/c01-2-color.webp', dark: 'img/c01-2.webp' },
+        { light: 'img/c01-3-color.webp', dark: 'img/c01-3.webp' },
+        { light: 'img/c01-4-color.webp', dark: 'img/c01-4.webp' },
+        { light: 'img/c01-5-color.webp', dark: 'img/c01-5.webp' }
+      ],
+      toc:    '/translations/divine-comedy/'
+    };
   </script>
-  <script is:inline src="/js/tsv-loader.js"></script>
+  <script is:inline src="/js/md-loader.js"></script>
   <script is:inline src="/js/translation-table.js"></script>
+  <script is:inline src="/js/book.js"></script>
 </Base>
