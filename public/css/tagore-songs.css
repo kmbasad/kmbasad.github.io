@@ -1,0 +1,461 @@
+/* ── গীতবিতান (Tagore songs) — index + song pages ──────────────────────────
+   Rides on the Temple & Saffron system in style.css. The index is set like
+   the printed Gitabitan's সূচিপত্র: columns of first lines under their পর্যায়;
+   the song page is a quiet reading column with the renditions shelf below. */
+
+/* ═══ INDEX PAGE ═══ */
+
+.gb-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 28px 80px;
+}
+
+.gb-hero {
+  max-width: 720px;
+  margin-bottom: 26px;
+}
+
+.gb-super {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 10px;
+  font-family: var(--ui-font);
+}
+
+.gb-title {
+  font-family: var(--bn-font);
+  font-size: clamp(40px, 6.5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--text);
+  text-align: left;
+}
+
+.gb-sub {
+  margin-top: 12px;
+  font-family: var(--serif-font);
+  font-style: italic;
+  font-size: 15.5px;
+  color: var(--text-3);
+  line-height: 1.7;
+}
+
+.gb-sub a { color: var(--text-3); }
+.gb-sub a:hover { color: var(--accent); }
+
+/* Search — a single generous rule-line input, sticky under the nav */
+.gb-search {
+  position: sticky;
+  top: 52px;
+  z-index: 40;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 14px 0 0;
+  margin-bottom: 8px;
+}
+
+.gb-search-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-2);
+  padding-bottom: 10px;
+}
+
+.gb-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--bn-font);
+  font-size: clamp(17px, 2.2vw, 21px);
+  color: var(--text);
+  padding: 2px 0;
+}
+
+.gb-search input::placeholder { color: var(--text-4); opacity: 1; }
+
+.gb-count {
+  flex-shrink: 0;
+  font-family: var(--bn-font);
+  font-size: 13px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+/* পর্যায় chips */
+.gb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 8px;
+  padding: 16px 0 8px;
+}
+
+.gb-chip {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 20px;
+  padding: 4px 13px;
+  font-family: var(--bn-font);
+  font-size: 13.5px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color var(--dur) ease, border-color var(--dur) ease,
+              background-color var(--dur) ease;
+}
+
+.gb-chip .n {
+  font-size: 11px;
+  color: var(--text-4);
+  margin-left: 4px;
+  transition: color var(--dur) ease;
+}
+
+.gb-chip:hover { border-color: var(--accent-mid); color: var(--accent); }
+
+.gb-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.gb-chip.active .n { color: var(--bg); opacity: 0.75; }
+
+/* Section = one পর্যায় */
+.gb-section {
+  margin-top: 40px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+.gb-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.gb-section-head h2 {
+  font-family: var(--bn-font);
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.gb-section-head .meta {
+  font-family: var(--bn-font);
+  font-size: 12.5px;
+  color: var(--text-4);
+}
+
+.gb-section-head .grp {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-4);
+  font-family: var(--ui-font);
+}
+
+/* The সূচিপত্র columns of first lines */
+.gb-index {
+  columns: 2;
+  column-gap: 56px;
+}
+
+.gb-item {
+  display: block;
+  break-inside: avoid;
+  font-family: var(--bn-font);
+  font-size: 16.5px;
+  line-height: 1.6;
+  padding: 4.5px 0;
+  color: var(--text-2);
+  background-image: none;
+  border-bottom: 1px dotted color-mix(in srgb, var(--border) 62%, transparent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--dur) ease, padding-left var(--dur) var(--ease);
+}
+
+.gb-item:hover {
+  color: var(--accent);
+  padding-left: 10px;
+}
+
+.gb-item .no {
+  font-size: 11.5px;
+  color: var(--text-4);
+  margin-right: 8px;
+}
+
+/* ♪ — this song has recordings on the shelf */
+.gb-item .rec {
+  color: var(--accent);
+  opacity: 0.6;
+  font-size: 12px;
+  margin-left: 7px;
+}
+
+.gb-hide { display: none; }
+
+.gb-empty {
+  margin-top: 56px;
+  text-align: center;
+  font-family: var(--bn-font);
+  font-size: 16px;
+  color: var(--text-3);
+}
+
+@media (max-width: 860px) {
+  .gb-index { columns: 1; }
+  .gb-page { padding: 44px 20px 64px; }
+  .gb-section-head .grp { display: none; }
+}
+
+/* ═══ SONG PAGE ═══ */
+
+.song-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+
+.song-super {
+  font-family: var(--bn-font);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-4);
+  margin-bottom: 14px;
+}
+
+.song-super a { color: var(--text-4); background-image: none; }
+.song-super a:hover { color: var(--accent); }
+.song-super .sep { margin: 0 7px; opacity: 0.5; }
+
+.song-title {
+  font-family: var(--bn-font);
+  font-size: clamp(26px, 4.2vw, 38px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 34px;
+  text-align: left;
+}
+
+/* Lyrics — Gitabitan sets the স্থায়ী flush and the অন্তরা indented; the
+   scraped lines keep those leading spaces, so pre-wrap preserves the shape.
+   Wrapped continuations hang so the indentation still reads on phones. */
+.song-lyrics {
+  font-family: var(--bn-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2.1;
+  color: var(--text);
+  white-space: pre-wrap;
+  margin-bottom: 40px;
+}
+
+.song-lyrics > div {
+  padding-left: 2.8em;
+  text-indent: -2.8em;
+}
+
+/* Metadata — raga, tala, dates; a quiet ledger between hairlines */
+.song-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px 28px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  margin-bottom: 48px;
+}
+
+.song-meta .k {
+  display: block;
+  font-family: var(--ui-font);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 3px;
+}
+
+.song-meta .v {
+  font-family: var(--bn-font);
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+/* শ্রবণ — the renditions shelf */
+.song-listen-label {
+  font-family: var(--bn-font);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.song-listen-sub {
+  font-family: var(--serif-font);
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--text-3);
+  margin-bottom: 18px;
+}
+
+.song-rends {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
+  gap: 18px;
+}
+
+.song-rend {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sh-sm);
+  transition: box-shadow var(--dur) ease, transform var(--dur) var(--ease);
+}
+
+.song-rend:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+
+.song-rend .thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: var(--surface-3);
+}
+
+.song-rend .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* play badge */
+.song-rend .thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(19, 13, 11, 0.62) 0%, rgba(19, 13, 11, 0.62) 100%);
+  transition: transform var(--dur) var(--ease), background-color var(--dur) ease;
+}
+
+.song-rend .thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-left: 14px solid #f8f0e6;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  transform: translateX(3px);
+}
+
+.song-rend .thumb:hover::after { transform: scale(1.12); }
+
+.song-rend iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+.song-rend .artist {
+  padding: 10px 13px 11px;
+  font-family: var(--bn-font);
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* No recordings yet — offer the search instead */
+.song-listen-empty {
+  font-family: var(--bn-font);
+  font-size: 15px;
+  color: var(--text-3);
+  padding: 20px 0 4px;
+}
+
+.song-yt-search {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--bn-font);
+  font-size: 14px;
+  color: var(--accent);
+  border: 1px solid var(--accent-mid);
+  border-radius: 20px;
+  padding: 6px 16px;
+  background-image: none;
+  transition: background-color var(--dur) ease, color var(--dur) ease;
+}
+
+.song-yt-search:hover { background: var(--accent-light); }
+
+.song-src {
+  margin-top: 44px;
+  font-family: var(--ui-font);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text-4);
+}
+
+.song-src a { color: var(--text-4); }
+.song-src a:hover { color: var(--accent); }
+
+.song-page .book-nav { margin-top: 2.2rem; }
+
+/* prev/next carry the neighbouring first lines — keep them from overflowing */
+.song-page .book-nav-btn {
+  max-width: 38%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--bn-font);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 12.5px;
+}
+
+@media (max-width: 640px) {
+  .song-page { padding: 40px 18px 56px; }
+  .song-lyrics { font-size: 16.5px; }
+  .song-lyrics > div { padding-left: 1.8em; text-indent: -1.8em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gb-item, .song-rend, .song-rend .thumb::after { transition: none; }
+  .song-rend:hover { transform: none; }
+}

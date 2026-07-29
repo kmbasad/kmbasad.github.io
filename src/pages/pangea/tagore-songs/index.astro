@@ -1,0 +1,132 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { loadSections, bnNum } from '../../../data/tagore-songs.js';
+
+const sections = loadSections();
+const total = sections.reduce((n, s) => n + s.songs.length, 0);
+const withRec = sections.reduce(
+  (n, s) => n + s.songs.filter((g) => g.renditions.length > 0).length, 0);
+
+// roman search key: the source slug with hyphens opened back into words
+const roman = (slug) => slug.replace(/-\d+$/, '').replace(/-/g, ' ');
+---
+
+<Base
+  title="গীতবিতান — রবীন্দ্রসংগীত — KMBA"
+  description={`রবীন্দ্রনাথ ঠাকুরের ${bnNum(total)}টি গানের সূচি — কথা, রাগ-তাল ও শ্রবণসহ।`}
+  section="pangea"
+  styles={['/css/tagore-songs.css']}
+  navTitle="গীতবিতান"
+  navParentHref="/pangea/"
+  navParentLabel="প্যাঞ্জিয়া"
+>
+  <div class="gb-page">
+
+    <header class="gb-hero">
+      <p class="gb-super">Pangea · Gitabitan</p>
+      <h1 class="gb-title">গীতবিতান</h1>
+      <p class="gb-sub">
+        রবীন্দ্রনাথ ঠাকুরের {bnNum(total)}টি গান, {bnNum(sections.length)}টি পর্যায়ে —
+        প্রতিটি গানের কথা, রাগ-তাল, ও {bnNum(withRec)}টি গানের শ্রবণযোগ্য পরিবেশনা।
+        পাঠ ও পরিবেশনা-সূত্র:
+        <a href="https://www.tagoreweb.in/Songs" target="_blank" rel="noopener">tagoreweb.in</a>।
+      </p>
+    </header>
+
+    <div class="gb-search">
+      <div class="gb-search-row">
+        <input id="gb-q" type="search" autocomplete="off" spellcheck="false"
+          placeholder="প্রথম ছত্র খুঁজুন — বাংলায় বা ইংরেজি বানানে (amar sonar bangla)…"
+          aria-label="গান খুঁজুন" />
+        <span class="gb-count" id="gb-count">মোট {bnNum(total)}টি গান</span>
+      </div>
+      <div class="gb-chips" role="group" aria-label="পর্যায় বাছাই">
+        <button class="gb-chip active" data-sec="">সব<span class="n">{bnNum(total)}</span></button>
+        {sections.map((sec) => (
+          <button class="gb-chip" data-sec={sec.slug}>
+            {sec.bn}<span class="n">{bnNum(sec.songs.length)}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {sections.map((sec) => (
+      <section class="gb-section" data-sec={sec.slug}>
+        <div class="gb-section-head">
+          <h2>{sec.bn}</h2>
+          <span class="meta">{bnNum(sec.songs.length)}টি গান</span>
+          <span class="grp">{sec.group}</span>
+        </div>
+        <div class="gb-index">
+          {sec.songs.map((song, i) => (
+            <a class="gb-item" href={`/pangea/tagore-songs/${song.slug}/`}
+               data-t={song.title} data-r={roman(song.slug)}>
+              <span class="no">{bnNum(i + 1)}</span>{song.title}
+              {song.renditions.length > 0 && <span class="rec" aria-label="শ্রবণযোগ্য">♪</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <p class="gb-empty gb-hide" id="gb-empty">কিছু পাওয়া গেল না — অন্য বানানে চেষ্টা করুন।</p>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var q = document.getElementById('gb-q');
+      var countEl = document.getElementById('gb-count');
+      var emptyEl = document.getElementById('gb-empty');
+      var chips = Array.prototype.slice.call(document.querySelectorAll('.gb-chip'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('.gb-section'));
+      var total = 0;
+      sections.forEach(function (s) { total += s.querySelectorAll('.gb-item').length; });
+      var bn = function (n) {
+        return String(n).replace(/\d/g, function (d) { return '০১২৩৪৫৬৭৮৯'[d]; });
+      };
+      var activeSec = '';
+
+      function apply() {
+        var query = q.value.trim();
+        var qr = query.toLowerCase();
+        var shown = 0;
+        sections.forEach(function (sec) {
+          if (activeSec && sec.getAttribute('data-sec') !== activeSec) {
+            sec.classList.add('gb-hide');
+            return;
+          }
+          var visible = 0;
+          var items = sec.querySelectorAll('.gb-item');
+          for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            var hit = !query ||
+              it.getAttribute('data-t').indexOf(query) !== -1 ||
+              it.getAttribute('data-r').indexOf(qr) !== -1;
+            it.classList.toggle('gb-hide', !hit);
+            if (hit) visible++;
+          }
+          sec.classList.toggle('gb-hide', visible === 0);
+          shown += visible;
+        });
+        emptyEl.classList.toggle('gb-hide', shown !== 0);
+        countEl.textContent = (query || activeSec)
+          ? bn(total) + 'টির মধ্যে ' + bn(shown) + 'টি'
+          : 'মোট ' + bn(total) + 'টি গান';
+      }
+
+      var t;
+      q.addEventListener('input', function () {
+        clearTimeout(t);
+        t = setTimeout(apply, 90);
+      });
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          activeSec = chip.getAttribute('data-sec');
+          chips.forEach(function (c) { c.classList.toggle('active', c === chip); });
+          apply();
+        });
+      });
+    })();
+  </script>
+</Base>

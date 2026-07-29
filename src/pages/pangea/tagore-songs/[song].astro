@@ -1,0 +1,139 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { loadSongs, bnNum } from '../../../data/tagore-songs.js';
+
+export function getStaticPaths() {
+  return loadSongs().map((s) => ({
+    params: { song: s.slug },
+    props: {
+      title: s.title,
+      lines: s.lines,
+      meta: s.meta,
+      renditions: s.renditions,
+      src: s.src,
+      serial: s.serial,
+      section: { slug: s.section.slug, bn: s.section.bn },
+      prev: s.prev ? { slug: s.prev.slug, title: s.prev.title } : null,
+      next: s.next ? { slug: s.next.slug, title: s.next.title } : null,
+    },
+  }));
+}
+
+const { title, lines, meta, renditions, src, serial, section, prev, next } = Astro.props;
+
+const metaRows = [
+  ['রাগ', meta.raga],
+  ['তাল', meta.tala],
+  ['রচনাকাল (বঙ্গাব্দ)', meta.writtenBn],
+  ['রচনাকাল (খৃষ্টাব্দ)', meta.writtenEn],
+  ['রচনাস্থান', meta.place],
+  ['স্বরলিপিকার', meta.notator],
+].filter(([, v]) => v);
+
+const ytSearch =
+  'https://www.youtube.com/results?search_query=' +
+  encodeURIComponent(`${title} রবীন্দ্রসংগীত`);
+---
+
+<Base
+  title={`${title} — গীতবিতান — KMBA`}
+  description={`${title} — রবীন্দ্রনাথ ঠাকুরের গান (${section.bn} ${bnNum(serial)})। কথা, রাগ-তাল ও শ্রবণ।`}
+  section="pangea"
+  styles={['/css/tagore-songs.css', '/css/book.css']}
+  navTitle={section.bn + ' ' + bnNum(serial)}
+  navParentHref="/pangea/tagore-songs/"
+  navParentLabel="গীতবিতান"
+  navGrandParentHref="/pangea/"
+  navGrandParentLabel="প্যাঞ্জিয়া"
+>
+  <article class="song-page">
+
+    <p class="song-super">
+      <a href="/pangea/tagore-songs/">গীতবিতান</a><span class="sep">·</span>{section.bn}<span
+        class="sep">·</span>{bnNum(serial)}
+    </p>
+
+    <h1 class="song-title">{title}</h1>
+
+    <div class="song-lyrics">
+      {lines.map((l) => <div>{l || ' '}</div>)}
+    </div>
+
+    {metaRows.length > 0 && (
+      <dl class="song-meta">
+        {metaRows.map(([k, v]) => (
+          <div>
+            <dt class="k">{k}</dt>
+            <dd class="v">{v}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    <section class="song-listen">
+      <h2 class="song-listen-label">শ্রবণ</h2>
+      {renditions.length > 0 ? (
+        <>
+          <p class="song-listen-sub">
+            tagoreweb.in-এ সংকলিত পরিবেশনা — ছবিতে চাপ দিলেই গান বাজবে ·
+            <a href={ytSearch} target="_blank" rel="noopener">ইউটিউবে আরও খুঁজুন</a>
+          </p>
+          <div class="song-rends">
+            {renditions.map((r) => (
+              <figure class="song-rend">
+                <button class="thumb" type="button" data-yt={r.yt}
+                  aria-label={`${r.artist || 'পরিবেশনা'} — গান চালান`}>
+                  <img src={`https://i.ytimg.com/vi/${r.yt}/hqdefault.jpg`}
+                    alt="" loading="lazy" />
+                </button>
+                {r.artist && <figcaption class="artist">{r.artist}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </>
+      ) : (
+        <p class="song-listen-empty">
+          এই গানের কোনো পরিবেশনা এখনো সংকলনে যুক্ত হয়নি।<br />
+          <a class="song-yt-search" href={ytSearch} target="_blank" rel="noopener">
+            ইউটিউবে খুঁজে শুনুন ↗
+          </a>
+        </p>
+      )}
+    </section>
+
+    <div class="book-nav">
+      {prev
+        ? <a href={`/pangea/tagore-songs/${prev.slug}/`} class="book-nav-btn book-nav-prev">
+            <span class="book-nav-arrow" aria-hidden="true">←</span>&nbsp;{prev.title}
+          </a>
+        : <span class="book-nav-btn book-nav-disabled" aria-hidden="true">←</span>
+      }
+      <a href="/pangea/tagore-songs/" class="book-nav-btn book-nav-toc">সূচি</a>
+      {next
+        ? <a href={`/pangea/tagore-songs/${next.slug}/`} class="book-nav-btn book-nav-next">
+            {next.title}&nbsp;<span class="book-nav-arrow" aria-hidden="true">→</span>
+          </a>
+        : <span class="book-nav-btn book-nav-disabled" aria-hidden="true">→</span>
+      }
+    </div>
+
+    <p class="song-src">
+      পাঠ ও পরিবেশনা-সূত্র: <a href={src} target="_blank" rel="noopener">tagoreweb.in</a>
+    </p>
+  </article>
+
+  <script is:inline>
+    // click-to-play: swap the thumbnail for the privacy-friendly YouTube embed
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest && e.target.closest('.song-rend .thumb');
+      if (!btn) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' +
+        btn.getAttribute('data-yt') + '?autoplay=1&rel=0';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.title = 'YouTube player';
+      btn.replaceWith(iframe);
+    });
+  </script>
+</Base>

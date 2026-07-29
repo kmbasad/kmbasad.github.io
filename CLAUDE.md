@@ -8,7 +8,7 @@ Personal website for **Khan Muhammad Bin Asad** (astronomer at CASSA, IUB), host
 Pages. **Wholly public.** Built with **Astro** (static output). Four sections:
 
 - **Panthea** — the published stories of the Panthea epic (written in Bengali).
-- **Pangea** — land of the archive: canonical Bengali texts (e.g. Alaol's *Sapta Paykar*, modernized with parallel English).
+- **Pangea** — land of the archive: canonical Bengali texts (e.g. Alaol's *Sapta Paykar*, modernized with parallel English; the complete *Gitabitan* — all Tagore songs with lyrics and YouTube renditions).
 - **Translations** — world literature rendered into Bangla (Hafez's *Divan*, Dante's *Inferno*, Ovid's *Metamorphoses*).
 - **Trellises** — interactive matrix readings: philosophy/theology (Consciousness, God) and film (Ray, Kiarostami, Chan-wook), with essays.
 
@@ -115,6 +115,14 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   `src/pages/pangea/alaol-sapta-paykar/[chapter].astro` (`getStaticPaths` over
   `src/data/alaol-chapters.js`, whose `hasEn` flag drives `noSource`); prev/next/index footer nav
   is rendered from the chapter list.
+- **Gitabitan (Tagore songs)** — the one Pangea work that does *not* use the runtime engines:
+  song data (lyrics, raga/tala metadata, YouTube rendition IDs) lives in
+  `src/data/tagore-songs/<section>.json` (emitted by `scripts/tagore_songs_scrape.py` from
+  tagoreweb.in) and is rendered **at build time**. `src/data/tagore-songs.js` holds the canonical
+  section order + loaders; `src/pages/pangea/tagore-songs/index.astro` is the searchable
+  সূচিপত্র (client-side filter over server-rendered rows), `[song].astro` statically generates
+  all ~2,270 song pages (lyrics use `white-space: pre-wrap` — the leading spaces in the JSON
+  are Gitabitan's indentation, don't strip them), and `public/css/tagore-songs.css` styles both.
 - **Trellis** — `<div id="trellis-mount">` inside `.page-section`, then a
   `<section class="trellis-essay"><div id="essay-mount"></div></section>`; set `TRELLIS_CONFIG`
   (`{ data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' }`); load `trellis.js` (it
@@ -130,7 +138,9 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
 
 ## Scripts
 
-`scripts/` holds one-off Python content-prep pipelines (e.g. the Alaol chapter-splitter). Dev
+`scripts/` holds one-off Python content-prep pipelines (e.g. the Alaol chapter-splitter, and
+`tagore_songs_scrape.py`, which scrapes tagoreweb.in → `src/data/tagore-songs/*.json` in three
+resumable stages: `catalogue` / `songs` / `emit`; its HTML cache lives outside the repo). Dev
 tooling only — not served, not part of the build. Read before running; paths are hardcoded.
 Note: the Pangea `.md` files are now the hand-edited source of truth (e.g. the prologue's English
 was tightened by hand), so there is no live TSV→MD regeneration step to re-run.

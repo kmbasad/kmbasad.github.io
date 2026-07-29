@@ -11,6 +11,7 @@ import { pangeaWorks } from '../../data/pangea-works.js';
       {pangeaWorks.map((w) => (
         <a class="listing-item" href={`/pangea/${w.slug}/`}>
           <span class="title">{w.title}</span>
+          {w.desc && <span class="desc">{w.desc}</span>}
         </a>
       ))}
     </div>
