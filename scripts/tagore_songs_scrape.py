@@ -201,7 +201,72 @@ def stage_emit():
     print(f'EMITTED {n_songs} songs, {n_rend} renditions, {len(out_cats)} categories')
 
 
+def stage_prune():
+    """Drop renditions whose YouTube video is gone. A video's oEmbed status
+    tells us without an API key: 200 = alive, 400/401/403/404/410 = deleted,
+    private, or embedding disabled — all unplayable in our click-to-play
+    cards. Anything else (429, network trouble) is left alone: we only prune
+    on a definite no. Statuses are cached, so re-runs are cheap."""
+    import threading
+
+    cat_files = [p for p in sorted(OUT_DIR.glob('*.json'))
+                 if p.name != 'categories.json']
+    ids = set()
+    for p in cat_files:
+        for s in json.loads(p.read_text(encoding='utf-8')):
+            for r in s['renditions']:
+                ids.add(r['yt'])
+
+    cache_file = CACHE_DIR / 'yt-status.json'
+    status = json.loads(cache_file.read_text()) if cache_file.exists() else {}
+    # re-check transient statuses (rate-limits, network errors) from prior runs
+    todo = [v for v in ids if status.get(v) not in (200, 400, 401, 403, 404, 410)]
+    print(f'{len(ids)} unique ids, {len(todo)} to check', flush=True)
+
+    lock = threading.Lock()
+    done = [0]
+
+    def check(vid):
+        try:
+            r = session.get('https://www.youtube.com/oembed',
+                            params={'url': f'https://www.youtube.com/watch?v={vid}',
+                                    'format': 'json'},
+                            timeout=15)
+            code = r.status_code
+        except Exception:
+            code = -1
+        with lock:
+            status[vid] = code
+            done[0] += 1
+            if done[0] % 200 == 0:
+                cache_file.write_text(json.dumps(status))
+                print(f'{done[0]}/{len(todo)}', flush=True)
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        list(ex.map(check, todo))
+    cache_file.write_text(json.dumps(status))
+
+    from collections import Counter
+    print('status counts:', dict(Counter(status[v] for v in ids)), flush=True)
+
+    DEAD = {400, 401, 403, 404, 410}
+    dropped = kept = with_rend = 0
+    for p in cat_files:
+        songs = json.loads(p.read_text(encoding='utf-8'))
+        for s in songs:
+            alive = [r for r in s['renditions'] if status.get(r['yt']) not in DEAD]
+            dropped += len(s['renditions']) - len(alive)
+            kept += len(alive)
+            s['renditions'] = alive
+            if alive:
+                with_rend += 1
+        p.write_text(json.dumps(songs, ensure_ascii=False), encoding='utf-8')
+    print(f'PRUNED {dropped} dead renditions; {kept} kept; '
+          f'{with_rend} songs still have recordings')
+
+
 if __name__ == '__main__':
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     stage = sys.argv[1] if len(sys.argv) > 1 else 'catalogue'
-    {'catalogue': stage_catalogue, 'songs': stage_songs, 'emit': stage_emit}[stage]()
+    {'catalogue': stage_catalogue, 'songs': stage_songs, 'emit': stage_emit,
+     'prune': stage_prune}[stage]()
