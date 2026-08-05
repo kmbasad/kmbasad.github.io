@@ -25,6 +25,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Build with Astro
         uses: withastro/action@v3
+        with:
+          # the action still defaults to Node 20; Astro 7 refuses to build on
+          # anything below 22.12, so the runner has to be told
+          node-version: 22
 
   deploy:
     needs: build
