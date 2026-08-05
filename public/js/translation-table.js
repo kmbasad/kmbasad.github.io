@@ -120,9 +120,11 @@
           span.className = "w";
           
           if (window.TT_DICT && window.TT_DICT[colName]) {
-            // Normalise: strip punctuation, Arabic tashkeel, lowercase
+            // Normalise: NFC (Bengali nukta forms), strip punctuation,
+            // Arabic tashkeel, lowercase \u2014 mirror md-loader's normWord
             var wRaw = parts[p];
-            var wStripped = wRaw.replace(/[^\p{L}\p{M}\p{N}'\-]/gu, '')
+            var wStripped = wRaw.normalize('NFC')
+                               .replace(/[^\p{L}\p{M}\p{N}'\-]/gu, '')
                                .replace(/[\u064B-\u065F\u0670]/gu, '')
                                .toLowerCase();
             var wNoHyphens = wStripped.replace(/-/g, '');

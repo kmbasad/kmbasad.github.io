@@ -1,0 +1,3474 @@
+{
+ "9101": {
+  "en": [
+   "Today, who are those heard weeping — where do the orphaned cry alas, alas,",
+   "Days and months pass, the year runs out — will the wailing never end?",
+   "Who are those gazing with vacant eyes toward a new year without joy or hope,",
+   "Who lie on the parched bed of earth — desert on every side.",
+   "Speaking words of assurance to all, the year had come bearing so many hopes,",
+   "Trampling so many hopes it departs today — how many homes left empty.",
+   "It wiped away so many wretches' means of living, leaving tears behind —",
+   "On the rising path of the new year it left darkness behind.",
+   "Alas, will one whose home holds not a grain of food not receive even human love —",
+   "Are there today no streams of pity's tears for the afflicted?",
+   "Weep and say, 'Lord, let sorrow depart, let the scorched earth's heart be soothed —",
+   "if the year must go, let it take with it the year's burden of grief.'"
+  ],
+  "align": [
+   [
+    [
+     "আজি",
+     "Today"
+    ],
+    [
+     "কাঁদে",
+     "weeping"
+    ],
+    [
+     "কারা",
+     "who"
+    ],
+    [
+     "শুনা",
+     "heard"
+    ],
+    [
+     "অনাথেরা",
+     "orphaned"
+    ],
+    [
+     "হায়",
+     "alas"
+    ]
+   ],
+   [
+    [
+     "দিন",
+     "Days"
+    ],
+    [
+     "মাস",
+     "months"
+    ],
+    [
+     "যায়",
+     "pass"
+    ],
+    [
+     "বরষ",
+     "year"
+    ],
+    [
+     "ফুরায়",
+     "runs out"
+    ],
+    [
+     "ফুরাবে",
+     "end"
+    ],
+    [
+     "হাহাকার",
+     "wailing"
+    ]
+   ],
+   [
+    [
+     "কারা",
+     "Who"
+    ],
+    [
+     "চেয়ে",
+     "gazing"
+    ],
+    [
+     "শূন্য",
+     "vacant"
+    ],
+    [
+     "নয়ানে",
+     "eyes"
+    ],
+    [
+     "সুখ-আশা-হীন",
+     "without joy"
+    ],
+    [
+     "নববর্ষ-পানে",
+     "new year"
+    ]
+   ],
+   [
+    [
+     "কারা",
+     "Who"
+    ],
+    [
+     "শুয়ে",
+     "lie"
+    ],
+    [
+     "শুষ্ক",
+     "parched"
+    ],
+    [
+     "ভূমিশয়ানে",
+     "bed of earth"
+    ],
+    [
+     "মরুময়",
+     "desert"
+    ],
+    [
+     "চারিধার",
+     "every side"
+    ]
+   ],
+   [
+    [
+     "আশ্বাসবচন",
+     "words of assurance"
+    ],
+    [
+     "সকলেরে",
+     "to all"
+    ],
+    [
+     "ক’য়ে",
+     "Speaking"
+    ],
+    [
+     "এসেছিল",
+     "had come"
+    ],
+    [
+     "বর্ষ",
+     "year"
+    ],
+    [
+     "আশা",
+     "hopes"
+    ],
+    [
+     "লয়ে",
+     "bearing"
+    ]
+   ],
+   [
+    [
+     "আশা",
+     "hopes"
+    ],
+    [
+     "দ’লে",
+     "Trampling"
+    ],
+    [
+     "আজ",
+     "today"
+    ],
+    [
+     "যায়",
+     "departs"
+    ],
+    [
+     "শূন্য",
+     "empty"
+    ],
+    [
+     "পরিবার",
+     "homes"
+    ]
+   ],
+   [
+    [
+     "অভাগার",
+     "wretches'"
+    ],
+    [
+     "জীবনসম্বল",
+     "means of living"
+    ],
+    [
+     "মুছে",
+     "wiped"
+    ],
+    [
+     "রেখে",
+     "leaving"
+    ],
+    [
+     "অশ্রুজল",
+     "tears"
+    ]
+   ],
+   [
+    [
+     "নব",
+     "new"
+    ],
+    [
+     "বরষের",
+     "year"
+    ],
+    [
+     "উদয়ের",
+     "rising"
+    ],
+    [
+     "পথে",
+     "path"
+    ],
+    [
+     "রেখে",
+     "left"
+    ],
+    [
+     "অন্ধকার",
+     "darkness"
+    ]
+   ],
+   [
+    [
+     "হায়",
+     "Alas"
+    ],
+    [
+     "গৃহে",
+     "home"
+    ],
+    [
+     "অন্নকণা",
+     "grain of food"
+    ],
+    [
+     "মানুষের",
+     "human"
+    ],
+    [
+     "প্রেম",
+     "love"
+    ],
+    [
+     "পাবে",
+     "receive"
+    ]
+   ],
+   [
+    [
+     "আজি",
+     "today"
+    ],
+    [
+     "কাতরের",
+     "afflicted"
+    ],
+    [
+     "করুণার",
+     "pity's"
+    ],
+    [
+     "অশ্রুধার",
+     "streams"
+    ]
+   ],
+   [
+    [
+     "কেঁদে",
+     "Weep"
+    ],
+    [
+     "বলো",
+     "say"
+    ],
+    [
+     "নাথ",
+     "Lord"
+    ],
+    [
+     "দুঃখ",
+     "sorrow"
+    ],
+    [
+     "তাপিত",
+     "scorched"
+    ],
+    [
+     "ধরার",
+     "earth's"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "জুড়াক",
+     "soothed"
+    ]
+   ],
+   [
+    [
+     "বর্ষ",
+     "year"
+    ],
+    [
+     "যায়",
+     "go"
+    ],
+    [
+     "লয়ে",
+     "take"
+    ],
+    [
+     "বরষের",
+     "year's"
+    ],
+    [
+     "শোকভার",
+     "burden of grief"
+    ]
+   ]
+  ]
+ },
+ "9102": {
+  "en": [
+   "Victory to you, victory.",
+   "You have hung around the homeland's neck an unfading garland of glory.",
+   "For long days India's voice had stayed silent, bearing its disgrace;",
+   "today you have wakened it and proclaimed it across the world.",
+   "The new flame of light you have kindled in the temple of knowledge",
+   "has set a shining mark on the brow of all your brothers.",
+   "May your chariot of victory range unhindered today through all the world,",
+   "may whatever sorrow and poverty are ours not stay to bind you."
+  ],
+  "align": [
+   [
+    [
+     "জয়",
+     "Victory"
+    ],
+    [
+     "তব",
+     "to you"
+    ]
+   ],
+   [
+    [
+     "স্বদেশের",
+     "homeland's"
+    ],
+    [
+     "গলে",
+     "neck"
+    ],
+    [
+     "তুলে",
+     "hung"
+    ],
+    [
+     "যশোমালা",
+     "garland of glory"
+    ],
+    [
+     "অক্ষয়",
+     "unfading"
+    ]
+   ],
+   [
+    [
+     "বহুদিন",
+     "long days"
+    ],
+    [
+     "ভারতের",
+     "India's"
+    ],
+    [
+     "বাণী",
+     "voice"
+    ],
+    [
+     "নীরবে",
+     "silent"
+    ],
+    [
+     "অপমান",
+     "disgrace"
+    ],
+    [
+     "মানি",
+     "bearing"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "আজ",
+     "today"
+    ],
+    [
+     "জাগায়ে",
+     "wakened"
+    ],
+    [
+     "রটালে",
+     "proclaimed"
+    ],
+    [
+     "বিশ্বময়",
+     "across the world"
+    ]
+   ],
+   [
+    [
+     "জ্ঞানমন্দিরে",
+     "temple of knowledge"
+    ],
+    [
+     "জ্বালায়েছ",
+     "kindled"
+    ],
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "নব",
+     "new"
+    ],
+    [
+     "আলোকশিখা",
+     "flame of light"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "ভ্রাতার",
+     "brothers"
+    ],
+    [
+     "ললাটে",
+     "brow"
+    ],
+    [
+     "দিল",
+     "set"
+    ],
+    [
+     "উজ্জ্বল",
+     "shining"
+    ],
+    [
+     "টিকা",
+     "mark"
+    ]
+   ],
+   [
+    [
+     "অবারিতগতি",
+     "unhindered"
+    ],
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "জয়রথ",
+     "chariot of victory"
+    ],
+    [
+     "ফিরে",
+     "range"
+    ],
+    [
+     "আজি",
+     "today"
+    ],
+    [
+     "জগৎ",
+     "world"
+    ]
+   ],
+   [
+    [
+     "দুঃখ",
+     "sorrow"
+    ],
+    [
+     "দীনতা",
+     "poverty"
+    ],
+    [
+     "মোদের",
+     "ours"
+    ],
+    [
+     "তোমারে",
+     "you"
+    ],
+    [
+     "বাঁধি",
+     "bind"
+    ]
+   ]
+  ]
+ },
+ "9103": {
+  "en": [
+   "Make the pilgrim-courtyard of world-learning gloriously bright today.",
+   "Shine forth, assembly of blessed sons.",
+   "Fulfil the long waiting of the dense night of darkness; take the initiation of light.",
+   "Pilgrims all, make ready; let the divine vina sound.",
+   "Come, workers; come, the wise; come, you intent on the people's good,",
+   "come, king of ascetics!",
+   "Come, society rich in the power of mind, freed of every bond."
+  ],
+  "align": [
+   [
+    [
+     "বিশ্ববিদ্যাতীর্থপ্রাঙ্গন",
+     "pilgrim-courtyard"
+    ],
+    [
+     "কর’",
+     "Make"
+    ],
+    [
+     "মহোজ্জ্বল",
+     "gloriously bright"
+    ],
+    [
+     "আজ",
+     "today"
+    ]
+   ],
+   [
+    [
+     "বরপুত্রসংঘ",
+     "assembly"
+    ],
+    [
+     "বিরাজ’",
+     "Shine forth"
+    ]
+   ],
+   [
+    [
+     "ঘন",
+     "dense"
+    ],
+    [
+     "তিমিররাত্রির",
+     "night of darkness"
+    ],
+    [
+     "চিরপ্রতীক্ষা",
+     "long waiting"
+    ],
+    [
+     "পূর্ণ",
+     "Fulfil"
+    ],
+    [
+     "লহ’",
+     "take"
+    ],
+    [
+     "জ্যোতিদীক্ষা",
+     "initiation of light"
+    ]
+   ],
+   [
+    [
+     "যাত্রিদল",
+     "Pilgrims"
+    ],
+    [
+     "সাজ’",
+     "make ready"
+    ],
+    [
+     "দিব্যবীণা",
+     "divine vina"
+    ],
+    [
+     "বাজ’",
+     "sound"
+    ]
+   ],
+   [
+    [
+     "এস’",
+     "Come"
+    ],
+    [
+     "কর্মী",
+     "workers"
+    ],
+    [
+     "জ্ঞানী",
+     "wise"
+    ],
+    [
+     "জনকল্যাণধ্যানী",
+     "people's good"
+    ]
+   ],
+   [
+    [
+     "এস’তাপসরাজ",
+     "king of ascetics"
+    ]
+   ],
+   [
+    [
+     "এস’",
+     "Come"
+    ],
+    [
+     "ধীশক্তিসম্পদ",
+     "power of mind"
+    ],
+    [
+     "মুক্তবন্ধ",
+     "freed"
+    ],
+    [
+     "সমাজ",
+     "society"
+    ]
+   ]
+  ]
+ },
+ "9104": {
+  "en": [
+   "You are the priest of the world — in this world of yours",
+   "one longs to win the other, and two long to be one.",
+   "Flower embraces flower, the sun and the dawn entwine.",
+   "Cloud sees cloud and comes running; star gazes toward star.",
+   "Your law is fulfilled, O Lord; the victory is yours —",
+   "by your grace these two hearts today have become one.",
+   "The hand with which you bound the moon in love to the earth",
+   "with that same hand you have bound these two hearts, heart to heart.",
+   "The world sings victory, victory; a clamour of joy has risen,",
+   "the wind of love is blowing — love's fragrance streams abroad.",
+   "Sing, O birds, your song; tell it, wind, through all creation —",
+   "in Mahesh's world of love, today love has won the victory."
+  ],
+  "align": [
+   [
+    [
+     "জগতের",
+     "world"
+    ],
+    [
+     "পুরোহিত",
+     "priest"
+    ],
+    [
+     "তুমি",
+     "You"
+    ],
+    [
+     "তোমার",
+     "yours"
+    ],
+    [
+     "জগৎ-মাঝারে",
+     "world"
+    ]
+   ],
+   [
+    [
+     "এক",
+     "one"
+    ],
+    [
+     "চায়",
+     "longs"
+    ],
+    [
+     "একেরে",
+     "the other"
+    ],
+    [
+     "পাইতে",
+     "to win"
+    ],
+    [
+     "দুই",
+     "two"
+    ],
+    [
+     "হইবারে",
+     "to be"
+    ]
+   ],
+   [
+    [
+     "ফুলে",
+     "Flower"
+    ],
+    [
+     "কোলাকুলি",
+     "embraces"
+    ],
+    [
+     "গলাগলি",
+     "entwine"
+    ],
+    [
+     "অরুণে",
+     "sun"
+    ],
+    [
+     "উষায়",
+     "dawn"
+    ]
+   ],
+   [
+    [
+     "মেঘ",
+     "Cloud"
+    ],
+    [
+     "দেখে",
+     "sees"
+    ],
+    [
+     "ছুটে",
+     "running"
+    ],
+    [
+     "আসে",
+     "comes"
+    ],
+    [
+     "তারাটি",
+     "star"
+    ],
+    [
+     "চায়",
+     "gazes"
+    ]
+   ],
+   [
+    [
+     "পূর্ণ",
+     "fulfilled"
+    ],
+    [
+     "তোমার",
+     "Your"
+    ],
+    [
+     "নিয়ম",
+     "law"
+    ],
+    [
+     "প্রভু",
+     "Lord"
+    ],
+    [
+     "জয়",
+     "victory"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "কৃপায়",
+     "grace"
+    ],
+    [
+     "এক",
+     "one"
+    ],
+    [
+     "আজি",
+     "today"
+    ],
+    [
+     "যুগলহৃদয়",
+     "two hearts"
+    ]
+   ],
+   [
+    [
+     "হাতে",
+     "hand"
+    ],
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "বেঁধে",
+     "bound"
+    ],
+    [
+     "শশধরে",
+     "moon"
+    ],
+    [
+     "ধরার",
+     "earth"
+    ],
+    [
+     "প্রণয়ে",
+     "love"
+    ]
+   ],
+   [
+    [
+     "সেই",
+     "that"
+    ],
+    [
+     "হাতে",
+     "hand"
+    ],
+    [
+     "বাঁধিয়াছ",
+     "bound"
+    ],
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "দুটি",
+     "two"
+    ],
+    [
+     "হৃদয়ে",
+     "heart"
+    ]
+   ],
+   [
+    [
+     "জগত",
+     "world"
+    ],
+    [
+     "গাহিছে",
+     "sings"
+    ],
+    [
+     "জয়-জয়",
+     "victory"
+    ],
+    [
+     "উঠেছে",
+     "risen"
+    ],
+    [
+     "হরষকোলাহল",
+     "clamour of joy"
+    ]
+   ],
+   [
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "বাতাস",
+     "wind"
+    ],
+    [
+     "বহিতেছে",
+     "blowing"
+    ],
+    [
+     "ছুটিতেছে",
+     "streams"
+    ],
+    [
+     "প্রেমপরিমল",
+     "love's fragrance"
+    ]
+   ],
+   [
+    [
+     "পাখিরা",
+     "birds"
+    ],
+    [
+     "গাও",
+     "Sing"
+    ],
+    [
+     "গান",
+     "song"
+    ],
+    [
+     "কহো",
+     "tell"
+    ],
+    [
+     "বায়ু",
+     "wind"
+    ],
+    [
+     "চরাচরময়",
+     "all creation"
+    ]
+   ],
+   [
+    [
+     "মহেশের",
+     "Mahesh's"
+    ],
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "জগতে",
+     "world"
+    ],
+    [
+     "আজি",
+     "today"
+    ],
+    [
+     "জয়",
+     "victory"
+    ]
+   ]
+  ]
+ },
+ "9105": {
+  "en": [
+   "You, O sun of love, lighting all creation,",
+   "however much you bestow, undiminished is your hand.",
+   "Stay shining upon the eyes of these two —",
+   "then tell me, what is there to fear from the dark?",
+   "If they lose you, the two will lose each other —",
+   "the two will sit and weep, blinded in dense delusion;",
+   "such darkness will fall that, seated side by side,",
+   "still the two will not know each other's faces.",
+   "See, Lord, stay awake upon their eyes for ever —",
+   "let not the world's dense clouds cover you.",
+   "Seated in your light, their moon-faces bright,",
+   "each beholds the other, their whole being athrill."
+  ],
+  "align": [
+   [
+    [
+     "তুমি",
+     "You"
+    ],
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "রবি",
+     "sun"
+    ],
+    [
+     "আলো",
+     "lighting"
+    ],
+    [
+     "চরাচর",
+     "all creation"
+    ]
+   ],
+   [
+    [
+     "বিতরণ",
+     "bestow"
+    ],
+    [
+     "অক্ষয়",
+     "undiminished"
+    ],
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "কর",
+     "hand"
+    ]
+   ],
+   [
+    [
+     "দুজনের",
+     "these two"
+    ],
+    [
+     "আঁখি-’পরে",
+     "eyes"
+    ],
+    [
+     "থাকো",
+     "Stay"
+    ],
+    [
+     "আলো",
+     "shining"
+    ]
+   ],
+   [
+    [
+     "আঁধারে",
+     "dark"
+    ],
+    [
+     "বলো",
+     "tell"
+    ],
+    [
+     "কিসের",
+     "what"
+    ],
+    [
+     "ডর",
+     "fear"
+    ]
+   ],
+   [
+    [
+     "তোমারে",
+     "you"
+    ],
+    [
+     "হারায়",
+     "lose"
+    ],
+    [
+     "দুজনে",
+     "the two"
+    ],
+    [
+     "হারাবে",
+     "will lose"
+    ],
+    [
+     "দোঁহে",
+     "each other"
+    ]
+   ],
+   [
+    [
+     "দুজনে",
+     "the two"
+    ],
+    [
+     "কাঁদিবে",
+     "weep"
+    ],
+    [
+     "বসি",
+     "sit"
+    ],
+    [
+     "অন্ধ",
+     "blinded"
+    ],
+    [
+     "ঘন",
+     "dense"
+    ],
+    [
+     "মোহে",
+     "delusion"
+    ]
+   ],
+   [
+    [
+     "আঁধার",
+     "darkness"
+    ],
+    [
+     "পাশাপাশি",
+     "side by side"
+    ],
+    [
+     "বসে",
+     "seated"
+    ]
+   ],
+   [
+    [
+     "দোঁহার",
+     "the two"
+    ],
+    [
+     "মুখ",
+     "faces"
+    ],
+    [
+     "চিনিবে",
+     "know"
+    ],
+    [
+     "পরস্পর",
+     "each other's"
+    ]
+   ],
+   [
+    [
+     "দেখো",
+     "See"
+    ],
+    [
+     "প্রভু",
+     "Lord"
+    ],
+    [
+     "চিরদিন",
+     "for ever"
+    ],
+    [
+     "আঁখি-’পরে",
+     "eyes"
+    ],
+    [
+     "থেকো",
+     "stay"
+    ],
+    [
+     "জেগে",
+     "awake"
+    ]
+   ],
+   [
+    [
+     "তোমারে",
+     "you"
+    ],
+    [
+     "ঢাকে",
+     "cover"
+    ],
+    [
+     "সংসারের",
+     "world's"
+    ],
+    [
+     "ঘন",
+     "dense"
+    ],
+    [
+     "মেঘে",
+     "clouds"
+    ]
+   ],
+   [
+    [
+     "তোমারি",
+     "your"
+    ],
+    [
+     "আলোকে",
+     "light"
+    ],
+    [
+     "বসি",
+     "Seated"
+    ],
+    [
+     "উজল-আনন-শশী",
+     "moon-faces bright"
+    ]
+   ],
+   [
+    [
+     "উভয়ে",
+     "each"
+    ],
+    [
+     "হেরে",
+     "beholds"
+    ],
+    [
+     "পুলকিতকলেবর",
+     "whole being athrill"
+    ]
+   ]
+  ]
+ },
+ "9106": {
+  "en": [
+   "On this blessed day, at this blessed hour, the earth with joyful heart",
+   "has offered today the flowers of two hearts as gift —",
+   "see, they lie there at your feet;",
+   "take them up in your right hand, King of kings.",
+   "With one thread, God, string them together —",
+   "let it not break, not tear; let them stay in that hand.",
+   "With your dew keep them alive —",
+   "lest, who knows, they wither in the world's harsh sunlight."
+  ],
+  "align": [
+   [
+    [
+     "শুভদিনে",
+     "blessed day"
+    ],
+    [
+     "শুভক্ষণে",
+     "blessed hour"
+    ],
+    [
+     "পৃথিবী",
+     "earth"
+    ],
+    [
+     "আনন্দমনে",
+     "joyful heart"
+    ]
+   ],
+   [
+    [
+     "দুটি",
+     "two"
+    ],
+    [
+     "হৃদয়ের",
+     "hearts"
+    ],
+    [
+     "ফুল",
+     "flowers"
+    ],
+    [
+     "উপহার",
+     "gift"
+    ],
+    [
+     "দিল",
+     "offered"
+    ],
+    [
+     "আজ",
+     "today"
+    ]
+   ],
+   [
+    [
+     "চরণের",
+     "feet"
+    ],
+    [
+     "দেখো",
+     "see"
+    ],
+    [
+     "পড়িয়া",
+     "lie"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "দক্ষিণহস্তে",
+     "right hand"
+    ],
+    [
+     "লও",
+     "take"
+    ],
+    [
+     "রাজরাজ",
+     "King of kings"
+    ]
+   ],
+   [
+    [
+     "এক",
+     "one"
+    ],
+    [
+     "সূত্র",
+     "thread"
+    ],
+    [
+     "দেব",
+     "God"
+    ],
+    [
+     "গেঁথে",
+     "string"
+    ],
+    [
+     "সাথে",
+     "together"
+    ]
+   ],
+   [
+    [
+     "টুটে",
+     "break"
+    ],
+    [
+     "ছিঁড়ে",
+     "tear"
+    ],
+    [
+     "থাকে",
+     "stay"
+    ],
+    [
+     "হাতে",
+     "hand"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "শিশির",
+     "dew"
+    ],
+    [
+     "রাখো",
+     "keep"
+    ],
+    [
+     "বাঁচাইয়ে",
+     "alive"
+    ]
+   ],
+   [
+    [
+     "শুকায়",
+     "wither"
+    ],
+    [
+     "পাছে",
+     "lest"
+    ],
+    [
+     "সংসাররৌদ্রের",
+     "world's harsh sunlight"
+    ]
+   ]
+  ]
+ },
+ "9107": {
+  "en": [
+   "Become one, you two; lay your heads at the feet of the One —",
+   "may your two hearts today be joined in his union's shade.",
+   "In the surge of his love may two souls awaken —",
+   "may all that is withered and stained break beneath his feet.",
+   "Before you lies the world's road; do not fear its hindrances —",
+   "go, you two, go on your way — go singing his victory.",
+   "Take devotion for provision; may your strength be unconquerable —",
+   "may the blessing-word of fearlessness come on his grace's breeze."
+  ],
+  "align": [
+   [
+    [
+     "দুজনে",
+     "you two"
+    ],
+    [
+     "এক",
+     "one"
+    ],
+    [
+     "মাথা",
+     "heads"
+    ],
+    [
+     "রাখো",
+     "lay"
+    ],
+    [
+     "একের",
+     "the One"
+    ],
+    [
+     "পায়ে",
+     "feet"
+    ]
+   ],
+   [
+    [
+     "দুজনের",
+     "two"
+    ],
+    [
+     "হৃদয়",
+     "hearts"
+    ],
+    [
+     "আজি",
+     "today"
+    ],
+    [
+     "মিলুক",
+     "be joined"
+    ],
+    [
+     "তাঁরি",
+     "his"
+    ],
+    [
+     "মিলন-ছায়ে",
+     "union's shade"
+    ]
+   ],
+   [
+    [
+     "তাঁহারি",
+     "his"
+    ],
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "বেগে",
+     "surge"
+    ],
+    [
+     "দুটি",
+     "two"
+    ],
+    [
+     "প্রাণ",
+     "souls"
+    ],
+    [
+     "জেগে",
+     "awaken"
+    ]
+   ],
+   [
+    [
+     "যা-কিছু",
+     "all"
+    ],
+    [
+     "শীর্ণ",
+     "withered"
+    ],
+    [
+     "মলিন",
+     "stained"
+    ],
+    [
+     "টুটুক",
+     "break"
+    ],
+    [
+     "চরণ-ঘায়ে",
+     "beneath his feet"
+    ]
+   ],
+   [
+    [
+     "সমুখে",
+     "Before"
+    ],
+    [
+     "সংসারপথ",
+     "world's road"
+    ],
+    [
+     "বিঘ্নবাধা",
+     "hindrances"
+    ],
+    [
+     "ভয়",
+     "fear"
+    ]
+   ],
+   [
+    [
+     "দুজনে",
+     "you two"
+    ],
+    [
+     "যাও",
+     "go"
+    ],
+    [
+     "গান",
+     "singing"
+    ],
+    [
+     "তাঁহারি",
+     "his"
+    ],
+    [
+     "জয়",
+     "victory"
+    ]
+   ],
+   [
+    [
+     "ভকতি",
+     "devotion"
+    ],
+    [
+     "লও",
+     "Take"
+    ],
+    [
+     "পাথেয়",
+     "provision"
+    ],
+    [
+     "শকতি",
+     "strength"
+    ],
+    [
+     "অজেয়",
+     "unconquerable"
+    ]
+   ],
+   [
+    [
+     "অভয়ের",
+     "fearlessness"
+    ],
+    [
+     "আশিসবাণী",
+     "blessing-word"
+    ],
+    [
+     "আসুক",
+     "come"
+    ],
+    [
+     "প্রসাদ-বায়ে",
+     "grace's breeze"
+    ]
+   ]
+  ]
+ },
+ "9108": {
+  "en": [
+   "From his boundless realm of blessing",
+   "into the woodland shade of your hearts",
+   "in a stream of the Infinite's touch",
+   "spring has been wakened today.",
+   "So the nectar-filled blossom of union",
+   "has opened — when, we never knew —",
+   "this blossom, this offering of worship —",
+   "bow down, both of you, at his feet.",
+   "May every obstacle fall away from you;",
+   "may the stream of his blessing descend.",
+   "May it wipe away the stains of sullied dust;",
+   "may the wind of peace blow unbound.",
+   "In the sweetness of ever-new love",
+   "may the fruit of good ripen in both your hearts;",
+   "may your happiness for ever keep giving,",
+   "swelling the joy of all the world."
+  ],
+  "align": [
+   [
+    [
+     "তাঁহার",
+     "his"
+    ],
+    [
+     "অসীম",
+     "boundless"
+    ],
+    [
+     "মঙ্গললোক",
+     "realm of blessing"
+    ],
+    [
+     "হতে",
+     "From"
+    ]
+   ],
+   [
+    [
+     "তোমাদের",
+     "your"
+    ],
+    [
+     "হৃদয়বনচ্ছায়ে",
+     "woodland shade"
+    ]
+   ],
+   [
+    [
+     "অনন্তেরই",
+     "Infinite's"
+    ],
+    [
+     "পরশরসের",
+     "touch"
+    ],
+    [
+     "স্রোতে",
+     "stream"
+    ]
+   ],
+   [
+    [
+     "আজ",
+     "today"
+    ],
+    [
+     "বসন্ত",
+     "spring"
+    ],
+    [
+     "জাগায়ে",
+     "wakened"
+    ]
+   ],
+   [
+    [
+     "সুধাময়",
+     "nectar-filled"
+    ],
+    [
+     "মিলনকুসুমখানি",
+     "blossom of union"
+    ]
+   ],
+   [
+    [
+     "ফুটে",
+     "opened"
+    ],
+    [
+     "নাহি",
+     "never"
+    ],
+    [
+     "জানি",
+     "knew"
+    ]
+   ],
+   [
+    [
+     "কুসুমের",
+     "blossom"
+    ],
+    [
+     "পূজার",
+     "worship"
+    ],
+    [
+     "অর্ঘ্যখানি",
+     "offering"
+    ]
+   ],
+   [
+    [
+     "প্রণাম",
+     "bow down"
+    ],
+    [
+     "দুইজনে",
+     "both"
+    ],
+    [
+     "তাঁর",
+     "his"
+    ],
+    [
+     "পায়ে",
+     "feet"
+    ]
+   ],
+   [
+    [
+     "সকল",
+     "every"
+    ],
+    [
+     "বাধা",
+     "obstacle"
+    ],
+    [
+     "তোমাদের",
+     "you"
+    ],
+    [
+     "ঘুচে",
+     "fall away"
+    ]
+   ],
+   [
+    [
+     "নামুক",
+     "descend"
+    ],
+    [
+     "তাঁহার",
+     "his"
+    ],
+    [
+     "আশীর্বাদের",
+     "blessing"
+    ],
+    [
+     "ধারা",
+     "stream"
+    ]
+   ],
+   [
+    [
+     "মলিন",
+     "sullied"
+    ],
+    [
+     "ধুলার",
+     "dust"
+    ],
+    [
+     "চিহ্ন",
+     "stains"
+    ],
+    [
+     "মুছে",
+     "wipe away"
+    ]
+   ],
+   [
+    [
+     "শান্তিপবন",
+     "wind of peace"
+    ],
+    [
+     "বহুক",
+     "blow"
+    ],
+    [
+     "বন্ধহারা",
+     "unbound"
+    ]
+   ],
+   [
+    [
+     "নিত্যনবীন",
+     "ever-new"
+    ],
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "মাধুরীতে",
+     "sweetness"
+    ]
+   ],
+   [
+    [
+     "কল্যাণফল",
+     "fruit of good"
+    ],
+    [
+     "ফলুক",
+     "ripen"
+    ],
+    [
+     "দোঁহার",
+     "both"
+    ],
+    [
+     "চিতে",
+     "hearts"
+    ]
+   ],
+   [
+    [
+     "সুখ",
+     "happiness"
+    ],
+    [
+     "তোমাদের",
+     "your"
+    ],
+    [
+     "নিত্য",
+     "for ever"
+    ],
+    [
+     "রহুক",
+     "keep"
+    ],
+    [
+     "দিতে",
+     "giving"
+    ]
+   ],
+   [
+    [
+     "নিখিলজনের",
+     "all the world"
+    ],
+    [
+     "আনন্দ",
+     "joy"
+    ],
+    [
+     "বাড়ায়ে",
+     "swelling"
+    ]
+   ]
+  ]
+ },
+ "9109": {
+  "en": [
+   "On the journey-road of new life grant, oh grant this boon,",
+   "O heart's Lord —",
+   "may the wealth of love fill the heart full;",
+   "may your gracious face reign amid this world;",
+   "in joy may we receive your alms, in sorrow receive your initiation;",
+   "may the mind be freed of pettiness, be joined with the whole world;",
+   "may it know no weariness in works of good —",
+   "peace, peace, peace."
+  ],
+  "align": [
+   [
+    [
+     "নবজীবনের",
+     "new life"
+    ],
+    [
+     "যাত্রাপথে",
+     "journey-road"
+    ],
+    [
+     "দাও",
+     "grant"
+    ],
+    [
+     "বর",
+     "boon"
+    ]
+   ],
+   [
+    [
+     "হৃদয়েশ্বর",
+     "heart's Lord"
+    ]
+   ],
+   [
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "বিত্ত",
+     "wealth"
+    ],
+    [
+     "পূর্ণ",
+     "full"
+    ],
+    [
+     "চিত্ত",
+     "heart"
+    ]
+   ],
+   [
+    [
+     "সংসারমাঝে",
+     "amid this world"
+    ],
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "দক্ষিণমুখ",
+     "gracious face"
+    ],
+    [
+     "রাজে",
+     "reign"
+    ]
+   ],
+   [
+    [
+     "সুখরূপে",
+     "in joy"
+    ],
+    [
+     "পাই",
+     "receive"
+    ],
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "ভিক্ষা",
+     "alms"
+    ],
+    [
+     "দুখরূপে",
+     "in sorrow"
+    ],
+    [
+     "দীক্ষা",
+     "initiation"
+    ]
+   ],
+   [
+    [
+     "মন",
+     "mind"
+    ],
+    [
+     "ক্ষুদ্রতামুক্ত",
+     "freed of pettiness"
+    ],
+    [
+     "নিখিলের",
+     "whole world"
+    ],
+    [
+     "যুক্ত",
+     "joined"
+    ]
+   ],
+   [
+    [
+     "শুভকর্মে",
+     "works of good"
+    ],
+    [
+     "নাহি",
+     "no"
+    ],
+    [
+     "মানে",
+     "know"
+    ],
+    [
+     "ক্লান্তি",
+     "weariness"
+    ]
+   ],
+   [
+    [
+     "শান্তি",
+     "peace"
+    ]
+   ]
+  ]
+ },
+ "9110": {
+  "en": [
+   "On love's union-day, the true witness, the Indwelling One —",
+   "I bow to him — I bow, I bow.",
+   "He who is companion day and night, in danger and fortune, in joy and sorrow, the Indwelling One —",
+   "I bow to him — I bow, I bow.",
+   "He whose gaze in the dark of night is in star after star,",
+   "whose gaze crosses the bounds of life and death,",
+   "whose gaze is in the blazing sunlight, in the flame of fire, in every creature's soul — the Indwelling One,",
+   "I bow to him — I bow, I bow.",
+   "Offer all life's works, the world's duties, at his feet.",
+   "He who is witness of the universe, the Indwelling One —",
+   "I bow to him — I bow, I bow."
+  ],
+  "align": [
+   [
+    [
+     "প্রেমের",
+     "love's"
+    ],
+    [
+     "মিলনদিনে",
+     "union-day"
+    ],
+    [
+     "সত্য",
+     "true"
+    ],
+    [
+     "সাক্ষী",
+     "witness"
+    ],
+    [
+     "অন্তর্যামী",
+     "Indwelling One"
+    ]
+   ],
+   [
+    [
+     "নমি",
+     "bow"
+    ],
+    [
+     "তাঁরে",
+     "to him"
+    ],
+    [
+     "আমি",
+     "I"
+    ]
+   ],
+   [
+    [
+     "বিপদে",
+     "danger"
+    ],
+    [
+     "সম্পদে",
+     "fortune"
+    ],
+    [
+     "সুখে",
+     "joy"
+    ],
+    [
+     "দুখে",
+     "sorrow"
+    ],
+    [
+     "সাথি",
+     "companion"
+    ],
+    [
+     "দিনরাতি",
+     "day and night"
+    ],
+    [
+     "অন্তর্যামী",
+     "Indwelling One"
+    ]
+   ],
+   [
+    [
+     "নমি",
+     "bow"
+    ],
+    [
+     "তাঁরে",
+     "to him"
+    ],
+    [
+     "আমি",
+     "I"
+    ]
+   ],
+   [
+    [
+     "তিমিররাত্রে",
+     "dark of night"
+    ],
+    [
+     "যাঁর",
+     "whose"
+    ],
+    [
+     "দৃষ্টি",
+     "gaze"
+    ],
+    [
+     "তারায়",
+     "star"
+    ]
+   ],
+   [
+    [
+     "যাঁর",
+     "whose"
+    ],
+    [
+     "দৃষ্টি",
+     "gaze"
+    ],
+    [
+     "জীবনের",
+     "life"
+    ],
+    [
+     "মরণের",
+     "death"
+    ],
+    [
+     "সীমা",
+     "bounds"
+    ],
+    [
+     "পারায়",
+     "crosses"
+    ]
+   ],
+   [
+    [
+     "যাঁর",
+     "whose"
+    ],
+    [
+     "দৃষ্টি",
+     "gaze"
+    ],
+    [
+     "দীপ্ত",
+     "blazing"
+    ],
+    [
+     "সূর্য-আলোকে",
+     "sunlight"
+    ],
+    [
+     "অগ্নিশিখায়",
+     "flame of fire"
+    ],
+    [
+     "জীব-আত্মায়",
+     "creature's soul"
+    ],
+    [
+     "অন্তর্যামী",
+     "Indwelling One"
+    ]
+   ],
+   [
+    [
+     "নমি",
+     "bow"
+    ],
+    [
+     "তাঁরে",
+     "to him"
+    ],
+    [
+     "আমি",
+     "I"
+    ]
+   ],
+   [
+    [
+     "জীবনের",
+     "life's"
+    ],
+    [
+     "কর্ম",
+     "works"
+    ],
+    [
+     "সংসারধর্ম",
+     "world's duties"
+    ],
+    [
+     "নিবেদন",
+     "Offer"
+    ],
+    [
+     "তাঁর",
+     "his"
+    ],
+    [
+     "চরণে",
+     "feet"
+    ]
+   ],
+   [
+    [
+     "নিখিলের",
+     "universe"
+    ],
+    [
+     "সাক্ষী",
+     "witness"
+    ],
+    [
+     "অন্তর্যামী",
+     "Indwelling One"
+    ]
+   ],
+   [
+    [
+     "নমি",
+     "bow"
+    ],
+    [
+     "তাঁরে",
+     "to him"
+    ],
+    [
+     "আমি",
+     "I"
+    ]
+   ]
+  ]
+ },
+ "9111": {
+  "en": [
+   "Blessed bride, keep the honey of tenderness stored in your soul. Ah.",
+   "Be true in love, be steadfast in well-being —",
+   "in sorrow and joy stay calm, with a smiling face.",
+   "Be victorious over blows, gracious in unshaken patience. Ah.",
+   "Walk heeding the word of good counsel;",
+   "by the grace of compassionate humility let peace spread on every side —",
+   "make your household tender with forgiveness.",
+   "Let no pride of possessions belittle the soul.",
+   "Let the mind know that time mocks wealth and honour —",
+   "let not that trick of dust veil the Eternal from your eyes. Ah."
+  ],
+  "align": [
+   [
+    [
+     "সুমঙ্গলী",
+     "Blessed"
+    ],
+    [
+     "বধূ",
+     "bride"
+    ],
+    [
+     "সঞ্চিত",
+     "stored"
+    ],
+    [
+     "রেখো",
+     "keep"
+    ],
+    [
+     "প্রাণে",
+     "soul"
+    ],
+    [
+     "স্নেহমধু",
+     "honey of tenderness"
+    ],
+    [
+     "আহা",
+     "Ah"
+    ]
+   ],
+   [
+    [
+     "সত্য",
+     "true"
+    ],
+    [
+     "প্রেমে",
+     "love"
+    ],
+    [
+     "ধ্রুব",
+     "steadfast"
+    ],
+    [
+     "ক্ষেমে",
+     "well-being"
+    ]
+   ],
+   [
+    [
+     "দুঃখে",
+     "sorrow"
+    ],
+    [
+     "সুখে",
+     "joy"
+    ],
+    [
+     "শান্ত",
+     "calm"
+    ],
+    [
+     "হাস্যমুখে",
+     "smiling face"
+    ]
+   ],
+   [
+    [
+     "আঘাতে",
+     "blows"
+    ],
+    [
+     "জয়ী",
+     "victorious"
+    ],
+    [
+     "অবিচল",
+     "unshaken"
+    ],
+    [
+     "ধৈর্যে",
+     "patience"
+    ],
+    [
+     "কল্যাণময়ী",
+     "gracious"
+    ],
+    [
+     "আহা",
+     "Ah"
+    ]
+   ],
+   [
+    [
+     "চলো",
+     "Walk"
+    ],
+    [
+     "শুভবুদ্ধির",
+     "good counsel"
+    ],
+    [
+     "বাণী",
+     "word"
+    ],
+    [
+     "শুনে",
+     "heeding"
+    ]
+   ],
+   [
+    [
+     "সকরুণ",
+     "compassionate"
+    ],
+    [
+     "নম্রতাগুণে",
+     "humility"
+    ],
+    [
+     "শান্তি",
+     "peace"
+    ],
+    [
+     "বিস্তার",
+     "spread"
+    ]
+   ],
+   [
+    [
+     "ক্ষমাস্নিগ্ধ",
+     "tender with forgiveness"
+    ],
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "সংসার",
+     "household"
+    ]
+   ],
+   [
+    [
+     "উপকরণের",
+     "possessions"
+    ],
+    [
+     "গর্ব",
+     "pride"
+    ],
+    [
+     "আত্মারে",
+     "soul"
+    ],
+    [
+     "খর্ব",
+     "belittle"
+    ]
+   ],
+   [
+    [
+     "মন",
+     "mind"
+    ],
+    [
+     "জানে",
+     "know"
+    ],
+    [
+     "উপহাস",
+     "mocks"
+    ],
+    [
+     "কাল",
+     "time"
+    ],
+    [
+     "ধনমানে",
+     "wealth and honour"
+    ]
+   ],
+   [
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "চক্ষে",
+     "eyes"
+    ],
+    [
+     "ধূলির",
+     "dust"
+    ],
+    [
+     "ফাঁকি",
+     "trick"
+    ],
+    [
+     "নিত্যেরে",
+     "Eternal"
+    ],
+    [
+     "ঢাকি",
+     "veil"
+    ],
+    [
+     "আহা",
+     "Ah"
+    ]
+   ]
+  ]
+ },
+ "9112": {
+  "en": [
+   "Give these your blessing.",
+   "Little lives are blossoming on the earth; they bring news of paradise.",
+   "Lest these smiling faces forget their smiles,",
+   "lest darkness and peril close around them,",
+   "call them near, hold them to your breast, take them on your lap,",
+   "and give them your blessing.",
+   "Say, 'Go in happiness, treading the waves of the world;",
+   "may a wind come from heaven —",
+   "make light of joy and sorrow, they are only the play of waves",
+   "dancing all around you.'"
+  ],
+  "align": [
+   [
+    [
+     "ইহাদের",
+     "these"
+    ],
+    [
+     "করো",
+     "Give"
+    ],
+    [
+     "আশীর্বাদ",
+     "blessing"
+    ]
+   ],
+   [
+    [
+     "ধরায়",
+     "earth"
+    ],
+    [
+     "ফুটি",
+     "blossoming"
+    ],
+    [
+     "ক্ষুদ্র",
+     "Little"
+    ],
+    [
+     "প্রাণগুলি",
+     "lives"
+    ],
+    [
+     "নন্দনের",
+     "paradise"
+    ],
+    [
+     "এনেছে",
+     "bring"
+    ],
+    [
+     "সংবাদ",
+     "news"
+    ]
+   ],
+   [
+    [
+     "হাসিমুখগুলি",
+     "smiling faces"
+    ],
+    [
+     "হাসি",
+     "smiles"
+    ],
+    [
+     "পাছে",
+     "Lest"
+    ],
+    [
+     "ভুলি",
+     "forget"
+    ]
+   ],
+   [
+    [
+     "পাছে",
+     "lest"
+    ],
+    [
+     "ঘেরে",
+     "close around"
+    ],
+    [
+     "আঁধার",
+     "darkness"
+    ],
+    [
+     "প্রমাদ",
+     "peril"
+    ]
+   ],
+   [
+    [
+     "ডেকে",
+     "call"
+    ],
+    [
+     "বুকে",
+     "breast"
+    ],
+    [
+     "রেখে",
+     "hold"
+    ],
+    [
+     "কোলে",
+     "lap"
+    ]
+   ],
+   [
+    [
+     "তোমরা",
+     "your"
+    ],
+    [
+     "করো",
+     "give"
+    ],
+    [
+     "আশীর্বাদ",
+     "blessing"
+    ]
+   ],
+   [
+    [
+     "বলো",
+     "Say"
+    ],
+    [
+     "সুখে",
+     "happiness"
+    ],
+    [
+     "যাও",
+     "Go"
+    ],
+    [
+     "ভবের",
+     "world"
+    ],
+    [
+     "তরঙ্গ",
+     "waves"
+    ],
+    [
+     "দ’লে",
+     "treading"
+    ]
+   ],
+   [
+    [
+     "স্বর্গ",
+     "heaven"
+    ],
+    [
+     "আসুক",
+     "come"
+    ],
+    [
+     "বাতাস",
+     "wind"
+    ]
+   ],
+   [
+    [
+     "সুখ",
+     "joy"
+    ],
+    [
+     "দুঃখ",
+     "sorrow"
+    ],
+    [
+     "হেলা",
+     "make light"
+    ],
+    [
+     "কেবল",
+     "only"
+    ],
+    [
+     "ঢেউখেলা",
+     "play of waves"
+    ]
+   ],
+   [
+    [
+     "নাচিবে",
+     "dancing"
+    ],
+    [
+     "তোদের",
+     "you"
+    ],
+    [
+     "চারিপাশ",
+     "all around"
+    ]
+   ]
+  ]
+ },
+ "9113": {
+  "en": [
+   "Before us lies the ocean of peace —",
+   "launch the boat, O Helmsman.",
+   "You will be the eternal companion — take me, take me into your lap —",
+   "on the path to the Infinite will burn the light of the Pole Star.",
+   "Giver of freedom, your forgiveness, your mercy",
+   "will be the eternal provision of the eternal journey.",
+   "May the mortal world's bonds dissolve; may the vast universe open its arms and gather us in —",
+   "may the heart find fearless acquaintance with the great Unknown."
+  ],
+  "align": [
+   [
+    [
+     "সমুখে",
+     "Before"
+    ],
+    [
+     "শান্তিপারাবার",
+     "ocean of peace"
+    ]
+   ],
+   [
+    [
+     "ভাসাও",
+     "launch"
+    ],
+    [
+     "তরণী",
+     "boat"
+    ],
+    [
+     "কর্ণধার",
+     "Helmsman"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "You"
+    ],
+    [
+     "চিরসাথি",
+     "eternal companion"
+    ],
+    [
+     "লও",
+     "take"
+    ],
+    [
+     "ক্রোড়",
+     "lap"
+    ]
+   ],
+   [
+    [
+     "অসীমের",
+     "Infinite"
+    ],
+    [
+     "পথে",
+     "path"
+    ],
+    [
+     "জ্বলিবে",
+     "burn"
+    ],
+    [
+     "জ্যোতি",
+     "light"
+    ],
+    [
+     "ধ্রুবতারকার",
+     "Pole Star"
+    ]
+   ],
+   [
+    [
+     "মুক্তিদাতা",
+     "Giver of freedom"
+    ],
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "ক্ষমা",
+     "forgiveness"
+    ],
+    [
+     "দয়া",
+     "mercy"
+    ]
+   ],
+   [
+    [
+     "চিরপাথেয়",
+     "eternal provision"
+    ],
+    [
+     "চিরযাত্রার",
+     "eternal journey"
+    ]
+   ],
+   [
+    [
+     "মর্তের",
+     "mortal"
+    ],
+    [
+     "বন্ধনক্ষয়",
+     "bonds dissolve"
+    ],
+    [
+     "বিরাট",
+     "vast"
+    ],
+    [
+     "বিশ্ব",
+     "universe"
+    ],
+    [
+     "বাহু",
+     "arms"
+    ],
+    [
+     "মেলি",
+     "open"
+    ]
+   ],
+   [
+    [
+     "পায়",
+     "find"
+    ],
+    [
+     "অন্তরে",
+     "heart"
+    ],
+    [
+     "নির্ভয়",
+     "fearless"
+    ],
+    [
+     "পরিচয়",
+     "acquaintance"
+    ],
+    [
+     "মহা-অজানার",
+     "great Unknown"
+    ]
+   ]
+  ]
+ },
+ "9114": {
+  "en": [
+   "Those who once went and killed him",
+   "in the name of the king —",
+   "in this age those same ones are born again today;",
+   "they come to the temple dressed as devotees —",
+   "calling the killer soldiery,",
+   "they raise the cry 'Kill, kill!'",
+   "The voice of worship-chants mingles with the roar —",
+   "the Son of Man in piercing pain says: O God,",
+   "this cup is filled with cruel poison —",
+   "cast it far away, cast it far away, quickly."
+  ],
+  "align": [
+   [
+    [
+     "একদিন",
+     "once"
+    ],
+    [
+     "যারা",
+     "Those who"
+    ],
+    [
+     "মেরেছিল",
+     "killed"
+    ],
+    [
+     "তাঁরে",
+     "him"
+    ],
+    [
+     "গিয়ে",
+     "went"
+    ]
+   ],
+   [
+    [
+     "রাজার",
+     "king"
+    ],
+    [
+     "দোহাই",
+     "name"
+    ]
+   ],
+   [
+    [
+     "যুগে",
+     "age"
+    ],
+    [
+     "তারাই",
+     "those same"
+    ],
+    [
+     "জন্ম",
+     "born"
+    ],
+    [
+     "আজি",
+     "today"
+    ]
+   ],
+   [
+    [
+     "মন্দিরে",
+     "temple"
+    ],
+    [
+     "এসেছে",
+     "come"
+    ],
+    [
+     "ভক্ত",
+     "devotees"
+    ],
+    [
+     "সাজি",
+     "dressed"
+    ]
+   ],
+   [
+    [
+     "ঘাতক",
+     "killer"
+    ],
+    [
+     "সৈন্যে",
+     "soldiery"
+    ],
+    [
+     "ডাকি",
+     "calling"
+    ]
+   ],
+   [
+    [
+     "মারো",
+     "Kill"
+    ],
+    [
+     "ওঠে",
+     "raise"
+    ],
+    [
+     "হাঁকি",
+     "cry"
+    ]
+   ],
+   [
+    [
+     "গর্জনে",
+     "roar"
+    ],
+    [
+     "মিশে",
+     "mingles"
+    ],
+    [
+     "পূজামন্ত্রের",
+     "worship-chants"
+    ],
+    [
+     "স্বর",
+     "voice"
+    ]
+   ],
+   [
+    [
+     "মানবপুত্র",
+     "Son of Man"
+    ],
+    [
+     "তীব্র",
+     "piercing"
+    ],
+    [
+     "ব্যথায়",
+     "pain"
+    ],
+    [
+     "কহেন",
+     "says"
+    ],
+    [
+     "ঈশ্বর",
+     "God"
+    ]
+   ],
+   [
+    [
+     "পানপাত্র",
+     "cup"
+    ],
+    [
+     "নিদারুণ",
+     "cruel"
+    ],
+    [
+     "বিষে",
+     "poison"
+    ],
+    [
+     "ভরা",
+     "filled"
+    ]
+   ],
+   [
+    [
+     "দূরে",
+     "far away"
+    ],
+    [
+     "ফেলে",
+     "cast"
+    ],
+    [
+     "ত্বরা",
+     "quickly"
+    ]
+   ]
+  ]
+ },
+ "9115": {
+  "en": [
+   "Open the door, Lord, onto the path of light —",
+   "for those who thirst for light, their eyes upraised,",
+   "who have lost their way beneath the shadows of dusk,",
+   "while before them the night of despair closes in.",
+   "Those who, lost to themselves in your whole wide world,",
+   "search for the Pole Star through the veil of darkness —",
+   "bring their sight into the world of form —",
+   "onto the path of light."
+  ],
+  "align": [
+   [
+    [
+     "আলোকের",
+     "light"
+    ],
+    [
+     "পথে",
+     "path"
+    ],
+    [
+     "প্রভু",
+     "Lord"
+    ],
+    [
+     "দ্বার",
+     "door"
+    ],
+    [
+     "খুলে",
+     "Open"
+    ]
+   ],
+   [
+    [
+     "আলোক-পিয়াসী",
+     "thirst for light"
+    ],
+    [
+     "আঁখি",
+     "eyes"
+    ],
+    [
+     "তুলে",
+     "upraised"
+    ]
+   ],
+   [
+    [
+     "প্রদোষের",
+     "dusk"
+    ],
+    [
+     "ছায়াতলে",
+     "beneath the shadows"
+    ],
+    [
+     "হারায়েছে",
+     "lost"
+    ],
+    [
+     "দিশা",
+     "way"
+    ]
+   ],
+   [
+    [
+     "সমুখে",
+     "before"
+    ],
+    [
+     "ঘিরে",
+     "closes in"
+    ],
+    [
+     "নিরাশার",
+     "despair"
+    ],
+    [
+     "নিশা",
+     "night"
+    ]
+   ],
+   [
+    [
+     "নিখিল",
+     "whole"
+    ],
+    [
+     "ভুবনে",
+     "world"
+    ],
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "আত্মহারা",
+     "lost to themselves"
+    ]
+   ],
+   [
+    [
+     "আঁধারের",
+     "darkness"
+    ],
+    [
+     "আবরণে",
+     "veil"
+    ],
+    [
+     "খোঁজে",
+     "search"
+    ],
+    [
+     "ধ্রুবতারা",
+     "Pole Star"
+    ]
+   ],
+   [
+    [
+     "তাহাদের",
+     "their"
+    ],
+    [
+     "দৃষ্টি",
+     "sight"
+    ],
+    [
+     "আনো",
+     "bring"
+    ],
+    [
+     "রূপের",
+     "form"
+    ],
+    [
+     "জগতে",
+     "world"
+    ]
+   ],
+   [
+    [
+     "আলোকের",
+     "light"
+    ],
+    [
+     "পথে",
+     "path"
+    ]
+   ]
+  ]
+ },
+ "9116": {
+  "en": [
+   "Behold, the Great Man comes.",
+   "A thrill runs in every direction",
+   "through blade after blade of the grass of mortal dust.",
+   "In the realm of gods the conch rings out;",
+   "in the realm of men the victory-drum sounds —",
+   "the hour of the great birth has come.",
+   "Today all the fortress-gates of the moonless night",
+   "have crashed broken to the dust.",
+   "On the peak of dawn wakes the cry 'Fear not, fear not'",
+   "in the assurance of new life.",
+   "'Victory, victory, victory to the rising of Man'",
+   "thundered forth across the great sky."
+  ],
+  "align": [
+   [
+    [
+     "ওই",
+     "Behold"
+    ],
+    [
+     "মহামানব",
+     "Great Man"
+    ],
+    [
+     "আসে",
+     "comes"
+    ]
+   ],
+   [
+    [
+     "দিকে",
+     "every direction"
+    ],
+    [
+     "রোমাঞ্চ",
+     "thrill"
+    ],
+    [
+     "লাগে",
+     "runs"
+    ]
+   ],
+   [
+    [
+     "মর্তধূলির",
+     "mortal dust"
+    ],
+    [
+     "ঘাসে",
+     "grass"
+    ]
+   ],
+   [
+    [
+     "সুরলোকে",
+     "realm of gods"
+    ],
+    [
+     "বেজে",
+     "rings"
+    ],
+    [
+     "শঙ্খ",
+     "conch"
+    ]
+   ],
+   [
+    [
+     "নরলোকে",
+     "realm of men"
+    ],
+    [
+     "বাজে",
+     "sounds"
+    ],
+    [
+     "জয়ডঙ্ক",
+     "victory-drum"
+    ]
+   ],
+   [
+    [
+     "এল",
+     "has come"
+    ],
+    [
+     "মহাজন্মের",
+     "great birth"
+    ],
+    [
+     "লগ্ন",
+     "hour"
+    ]
+   ],
+   [
+    [
+     "আজি",
+     "Today"
+    ],
+    [
+     "অমারাত্রির",
+     "moonless night"
+    ],
+    [
+     "দুর্গতোরণ",
+     "fortress-gates"
+    ],
+    [
+     "যত",
+     "all"
+    ]
+   ],
+   [
+    [
+     "ধূলিতলে",
+     "to the dust"
+    ],
+    [
+     "ভগ্ন",
+     "broken"
+    ]
+   ],
+   [
+    [
+     "উদয়শিখরে",
+     "peak of dawn"
+    ],
+    [
+     "জাগে",
+     "wakes"
+    ],
+    [
+     "মাভৈ:",
+     "Fear not"
+    ]
+   ],
+   [
+    [
+     "নবজীবনের",
+     "new life"
+    ],
+    [
+     "আশ্বাসে",
+     "assurance"
+    ]
+   ],
+   [
+    [
+     "জয়",
+     "Victory"
+    ],
+    [
+     "মানব-অভ্যুদয়",
+     "rising of Man"
+    ]
+   ],
+   [
+    [
+     "মন্দ্রি-উঠিল",
+     "thundered forth"
+    ],
+    [
+     "মহাকাশে",
+     "great sky"
+    ]
+   ]
+  ]
+ },
+ "9117": {
+  "en": [
+   "O Ever-new,",
+   "let the first blessed moment of birth appear once more.",
+   "Let your appearing come, unveiling the mist,",
+   "like the sun.",
+   "Piercing the breast of emptiness, reveal yourself.",
+   "Let the victory of life be made manifest,",
+   "let the eternal wonder of the Infinite be made manifest in you.",
+   "On the horizon of sunrise the conch sounds; within my heart",
+   "a call goes out to the Ever-new —",
+   "the twenty-fifth of Baishakh."
+  ],
+  "align": [
+   [
+    [
+     "নূতন",
+     "Ever-new"
+    ]
+   ],
+   [
+    [
+     "দেখা",
+     "appear"
+    ],
+    [
+     "আর-বার",
+     "once more"
+    ],
+    [
+     "জন্মের",
+     "birth"
+    ],
+    [
+     "প্রথম",
+     "first"
+    ],
+    [
+     "শুভক্ষণ",
+     "blessed moment"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "প্রকাশ",
+     "appearing"
+    ],
+    [
+     "কুহেলিকা",
+     "mist"
+    ],
+    [
+     "উদঘাটন",
+     "unveiling"
+    ]
+   ],
+   [
+    [
+     "সূর্যের",
+     "sun"
+    ],
+    [
+     "মতন",
+     "like"
+    ]
+   ],
+   [
+    [
+     "রিক্ততার",
+     "emptiness"
+    ],
+    [
+     "বক্ষ",
+     "breast"
+    ],
+    [
+     "ভেদি",
+     "Piercing"
+    ],
+    [
+     "আপনারে",
+     "yourself"
+    ],
+    [
+     "উন্মোচন",
+     "reveal"
+    ]
+   ],
+   [
+    [
+     "ব্যক্ত",
+     "manifest"
+    ],
+    [
+     "জীবনের",
+     "life"
+    ],
+    [
+     "জয়",
+     "victory"
+    ]
+   ],
+   [
+    [
+     "ব্যক্ত",
+     "manifest"
+    ],
+    [
+     "তোমামাঝে",
+     "in you"
+    ],
+    [
+     "অসীমের",
+     "Infinite"
+    ],
+    [
+     "চিরবিস্ময়",
+     "eternal wonder"
+    ]
+   ],
+   [
+    [
+     "উদয়দিগন্তে",
+     "horizon of sunrise"
+    ],
+    [
+     "শঙ্খ",
+     "conch"
+    ],
+    [
+     "বাজে",
+     "sounds"
+    ],
+    [
+     "মোর",
+     "my"
+    ],
+    [
+     "চিত্তমাঝে",
+     "heart"
+    ]
+   ],
+   [
+    [
+     "চিরনূতনেরে",
+     "Ever-new"
+    ],
+    [
+     "ডাক",
+     "call"
+    ]
+   ],
+   [
+    [
+     "পঁচিশে",
+     "twenty-fifth"
+    ],
+    [
+     "বৈশাখ",
+     "Baishakh"
+    ]
+   ]
+  ]
+ }
+}

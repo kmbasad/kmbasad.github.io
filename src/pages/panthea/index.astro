@@ -1,15 +1,400 @@
 ---
 import Base from '../../layouts/Base.astro';
+import {
+  toBn,
+  towerSegments,
+  patalSegments,
+  diameterAt,
+  TOWER_HEIGHT_M,
+  PATAL_DEPTH_M,
+  MINAR_BASE_M,
+  ISLAND_DIAMETER_M,
+  ISLAND_SHORE_M,
+  CORE_DIAMETER_M,
+} from '../../data/panthea-tiers.js';
+
+// ── Story (optional, exactly as on a floor page) ──
+// The home's prose lives at src/stories/panthea/index.md if it exists at all.
+// It is globbed rather than imported so the file may be absent: no file → the
+// same empty stub every unwritten floor shows. Right now there is none, so the
+// text panel stands empty — the panel itself stays, identical to a floor's.
+const stories = import.meta.glob('../../stories/panthea/index.md', { eager: true });
+const Story = (stories['../../stories/panthea/index.md'] as any)?.Content ?? null;
+
+// dev-only: marks the story as editable in the browser (see astro.config.mjs)
+const editSrc = import.meta.env.DEV ? 'index.md' : null;
+
+// ── Map geometry ────────────────────────────────────────────────────────────
+// Two maps, both generated from panthea-tiers.js at build time so map and
+// data can never drift. All coordinates are viewBox units (0 0 460 620):
+// metre scale in the left gutter, তলা scale at the far right, and the segment
+// names set between the boundary lines, hugging the slope.
+const R = (n) => Math.round(n * 10) / 10;
+const CX = 280;
+
+// Both maps are sections of one construction, so both are drawn at ONE scale:
+// U units per metre of radius, fixed by the tower's 1600 m base. Every flank
+// is walked along the profile in panthea-tiers.js — the মিনার's flared spire,
+// the পাতাল's narrow well swelling to its belly — so no silhouette here can
+// drift from the diameters printed on the floor pages.
+const U = 116 / (MINAR_BASE_M / 2);
+const halfOf = (kind, m) => (diameterAt(kind, m) / 2) * U;
+const ISLAND_HALF = R((ISLAND_DIAMETER_M / 2) * U);
+const ISLAND_TOP_HALF = R(((ISLAND_DIAMETER_M - 2 * ISLAND_SHORE_M) / 2) * U);
+const CORE_HALF = R((CORE_DIAMETER_M / 2) * U);
+
+const bandOf = (kind, yFn) => (s) => {
+  const [m0, m1] = s.metres;
+  const left = [], right = [];
+  for (let i = 0; i <= 12; i++) {
+    const m = m0 + ((m1 - m0) * i) / 12;
+    const y = R(yFn(m)), h = halfOf(kind, m);
+    left.push(`${R(CX - h)},${y}`);
+    right.push(`${R(CX + h)},${y}`);
+  }
+  const mMid = (m0 + m1) / 2;
+  return {
+    ...s,
+    points: [...left, ...right.reverse()].join(' '),
+    nameY: R(yFn(mMid) + 3.5),
+    nameX: R(CX + halfOf(kind, mMid) + 10),
+  };
+};
+
+// Map ১ — the tower, sea level (bottom) to summit (top).
+const T_BASE = 540, T_TOP = 48;
+const tY = (m) => T_BASE - (m / TOWER_HEIGHT_M) * (T_BASE - T_TOP);
+
+const towerBands = towerSegments.map(bandOf('minar', tY));
+
+const towerTicks = [0, ...towerSegments.map((s) => s.metres[1])].map((m) => ({
+  bn: toBn(m),
+  y: R(tY(m)),
+  x2: R(CX - halfOf('minar', m) - 6),
+}));
+
+const towerFloorTicks = [0, ...towerSegments.map((s) => s.floors[1])].map((f, i) => {
+  const m = i === 0 ? 0 : towerSegments[i - 1].metres[1];
+  return { bn: toBn(f), y: R(tY(m)), x1: R(CX + halfOf('minar', m) + 6) };
+});
+
+// Map ২ — the underworld, ground (top) to nadir (bottom).
+const P_TOP = 78, P_BOT = 566;
+const pY = (m) => P_TOP + (m / PATAL_DEPTH_M) * (P_BOT - P_TOP);
+
+const patalBands = patalSegments.map(bandOf('patal', pY));
+
+const patalTicks = [0, ...patalSegments.map((s) => s.metres[1])].map((m) => ({
+  bn: toBn(m),
+  y: R(pY(m)),
+  x2: R(CX - halfOf('patal', m) - 6),
+}));
+
+const patalFloorTicks = [0, ...patalSegments.map((s) => s.floors[1])].map((f, i) => {
+  const m = i === 0 ? 0 : patalSegments[i - 1].metres[1];
+  return { bn: toBn(f), y: R(pY(m)), x1: R(CX + halfOf('patal', m) + 6) };
+});
+
+// Width annotations at the two ends of each map, set in the same footnote
+// size as the gutter ticks: a dimension line drawn at the true width with end
+// serifs, and the metre value above or below it. The two 100 m ends measure
+// as brackets barely wider than the spine — which is the point of them.
+//
+// Two different widths meet at the ground: the tower's ১৬০০ m base, bracketed
+// below the section like every other diameter, and the ৩০০০ m island it
+// stands on. The island's figure is not bracketed — it is set INSIDE the
+// plate, which is drawn at exactly that width, so the plate's own two edges
+// serve as the dimension's end serifs. That is what keeps the plate from
+// reading as the ১৬০০ bracket overrunning itself.
+const dim = (kind, m, y, ty) => ({
+  half: R(halfOf(kind, m)),
+  y, ty,
+  label: `ব্যাস ${toBn(Math.round(diameterAt(kind, m)))} মিটার`,
+});
+const islandLabel = `দ্বীপ ${toBn(ISLAND_DIAMETER_M)} মিটার`;
+// the base bracket rides just under the plate's waterline edge (y 562), close
+// enough to read as that plate's own dimension rather than a floating figure
+const towerDims = [dim('minar', TOWER_HEIGHT_M, 32, 24), dim('minar', 0, 572, 589)];
+const patalDims = [dim('patal', 0, 32, 24), dim('patal', PATAL_DEPTH_M, 588, 605)];
+
+// the ground plate: the island in section, with the well's mouth cut out of
+// its middle on the পাতাল slide (the well is coaxial — the spine runs down it)
+// The island is widest at the waterline and tapers away from it by the shore
+// ring — upward to its flat crown on the মিনার slide, downward into its
+// submerged flank on the পাতাল slide. Same plate, cut the same way, seen from
+// the two sides of গ্রাউন্ড.
+const WELL_HALF = R(halfOf('patal', 0));
+const islandTower = `${CX - ISLAND_HALF},562 ${CX - ISLAND_TOP_HALF},544 ${CX + ISLAND_TOP_HALF},544 ${CX + ISLAND_HALF},562`;
+const islandPatalL = `${CX - ISLAND_HALF},56 ${CX - WELL_HALF},56 ${CX - WELL_HALF},74 ${CX - ISLAND_TOP_HALF},74`;
+const islandPatalR = `${CX + ISLAND_HALF},56 ${CX + WELL_HALF},56 ${CX + WELL_HALF},74 ${CX + ISLAND_TOP_HALF},74`;
+
+const floorsOf = (s) => Array.from({ length: s.count }, (_, i) => s.floors[0] + i);
 ---
 
-<Base title="Panthea — KMBA" section="panthea">
+<Base
+  title="প্যান্থিয়া"
+  description="প্যান্থিয়া — মহাসমুদ্রের দ্বীপে হাজার তলার মিনার ও হাজার তলার পাতাল: দুই জগতের মানচিত্র ও বর্ণনা।"
+  section="panthea"
+  bodyClass="panthea-page"
+  styles={['/css/panthea.css']}
+  navTitle="প্যান্থিয়া"
+>
+  <!-- The home is the roof, one step above তলা ১০০০ — so its gilt key carries
+       a single ↓ and no ↑, which is the whole of what the bar needs to say
+       about where you are standing. -->
+  <Fragment slot="nav-here">
+    <span class="nav-cur">প্যান্থিয়া</span>
+    <a class="pn-nav-arrow" href="/panthea/minar/1000/" title="তলা ১০০০ · ctrl+↓"
+       aria-label="তলা ১০০০">↓</a>
+  </Fragment>
 
-  <div class="main">
-    <h1 class="work-title">প্যান্থিয়া</h1>
-    <div class="listing-box">
-      <!-- ARTICLES_START -->
-      <p class="listing-empty">প্রথম কাহিনিগুলো লেখা হচ্ছে।</p>
-      <!-- ARTICLES_END -->
+  <div class="pn-wrap">
+
+    <!-- ══ design panel: the two maps with slider — pure design + TOC ══ -->
+    <div class="pn-left">
+      <div class="pn-slider" data-active="0">
+        <div class="pn-slides">
+
+          <!-- ── slide ১: the tower ── -->
+          <div class="pn-slide" data-world="minar">
+            <svg class="pn-map" viewBox="0 0 560 620" role="img" aria-label="মিনারের মানচিত্র — হাজার তলা, চৌদ্দ স্তর">
+              <!-- metre scale, far left -->
+              <g class="pn-scale">
+                <text class="pn-scale-unit" x="46" y="30" text-anchor="end">মিটার</text>
+                {towerTicks.map((t) => (
+                  <>
+                    <line class="pn-tick" x1="52" y1={t.y} x2={t.x2} y2={t.y} />
+                    <text class="pn-scale-num" x="46" y={t.y + 4} text-anchor="end">{t.bn}</text>
+                  </>
+                ))}
+              </g>
+
+              <!-- তলা scale, far right -->
+              <g class="pn-scale">
+                <text class="pn-scale-unit" x="552" y="30" text-anchor="end">তলা</text>
+                {towerFloorTicks.map((t) => (
+                  <>
+                    <line class="pn-tick" x1={t.x1} y1={t.y} x2="524" y2={t.y} />
+                    <text class="pn-scale-num" x="552" y={t.y + 4} text-anchor="end">{t.bn}</text>
+                  </>
+                ))}
+              </g>
+
+              <!-- segment names, set between the boundary lines along the slope -->
+              <g class="pn-names">
+                {towerBands.map((b) => (
+                  <text class="pn-seg-name" x={b.nameX} y={b.nameY}>{b.bn}</text>
+                ))}
+              </g>
+
+              <!-- sea + island + ground bar (clickable → গ্রাউন্ড) -->
+              <line class="pn-sea-line" x1="60" y1="562" x2="540" y2="562" />
+              <a href="/panthea/bhumi/" class="pn-ground-link" aria-label="গ্রাউন্ড">
+                <polygon class="pn-ground" points={islandTower}>
+                  <title>গ্রাউন্ড ০</title>
+                </polygon>
+                <text class="pn-ground-label" x={CX} y="557" text-anchor="middle">{islandLabel}</text>
+              </a>
+
+              <!-- the fourteen segments: the shapes alone are the hover/click targets -->
+              {towerBands.map((b) => (
+                <polygon class={`pn-band pn-band-t${b.index}`} points={b.points} data-seg={`t-${b.slug}`}>
+                  <title>{b.bn} — তলা {b.floorsBn}</title>
+                </polygon>
+              ))}
+              <!-- the spine: the one shaft that runs the whole 8 km -->
+              <rect class="pn-core" x={R(CX - CORE_HALF)} y={T_TOP} width={R(CORE_HALF * 2)} height={R(T_BASE - T_TOP)} />
+              <circle class="pn-beacon" cx={CX} cy="40" r="3.2" />
+
+              <!-- width at the two ends: crown and base -->
+              {towerDims.map((d) => (
+                <g class="pn-dim">
+                  <line x1={CX - d.half} y1={d.y} x2={CX + d.half} y2={d.y} />
+                  <line x1={CX - d.half} y1={d.y - 3.5} x2={CX - d.half} y2={d.y + 3.5} />
+                  <line x1={CX + d.half} y1={d.y - 3.5} x2={CX + d.half} y2={d.y + 3.5} />
+                  <text x={CX} y={d.ty} text-anchor="middle">{d.label}</text>
+                </g>
+              ))}
+            </svg>
+          </div>
+
+          <!-- ── slide ২: the underworld ── -->
+          <div class="pn-slide" data-world="patal">
+            <svg class="pn-map" viewBox="0 0 560 620" role="img" aria-label="পাতালের মানচিত্র — হাজার তলা, চৌদ্দ স্তর">
+              <g class="pn-scale">
+                <text class="pn-scale-unit" x="46" y="30" text-anchor="end">মিটার</text>
+                {patalTicks.map((t) => (
+                  <>
+                    <line class="pn-tick" x1="52" y1={t.y} x2={t.x2} y2={t.y} />
+                    <text class="pn-scale-num" x="46" y={t.y + 4} text-anchor="end">{t.bn}</text>
+                  </>
+                ))}
+              </g>
+
+              <g class="pn-scale">
+                <text class="pn-scale-unit" x="552" y="30" text-anchor="end">তলা</text>
+                {patalFloorTicks.map((t) => (
+                  <>
+                    <line class="pn-tick" x1={t.x1} y1={t.y} x2="524" y2={t.y} />
+                    <text class="pn-scale-num" x="552" y={t.y + 4} text-anchor="end">{t.bn}</text>
+                  </>
+                ))}
+              </g>
+
+              <g class="pn-names">
+                {patalBands.map((b) => (
+                  <text class="pn-seg-name" x={b.nameX} y={b.nameY}>{b.bn}</text>
+                ))}
+              </g>
+
+              <line class="pn-sea-line" x1="60" y1="56" x2="540" y2="56" />
+              <a href="/panthea/bhumi/" class="pn-ground-link" aria-label="গ্রাউন্ড">
+                <polygon class="pn-ground" points={islandPatalL}>
+                  <title>গ্রাউন্ড ০</title>
+                </polygon>
+                <polygon class="pn-ground" points={islandPatalR}>
+                  <title>গ্রাউন্ড ০</title>
+                </polygon>
+                <text class="pn-ground-label" x={CX} y="48" text-anchor="middle">{islandLabel}</text>
+              </a>
+
+              {patalBands.map((b) => (
+                <polygon class={`pn-band pn-band-u${b.index}`} points={b.points} data-seg={`p-${b.slug}`}>
+                  <title>{b.bn} — তলা {b.floorsBn}</title>
+                </polygon>
+              ))}
+              <rect class="pn-core" x={R(CX - CORE_HALF)} y={P_TOP} width={R(CORE_HALF * 2)} height={R(P_BOT - P_TOP)} />
+              <circle class="pn-nadir-dot" cx={CX} cy={P_BOT} r="3.2" />
+
+              <!-- width at the two ends: the well's mouth and the nadir -->
+              {patalDims.map((d) => (
+                <g class="pn-dim">
+                  <line x1={CX - d.half} y1={d.y} x2={CX + d.half} y2={d.y} />
+                  <line x1={CX - d.half} y1={d.y - 3.5} x2={CX - d.half} y2={d.y + 3.5} />
+                  <line x1={CX + d.half} y1={d.y - 3.5} x2={CX + d.half} y2={d.y + 3.5} />
+                  <text x={CX} y={d.ty} text-anchor="middle">{d.label}</text>
+                </g>
+              ))}
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- floor-grid popups: open beside the hovered band, sized to fit, never scroll -->
+        {[
+          ...towerBands.map((s) => ({ ...s, world: 't', dot: 't', base: '/panthea/minar' })),
+          ...patalBands.map((s) => ({ ...s, world: 'p', dot: 'u', base: '/panthea/patal' })),
+        ].map((s) => (
+          <div class={`pn-floors pn-floors--${s.world === "p" ? "patal" : "minar"}`} id={`floors-${s.world}-${s.slug}`}>
+            <div class="pn-floors-head">
+              <span class={`pn-seg-dot pn-dot-${s.dot}${s.index}`} aria-hidden="true"></span>
+              <b>{s.bn}</b>
+              <span class="pn-floors-meta">তলা {s.floorsBn} · {s.metresBn}</span>
+              <button type="button" class="pn-floors-close" aria-label="বন্ধ করা">×</button>
+            </div>
+            <div class="pn-chips">
+              {floorsOf(s).map((f) => (
+                <a class="pn-chip" href={`${s.base}/${f}/`}>{toBn(f)}</a>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <!-- the two views of this panel, laid over the foot of the map rather
+             than given a bar of their own -->
+        <nav class="pn-views" role="tablist" aria-label="নকশা">
+          <button type="button" class="pn-dseg active" data-slide="0" role="tab" aria-selected="true">মিনার</button>
+          <button type="button" class="pn-dseg" data-slide="1" role="tab" aria-selected="false">পাতাল</button>
+        </nav>
+      </div>
     </div>
+
+    <!-- ══ text panel: the story alone — empty until index.md is written ══ -->
+    <div class="pn-right">
+      <!-- data-toc-scan: site.js stamps these headings and lists them in the
+           menubar সূচি. No headings (the story is unwritten) → no সূচি key. -->
+      <div class="pn-story pn-prose" data-md={editSrc} data-toc-scan="h2, h3">
+        {Story
+          ? <Story />
+          : <p class="pn-story-empty">এই তলার ছবি ও কাহিনি এখনো আঁকা হয়নি, লেখা হয়নি।</p>}
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    // the roof: the only way is down, by arrow or by ctrl+↓ (holding it rides
+    // on from তলা ১০০০ — the floor pages pick the key up as it repeats)
+    document.addEventListener('keydown', (e) => {
+      if (!e.ctrlKey || e.altKey || e.metaKey || e.key !== 'ArrowDown') return;
+      if (e.target.closest?.('input, textarea, [contenteditable]')) return;
+      e.preventDefault();
+      location.href = '/panthea/minar/1000/';
+    });
+
+    // design nav: one small segment per design/map
+    const tabs = document.querySelectorAll('.pn-views .pn-dseg');
+    const slider = document.querySelector('.pn-slider');
+    const overlays = document.querySelectorAll('.pn-floors');
+
+    const closeAll = () => overlays.forEach((o) => o.classList.remove('open'));
+
+    tabs.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        tabs.forEach((b) => {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+        slider.setAttribute('data-active', btn.dataset.slide);
+        dismiss();
+      });
+    });
+
+    // map bands → the floor grid lives in ONE glass box per world, pinned to
+    // the same corner for every segment; only its free edge moves, because the
+    // box is as tall as its rows of floor numbers (the same box, and the same
+    // rule, that the segment button drops on a floor page).
+    // Hover: the box appears instantly as a preview and follows the hovered
+    // band; it fades when the pointer leaves. Click: pins the box; clicking
+    // the same band again (or ×) dismisses it; another band re-pins.
+    const bands = document.querySelectorAll('.pn-map .pn-band');
+    let pinned = null;
+
+    const showBox = (overlay) => {
+      overlays.forEach((o) => o.classList.toggle('open', o === overlay));
+      bands.forEach((b) => {
+        const o = document.getElementById(`floors-${b.dataset.seg}`);
+        b.classList.toggle('pn-band-active', overlay !== null && o === overlay);
+      });
+    };
+
+    const dismiss = () => {
+      pinned = null;
+      showBox(null);
+    };
+
+    bands.forEach((band) => {
+      const overlay = document.getElementById(`floors-${band.dataset.seg}`);
+      if (!overlay) return;
+      band.addEventListener('mouseenter', () => showBox(overlay));
+      band.addEventListener('mouseleave', () => showBox(pinned));
+      band.addEventListener('click', () => {
+        if (pinned === overlay) {
+          pinned = null;      // stays as hover preview, gone on mouseleave
+        } else {
+          pinned = overlay;
+        }
+        showBox(overlay);
+      });
+    });
+
+    document.querySelectorAll('.pn-floors-close').forEach((b) =>
+      b.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dismiss();
+      })
+    );
+
+  </script>
+  {import.meta.env.DEV && <script is:inline src="/__panthea/edit.js"></script>}
 </Base>

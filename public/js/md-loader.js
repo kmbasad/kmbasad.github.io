@@ -48,9 +48,11 @@
   var COL_CLASS = { it: 'it', la: 'it', fa: 'fa', en: 'en' };
 
   // Normalise a word the same way translation-table.js does, so dictionary
-  // keys line up with the tokens it looks up at hover time.
+  // keys line up with the tokens it looks up at hover time. NFC first:
+  // Bengali \u09A1\u09BC/\u09A2\u09BC/\u09AF\u09BC exist precomposed and decomposed (nukta), and the text
+  // and a hand-written word-list may not agree.
   function normWord(w) {
-    return String(w).trim()
+    return String(w).normalize('NFC').trim()
       .replace(/[^\p{L}\p{M}\p{N}']/gu, '')
       .replace(/[\u064B-\u065F\u0670]/gu, '')   // strip Arabic tashkeel
       .toLowerCase();
@@ -72,7 +74,7 @@
 
   /* ── frontmatter + body split ──────────────────────────────────── */
   var raw = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-  var meta = {}, bodyText = raw;
+  var meta = {}, bodyText = raw, fmLineCount = 0;
   var fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
   if (fm) {
     fm[1].split('\n').forEach(function (l) {
@@ -80,6 +82,7 @@
       if (m) meta[m[1]] = m[2].trim();
     });
     bodyText = raw.slice(fm[0].length);
+    fmLineCount = fm[0].split('\n').length - 1;   // lines the frontmatter occupies
   }
 
   var type = (cfg.type || meta.type || 'tercet').toLowerCase();
@@ -154,7 +157,9 @@
         if (noSource) { bn = c0; src = ''; num = cells[1] || ''; }
         else          { bn = c0; src = cells[1] || ''; num = cells[2] || ''; }
         var mk = markerRecord(bn, src);
-        out.push(mk || { num: num, bn: bn, src: src });
+        // srcLine: this row's absolute line index in the fetched .md —
+        // the dev-only in-browser editor saves an edited verse back here.
+        out.push(mk || { num: num, bn: bn, src: src, srcLine: fmLineCount + i });
         continue;
       }
 
@@ -169,7 +174,8 @@
       out.push({
         num: num2,
         bn:  (di === -1 ? ln : ln.slice(0, di)).trim(),
-        src: (di === -1 ? '' : ln.slice(di + DELIM.length)).trim()
+        src: (di === -1 ? '' : ln.slice(di + DELIM.length)).trim(),
+        srcLine: fmLineCount + i
       });
     }
     return out;
@@ -245,11 +251,11 @@
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  function row(cls, bn, src, lnum, langCls, attrs) {
+  function row(cls, bn, src, lnum, langCls, attrs, lnExtra) {
     return '<tr' + (cls ? ' class="' + cls + '"' : '') + (attrs || '') + '>' +
       '<td class="bn"' + lineAttr(lnum) + '>' + bn + '</td>' +
       (noSource ? '' : '<td class="' + langCls + '"' + lineAttr(lnum) + '>' + src + '</td>') +
-      '<td class="ln-col"' + lineAttr(lnum) + '>' + (lnum || '') + '</td>' +
+      '<td class="ln-col"' + lineAttr(lnum) + '>' + (lnExtra || '') + (lnum || '') + '</td>' +
     '</tr>';
   }
 
@@ -262,6 +268,7 @@
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) return;
     var html = '', nextStart = true, tercet = 0, sectionIdx = 0;
+    var pendingSection = null;   // marginSections: heading waiting for its first verse
 
     var nCols = noSource ? 2 : 3;
 
@@ -277,6 +284,9 @@
       }
 
       if (r.heading) {
+        // marginSections: no heading row in the flow — the section name rides
+        // the ln-col of its first verse (small), which also anchors the সূচি.
+        if (cfg.marginSections) { pendingSection = r; nextStart = true; continue; }
         var secId = 'sec-' + (++sectionIdx);
         html += '<tr class="tt-section" id="' + secId + '" data-toc="' + esc(r.bn) + '">' +
           '<td class="bn">' + esc(r.bn) + '</td>' +
@@ -295,16 +305,21 @@
         continue;
       }
 
-      var cls = '', attrs = '';
+      var cls = '', attrs = '', lnExtra = '';
       if (nextStart) {
         tercet++;
         cls = 'tercet-start';
-        attrs = ' data-tercet="' + tercet + '"';
         nextStart = false;
-      } else {
-        attrs = ' data-tercet="' + tercet + '"';
       }
-      html += row(cls, esc(r.bn), esc(r.src), r.num, langCls, attrs);
+      attrs = ' data-tercet="' + tercet + '"';
+      if (pendingSection) {
+        cls += ' tt-secstart';
+        attrs += ' id="sec-' + (++sectionIdx) + '" data-toc="' + esc(pendingSection.bn) + '"';
+        lnExtra = '<span class="ln-sec">' + esc(pendingSection.bn) + '</span>';
+        pendingSection = null;
+      }
+      if (r.srcLine != null) attrs += ' data-mdline="' + r.srcLine + '"';
+      html += row(cls, esc(r.bn), esc(r.src), r.num, langCls, attrs, lnExtra);
     }
     tbody.innerHTML = html;
   }
@@ -313,8 +328,6 @@
   function buildGhazal(records, langCls) {
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) return;
-
-    var groupSize = (cfg.tocGroupSize && cfg.tocGroupSize > 0) ? cfg.tocGroupSize : 0;
 
     function toBn(n) {
       return String(n).replace(/[0-9]/g, function (d) { return '০১২৩৪৫৬৭৮৯'[+d]; });
@@ -331,21 +344,12 @@
     }
     if (cur) ghazals.push(cur);
 
-    var totalGhazals = ghazals.length;
     var html = '';
     for (var gi = 0; gi < ghazals.length; gi++) {
       var g = ghazals[gi], gnum = g.num;
-      var gnumInt = parseInt(gnum, 10);
 
-      // TOC data-toc on the first row of every group-start ghazal
-      var tocAttr = '';
-      if (groupSize && !isNaN(gnumInt) && ((gnumInt - 1) % groupSize === 0)) {
-        var groupEnd = Math.min(gnumInt + groupSize - 1, totalGhazals);
-        var label = gnumInt === groupEnd
-          ? 'গজল ' + toBn(gnumInt)
-          : 'গজল ' + toBn(gnumInt) + '–' + toBn(groupEnd);
-        tocAttr = ' data-toc="' + label + '"';
-      }
+      // every ghazal is a সূচি entry — its Bangla number (grid-style TOC)
+      var tocAttr = ' data-toc="' + toBn(esc(gnum)) + '"';
 
       for (var ri = 0; ri < g.rows.length; ri += 2) {
         var a = g.rows[ri], b = g.rows[ri + 1];
@@ -355,7 +359,14 @@
         var cls = first ? 'ghazal-start' : '';
         var attrs = ' data-ghazal="' + esc(gnum) + '"' +
                     (first ? ' id="g' + esc(gnum) + '"' + tocAttr : '');
-        var lbl = first ? gnum : '';
+        var ml = (a.srcLine != null ? String(a.srcLine) : '') +
+                 (b && b.srcLine != null ? ',' + b.srcLine : '');
+        if (ml) attrs += ' data-mdline="' + ml + '"';
+        // Wrapped so mobile CSS can swap the Latin numeral for a
+        // centred ॥ বাংলা-digit ॥ manuscript mark (data-bn).
+        var lbl = first
+          ? '<span class="gnum" data-bn="' + toBn(esc(gnum)) + '">' + esc(gnum) + '</span>'
+          : '';
         html += '<tr' + (cls ? ' class="' + cls + '"' : '') + attrs + '>' +
           '<td class="bn">' + bn + '</td>' +
           '<td class="' + langCls + '">' + src + '</td>' +
@@ -365,7 +376,11 @@
     tbody.innerHTML = html;
   }
 
-  // Notify site.js that dynamic content is ready (tick TOC can now build)
+  /* The parallel text is in the DOM. `content-ready` is the site-wide signal
+     the chrome listens for (site.js rebuilds the সূচি from the rows' data-toc);
+     `md-loader-done` is this loader's own event, kept for book.js and the dev
+     verse editor, which wait on the table specifically. */
+  document.dispatchEvent(new CustomEvent('content-ready'));
   document.dispatchEvent(new CustomEvent('md-loader-done'));
 
 })();

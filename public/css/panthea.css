@@ -1,0 +1,880 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   প্যান্থিয়া — the two-world pages
+   ═══════════════════════════════════════════════════════════════════════════
+   Fullwidth, two panels: design on the left (the twin map-TOCs on the home,
+   the locator glyph on floor pages — no text lives there beyond the maps'
+   own labels), all titles and prose on the right. Both maps are authored at
+   build time in src/pages/panthea/index.astro from src/data/panthea-tiers.js;
+   every colour comes from the --pn-* tokens below, so day/night theming
+   needs zero JS. */
+
+/* ── The two ramps ──
+   The tower climbs out of the sea into thinner and thinner air and ends in
+   light: the crown is the one band struck gold, and the beacon on it is the
+   only lapis in the drawing. The পাতাল runs the other way — daylight at the
+   mouth, cooling and turning through indigo into violet under pressure, and
+   ending at নাদির in the exact ink the site writes with. */
+:root {
+  --pn-line: rgba(14, 26, 43, 0.34);
+  --pn-line-soft: rgba(14, 26, 43, 0.15);
+  --pn-label: #2c3e57;
+  --pn-muted: #5a6b85;
+  --pn-island: #d8d3c4;
+  --pn-glyph: rgba(14, 26, 43, 0.055);
+
+  /* মিনার — fourteen steps, sea up to the gilt crown */
+  --pn-t1: #9fbcc2;
+  --pn-t2: #9dbec9;
+  --pn-t3: #9bbfd1;
+  --pn-t4: #9dc0d9;
+  --pn-t5: #a2c1e0;
+  --pn-t6: #a8c4e6;
+  --pn-t7: #afc8ea;
+  --pn-t8: #b7ccec;
+  --pn-t9: #c1d2ee;
+  --pn-t10: #c4d3ee;
+  --pn-t11: #ccd9f0;
+  --pn-t12: #d6e0f1;
+  --pn-t13: #e6e0cf;
+  --pn-t14: #e3b65c;
+
+  /* পাতাল — fourteen steps, stone light down to ink */
+  --pn-u1: #c6cad5;
+  --pn-u2: #b7bcca;
+  --pn-u3: #a8aebf;
+  --pn-u4: #99a0b4;
+  --pn-u5: #8a92a9;
+  --pn-u6: #7c849f;
+  --pn-u7: #6f7695;
+  --pn-u8: #63698b;
+  --pn-u9: #585c80;
+  --pn-u10: #4e4e73;
+  --pn-u11: #444164;
+  --pn-u12: #363251;
+  --pn-u13: #26223a;
+  --pn-u14: #151322;
+}
+
+/* ── Fullwidth two-panel frame ── */
+.pn-wrap {
+  display: grid;
+  /* text on the left (reading width), design panel on the right (the rest) */
+  grid-template-columns: minmax(320px, 720px) minmax(0, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: clamp(28px, 3vw, 56px);
+  margin: 0 auto;
+  /* NO bottom padding here: padding on the wrap shrinks the sticky containing
+     block, which would drag the design panel up at the end of the page scroll.
+     The bottom breathing room lives on .pn-right instead. */
+  padding: 0 clamp(14px, 1.6vw, 28px) 0;
+  /* the design half of the page sits on --surface; the text half paints
+     itself back to --bg below, so one hairline divider separates two flat,
+     differently-toned panels — no boxes */
+  background: var(--surface);
+}
+
+/* There is no second bar under the menubar. Panthea's whole chrome is the
+   breadcrumb — প্যান্থিয়া › স্তর › ↑ floor ↓ — and the design panel's own view
+   nav, overlaid along its foot. */
+
+/* text column first, design panel second */
+.pn-wrap .pn-right {
+  grid-column: 1;
+  grid-row: 1;
+  /* the text panel keeps the page background and carries the divider: it
+     bleeds over the wrap's left padding, and half the column gap to its
+     right, where the hairline sits mid-gap */
+  background: var(--bg);
+  margin-left: calc(-1 * clamp(14px, 1.6vw, 28px));
+  padding-left: clamp(14px, 1.6vw, 28px);
+  padding-top: 12px;
+  margin-right: calc(-0.5 * clamp(28px, 3vw, 56px));
+  padding-right: calc(0.5 * clamp(28px, 3vw, 56px));
+  border-right: 1px solid var(--border);
+}
+.pn-wrap .pn-left { grid-column: 2; grid-row: 1; }
+
+/* The design panel NEVER scrolls: fixed to the viewport height, everything
+   inside (map, overlays, glyph) is sized to fit entirely within it. */
+.pn-left {
+  /* Stuck flush under the menubar — with the topbar gone there is nothing
+     between them — and running to the foot of the viewport: the design panel
+     takes the whole height it can, leaving no strip of page under it.
+     Scrolling then has zero visual effect on it. */
+  position: sticky;
+  top: var(--nav-now);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  /* --nav-now, not --nav-h-min: this panel stands *beside* the bar at every
+     scroll position, so it must track the live height (50px at rest, 42px
+     once tight). Using the tight value alone overhangs the fold by 8px.
+     The extra 1px is the shelf's bottom border, which --nav-h does not count:
+     without it the panel ends one pixel past the fold and that alone raises a
+     scrollbar on a page that should never have one. */
+  height: calc(100vh - var(--nav-now) - 1px);
+  overflow: hidden;
+  padding: 2px;
+}
+
+/* ── The view nav — one small key per design/img on the page, overlaid along
+      the foot of the design panel rather than given a bar of its own.
+   It floats over the drawing (which is mostly white space down there), so it
+   costs the panel no height and adds no box. A panel with a single view
+   renders no nav at all. ── */
+.pn-views {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  pointer-events: none;          /* only the keys themselves catch the mouse */
+}
+
+.pn-dseg {
+  appearance: none;
+  pointer-events: auto;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: saturate(1.2) blur(10px);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 13px;
+  font-family: var(--bn-font);
+  font-size: 13.5px;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.pn-dseg:hover {
+  color: var(--text);
+  border-color: var(--border-2);
+}
+
+.pn-dseg.active {
+  color: var(--accent);
+  font-weight: 600;
+  background: var(--accent-light);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* ── The slider ── */
+.pn-slider {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.pn-slides {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pn-slide {
+  width: 50%;
+  flex: 0 0 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* the view keys are laid over this strip — the map shrinks to leave it,
+     so the keys never sit on the ব্যাস bracket under the ground plate */
+  padding-bottom: 34px;
+}
+
+.pn-slide .pn-map {
+  flex: 1;
+  min-height: 0;
+}
+
+.pn-slider[data-active="1"] .pn-slides {
+  transform: translateX(-50%);
+}
+
+/* ── The maps — scaled to fit the panel entirely ── */
+.pn-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pn-map text {
+  font-family: var(--bn-font);
+  fill: var(--pn-label);
+}
+
+/* both gutters — metres left, তলা right — tiny tick labels */
+.pn-map .pn-scale-num { font-size: 7.5px; fill: var(--pn-muted); }
+.pn-map .pn-scale-unit { font-size: 7.5px; fill: var(--pn-muted); font-style: italic; }
+
+.pn-map .pn-tick {
+  stroke: var(--pn-line-soft);
+  stroke-width: 0.8;
+  stroke-dasharray: 2 4;
+}
+
+.pn-map .pn-sea-line {
+  stroke: var(--pn-line-soft);
+  stroke-width: 1;
+}
+
+.pn-map .pn-ground { fill: var(--pn-island); stroke: var(--pn-line); stroke-width: 1; }
+
+/* the island's own width, set inside the plate it measures — the plate's two
+   edges are the dimension's end serifs, so it needs no bracket of its own.
+   Sized to sit within the 18-unit plate on the মিনার slide. */
+.pn-map .pn-ground-label { font-size: 9px; letter-spacing: 0.02em; }
+.pn-ground-link { cursor: pointer; }
+.pn-ground-link:hover .pn-ground { stroke: var(--accent); stroke-width: 1.6; }
+
+.pn-map .pn-band {
+  stroke: var(--pn-line);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: fill 0.3s ease, stroke 0.2s ease;
+}
+
+/* hover/active: no border change — only a gentle lift of the band's colour */
+.pn-map .pn-band:hover,
+.pn-map .pn-band-active {
+  filter: brightness(1.14) saturate(1.25);
+}
+
+/* width annotations at the two ends of each map — a dimension line at the
+   true width, footnote-size like the gutter ticks */
+.pn-map .pn-dim line {
+  stroke: var(--pn-line-soft);
+  stroke-width: 0.8;
+}
+
+.pn-map .pn-dim text {
+  font-size: 7.5px;
+  fill: var(--pn-muted);
+}
+
+.pn-map .pn-beacon { fill: var(--accent); }
+.pn-map .pn-nadir-dot { fill: var(--pn-u14); stroke: var(--pn-line); stroke-width: 0.6; }
+
+/* the spine — one elevator core, drawn at the same scale as everything else,
+   running the whole height of both maps; never a hover target */
+.pn-map .pn-core {
+  fill: color-mix(in srgb, var(--accent) 22%, transparent);
+  pointer-events: none;
+}
+
+/* segment names — small (well below the body-text size), set between the
+   তলা boundary lines, following the slope */
+.pn-map .pn-seg-name {
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--pn-label);
+}
+
+.pn-band-t1 { fill: var(--pn-t1); } .pn-band-t2 { fill: var(--pn-t2); }
+.pn-band-t3 { fill: var(--pn-t3); } .pn-band-t4 { fill: var(--pn-t4); }
+.pn-band-t5 { fill: var(--pn-t5); } .pn-band-t6 { fill: var(--pn-t6); }
+.pn-band-t7 { fill: var(--pn-t7); } .pn-band-t8 { fill: var(--pn-t8); }
+.pn-band-t9 { fill: var(--pn-t9); } .pn-band-t10 { fill: var(--pn-t10); }
+.pn-band-t11 { fill: var(--pn-t11); } .pn-band-t12 { fill: var(--pn-t12); }
+.pn-band-t13 { fill: var(--pn-t13); } .pn-band-t14 { fill: var(--pn-t14); }
+
+.pn-band-u1 { fill: var(--pn-u1); } .pn-band-u2 { fill: var(--pn-u2); }
+.pn-band-u3 { fill: var(--pn-u3); } .pn-band-u4 { fill: var(--pn-u4); }
+.pn-band-u5 { fill: var(--pn-u5); } .pn-band-u6 { fill: var(--pn-u6); }
+.pn-band-u7 { fill: var(--pn-u7); } .pn-band-u8 { fill: var(--pn-u8); }
+.pn-band-u9 { fill: var(--pn-u9); } .pn-band-u10 { fill: var(--pn-u10); }
+.pn-band-u11 { fill: var(--pn-u11); } .pn-band-u12 { fill: var(--pn-u12); }
+.pn-band-u13 { fill: var(--pn-u13); } .pn-band-u14 { fill: var(--pn-u14); }
+
+/* ── The floor-grid box ──
+      ONE box with two homes: pinned into a corner of the maps on /panthea/,
+      and dropped from the segment button on a floor page. Everything about
+      how it LOOKS lives in this rule, so the two are the same object; the
+      modifiers further down say only where each one is anchored.
+
+      Its height is its content's. The width is fixed, so the chip grid always
+      falls into the same ten columns, and the number of ROWS is then just the
+      segment's floor count — a forty-floor স্তর gets a short box, a hundred-
+      floor one a tall. The anchored edge stays put and the free edge moves.
+      Transparent enough that the metre scale stays legible beneath it. ── */
+.pn-floors {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  /* Ten columns is what makes a 100-floor স্তর exactly ten rows, with no
+     orphan on a line of its own — so the width is derived from that, not
+     chosen. A column has to fit the widest chip in the building, and that is
+     জেনিথ's ও নাদিরের ১০০০: four Bengali digits, 36px with its padding and
+     border. Ten of those plus nine 4px gaps is 396px of grid; border-box adds
+     2px border and 24px padding, and 432 leaves ~1px of slack per track
+     against font rounding while still being far too narrow for an eleventh
+     column (which would want 436). */
+  width: 432px;
+  max-width: calc(100vw - 24px);
+  max-height: min(72vh, 540px);
+  background: color-mix(in srgb, var(--bg) 66%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+  padding: 10px 12px 12px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.pn-floors.open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* ── home ১: pinned into the design panel, beside the map it belongs to.
+      Same corner as before; only the free edge now moves with the row count.
+      মিনার hangs from the top, পাতাল stands on the bottom — each anchored on
+      the side its own world runs away from. ── */
+.pn-slider .pn-floors {
+  left: 4px;
+  top: 4px;
+  max-width: 52%;
+  max-height: calc(100% - 8px);
+}
+
+.pn-slider .pn-floors--patal {
+  top: auto;
+  bottom: 38px;                  /* clear of the view keys along the foot */
+  transform: translateY(-6px);
+}
+
+.pn-slider .pn-floors--patal.open {
+  transform: none;
+}
+
+.pn-floors-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--bn-font);
+}
+
+.pn-floors-head b {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pn-floors-meta {
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+.pn-floors-close {
+  margin-left: auto;
+  appearance: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  font-size: 14px;
+  color: var(--text-3);
+  cursor: pointer;
+}
+
+.pn-floors-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pn-seg-dot {
+  align-self: center;
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 3px;
+  border: 1px solid var(--pn-line-soft);
+}
+
+.pn-dot-t1 { background: var(--pn-t1); } .pn-dot-t2 { background: var(--pn-t2); }
+.pn-dot-t3 { background: var(--pn-t3); } .pn-dot-t4 { background: var(--pn-t4); }
+.pn-dot-t5 { background: var(--pn-t5); } .pn-dot-t6 { background: var(--pn-t6); }
+.pn-dot-t7 { background: var(--pn-t7); } .pn-dot-t8 { background: var(--pn-t8); }
+.pn-dot-t9 { background: var(--pn-t9); } .pn-dot-t10 { background: var(--pn-t10); }
+.pn-dot-t11 { background: var(--pn-t11); } .pn-dot-t12 { background: var(--pn-t12); }
+.pn-dot-t13 { background: var(--pn-t13); } .pn-dot-t14 { background: var(--pn-t14); }
+.pn-dot-u1 { background: var(--pn-u1); } .pn-dot-u2 { background: var(--pn-u2); }
+.pn-dot-u3 { background: var(--pn-u3); } .pn-dot-u4 { background: var(--pn-u4); }
+.pn-dot-u5 { background: var(--pn-u5); } .pn-dot-u6 { background: var(--pn-u6); }
+.pn-dot-u7 { background: var(--pn-u7); } .pn-dot-u8 { background: var(--pn-u8); }
+.pn-dot-u9 { background: var(--pn-u9); } .pn-dot-u10 { background: var(--pn-u10); }
+.pn-dot-u11 { background: var(--pn-u11); } .pn-dot-u12 { background: var(--pn-u12); }
+.pn-dot-u13 { background: var(--pn-u13); } .pn-dot-u14 { background: var(--pn-u14); }
+
+/* ten columns at the box's fixed width; the rows follow from the floor count,
+   and the box's height follows from the rows. 36px is the four-digit floor
+   (১০০০) — a narrower track leaves that one chip hanging out of its column.
+   overflow must name BOTH axes: a lone `overflow-y: auto` promotes the
+   still-`visible` x axis to `auto` as well, and then a fraction of a pixel of
+   grid rounding is enough to hang a horizontal scrollbar under the numbers. */
+.pn-chips {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  gap: 4px;
+  align-content: flex-start;
+  overflow: hidden auto;
+}
+
+.pn-chip {
+  padding: 5px 6px;
+  text-align: center;
+  font-family: var(--bn-font);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--bg) 45%, transparent);
+  border: 1px solid var(--border-2);
+  border-radius: 7px;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.pn-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ══ Panthea in the menubar ══
+   All of Panthea's navigation is breadcrumb now: প্যান্থিয়া › স্তর › ↑ floor ↓.
+   The স্তর key and the floor arrows are glass keys of the same family as the
+   ancestor links they sit among — see .nav-parent in style.css. */
+
+/* the স্তর crumb — the key plus its chevron, hidden together on গ্রাউন্ড, which
+   belongs to no স্তর (hidden, never removed: the ride must restore it) */
+.pn-seg-crumb {
+  display: contents;
+}
+
+.pn-seg-crumb.pnf-off {
+  display: none;
+}
+
+/* the স্তর key: an ancestor key that opens the floor grid instead of a page */
+.pn-seg-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.pn-seg-key .pn-seg-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+}
+
+/* ── The arrows ──
+   Both keys are stepped the same way: ↑ | name | ↓ — the স্তর key crosses a
+   whole স্তর, the gilt key one তলা. These are the primary way through 2001
+   pages, so they are full-height, generously wide, and drawn in lapis rather
+   than whispered in grey — a target you can hit without aiming. */
+.pn-nav-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 0 0 auto;
+  min-width: 26px;
+  padding: 0 7px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  background-image: none;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.pn-nav-arrow:hover {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+/* the গিল্ট key's pair, divided from the number by the same gold hairline
+   that divides the সূচি action from it */
+.nav-here .pn-nav-arrow:first-child {
+  border-right: 1px solid color-mix(in srgb, var(--accent-2) 34%, transparent);
+}
+
+.nav-here .pn-nav-arrow:last-child {
+  border-left: 1px solid color-mix(in srgb, var(--accent-2) 34%, transparent);
+}
+
+/* the number sits tighter between them than a lone title would */
+.panthea-page .nav-cur {
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+/* ── The স্তর key and its arrows, as one stepped glass key ──
+   Same silhouette as an ancestor key (hairline, soft radius, surface wash),
+   only divided into three presses. */
+.pn-key-group {
+  display: inline-flex;
+  align-items: stretch;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  overflow: hidden;
+  transition: border-color var(--dur) ease;
+}
+
+.pn-key-group:hover {
+  border-color: var(--accent-mid);
+}
+
+.pn-key-group .pn-nav-arrow:first-child {
+  border-right: 1px solid var(--border);
+}
+
+.pn-key-group .pn-nav-arrow:last-child {
+  border-left: 1px solid var(--border);
+}
+
+/* the key inside the group drops its own frame — the group carries it */
+.pn-key-group .pn-seg-key {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* ── home ২ of the floor-grid box: dropped from the স্তর key in the menubar
+      rather than pinned into the design panel. .nav-page-info clips its
+      overflow, so this copy is fixed to the viewport and the component's JS
+      hangs it under the key on open. Anchoring only — every other property
+      comes from .pn-floors, so the two remain one object. ── */
+.pn-floors--drop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 250;
+}
+
+/* the floor you are actually on, lit inside its own grid */
+.pn-chip-here {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+/* Panthea's own সূচি button and dropdown used to live here, duplicating
+   site.js. The story's headings now carry data-toc (via data-toc-scan on
+   .pn-story) and the one menubar সূচি lists them. */
+
+/* the text column and the title bar share exactly the same width: the grid
+   track caps both at 720px. No max-width here — the panel box carries bleed
+   paddings past the track, and capping the box would drag its divider out of
+   line with the title bar's. */
+.pn-right {
+  min-width: 0;
+  padding-bottom: 96px;
+}
+
+/* the story is pure Markdown (src/stories/panthea/): the opening paragraph
+   is the lede, *emphasis* inside a heading is the small floor-range tag,
+   and a blockquote sets the coda. */
+.pn-story > p:first-child:not(.pn-story-empty) {
+  font-size: 17.5px;
+  line-height: 2;
+  color: var(--text-2);
+  margin: 0 0 12px;
+}
+
+.pn-prose {
+  font-family: var(--bn-font);
+  font-size: 17px;
+  line-height: 2.05;
+  color: var(--text);
+}
+
+.pn-prose p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+}
+
+.pn-prose h2 {
+  font-family: var(--bn-font);
+  font-size: clamp(21px, 2.4vw, 27px);
+  font-weight: 700;
+  color: var(--text);
+  margin: 2.2em 0 0.8em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+
+.pn-prose h3 {
+  font-family: var(--bn-font);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.9em 0 0.6em;
+  text-align: left;
+}
+
+.pn-story h2 em,
+.pn-story h3 em {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-3);
+  margin-left: 8px;
+}
+
+.pn-story blockquote {
+  margin: 0;
+  font-style: italic;
+}
+
+.pn-story blockquote p {
+  color: var(--text-2);
+}
+
+/* ── Floor pages: the plan panel ──
+   One large empty circle — the floor's plan, same drawn size on every page —
+   with the side-view locator inset top-right and the true diameter noted
+   bottom-left. The per-floor design will be painted inside the circle. */
+.pnf-plan {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.pnf-circle {
+  height: 96%;
+  max-height: 96%;
+  max-width: 96%;
+  aspect-ratio: 1;
+}
+
+.pnf-circle circle {
+  fill: color-mix(in srgb, var(--bg) 45%, transparent);
+  stroke: var(--border-2);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+/* the elevator core, at the centre of every floor and drawn to that floor's
+   own scale: a speck on the ground plate, most of the room at the crown */
+.pnf-circle .pnf-core {
+  fill: color-mix(in srgb, var(--accent) 26%, transparent);
+  stroke: var(--accent);
+  stroke-width: 1.2;
+}
+
+/* গ্রাউন্ড only — the mouth of the well the পাতাল hangs from */
+.pnf-circle .pnf-well {
+  fill: none;
+  stroke: var(--pn-line);
+  stroke-width: 1.1;
+  stroke-dasharray: 7 7;
+}
+
+.pnf-locator {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  height: 264px;
+  opacity: 0.9;
+}
+
+.pnf-diameter {
+  position: absolute;
+  left: 18px;
+  /* lifted off the very foot of the panel — the figures read as the plan's
+     caption, not as something resting on the page's bottom edge */
+  bottom: 42px;
+  font-family: var(--bn-font);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-3);
+}
+
+.pnf-diameter > span:not(.pnf-off) { display: block; }
+.pnf-well-line { opacity: 0.72; }
+
+/* the scale bar — always the same length on the page, worth a different
+   number of metres on every floor, because every floor plan is drawn to fill
+   the same circle. Change the width here and in PantheaFloor.astro together. */
+.pnf-scale {
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  margin-top: 9px;
+}
+
+.pnf-scale-bar {
+  width: 120px;
+  height: 5px;
+  border: 1px solid var(--border-2);
+  border-top: 0;
+}
+
+.pnf-scale-val {
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.pn-glyph-cone,
+.pn-glyph-funnel {
+  fill: var(--pn-glyph);
+  stroke: var(--pn-line-soft);
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.pn-glyph-ground {
+  stroke: var(--pn-line-soft);
+  stroke-width: 1;
+}
+
+.pn-glyph-band {
+  stroke: var(--pn-line);
+  stroke-width: 0.8;
+  opacity: 0.9;
+}
+
+.pnf-band-t1 { fill: var(--pn-t1); } .pnf-band-t2 { fill: var(--pn-t2); }
+.pnf-band-t3 { fill: var(--pn-t3); } .pnf-band-t4 { fill: var(--pn-t4); }
+.pnf-band-t5 { fill: var(--pn-t5); } .pnf-band-t6 { fill: var(--pn-t6); }
+.pnf-band-t7 { fill: var(--pn-t7); } .pnf-band-t8 { fill: var(--pn-t8); }
+.pnf-band-t9 { fill: var(--pn-t9); } .pnf-band-t10 { fill: var(--pn-t10); }
+.pnf-band-t11 { fill: var(--pn-t11); } .pnf-band-t12 { fill: var(--pn-t12); }
+.pnf-band-t13 { fill: var(--pn-t13); } .pnf-band-t14 { fill: var(--pn-t14); }
+.pnf-band-u1 { fill: var(--pn-u1); } .pnf-band-u2 { fill: var(--pn-u2); }
+.pnf-band-u3 { fill: var(--pn-u3); } .pnf-band-u4 { fill: var(--pn-u4); }
+.pnf-band-u5 { fill: var(--pn-u5); } .pnf-band-u6 { fill: var(--pn-u6); }
+.pnf-band-u7 { fill: var(--pn-u7); } .pnf-band-u8 { fill: var(--pn-u8); }
+.pnf-band-u9 { fill: var(--pn-u9); } .pnf-band-u10 { fill: var(--pn-u10); }
+.pnf-band-u11 { fill: var(--pn-u11); } .pnf-band-u12 { fill: var(--pn-u12); }
+.pnf-band-u13 { fill: var(--pn-u13); } .pnf-band-u14 { fill: var(--pn-u14); }
+.pnf-band-ground { fill: var(--pn-island); stroke: var(--pn-line); stroke-width: 1; }
+
+.pn-glyph-floor {
+  stroke: var(--accent);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+/* the spine in the locator: summit to nadir, straight through the ground */
+.pn-glyph-core {
+  fill: color-mix(in srgb, var(--accent) 34%, transparent);
+}
+
+/* ── The elevator (ctrl+↑ / ctrl+↓) ──
+   Every floor page carries all three locator states — segment band, floor
+   hairline, ground bar — and hides the ones that don't apply, so a ride can
+   cross গ্রাউন্ড without rebuilding the glyph. */
+.pnf-off { display: none; }
+
+/* in transit: the story of the floor you are leaving steps back, the plan and
+   the locator stay lit — they are the ones actually moving */
+body.pn-riding .pn-right {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* the floor's name is in the menubar breadcrumb — that is what lights up */
+body.pn-riding .nav-cur { color: var(--accent); }
+
+body.pn-riding .pnf-core {
+  fill: color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.pn-right { transition: opacity 0.22s ease; }
+
+/* the stub story on floors not yet written */
+.pn-story-empty {
+  font-style: italic;
+  color: var(--text-3);
+}
+
+/* সূচি targets. With the topbar gone the menubar is all there is to clear, so
+   this is the site-wide offset plus a little reading room. */
+.pn-story h2,
+.pn-story h3 {
+  scroll-margin-top: calc(var(--nav-h-min) + 20px);
+}
+
+/* ── Theme crossfade for the maps ── */
+.pn-map polygon,
+.pn-map line,
+.pn-map circle,
+.pn-map rect,
+.pn-map text,
+.pnf-locator polygon,
+.pnf-locator rect,
+.pnf-locator line,
+.pnf-circle circle {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* ── Mobile: single column; the design panel keeps a fixed height so its
+      contents still fit entirely — it never scrolls ── */
+@media (max-width: 960px) {
+  .pn-wrap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 16px;
+  }
+
+  .pn-wrap .pn-left,
+  .pn-wrap .pn-right {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* stacked: no mid-gap divider — the design half becomes a full-width
+     surface band under the text instead */
+  .pn-wrap .pn-right {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    border-right: 0;
+    max-width: 720px;
+  }
+
+  .pn-left {
+    position: static;
+    height: 76vh;
+  }
+}

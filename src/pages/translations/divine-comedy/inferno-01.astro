@@ -1,52 +1,34 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import BookReader from '../../../components/BookReader.astro';
+import { translationWorks } from '../../../data/translation-works.js';
+
+// breadcrumb names come straight from the catalogue — exactly the titles
+// the landing page prints (cantos are bare numerals in its grid)
+const work = translationWorks.find((w) => w.slug === 'divine-comedy')!;
+const canticle = work.canticles!.find((c) => c.slug === 'inferno')!;
 ---
 
 <Base
-  title="Inferno I — KMBA"
   section="translations"
   bodyClass="book-page"
   styles={['/css/translation-table.css', '/css/book.css']}
-  navTitle="কান্ত ১"
-  navGrandParentHref="/translations/divine-comedy/" navGrandParentLabel="ডিভাইন কমেডি"
-  navParentHref="/translations/divine-comedy/" navParentLabel="দোজখ"
+  navTitle={`${canticle.title} ১`}
+  navParentHref="/translations/divine-comedy/" navParentLabel={work.title}
 >
   <Fragment slot="head">
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
       rel="stylesheet"
     />
   </Fragment>
 
-  <div class="book-layout">
-    <!-- Left: image panel — book.js populates from TRANS_CONFIG.images -->
-    <div class="book-img-panel" aria-hidden="true"></div>
-
-    <!-- Right: scrollable text -->
-    <div class="book-text-panel">
-      <div class="book-text-body">
-        <table class="tt-table">
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <script is:inline>
-    window.TRANS_CONFIG = {
-      src:    'inferno-01.md',
-      dict:   'inferno-01-words.md',
-      images: [
-        { light: 'img/c01-1-color.webp', dark: 'img/c01-1.webp' },
-        { light: 'img/c01-2-color.webp', dark: 'img/c01-2.webp' },
-        { light: 'img/c01-3-color.webp', dark: 'img/c01-3.webp' },
-        { light: 'img/c01-4-color.webp', dark: 'img/c01-4.webp' },
-        { light: 'img/c01-5-color.webp', dark: 'img/c01-5.webp' }
-      ],
-      toc:    '/translations/divine-comedy/'
-    };
-  </script>
-  <script is:inline src="/js/md-loader.js"></script>
-  <script is:inline src="/js/translation-table.js"></script>
-  <script is:inline src="/js/book.js"></script>
+  <BookReader
+    config={{
+      src: 'inferno-01.md',
+      dict: 'inferno-01-words.md',
+      dictLang: 'it',
+      toc: '/translations/divine-comedy/'
+    }}
+  />
 </Base>

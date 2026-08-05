@@ -1,45 +1,34 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import BookReader from '../../../components/BookReader.astro';
+import { translationWorks } from '../../../data/translation-works.js';
+
+// breadcrumb names come straight from the catalogue — exactly the titles
+// the landing pages print
+const work = translationWorks.find((w) => w.slug === 'divan')!;
+const part = work.parts!.find((p) => p.slug === 'prathama')!;
 ---
 
 <Base
-  title="Ghazals 1–33 — Hafez"
   section="translations"
   bodyClass="book-page"
   styles={['/css/translation-table.css', '/css/book.css']}
-  navTitle="প্রথমা · গজল ১–৩৩" navParentHref="/translations/divan/" navParentLabel="দিওয়ান"
+  navTitle={part.title} navParentHref="/translations/divan/" navParentLabel={work.title}
 >
   <Fragment slot="head">
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
       rel="stylesheet"
     />
   </Fragment>
 
-  <div class="book-layout">
-    <!-- Left: image panel — book.js populates from TRANS_CONFIG.images -->
-    <div class="book-img-panel" aria-hidden="true"></div>
-
-    <!-- Right: scrollable text -->
-    <div class="book-text-panel">
-      <div class="book-text-body">
-        <table class="tt-table">
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <script is:inline>
-    window.TRANS_CONFIG = {
-      src:         'prathama.md',
-      dict:        'prathama-words.md',
-      tocGroupSize: 3,
-      images:      ['img/prathama-01.jpg'],
-      toc:         '/translations/divan/'
-    };
-  </script>
-  <script is:inline src="/js/md-loader.js"></script>
-  <script is:inline src="/js/translation-table.js"></script>
-  <script is:inline src="/js/book.js"></script>
+  <BookReader
+    config={{
+      src: 'prathama.md',
+      dict: 'prathama-words.md',
+      dictLang: 'fa',
+      tocStyle: 'grid',
+      toc: '/translations/divan/'
+    }}
+  />
 </Base>

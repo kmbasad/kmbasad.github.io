@@ -1,0 +1,61 @@
+---
+/**
+ * BookReader.astro — the shared shell of every Translations reading page.
+ *
+ * Two panes under the menubar, in the manner of the books workshop:
+ *   · left — the parallel text (বাংলা · মূল · #), fed by md-loader.js +
+ *     translation-table.js into the empty .tt-table, scrolling on its own
+ *     (data-page-scroll: the menubar reads this column's scroll);
+ *   · right — the শব্দকোষ: click any source-language word and book.js
+ *     fetches its meaning from Wiktionary into this panel, with links out
+ *     to the classic dictionaries of that language.
+ *
+ * Word-hover cross-highlighting between the Bangla and the source is
+ * translation-table.js, unchanged. No image panel — the plates will
+ * return in another form later. No chapter head either: the page is the
+ * poem alone — the work's name lives in the menubar breadcrumb, and the
+ * সূচি key beside it (built by site.js from the rows' data-toc) holds
+ * the table of contents.
+ *
+ * Props: `config`, which becomes window.TRANS_CONFIG (src, dict?,
+ * dictLang, meters?, marginSections?, tocStyle?, toc/prev/next…).
+ */
+interface Props {
+  config: Record<string, unknown>;
+}
+const { config } = Astro.props;
+---
+
+<div class="book-layout">
+  <div class="book-text-panel" data-page-scroll>
+    <div class="book-text-body">
+      <table class="tt-table">
+        <tbody></tbody>
+      </table>
+      <!-- book.js appends the footer prev/সূচিপত্র/next nav here -->
+    </div>
+  </div>
+
+  <aside class="book-dict" id="book-dict" aria-label="শব্দকোষ">
+    <div class="dict-inner">
+      <div class="dict-top">
+        <span class="dict-kicker">শব্দকোষ</span>
+        <button class="dict-close" id="dict-close" type="button" aria-label="শব্দকোষ বন্ধ করুন">×</button>
+      </div>
+      <h2 class="dict-word" id="dict-word">অভিধান</h2>
+      <p class="dict-hint" id="dict-hint">মূল পাঠের যেকোনো শব্দে ক্লিক করুন — অর্থ এখানে আসবে।</p>
+      <div class="dict-body" id="dict-body"></div>
+      <nav class="dict-links" id="dict-links" hidden aria-label="বাইরের অভিধান"></nav>
+    </div>
+  </aside>
+</div>
+
+<script is:inline define:vars={{ config }}>
+  window.TRANS_CONFIG = config;
+</script>
+<script is:inline src="/js/md-loader.js"></script>
+<script is:inline src="/js/translation-table.js"></script>
+<script is:inline src="/js/book.js"></script>
+{/* dev-server only: Ctrl+double-click a বাংলা line to edit it in place —
+    the endpoint and script exist solely inside `npm run dev` */}
+{import.meta.env.DEV && <script is:inline src="/__trans/edit.js"></script>}

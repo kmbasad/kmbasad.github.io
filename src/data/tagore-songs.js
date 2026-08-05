@@ -31,13 +31,22 @@ export const tagoreSections = [
 
 const files = import.meta.glob('./tagore-songs/*.json', { eager: true, import: 'default' });
 
+// Claude's English translations + word alignments, one chunk file per ~25
+// songs (written by the translation agents), each keyed by song id:
+// { "<id>": { en: [lines], align: [[[bnWord, enWords], …], …] }, … }
+const enFiles = import.meta.glob('./tagore-songs-en/*.json', { eager: true, import: 'default' });
+const enById = {};
+for (const chunk of Object.values(enFiles)) Object.assign(enById, chunk);
+
 // Sections in canonical order, each with its songs; a song's serial within
 // its section (1-based) is its গীতবিতান number.
 export function loadSections() {
   return tagoreSections
     .map((sec) => {
       const songs = files[`./tagore-songs/${sec.slug}.json`];
-      return songs ? { ...sec, songs } : null;
+      return songs
+        ? { ...sec, songs: songs.map((s) => ({ ...s, ...(enById[s.id] || {}) })) }
+        : null;
     })
     .filter(Boolean);
 }

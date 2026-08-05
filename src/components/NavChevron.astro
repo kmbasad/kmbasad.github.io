@@ -1,0 +1,10 @@
+---
+/**
+ * The drawn gold chevron that steps one breadcrumb key apart from the next.
+ * Base.astro emits one after each ancestor; a section supplying its own extra
+ * crumb through the `nav-crumbs` slot draws its separator with this too, so
+ * every step of every breadcrumb on the site is the same mark.
+ */
+---
+
+<span class="nav-sep" aria-hidden="true"><svg viewBox="0 0 8 12" width="8" height="12" focusable="false"><path d="M1.8 1.6 6.3 6 1.8 10.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>

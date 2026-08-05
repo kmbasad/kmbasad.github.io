@@ -1,421 +1,652 @@
-/* book.js — pannable/zoomable image panel + image slider for translation pages */
+/**
+ * book.js — the reading engine of the Translations pages.
+ *
+ * Runs inside the BookReader shell (src/components/BookReader.astro):
+ * the parallel table on the left (built by md-loader.js, word-wrapped by
+ * translation-table.js) and the শব্দকোষ panel on the right.
+ *
+ *   · শব্দকোষ — click any source-language word and its meaning is fetched
+ *     from Wiktionary (filtered to that language) into the side panel,
+ *     with links out to the classic dictionaries of the language
+ *     (Logeion/Whitaker/Perseus for Latin, Treccani for Italian,
+ *     Vajehyab/Steingass for Persian). On narrow screens the panel
+ *     becomes a bottom sheet that rises on lookup.
+ *   · Prosody toggles (cfg.meters) — মাত্রা: matrabritta matra-count
+ *     dividers walked over the Bangla line; পর্ব: Latin dactylic-hexameter
+ *     foot boundaries. Both insert separator glyphs into the live text
+ *     without disturbing the .w hover-highlight spans.
+ *   · Footer nav (আগের / সূচিপত্র / পরের) + Ctrl←/→ chapter keys.
+ *
+ * Config (window.TRANS_CONFIG, shared with md-loader.js):
+ *   dictLang: 'la' | 'it' | 'fa'   — the source language of this page
+ *   meters:   { matra: [8,16], feet: true }   — which toggles to offer
+ *   toc, prev, next, tocLabel      — footer navigation
+ */
 (function () {
   'use strict';
 
-  var MQ_DESKTOP = window.matchMedia('(min-width: 900px)');
+  var cfg = window.TRANS_CONFIG || {};
+  var MQ_NARROW = window.matchMedia('(max-width: 899px)');
 
-  /* ── Transform helpers ─────────────────────────────────────────────────── */
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  var eu = encodeURIComponent;
 
-  function applyXform(img, s) {
-    img.style.transform =
-      'translate3d(' + s.tx.toFixed(2) + 'px,' + s.ty.toFixed(2) + 'px,0)' +
-      ' scale(' + s.scale.toFixed(5) + ')';
+  /* ═════════════════════════════════════════════════════════════════════
+   * শব্দকোষ — the dictionary panel
+   * ═════════════════════════════════════════════════════════════════════ */
+
+  var LANGS = {
+    la: {
+      wikt: 'Latin',
+      hint: 'লাতিন যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
+      links: [
+        ['Logeion',  function (w) { return 'https://logeion.uchicago.edu/' + eu(w); }],
+        ['Whitaker', function (w) { return 'https://latin-words.com/?query=' + eu(w); }],
+        ['Perseus',  function (w) { return 'https://www.perseus.tufts.edu/hopper/morph?l=' + eu(w) + '&la=la'; }]
+      ]
+    },
+    it: {
+      wikt: 'Italian',
+      hint: 'ইতালীয় যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
+      links: [
+        ['Treccani',      function (w) { return 'https://www.treccani.it/vocabolario/ricerca/' + eu(w) + '/'; }],
+        ['WordReference', function (w) { return 'https://www.wordreference.com/definizione/' + eu(w); }],
+        ['Wiktionary',    function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#Italian'; }]
+      ]
+    },
+    fa: {
+      wikt: 'Persian',
+      rtl: true,
+      hint: 'ফারসি যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
+      links: [
+        ['Vajehyab',   function (w) { return 'https://www.vajehyab.com/?q=' + eu(w); }],
+        ['Steingass',  function (w) { return 'https://dsal.uchicago.edu/cgi-bin/app/steingass_query.py?qs=' + eu(w) + '&searchhws=yes'; }],
+        ['Wiktionary', function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#Persian'; }]
+      ]
+    }
+  };
+
+  var LANG = LANGS[cfg.dictLang] || null;
+  var dictEl = $('book-dict');
+
+  var stripMacrons = function (w) {
+    return w.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  };
+
+  /* Trim punctuation from both ends; keep letters, marks, digits,
+     apostrophes and ZWNJ inside. */
+  function coreWord(raw) {
+    return String(raw)
+      .replace(/[ً-ٰٟـ]/g, '')                     // tashkeel, kasheeda
+      .replace(/^[^\p{L}\p{M}\p{N}]+|[^\p{L}\p{M}\p{N}'’‌]+$/gu, '')
+      .replace(/['’‌]+$/g, function (m) {
+        return m.indexOf('‌') !== -1 ? '' : m;                    // trailing ZWNJ goes
+      });
   }
 
-  /* Scale image to cover the panel, centred. */
-  function fitCover(img, panel, s) {
-    var pw = panel.clientWidth;
-    var ph = panel.clientHeight;
-    var iw = img.naturalWidth;
-    var ih = img.naturalHeight;
-    if (!pw || !ph || !iw || !ih) return;
-    var cover = Math.max(pw / iw, ph / ih);
-    s.minScale = cover;
-    s.scale    = cover;
-    s.tx = (pw - iw * cover) / 2;
-    s.ty = (ph - ih * cover) / 2;
-    applyXform(img, s);
-  }
+  /* Lookup candidates, best first, per language. */
+  function candidates(word) {
+    var out = [];
+    function add(w) { if (w && w.length > 0 && out.indexOf(w) === -1) out.push(w); }
 
-  /* Keep image covering the panel (no empty edges). */
-  function clamp(s, iw, ih, pw, ph) {
-    var w  = iw * s.scale;
-    var h  = ih * s.scale;
-    var x0 = w > pw ? 0              : (pw - w) / 2;
-    var x1 = w > pw ? pw - w         : (pw - w) / 2;
-    var y0 = h > ph ? 0              : (ph - h) / 2;
-    var y1 = h > ph ? ph - h         : (ph - h) / 2;
-    s.tx = Math.min(x0, Math.max(x1, s.tx));
-    s.ty = Math.min(y0, Math.max(y1, s.ty));
-  }
-
-  /* ── Pan + zoom (desktop) ──────────────────────────────────────────────── */
-
-  function setupPanZoom(panel, getImg, getState) {
-
-    /* Mouse drag → pan */
-    panel.addEventListener('mousedown', function (e) {
-      if (!MQ_DESKTOP.matches || e.button !== 0) return;
-      var s   = getState();
-      var ox  = e.clientX - s.tx;
-      var oy  = e.clientY - s.ty;
-      panel.classList.add('is-dragging');
-
-      function move(e) {
-        var img = getImg();
-        var s   = getState();
-        s.tx = e.clientX - ox;
-        s.ty = e.clientY - oy;
-        clamp(s, img.naturalWidth, img.naturalHeight, panel.clientWidth, panel.clientHeight);
-        applyXform(img, s);
-      }
-      function up() {
-        panel.classList.remove('is-dragging');
-        document.removeEventListener('mousemove', move);
-        document.removeEventListener('mouseup',   up);
-      }
-      document.addEventListener('mousemove', move);
-      document.addEventListener('mouseup',   up);
-    });
-
-    /* Double-click → reset to cover fit */
-    panel.addEventListener('dblclick', function () {
-      if (!MQ_DESKTOP.matches) return;
-      var img = getImg();
-      var s   = getState();
-      s.scale = s.minScale;
-      fitCover(img, panel, s);
-    });
-
-    /* Wheel → zoom to cursor */
-    panel.addEventListener('wheel', function (e) {
-      if (!MQ_DESKTOP.matches) return;
-      e.preventDefault();
-      var img     = getImg();
-      var s       = getState();
-      var factor  = e.deltaY < 0 ? 1.1 : (1 / 1.1);
-      var newSc   = Math.max(s.minScale, Math.min(s.scale * factor, s.minScale * 7));
-      var rect    = panel.getBoundingClientRect();
-      var mx      = e.clientX - rect.left;
-      var my      = e.clientY - rect.top;
-      var ix      = (mx - s.tx) / s.scale;
-      var iy      = (my - s.ty) / s.scale;
-      s.scale     = newSc;
-      s.tx        = mx - ix * s.scale;
-      s.ty        = my - iy * s.scale;
-      clamp(s, img.naturalWidth, img.naturalHeight, panel.clientWidth, panel.clientHeight);
-      applyXform(img, s);
-    }, { passive: false });
-
-    /* Touch: 1-finger pan, 2-finger pinch+zoom — desktop only */
-    var t0 = null, t1 = null, tDist = 0;
-
-    panel.addEventListener('touchstart', function (e) {
-      if (!MQ_DESKTOP.matches) return;
-      if (e.touches.length === 1) {
-        t0 = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        t1 = null;
-      } else if (e.touches.length === 2) {
-        t0 = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        t1 = { x: e.touches[1].clientX, y: e.touches[1].clientY };
-        tDist = Math.hypot(t1.x - t0.x, t1.y - t0.y);
-      }
-    }, { passive: true });
-
-    panel.addEventListener('touchmove', function (e) {
-      if (!MQ_DESKTOP.matches) return;
-      e.preventDefault();
-      var img = getImg();
-      var s   = getState();
-
-      if (e.touches.length === 1 && t0 && !t1) {
-        var dx = e.touches[0].clientX - t0.x;
-        var dy = e.touches[0].clientY - t0.y;
-        s.tx  += dx; s.ty += dy;
-        t0     = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        clamp(s, img.naturalWidth, img.naturalHeight, panel.clientWidth, panel.clientHeight);
-        applyXform(img, s);
-      } else if (e.touches.length === 2 && t0 && t1) {
-        var a0   = e.touches[0], a1 = e.touches[1];
-        var dist = Math.hypot(a1.clientX - a0.clientX, a1.clientY - a0.clientY);
-        var cx   = (a0.clientX + a1.clientX) / 2;
-        var cy   = (a0.clientY + a1.clientY) / 2;
-        var rect = panel.getBoundingClientRect();
-        var mx   = cx - rect.left;
-        var my   = cy - rect.top;
-        var ix   = (mx - s.tx) / s.scale;
-        var iy   = (my - s.ty) / s.scale;
-        s.scale  = Math.max(s.minScale, Math.min(s.scale * (dist / tDist), s.minScale * 7));
-        s.tx     = mx - ix * s.scale;
-        s.ty     = my - iy * s.scale;
-        tDist    = dist;
-        t0 = { x: a0.clientX, y: a0.clientY };
-        t1 = { x: a1.clientX, y: a1.clientY };
-        clamp(s, img.naturalWidth, img.naturalHeight, panel.clientWidth, panel.clientHeight);
-        applyXform(img, s);
-      }
-    }, { passive: false });
-
-    /* Re-fit when panel resizes (e.g. window resize) */
-    var rafR = null;
-    window.addEventListener('resize', function () {
-      if (rafR) return;
-      rafR = requestAnimationFrame(function () {
-        rafR = null;
-        if (MQ_DESKTOP.matches) {
-          var img = getImg();
-          var s   = getState();
-          // only refit if at minimum scale (user hasn't zoomed in)
-          if (Math.abs(s.scale - s.minScale) < 0.001) fitCover(img, panel, s);
+    if (cfg.dictLang === 'la') {
+      var w = stripMacrons(word);
+      add(w.toLowerCase());
+      if (w !== w.toLowerCase()) add(w);                    // Iuppiter, Phoebe…
+      ['que', 'ne', 've'].forEach(function (enc) {
+        if (w.length > enc.length + 2 && w.toLowerCase().slice(-enc.length) === enc) {
+          add(w.toLowerCase().slice(0, -enc.length));
         }
       });
-    });
-  }
-
-  /* ── Arrow button ──────────────────────────────────────────────────────── */
-
-  function makeArrow(dir) {
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'book-arrow book-arrow--' + dir;
-    btn.setAttribute('aria-label', dir === 'prev' ? 'Previous image' : 'Next image');
-    btn.innerHTML = dir === 'prev'
-      ? '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 4 7 10 13 16"/></svg>'
-      : '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 4 13 10 7 16"/></svg>';
-    return btn;
-  }
-
-  /* Skip shortcuts while typing in form fields. */
-  function isTypingTarget(el) {
-    if (!el || el === document.body) return false;
-    var tag = (el.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'select') return true;
-    if (el.isContentEditable) return true;
-    return false;
-  }
-
-  /* ── Persist active image across reloads (URL ?img= + sessionStorage) ─── */
-
-  function imgStorageKey() {
-    return 'kmba-book-img:' + location.pathname;
-  }
-
-  /* 1-based ?img= in the URL; sessionStorage as fallback. */
-  function readSavedImgIndex(n) {
-    if (n < 1) return 0;
-    try {
-      var q = new URLSearchParams(location.search).get('img');
-      if (q !== null && q !== '') {
-        var i = parseInt(q, 10);
-        if (!isNaN(i) && i >= 1 && i <= n) return i - 1;
+    } else if (cfg.dictLang === 'it') {
+      var lw = word.toLowerCase().replace(/’/g, "'");
+      add(lw);
+      if (lw.indexOf("'") !== -1) {
+        var parts = lw.split("'").filter(Boolean);
+        parts.forEach(function (p) { if (p.length >= 2) add(p); });
+        if (parts[0] && parts[0].length <= 2) add(parts[0] + "'");   // l', d', ch'
+        parts.forEach(function (p) { if (p.length === 1) add(p); }); // i, e…
       }
-    } catch (e) { /* ignore */ }
-    try {
-      var s = sessionStorage.getItem(imgStorageKey());
-      if (s !== null && s !== '') {
-        var j = parseInt(s, 10);
-        if (!isNaN(j) && j >= 0 && j < n) return j;
-      }
-    } catch (e) { /* ignore */ }
-    return 0;
-  }
-
-  function persistImgIndex(idx, n) {
-    if (n < 2) return;
-    try { sessionStorage.setItem(imgStorageKey(), String(idx)); } catch (e) { /* ignore */ }
-    try {
-      var url = new URL(location.href);
-      if (idx <= 0) url.searchParams.delete('img');
-      else url.searchParams.set('img', String(idx + 1));
-      var next = url.pathname + url.search + url.hash;
-      if (next !== location.pathname + location.search + location.hash) {
-        history.replaceState(null, '', next);
-      }
-    } catch (e) { /* ignore */ }
-  }
-
-  /* ── Theme-aware image srcs ──────────────────────────────────────────────
-     Each entry may be a string path, or { light, dark } for day/night art.
-     Day (light) shows color when provided; night (dark) shows B/W.        */
-
-  function currentTheme() {
-    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-  }
-
-  function resolveImgSrc(entry, theme) {
-    if (!entry) return '';
-    if (typeof entry === 'string') return entry;
-    if (theme === 'dark') return entry.dark || entry.light || entry.night || entry.day || '';
-    return entry.light || entry.dark || entry.day || entry.night || '';
-  }
-
-  function entryHasThemeVariant(entry) {
-    return entry && typeof entry === 'object' && (entry.light || entry.dark || entry.day || entry.night);
-  }
-
-  /* ── Build the image panel ─────────────────────────────────────────────── */
-
-  /* Returns go(delta) for keyboard wiring; null if no multi-image slider. */
-  function buildPanel(panel, entries) {
-    var n       = entries.length;
-    var start   = readSavedImgIndex(n);
-    var current = start;
-    var theme   = currentTheme();
-    var states  = entries.map(function () { return { scale: 1, tx: 0, ty: 0, minScale: 1 }; });
-
-    /* Create all img elements */
-    var imgEls = entries.map(function (entry, i) {
-      var img       = new Image();
-      img.className = 'book-img' + (i === start ? ' book-img--active' : '');
-      img.src       = resolveImgSrc(entry, theme);
-      img.alt       = '';
-      img.draggable = false;
-      img.dataset.bookIdx = String(i);
-      panel.appendChild(img);
-      return img;
-    });
-
-    /* Fit image to panel once its dimensions are known (desktop only) */
-    function fitEl(idx) {
-      if (!MQ_DESKTOP.matches) return;
-      var img = imgEls[idx];
-      var s   = states[idx];
-      if (img.naturalWidth) {
-        fitCover(img, panel, s);
-      } else {
-        img.addEventListener('load', function onLoad() {
-          img.removeEventListener('load', onLoad);
-          fitCover(img, panel, s);
-        });
-      }
+    } else if (cfg.dictLang === 'fa') {
+      add(word);
+      add(word.replace(/‌/g, ''));                     // ZWNJ collapsed
+    } else {
+      add(word);
     }
-    fitEl(start);
+    return out.slice(0, 6);
+  }
 
-    /* Slider: go to image index */
-    var dots = [];
-    function go(idx) {
-      idx = ((idx % n) + n) % n;
-      if (idx === current) {
-        persistImgIndex(current, n);
+  function wiktionary(word) {
+    var url = 'https://en.wiktionary.org/api/rest_v1/page/definition/' +
+              eu(word) + '?redirect=true';
+    return fetch(url).then(function (res) {
+      if (!res.ok) return null;
+      return res.json().then(function (data) {
+        var keys = Object.keys(data);
+        for (var i = 0; i < keys.length; i++) {
+          var hits = data[keys[i]].filter(function (e) { return e.language === LANG.wikt; });
+          if (hits.length) return hits;
+        }
+        return null;
+      });
+    });
+  }
+
+  function renderEntries(entries) {
+    return entries.map(function (e) {
+      return '<section class="dict-pos">' +
+        '<h3>' + esc(e.partOfSpeech || '') + '</h3>' +
+        '<ol>' + e.definitions.map(function (d) {
+          return '<li>' + (d.definition || '') + '</li>';
+        }).join('') + '</ol></section>';
+    }).join('');
+  }
+
+  /* Wiktionary definitions embed links ("inflection of dīcō") —
+     turn them into in-panel lookups instead of navigation. */
+  function hookDefinitionLinks() {
+    $('dict-body').querySelectorAll('a').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var m = href.match(/\/wiki\/([^#?]+)|^\.\/([^#?]+)/);
+      if (m) {
+        var target = decodeURIComponent(m[1] || m[2]);
+        a.setAttribute('href', '#');
+        a.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          lookup(target);
+        });
+      } else {
+        a.target = '_blank';
+        a.rel = 'noopener';
+        if (href.charAt(0) === '/') a.href = 'https://en.wiktionary.org' + href;
+      }
+    });
+  }
+
+  function openSheet() {
+    if (MQ_NARROW.matches && dictEl) dictEl.classList.add('is-open');
+  }
+  function closeSheet() {
+    if (dictEl) dictEl.classList.remove('is-open');
+  }
+
+  var lookupSeq = 0;
+
+  function lookup(word) {
+    if (!LANG || !dictEl) return;
+    var seq = ++lookupSeq;
+    var wordEl = $('dict-word'), bodyEl = $('dict-body'), linksEl = $('dict-links');
+
+    wordEl.textContent = word;
+    if (LANG.rtl) wordEl.setAttribute('dir', 'rtl'); else wordEl.removeAttribute('dir');
+    wordEl.classList.add('has-word');
+    $('dict-hint').hidden = true;
+    bodyEl.innerHTML = '<p class="dict-note">খুঁজছি…</p>';
+
+    var q = cfg.dictLang === 'la' ? stripMacrons(word).toLowerCase() : word;
+    linksEl.innerHTML = LANG.links.map(function (l) {
+      return '<a href="' + esc(l[1](q)) + '" target="_blank" rel="noopener">' + esc(l[0]) + '</a>';
+    }).join('');
+    linksEl.hidden = false;
+    openSheet();
+
+    var cands = candidates(word);
+    (function tryNext(i) {
+      if (seq !== lookupSeq) return;                        // a newer click won
+      if (i >= cands.length) {
+        bodyEl.innerHTML =
+          '<p class="dict-note">উইকশনারিতে সরাসরি পাওয়া গেল না — নিচের অভিধানগুলো দেখুন।</p>';
         return;
       }
-      imgEls[current].classList.remove('book-img--active');
-      dots[current] && dots[current].classList.remove('book-dot--active');
-      current = idx;
-      imgEls[current].classList.add('book-img--active');
-      dots[current] && dots[current].classList.add('book-dot--active');
-      fitEl(idx);
-      persistImgIndex(current, n);
-    }
-
-    /* Day/night: swap themed sources; re-fit active image. */
-    function applyThemeSrcs(nextTheme) {
-      if (nextTheme === theme) return;
-      theme = nextTheme;
-      entries.forEach(function (entry, i) {
-        if (!entryHasThemeVariant(entry)) return;
-        var next = resolveImgSrc(entry, theme);
-        if (!next) return;
-        var img = imgEls[i];
-        if ((img.getAttribute('src') || '') === next) return;
-        /* Reset pan/zoom; re-fit after the new plate loads. */
-        states[i] = { scale: 1, tx: 0, ty: 0, minScale: 1 };
-        img.addEventListener('load', function onThemeLoad() {
-          img.removeEventListener('load', onThemeLoad);
-          if (i === current) fitEl(i);
-        });
-        img.src = next;
-      });
-    }
-
-    /* Arrows + dots if multiple images */
-    if (n > 1) {
-      var prevBtn = makeArrow('prev');
-      var nextBtn = makeArrow('next');
-      prevBtn.addEventListener('click', function () { go(current - 1); });
-      nextBtn.addEventListener('click', function () { go(current + 1); });
-      panel.appendChild(prevBtn);
-      panel.appendChild(nextBtn);
-
-      var dotsEl = document.createElement('div');
-      dotsEl.className = 'book-dots';
-      entries.forEach(function (_, i) {
-        var d = document.createElement('button');
-        d.type = 'button';
-        d.className = 'book-dot' + (i === start ? ' book-dot--active' : '');
-        d.setAttribute('aria-label', 'Image ' + (i + 1));
-        d.addEventListener('click', function () { go(i); });
-        dotsEl.appendChild(d);
-        dots.push(d);
-      });
-      panel.appendChild(dotsEl);
-
-      /* Write current choice into the URL / session so a reload lands here. */
-      persistImgIndex(start, n);
-    }
-
-    /* Zoom hint (desktop) */
-    if (MQ_DESKTOP.matches) {
-      var hint = document.createElement('span');
-      hint.className = 'book-zoom-hint';
-      hint.textContent = n > 1
-        ? '← → images · ctrl ← → canto · scroll zoom · drag pan'
-        : 'scroll to zoom · drag to pan · dbl-click to reset';
-      panel.appendChild(hint);
-    }
-
-    /* Pan/zoom (handlers check MQ_DESKTOP internally) */
-    setupPanZoom(
-      panel,
-      function () { return imgEls[current]; },
-      function () { return states[current];  }
-    );
-
-    /* Touch swipe → navigate (mobile: check !MQ_DESKTOP; desktop: also usable) */
-    var swipeX = null, swipeY = null, multiTouch = false;
-    panel.addEventListener('touchstart', function (e) {
-      multiTouch = e.touches.length > 1;
-      if (e.touches.length === 1) {
-        swipeX = e.touches[0].clientX;
-        swipeY = e.touches[0].clientY;
-      }
-    }, { passive: true });
-    panel.addEventListener('touchend', function (e) {
-      if (multiTouch || swipeX === null || n < 2) { swipeX = null; return; }
-      var dx = e.changedTouches[0].clientX - swipeX;
-      var dy = e.changedTouches[0].clientY - swipeY;
-      /* Only navigate on a clearly horizontal swipe */
-      if (Math.abs(dx) > Math.abs(dy) * 1.4 && Math.abs(dx) > 45) {
-        go(current + (dx < 0 ? 1 : -1));
-      }
-      swipeX = null;
-    }, { passive: true });
-    panel.addEventListener('touchstart', function (e) {
-      if (e.touches.length > 1) multiTouch = true;
-    }, { passive: true });
-
-    /* React to theme toggle (site.js sets data-theme on <html>). */
-    if (entries.some(entryHasThemeVariant)) {
-      if (window.MutationObserver) {
-        var mo = new MutationObserver(function () {
-          applyThemeSrcs(currentTheme());
-        });
-        mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-      }
-      document.addEventListener('kmba-theme', function (e) {
-        var t = (e && e.detail) || currentTheme();
-        applyThemeSrcs(t === 'dark' ? 'dark' : 'light');
-      });
-    }
-
-    return n > 1
-      ? function (delta) { go(current + delta); }
-      : null;
+      wiktionary(cands[i]).then(function (entries) {
+        if (seq !== lookupSeq) return;
+        if (!entries) { tryNext(i + 1); return; }
+        var note = cands[i] !== word
+          ? '<p class="dict-note dict-lemma">→ ' + esc(cands[i]) + '</p>' : '';
+        bodyEl.innerHTML = note + renderEntries(entries);
+        hookDefinitionLinks();
+      }).catch(function () { tryNext(i + 1); });
+    })(0);
   }
 
-  /* ── Footer nav (Previous / Index / Next) ─────────────────────────────── */
+  /* The visible text of a word span, prosody separators excluded. */
+  function spanWord(span) {
+    var clone = span.cloneNode(true);
+    clone.querySelectorAll('.m-sep, .f-sep').forEach(function (el) { el.remove(); });
+    return coreWord(clone.textContent);
+  }
 
-  function buildFooterNav(cfg) {
+  function setupDict() {
+    if (!LANG || !dictEl) return;
+    document.body.classList.add('book-has-dict');
+    $('dict-hint').textContent = LANG.hint;
+
+    /* Click any word in a source-language cell (md-loader renders Latin
+       into .it cells too; bn and ln-col are not lookup targets). */
+    document.addEventListener('click', function (ev) {
+      var span = ev.target.closest ? ev.target.closest('.tt-table td .w') : null;
+      if (!span) return;
+      var td = span.closest('td');
+      if (!td || td.classList.contains('bn') || td.classList.contains('ln-col')) return;
+      var word = spanWord(span);
+      if (word) lookup(word);
+    });
+
+    var closeBtn = $('dict-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') closeSheet();
+    });
+  }
+
+  /* ═════════════════════════════════════════════════════════════════════
+   * Prosody separators — inserted at text-node level so the .w
+   * hover-highlight spans survive toggling.
+   * ═════════════════════════════════════════════════════════════════════ */
+
+  /* The cell's text with all separator glyphs removed — exactly the
+     concatenation, in order, of the text nodes walked below. */
+  function cleanCellText(cell) {
+    var clone = cell.cloneNode(true);
+    clone.querySelectorAll('.m-sep, .f-sep').forEach(function (el) { el.remove(); });
+    return clone.textContent;
+  }
+
+  function clearSeps(cell, cls) {
+    cell.querySelectorAll('.' + cls).forEach(function (el) { el.remove(); });
+  }
+
+  /* Insert a separator glyph before each UTF-16 offset in `positions`
+     (ascending) into the cell's running text (separators excluded). */
+  function insertSeps(cell, positions, cls, glyph) {
+    if (!positions || !positions.length) return;
+    var queue = positions.slice();
+    var offset = 0;
+    var makeSep = function () {
+      var sep = document.createElement('span');
+      sep.className = cls;
+      sep.textContent = glyph;
+      return sep;
+    };
+    var walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return n.parentElement && n.parentElement.closest('.' + cls)
+          ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node = walker.nextNode();
+    while (node && queue.length) {
+      var end = offset + node.nodeValue.length;
+      var pos = queue[0];
+      if (pos <= offset) {
+        node.parentNode.insertBefore(makeSep(), node);      // boundary: before node
+        queue.shift();
+      } else if (pos < end) {
+        var rest = node.splitText(pos - offset);
+        rest.parentNode.insertBefore(makeSep(), rest);
+        queue.shift();
+        offset = pos;
+        node = rest;
+        walker.currentNode = rest;                          // don't re-visit the tail
+      } else {
+        offset = end;
+        node = walker.nextNode();
+      }
+    }
+    while (queue.length) {                                  // trailing boundary
+      cell.appendChild(makeSep());
+      queue.shift();
+    }
+  }
+
+  /* ── মাত্রা: matrabritta matra walk over a Bangla verse line ─────────
+     Open (vowel-ended) syllable = 1 matra, closed = 2 — counted
+     incrementally: every vowel sound is 1 (diphthongs ঐ ঔ ৈ ৌ are 2),
+     and every syllable-closing consonant — bare, hasanta'd or
+     conjunct-initial, anusvara/visarga/khanda-ta — adds 1. A divider
+     lands exactly where the running count passes each target (e.g. 8
+     then 16), even inside a word, nudged forward only past marks that
+     belong to the syllable already counted. */
+
+  var BN_CONSONANT  = /[ক-হড়ঢ়য়]/;
+  var BN_VOWEL_SIGN = /[া-ৄেৈোৌৗ]/;
+  var BN_VOWEL_IND  = /[অ-ঔ]/;
+  var BN_TWO_MATRA  = /[ঐঔৈৌ]/;
+  var BN_CODA_MARK  = /[ংঃৎ]/;   // anusvara, visarga, khanda-ta
+  var BN_ZERO_MARK  = /[ঁ়]/;         // candrabindu, nukta
+  var HASANTA = '্';
+  var ZW = /[‌‍়]/;              // ZWNJ, ZWJ, nukta (transparent)
+
+  function matraBreaks(text, targets) {
+    var chars = Array.from(text);
+    var breaks = [];
+    var cum = 0;
+    var nucleus = false;    // a vowel has sounded; its syllable is still open
+
+    var skipZW = function (k, dir) { while (ZW.test(chars[k] || '')) k += dir; return k; };
+    var nextOf = function (i) { return chars[skipZW(i + 1, +1)]; };
+
+    // ও in পাওয়া/যাওয়া… is the glide w, not a vowel: ও + য়/য + vowel sign
+    var isGlideO = function (i) {
+      var j = skipZW(i + 1, +1);
+      if (chars[j] !== 'য়' && chars[j] !== 'য') return false;
+      var k = skipZW(j + 1, +1);
+      return chars[k] !== undefined && BN_VOWEL_SIGN.test(chars[k]);
+    };
+
+    // A divider may not fall before a mark that closes the syllable just
+    // counted, before a conjunct-initial consonant, between a consonant
+    // and its vowel sign, or before trailing punctuation.
+    var breakableBefore = function (i) {
+      var next = nextOf(i);
+      if (next === undefined || /\s/.test(next)) return true;
+      if (next === HASANTA || BN_CODA_MARK.test(next) || BN_ZERO_MARK.test(next)) return false;
+      if (BN_VOWEL_SIGN.test(next)) return false;
+      if (BN_CONSONANT.test(next) && nextOf(skipZW(i + 1, +1)) === HASANTA) return false;
+      if (!BN_CONSONANT.test(next) && !BN_VOWEL_IND.test(next)) return false;
+      return true;
+    };
+
+    for (var i = 0; i < chars.length; i++) {
+      var c = chars[i];
+      if (BN_CONSONANT.test(c)) {
+        var next = nextOf(i);
+        if (next === HASANTA) {
+          if (nucleus) { cum += 1; nucleus = false; }
+        } else if (next !== undefined && BN_VOWEL_SIGN.test(next)) {
+          /* counted when the vowel sign is reached */
+        } else {
+          cum += 1;
+          nucleus = true;
+        }
+      } else if (c === 'ও' && isGlideO(i)) {
+        /* silent glide onset */
+      } else if (BN_VOWEL_SIGN.test(c) || BN_VOWEL_IND.test(c)) {
+        cum += BN_TWO_MATRA.test(c) ? 2 : 1;
+        nucleus = true;
+      } else if (BN_CODA_MARK.test(c)) {
+        if (nucleus) cum += 1;
+        nucleus = false;
+      } else if (c !== HASANTA && !ZW.test(c) && !BN_ZERO_MARK.test(c)) {
+        nucleus = false;
+      }
+      if (breaks.length < targets.length &&
+          cum >= targets[breaks.length] && breakableBefore(i)) {
+        breaks.push(i + 1);                     // insert AFTER char i
+      }
+    }
+    // code-point indices → UTF-16 offsets (identical for Bengali, but safe)
+    return breaks.map(function (cp) {
+      var s = 0;
+      for (var k = 0; k < cp; k++) s += chars[k].length;
+      return s;
+    });
+  }
+
+  /* ── পর্ব: Latin dactylic hexameter scansion ─────────────────────────
+     No macrons in the source, so quantities are inferred from what is
+     certain: diphthongs and position are long, everything else anceps.
+     Elision removes a syllable. The syllable count fixes the number of
+     dactyls exactly (n − 12), and a small constraint search places them
+     among feet 1–5, preferring the classical dactylic 5th foot.
+     Unscannable lines are left unmarked. */
+
+  var LA_WORD = /[A-Za-zÀ-ÿĀ-ſ]+/g;
+  var laIsVowel = function (c) { return c !== undefined && 'aeiouy'.indexOf(c) !== -1; };
+
+  function laNuclei(w) {
+    var out = [];
+    for (var i = 0; i < w.length; i++) {
+      var c = w[i];
+      if (!laIsVowel(c)) continue;
+      if (c === 'u' && laIsVowel(w[i + 1]) &&
+          (w[i - 1] === 'q' || (w[i - 1] === 'g' && w[i - 2] === 'n') ||
+           (w[i - 1] === 's' && /^(uad|uav|ues)/.test(w.slice(i))))) continue;
+      if (c === 'i' && laIsVowel(w[i + 1])) {
+        if (i === 0 || laIsVowel(w[i - 1])) continue;
+        if (/^(con|in|ad|ob|sub|per|dis|circum)$/.test(w.slice(0, i))) continue;
+      }
+      var two = w.slice(i, i + 2);
+      if (two === 'ae' || two === 'au' || two === 'oe' ||
+          (two === 'eu' && (/^(heu|seu|ceu|neu|eheu)$/.test(w) || /^(deucalion|eur)/.test(w))) ||
+          (two === 'ei' && /^(ei|dein|deinde|deinceps)$/.test(w)) ||
+          (two === 'ui' && /^(cui|huic)$/.test(w))) {
+        out.push({ start: i, len: 2 });
+        i++;
+        continue;
+      }
+      out.push({ start: i, len: 1 });
+    }
+    return out;
+  }
+
+  var LA_MUTA = 'bpdtcgf';
+  var LA_LIQUID = 'lr';
+
+  function hexBreaks(text) {
+    var words = [];
+    var m;
+    LA_WORD.lastIndex = 0;
+    while ((m = LA_WORD.exec(text))) {
+      words.push({ text: m[0], lower: m[0].toLowerCase(), start: m.index });
+    }
+    if (!words.length) return null;
+
+    var wordNuc = words.map(function (wd) { return laNuclei(wd.lower); });
+    var sylls = [];
+    wordNuc.forEach(function (ns, wi) {
+      ns.forEach(function (nc, ni) {
+        sylls.push({ wi: wi, ni: ni, start: nc.start, end: nc.start + nc.len,
+                     diph: nc.len === 2, elided: false });
+      });
+    });
+
+    // elision: final vowel or vowel+m before a word starting with (h+)vowel
+    for (var s = 0; s < sylls.length - 1; s++) {
+      var cur = sylls[s], nxt = sylls[s + 1];
+      if (cur.wi === nxt.wi || cur.ni !== wordNuc[cur.wi].length - 1) continue;
+      var tail = words[cur.wi].lower.slice(cur.end);
+      if ((tail === '' || tail === 'm') && /^h?[aeiouy]/.test(words[nxt.wi].lower)) {
+        cur.elided = true;
+      }
+    }
+
+    var counted = sylls.filter(function (x) { return !x.elided; });
+    var n = counted.length;
+    var d = n - 12;
+    if (d < 0 || d > 5) return null;
+
+    var elided = {};
+    sylls.forEach(function (x) {
+      if (!x.elided) return;
+      var end = x.end;
+      if (words[x.wi].lower[end] === 'm') end++;
+      (elided[x.wi] = elided[x.wi] || []).push([x.start, end]);
+    });
+    var keptSlice = function (wi, from, to) {
+      var wl = words[wi].lower;
+      var out = '';
+      for (var p = from; p < (to === undefined ? wl.length : to); p++) {
+        var drop = (elided[wi] || []).some(function (ab) { return p >= ab[0] && p < ab[1]; });
+        if (!drop) out += wl[p];
+      }
+      return out;
+    };
+    var consVal = function (run) {
+      var v = 0;
+      for (var p = 0; p < run.length; p++) {
+        var c = run[p];
+        if (c === 'h') continue;
+        if (c === 'x' || c === 'z') v += 2;
+        else if (c === 'u' && run[p - 1] === 'q') continue;
+        else v += 1;
+      }
+      return v;
+    };
+
+    // weights: L = certainly long, U = anceps
+    var W = counted.map(function (x, k) {
+      if (k === n - 1) return 'U';
+      if (x.diph) return 'L';
+      var nxt = counted[k + 1];
+      var tail, onset = '';
+      if (nxt.wi === x.wi) tail = keptSlice(x.wi, x.end, nxt.start);
+      else {
+        tail = keptSlice(x.wi, x.end);
+        for (var wi2 = x.wi + 1; wi2 < nxt.wi; wi2++) onset += keptSlice(wi2, 0);
+        onset += keptSlice(nxt.wi, 0, nxt.start);
+      }
+      var tv = consVal(tail), ov = consVal(onset);
+      if (tv + ov < 2) return 'U';
+      if (tv === 0) return 'U';
+      var run = tail + onset;
+      var ml = nxt.wi === x.wi && run.length === 2 &&
+        LA_MUTA.indexOf(run[0]) !== -1 && LA_LIQUID.indexOf(run[1]) !== -1;
+      return ml ? 'U' : 'L';
+    });
+
+    var choose = function (arr, k) {
+      if (k === 0) return [[]];
+      var acc = [];
+      arr.forEach(function (v, i) {
+        choose(arr.slice(i + 1), k - 1).forEach(function (r) { acc.push([v].concat(r)); });
+      });
+      return acc;
+    };
+    var best = null, bestScore = -1;
+    choose([0, 1, 2, 3, 4], d).forEach(function (S) {
+      var set = {};
+      S.forEach(function (f) { set[f] = true; });
+      var p = 0, ok = true;
+      for (var f = 0; f < 5 && ok; f++) {
+        var pattern = set[f] ? 'LSS' : 'LL';
+        for (var pi = 0; pi < pattern.length; pi++) {
+          var w = W[p++];
+          if ((pattern[pi] === 'L' && w === 'S') || (pattern[pi] === 'S' && w === 'L')) {
+            ok = false;
+            break;
+          }
+        }
+      }
+      if (ok && W[p] === 'S') ok = false;
+      if (!ok) return;
+      var score = (set[4] ? 100 : 0) + S.reduce(function (a, f) { return a + (5 - f); }, 0);
+      if (score > bestScore) { bestScore = score; best = set; }
+    });
+    if (!best) return null;
+
+    // boundary syllables → string insertion positions
+    var positions = [];
+    var p = 0;
+    for (var f = 0; f < 5; f++) {
+      p += best[f] ? 3 : 2;
+      var x = counted[p - 1];
+      var laterInWord = counted.find(function (t) { return t.wi === x.wi && t.ni > x.ni; });
+      if (!laterInWord) {
+        var q = words[x.wi].start + words[x.wi].text.length;
+        while (q < text.length && !/\s/.test(text[q])) q++;
+        positions.push(q);
+      } else {
+        var run = words[x.wi].lower.slice(x.end, laterInWord.start);
+        var ml = run.length === 2 &&
+          LA_MUTA.indexOf(run[0]) !== -1 && LA_LIQUID.indexOf(run[1]) !== -1;
+        var digraph = run.length === 2 && run[1] === 'h';
+        var keep = 0;
+        if (run.length === 1 && (run === 'x' || run === 'z')) keep = 1;
+        else if (run.length >= 2 && !ml && !digraph && run !== 'qu') keep = 1;
+        positions.push(words[x.wi].start + x.end + keep);
+      }
+    }
+    return positions;
+  }
+
+  /* ── The toggles ────────────────────────────────────────────────────── */
+
+  var VERSE_ROW = 'tbody tr:not(.tt-section):not(.tt-marker):not(.tt-title)';
+  var meterOn = { matra: false, feet: false };
+
+  function applyMatra() {
+    var targets = (cfg.meters && cfg.meters.matra) || [8, 16];
+    document.querySelectorAll('.tt-table ' + VERSE_ROW + ' td.bn').forEach(function (cell) {
+      clearSeps(cell, 'm-sep');
+      if (!meterOn.matra) return;
+      insertSeps(cell, matraBreaks(cleanCellText(cell), targets), 'm-sep', '/');
+    });
+  }
+
+  function applyFeet() {
+    document.querySelectorAll('.tt-table ' + VERSE_ROW + ' td.it').forEach(function (cell) {
+      clearSeps(cell, 'f-sep');
+      if (!meterOn.feet) return;
+      var breaks = hexBreaks(cleanCellText(cell));
+      if (breaks) insertSeps(cell, breaks, 'f-sep', '|');
+    });
+  }
+
+  /* The মিটার স্ক্যান bar lives at the head of the শব্দকোষ panel:
+     বাংলা toggles the matrabritta dividers, লাতিন the hexameter feet. */
+  function setupMeters() {
+    if (!cfg.meters) return;
+    var inner = document.querySelector('#book-dict .dict-inner');
+    if (!inner) return;
+
+    var bar = document.createElement('div');
+    bar.className = 'dict-meter';
+
+    var label = document.createElement('span');
+    label.className = 'dict-meter-label';
+    label.textContent = 'মিটার স্ক্যান:';
+    bar.appendChild(label);
+
+    function chip(text, title, onToggle) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'book-tool';
+      b.textContent = text;
+      b.title = title;
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        var on = b.getAttribute('aria-pressed') !== 'true';
+        b.setAttribute('aria-pressed', String(on));
+        b.classList.toggle('is-on', on);
+        onToggle(on);
+      });
+      return b;
+    }
+
+    if (cfg.meters.matra) {
+      bar.appendChild(chip('বাংলা', 'মাত্রাবৃত্তের পর্ব ভাগ দেখাও',
+        function (on) { meterOn.matra = on; applyMatra(); }));
+    }
+    if (cfg.meters.feet) {
+      bar.appendChild(chip('লাতিন', 'ড্যাকটিলিক হেক্সামিটার — ৬ পর্ব',
+        function (on) { meterOn.feet = on; applyFeet(); }));
+    }
+    if (bar.children.length > 1) inner.insertBefore(bar, inner.firstChild);
+
+    /* If the md arrives after a toggle was switched on, redraw. */
+    document.addEventListener('md-loader-done', function () {
+      if (meterOn.matra) applyMatra();
+      if (meterOn.feet) applyFeet();
+    });
+  }
+
+  /* ═════════════════════════════════════════════════════════════════════
+   * Footer nav (আগের / সূচিপত্র / পরের) + keyboard
+   * ═════════════════════════════════════════════════════════════════════ */
+
+  function buildFooterNav() {
     var body = document.querySelector('.book-text-body');
     if (!body) return;
-
-    var toc  = cfg.toc  || null;
-    var prev = cfg.prev || null;
-    var next = cfg.next || null;
+    var toc = cfg.toc || null, prev = cfg.prev || null, next = cfg.next || null;
     if (!toc && !prev && !next) return;
 
-    var nav = document.createElement('div');
+    var nav = document.createElement('nav');
     nav.className = 'book-nav';
+    nav.setAttribute('aria-label', 'অধ্যায়');
 
     function makeBtn(href, cls, inner) {
       var el = document.createElement(href ? 'a' : 'span');
@@ -426,60 +657,36 @@
     }
 
     nav.appendChild(makeBtn(prev, 'book-nav-prev',
-      '<span class="book-nav-arrow" aria-hidden="true">←</span> Previous'));
-    if (toc) {
-      nav.appendChild(makeBtn(toc, 'book-nav-toc', cfg.tocLabel || 'Index'));
-    }
+      '<span class="book-nav-arrow" aria-hidden="true">←</span> আগের'));
+    if (toc) nav.appendChild(makeBtn(toc, 'book-nav-toc', cfg.tocLabel || 'সূচিপত্র'));
     nav.appendChild(makeBtn(next, 'book-nav-next',
-      'Next <span class="book-nav-arrow" aria-hidden="true">→</span>'));
+      'পরের <span class="book-nav-arrow" aria-hidden="true">→</span>'));
 
     body.appendChild(nav);
   }
 
-  /* ── Keyboard: ←/→ images · Ctrl←/Ctrl→ prev/next canto ──────────────── */
+  function isTypingTarget(el) {
+    if (!el || el === document.body) return false;
+    var tag = (el.tagName || '').toLowerCase();
+    return tag === 'input' || tag === 'textarea' || tag === 'select' || el.isContentEditable;
+  }
 
-  function setupKeyboard(goImage, cfg) {
+  function setupKeyboard() {
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
       if (isTypingTarget(e.target)) return;
-      /* Ignore other modifiers (Alt, Shift alone); Ctrl/Meta = canto nav. */
-      if (e.altKey) return;
-
-      var dir = e.key === 'ArrowLeft' ? -1 : 1;
-
-      if (e.ctrlKey || e.metaKey) {
-        var href = dir < 0 ? cfg.prev : cfg.next;
-        if (!href) return;
-        e.preventDefault();
-        window.location.href = href;
-        return;
-      }
-
-      /* Plain ←/→: cycle panel images when a multi-image slider exists. */
-      if (!goImage) return;
+      var href = e.key === 'ArrowLeft' ? cfg.prev : cfg.next;
+      if (!href) return;
       e.preventDefault();
-      goImage(dir);
+      window.location.href = href;
     });
   }
 
-  /* ── Init ──────────────────────────────────────────────────────────────── */
+  /* ── Init ──────────────────────────────────────────────────────────── */
 
-  function init() {
-    var panel = document.querySelector('.book-img-panel');
-    if (!panel) return;
-
-    var cfg  = window.TRANS_CONFIG || {};
-    var srcs = cfg.images || [];
-    var goImage = null;
-
-    if (srcs.length) {
-      document.body.classList.add('book-has-images');
-      goImage = buildPanel(panel, srcs);
-    }
-
-    buildFooterNav(cfg);
-    setupKeyboard(goImage, cfg);
-  }
-
-  init();
+  setupDict();
+  setupMeters();
+  buildFooterNav();
+  setupKeyboard();
 }());

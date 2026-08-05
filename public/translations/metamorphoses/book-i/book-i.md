@@ -4,13 +4,19 @@ type: tercet
 lang: la
 ---
 
+## ১ · আরম্ভ
+
 | বাংলা | লাতিন | # |
 | :-- | :-- | --: |
 | আমার মন চাইছে বলতে নতুন রূপে রূপান্তরিত | In nova fert animus mutatas dicere formas | 1 |
 | বস্তুর কথা; রূপ বদলের রূপকার হে সব দেবতা, | corpora; di, coeptis (nam vos mutastis et illas) |  |
 | আমার মহাকাব্য অনুপ্রাণিত করে অবাধে বহাও | adspirate meis primaque ab origine mundi |  |
 | মহাবিশ্বের শুরু থেকে আমাদের বর্তমান অবধি। | ad mea perpetuum deducite tempora carmen. |  |
-| | | |
+
+## ২ · কেয়স ও সৃষ্টি
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | সমুদ্র মাটি আর সব-ঘেরা আকাশের জন্মের আগে | Ante mare et terras et quod tegit omnia caelum | 5 |
 | দুনিয়ার সবখানে প্রকৃতি দেখাত কেবল এক রূপ, | unus erat toto naturae vultus in orbe, |  |
 | যার নাম কেয়স: খাপছাড়া জিনিসের রুক্ষ পিণ্ড, | quem dixere chaos: rudis indigestaque moles |  |
@@ -86,6 +92,11 @@ lang: la
 | দেবতাদের রূপ ও তারামণ্ডল বাসা বাঁধে মহাকাশে, | astra tenent caeleste solum formaeque deorum, |  |
 | ঝকঝকানো মাছের জন্য জায়গা করে দেয় সমুদ্র, | cesserunt nitidis habitandae piscibus undae, |  |
 | মাটি পায় পশুদের, আর অবাধ বাতাস হয় পাখিদের। | terra feras cepit, volucres agitabilis aer. |  |
+
+## ৩ · মানুষের জন্ম
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | এদের চেয়ে পবিত্র, মনের দিক দিয়ে আরো মহীয়ান | Sanctius his animal mentisque capacius altae |  |
 | কোনো প্রাণী ছিল না যে বাকি সবাইকে শাসন করতে পারে। | deerat adhuc et quod dominari in cetera posset. |  |
 | তখন মানুষ হলো—হয় নিজের দৈব বীজ থেকে তাকে | Natus homo est, sive hunc divino semine fecit |  |
@@ -99,7 +110,11 @@ lang: la
 | চোখ তাক করতে বলেছেন তারাখচিত খিলানের দিকে। | iussit et erectos ad sidera tollere vultus. |  |
 | যে মাটি অতীতে ছিল রূপহীন রসহীন তাকে এইভাবে | Sic, modo quae fuerat rudis et sine imagine, tellus |  |
 | ঢালাই করে দিয়েছিলেন মানুষের নতুন অচিন রূপ। | induit ignotas hominum conversa figuras. |  |
-| | | |
+
+## ৪ · চার যুগ
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | স্বর্ণযুগ ছিল প্রথম যুগ, যখন আইন না থাকলেও | Aurea prima sata est aetas, quae vindice nullo, | 89 |
 | মানুষ স্বাধীন ইচ্ছায় নীতি ছাড়া ন্যায়ের পূজা করত। | sponte sua, sine lege fidem rectumque colebat. |  |
 | শাস্তির ভয় ছিল না, মানুষ পড়ত না ব্রঞ্জে খোদাই | Poena metusque aberant, nec verba minantia fixo |  |
@@ -164,7 +179,11 @@ lang: la
 | জ্যোতিষীর কাছে যায় পুত্র পিতার মৃত্যুদিন জানতে। | filius ante diem patrios inquirit in annos. |  |
 | মর্তে ধার্মিকতা হার মানে, রক্তভেজা এই মাটির | Victa iacet pietas, et virgo caede madentis, |  |
 | শেষ অমর্ত্য কুমারী আস্ত্রিয়াও আতঙ্কে চলে যান। | ultima caelestum terras Astraea reliquit. |  |
-| | | |
+
+## ৫ · গিগান্তদের বিদ্রোহ
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | পৃথিবীর চেয়ে নিরাপদ ছিল না তখন ইথারের দেশ, | Neve foret terris securior arduus aether, | 151 |
 | লোকে বলে দানবের দল স্বর্গের ছাদ ছোঁয়ার জন্য | adfectasse ferunt regnum caeleste Gigantas |  |
 | পাহাড়ের উপরে পাহাড় উঠিয়েছিল তারা পর্যন্ত। | altaque congestos struxisse ad sidera montes. |  |
@@ -177,7 +196,11 @@ lang: la
 | এদেরকে দেন মানুষের রূপ। কিন্তু নতুনরাও ঘৃণা | in faciem vertisse hominum. Sed et illa propago |  |
 | করত দেবতাদের, আগের মতোই নিষ্ঠুর ও হিংস্র | contemptrix superum saevaeque avidissima caedis |  |
 | তারা ছিল জিঘাংসু: বুঝাই যেত যে রক্তের সন্তান। | et violenta fuit: scires e sanguine natos. |  |
-| | | |
+
+## ৬ · দেবসভা
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | স্যাটার্নের পুত্র দেবপতি উঁচু কেল্লা থেকে তা দেখে | Quae pater ut summa vidit Saturnius arce, | 163 |
 | আর্তনাদ করেন, তার মনে পড়ে সম্প্রতি ঘটে যাওয়া | ingemit et, facto nondum vulgata recenti, |  |
 | লোকের অজানা এক ঘটনা: লিকায়নের বীভৎস ভোজ; | foeda Lycaoniae referens convivia mensae, |  |
@@ -226,7 +249,11 @@ lang: la
 | সব স্তব্ধ করেন, হাত ইশারায় সব শান্ত করেন। | murmura conpressit, tenuere silentia cuncti. |  |
 | তার গ্র্যাভিটির ভারে যখন সম্মেলনে মৌনতা নামে, | Substitit ut clamor pressus gravitate regentis, |  |
 | তখন মহান জুপিটার নিজে আবার নীরবতা ভাঙেন: | Iuppiter hoc iterum sermone silentia rupit: |  |
-| | | |
+
+## ৭ · লিকাওন
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | ‘তার উচিত শাস্তি হয়ে গেছে, চিন্তার কিছু নাই আর। | “Ille quidem poenas, curam hanc dimittite, solvit. | 209 |
 | কিন্তু তোমাদেরকে বলছি কি ছিল অপরাধ, কি শাস্তি। | Quod tamen admissum, quae sit vindicta, docebo. |  |
 | এ যুগের সব কলুষের কথা আমাদের কানে এসেছিল; | Contigerat nostras infamia temporis aures; |  |
@@ -273,7 +300,11 @@ lang: la
 | সবার শঙ্কা বুঝে তাদেরকে আশ্বস্ত করেন পিতা, | Talia quaerentes (sibi enim fore cetera curae) |  |
 | বলেন যে তিনি সব দেখবেন, আর নতুন এমন এক | rex superum trepidare vetat subolemque priori |  |
 | প্রজাতি প্রমিজ করেন যাদের জন্ম হবে অলৌকিক। | dissimilem populo promittit origine mira. |  |
-| | | |
+
+## ৮ · মহাপ্লাবন
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | এবং বজ্রে তিনি পুরা পৃথিবী পুড়াতে উদ্যত হন, | Iamque erat in totas sparsurus fulmina terras: | 253 |
 | কিন্তু শঙ্কা হয়, না জানি আগুন লেগে যায় ইথারেও | sed timuit, ne forte sacer tot ab ignibus aether |  |
 | আর পৃথিবীর সাথে পুড়তে শুরু করে পুরা মহাশূন্য, | conciperet flammas longusque ardesceret axis: |  |
@@ -336,7 +367,11 @@ lang: la
 | পাহাড় চূড়ায় ভেঙে ভেঙে পড়ছিল অভূতপূর্ব ঢেউ। | pulsabantque novi montana cacumina fluctus. |  |
 | অধিকাংশ মানুষ মরেছিল জলে ডুবে, যারা বেঁচে ছিল | Maxima pars unda rapitur; quibus unda pepercit, |  |
 | তাদের মৃত্যু হয় ধীরে ধীরে ধুঁকে ধুঁকে ক্ষুধা তৃষ্ণায়। | illos longa domant inopi ieiunia victu. |  |
-| | | |
+
+## ৯ · দেউকালিয়ন ও পিররা
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | বিওতিয়া থেকে ওতিয়ার ক্ষেতকে আলাদা করত ফোসিস | Separat Aonios Oetaeis Phocis ab arvis, | 313 |
 | যা মাটি থাকতে বেশ উর্বর ছিল, এখন সমুদ্রের | terra ferax, dum terra fuit, sed tempore in illo |  |
 | অংশ কেবল; কত বড় প্রদেশ কত দ্রুত তলিয়ে গেল! | pars maris et latus subitarum campus aquarum. |  |
@@ -445,7 +480,11 @@ lang: la
 | ও নারীর হাতে ছোঁড়া পাথর পূরণ করে নারীর অভাব। | et de femineo reparata est femina iactu. |  |
 | আমরা যে অনেক কঠিন জাতি, অনেক শ্রম দিতে পারি, | Inde genus durum sumus experiensque laborum |  |
 | তাই আমাদের এই আদি উৎসের সাক্ষ্য বহন করে। | et documenta damus qua simus origine nati. |  |
-| | | |
+
+## ১০ · প্রাণের পুনরুদ্ভব
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | নানা রূপের অন্য অনেক প্রাণী তৈরি করেছিল মাটি | Cetera diversis tellus animalia formis | 416 |
 | স্বতঃপ্রণোদিত হয়ে যখন বহুদিনের বাঁধা সোঁদা পানি | sponte sua peperit, postquam vetus umor ab igne |  |
 | শুকায় রোদের তাপে; থকথকে কাদা আর ঘন জলাভূমি | percaluit solis, caenumque udaeque paludes |  |
@@ -464,7 +503,11 @@ lang: la
 | সব প্রাণ, এই দুই উপাদান থেকে সবকিছুর জন্ম; | concipiunt, et ab his oriuntur cuncta duobus; |  |
 | পানি ও আগুন একে অপরের বিপরীত হলেও সৃষ্টি | cumque sit ignis aquae pugnax, vapor umidus omnes |  |
 | করে দুই জন মিলে, মিলনের সাথে বিরোধের এত ভাব! | res creat, et discors concordia fetibus apta est. |  |
-| | | |
+
+## ১১ · পিথন
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | সুতরাং সেই সাম্প্রতিক বন্যার কাদা মাখা পৃথিবী | Ergo ubi diluvio tellus lutulenta recenti | 434 |
 | যখন ইথারচারী সূর্যের তাপী আলোতে উষ্ণ হয় | solibus aetheriis altoque recanduit aestu, |  |
 | তখন প্রসব করে অসংখ্য অদ্ভুত প্রজাতি, কোনোটা | edidit innumeras species, partimque figuras |  |
@@ -483,7 +526,11 @@ lang: la
 | তাদের মাথায় ওক পাতার জয়মালা পরিয়ে দেয়া হতো; | vicerat, aesculeae capiebat frondis honorem: |  |
 | লরেল ছিল না বলে তখন দ্যুতির দেবতা নিজেও তার | nondum laurus erat, longoque decentia crine |  |
 | দিঘল বহতা চুল বেঁধে নিতেন যেকোনো পাতার মালায়। | tempora cingebat de qualibet arbore Phoebus. |  |
-| | | |
+
+## ১২ · আপোলো ও দাফনে
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | এপোলো প্রথম প্রেমে পড়েন পেনিয়াসের মেয়ে ড্যাফনির, | Primus amor Phoebi Daphne Peneia, quem non | 452 |
 | কাকতালীয় ভাবে না বরং কিউপিডের নির্মম ক্রোধে। | fors ignara dedit, sed saeva Cupidinis ira. |  |
 | পাইথন খুন করে গর্বিত ডিলসের দেব একদিন | Delius hunc, nuper victa serpente superbus, |  |
@@ -621,7 +668,11 @@ lang: la
 | প্রাচীন এপিডেনাস, নরম এমফ্রিসাস এবং এয়াস; | Apidanusque senex lenisque Amphrysos et Aeas, |  |
 | পরে এসেছিল আর সব নদী, যারা আঁকাবাঁকা বিভিন্ন | moxque amnes alii, qui, qua tulit impetus illos, |  |
 | পথে অনেক ঘুরে তাদের ক্লান্ত পানি নিয়ে যায় সাগরে। | in mare deducunt fessas erroribus undas. |  |
-| | | |
+
+## ১৩ · আইয়ো
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | ছিলেন না শুধু ইনাকাস, গুহার গহীনে বসে তার নদী | Inachus unus abest imoque reconditus antro | 582 |
 | আরো ভরছিলেন চোখের পানি দিয়ে, কারণ তার কন্যা | fletibus auget aquas natamque miserrimus Io |  |
 | আয়ো হারিয়ে গেছে। সে তখনো জীবিত আছে না ছায়ার দেশে | luget ut amissam. Nescit, vitane fruatur, |  |
@@ -662,7 +713,11 @@ lang: la
 | প্রেম তাতে বাদ সাধে। লজ্জা প্রেমের কাছে হার মানতই, | hinc dissuadet amor. Victus pudor esset amore; |  |
 | কিন্তু যে তার বোন আর বউ তাকে একটা গরুর মতো | sed leve si munus sociae generisque torique |  |
 | সামান্য উপহার না দেয়ার অর্থ তা কেবল গরু না। | vacca negaretur, poterat non vacca videri. |  |
-| | | |
+
+## ১৪ · আর্গুস
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | সতিন হাতিয়ে নেন জুনো, তাও নিশ্চিত হতে পারেন না, | Paelice donata non protinus exuit omnem | 621 |
 | চালাক জোভের ছলচাতুরিকে তখনো এমন ভয় তার, | diva metum timuitque Iovem et fuit anxia furti, |  |
 | তাই এরেস্টরের ছেলে আর্গাসকে পাহারায় লাগান। | donec Arestoridae servandam tradidit Argo. |  |
@@ -734,7 +789,11 @@ lang: la
 | কয়েকটা চোখকে সে ঠিকই ঘুমাতে দেয়, কিন্তু তখন | et, quamvis sopor est oculorum parte receptus, |  |
 | অন্য চোখদেরকে জাগিয়ে রাখে। এবং নলের বাঁশির | parte tamen vigilat. Quaerit quoque (namque reperta |  |
 | জন্মকথা জানতে চায়, কারণ তখনো তা বেশ নূতন। | fistula nuper erat), qua sit ratione reperta. |  |
-| | | |
+
+## ১৫ · সিরিংক্স
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | দেবতা তখন বলেছিল, ‘আর্কেডিয়ার শীতল পাহাড়ে | Tum deus “Arcadiae gelidis in montibus” inquit | 688 |
 | এক নায়াদ থাকত—ননাক্রিসের সবচেয়ে বিখ্যাত | “inter hamadryadas celeberrima Nonacrinas |  |
 | হামাড্রায়াড। তার পরী বোনরা তাকে সিরিংক্স ডাকত। | naias una fuit; nymphae Syringa vocabant. |  |
@@ -769,7 +828,11 @@ lang: la
 | পাহাড় গড়িয়ে পড়ে, রক্তে ভিজে যায় পবিত্র পাথর। | deicit et maculat praeruptam sanguine rupem. |  |
 | আর্গাস, তুমি লাশ এখন, তোমার সব বাতি নিভে গেছে, | Arge, iaces, quodque in tot lumina lumen habebas, |  |
 | এক আঁধার রাত্রি অধিকার করে নিয়েছে একশ চোখ। | exstinctum est, centumque oculos nox occupat una. |  |
-| | | |
+
+## ১৬ · আইয়োর মুক্তি
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | ক্রোনাসের মেয়ে জুনো এই চোখগুলো তুলে তার ময়ূরের | Excipit hos volucrisque suae Saturnia pennis | 721 |
 | লেজে লাগিয়ে তা সাজিয়েছিলেন তারার মতন জহরতে। | collocat et gemmis caudam stellantibus inplet. |  |
 | এবং তখনি তার ক্রোধ দপ করে জ্বলে উঠে যা নিভাতে | Protinus exarsit nec tempora distulit irae |  |
@@ -796,7 +859,11 @@ lang: la
 | আবার দুই পা ফিরে পেয়ে পরী খুশি হয়, দুপায়ে দাঁড়ায়, | Officioque pedum nymphe contenta duorum |  |
 | কিন্তু গরুর ডাক বের হবে ভেবে কথা বলার সাহস | erigitur metuitque loqui, ne more iuvencae |  |
 | পায়নি, বহুদিন ভুলে থাকা শব্দ ভয়ে ভয়ে মুখে আনে। | mugiat, et timide verba intermissa retemptat. |  |
-| | | |
+
+## ১৭ · ফাইথন
+
+| বাংলা | লাতিন | # |
+| :-- | :-- | --: |
 | দেবী হিসেবে এখন তার পূজা করে লিনেনপরা সাধুরা। | Nunc dea linigera colitur celeberrima turba, | 746 |
 | এপাফাস নামে তার এক ছেলে হয় যাকে লোকে জিউসের | nunc Epaphus magni genitus de semine tandem |  |
 | ছেলে ভাবত, মায়ের পাশে তার মন্দির হতো মিশরের | creditur esse Iovis, perque urbes iuncta parenti |  |

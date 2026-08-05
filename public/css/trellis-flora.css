@@ -10,37 +10,22 @@
    watermark beneath the cells, never compete with the text. Inks are kept
    low-contrast and the cell surfaces fairly opaque so legibility wins.     */
 :root {
-  --flora-ink:        rgba(74, 40, 18, 0.44);
-  --flora-ink-mid:    rgba(74, 40, 18, 0.30);
-  --flora-ink-soft:   rgba(74, 40, 18, 0.20);
-  --flora-ink-faint:  rgba(74, 40, 18, 0.13);
-  --flora-leaf-fill:  rgba(74, 40, 18, 0.06);
-  --flora-flower:     rgba(194, 83, 31, 0.52);
-  --flora-flower-2:   rgba(176, 92, 28, 0.40);
-  --flora-flower-eye: rgba(74, 40, 18, 0.55);
+  /* A cyanotype botanical: the vine printed in lapis, the blossoms gilt. */
+  --flora-ink:        rgba(24, 62, 122, 0.46);
+  --flora-ink-mid:    rgba(24, 62, 122, 0.31);
+  --flora-ink-soft:   rgba(24, 62, 122, 0.21);
+  --flora-ink-faint:  rgba(24, 62, 122, 0.12);
+  --flora-leaf-fill:  rgba(24, 62, 122, 0.055);
+  --flora-flower:     rgba(169, 124, 24, 0.55);
+  --flora-flower-2:   rgba(196, 150, 52, 0.42);
+  --flora-flower-eye: rgba(20, 44, 88, 0.55);
 
   /* Cell surface — opaque enough to keep the vine a watermark, not a layer */
-  --flora-cell-alpha:        0.74;
-  --flora-cell-surface:      rgba(248, 240, 230, var(--flora-cell-alpha));
-  --flora-diag-surface:      rgba(226, 206, 181, var(--flora-cell-alpha));
-  /* Header surface — warm stone, its own material against the sand cells */
-  --flora-header-surface:    rgba(198, 188, 168, 0.42);
-}
-
-[data-theme="dark"] {
-  --flora-ink:        rgba(240, 224, 206, 0.26);
-  --flora-ink-mid:    rgba(240, 224, 206, 0.17);
-  --flora-ink-soft:   rgba(240, 224, 206, 0.11);
-  --flora-ink-faint:  rgba(240, 224, 206, 0.07);
-  --flora-leaf-fill:  rgba(240, 224, 206, 0.05);
-  --flora-flower:     rgba(224, 145, 63, 0.40);
-  --flora-flower-2:   rgba(200, 110, 40, 0.30);
-  --flora-flower-eye: rgba(240, 224, 206, 0.40);
-
-  --flora-cell-alpha:        0.80;
-  --flora-cell-surface:      rgba(29, 21, 17,  var(--flora-cell-alpha));
-  --flora-diag-surface:      rgba(45, 30, 22,  var(--flora-cell-alpha));
-  --flora-header-surface:    rgba(40, 28, 22,  0.66);
+  --flora-cell-alpha:        0.72;
+  --flora-cell-surface:      rgba(252, 253, 255, var(--flora-cell-alpha));
+  --flora-diag-surface:      rgba(243, 234, 212, var(--flora-cell-alpha));
+  /* Header surface — cool stone, its own material against the paper cells */
+  --flora-header-surface:    rgba(199, 209, 226, 0.46);
 }
 
 /* ── Cells: translucent foreground panels above the SVG ── */
@@ -173,9 +158,29 @@
   .matrix-container[data-flora] tbody th,
   .matrix-container[data-flora] thead th,
   .matrix-container[data-flora] .corner-th {
-    background-color: rgba(251, 244, 224, 0.94);
+    background-color: rgba(252, 253, 255, 0.94);
   }
   .matrix-container .trellis-flora-svg .flora-flower ellipse {
     fill: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* ── Mobile: the subject column stays pinned while the grid scrolls ──
+   This file is injected after trellis.css, so its position:relative on
+   header cells would defeat the sticky column set there — restore it
+   here, with an opaque surface so cells don't ghost through. */
+@media (max-width: 767px) {
+  .matrix-container[data-flora] tbody th,
+  .matrix-container[data-flora] thead th:first-child,
+  .matrix-container[data-flora] .corner-th {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: var(--surface-3);
+  }
+
+  .matrix-container[data-flora] thead th:first-child,
+  .matrix-container[data-flora] .corner-th {
+    z-index: 3;
   }
 }

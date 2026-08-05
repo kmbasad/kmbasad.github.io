@@ -6,7 +6,7 @@ import { pangeaWorks } from '../../../data/pangea-works.js';
 const work = pangeaWorks.find((w) => w.slug === 'alaol-sapta-paykar')!;
 ---
 
-<Base title="Alaol's Sapta Paykar — KMBA" section="pangea"
+<Base title={work.title} section="pangea"
   navTitle="সপ্ত পয়কর" navParentHref="/pangea/" navParentLabel="প্যাঞ্জিয়া"
 >
   <Fragment slot="head">

@@ -8,17 +8,19 @@ function toBn(n: number): string {
   return String(n).replace(/[0-9]/g, (d) => '০১২৩৪৫৬৭৮৯'[Number(d)]);
 }
 
-const canticles = [
-  { title: 'দোজখ',    slug: 'inferno',    count: 34, existing: new Set(['inferno-01']) },
-  { title: 'আরাফ',    slug: 'purgatorio', count: 33, existing: new Set<string>() },
-  { title: 'বেহেশ্ত', slug: 'paradiso',   count: 33, existing: new Set<string>() },
-];
+// canticle titles come from the catalogue (the same names the breadcrumbs
+// use); counts and the published set are this page's own knowledge
+const shape: Record<string, { count: number; existing: Set<string> }> = {
+  inferno:    { count: 34, existing: new Set(['inferno-01']) },
+  purgatorio: { count: 33, existing: new Set<string>() },
+  paradiso:   { count: 33, existing: new Set<string>() },
+};
+const canticles = work.canticles!.map((c) => ({ ...c, ...shape[c.slug] }));
 ---
 
 <Base
-  title="Dante's Divine Comedy — KMBA"
   section="translations"
-  navTitle="ডিভাইন কমেডি"
+  navTitle={work.title}
   navParentHref="/translations/"
   navParentLabel="অনুবাদ"
 >

@@ -9,74 +9,6 @@ body.home-page {
   background: var(--bg);
 }
 
-/* ── Nav override — no border on the immersive home, sits over the canvas ── */
-
-body.home-page > .nav {
-  position: relative;
-  z-index: 10;
-  border-bottom: none;
-}
-
-body.home-page .nav-brand,
-body.home-page .nav-links a,
-body.home-page .nav-theme-btn {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-body.home-page .nav-brand a:hover,
-body.home-page .nav-links a:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-body.home-page .nav-links a.active {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-body.home-page .nav-theme-btn {
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-body.home-page .nav-theme-btn:hover {
-  color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-[data-theme="light"] body.home-page .nav-brand,
-[data-theme="light"] body.home-page .nav-links a,
-[data-theme="light"] body.home-page .nav-theme-btn {
-  color: rgba(40, 30, 14, 0.55);
-}
-
-[data-theme="light"] body.home-page .nav-brand a:hover,
-[data-theme="light"] body.home-page .nav-links a:hover {
-  color: rgba(40, 30, 14, 0.95);
-}
-
-[data-theme="light"] body.home-page .nav-links a.active {
-  color: rgba(40, 30, 14, 0.9);
-}
-
-[data-theme="light"] body.home-page .nav-theme-btn {
-  border-color: rgba(40, 30, 14, 0.15);
-}
-
-[data-theme="light"] body.home-page .nav-theme-btn:hover {
-  color: rgba(40, 30, 14, 0.95);
-  border-color: rgba(40, 30, 14, 0.3);
-}
-
-/* ── Starfield canvas ─────────────────────────────────────────────────────── */
-
-#home-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  transition: opacity 0.7s ease;
-}
-
 /* ── Stage ────────────────────────────────────────────────────────────────── */
 
 .home-stage {
@@ -97,18 +29,50 @@ body.home-page .nav-theme-btn:hover {
   position: fixed;
   inset: 0;
   background: radial-gradient(ellipse 80% 80% at 50% 40%,
-    transparent 28%,
-    rgba(19, 13, 11, 0.62) 100%
+    transparent 34%,
+    rgba(29, 79, 155, 0.16) 100%
   );
   pointer-events: none;
   z-index: 0;
 }
 
-[data-theme="light"] .home-stage::before {
-  background: radial-gradient(ellipse 80% 80% at 50% 40%,
-    transparent 30%,
-    rgba(120, 64, 32, 0.30) 100%
-  );
+/* ── The plate — a graduated limb, printed faint behind the name ─────────── */
+
+.home-plate {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: clamp(300px, 44vmin, 540px);
+  height: clamp(300px, 44vmin, 540px);
+  transform: translate(-50%, -46%);
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+}
+
+.home-plate-ring {
+  fill: none;
+  stroke: rgba(29, 79, 155, 0.15);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.home-plate-ring--in {
+  stroke: rgba(29, 79, 155, 0.09);
+}
+
+.home-plate-tick {
+  stroke: rgba(29, 79, 155, 0.13);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.home-plate-tick--long {
+  stroke: rgba(29, 79, 155, 0.22);
+}
+
+.home-plate-zenith {
+  fill: rgba(29, 79, 155, 0.38);
 }
 
 /* ── Center content ───────────────────────────────────────────────────────── */
@@ -138,13 +102,9 @@ body.home-page .nav-theme-btn:hover {
   font-size: 10.5px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(90, 107, 133, 0.85);
   margin: 0 0 18px;
   font-weight: 400;
-}
-
-[data-theme="light"] .home-role {
-  color: rgba(50, 42, 32, 0.38);
 }
 
 /* ── Name ─────────────────────────────────────────────────────────────────── */
@@ -156,11 +116,7 @@ body.home-page .nav-theme-btn:hover {
   letter-spacing: -0.01em;
   line-height: 1.04;
   margin: 0 0 18px;
-  color: rgba(244, 234, 220, 0.94);
-}
-
-[data-theme="light"] .home-name {
-  color: rgba(36, 26, 20, 0.92);
+  color: #0e1a2b;
 }
 
 /* ── Tagline ──────────────────────────────────────────────────────────────── */
@@ -169,13 +125,9 @@ body.home-page .nav-theme-btn:hover {
   font-family: var(--bn-font);
   font-size: clamp(13.5px, 1.6vw, 18px);
   font-weight: 300;
-  color: rgba(244, 234, 220, 0.46);
+  color: rgba(44, 62, 87, 0.72);
   margin: 0;
   letter-spacing: 0.01em;
-}
-
-[data-theme="light"] .home-tagline {
-  color: rgba(60, 44, 32, 0.5);
 }
 
 /* ── Divider ──────────────────────────────────────────────────────────────── */
@@ -186,17 +138,8 @@ body.home-page .nav-theme-btn:hover {
   margin: 40px auto;
   background: linear-gradient(to bottom,
     transparent,
-    rgba(255, 255, 255, 0.16) 35%,
-    rgba(255, 255, 255, 0.16) 65%,
-    transparent
-  );
-}
-
-[data-theme="light"] .home-divider {
-  background: linear-gradient(to bottom,
-    transparent,
-    rgba(50, 42, 32, 0.18) 35%,
-    rgba(50, 42, 32, 0.18) 65%,
+    rgba(29, 79, 155, 0.32) 35%,
+    rgba(29, 79, 155, 0.32) 65%,
     transparent
   );
 }
@@ -225,53 +168,37 @@ body.home-page .nav-theme-btn:hover {
 }
 
 .home-section + .home-section {
-  border-left: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-[data-theme="light"] .home-section + .home-section {
-  border-left-color: rgba(50, 42, 32, 0.13);
+  border-left: 1px solid rgba(14, 26, 43, 0.12);
 }
 
 .home-section-label {
   font-family: var(--bn-font);
   font-size: clamp(15px, 1.9vw, 21px);
   font-weight: 500;
-  color: rgba(244, 234, 220, 0.85);
+  color: #16273f;
   display: block;
   letter-spacing: 0;
-}
-
-[data-theme="light"] .home-section-label {
-  color: rgba(36, 26, 20, 0.84);
 }
 
 .home-section-sub {
   font-family: var(--bn-font);
   font-size: 13px;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(90, 107, 133, 0.95);
   display: block;
-}
-
-[data-theme="light"] .home-section-sub {
-  color: rgba(50, 42, 32, 0.52);
 }
 
 /* ── Meta links ───────────────────────────────────────────────────────────── */
 
 .home-meta {
   font-size: 11.5px;
-  color: rgba(255, 255, 255, 0.22);
+  color: rgba(90, 107, 133, 0.75);
   margin-bottom: 14px;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-[data-theme="light"] .home-meta {
-  color: rgba(50, 42, 32, 0.28);
 }
 
 .home-meta a {
@@ -281,11 +208,7 @@ body.home-page .nav-theme-btn:hover {
 }
 
 .home-meta a:hover {
-  color: rgba(255, 255, 255, 0.58);
-}
-
-[data-theme="light"] .home-meta a:hover {
-  color: rgba(26, 20, 12, 0.65);
+  color: var(--accent);
 }
 
 .home-meta-sep {
@@ -298,13 +221,9 @@ body.home-page .nav-theme-btn:hover {
 .home-license {
   font-size: 9.5px;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.12);
+  color: rgba(139, 153, 174, 0.85);
   margin: 0;
   text-transform: uppercase;
-}
-
-[data-theme="light"] .home-license {
-  color: rgba(50, 42, 32, 0.16);
 }
 
 .home-license a {
@@ -314,38 +233,59 @@ body.home-page .nav-theme-btn:hover {
 }
 
 .home-license a:hover {
-  color: rgba(255, 255, 255, 0.38);
-}
-
-[data-theme="light"] .home-license a:hover {
-  color: rgba(26, 20, 12, 0.45);
+  color: var(--accent);
 }
 
 /* ── Mobile ───────────────────────────────────────────────────────────────── */
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
+  /* Let the page scroll instead of clipping on short screens; the
+     vignette is fixed, so it stays put. */
+  body.home-page {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .home-stage {
+    padding: 36px 22px calc(28px + env(safe-area-inset-bottom));
+  }
+
+  .home-center {
+    width: 100%;
+  }
+
   .home-sections {
     flex-direction: column;
     align-items: center;
     gap: 0;
-    margin-bottom: 44px;
+    margin-bottom: 36px;
+    width: 100%;
   }
 
   .home-section {
-    padding: 20px 0;
+    padding: 16px 0;
     width: 100%;
   }
 
   .home-section + .home-section {
     border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    border-top: 1px solid rgba(14, 26, 43, 0.12);
   }
 
-  [data-theme="light"] .home-section + .home-section {
-    border-top-color: rgba(50, 42, 32, 0.12);
+  .home-section-label {
+    font-size: 19px;
   }
 
   .home-divider {
-    margin: 32px auto;
+    margin: 26px auto;
+    height: 36px;
+  }
+
+  /* Keep the whole limb — zenith dot included — clear of the nav. */
+  .home-plate {
+    width: clamp(230px, 64vw, 320px);
+    height: clamp(230px, 64vw, 320px);
+    transform: translate(-50%, -34%);
   }
 }

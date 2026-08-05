@@ -13,26 +13,40 @@ html {
   -webkit-text-size-adjust: 100%
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAPIS & GOLD — the one palette
+   ═══════════════════════════════════════════════════════════════════════════
+   An astronomer's paper. Two pigments carry the whole site: ultramarine
+   ground from lapis — the ink of Persian illumination, of the celestial
+   atlas, of নীল — and the gold leaf that marks what matters. Everything
+   else is the paper they sit on: a cool chalk ground (the accent at ~7%
+   over white) with near-white reading surfaces lifted off it, so a poem
+   always sits on the brightest thing on the page.
+
+   Lapis is structure and interaction (links, active states, the vine).
+   Gold is marginalia and emphasis only (line numbers, the diagonal of a
+   trellis, the beacon at the zenith) — never a surface, never a paragraph.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 :root {
-  /* ── Temple & Saffron — DAY (warm sand, terracotta-saffron, deep teal) ── */
-  --accent: #c2531f;            /* terracotta-saffron */
-  --accent-2: #1f6f6a;          /* deep teal — secondary */
-  --accent-light: rgba(194, 83, 31, 0.10);
-  --accent-mid: rgba(194, 83, 31, 0.34);
-  --text: #241a14;
-  --text-2: #4a3729;
-  --text-3: #7c6552;
-  --text-4: #a98e72;
-  --surface: #f8f0e6;
-  --surface-2: #eddcc9;
-  --surface-3: #e2ceb5;
-  --border: rgba(74, 45, 22, 0.16);
-  --border-2: rgba(74, 45, 22, 0.30);
-  --bg: #f1e7dd;
+  --accent: #1d4f9b;            /* lapis — ultramarine ink */
+  --accent-2: #a97c18;          /* gold — illumination, marginalia */
+  --accent-light: rgba(29, 79, 155, 0.09);
+  --accent-mid: rgba(29, 79, 155, 0.32);
+  --text: #0e1a2b;              /* ink */
+  --text-2: #2c3e57;
+  --text-3: #5a6b85;
+  --text-4: #8b99ae;
+  --surface: #fbfcfe;           /* fresh paper — panels, cards, the nav */
+  --surface-2: #e0e5ef;
+  --surface-3: #cfd7e5;
+  --border: rgba(14, 26, 43, 0.13);
+  --border-2: rgba(14, 26, 43, 0.26);
+  --bg: #ebeff6;                /* chalk ground */
   --r: 8px;
   --r-sm: 4px;
-  --sh-sm: 0 1px 2px rgba(74, 45, 22, .07), 0 1px 1px rgba(74, 45, 22, .05);
-  --sh: 0 6px 24px rgba(74, 45, 22, .13), 0 1px 3px rgba(74, 45, 22, .07);
+  --sh-sm: 0 1px 2px rgba(14, 26, 43, .06), 0 1px 1px rgba(14, 26, 43, .04);
+  --sh: 0 6px 24px rgba(14, 26, 43, .10), 0 1px 3px rgba(14, 26, 43, .06);
   /* Type system */
   --display-font: 'Fraunces', Georgia, 'Times New Roman', serif;
   --serif-font: 'Spectral', Georgia, 'Times New Roman', serif;
@@ -40,6 +54,11 @@ html {
   /* Unified Bangla stack — Tiro Bangla (designed for literary reading) as
      primary; Noto Serif Bengali covers weights Tiro lacks; system fonts last. */
   --bn-font: 'Noto Serif Bengali', 'Tiro Bangla', 'Kalpurush', 'SolaimanLipi', Georgia, serif;
+  /* The chrome speaks in a different Bangla voice from the page: Tiro Bangla
+     leads here (the page leads with Noto Serif Bengali), so the menubar and
+     the menu sheet read as lettering rather than as UI. One weight only —
+     never ask it for 500, that is a synthetic bold and it muddies. */
+  --bn-display: 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif;
   /* Motion */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,6 +66,18 @@ html {
   --dur-slow: 0.42s;
   /* Tracking for uppercase micro-labels */
   --ls-label: 0.14em;
+  /* The menubar's height. Anything that sticks under the nav — the Panthea
+     topbar, the Gitabitan search rule, the book page's full-height panels —
+     measures from this, so the bar can be resized in exactly one place. */
+  --nav-h: 50px;
+  /* …and what it draws back to once the page is moving. Anything that sticks
+     under the bar measures from THIS one, because sticking only ever happens
+     after the bar has already narrowed. */
+  --nav-h-min: 42px;
+  /* …and the one the layout should actually use right now. <html> carries
+     .nav-tight while the page is scrolled, so a full-height panel beside
+     the bar (the dual-panel translation pages) narrows with it. */
+  --nav-now: var(--nav-h);
 }
 
 body {
@@ -61,8 +92,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Candlelit depth on every inner page — a warm glow from the top edge and a
-   soft vignette toward the corners. The home page paints its own starfield. */
+/* Depth on every inner page — one soft light on the paper from above, no
+   more. The chalk ground carries the rest flat. */
 body:not(.home-page)::before {
   content: '';
   position: fixed;
@@ -70,37 +101,23 @@ body:not(.home-page)::before {
   pointer-events: none;
   z-index: -1;
   background:
-    radial-gradient(ellipse 80% 55% at 50% -8%,
-      rgba(194, 83, 31, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 120% 80% at 50% 50%,
-      transparent 55%, rgba(74, 40, 18, 0.06) 100%);
+    radial-gradient(ellipse 90% 38% at 50% -12%,
+      rgba(255, 255, 255, 0.62) 0%, transparent 58%);
   /* Own compositor layer so the fixed gradient doesn't repaint on scroll. */
   transform: translateZ(0);
   will-change: transform;
 }
 
-[data-theme="dark"] body:not(.home-page)::before {
-  background:
-    radial-gradient(ellipse 80% 55% at 50% -8%,
-      rgba(224, 145, 63, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 120% 85% at 50% 50%,
-      transparent 45%, rgba(0, 0, 0, 0.55) 100%);
-}
-
-/* Fine film grain — candlelit texture, kept low enough not to muddy text. */
+/* Fine grain — plate emulsion, kept low enough not to muddy text. */
 body:not(.home-page)::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.04;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   transform: translateZ(0);
-}
-
-[data-theme="dark"] body:not(.home-page)::after {
-  opacity: 0.06;
 }
 
 /* Links — an underline that grows in on hover instead of the default rule */
@@ -135,25 +152,152 @@ a:hover {
   border-radius: 3px;
 }
 
-/* NAV — blends with the page background; no separate band */
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE MENUBAR
+   ═══════════════════════════════════════════════════════════════════════════
+   A single hairline shelf that floats over the paper. Three parts: the mark
+   (home, and a dial that turns when you touch it), the section names, and
+   the page you are on. One glide rail does all the state — it rests under
+   the active section and follows the pointer, so nothing else has to move.
+   Below 760px the names fold into the menu sheet at the end of this file. */
+
 .nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(1.2) blur(14px);
-  -webkit-backdrop-filter: saturate(1.2) blur(14px);
+  /* Slick, not frosted: the chalk held thin over a light blur, closed by a
+     single hairline. The same shelf on every page, home included. */
+  background: color-mix(in srgb, var(--bg) 76%, transparent);
+  backdrop-filter: saturate(1.25) blur(14px);
+  -webkit-backdrop-filter: saturate(1.25) blur(14px);
   border-bottom: 1px solid var(--border);
+  transition: background var(--dur) ease, border-color var(--dur) ease,
+              box-shadow var(--dur) ease;
+}
+
+/* The shelf never leaves — on any page, at any scroll depth. What changes
+   is its height, its glass, and the progress it draws along its edge. */
+
+.nav-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1.5px;
+  transform-origin: left center;
+  transform: scaleX(var(--p, 0));
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+.nav.is-scrolled .nav-progress { opacity: 1; }
+
+/* Once the paper starts moving under it the shelf tightens: a touch more
+   body so text cannot ghost through, and the faintest lift off the page. */
+.nav.is-scrolled {
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  box-shadow: 0 10px 22px -22px rgba(14, 26, 43, 0.65);
 }
 
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 52px;
+  height: var(--nav-now);
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 20px;
+  transition: height var(--dur-slow) var(--ease-out);
+}
+
+/* Narrower once the paper is moving: the shelf gives its height back to
+   the page and holds at the top. */
+html.nav-tight { --nav-now: var(--nav-h-min); }
+
+/* ── The mark ──────────────────────────────────────────────────────────── */
+
+.nav-mark {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Sized against the shelf, not chosen freely: 34 of the resting 50px and
+     29 of the tightened 42px leave the same breathing ring above and below,
+     so the dial keeps its place as the bar narrows. */
+  width: 34px;
+  height: 34px;
+  background-image: none;
+  border-radius: 50%;
+  transition: width var(--dur-slow) var(--ease-out), height var(--dur-slow) var(--ease-out);
+}
+
+.nav.is-scrolled .nav-mark { width: 29px; height: 29px; }
+
+.nav-mark svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.nav-mark .nm-ring {
+  fill: none;
+  stroke: var(--text-4);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  transition: stroke var(--dur) ease;
+}
+
+.nav-mark .nm-ticks line {
+  stroke: var(--text-3);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  transition: stroke var(--dur) ease;
+}
+
+/* The dial reads the page: a quarter turn from the top of the document to
+   the bottom, plus a kick when you touch it. Both fold into one rotation. */
+.nav-mark .nm-ticks {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(calc(var(--p, 0) * 90deg + var(--kick, 0deg)));
+  transition: transform .5s var(--ease-out);
+}
+
+.nav-mark .nm-zenith {
+  fill: var(--accent);
+  r: 8;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform var(--dur) var(--ease), fill var(--dur) ease;
+}
+
+.nav-mark:hover,
+.nav-mark:focus-visible           { --kick: 45deg; }
+.nav-mark:hover .nm-ring          { stroke: var(--accent); }
+.nav-mark:hover .nm-ticks line    { stroke: var(--accent-mid); }
+.nav-mark:hover .nm-zenith        { transform: scale(1.28); }
+
+/* On the home page the mark itself is the active item. */
+.nav-mark.is-here .nm-ring { stroke: var(--accent); }
+.nav-mark.is-here .nm-ticks line { stroke: var(--accent-mid); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .nav-inner,
+  .nav-links a,
+  .nav-mark,
+  .nav-mark .nm-ticks { transition: none; }
+  .nav-mark .nm-ticks { transform: none; }
+}
+
+/* ── The section names ─────────────────────────────────────────────────── */
+
+.nav-links-wrap {
+  position: relative;
+  display: flex;
+  min-width: 0;
 }
 
 .nav-links {
@@ -164,42 +308,54 @@ a:hover {
   margin: 0;
 }
 
+/* One type size for everything on the shelf — section names, breadcrumb,
+   সূচি — carried by --nav-fs so the whole bar breathes in and out together
+   when it narrows on scroll. */
+.nav { --nav-fs: 16.5px; }
+.nav.is-scrolled { --nav-fs: 15.5px; }
+
 .nav-links a {
   position: relative;
+  z-index: 1;
   display: block;
-  padding: 7px 10px 8px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: var(--bn-font);
-  letter-spacing: 0.04em;
-  color: var(--text-3);
-  transition: color var(--dur) ease;
+  padding: 6px 14px 7px;
+  font-size: var(--nav-fs);
+  font-weight: 400;
+  font-family: var(--bn-display);
+  letter-spacing: 0.015em;
+  line-height: 1.35;
+  transition: color var(--dur) ease, font-size var(--dur-slow) var(--ease-out);
+  color: var(--text-2);
+  white-space: nowrap;
 }
 
-.nav-links a::after {
-  content: '';
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent); }
+
+/* The rail: a soft wash with a lapis rule along its foot. JS sizes and
+   moves it; before it is measured it stays invisible, so nothing flashes. */
+.nav-glide {
   position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 4px;
-  height: 1.5px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--dur) var(--ease);
+  left: 0;
+  top: 3px;
+  bottom: 2px;
+  width: 0;
+  border-radius: 3px 3px 0 0;
+  /* a rule with the faintest light standing on it — not a button */
+  background: linear-gradient(to bottom,
+    transparent 42%, rgba(29, 79, 155, 0.07) 100%);
+  box-shadow: inset 0 -1.5px 0 var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition: transform .42s var(--ease-out), width .42s var(--ease-out),
+              opacity .22s ease;
 }
 
-.nav-links a:hover {
-  color: var(--text);
-}
+.nav-glide.is-on { opacity: 1; }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  transform: scaleX(1);
-}
-
-.nav-links a.active {
-  color: var(--accent);
+@media (prefers-reduced-motion: reduce) {
+  .nav-glide { transition: opacity .2s ease; }
 }
 
 /* PAGE INTRO — title block at the top of each page's content area */
@@ -385,13 +541,42 @@ a:hover {
   color: var(--accent)
 }
 
+/* ── Mobile chrome ———————————————————————————————————————————————————— */
 @media(max-width:640px) {
 
-  .nav-inner,
-  .main {
-    padding-left: 16px;
-    padding-right: 16px
+  .nav-inner {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+    gap: 12px;
   }
+
+  .main {
+    padding: 44px 20px 56px;
+  }
+
+  .page-intro {
+    padding: 36px 20px 22px;
+  }
+
+  .page-intro h1 {
+    font-size: clamp(27px, 7.5vw, 34px);
+  }
+
+  /* Listing rows: taller tap targets, no hover-indent jump on touch */
+  .listing-item {
+    padding: 14px 12px 14px 6px;
+  }
+
+  .listing-item:hover {
+    padding-left: 6px;
+    background: none;
+  }
+
+  .listing-item:hover::before { width: 0; }
+
+  /* Legacy .trans-* tables: let verse wrap rather than scroll */
+  .trans-bn,
+  .trans-fa { white-space: normal; }
 
   .home-hero {
     padding: 28px 24px
@@ -823,7 +1008,7 @@ a:hover {
   cursor: pointer;
   display: inline-block;
   /* Adds a very subtle dotted underline to indicate it's interactive */
-  border-bottom: 1px dotted rgba(156, 163, 175, 0.6);
+  border-bottom: 1px dotted rgba(90, 107, 133, 0.55);
 }
 
 .has-tooltip::after {
@@ -888,52 +1073,24 @@ h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .section-intro, .piece
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   THEME SYSTEM — DARK MODE + INTERACTIVE VARS
+   INTERACTIVE VARS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Matrix / cell interactive color vars (defined here so dark mode can override) */
+/* Matrix / cell interactive color vars — lapis for any cell, gold for the
+   diagonal (where a subject meets its own property). */
 :root {
-  --cell-active-bg: rgba(194, 83, 31, 0.16);
-  --cell-active-text: #9a3f1c;
-  --cell-active-accent: #c2531f;
-  --cell-hover-bg: rgba(194, 83, 31, 0.08);
-  --cell-cross-bg: rgba(194, 83, 31, 0.05);
-  --diag-bg: rgba(31, 111, 106, 0.15);
-  --diag-hover-bg: rgba(31, 111, 106, 0.24);
-  --diag-accent: #1f6f6a;
-  --diag-border: rgba(31, 111, 106, 0.50);
+  --cell-active-bg: rgba(29, 79, 155, 0.14);
+  --cell-active-text: #163f7d;
+  --cell-active-accent: #1d4f9b;
+  --cell-hover-bg: rgba(29, 79, 155, 0.07);
+  --cell-cross-bg: rgba(29, 79, 155, 0.05);
+  --diag-bg: rgba(169, 124, 24, 0.14);
+  --diag-hover-bg: rgba(169, 124, 24, 0.24);
+  --diag-accent: #a97c18;
+  --diag-border: rgba(169, 124, 24, 0.50);
 }
 
-/* ── Temple & Saffron — NIGHT (oxblood-black, glowing saffron, jade teal) ── */
-[data-theme="dark"] {
-  --accent: #e0913f;            /* saffron, brightened for the dark */
-  --accent-2: #3fb0a3;          /* jade teal — secondary */
-  --accent-light: rgba(224, 145, 63, 0.13);
-  --accent-mid: rgba(224, 145, 63, 0.40);
-  --text: #efe2d6;
-  --text-2: #cdb9a6;
-  --text-3: #9a8472;
-  --text-4: #6e5b4c;
-  --surface: #1d1511;
-  --surface-2: #271b15;
-  --surface-3: #33231b;
-  --border: rgba(240, 220, 200, 0.12);
-  --border-2: rgba(240, 220, 200, 0.24);
-  --bg: #130d0b;
-  --sh-sm: 0 1px 3px rgba(0, 0, 0, .55), 0 1px 2px rgba(0, 0, 0, .4);
-  --sh: 0 4px 18px rgba(0, 0, 0, .65), 0 1px 4px rgba(0, 0, 0, .45);
-  --cell-active-bg: rgba(224, 145, 63, 0.18);
-  --cell-active-text: #f2c089;
-  --cell-active-accent: #e0913f;
-  --cell-hover-bg: rgba(224, 145, 63, 0.09);
-  --cell-cross-bg: rgba(224, 145, 63, 0.06);
-  --diag-bg: rgba(63, 176, 163, 0.14);
-  --diag-hover-bg: rgba(63, 176, 163, 0.24);
-  --diag-accent: #3fb0a3;
-  --diag-border: rgba(63, 176, 163, 0.45);
-}
-
-/* Smooth theme transition on key elements */
+/* Smooth surface transitions on key elements */
 html,
 body,
 .nav,
@@ -946,199 +1103,449 @@ body,
               box-shadow .3s ease;
 }
 
-/* ── Nav right side: page context + theme toggle ────────────────────────────── */
+/* ── Nav right side: where you are, and the menu key ───────────────────── */
+/* The far-right cluster: the four section names, and the menu key that
+   replaces them below the fold breakpoint. `margin-left: auto` is what drives
+   the whole bar's shape — mark and breadcrumb held together at the left, the
+   site's rooms pushed to the opposite end. */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
   margin-left: auto;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
-/* Current-page breadcrumb: Parent › Title */
+/* Current-page breadcrumb: Grandparent › Parent › [ Title │ সূচি ].
+   Glass keys on the glass shelf, all set at the bar's one type size.
+   Ancestors are quiet surface keys with a hairline border; small gold
+   chevrons step between them. The current page is the one gilt key — a
+   gold hairline frame, the title in Tiro true italic, and (when the page
+   has a TOC) the সূচি beyond a thin divider inside the same key. The whole
+   gilt key is one target: press it anywhere and the সূচি opens — this page
+   and its contents are one thing, the ancestors are other pages. */
+/* It sits immediately after the mark, so the two read as one cluster: whose
+   site, then which page. It yields before the section names do. */
 .nav-page-info {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-family: var(--bn-font);
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  gap: 8px;
+  flex: 0 1 auto;
+  font-family: var(--bn-display);
+  font-size: var(--nav-fs);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 320px;
-  color: var(--text-3);
+  max-width: 520px;
 }
 
 .nav-parent {
-  color: var(--text-4);
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 13px 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: color-mix(in srgb, var(--surface) 20%, transparent);
+  color: var(--text-2);
   text-decoration: none;
-  transition: color var(--dur) ease;
   font-weight: 400;
+  transition: color var(--dur) ease, border-color var(--dur) ease,
+              background var(--dur) ease, box-shadow var(--dur) ease,
+              font-size var(--dur-slow) var(--ease-out);
 }
 
-.nav-parent:hover { color: var(--accent); }
+.nav-parent:hover {
+  color: var(--accent);
+  border-color: var(--accent-mid);
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+  box-shadow: var(--sh-sm);
+}
 
+/* the step marks — drawn gold chevrons, unmissable but fine-lined */
 .nav-sep {
-  color: var(--text-4);
-  opacity: 0.55;
-  font-size: 10px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-2);
+}
+
+.nav-sep svg { display: block; }
+
+/* the gilt key: current page + its সূচি behind one gold hairline frame */
+.nav-here {
+  display: inline-flex;
+  align-items: stretch;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 48%, transparent);
+  border-radius: var(--r);
+  background: color-mix(in srgb, var(--accent-2) 5%, transparent);
+  overflow: hidden;
+  transition: border-color var(--dur) ease, background var(--dur) ease,
+              box-shadow var(--dur) ease;
+}
+
+.nav-here.has-toc { cursor: pointer; }
+
+.nav-here.has-toc:hover,
+.nav-here.has-toc:focus-within {
+  border-color: color-mix(in srgb, var(--accent-2) 80%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 9%, transparent);
+  box-shadow: var(--sh-sm);
 }
 
 .nav-cur {
-  color: var(--text-2);
-  font-weight: 500;
+  flex-shrink: 1;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-@media (max-width: 640px) {
-  .nav-page-info { display: none; }
-}
-
-/* Theme toggle button — blends with nav, no separate chrome */
-.nav-theme-btn {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-3);
-  border-radius: var(--r-sm);
-  width: 30px;
-  height: 30px;
-  font-size: 14px;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .15s, color .15s, border-color .15s;
-  flex-shrink: 0;
-}
-.nav-theme-btn:hover {
+  padding: 3px 13px 4px;
+  font-size: var(--nav-fs);
+  font-weight: 400;
   color: var(--text);
-  border-color: var(--border-2);
+  transition: font-size var(--dur-slow) var(--ease-out);
 }
 
-/* Sun icon in light mode, moon icon in dark mode (CSS content) */
-[data-theme="light"] .nav-theme-btn::before { content: '☀'; }
-[data-theme="dark"]  .nav-theme-btn::before { content: '☾'; }
+/* ── The menu key — two rules that cross when the sheet is open ────────── */
+.nav-key {
+  display: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: -8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-key-bar {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 1.5px;
+  background: var(--text-2);
+  border-radius: 1px;
+  transition: transform .34s var(--ease-out), width .34s var(--ease-out),
+              background-color var(--dur) ease;
+}
+
+.nav-key-bar:nth-child(1) { top: 17px; }
+.nav-key-bar:nth-child(2) { top: 23px; width: 13px; }
+
+.nav-key:hover .nav-key-bar { background: var(--accent); }
+.nav-key:hover .nav-key-bar:nth-child(2) { width: 20px; }
+
+.nav-key[aria-expanded="true"] .nav-key-bar {
+  background: var(--accent);
+  width: 21px;
+}
+.nav-key[aria-expanded="true"] .nav-key-bar:nth-child(1) { transform: translateY(3px) rotate(45deg); }
+.nav-key[aria-expanded="true"] .nav-key-bar:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   TOC RAIL — fixed right rail, centred vertically.
-   Collapsed to a column of horizontal dash markers; on hover/focus-within
-   the whole panel expands to show labelled links with frosted-glass chrome.
-   Scroll-spy marks past sections and highlights the active one.
-   Hidden below 78 rem where there is no room beside the content column.
-   ═══════════════════════════════════════════════════════════════════════════ */
+   THE MENU SHEET — small screens
+   ═══════════════════════════════════════════════════════════════════════════
+   Not a dropdown: the page steps back behind frosted chalk and the four
+   sections stand at reading size, each under its own gloss, rising in
+   sequence. The mark is printed large behind them, the same limb the home
+   page carries — so the menu is unmistakably this site's, not a component. */
 
-.toc {
+.nav-sheet {
   position: fixed;
-  top: 50%;
-  right: 0.6rem;
-  transform: translateY(-50%);
-  z-index: 200;
-  display: none;
+  inset: 0;
+  /* under the bar, never over it — the key that closes the sheet has to
+     stay reachable, and the glass shelf reads over the frosted page */
+  z-index: 90;
+  display: flex;
   flex-direction: column;
-  max-height: 82vh;
-  overflow: hidden;
-  font-family: var(--ui-font);
-  border: 1px solid transparent;
-  transition: background 0.2s ease, box-shadow 0.2s ease,
-              padding 0.2s ease, border-color 0.2s ease;
-}
-
-@media (min-width: 78rem) {
-  .toc { display: flex; }
-}
-
-.toc__title {
-  align-self: flex-end;
-  margin: 0 0.25rem 0.5rem;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--text-3);
+  justify-content: flex-start;
+  padding: calc(var(--nav-h) + 24px) max(26px, env(safe-area-inset-left))
+           calc(34px + env(safe-area-inset-bottom)) max(26px, env(safe-area-inset-right));
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: saturate(1.4) blur(22px);
+  -webkit-backdrop-filter: saturate(1.4) blur(22px);
   opacity: 0;
-  transition: opacity 0.18s ease;
+  transition: opacity .3s ease;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
-.toc__list {
+.nav-sheet.is-open { opacity: 1; }
+
+/* The limb, printed faint behind the names */
+.nav-sheet-plate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(104vw, 560px);
+  height: min(104vw, 560px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.nav-sheet-plate .nm-ring {
+  fill: none;
+  stroke: rgba(29, 79, 155, 0.13);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nav-sheet-plate .nm-ticks line {
+  stroke: rgba(29, 79, 155, 0.16);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nav-sheet-plate .nm-zenith { fill: rgba(29, 79, 155, 0.24); r: 1.7; }
+
+.nav-sheet-list {
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
+  width: 100%;
+  max-width: 480px;
+  /* auto margins centre it when there is room and let it scroll when not */
+  margin: auto;
 }
 
-.toc__item { margin: 0; }
+.nav-sheet-list li { border-top: 1px solid var(--border); }
+.nav-sheet-list li:last-child { border-bottom: 1px solid var(--border); }
 
-.toc__link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.65rem;
-  padding: 0.16rem 0.25rem;
-  border-radius: var(--r-sm);
-  color: var(--text-3);
-  text-decoration: none;
+.nav-sheet-item {
+  display: block;
+  padding: 17px 2px 16px;
+  background-image: none;
+  color: inherit;
 }
 
-.toc__label {
-  max-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 0.82rem;
+.nav-sheet-label {
+  display: block;
+  font-family: var(--bn-display);
+  font-size: clamp(24px, 7.2vw, 31px);
+  font-weight: 400;
   line-height: 1.3;
-  opacity: 0;
-  transition: max-width 0.24s ease, opacity 0.18s ease, color 0.15s ease;
+  color: var(--text);
+  transition: color var(--dur) ease;
 }
 
-.toc__marker {
-  flex: none;
-  width: 1.1rem;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--border-2);
-  transition: width 0.18s ease, background 0.15s ease;
+.nav-sheet-gloss {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--bn-display);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--text-3);
 }
 
-.toc__link.is-past .toc__marker {
-  background: color-mix(in srgb, var(--accent) 42%, var(--border-2));
-}
-
-.toc__link.is-active .toc__marker {
-  width: 1.7rem;
+/* The section you are in wears the lapis and a marker in the margin. */
+.nav-sheet-item.active { position: relative; }
+.nav-sheet-item.active .nav-sheet-label { color: var(--accent); }
+.nav-sheet-item.active::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -8px;
+  border-radius: 50%;
   background: var(--accent);
 }
 
-.toc__link.is-active .toc__label {
-  color: var(--text);
-  font-weight: 600;
+.nav-sheet-item:active .nav-sheet-label { color: var(--accent); }
+
+/* Each name rises after the one above it */
+.nav-sheet.is-open .nav-sheet-list li {
+  animation: sheet-rise .52s var(--ease-out) both;
+  animation-delay: calc(var(--i) * 55ms + 40ms);
 }
 
-/* Expand on hover / keyboard focus */
-.toc:hover,
-.toc:focus-within {
-  background: color-mix(in srgb, var(--surface) 90%, transparent);
-  backdrop-filter: saturate(1.2) blur(10px);
-  -webkit-backdrop-filter: saturate(1.2) blur(10px);
-  border-color: var(--border);
-  border-radius: calc(var(--r) + 4px);
-  padding: 0.7rem 0.85rem;
-  box-shadow: var(--sh);
+@keyframes sheet-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-.toc:hover .toc__title,
-.toc:focus-within .toc__title { opacity: 1; }
-
-.toc:hover .toc__label,
-.toc:focus-within .toc__label { max-width: 13rem; opacity: 1; }
-
-.toc__link:hover { color: var(--text); }
-.toc__link:hover .toc__label { color: var(--text); }
-.toc__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .toc, .toc__label, .toc__marker { transition: none; }
+  .nav-sheet { transition: none; }
+  .nav-sheet.is-open .nav-sheet-list li { animation: none; }
+}
+
+/* While the sheet is open the page underneath must not scroll */
+body.nav-open { overflow: hidden; }
+
+/* ── Fold: below 760px the names live in the sheet ─────────────────────── */
+@media (max-width: 760px) {
+  .nav-links-wrap { display: none; }
+  .nav-key { display: block; }
+}
+
+@media (min-width: 761px) {
+  .nav-sheet { display: none; }
+}
+
+@media (max-width: 900px) {
+  .nav-page-info { max-width: 240px; }
+  /* the ancestors bow out on a narrow shelf — the gilt key stays */
+  .nav-parent, .nav-sep { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   সূচি — the table of contents lives in the menubar (site.js injects the key
+   into .nav-right when a page has ≥2 [data-toc] targets). The key opens a
+   frosted panel hanging under the shelf: a list of section names, or — with
+   `tocStyle: 'grid'` in the page config — a grid of bare numbers (the
+   ghazals). Scroll-spy marks the active entry and dims the passed ones.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.toc-key {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--bn-display);
+  font-size: var(--nav-fs);
+  line-height: 1.5;
+  color: var(--accent);
+  background: none;
+  border: none;
+  border-left: 1px solid var(--border);   /* the divider inside the gilt key */
+  padding: 3px 12px 4px;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease),
+              font-size var(--dur-slow) var(--ease-out);
+}
+
+.toc-key:hover,
+.nav-here.has-toc:hover .toc-key,
+.toc-key.is-open {
+  background: var(--accent-light);
+}
+
+/* a সূচি key standing alone (page with a TOC but no breadcrumb) gets its
+   own full frame instead of the gilt key's inner divider */
+/* the standalone সূচি on a page with no breadcrumb: it still sits in the left
+   cluster beside the mark, so it wears a key's own frame */
+.nav-inner > .toc-key {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+}
+
+.toc-key-caret {
+  display: inline-block;
+  font-size: 0.6em;
+  opacity: 0.75;
+  transition: transform 0.18s var(--ease);
+}
+
+.toc-key.is-open .toc-key-caret {
+  transform: rotate(180deg);
+}
+
+/* A সূচি jump must not land its target under the shelf. Sticking only ever
+   happens after the bar has narrowed, so the offset is --nav-h-min; a page
+   with its own sticky rule under the bar (Panthea's topbar, গীতবিতান's search
+   rule) adds that rule's height to this in its own stylesheet. */
+[data-toc] {
+  scroll-margin-top: calc(var(--nav-h-min) + 12px);
+}
+
+.toc-menu {
+  position: fixed;
+  top: calc(var(--nav-now) + 8px);
+  /* the gilt key lives at the left of the shelf, so the panel hangs from its
+     LEFT edge; site.js sets this on open and clamps it to the viewport */
+  left: 10px;
+  right: auto;
+  z-index: 260;
+  min-width: 13rem;
+  max-width: min(34rem, calc(100vw - 20px));
+  /* never a scrollbar — a long list breaks into columns instead */
+  overflow: visible;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  backdrop-filter: saturate(1.2) blur(14px);
+  -webkit-backdrop-filter: saturate(1.2) blur(14px);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--r) + 4px);
+  box-shadow: var(--sh);
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease),
+              top var(--dur-slow) var(--ease-out);
+}
+
+.toc-menu.is-open {
+  opacity: 1;
+  transform: none;
+}
+
+.toc-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* long lists fold into columns (site.js counts the entries) */
+.toc-menu--cols2 .toc-menu__list { columns: 2; column-gap: 0.5rem; }
+.toc-menu--cols3 .toc-menu__list { columns: 3; column-gap: 0.5rem; }
+
+.toc-menu--cols2 .toc-menu__list li,
+.toc-menu--cols3 .toc-menu__list li {
+  break-inside: avoid;
+}
+
+.toc-menu__link {
+  display: block;
+  padding: 0.32rem 0.75rem;
+  border-radius: var(--r-sm);
+  font-family: var(--bn-display);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-2);
+  text-decoration: none;
+  background-image: none;
+}
+
+.toc-menu__link:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.toc-menu__link.is-past { color: var(--text-4); }
+
+.toc-menu__link.is-active {
+  color: var(--accent);
+  font-weight: 600;
+  background: var(--accent-light);
+}
+
+/* Grid shape — the ghazals: bare numbers in rows of six */
+.toc-menu--grid {
+  min-width: 0;
+  width: 16.5rem;
+}
+
+.toc-menu--grid .toc-menu__list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+}
+
+.toc-menu--grid .toc-menu__link {
+  padding: 0.3rem 0;
+  text-align: center;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc-menu { transition: none; }
 }
 
 /* ── Divine Comedy index ─────────────────────────────────────────────────── */

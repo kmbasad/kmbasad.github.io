@@ -20,12 +20,13 @@ const { en, bn, hasEn, prev, next } = Astro.props;
 ---
 
 <Base
-  title={`${en} — Alaol's Sapta Paykar — KMBA`}
   section="pangea"
   styles={['/css/translation-table.css', '/css/book.css']}
   navTitle={bn}
   navParentHref="/pangea/alaol-sapta-paykar/"
   navParentLabel="সপ্ত পয়কর"
+  navGrandParentHref="/pangea/"
+  navGrandParentLabel="প্যাঞ্জিয়া"
 >
   <Fragment slot="head">
     <link
@@ -78,7 +79,13 @@ const { en, bn, hasEn, prev, next } = Astro.props;
       margin-top: 2rem;
     }
     @media (max-width: 640px) {
-      .pangea-page { padding: 20px 14px 48px; }
+      /* Verse cells carry their own side padding on phones (≤640 block in
+         translation-table.css), so the column goes edge-to-edge. */
+      .pangea-page { padding: 12px 0 48px; }
+      .pangea-page .book-nav {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
     }
   </style>
 

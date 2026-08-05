@@ -240,10 +240,17 @@
   }
 
   // ── Build full matrix from a 2D grid and mount into a container ────────
-  function buildMatrix(mountId, tsv) {
+  // `opts` carries what the data file knows but the grid does not: the
+  // matrix's own `# Title`, the stable anchor the menubar সূচি scrolls to,
+  // and whether that title should also be drawn. It is drawn only on a page
+  // holding several matrices — where the two tables would otherwise butt up
+  // against each other unlabelled. A page with one matrix already wears its
+  // name in the breadcrumb and must not repeat it.
+  function buildMatrix(mountId, tsv, opts) {
     var mount = document.getElementById(mountId);
     if (!mount) return;
     if (!tsv || !tsv.length) return;
+    opts = opts || {};
 
     var nRows = tsv.length - 1;
     var nCols = tsv[0].length - 1;
@@ -289,7 +296,18 @@
     // ── Container ────────────────────────────────────────────────────────
     var container = document.createElement('div');
     container.className = 'matrix-container';
-    container.id = ids.container;
+    /* The anchor is the matrix's position in its file, not a uid() draw:
+       uid() runs sixteen times per matrix, so a counter-derived id would
+       shift the moment another id joined the list above. */
+    container.id = opts.anchor || ids.container;
+    if (opts.title) container.setAttribute('data-toc', opts.title);
+
+    if (opts.title && opts.showTitle) {
+      var mxTitle = document.createElement('h2');
+      mxTitle.className = 'matrix-title';
+      mxTitle.textContent = opts.title;
+      container.appendChild(mxTitle);
+    }
 
     // fsBtn lives inside the corner cell — built here, injected below.
     // Icon-only (no text) so the corner cell stays clean.
@@ -759,7 +777,12 @@
     }
 
     var html = '';
-    if (title) html += '<div class="section-title">' + title + '</div>\n';
+    /* the essay is the page's last স্টেশন — an anchor here puts it in the
+       menubar সূচি under its own name, below the matrices */
+    if (title) {
+      html += '<div class="section-title" id="essay" data-toc="' +
+        title.replace(/"/g, '&quot;') + '">' + title + '</div>\n';
+    }
     if (intro) html += '<p class="section-intro">' + inlineMarkup(intro) + '</p>\n';
 
     var bodyParts = blocks.slice(i).map(function (p) {
@@ -774,6 +797,14 @@
   }
 
   // ── Auto-discover and initialise ──────────────────────────────────────
+
+  // The matrices and the essay are fetched independently and land in either
+  // order, so each announces itself. site.js rebuilds the সূচি from scratch
+  // on every `content-ready`, so announcing twice costs nothing and
+  // announcing once would race.
+  function announce() {
+    document.dispatchEvent(new CustomEvent('content-ready'));
+  }
 
   // Split a data file into one-or-more matrix blocks. A new block begins at a
   // top-level "# " heading once the current block already holds an "axes:"
@@ -796,13 +827,27 @@
     return blocks.filter(function (b) { return b.trim(); });
   }
 
+  // The `# Title` heading a chunk opens with. parseMarkdown never reads it —
+  // it looks only for `axes:`, `## sections` and `### items` — so it is read
+  // here, where the chunks are still whole, and handed to buildMatrix.
+  function matrixTitle(chunk) {
+    var m = chunk.match(/^#\s+(.+?)\s*$/m);
+    return m ? m[1].trim() : '';
+  }
+
   function loadAndBuild(src, mountId) {
     fetch(src)
       .then(function (res) { return res.text(); })
       .then(function (text) {
-        splitMatrices(text).forEach(function (chunk) {
-          buildMatrix(mountId, parseSource(src, chunk));
+        var chunks = splitMatrices(text);
+        chunks.forEach(function (chunk, i) {
+          buildMatrix(mountId, parseSource(src, chunk), {
+            title:     matrixTitle(chunk),
+            anchor:    'mx-' + (i + 1),
+            showTitle: chunks.length > 1,
+          });
         });
+        announce();
       });
   }
 
@@ -820,7 +865,7 @@
       .then(function (res) { return res.ok ? res.text() : ''; })
       .then(function (md) {
         var mount = document.getElementById('essay-mount');
-        if (mount && md && md.trim()) renderEssay(md, mount);
+        if (mount && md && md.trim()) { renderEssay(md, mount); announce(); }
       });
   }
 

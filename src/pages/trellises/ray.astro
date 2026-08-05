@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 ---
 
-<Base title="Ray, Satyajit — KMBA" section="trellises" styles={['/css/trellis.css']}
+<Base section="trellises" styles={['/css/trellis.css']}
   navTitle="সত্যজিৎ রায়" navParentHref="/trellises/" navParentLabel="মাচা"
 >
   <Fragment slot="head">
@@ -17,8 +17,9 @@ import Base from '../../layouts/Base.astro';
     </style>
   </Fragment>
 
+  <!-- no page head: the trellis's name lives in the menubar breadcrumb, and
+       the সূচি key beside it holds the matrices and the essay -->
   <div class="page-section">
-    <h1 class="work-title">সত্যজিৎ রায়</h1>
     <div id="trellis-mount"></div>
   </div>
 

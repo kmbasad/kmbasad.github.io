@@ -7,3 +7,6 @@ dist/
 .astro/
 .DS_Store
 *.log
+
+# books workshop — private working material, not for the public repo
+books/

@@ -5,19 +5,19 @@ import { translationWorks } from '../../../data/translation-works.js';
 const work = translationWorks.find((w) => w.slug === 'metamorphoses')!;
 ---
 
-<Base title="Ovid's Metamorphoses — KMBA" section="translations"
-  navTitle="মেটামর্ফোসিজ" navParentHref="/translations/" navParentLabel="অনুবাদ"
+<Base section="translations"
+  navTitle={work.title} navParentHref="/translations/" navParentLabel="অনুবাদ"
 >
 
   <div class="main">
     <h1 class="work-title">{work.title}</h1>
 
     <div class="listing-box">
-      <!-- ARTICLES_START -->
-      <a class="listing-item" href="/translations/metamorphoses/book-i/">
-        <span class="title">প্রথম বই</span>
-      </a>
-      <!-- ARTICLES_END -->
+      {work.parts!.map((p) => (
+        <a href={`/translations/metamorphoses/${p.slug}/`} class="listing-item">
+          <span class="title">{p.title}</span>
+        </a>
+      ))}
     </div>
   </div>
 </Base>

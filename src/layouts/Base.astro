@@ -1,4 +1,6 @@
 ---
+import NavChevron from '../components/NavChevron.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -10,11 +12,12 @@ interface Props {
   navParentLabel?: string;      // breadcrumb parent label
   navGrandParentHref?: string;  // optional grandparent URL
   navGrandParentLabel?: string; // optional grandparent label
+  tocStyle?: '' | 'grid';       // সূচি shape: a list of names, or a grid of numbers
 }
 
 const {
-  title = 'KMBA',
-  description = 'Khan Muhammad Bin Asad — Panthea, Pangea, Translations, Trellises.',
+  title = '',
+  description = 'যৌথ অচেতন — খান মুহাম্মদ বিন আসাদ: প্যান্থিয়া, প্যাঞ্জিয়া, অনুবাদ, মাচা।',
   section = '',
   bodyClass = '',
   styles = [],
@@ -23,35 +26,63 @@ const {
   navParentLabel = '',
   navGrandParentHref = '',
   navGrandParentLabel = '',
+  tocStyle = '',
 } = Astro.props;
 
 const isHome = Astro.url.pathname === '/';
 
+/* The tab title is the page's whole breadcrumb read outward, ending at the
+   site's name: title/h1 — parent — grandparent — যৌথ অচেতন. Pages with a
+   breadcrumb derive it from their nav props; pages without one pass `title`
+   (their h1); home passes nothing and gets the bare site name. */
+const SITE_NAME = 'যৌথ অচেতন';
+const crumbChain = navTitle ? [navTitle, navParentLabel, navGrandParentLabel] : [title];
+const pageTitle = crumbChain
+  .filter(Boolean)
+  .filter((s) => s !== SITE_NAME)
+  .concat(SITE_NAME)
+  .join(' — ');
+
+/* হোম is not a link here — the mark is the way home. */
 const links = [
-  { href: '/',             label: 'হোম',         active: isHome },
-  { href: '/panthea/',     label: 'প্যান্থিয়া',  active: section === 'panthea' },
-  { href: '/pangea/',      label: 'প্যাঞ্জিয়া',  active: section === 'pangea' },
-  { href: '/translations/',label: 'অনুবাদ',      active: section === 'translations' },
-  { href: '/trellises/',   label: 'মাচা',        active: section === 'trellises' },
+  { href: '/panthea/',     label: 'প্যান্থিয়া', gloss: 'গদ্যকবিতায় লেখা গল্পের ধারা', active: section === 'panthea' },
+  { href: '/pangea/',      label: 'প্যাঞ্জিয়া', gloss: 'বাংলা সাহিত্যের আর্কাইভ',      active: section === 'pangea' },
+  { href: '/translations/',label: 'অনুবাদ',     gloss: 'বিশ্বসাহিত্যের বাংলা অনুবাদ',  active: section === 'translations' },
+  { href: '/trellises/',   label: 'মাচা',       gloss: 'চিন্তার মাচায় লেখা প্রবন্ধ',   active: section === 'trellises' },
 ];
+
+/* The breadcrumb's ancestors, outermost first — minus the section root.
+   The four section names are already in the bar's left cluster with the glide
+   rail resting under the active one, so repeating one as the ladder's top step
+   says nothing twice. It stays in the tab title, where there is no such
+   cluster to read it from. */
+const SECTION_ROOTS = new Set(links.map((l) => l.href));
+const ancestors = [
+  { href: navGrandParentHref, label: navGrandParentLabel },
+  { href: navParentHref,      label: navParentLabel },
+].filter((a) => a.href && a.label && !SECTION_ROOTS.has(a.href));
+
+/* The mark — the same graduated limb the home page prints large, cut down to
+   an eight-division rose with the zenith dot at its head — the identical
+   drawing the favicon carries, so the tab and the bar are one mark. Three
+   sizes: this, the watermark behind the menu sheet, and the home plate. */
+const markTicks = Array.from({ length: 8 }, (_, i) => {
+  const rad = (i * 45 - 67.5) * Math.PI / 180;
+  return {
+    x1: (50 + 33 * Math.cos(rad)).toFixed(2), y1: (50 + 33 * Math.sin(rad)).toFixed(2),
+    x2: (50 + 22 * Math.cos(rad)).toFixed(2), y2: (50 + 22 * Math.sin(rad)).toFixed(2),
+  };
+});
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ebeff6" />
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
-
-    <!-- Apply theme before paint to avoid a flash of the wrong mode -->
-    <script is:inline>
-      try {
-        var _t = localStorage.getItem('kmba-theme') ||
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', _t);
-      } catch (e) {}
-    </script>
 
     <!-- Bengali-forward typography (the work is written in Bangla) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,6 +92,10 @@ const links = [
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap"
     />
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <link rel="stylesheet" href="/css/style.css" />
     {styles.map((href) => <link rel="stylesheet" href={href} />)}
 
@@ -69,43 +104,104 @@ const links = [
     <slot name="head" />
   </head>
 
-  <body class={bodyClass}>
-    <nav class="nav">
+  <body class={bodyClass} data-toc-style={tocStyle || undefined}>
+    <nav class="nav" id="site-nav">
       <div class="nav-inner">
 
-        <!-- Left: all navigation links including home -->
-        <ul class="nav-links">
-          {links.map((l) => (
-            <li>
-              <a href={l.href} class={l.active ? 'active' : undefined}>{l.label}</a>
-            </li>
-          ))}
-        </ul>
+        <!-- The mark — links home; its dial turns on hover -->
+        <a class:list={['nav-mark', isHome && 'is-here']} href="/" aria-label="খান মুহাম্মদ বিন আসাদ — প্রথম পাতা">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <circle class="nm-ring" cx="50" cy="50" r="42" />
+            <g class="nm-ticks">
+              {markTicks.map((t) => <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />)}
+            </g>
+            <circle class="nm-zenith" cx="50" cy="8" r="6.5" />
+          </svg>
+        </a>
 
-        <!-- Right: current page context + theme toggle -->
+        <!-- Beside the mark: where you are. The mark says whose site this is
+             and the breadcrumb says which page — one cluster, read left to
+             right, before any of the site's other rooms are offered. -->
+        {navTitle && (
+          <div class="nav-page-info">
+            {ancestors.map((a) => (
+              <>
+                <a class="nav-parent" href={a.href}>{a.label}</a>
+                <NavChevron />
+              </>
+            ))}
+
+            <!-- a section may step in one more crumb of its own here — it
+                 need not be a link (Panthea's স্তর key opens the floor grid);
+                 it draws its own trailing <NavChevron /> -->
+            <slot name="nav-crumbs" />
+
+            <span class="nav-here">
+              <!-- site.js slots the সূচি inside this gilt key; the whole
+                   key then opens the table of contents. The title is the
+                   default — a section needing controls beside it (Panthea's
+                   ↑ ৫০০ ↓) replaces the whole content, keeping .nav-cur. -->
+              <slot name="nav-here"><span class="nav-cur">{navTitle}</span></slot>
+            </span>
+          </div>
+        )}
+
+        <!-- Far right: the site's four rooms, and the menu key that replaces
+             them on a narrow shelf. One glide rail follows the hovered item
+             and rests under the active one. -->
         <div class="nav-right">
-          {navTitle && (
-            <div class="nav-page-info">
-              {navGrandParentHref && navGrandParentLabel && (
-                <a class="nav-parent" href={navGrandParentHref}>{navGrandParentLabel}</a>
-              )}
-              {navGrandParentHref && navGrandParentLabel && (
-                <span class="nav-sep" aria-hidden="true">›</span>
-              )}
-              {navParentHref && navParentLabel && (
-                <a class="nav-parent" href={navParentHref}>{navParentLabel}</a>
-              )}
-              {navParentHref && navParentLabel && (
-                <span class="nav-sep" aria-hidden="true">›</span>
-              )}
-              <span class="nav-cur">{navTitle}</span>
-            </div>
-          )}
-          <button class="nav-theme-btn" id="nav-theme-btn" aria-label="Toggle theme"></button>
+          <div class="nav-links-wrap">
+            <span class="nav-glide" aria-hidden="true"></span>
+            <ul class="nav-links">
+              {links.map((l) => (
+                <li>
+                  <a href={l.href} class={l.active ? 'active' : undefined}>{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <button
+            class="nav-key"
+            id="nav-key"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-sheet"
+            aria-label="মেনু খুলুন"
+          >
+            <span class="nav-key-bar" aria-hidden="true"></span>
+            <span class="nav-key-bar" aria-hidden="true"></span>
+          </button>
         </div>
 
       </div>
+
+      <!-- how far through the page you are — drawn along the shelf's edge -->
+      <span class="nav-progress" aria-hidden="true"></span>
     </nav>
+
+    <!-- The menu sheet — small screens only. Kept outside <nav> because the
+         nav's backdrop-filter would otherwise contain its fixed position. -->
+    <div class="nav-sheet" id="nav-sheet" hidden>
+      <svg class="nav-sheet-plate" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <circle class="nm-ring" cx="50" cy="50" r="42" />
+        <g class="nm-ticks">
+          {markTicks.map((t) => <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />)}
+        </g>
+        <circle class="nm-zenith" cx="50" cy="8" r="6.5" />
+      </svg>
+
+      <ul class="nav-sheet-list">
+        {links.map((l, i) => (
+          <li style={`--i:${i}`}>
+            <a href={l.href} class={l.active ? 'nav-sheet-item active' : 'nav-sheet-item'}>
+              <span class="nav-sheet-label">{l.label}</span>
+              <span class="nav-sheet-gloss">{l.gloss}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
 
     <slot />
   </body>

@@ -3,14 +3,16 @@ import Base from '../../layouts/Base.astro';
 ---
 
 <Base
-  title="God: a journey to the fountain of existence — KMBA"
   section="trellises"
   styles={['/css/trellis.css']}
   navTitle="গড" navParentHref="/trellises/" navParentLabel="মাচা"
 >
 
+  <!-- no page head: the trellis's name lives in the menubar breadcrumb, and
+       the সূচি key beside it holds the matrices and the essay. This is the
+       one file with two matrices, so trellis.js draws their names above
+       them — everywhere else a single matrix goes unlabelled. -->
   <div class="page-section">
-    <h1 class="work-title">গড</h1>
     <div id="trellis-mount"></div>
   </div>
 

@@ -5,17 +5,19 @@ import { translationWorks } from '../../../data/translation-works.js';
 const work = translationWorks.find((w) => w.slug === 'divan')!;
 ---
 
-<Base title="Hafez's Divan — KMBA" section="translations"
-  navTitle="দিওয়ান" navParentHref="/translations/" navParentLabel="অনুবাদ"
+<Base section="translations"
+  navTitle={work.title} navParentHref="/translations/" navParentLabel="অনুবাদ"
 >
 
   <div class="main">
     <h1 class="work-title">{work.title}</h1>
 
     <div class="listing-box">
-      <a href="/translations/divan/prathama/" class="listing-item">
-        <span class="title">প্রথমা: গজল ১ থেকে ৩৩</span>
-      </a>
+      {work.parts!.map((p) => (
+        <a href={`/translations/divan/${p.slug}/`} class="listing-item">
+          <span class="title">{p.title}</span>
+        </a>
+      ))}
     </div>
   </div>
 </Base>

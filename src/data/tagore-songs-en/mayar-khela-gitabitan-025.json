@@ -1,0 +1,5011 @@
+{
+ "9926": {
+  "en": [
+   "O, let me see — lift your eyes and look:",
+   "why this haze of sleep in your eyes?",
+   "I have drunk, it seems, of something —",
+   "some wine brimming with nectar.",
+   "That is why there is a haze of sleep in my eyes.",
+   "Fie, fie, fie!",
+   "Friend, what is the harm?",
+   "(In this world) some are so wise, some absent-minded,",
+   "some are aware, some unaware,",
+   "in someone's eyes a gleam of laughter,",
+   "in someone's eyes, tears.",
+   "In my eyes only a haze of sleep.",
+   "Friend, why so nearly motionless,",
+   "here, standing in the tree's shade?",
+   "Numb under the heart's burden, these feet",
+   "do not wish to move,",
+   "so I stand in the tree's shade.",
+   "Fie, fie, fie!",
+   "Friend, what is the harm?",
+   "(In this world) some lie fallen, some walk away,",
+   "some in languor do not wish to move,",
+   "some are free in themselves, while someone's",
+   "feet are caught in a snare.",
+   "Someone's eyes are touched with a daze."
+  ],
+  "align": [
+   [
+    [
+     "দেখি",
+     "let me see"
+    ],
+    [
+     "আঁখি",
+     "eyes"
+    ],
+    [
+     "তুলে",
+     "lift"
+    ],
+    [
+     "চাও",
+     "look"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "চোখে",
+     "eyes"
+    ],
+    [
+     "কেন",
+     "why"
+    ],
+    [
+     "ঘুমঘোর",
+     "haze of sleep"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "যেন",
+     "it seems"
+    ],
+    [
+     "পান",
+     "drunk"
+    ]
+   ],
+   [
+    [
+     "মদিরা",
+     "wine"
+    ],
+    [
+     "রস-ভোর",
+     "brimming with nectar"
+    ]
+   ],
+   [
+    [
+     "আমার",
+     "my"
+    ],
+    [
+     "চোখে",
+     "eyes"
+    ],
+    [
+     "তাই",
+     "That is why"
+    ],
+    [
+     "ঘুমঘোর",
+     "haze of sleep"
+    ]
+   ],
+   [
+    [
+     "ছি",
+     "Fie"
+    ]
+   ],
+   [
+    [
+     "সখী",
+     "Friend"
+    ],
+    [
+     "ক্ষতি",
+     "harm"
+    ],
+    [
+     "কী",
+     "what"
+    ]
+   ],
+   [
+    [
+     "কেহ",
+     "some"
+    ],
+    [
+     "জ্ঞানী",
+     "wise"
+    ],
+    [
+     "অতি",
+     "so"
+    ],
+    [
+     "ভোলামন",
+     "absent-minded"
+    ]
+   ],
+   [
+    [
+     "কেহ",
+     "some"
+    ],
+    [
+     "সচেতন",
+     "aware"
+    ],
+    [
+     "অচেতন",
+     "unaware"
+    ]
+   ],
+   [
+    [
+     "কাহারো",
+     "someone's"
+    ],
+    [
+     "নয়নে",
+     "eyes"
+    ],
+    [
+     "হাসির",
+     "laughter"
+    ],
+    [
+     "কিরণ",
+     "gleam"
+    ]
+   ],
+   [
+    [
+     "কাহারো",
+     "someone's"
+    ],
+    [
+     "নয়নে",
+     "eyes"
+    ],
+    [
+     "লোর",
+     "tears"
+    ]
+   ],
+   [
+    [
+     "আমার",
+     "my"
+    ],
+    [
+     "চোখে",
+     "eyes"
+    ],
+    [
+     "শুধু",
+     "only"
+    ],
+    [
+     "ঘুমঘোর",
+     "haze of sleep"
+    ]
+   ],
+   [
+    [
+     "সখা",
+     "Friend"
+    ],
+    [
+     "কেন",
+     "why"
+    ],
+    [
+     "অচলপ্রায়",
+     "nearly motionless"
+    ]
+   ],
+   [
+    [
+     "হেথা",
+     "here"
+    ],
+    [
+     "দাঁড়ায়ে",
+     "standing"
+    ],
+    [
+     "তরুছায়",
+     "tree's shade"
+    ]
+   ],
+   [
+    [
+     "অবশ",
+     "Numb"
+    ],
+    [
+     "হৃদয়ভারে",
+     "heart's burden"
+    ],
+    [
+     "চরণ",
+     "feet"
+    ]
+   ],
+   [
+    [
+     "চলিতে",
+     "to move"
+    ],
+    [
+     "নাহি",
+     "not"
+    ],
+    [
+     "চায়",
+     "wish"
+    ]
+   ],
+   [
+    [
+     "তাই",
+     "so"
+    ],
+    [
+     "দাঁড়ায়ে",
+     "stand"
+    ],
+    [
+     "তরুছায়",
+     "tree's shade"
+    ]
+   ],
+   [
+    [
+     "ছি",
+     "Fie"
+    ]
+   ],
+   [
+    [
+     "সখী",
+     "Friend"
+    ],
+    [
+     "ক্ষতি",
+     "harm"
+    ],
+    [
+     "কী",
+     "what"
+    ]
+   ],
+   [
+    [
+     "কেহ",
+     "some"
+    ],
+    [
+     "পড়ে",
+     "lie fallen"
+    ],
+    [
+     "চলে",
+     "walk away"
+    ]
+   ],
+   [
+    [
+     "আলসে",
+     "in languor"
+    ],
+    [
+     "চলিতে",
+     "to move"
+    ],
+    [
+     "চায়",
+     "wish"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "কেহ",
+     "some"
+    ],
+    [
+     "আপনি",
+     "in themselves"
+    ],
+    [
+     "স্বাধীন",
+     "free"
+    ],
+    [
+     "কাহারো",
+     "someone's"
+    ]
+   ],
+   [
+    [
+     "চরণে",
+     "feet"
+    ],
+    [
+     "পড়েছে",
+     "caught"
+    ],
+    [
+     "ডোর",
+     "snare"
+    ]
+   ],
+   [
+    [
+     "কাহারো",
+     "Someone's"
+    ],
+    [
+     "নয়নে",
+     "eyes"
+    ],
+    [
+     "লেগেছে",
+     "touched"
+    ],
+    [
+     "ঘোর",
+     "daze"
+    ]
+   ]
+  ]
+ },
+ "9927": {
+  "en": [
+   "There is no understanding him — come away, come away.",
+   "What words he speaks, friend, and with what eyes he gazes!",
+   "Come away, come away.",
+   "Shame breaks, and in the end I die of shame,",
+   "in vain pursuit —",
+   "he will not be caught; say, who can hold him?",
+   "He himself knows where his heart is.",
+   "Come away, come away."
+  ],
+  "align": [
+   [
+    [
+     "ওকে",
+     "him"
+    ],
+    [
+     "বোঝা",
+     "understanding"
+    ],
+    [
+     "আয়",
+     "away"
+    ]
+   ],
+   [
+    [
+     "কথা",
+     "words"
+    ],
+    [
+     "বলে",
+     "speaks"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "চোখে",
+     "eyes"
+    ],
+    [
+     "চায়",
+     "gazes"
+    ]
+   ],
+   [
+    [
+     "চলে",
+     "Come"
+    ],
+    [
+     "আয়",
+     "away"
+    ]
+   ],
+   [
+    [
+     "লাজ",
+     "Shame"
+    ],
+    [
+     "টুটে",
+     "breaks"
+    ],
+    [
+     "শেষে",
+     "in the end"
+    ],
+    [
+     "মরি",
+     "die"
+    ],
+    [
+     "লাজে",
+     "shame"
+    ]
+   ],
+   [
+    [
+     "মিছে",
+     "vain"
+    ],
+    [
+     "কাজে",
+     "pursuit"
+    ]
+   ],
+   [
+    [
+     "ধরা",
+     "caught"
+    ],
+    [
+     "বলো",
+     "say"
+    ],
+    [
+     "কে",
+     "who"
+    ],
+    [
+     "পারে",
+     "can"
+    ]
+   ],
+   [
+    [
+     "আপনি",
+     "himself"
+    ],
+    [
+     "সে",
+     "He"
+    ],
+    [
+     "জানে",
+     "knows"
+    ],
+    [
+     "মন",
+     "heart"
+    ],
+    [
+     "কোথায়",
+     "where"
+    ]
+   ],
+   [
+    [
+     "চলে",
+     "Come"
+    ],
+    [
+     "আয়",
+     "away"
+    ]
+   ]
+  ]
+ },
+ "9928": {
+  "en": [
+   "Day and night, as though for someone",
+   "I wait in hope upon hope.",
+   "(So) my heart is startled, my ears alert,",
+   "my eyes thirsty and restless.",
+   "Grown restless, I wander round and round,",
+   "always thinking — what if I catch sight of her!",
+   "\"Who comes?\" I start and look up",
+   "when a bird calls in the grove.",
+   "Awake, I cannot see her,",
+   "so I wait in hope of dreams —",
+   "if behind the veil of sleep she yields herself,",
+   "I will bind her in a snare of dream.",
+   "The one I love so much, the one I want so much —",
+   "it never feels that she is not near,",
+   "as if this longing, with its desperate surge,",
+   "will call her and bring her here."
+  ],
+  "align": [
+   [
+    [
+     "দিবস",
+     "Day"
+    ],
+    [
+     "রজনী",
+     "night"
+    ],
+    [
+     "কার",
+     "someone"
+    ]
+   ],
+   [
+    [
+     "আশায়",
+     "hope"
+    ],
+    [
+     "থাকি",
+     "I wait"
+    ]
+   ],
+   [
+    [
+     "চমকিত",
+     "startled"
+    ],
+    [
+     "মন",
+     "heart"
+    ],
+    [
+     "চকিত",
+     "alert"
+    ],
+    [
+     "শ্রবণ",
+     "ears"
+    ]
+   ],
+   [
+    [
+     "তৃষিত",
+     "thirsty"
+    ],
+    [
+     "আকুল",
+     "restless"
+    ],
+    [
+     "আঁখি",
+     "eyes"
+    ]
+   ],
+   [
+    [
+     "চঞ্চল",
+     "restless"
+    ],
+    [
+     "ঘুরিয়ে",
+     "wander"
+    ]
+   ],
+   [
+    [
+     "সদা",
+     "always"
+    ],
+    [
+     "মনে",
+     "thinking"
+    ],
+    [
+     "দেখা",
+     "sight"
+    ],
+    [
+     "পাই",
+     "catch"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "আসিছে",
+     "comes"
+    ],
+    [
+     "চমকিয়ে",
+     "start"
+    ],
+    [
+     "চাই",
+     "look"
+    ]
+   ],
+   [
+    [
+     "কাননে",
+     "grove"
+    ],
+    [
+     "ডাকিলে",
+     "calls"
+    ],
+    [
+     "পাখি",
+     "bird"
+    ]
+   ],
+   [
+    [
+     "জাগরণে",
+     "Awake"
+    ],
+    [
+     "তারে",
+     "her"
+    ],
+    [
+     "দেখিতে",
+     "see"
+    ]
+   ],
+   [
+    [
+     "থাকি",
+     "I wait"
+    ],
+    [
+     "স্বপনের",
+     "dreams"
+    ],
+    [
+     "আশে",
+     "hope"
+    ]
+   ],
+   [
+    [
+     "ঘুমের",
+     "sleep"
+    ],
+    [
+     "আড়ালে",
+     "behind the veil"
+    ],
+    [
+     "ধরা",
+     "yields herself"
+    ]
+   ],
+   [
+    [
+     "বাঁধিব",
+     "bind"
+    ],
+    [
+     "স্বপনপাশে",
+     "snare of dream"
+    ]
+   ],
+   [
+    [
+     "ভালোবাসি",
+     "love"
+    ],
+    [
+     "এত",
+     "so much"
+    ],
+    [
+     "চাই",
+     "want"
+    ],
+    [
+     "যারে",
+     "The one"
+    ]
+   ],
+   [
+    [
+     "সে",
+     "she"
+    ],
+    [
+     "কাছে",
+     "near"
+    ],
+    [
+     "নাই",
+     "not"
+    ],
+    [
+     "মনে",
+     "feels"
+    ]
+   ],
+   [
+    [
+     "বাসনা",
+     "longing"
+    ],
+    [
+     "ব্যাকুল",
+     "desperate"
+    ],
+    [
+     "আবেগে",
+     "surge"
+    ]
+   ],
+   [
+    [
+     "তাহারে",
+     "her"
+    ],
+    [
+     "আনিবে",
+     "bring"
+    ],
+    [
+     "ডাকি",
+     "call"
+    ]
+   ]
+  ]
+ },
+ "9929": {
+  "en": [
+   "Friend, whatever you give of your own free wish, I will take.",
+   "Ah me, ah me, beggar of longing,",
+   "in your heart of hearts you want my heart and soul.",
+   "If you give a flower, I will lift it to my head;",
+   "if a thorn is given,",
+   "that too I will bear.",
+   "Ah me, ah me, beggar of longing,",
+   "in your heart of hearts you want my heart and soul.",
+   "If once you gaze, friend, with sweet eyes,",
+   "drinking the nectar of those eyes",
+   "I will stay drunk with it all my life.",
+   "If all I meet is a hard sidelong glance,",
+   "that too I will carry all my life, driven into my heart.",
+   "Ah me, ah me, beggar of longing,",
+   "in your heart of hearts you want my heart and soul."
+  ],
+  "align": [
+   [
+    [
+     "সখী",
+     "Friend"
+    ],
+    [
+     "সাধ",
+     "wish"
+    ],
+    [
+     "যাহা",
+     "whatever"
+    ],
+    [
+     "দেবে",
+     "give"
+    ],
+    [
+     "লইব",
+     "I will take"
+    ]
+   ],
+   [
+    [
+     "আহা",
+     "Ah"
+    ],
+    [
+     "মরি",
+     "ah me"
+    ],
+    [
+     "সাধের",
+     "longing"
+    ],
+    [
+     "ভিখারি",
+     "beggar"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "মনে",
+     "heart of hearts"
+    ],
+    [
+     "চাহ",
+     "want"
+    ],
+    [
+     "প্রাণমন",
+     "heart and soul"
+    ]
+   ],
+   [
+    [
+     "যদি",
+     "If"
+    ],
+    [
+     "দাও",
+     "give"
+    ],
+    [
+     "ফুল",
+     "flower"
+    ],
+    [
+     "শিরে",
+     "head"
+    ],
+    [
+     "তুলে",
+     "lift"
+    ]
+   ],
+   [
+    [
+     "দেয়",
+     "given"
+    ],
+    [
+     "যদি",
+     "if"
+    ],
+    [
+     "কাঁটা",
+     "thorn"
+    ]
+   ],
+   [
+    [
+     "তাও",
+     "that too"
+    ],
+    [
+     "সহিব",
+     "I will bear"
+    ]
+   ],
+   [
+    [
+     "আহা",
+     "Ah"
+    ],
+    [
+     "মরি",
+     "ah me"
+    ],
+    [
+     "সাধের",
+     "longing"
+    ],
+    [
+     "ভিখারি",
+     "beggar"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "মনে",
+     "heart of hearts"
+    ],
+    [
+     "চাহ",
+     "want"
+    ],
+    [
+     "প্রাণমন",
+     "heart and soul"
+    ]
+   ],
+   [
+    [
+     "এক",
+     "once"
+    ],
+    [
+     "চাও",
+     "gaze"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "মধুর",
+     "sweet"
+    ],
+    [
+     "নয়ানে",
+     "eyes"
+    ]
+   ],
+   [
+    [
+     "ওই",
+     "those"
+    ],
+    [
+     "আঁখি-সুধাপানে",
+     "drinking the nectar"
+    ]
+   ],
+   [
+    [
+     "চিরজীবন",
+     "all my life"
+    ],
+    [
+     "মাতি",
+     "drunk"
+    ],
+    [
+     "রহিব",
+     "stay"
+    ]
+   ],
+   [
+    [
+     "কঠিন",
+     "hard"
+    ],
+    [
+     "কটাক্ষ",
+     "sidelong glance"
+    ],
+    [
+     "মিলে",
+     "meet"
+    ]
+   ],
+   [
+    [
+     "তাও",
+     "that too"
+    ],
+    [
+     "হৃদয়ে",
+     "heart"
+    ],
+    [
+     "বিঁধায়ে",
+     "driven into"
+    ],
+    [
+     "চিরজীবন",
+     "all my life"
+    ],
+    [
+     "বহিব",
+     "carry"
+    ]
+   ],
+   [
+    [
+     "আহা",
+     "Ah"
+    ],
+    [
+     "মরি",
+     "ah me"
+    ],
+    [
+     "সাধের",
+     "longing"
+    ],
+    [
+     "ভিখারি",
+     "beggar"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "মনে",
+     "heart of hearts"
+    ],
+    [
+     "চাহ",
+     "want"
+    ],
+    [
+     "প্রাণমন",
+     "heart and soul"
+    ]
+   ]
+  ]
+ },
+ "9930": {
+  "en": [
+   "I am desperate to speak my heart's word,",
+   "yet no one asked.",
+   "He never came, the one to whom I offered",
+   "this life, this heart, this body.",
+   "Does he watch the road for me,",
+   "does he sing the song of parting —",
+   "he whose flute-note I heard",
+   "when I forsook my home?"
+  ],
+  "align": [
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "হৃদয়ের",
+     "heart's"
+    ],
+    [
+     "কথা",
+     "word"
+    ],
+    [
+     "বলিতে",
+     "to speak"
+    ],
+    [
+     "ব্যাকুল",
+     "desperate"
+    ]
+   ],
+   [
+    [
+     "শুধাইল",
+     "asked"
+    ],
+    [
+     "কেহ",
+     "no one"
+    ]
+   ],
+   [
+    [
+     "সে",
+     "He"
+    ],
+    [
+     "এল",
+     "came"
+    ],
+    [
+     "না",
+     "never"
+    ],
+    [
+     "যারে",
+     "the one"
+    ],
+    [
+     "সঁপিলাম",
+     "offered"
+    ]
+   ],
+   [
+    [
+     "এই",
+     "this"
+    ],
+    [
+     "প্রাণ",
+     "life"
+    ],
+    [
+     "মন",
+     "heart"
+    ],
+    [
+     "দেহ",
+     "body"
+    ]
+   ],
+   [
+    [
+     "সে",
+     "he"
+    ],
+    [
+     "মোর",
+     "me"
+    ],
+    [
+     "পথ",
+     "road"
+    ],
+    [
+     "চাহে",
+     "watch"
+    ]
+   ],
+   [
+    [
+     "বিরহ-গীত",
+     "song of parting"
+    ],
+    [
+     "গাহে",
+     "sing"
+    ]
+   ],
+   [
+    [
+     "যার",
+     "whose"
+    ],
+    [
+     "বাঁশরি-ধ্বনি",
+     "flute-note"
+    ],
+    [
+     "শুনিয়ে",
+     "heard"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "ত্যজিলাম",
+     "forsook"
+    ],
+    [
+     "গেহ",
+     "home"
+    ]
+   ]
+  ]
+ },
+ "9931": {
+  "en": [
+   "For a moment's span shyness held me back,",
+   "and the heart's word went unspoken.",
+   "For a whole lifetime, for that alone,",
+   "the heart's ache has remained."
+  ],
+  "align": [
+   [
+    [
+     "নিমেষের",
+     "a moment's"
+    ],
+    [
+     "শরমে",
+     "shyness"
+    ],
+    [
+     "বাধিল",
+     "held me back"
+    ]
+   ],
+   [
+    [
+     "মরমের",
+     "heart's"
+    ],
+    [
+     "কথা",
+     "word"
+    ],
+    [
+     "হল",
+     "went unspoken"
+    ]
+   ],
+   [
+    [
+     "জনমের",
+     "lifetime"
+    ],
+    [
+     "তাহারি",
+     "that alone"
+    ]
+   ],
+   [
+    [
+     "রহিল",
+     "remained"
+    ],
+    [
+     "মরম-বেদনা",
+     "heart's ache"
+    ]
+   ]
+  ]
+ },
+ "9932": {
+  "en": [
+   "O friend, let me see, let me see where your heart is.",
+   "How the anguished heart wanders round and round — see whom it begs for.",
+   "What honey, what nectar, what fragrance,",
+   "what beauty you have kept hidden!",
+   "On what morning, in what sun's light,",
+   "will you open it, and to whom?",
+   "What if he never comes in this life,",
+   "never finds the path to this grove!",
+   "And those who came — when spring is spent,",
+   "what if they turn back after all with despairing hearts!"
+  ],
+  "align": [
+   [
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "দেখি",
+     "let me see"
+    ],
+    [
+     "মন",
+     "heart"
+    ],
+    [
+     "কোথা",
+     "where"
+    ],
+    [
+     "আছে",
+     "is"
+    ]
+   ],
+   [
+    [
+     "কাতর",
+     "anguished"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "ঘুরে",
+     "wanders"
+    ],
+    [
+     "হেরো",
+     "see"
+    ],
+    [
+     "কারে",
+     "whom"
+    ],
+    [
+     "যাচে",
+     "begs"
+    ]
+   ],
+   [
+    [
+     "কী",
+     "What"
+    ],
+    [
+     "মধু",
+     "honey"
+    ],
+    [
+     "সুধা",
+     "nectar"
+    ],
+    [
+     "সৌরভ",
+     "fragrance"
+    ]
+   ],
+   [
+    [
+     "রূপ",
+     "beauty"
+    ],
+    [
+     "রেখেছ",
+     "kept"
+    ],
+    [
+     "লুকায়ে",
+     "hidden"
+    ]
+   ],
+   [
+    [
+     "প্রভাতে",
+     "morning"
+    ],
+    [
+     "রবির",
+     "sun's"
+    ],
+    [
+     "আলোকে",
+     "light"
+    ]
+   ],
+   [
+    [
+     "দিবে",
+     "will you"
+    ],
+    [
+     "খুলিয়ে",
+     "open"
+    ],
+    [
+     "কাহার",
+     "whom"
+    ]
+   ],
+   [
+    [
+     "সে",
+     "he"
+    ],
+    [
+     "আসে",
+     "comes"
+    ],
+    [
+     "না",
+     "never"
+    ],
+    [
+     "জীবনে",
+     "life"
+    ]
+   ],
+   [
+    [
+     "কাননে",
+     "grove"
+    ],
+    [
+     "পথ",
+     "path"
+    ],
+    [
+     "পায়",
+     "finds"
+    ],
+    [
+     "না",
+     "never"
+    ]
+   ],
+   [
+    [
+     "যারা",
+     "those who"
+    ],
+    [
+     "এসেছে",
+     "came"
+    ],
+    [
+     "বসন্ত",
+     "spring"
+    ],
+    [
+     "ফুরালে",
+     "spent"
+    ]
+   ],
+   [
+    [
+     "নিরাশ",
+     "despairing"
+    ],
+    [
+     "প্রাণে",
+     "hearts"
+    ],
+    [
+     "ফেরে",
+     "turn back"
+    ],
+    [
+     "পাছে",
+     "what if"
+    ]
+   ]
+  ]
+ },
+ "9933": {
+  "en": [
+   "This is no game, no game.",
+   "This is the burning anguish of the heart, friend.",
+   "This is a restlessness that fills the soul,",
+   "the hidden ache of the inmost heart,",
+   "this is life and death poured out toward someone's feet.",
+   "Someone, it seems, forever",
+   "calls me and leaves me desperate;",
+   "my soul strains to go, and I cannot go.",
+   "The word I long to speak —",
+   "that word, it seems, cannot be spoken;",
+   "where shall I set down, friend, this basket of love?",
+   "Strung with such care, yet in the end I cannot place the garland."
+  ],
+  "align": [
+   [
+    [
+     "এ",
+     "This"
+    ],
+    [
+     "খেলা",
+     "game"
+    ],
+    [
+     "নয়",
+     "no"
+    ]
+   ],
+   [
+    [
+     "হৃদয়-দহন-জ্বালা",
+     "burning anguish"
+    ],
+    [
+     "সখী",
+     "friend"
+    ]
+   ],
+   [
+    [
+     "প্রাণভরা",
+     "fills the soul"
+    ],
+    [
+     "ব্যাকুলতা",
+     "restlessness"
+    ]
+   ],
+   [
+    [
+     "গোপন",
+     "hidden"
+    ],
+    [
+     "মর্মের",
+     "inmost heart"
+    ],
+    [
+     "ব্যথা",
+     "ache"
+    ]
+   ],
+   [
+    [
+     "কাহার",
+     "someone's"
+    ],
+    [
+     "চরণোদ্দেশে",
+     "feet"
+    ],
+    [
+     "জীবন",
+     "life"
+    ],
+    [
+     "মরণ",
+     "death"
+    ],
+    [
+     "ঢালা",
+     "poured"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "Someone"
+    ],
+    [
+     "সতত",
+     "forever"
+    ]
+   ],
+   [
+    [
+     "ডাকিয়ে",
+     "calls"
+    ],
+    [
+     "আকুল",
+     "desperate"
+    ],
+    [
+     "করে",
+     "leaves"
+    ]
+   ],
+   [
+    [
+     "প্রাণ",
+     "soul"
+    ],
+    [
+     "যেতে",
+     "to go"
+    ]
+   ],
+   [
+    [
+     "কথা",
+     "word"
+    ],
+    [
+     "বলিতে",
+     "to speak"
+    ],
+    [
+     "চাহি",
+     "long"
+    ]
+   ],
+   [
+    [
+     "বুঝি",
+     "it seems"
+    ],
+    [
+     "বলিতে",
+     "be spoken"
+    ],
+    [
+     "নাহি",
+     "cannot"
+    ]
+   ],
+   [
+    [
+     "কোথায়",
+     "where"
+    ],
+    [
+     "নামায়ে",
+     "set down"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "ডালা",
+     "basket"
+    ]
+   ],
+   [
+    [
+     "যতনে",
+     "care"
+    ],
+    [
+     "গাঁথিয়ে",
+     "Strung"
+    ],
+    [
+     "শেষে",
+     "in the end"
+    ],
+    [
+     "পরাতে",
+     "place"
+    ],
+    [
+     "মালা",
+     "garland"
+    ],
+    [
+     "পারি",
+     "cannot"
+    ]
+   ]
+  ]
+ },
+ "9934": {
+  "en": [
+   "Who that one is, friend, is plain now,",
+   "the one to whom our friend has offered heart and soul.",
+   "Oh who is he — who, who?",
+   "There beneath the tree, a graceful garland at his throat,",
+   "who knows on what pretext he sits and stays.",
+   "Friend, what will come of it?",
+   "Will he ever come near, will he ever speak?",
+   "Does he know love, does he own any bond?",
+   "By what charm of maya has he taken the heart?",
+   "Raising entranced eyes, he gazes into eyes,",
+   "as if he lost his way and came here, who knows where. (Oh)",
+   "As if some strain of song fills his ears,",
+   "as if he is drowned in the light of some moon."
+  ],
+  "align": [
+   [
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "বোঝা",
+     "plain"
+    ]
+   ],
+   [
+    [
+     "আমাদের",
+     "our"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "যারে",
+     "to whom"
+    ],
+    [
+     "মনপ্রাণ",
+     "heart and soul"
+    ],
+    [
+     "সঁপেছে",
+     "offered"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "who"
+    ]
+   ],
+   [
+    [
+     "তরুতলে",
+     "beneath the tree"
+    ],
+    [
+     "বিনোদ-মালা",
+     "graceful garland"
+    ],
+    [
+     "গলে",
+     "throat"
+    ]
+   ],
+   [
+    [
+     "জানি",
+     "knows"
+    ],
+    [
+     "ছলে",
+     "pretext"
+    ],
+    [
+     "বসে",
+     "sits"
+    ],
+    [
+     "রয়েছে",
+     "stays"
+    ]
+   ],
+   [
+    [
+     "সখী",
+     "Friend"
+    ],
+    [
+     "কী",
+     "what"
+    ],
+    [
+     "হবে",
+     "will come"
+    ]
+   ],
+   [
+    [
+     "কাছে",
+     "near"
+    ],
+    [
+     "আসিবে",
+     "come"
+    ],
+    [
+     "কভু",
+     "ever"
+    ],
+    [
+     "কথা",
+     "speak"
+    ]
+   ],
+   [
+    [
+     "প্রেম",
+     "love"
+    ],
+    [
+     "জানে",
+     "know"
+    ],
+    [
+     "বাঁধন",
+     "bond"
+    ],
+    [
+     "মানে",
+     "own"
+    ]
+   ],
+   [
+    [
+     "মায়াগুণে",
+     "charm of maya"
+    ],
+    [
+     "মন",
+     "heart"
+    ],
+    [
+     "লয়েছে",
+     "taken"
+    ]
+   ],
+   [
+    [
+     "বিভল",
+     "entranced"
+    ],
+    [
+     "আঁখি",
+     "eyes"
+    ],
+    [
+     "তুলে",
+     "Raising"
+    ],
+    [
+     "চায়",
+     "gazes"
+    ]
+   ],
+   [
+    [
+     "পথ",
+     "way"
+    ],
+    [
+     "ভুলে",
+     "lost"
+    ],
+    [
+     "এল",
+     "came"
+    ],
+    [
+     "কোথায়",
+     "where"
+    ]
+   ],
+   [
+    [
+     "গানের",
+     "song"
+    ],
+    [
+     "স্বরে",
+     "strain"
+    ],
+    [
+     "শ্রবণ",
+     "ears"
+    ],
+    [
+     "ভরে",
+     "fills"
+    ]
+   ],
+   [
+    [
+     "চাঁদের",
+     "moon"
+    ],
+    [
+     "আলোয়",
+     "light"
+    ],
+    [
+     "মগ্ন",
+     "drowned"
+    ],
+    [
+     "হয়েছে",
+     "is"
+    ]
+   ]
+  ]
+ },
+ "9935": {
+  "en": [
+   "That sweet face rises in my mind.",
+   "I will not forget it in this life,",
+   "whether in dream or in waking.",
+   "Whether you know it or know it not,",
+   "in my mind a sweet flute seems always to play,",
+   "because you are always here in my heart.",
+   "I cannot give it voice,",
+   "I only gaze with anguished eyes."
+  ],
+  "align": [
+   [
+    [
+     "ওই",
+     "That"
+    ],
+    [
+     "মধুর",
+     "sweet"
+    ],
+    [
+     "মুখ",
+     "face"
+    ],
+    [
+     "জাগে",
+     "rises"
+    ],
+    [
+     "মনে",
+     "mind"
+    ]
+   ],
+   [
+    [
+     "ভুলিব",
+     "forget"
+    ],
+    [
+     "না",
+     "not"
+    ],
+    [
+     "জীবনে",
+     "life"
+    ]
+   ],
+   [
+    [
+     "স্বপনে",
+     "dream"
+    ],
+    [
+     "জাগরণে",
+     "waking"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "জান",
+     "know"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "মনে",
+     "mind"
+    ],
+    [
+     "সদা",
+     "always"
+    ],
+    [
+     "মধুর",
+     "sweet"
+    ],
+    [
+     "বাঁশরি",
+     "flute"
+    ],
+    [
+     "বাজে",
+     "play"
+    ]
+   ],
+   [
+    [
+     "হৃদয়ে",
+     "heart"
+    ],
+    [
+     "সদা",
+     "always"
+    ],
+    [
+     "আছে",
+     "are"
+    ],
+    [
+     "ব'লে",
+     "because"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "প্রকাশিতে",
+     "give it voice"
+    ],
+    [
+     "পারি",
+     "cannot"
+    ]
+   ],
+   [
+    [
+     "শুধু",
+     "only"
+    ],
+    [
+     "চাহি",
+     "gaze"
+    ],
+    [
+     "কাতর",
+     "anguished"
+    ],
+    [
+     "নয়নে",
+     "eyes"
+    ]
+   ]
+  ]
+ },
+ "9936": {
+  "en": [
+   "How will you catch him, friend, if you have given yourself away?",
+   "How will you make him weep, if you weep yourself?",
+   "If you would win a heart, keep your heart hidden.",
+   "Who will bind him, when you have bound yourself?",
+   "Come near, and no one stays near.",
+   "Speak, and no one speaks back.",
+   "Once they have you in hand, they drop you to the ground and go.",
+   "Beseech them weeping, and they turn their face away smiling."
+  ],
+  "align": [
+   [
+    [
+     "কেমনে",
+     "How"
+    ],
+    [
+     "ধরিবে",
+     "catch"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "দিলে",
+     "given yourself"
+    ]
+   ],
+   [
+    [
+     "কাঁদাবে",
+     "make him weep"
+    ],
+    [
+     "আপনি",
+     "yourself"
+    ],
+    [
+     "কাঁদিলে",
+     "weep"
+    ]
+   ],
+   [
+    [
+     "মন",
+     "heart"
+    ],
+    [
+     "পেতে",
+     "win"
+    ],
+    [
+     "চাও",
+     "would"
+    ],
+    [
+     "রাখো",
+     "keep"
+    ],
+    [
+     "গোপনে",
+     "hidden"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "বাঁধিবে",
+     "bind"
+    ],
+    [
+     "আপনায়",
+     "yourself"
+    ],
+    [
+     "বাঁধিলে",
+     "bound"
+    ]
+   ],
+   [
+    [
+     "কাছে",
+     "near"
+    ],
+    [
+     "আসিলে",
+     "Come"
+    ],
+    [
+     "কেহ",
+     "no one"
+    ],
+    [
+     "রহে",
+     "stays"
+    ]
+   ],
+   [
+    [
+     "কহিলে",
+     "Speak"
+    ],
+    [
+     "কেহ",
+     "no one"
+    ],
+    [
+     "কহে",
+     "speaks"
+    ]
+   ],
+   [
+    [
+     "হাতে",
+     "in hand"
+    ],
+    [
+     "পেলে",
+     "have"
+    ],
+    [
+     "ভূমিতলে",
+     "ground"
+    ],
+    [
+     "ফেলে",
+     "drop"
+    ],
+    [
+     "যায়",
+     "go"
+    ]
+   ],
+   [
+    [
+     "হাসিয়ে",
+     "smiling"
+    ],
+    [
+     "ফিরায়",
+     "turn"
+    ],
+    [
+     "মুখ",
+     "face"
+    ],
+    [
+     "কাঁদিয়ে",
+     "weeping"
+    ],
+    [
+     "সাধিলে",
+     "Beseech"
+    ]
+   ]
+  ]
+ },
+ "9937": {
+  "en": [
+   "The one I have loved with all my heart —",
+   "can he turn me away, friend?",
+   "I stay outside the world;",
+   "I do not know what goes on in the world.",
+   "Who knows — here, when a soul wants someone with all its life,",
+   "whether it wins him or not (I do not know) —",
+   "so I have come in fear and trembling,",
+   "to an unknown heart's door.",
+   "I love everything that is yours —",
+   "that wealth of beauty,",
+   "that play, that song, that honeyed smile.",
+   "With all this you have covered my life over —",
+   "where is your limit within this world?"
+  ],
+  "align": [
+   [
+    [
+     "সকল",
+     "all"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "বেসেছি",
+     "loved"
+    ],
+    [
+     "যারে",
+     "The one"
+    ]
+   ],
+   [
+    [
+     "সে",
+     "he"
+    ],
+    [
+     "ফিরাতে",
+     "turn me away"
+    ],
+    [
+     "পারে",
+     "can"
+    ],
+    [
+     "সখী",
+     "friend"
+    ]
+   ],
+   [
+    [
+     "সংসার-বাহিরে",
+     "outside the world"
+    ],
+    [
+     "থাকি",
+     "stay"
+    ]
+   ],
+   [
+    [
+     "জানি",
+     "know"
+    ],
+    [
+     "নে",
+     "not"
+    ],
+    [
+     "ঘটে",
+     "goes on"
+    ],
+    [
+     "সংসারে",
+     "world"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "জানে",
+     "knows"
+    ],
+    [
+     "হেথায়",
+     "here"
+    ],
+    [
+     "প্রাণপণে",
+     "with all its"
+    ],
+    [
+     "প্রাণ",
+     "soul"
+    ],
+    [
+     "চায়",
+     "wants"
+    ]
+   ],
+   [
+    [
+     "তারে",
+     "him"
+    ],
+    [
+     "পায়",
+     "wins"
+    ]
+   ],
+   [
+    [
+     "ভয়ে",
+     "fear"
+    ],
+    [
+     "এসেছি",
+     "come"
+    ]
+   ],
+   [
+    [
+     "অজানা",
+     "unknown"
+    ],
+    [
+     "হৃদয়-দ্বারে",
+     "heart's door"
+    ]
+   ],
+   [
+    [
+     "তোমার",
+     "yours"
+    ],
+    [
+     "সকলি",
+     "everything"
+    ],
+    [
+     "ভালোবাসি",
+     "love"
+    ]
+   ],
+   [
+    [
+     "ওই",
+     "that"
+    ],
+    [
+     "রূপরাশি",
+     "wealth of beauty"
+    ]
+   ],
+   [
+    [
+     "খেলা",
+     "play"
+    ],
+    [
+     "গান",
+     "song"
+    ],
+    [
+     "মধুহাসি",
+     "honeyed smile"
+    ]
+   ],
+   [
+    [
+     "ছেয়ে",
+     "covered"
+    ],
+    [
+     "জীবন",
+     "life"
+    ],
+    [
+     "আমারি",
+     "my"
+    ],
+    [
+     "আছ",
+     "you have"
+    ]
+   ],
+   [
+    [
+     "কোথায়",
+     "where"
+    ],
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "সীমা",
+     "limit"
+    ],
+    [
+     "ভুবন-মাঝারে",
+     "within this world"
+    ]
+   ]
+  ]
+ },
+ "9938": {
+  "en": [
+   "Who are you, and why declare your longing to my friend?",
+   "Who cares to know whether you love or love not?",
+   "The moon laughs, the evening laughs, the bower-garden is in bloom,",
+   "youth laughs, opening in the heart's springtime.",
+   "Why do you heave sighs — why do you not laugh?",
+   "Have you come to break up the game,",
+   "this festival of hearts between friend and friend?",
+   "Take your own grief, your own shadow, and go.",
+   "Step aside from life's road of joy.",
+   "Worship from afar the one enthroned on the heart's lotus."
+  ],
+  "align": [
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "সখীরে",
+     "friend"
+    ],
+    [
+     "কেন",
+     "why"
+    ],
+    [
+     "জানাও",
+     "declare"
+    ],
+    [
+     "বাসনা",
+     "longing"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "জানিতে",
+     "to know"
+    ],
+    [
+     "চায়",
+     "cares"
+    ],
+    [
+     "ভালোবাস",
+     "love"
+    ]
+   ],
+   [
+    [
+     "হাসে",
+     "laughs"
+    ],
+    [
+     "চন্দ্র",
+     "moon"
+    ],
+    [
+     "সন্ধ্যা",
+     "evening"
+    ],
+    [
+     "ফুল্ল",
+     "in bloom"
+    ],
+    [
+     "কুঞ্জকানন",
+     "bower-garden"
+    ]
+   ],
+   [
+    [
+     "হাসে",
+     "laughs"
+    ],
+    [
+     "হৃদয়-বসন্তে",
+     "heart's springtime"
+    ],
+    [
+     "বিকচ",
+     "opening"
+    ],
+    [
+     "যৌবন",
+     "youth"
+    ]
+   ],
+   [
+    [
+     "কেন",
+     "Why"
+    ],
+    [
+     "ফেল",
+     "heave"
+    ],
+    [
+     "শ্বাস",
+     "sighs"
+    ],
+    [
+     "হাস",
+     "laugh"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "এসেছ",
+     "come"
+    ],
+    [
+     "ভেঙে",
+     "break"
+    ],
+    [
+     "খেলা",
+     "game"
+    ]
+   ],
+   [
+    [
+     "সখীতে",
+     "friend"
+    ],
+    [
+     "হৃদয়ের",
+     "hearts"
+    ],
+    [
+     "মেলা",
+     "festival"
+    ]
+   ],
+   [
+    [
+     "আপন",
+     "your own"
+    ],
+    [
+     "দুঃখ",
+     "grief"
+    ],
+    [
+     "ছায়া",
+     "shadow"
+    ],
+    [
+     "লয়ে",
+     "Take"
+    ],
+    [
+     "যাও",
+     "go"
+    ]
+   ],
+   [
+    [
+     "জীবনের",
+     "life's"
+    ],
+    [
+     "আনন্দ-পথ",
+     "road of joy"
+    ],
+    [
+     "ছেড়ে",
+     "aside"
+    ],
+    [
+     "দাঁড়াও",
+     "Step"
+    ]
+   ],
+   [
+    [
+     "দূর",
+     "afar"
+    ],
+    [
+     "হতে",
+     "from"
+    ],
+    [
+     "পূজা",
+     "Worship"
+    ],
+    [
+     "হৃদয়-কমল-আসনা",
+     "the heart's lotus"
+    ]
+   ]
+  ]
+ },
+ "9939": {
+  "en": [
+   "Then be happy, be happy — I go — I go.",
+   "Friend, call him back — no use in this idle game.",
+   "Do not be impatient, friend —",
+   "no one returns when hope is sated;",
+   "keep hope waiting, and they return.",
+   "I was alone in that world of my own —",
+   "where is this that I have come to?",
+   "I do not know the paths here — let me go back.",
+   "If only I might find again that house of rest.",
+   "Friend, call him back.",
+   "No use in idle play, in idle slights.",
+   "Do not be impatient, friend —",
+   "no one returns when hope is sated;",
+   "keep hope waiting, and they return."
+  ],
+  "align": [
+   [
+    [
+     "সুখে",
+     "happy"
+    ],
+    [
+     "থাকো",
+     "be"
+    ],
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "যাই",
+     "go"
+    ]
+   ],
+   [
+    [
+     "সখী",
+     "Friend"
+    ],
+    [
+     "ওরে",
+     "him"
+    ],
+    [
+     "ডাকো",
+     "call"
+    ],
+    [
+     "মিছে",
+     "idle"
+    ],
+    [
+     "খেলায়",
+     "game"
+    ],
+    [
+     "নাই",
+     "no use"
+    ]
+   ],
+   [
+    [
+     "অধীর",
+     "impatient"
+    ],
+    [
+     "হ'য়ো",
+     "be"
+    ],
+    [
+     "না",
+     "not"
+    ],
+    [
+     "সখী",
+     "friend"
+    ]
+   ],
+   [
+    [
+     "আশ",
+     "hope"
+    ],
+    [
+     "মেটালে",
+     "sated"
+    ],
+    [
+     "ফেরে",
+     "returns"
+    ],
+    [
+     "কেহ",
+     "no one"
+    ]
+   ],
+   [
+    [
+     "আশ",
+     "hope"
+    ],
+    [
+     "রাখিলে",
+     "keep"
+    ],
+    [
+     "ফেরে",
+     "return"
+    ]
+   ],
+   [
+    [
+     "ছিলাম",
+     "was"
+    ],
+    [
+     "একেলা",
+     "alone"
+    ],
+    [
+     "আপন",
+     "my own"
+    ],
+    [
+     "ভুবনে",
+     "world"
+    ]
+   ],
+   [
+    [
+     "এসেছি",
+     "come"
+    ],
+    [
+     "কোথায়",
+     "where"
+    ]
+   ],
+   [
+    [
+     "পথ",
+     "paths"
+    ],
+    [
+     "জানি",
+     "know"
+    ],
+    [
+     "নে",
+     "not"
+    ],
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "যাই",
+     "go"
+    ]
+   ],
+   [
+    [
+     "বিরাম-ভবন",
+     "house of rest"
+    ],
+    [
+     "ফিরে",
+     "again"
+    ],
+    [
+     "পাই",
+     "find"
+    ]
+   ],
+   [
+    [
+     "সখী",
+     "Friend"
+    ],
+    [
+     "ওরে",
+     "him"
+    ],
+    [
+     "ডাকো",
+     "call"
+    ],
+    [
+     "ফিরে",
+     "back"
+    ]
+   ],
+   [
+    [
+     "মিছে",
+     "idle"
+    ],
+    [
+     "খেলা",
+     "play"
+    ],
+    [
+     "হেলা",
+     "slights"
+    ],
+    [
+     "নাই",
+     "No use"
+    ]
+   ],
+   [
+    [
+     "অধীরা",
+     "impatient"
+    ],
+    [
+     "হ'য়ো",
+     "be"
+    ],
+    [
+     "না",
+     "not"
+    ],
+    [
+     "সখী",
+     "friend"
+    ]
+   ],
+   [
+    [
+     "আশ",
+     "hope"
+    ],
+    [
+     "মেটালে",
+     "sated"
+    ],
+    [
+     "ফেরে",
+     "returns"
+    ],
+    [
+     "কেহ",
+     "no one"
+    ]
+   ],
+   [
+    [
+     "আশ",
+     "hope"
+    ],
+    [
+     "রাখিলে",
+     "keep"
+    ],
+    [
+     "ফেরে",
+     "return"
+    ]
+   ]
+  ]
+ },
+ "9940": {
+  "en": [
+   "Where has it gone, that abode of peace, that world?",
+   "That sun, moon, and stars, that grief-stilling evening breeze,",
+   "that beauty, that shade, that dream.",
+   "Where has it gone, that rest of my own within my own heart?",
+   "In whom shall the homeless heart take refuge?",
+   "(To Shanta) I have come back; I have known you;",
+   "I have brought my heart to your feet —",
+   "grant me the cool nectar of your tenderness,",
+   "give love, give peace, give new life."
+  ],
+  "align": [
+   [
+    [
+     "শান্তিভবন",
+     "abode of peace"
+    ],
+    [
+     "ভুবন",
+     "world"
+    ],
+    [
+     "কোথা",
+     "Where"
+    ],
+    [
+     "গেল",
+     "gone"
+    ]
+   ],
+   [
+    [
+     "রবি",
+     "sun"
+    ],
+    [
+     "শশী",
+     "moon"
+    ],
+    [
+     "তারা",
+     "stars"
+    ],
+    [
+     "শোকশান্ত",
+     "grief-stilling"
+    ],
+    [
+     "সন্ধ্যা-সমীরণ",
+     "evening breeze"
+    ]
+   ],
+   [
+    [
+     "শোভা",
+     "beauty"
+    ],
+    [
+     "ছায়া",
+     "shade"
+    ],
+    [
+     "স্বপন",
+     "dream"
+    ]
+   ],
+   [
+    [
+     "আপন",
+     "my own"
+    ],
+    [
+     "হৃদয়ে",
+     "heart"
+    ],
+    [
+     "বিরাম",
+     "rest"
+    ],
+    [
+     "কোথা",
+     "Where"
+    ],
+    [
+     "গেল",
+     "gone"
+    ]
+   ],
+   [
+    [
+     "গৃহহারা",
+     "homeless"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "লবে",
+     "take"
+    ],
+    [
+     "কাহার",
+     "whom"
+    ],
+    [
+     "শরণ",
+     "refuge"
+    ]
+   ],
+   [
+    [
+     "এসেছি",
+     "come"
+    ],
+    [
+     "ফিরিয়ে",
+     "back"
+    ],
+    [
+     "জেনেছি",
+     "known"
+    ],
+    [
+     "তোমারে",
+     "you"
+    ]
+   ],
+   [
+    [
+     "এনেছি",
+     "brought"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "তব",
+     "your"
+    ],
+    [
+     "পায়",
+     "feet"
+    ]
+   ],
+   [
+    [
+     "শীতল",
+     "cool"
+    ],
+    [
+     "স্নেহসুধা",
+     "nectar"
+    ],
+    [
+     "দান",
+     "grant"
+    ]
+   ],
+   [
+    [
+     "দাও",
+     "give"
+    ],
+    [
+     "প্রেম",
+     "love"
+    ],
+    [
+     "শান্তি",
+     "peace"
+    ],
+    [
+     "নূতন",
+     "new"
+    ],
+    [
+     "জীবন",
+     "life"
+    ]
+   ]
+  ]
+ },
+ "9941": {
+  "en": [
+   "You were near, you went far — now from afar come near.",
+   "You roamed the world; she is sitting there still.",
+   "There was no light of love; you could not know her well.",
+   "Now in the fire of parting the fire of love is ablaze!"
+  ],
+  "align": [
+   [
+    [
+     "কাছে",
+     "near"
+    ],
+    [
+     "ছিলে",
+     "were"
+    ],
+    [
+     "দূরে",
+     "far"
+    ],
+    [
+     "গেলে",
+     "went"
+    ],
+    [
+     "দূর",
+     "afar"
+    ],
+    [
+     "এস",
+     "come"
+    ]
+   ],
+   [
+    [
+     "ভুবন",
+     "world"
+    ],
+    [
+     "ভ্রমিলে",
+     "roamed"
+    ],
+    [
+     "বসে",
+     "sitting"
+    ],
+    [
+     "এখনো",
+     "still"
+    ]
+   ],
+   [
+    [
+     "প্রেমের",
+     "love"
+    ],
+    [
+     "আলো",
+     "light"
+    ],
+    [
+     "চিনিতে",
+     "know"
+    ],
+    [
+     "পার",
+     "could"
+    ],
+    [
+     "ভালো",
+     "well"
+    ]
+   ],
+   [
+    [
+     "এখন",
+     "Now"
+    ],
+    [
+     "বিরহানলে",
+     "fire of parting"
+    ],
+    [
+     "প্রেমানল",
+     "fire of love"
+    ],
+    [
+     "জ্বলিয়াছে",
+     "ablaze"
+    ]
+   ]
+  ]
+ },
+ "9942": {
+  "en": [
+   "Take care, friend — do not love me by mistake.",
+   "Do not come near because I love you.",
+   "Do whatever makes you happy, friend;",
+   "do not smile only so that I may be happy.",
+   "I am well enough with my own parting-sorrow;",
+   "what good, in endless dark, is a moment's light?",
+   "I let go of hope and drift — what will be, will be;",
+   "do not drift into the current of my fate."
+  ],
+  "align": [
+   [
+    [
+     "দেখো",
+     "Take care"
+    ],
+    [
+     "সখা",
+     "friend"
+    ],
+    [
+     "ভুল",
+     "mistake"
+    ],
+    [
+     "ভালোবেসো",
+     "love"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "ভালোবাসি",
+     "love"
+    ],
+    [
+     "কাছে",
+     "near"
+    ],
+    [
+     "এসো",
+     "come"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "সুখী",
+     "happy"
+    ],
+    [
+     "করো",
+     "Do"
+    ],
+    [
+     "সখা",
+     "friend"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "সুখী",
+     "happy"
+    ],
+    [
+     "হেসো",
+     "smile"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "আপন",
+     "my own"
+    ],
+    [
+     "বিরহ",
+     "parting-sorrow"
+    ],
+    [
+     "আছি",
+     "am"
+    ],
+    [
+     "ভালো",
+     "well"
+    ]
+   ],
+   [
+    [
+     "চির",
+     "endless"
+    ],
+    [
+     "আঁধারে",
+     "dark"
+    ],
+    [
+     "নিমেষের",
+     "moment's"
+    ],
+    [
+     "আলো",
+     "light"
+    ]
+   ],
+   [
+    [
+     "আশা",
+     "hope"
+    ],
+    [
+     "ছেড়ে",
+     "let go"
+    ],
+    [
+     "ভেসে",
+     "drift"
+    ],
+    [
+     "হবে",
+     "will be"
+    ]
+   ],
+   [
+    [
+     "আমার",
+     "my"
+    ],
+    [
+     "অদৃষ্ট-স্রোতে",
+     "fate"
+    ],
+    [
+     "ভেসো",
+     "drift"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ]
+  ]
+ },
+ "9943": {
+  "en": [
+   "I had made an error, and the error has broken.",
+   "This time I have woken, I have come to know;",
+   "this time no more error, no more error.",
+   "I have trailed along behind maya,",
+   "I have learned that dreams are all false.",
+   "The thorn of desire has pierced my soul —",
+   "this is no flower, no flower!",
+   "If I find love, I will not treat it with scorn,",
+   "I will not play games with a heart.",
+   "In that love-filled soul I will take shelter, friend —",
+   "this world is a fathomless sea,",
+   "and this is no shore, no shore!"
+  ],
+  "align": [
+   [
+    [
+     "ভুল",
+     "error"
+    ],
+    [
+     "করেছিনু",
+     "had made"
+    ],
+    [
+     "ভেঙেছে",
+     "broken"
+    ]
+   ],
+   [
+    [
+     "এবার",
+     "This time"
+    ],
+    [
+     "জেগেছি",
+     "woken"
+    ],
+    [
+     "জেনেছি",
+     "come to know"
+    ]
+   ],
+   [
+    [
+     "এবার",
+     "this time"
+    ],
+    [
+     "ভুল",
+     "error"
+    ],
+    [
+     "নয়",
+     "no more"
+    ]
+   ],
+   [
+    [
+     "ফিরেছি",
+     "trailed"
+    ],
+    [
+     "মায়ার",
+     "maya"
+    ],
+    [
+     "পিছে",
+     "behind"
+    ]
+   ],
+   [
+    [
+     "জেনেছি",
+     "learned"
+    ],
+    [
+     "স্বপন",
+     "dreams"
+    ],
+    [
+     "সব",
+     "all"
+    ],
+    [
+     "মিছে",
+     "false"
+    ]
+   ],
+   [
+    [
+     "বিঁধেছে",
+     "pierced"
+    ],
+    [
+     "বাসনা-কাঁটা",
+     "thorn of desire"
+    ],
+    [
+     "প্রাণে",
+     "soul"
+    ]
+   ],
+   [
+    [
+     "ফুল",
+     "flower"
+    ],
+    [
+     "নয়",
+     "no"
+    ]
+   ],
+   [
+    [
+     "পাই",
+     "find"
+    ],
+    [
+     "ভালোবাসা",
+     "love"
+    ],
+    [
+     "হেলা",
+     "scorn"
+    ],
+    [
+     "না",
+     "not"
+    ]
+   ],
+   [
+    [
+     "খেলা",
+     "play games"
+    ],
+    [
+     "না",
+     "not"
+    ],
+    [
+     "মন",
+     "heart"
+    ]
+   ],
+   [
+    [
+     "প্রেমময়",
+     "love-filled"
+    ],
+    [
+     "প্রাণে",
+     "soul"
+    ],
+    [
+     "লইব",
+     "take"
+    ],
+    [
+     "আশ্রয়",
+     "shelter"
+    ],
+    [
+     "সখী",
+     "friend"
+    ]
+   ],
+   [
+    [
+     "অতল",
+     "fathomless"
+    ],
+    [
+     "সাগর",
+     "sea"
+    ],
+    [
+     "সংসার",
+     "world"
+    ]
+   ],
+   [
+    [
+     "কূল",
+     "shore"
+    ],
+    [
+     "নয়",
+     "no"
+    ]
+   ]
+  ]
+ },
+ "9944": {
+  "en": [
+   "The bee goes back again and again,",
+   "the bee comes back again and again.",
+   "Only then does the flower unfold.",
+   "The bud longs to open and opens not — dying of shyness, dying of dread.",
+   "Forget pride and slight, give heart and soul, stay near night and day.",
+   "Oh, give up hope, and still keep hope alive,",
+   "in hope of the heart's jewel.",
+   "Come back, come back — the wood is drunk with the scent of flowers.",
+   "Tonight, on this night of parting, the full-blown blossom floats in dew-water."
+  ],
+  "align": [
+   [
+    [
+     "অলি",
+     "bee"
+    ],
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "যায়",
+     "goes"
+    ],
+    [
+     "বার",
+     "again and again"
+    ]
+   ],
+   [
+    [
+     "অলি",
+     "bee"
+    ],
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "আসে",
+     "comes"
+    ],
+    [
+     "বার",
+     "again and again"
+    ]
+   ],
+   [
+    [
+     "তবে",
+     "then"
+    ],
+    [
+     "ফুল",
+     "flower"
+    ],
+    [
+     "বিকাশে",
+     "unfold"
+    ]
+   ],
+   [
+    [
+     "কলি",
+     "bud"
+    ],
+    [
+     "ফুটিতে",
+     "to open"
+    ],
+    [
+     "চাহে",
+     "longs"
+    ],
+    [
+     "ফোটে",
+     "opens"
+    ],
+    [
+     "মরে",
+     "dying"
+    ],
+    [
+     "লাজে",
+     "shyness"
+    ],
+    [
+     "ত্রাসে",
+     "dread"
+    ]
+   ],
+   [
+    [
+     "ভুলি",
+     "Forget"
+    ],
+    [
+     "মান",
+     "pride"
+    ],
+    [
+     "অপমান",
+     "slight"
+    ],
+    [
+     "দাও",
+     "give"
+    ],
+    [
+     "প্রাণ",
+     "soul"
+    ],
+    [
+     "নিশি",
+     "night"
+    ],
+    [
+     "দিন",
+     "day"
+    ],
+    [
+     "রহ",
+     "stay"
+    ]
+   ],
+   [
+    [
+     "আশা",
+     "hope"
+    ],
+    [
+     "ছেড়ে",
+     "give up"
+    ],
+    [
+     "রেখে",
+     "keep"
+    ]
+   ],
+   [
+    [
+     "হৃদয়-রতন",
+     "heart's jewel"
+    ],
+    [
+     "আশে",
+     "hope"
+    ]
+   ],
+   [
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "এস",
+     "Come"
+    ],
+    [
+     "বন",
+     "wood"
+    ],
+    [
+     "মোদিত",
+     "drunk"
+    ],
+    [
+     "ফুলবাসে",
+     "scent of flowers"
+    ]
+   ],
+   [
+    [
+     "আজি",
+     "Tonight"
+    ],
+    [
+     "বিরহ-রজনী",
+     "night of parting"
+    ],
+    [
+     "ফুল্ল",
+     "full-blown"
+    ],
+    [
+     "কুসুম",
+     "blossom"
+    ],
+    [
+     "শিশির-সলিলে",
+     "dew-water"
+    ],
+    [
+     "ভাসে",
+     "floats"
+    ]
+   ]
+  ]
+ },
+ "9945": {
+  "en": [
+   "Who is that, calling me back?",
+   "Who remembers the one who has come back?",
+   "Whose heart aches because I went away?",
+   "Whose heart's word stays shut within the heart?",
+   "I understand only, friend, plain speech —",
+   "a plain heart, and plain love.",
+   "You all have so much — so many minds and hearts;",
+   "do not cast my heart into peril."
+  ],
+  "align": [
+   [
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "আমায়",
+     "me"
+    ],
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "ডাকে",
+     "calling"
+    ]
+   ],
+   [
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "এসেছে",
+     "come"
+    ],
+    [
+     "কে",
+     "Who"
+    ],
+    [
+     "রাখে",
+     "remembers"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "চলে",
+     "went away"
+    ],
+    [
+     "কার",
+     "Whose"
+    ],
+    [
+     "ব্যথা",
+     "aches"
+    ]
+   ],
+   [
+    [
+     "কাহার",
+     "Whose"
+    ],
+    [
+     "মনের",
+     "heart's"
+    ],
+    [
+     "কথা",
+     "word"
+    ],
+    [
+     "মনেই",
+     "within the heart"
+    ],
+    [
+     "থাকে",
+     "stays"
+    ]
+   ],
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "শুধু",
+     "only"
+    ],
+    [
+     "বুঝি",
+     "understand"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "সরল",
+     "plain"
+    ],
+    [
+     "ভাষা",
+     "speech"
+    ]
+   ],
+   [
+    [
+     "সরল",
+     "plain"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "ভালোবাসা",
+     "love"
+    ]
+   ],
+   [
+    [
+     "তোমাদের",
+     "You"
+    ],
+    [
+     "কত",
+     "so much"
+    ],
+    [
+     "মন",
+     "minds"
+    ],
+    [
+     "প্রাণ",
+     "hearts"
+    ],
+    [
+     "আছে",
+     "have"
+    ]
+   ],
+   [
+    [
+     "আমার",
+     "my"
+    ],
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "ফেলো",
+     "cast"
+    ],
+    [
+     "না",
+     "not"
+    ],
+    [
+     "বিপাকে",
+     "peril"
+    ]
+   ]
+  ]
+ },
+ "9946": {
+  "en": [
+   "The one you sent away with tears in your eyes —",
+   "by what pretext will you bring him back now?",
+   "Tonight, in the honeyed breeze, at midnight in the flower-grove,",
+   "has he risen in your mind beneath the bakul tree?",
+   "By what pretext now will you bring him back?",
+   "That day too the honeyed night had melted into the soul,",
+   "all ten directions budding with petals of flowers.",
+   "If two words of tenderness had passed in whispers,",
+   "if you had slipped that garland around his neck —",
+   "by what pretext will you bring him back now?",
+   "The honeyed night of the full moon comes back again and again;",
+   "the one who has gone away comes back no more.",
+   "The hour was in our favor — only a moment's error,",
+   "and forever the thirst-stricken heart burns.",
+   "by what pretext will you bring him back now?"
+  ],
+  "align": [
+   [
+    [
+     "বিদায়",
+     "sent away"
+    ],
+    [
+     "যারে",
+     "The one"
+    ],
+    [
+     "নয়ন-জলে",
+     "tears"
+    ]
+   ],
+   [
+    [
+     "এখন",
+     "now"
+    ],
+    [
+     "ফিরাবে",
+     "bring"
+    ],
+    [
+     "তারে",
+     "him"
+    ],
+    [
+     "কিসের",
+     "what"
+    ],
+    [
+     "ছলে",
+     "pretext"
+    ]
+   ],
+   [
+    [
+     "আজি",
+     "Tonight"
+    ],
+    [
+     "মধু",
+     "honeyed"
+    ],
+    [
+     "সমীরণে",
+     "breeze"
+    ],
+    [
+     "নিশীথে",
+     "midnight"
+    ],
+    [
+     "কুসুম-বনে",
+     "flower-grove"
+    ]
+   ],
+   [
+    [
+     "তারে",
+     "he"
+    ],
+    [
+     "পড়েছে",
+     "risen"
+    ],
+    [
+     "মনে",
+     "mind"
+    ],
+    [
+     "বকুল-তলে",
+     "beneath the bakul"
+    ]
+   ],
+   [
+    [
+     "এখন",
+     "now"
+    ],
+    [
+     "ফিরাবে",
+     "bring"
+    ],
+    [
+     "কিসের",
+     "what"
+    ],
+    [
+     "ছলে",
+     "pretext"
+    ]
+   ],
+   [
+    [
+     "সেদিনো",
+     "That day too"
+    ],
+    [
+     "মধুনিশি",
+     "honeyed night"
+    ],
+    [
+     "প্রাণে",
+     "soul"
+    ],
+    [
+     "মিশি",
+     "melted"
+    ]
+   ],
+   [
+    [
+     "মুকুলিত",
+     "budding"
+    ],
+    [
+     "দশদিশি",
+     "ten directions"
+    ],
+    [
+     "কুসুম-দলে",
+     "petals of flowers"
+    ]
+   ],
+   [
+    [
+     "দুটি",
+     "two"
+    ],
+    [
+     "সোহাগের",
+     "tenderness"
+    ],
+    [
+     "বাণী",
+     "words"
+    ],
+    [
+     "কানাকানি",
+     "whispers"
+    ]
+   ],
+   [
+    [
+     "মালাখানি",
+     "garland"
+    ],
+    [
+     "পরাতে",
+     "slipped"
+    ],
+    [
+     "গলে",
+     "neck"
+    ],
+    [
+     "ঐ",
+     "that"
+    ]
+   ],
+   [
+    [
+     "এখন",
+     "now"
+    ],
+    [
+     "ফিরাবে",
+     "bring"
+    ],
+    [
+     "তারে",
+     "him"
+    ],
+    [
+     "কিসের",
+     "what"
+    ],
+    [
+     "ছলে",
+     "pretext"
+    ]
+   ],
+   [
+    [
+     "মধুনিশি",
+     "honeyed night"
+    ],
+    [
+     "পূর্ণিমার",
+     "full moon"
+    ],
+    [
+     "ফিরে",
+     "back"
+    ],
+    [
+     "আসে",
+     "comes"
+    ],
+    [
+     "বার",
+     "again and again"
+    ]
+   ],
+   [
+    [
+     "জন",
+     "the one"
+    ],
+    [
+     "ফেরে",
+     "comes back"
+    ],
+    [
+     "গেছে",
+     "gone"
+    ],
+    [
+     "চলে",
+     "away"
+    ]
+   ],
+   [
+    [
+     "তিথি",
+     "hour"
+    ],
+    [
+     "অনকূল",
+     "in our favor"
+    ],
+    [
+     "শুধু",
+     "only"
+    ],
+    [
+     "নিমেষের",
+     "moment's"
+    ],
+    [
+     "ভুল",
+     "error"
+    ]
+   ],
+   [
+    [
+     "চিরদিন",
+     "forever"
+    ],
+    [
+     "তৃষাকুল",
+     "thirst-stricken"
+    ],
+    [
+     "পরান",
+     "heart"
+    ],
+    [
+     "জ্বলে",
+     "burns"
+    ]
+   ],
+   [
+    [
+     "এখন",
+     "now"
+    ],
+    [
+     "ফিরাবে",
+     "bring"
+    ],
+    [
+     "তারে",
+     "him"
+    ],
+    [
+     "কিসের",
+     "what"
+    ],
+    [
+     "ছলে",
+     "pretext"
+    ]
+   ]
+  ]
+ },
+ "9947": {
+  "en": [
+   "Whom have you, unknowing, set adrift in tears?",
+   "Oh, who is left gazing down the empty road?",
+   "Whose life is without joy, whose soul burns?",
+   "You never read the language of someone's eyes,",
+   "never grasped the hope of someone's heart,",
+   "never turned to see",
+   "whose desperate heart's longing you have come trampling down."
+  ],
+  "align": [
+   [
+    [
+     "বুঝে",
+     "unknowing"
+    ],
+    [
+     "কারে",
+     "Whom"
+    ],
+    [
+     "তুমি",
+     "you"
+    ],
+    [
+     "ভাসালে",
+     "set adrift"
+    ],
+    [
+     "আঁখিজলে",
+     "tears"
+    ]
+   ],
+   [
+    [
+     "কে",
+     "who"
+    ],
+    [
+     "আছে",
+     "is left"
+    ],
+    [
+     "চাহিয়া",
+     "gazing"
+    ],
+    [
+     "শূন্য",
+     "empty"
+    ],
+    [
+     "পথপানে",
+     "road"
+    ]
+   ],
+   [
+    [
+     "কাহার",
+     "Whose"
+    ],
+    [
+     "জীবনে",
+     "life"
+    ],
+    [
+     "সুখ",
+     "joy"
+    ],
+    [
+     "পরান",
+     "soul"
+    ],
+    [
+     "জ্বলে",
+     "burns"
+    ]
+   ],
+   [
+    [
+     "পড়",
+     "read"
+    ],
+    [
+     "নি",
+     "never"
+    ],
+    [
+     "কাহার",
+     "someone's"
+    ],
+    [
+     "নয়নের",
+     "eyes"
+    ],
+    [
+     "ভাষা",
+     "language"
+    ]
+   ],
+   [
+    [
+     "বোঝ",
+     "grasped"
+    ],
+    [
+     "নি",
+     "never"
+    ],
+    [
+     "কাহার",
+     "someone's"
+    ],
+    [
+     "মরমের",
+     "heart"
+    ],
+    [
+     "আশা",
+     "hope"
+    ]
+   ],
+   [
+    [
+     "দেখ",
+     "see"
+    ],
+    [
+     "নি",
+     "never"
+    ],
+    [
+     "ফিরে",
+     "turned"
+    ]
+   ],
+   [
+    [
+     "কার",
+     "whose"
+    ],
+    [
+     "ব্যাকুল",
+     "desperate"
+    ],
+    [
+     "প্রাণের",
+     "heart's"
+    ],
+    [
+     "সাধ",
+     "longing"
+    ],
+    [
+     "এসেছ",
+     "come"
+    ],
+    [
+     "দ'লে",
+     "trampling"
+    ]
+   ]
+  ]
+ },
+ "9948": {
+  "en": [
+   "I understand no one else — you alone I have understood.",
+   "In you I have found light in the dark of doubt.",
+   "I have roamed this world and won no one's heart;",
+   "only into your heart have I entered.",
+   "In this world who will turn me away, who will call and take me in?",
+   "Even now I cannot tell — I live on in fear.",
+   "You alone I know; your word I have understood;",
+   "in you I have found shore upon a shoreless sea."
+  ],
+  "align": [
+   [
+    [
+     "আমি",
+     "I"
+    ],
+    [
+     "কারেও",
+     "no one"
+    ],
+    [
+     "বুঝি",
+     "understand"
+    ],
+    [
+     "শুধু",
+     "alone"
+    ],
+    [
+     "বুঝেছি",
+     "understood"
+    ],
+    [
+     "তোমারে",
+     "you"
+    ]
+   ],
+   [
+    [
+     "তোমাতে",
+     "In you"
+    ],
+    [
+     "পেয়েছি",
+     "found"
+    ],
+    [
+     "আলো",
+     "light"
+    ],
+    [
+     "সংশয়-আঁধারে",
+     "dark of doubt"
+    ]
+   ],
+   [
+    [
+     "ফিরিয়াছি",
+     "roamed"
+    ],
+    [
+     "ভুবন",
+     "world"
+    ],
+    [
+     "কারো",
+     "no one's"
+    ],
+    [
+     "মন",
+     "heart"
+    ]
+   ],
+   [
+    [
+     "তোমারি",
+     "your"
+    ],
+    [
+     "শুধু",
+     "only"
+    ],
+    [
+     "মনের",
+     "heart"
+    ],
+    [
+     "গিয়েছি",
+     "entered"
+    ]
+   ],
+   [
+    [
+     "সংসারে",
+     "world"
+    ],
+    [
+     "কে",
+     "who"
+    ],
+    [
+     "ফিরাবে",
+     "turn me away"
+    ],
+    [
+     "লইবে",
+     "take"
+    ],
+    [
+     "ডাকি",
+     "call"
+    ]
+   ],
+   [
+    [
+     "আজিও",
+     "Even now"
+    ],
+    [
+     "বুঝিতে",
+     "tell"
+    ],
+    [
+     "নারি",
+     "cannot"
+    ],
+    [
+     "ভয়ে",
+     "fear"
+    ],
+    [
+     "থাকি",
+     "live"
+    ]
+   ],
+   [
+    [
+     "কেবল",
+     "alone"
+    ],
+    [
+     "তোমারে",
+     "You"
+    ],
+    [
+     "জানি",
+     "know"
+    ],
+    [
+     "বুঝেছি",
+     "understood"
+    ],
+    [
+     "তোমার",
+     "your"
+    ],
+    [
+     "বাণী",
+     "word"
+    ]
+   ],
+   [
+    [
+     "তোমাতে",
+     "in you"
+    ],
+    [
+     "পেয়েছি",
+     "found"
+    ],
+    [
+     "কূল",
+     "shore"
+    ],
+    [
+     "অকূল",
+     "shoreless"
+    ],
+    [
+     "পাথারে",
+     "sea"
+    ]
+   ]
+  ]
+ },
+ "9949": {
+  "en": [
+   "Night has passed into dawn, roaming the grove;",
+   "the parting-stricken heart has died of weeping.",
+   "The pale moon has set, the pale smile has faded,",
+   "and the heart broke out weeping in an anguished strain.",
+   "Come, friend, come then — let us turn back home;",
+   "let the pale eyes drift away in their own tears.",
+   "Let the empty heart break; let hope come to its end;",
+   "let the one the heart calls stay far away."
+  ],
+  "align": [
+   [
+    [
+     "প্রভাত",
+     "dawn"
+    ],
+    [
+     "নিশি",
+     "Night"
+    ],
+    [
+     "কানন",
+     "grove"
+    ],
+    [
+     "ঘুরে",
+     "roaming"
+    ]
+   ],
+   [
+    [
+     "বিরহ-বিধুর",
+     "parting-stricken"
+    ],
+    [
+     "হিয়া",
+     "heart"
+    ],
+    [
+     "মরিল",
+     "died"
+    ],
+    [
+     "ঝুরে",
+     "weeping"
+    ]
+   ],
+   [
+    [
+     "ম্লান",
+     "pale"
+    ],
+    [
+     "শশী",
+     "moon"
+    ],
+    [
+     "অস্ত",
+     "set"
+    ],
+    [
+     "হাসি",
+     "smile"
+    ],
+    [
+     "মিলাইল",
+     "faded"
+    ]
+   ],
+   [
+    [
+     "কাঁদি",
+     "weeping"
+    ],
+    [
+     "উঠিল",
+     "broke out"
+    ],
+    [
+     "প্রাণ",
+     "heart"
+    ],
+    [
+     "কাতর",
+     "anguished"
+    ],
+    [
+     "সুরে",
+     "strain"
+    ]
+   ],
+   [
+    [
+     "চল্‌",
+     "Come"
+    ],
+    [
+     "সখী",
+     "friend"
+    ],
+    [
+     "ঘরেতে",
+     "home"
+    ],
+    [
+     "ফিরে",
+     "turn back"
+    ]
+   ],
+   [
+    [
+     "যাক",
+     "let"
+    ],
+    [
+     "ভেসে",
+     "drift"
+    ],
+    [
+     "ম্লান",
+     "pale"
+    ],
+    [
+     "আঁখি",
+     "eyes"
+    ],
+    [
+     "নয়ন-নীরে",
+     "tears"
+    ]
+   ],
+   [
+    [
+     "যাক",
+     "Let"
+    ],
+    [
+     "ফেটে",
+     "break"
+    ],
+    [
+     "শূন্য",
+     "empty"
+    ],
+    [
+     "প্রাণ",
+     "heart"
+    ],
+    [
+     "আশা",
+     "hope"
+    ],
+    [
+     "অবসান",
+     "end"
+    ]
+   ],
+   [
+    [
+     "হৃদয়",
+     "heart"
+    ],
+    [
+     "যাহারে",
+     "the one"
+    ],
+    [
+     "ডাকে",
+     "calls"
+    ],
+    [
+     "থাক্‌",
+     "stay"
+    ],
+    [
+     "দূরে",
+     "far away"
+    ]
+   ]
+  ]
+ },
+ "9950": {
+  "en": [
+   "Come, come, Spring, to the earth.",
+   "Bring the cuckoo's call, songs of love,",
+   "bring the languid breeze laden with the wine of fragrance;",
+   "bring the swell of new youth, new life,",
+   "fresh blossoming desire to the earth.",
+   "Come trembling and shivering, murmurous with rustling,",
+   "thrilled with new leaves,",
+   "in the bower of malati vines restless with flowers,",
+   "in happy shade, on honeyed airs — come, come.",
+   "Come to the lap of young dawn, her lotus feet flushed with sunrise.",
+   "Come in the midnight swooning with moonlight,",
+   "on the bank of the rippling, murmuring river,",
+   "in lake waters happily asleep — come, come.",
+   "Come into hearts aching with youth,",
+   "come into eyes languid with the joy of union,",
+   "come into the midst of sweet shyness,",
+   "bind arm to arm,",
+   "and with new blossoms weave a new bond of union."
+  ],
+  "align": [
+   [
+    [
+     "এস",
+     "Come"
+    ],
+    [
+     "বসন্ত",
+     "Spring"
+    ],
+    [
+     "ধরাতলে",
+     "earth"
+    ]
+   ],
+   [
+    [
+     "আনো",
+     "Bring"
+    ],
+    [
+     "কুহুতান",
+     "cuckoo's call"
+    ],
+    [
+     "প্রেমগান",
+     "songs of love"
+    ]
+   ],
+   [
+    [
+     "আনো",
+     "bring"
+    ],
+    [
+     "গন্ধমদভরে",
+     "wine of fragrance"
+    ],
+    [
+     "অলস",
+     "languid"
+    ],
+    [
+     "সমীরণ",
+     "breeze"
+    ]
+   ],
+   [
+    [
+     "আনো",
+     "bring"
+    ],
+    [
+     "নবযৌবন-হিল্লোল",
+     "new youth"
+    ],
+    [
+     "নব",
+     "new"
+    ],
+    [
+     "প্রাণ",
+     "life"
+    ]
+   ],
+   [
+    [
+     "প্রফুল্ল",
+     "blossoming"
+    ],
+    [
+     "নবীন",
+     "fresh"
+    ],
+    [
+     "বাসনা",
+     "desire"
+    ],
+    [
+     "ধরাতলে",
+     "earth"
+    ]
+   ],
+   [
+    [
+     "এস",
+     "Come"
+    ],
+    [
+     "থরথর-কম্পিত",
+     "trembling"
+    ],
+    [
+     "মর্মর-মুখরিত",
+     "murmurous with rustling"
+    ]
+   ],
+   [
+    [
+     "নব-পল্লব-পুলকিত",
+     "thrilled with new"
+    ]
+   ],
+   [
+    [
+     "ফুল-আকুল-মালতী-বল্লি",
+     "malati vines"
+    ],
+    [
+     "বিতানে",
+     "bower"
+    ]
+   ],
+   [
+    [
+     "সুখছায়ে",
+     "happy shade"
+    ],
+    [
+     "মধুবায়ে",
+     "honeyed airs"
+    ],
+    [
+     "এস",
+     "come"
+    ]
+   ],
+   [
+    [
+     "এস",
+     "Come"
+    ],
+    [
+     "তরুণ",
+     "young"
+    ],
+    [
+     "উষার",
+     "dawn"
+    ],
+    [
+     "কোলে",
+     "lap"
+    ],
+    [
+     "অরুণ-চরণ-কমল-বরন",
+     "lotus feet flushed"
+    ]
+   ],
+   [
+    [
+     "এস",
+     "Come"
+    ],
+    [
+     "জ্যোৎস্না-বিবশ",
+     "swooning with moonlight"
+    ],
+    [
+     "নিশীথে",
+     "midnight"
+    ]
+   ],
+   [
+    [
+     "কল-কল্লোল",
+     "murmuring"
+    ],
+    [
+     "তটিনী-তীরে",
+     "bank"
+    ]
+   ],
+   [
+    [
+     "সুখসুপ্ত",
+     "happily asleep"
+    ],
+    [
+     "সরসী-নীরে",
+     "lake waters"
+    ],
+    [
+     "এস",
+     "come"
+    ]
+   ],
+   [
+    [
+     "এস",
+     "Come"
+    ],
+    [
+     "যৌবন-কাতর",
+     "aching with youth"
+    ],
+    [
+     "হৃদয়ে",
+     "hearts"
+    ]
+   ],
+   [
+    [
+     "এস",
+     "come"
+    ],
+    [
+     "মিলন-সুখালস",
+     "joy of union"
+    ],
+    [
+     "নয়নে",
+     "eyes"
+    ]
+   ],
+   [
+    [
+     "এস",
+     "come"
+    ],
+    [
+     "মধুর",
+     "sweet"
+    ],
+    [
+     "শরম",
+     "shyness"
+    ],
+    [
+     "মাঝারে",
+     "midst"
+    ]
+   ],
+   [
+    [
+     "বাহুতে",
+     "arm"
+    ],
+    [
+     "বাঁধি",
+     "bind"
+    ]
+   ],
+   [
+    [
+     "নবীন",
+     "new"
+    ],
+    [
+     "কুসুম",
+     "blossoms"
+    ],
+    [
+     "রচি",
+     "weave"
+    ],
+    [
+     "মিলন-বাঁধন",
+     "bond of union"
+    ]
+   ]
+  ]
+ }
+}

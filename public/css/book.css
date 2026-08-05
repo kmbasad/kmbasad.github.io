@@ -1,12 +1,22 @@
 /* =========================================================================
-   book.css — Two-sided book layout for translation pages
-   Desktop: left image panel (full height, pannable/zoomable) +
-            right scrollable text panel, split 50/50.
-   Mobile:  text first, image slider below.
+   book.css — the Translations reading room (BookReader.astro + book.js)
+
+   Desktop:  two panes under the menubar — the parallel text (its own
+             scroll column) and the শব্দকোষ dictionary panel on the right.
+   Tablet:   one flowing page; the শব্দকোষ becomes a bottom sheet that
+             rises when a source word is clicked.
+   Phone:    the Bangla reads as a book page (translation-table.css);
+             prosody chips stay, the dictionary sleeps.
+
+   Palette: Lapis & Gold — lapis for structure and interaction, gold for
+   marginalia (line numbers, prosody dividers, the শব্দকোষ kicker).
    ========================================================================= */
 
+:root {
+  --book-dict-w: 21.5rem;
+}
 
-/* ── Desktop: book view ──────────────────────────────────────────────────── */
+/* ── Desktop: the reading room ──────────────────────────────────────────── */
 @media (min-width: 900px) {
   body.book-page {
     overflow: hidden;
@@ -14,106 +24,120 @@
 
   .book-layout {
     display: flex;
-    height: calc(100vh - 52px); /* 56px = .nav-inner height */
+    height: calc(100vh - var(--nav-now));
+    transition: height var(--dur-slow) var(--ease-out);
     overflow: hidden;
   }
 
-  /* ── Left: image panel ─────────────────────────────────────── */
-  .book-img-panel {
-    flex: 0 0 50%;
-    position: relative;
-    overflow: hidden;
-    background: var(--surface);
-    cursor: grab;
-  }
-
-  .book-img-panel.is-dragging {
-    cursor: grabbing;
-  }
-
-  /* Images: JS sets position/transform; hidden until fitted */
-  .book-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: none;
-    height: auto;
-    transform-origin: 0 0;
-    will-change: transform;
-    user-select: none;
-    -webkit-user-drag: none;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.45s ease;
-  }
-
-  .book-img.book-img--active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* ── Right: text panel ─────────────────────────────────────── */
   .book-text-panel {
     flex: 1;
+    min-width: 0;
     overflow: auto;
   }
 
   .book-text-body {
-    padding: 1rem 1.4rem 0;
+    width: fit-content;
+    min-width: min(100%, 46rem);
+    margin: 0 auto;
+    padding: 1.1rem clamp(1.4rem, 4vw, 3.2rem) 0;
   }
 
-  /* Table fills the panel width; long lines create horizontal scroll */
-  .book-text-body .tt-table {
-    min-width: 100%;
+  .book-dict {
+    flex: 0 0 var(--book-dict-w);
+    overflow-y: auto;
+    border-left: 1px solid var(--border);
+    background: var(--surface);
   }
+
+  .dict-close { display: none; }
 }
 
-/* ── Mobile: stacked layout ─────────────────────────────────────────────── */
+/* ── Tablet & phone: one flowing page ──────────────────────────────────── */
 @media (max-width: 899px) {
-  .book-layout {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .book-text-panel {
-    order: 1;
-  }
-
-  /* Image slider sits below the text */
-  .book-img-panel {
-    order: 2;
-    position: relative;
-    overflow: hidden;
-    height: min(65vw, 320px);
-    background: var(--surface);
-    flex-shrink: 0;
-  }
-
-  .book-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    /* Override any JS-set transform */
-    transform: none !important;
-  }
-
-  .book-img.book-img--active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
   .book-text-body {
     padding: 0.8rem 1rem 0;
   }
+
+  /* The শব্দকোষ waits below the fold as a sheet; book.js raises it. */
+  .book-dict {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 320;
+    max-height: 62vh;
+    overflow-y: auto;
+    background: var(--surface);
+    border-top: 1px solid var(--border-2);
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -10px 40px rgba(14, 26, 43, 0.18);
+    transform: translateY(105%);
+    transition: transform var(--dur-slow) var(--ease-out);
+  }
+
+  .book-dict.is-open {
+    transform: none;
+  }
+
+  .book-dict .dict-inner {
+    padding-bottom: calc(1.6rem + env(safe-area-inset-bottom));
+  }
 }
 
-/* ── Table blending — transparent cells, no column dividers ─────────────── */
+/* ── মিটার স্ক্যান — the prosody bar at the head of the শব্দকোষ panel ──── */
+.dict-meter {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.95rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dict-meter-label {
+  font-family: var(--bn-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+  margin-right: 0.15rem;
+}
+
+.book-tool {
+  font-family: var(--bn-display);
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--accent-mid);
+  border-radius: 999px;
+  padding: 0.16rem 0.75rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease);
+}
+
+.book-tool:hover {
+  border-color: var(--accent);
+}
+
+.book-tool.is-on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+}
+
+/* The dividers themselves — gold marginalia inside the running line */
+.tt-table .m-sep,
+.tt-table .f-sep {
+  color: var(--accent-2);
+  font-weight: 600;
+  margin: 0 0.28rem;
+  user-select: none;
+  opacity: 0.85;
+}
+
+/* ── Table blending — the verse floats on the page, no cell chrome ─────── */
 .book-text-body .tt-table thead { display: none; }
 
 .book-text-body .tt-table td {
@@ -121,14 +145,148 @@
   border-right: none;
 }
 
-/* ── Bottom page navigation ─────────────────────────────────────────────── */
+/* Source-language words invite the শব্দকোষ */
+body.book-has-dict .tt-table td.it .w,
+body.book-has-dict .tt-table td.fa .w {
+  cursor: pointer;
+}
+
+/* ── The শব্দকোষ panel ─────────────────────────────────────────────────── */
+.dict-inner {
+  padding: 1.2rem 1.3rem 2.4rem;
+}
+
+.dict-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.dict-kicker {
+  font-family: var(--bn-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+}
+
+.dict-close {
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-3);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dict-close:hover {
+  color: var(--text);
+  border-color: var(--border-2);
+}
+
+.dict-word {
+  margin: 0 0 0.5rem;
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.dict-word[dir="rtl"] {
+  font-family: "Noto Naskh Arabic", "Scheherazade New", "Traditional Arabic", serif;
+  font-style: normal;
+  text-align: right;
+}
+
+.dict-word:not(.has-word) {
+  color: var(--text-4);
+  font-size: 1.2rem;
+}
+
+.dict-hint,
+.dict-note {
+  margin: 0 0 0.6rem;
+  font-family: var(--bn-font);
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--text-3);
+}
+
+.dict-lemma {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  color: var(--text-4);
+}
+
+.dict-pos h3 {
+  margin: 0.9rem 0 0.25rem;
+  font-family: var(--ui-font);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
+.dict-pos ol {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-family: var(--serif-font);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.dict-pos li {
+  margin-bottom: 0.4rem;
+}
+
+.dict-pos li a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-light);
+}
+
+.dict-pos li a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.dict-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.dict-links a {
+  font-family: var(--ui-font);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.dict-links a:hover {
+  text-decoration: underline;
+}
+
+/* ── Bottom chapter navigation ──────────────────────────────────────────── */
 .book-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.5rem 1.5rem 2rem;
+  padding: 2.5rem 0 2rem;
   border-top: 1px solid var(--border);
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .book-nav-btn {
@@ -136,11 +294,8 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.4rem 0.7rem;
-  font-size: 10.5px;
-  font-family: var(--ui-font);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-family: var(--bn-display);
   color: var(--text-4);
   text-decoration: none;
   background-image: none;
@@ -168,104 +323,30 @@
   opacity: 0.7;
 }
 
-/* ── Slider arrows ───────────────────────────────────────────────────────── */
-.book-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--surface) 80%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--text);
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.18s ease, background 0.18s ease, transform 0.18s ease;
-  box-shadow: var(--sh-sm);
+/* ── Phones ──────────────────────────────────────────────────────────────
+   The verse cells carry their own side padding (≤640 block in
+   translation-table.css), so the body goes edge-to-edge; the head and
+   chips keep a book margin of their own. Last in the file so these win
+   over the base rules above. */
+@media (max-width: 640px) {
+  .book-text-body {
+    padding: 0.5rem 0 0;
+  }
+
+  .book-nav {
+    padding: 1.8rem 1rem calc(1.6rem + env(safe-area-inset-bottom));
+    gap: 0.5rem;
+  }
+
+  .book-nav-btn {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.72rem;
+  }
 }
 
-.book-arrow:hover { opacity: 1; }
-
-.book-arrow--prev {
-  left: 12px;
-  transform: translateY(-50%);
-}
-
-.book-arrow--next {
-  right: 12px;
-  transform: translateY(-50%);
-}
-
-.book-arrow--prev:hover { transform: translateY(-50%) translateX(-1px); }
-.book-arrow--next:hover { transform: translateY(-50%) translateX(1px); }
-
-/* ── Dots ───────────────────────────────────────────────────────────────── */
-.book-dots {
-  position: absolute;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  z-index: 20;
-  pointer-events: none;
-}
-
-.book-dot {
-  width: 6px;
-  height: 6px;
-  border: none;
-  border-radius: 50%;
-  background: var(--text);
-  opacity: 0.3;
-  cursor: pointer;
-  padding: 0;
-  pointer-events: all;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.book-dot.book-dot--active {
-  opacity: 1;
-  transform: scale(1.3);
-}
-
-/* ── Zoom hint (desktop only) ─────────────────────────────────────────────
-   Subtle "scroll to zoom" label that fades out after a few seconds.          */
-.book-zoom-hint {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  font-size: 0.68rem;
-  font-family: var(--ui-font);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text);
-  background: color-mix(in srgb, var(--surface) 75%, transparent);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 4px 8px;
-  border-radius: var(--r-sm);
-  opacity: 0;
-  pointer-events: none;
-  animation: hint-fade 3s ease 1.2s 1 forwards;
-  z-index: 20;
-}
-
-@keyframes hint-fade {
-  0%   { opacity: 0; }
-  15%  { opacity: 0.7; }
-  75%  { opacity: 0.7; }
-  100% { opacity: 0; }
-}
-
-@media (max-width: 899px) {
-  .book-zoom-hint { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .book-dict,
+  .book-tool {
+    transition: none;
+  }
 }

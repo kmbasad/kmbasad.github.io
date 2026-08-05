@@ -1,4 +1,4 @@
-# God philosophers
+# দার্শনিক
 
 axes:
   rows: Philosopher
@@ -550,7 +550,7 @@ The immortality of the soul is, like God's existence, a postulate of practical r
 
 Every experience of every actual occasion — including every human experience — flows into God's consequent nature and is received, preserved, and harmonized there. This is the most reciprocal soul-God relation in the entire table. Plotinus's soul returns to the One but gives it nothing (the One is already complete). Shankara's Ātman recognizes identity with Brahman but contributes nothing to Brahman (which is unchangeable). Ibn Arabi's soul reveals divine Names but the Essence remains untouched. Spinoza's mind recognizes itself as a mode but does not enrich the substance. Only Whitehead's consequent God is genuinely enriched by what the soul experiences and achieves. Nothing genuinely lived is ever lost: the soul's joy, creativity, and suffering are permanently preserved in the divine memory — which is what Whitehead means when he says *"God is the great companion."*
 
-# God prophets
+# নবি
 
 axes:
   rows: Prophet

@@ -24,6 +24,30 @@
   position: relative;
 }
 
+/* Several matrices in one file stack in the one mount — give them air, or
+   the tables read as one long table. */
+.matrix-container + .matrix-container {
+  margin-top: 52px;
+}
+
+/* The matrix's own name, drawn only when its file holds more than one (গড:
+   দার্শনিক and নবি). A page with a single matrix wears its name in the
+   menubar breadcrumb and must not repeat it here. Gold, like every other
+   section heading on the site. */
+.matrix-title {
+  font-family: var(--bn-display);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--accent-2);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.matrix-container.is-fullscreen .matrix-title {
+  display: none;
+}
+
 .matrix-fs-btn {
   display: inline-flex;
   align-items: center;
@@ -450,12 +474,8 @@ tbody tr td.is-diagonal .cell-btn.active {
 
 /* Amber panel bar when a diagonal cell is open */
 .table-panel.panel-diagonal .panel-bar {
-  background: linear-gradient(90deg, var(--diag-accent), rgba(254, 243, 199, 0.5));
+  background: linear-gradient(90deg, var(--diag-accent), rgba(232, 205, 140, 0.55));
 }
-[data-theme="dark"] .table-panel.panel-diagonal .panel-bar {
-  background: linear-gradient(90deg, var(--diag-accent), rgba(120, 78, 8, 0.35));
-}
-
 /* ── Cross-highlight: row header + col header highlight on cell hover ─────── */
 tbody th.row-cross {
   background: var(--cell-cross-bg);
@@ -511,14 +531,10 @@ thead th:not(:first-child):hover .th-name {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .35);
+  background: rgba(14, 26, 43, .38);
   z-index: 90;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-}
-
-[data-theme="dark"] .table-overlay {
-  background: rgba(0, 0, 0, .6);
 }
 
 .table-overlay.visible {
@@ -533,16 +549,12 @@ thead th:not(:first-child):hover .th-name {
   height: 100vh;
   background: var(--surface);
   border-left: 1px solid var(--border);
-  box-shadow: -8px 0 40px rgba(0, 0, 0, .16);
+  box-shadow: -8px 0 40px rgba(14, 26, 43, .16);
   z-index: 100;
   overflow-y: auto;
   transition: right .3s cubic-bezier(.22,.68,0,1.2);
   display: flex;
   flex-direction: column;
-}
-
-[data-theme="dark"] .table-panel {
-  box-shadow: -8px 0 48px rgba(0, 0, 0, .7);
 }
 
 .table-panel.open {
@@ -767,4 +779,89 @@ thead th:not(:first-child):hover .th-name {
   margin: 0 auto 32px auto;
   max-width: 900px;
   letter-spacing: 0.01em;
+}
+
+/* ── Mobile matrix ————————————————————————————————————————————————————————
+   The grid must scroll sideways on a phone — but the subject column stays
+   pinned so every cell keeps its row context. border-collapse:separate is
+   required for position:sticky to work on table cells; left borders are
+   dropped so the un-collapsed borders stay single, not doubled.           */
+@media (max-width: 767px) {
+  .page-section {
+    padding: 36px 14px 44px;
+  }
+
+  .page-section:first-of-type {
+    padding-top: 24px;
+  }
+
+  .trellis-essay {
+    padding: 40px 14px 52px;
+  }
+
+  .article-legend {
+    font-size: 13px;
+    padding: 10px 4px 24px;
+  }
+
+  .table-scroll table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  thead th,
+  tbody th,
+  td {
+    border-left: none;
+  }
+
+  thead th:first-child,
+  tbody th {
+    border-left: 1px solid var(--border);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+  }
+
+  thead th:first-child {
+    z-index: 3;
+  }
+
+  tbody th {
+    box-shadow: 4px 0 10px -4px rgba(14, 26, 43, 0.20);
+  }
+
+  /* Narrower columns — more of the grid on screen at once */
+  thead th:first-child,
+  .corner-th,
+  tbody th {
+    width: 124px;
+    min-width: 124px;
+  }
+
+  thead th,
+  td {
+    width: 138px;
+    min-width: 138px;
+  }
+
+  .corner-row-label,
+  .corner-col-label {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .cell-btn {
+    padding: 8px 9px 16px;
+  }
+
+  /* Detail panel: full-screen sheet, safe-area aware */
+  .panel-nav {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .panel-close-btn {
+    width: 34px;
+    height: 34px;
+  }
 }
