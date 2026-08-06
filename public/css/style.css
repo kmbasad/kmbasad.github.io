@@ -84,8 +84,12 @@ html {
   /* ── The one mobile reading column ──
      Every section reads the same on a phone: same side margin, same Bangla
      size, same leading. The section stylesheets consume these tokens in
-     their own phone blocks — never restate the numbers. */
-  --m-read-pad: 20px;
+     their own phone blocks — never restate the numbers. The margin is
+     kindle-thin: the text fills the window. Prose justifies; verse never
+     breaks a line — the page's verse size (--verse-fs, set by the fitter in
+     translation-table.js) shrinks from --m-read-fs until the longest line
+     fits the screen. */
+  --m-read-pad: 12px;
   --m-read-fs: 17.5px;
   --m-read-lh: 2.0;
 }
@@ -561,11 +565,11 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   }
 
   .main {
-    padding: 44px 20px 56px;
+    padding: 44px var(--m-read-pad) 56px;
   }
 
   .page-intro {
-    padding: 36px 20px 22px;
+    padding: 36px var(--m-read-pad) 22px;
   }
 
   .page-intro h1 {
@@ -824,6 +828,8 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   .essay-body p {
     font-size: var(--m-read-fs);
     line-height: var(--m-read-lh);
+    /* kindle rule: prose reads justified on the narrow page */
+    text-align: justify;
   }
 
   .poem-body {

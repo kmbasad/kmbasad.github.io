@@ -327,4 +327,71 @@
 
   window.TranslationTable = { init: init };
 
+  /* ═══════════════════════════════════════════════════════════════════
+   * Verse fit — phones only
+   *
+   * A verse line must never break. On the collapsed one-column page the
+   * bn cells are nowrap; this measures the page's longest line and sets
+   * --verse-fs (from the --m-read-fs base downward) so that line fits
+   * the screen. One size per page — a poem read at one size, not a
+   * ransom note — floored at 12.5px. Runs after md-loader has built and
+   * word-wrapped the table, again when the webfonts land (they change
+   * every width), and on resize.
+   * ═══════════════════════════════════════════════════════════════════ */
+  var fitRaf = null;
+
+  function isVerseRow(tr) {
+    return !/(?:^|\s)(?:tt-section|tt-title|tt-marker)(?:\s|$)/.test(tr.className);
+  }
+
+  function fitVerse() {
+    var doc = document.documentElement;
+    doc.style.removeProperty("--verse-fs");
+    if (window.innerWidth > 640) return;
+
+    var cells = document.querySelectorAll(".tt-table td.bn");
+    if (!cells.length) return;
+
+    var pad = 0, probe = null, worst = null, minRatio = 1;
+    for (var i = 0; i < cells.length; i++) {
+      var td = cells[i];
+      if (!isVerseRow(td.parentNode)) continue;
+      if (!probe) {
+        probe = td;
+        var cs = getComputedStyle(td);
+        pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+      }
+      var have = td.clientWidth - pad;
+      var need = td.scrollWidth - pad;
+      if (need > have && have > 0) {
+        var r = have / need;
+        if (r < minRatio) { minRatio = r; worst = td; }
+      }
+    }
+    if (!worst) return;
+
+    var base = parseFloat(getComputedStyle(probe).fontSize) || 17.5;
+    var fs = base;
+    /* linear scale with a hair of slack, then verify against the worst
+       line — shaping isn't perfectly linear in the font size */
+    for (var pass = 0; pass < 3; pass++) {
+      fs = Math.max(12.5, Math.floor(fs * minRatio * 0.985 * 10) / 10);
+      doc.style.setProperty("--verse-fs", fs + "px");
+      if (fs <= 12.5) break;
+      var have2 = worst.clientWidth - pad;
+      var need2 = worst.scrollWidth - pad;
+      if (need2 <= have2 || have2 <= 0) break;
+      minRatio = have2 / need2;
+    }
+  }
+
+  function queueFit() {
+    if (fitRaf) return;
+    fitRaf = requestAnimationFrame(function () { fitRaf = null; fitVerse(); });
+  }
+
+  document.addEventListener("md-loader-done", queueFit);
+  window.addEventListener("resize", queueFit, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queueFit);
+
 })();

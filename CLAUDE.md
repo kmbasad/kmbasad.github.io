@@ -152,7 +152,15 @@ plain list of links.
   ends under it, and the breadcrumb gets the whole shelf (`max-width: none`). There is no
   hamburger and no menu sheet — pure CSS, nothing to wire. **Mobile reading is one column
   site-wide**: every section's phone styles consume the `--m-read-pad` / `--m-read-fs` /
-  `--m-read-lh` tokens from `style.css` — never restate the numbers.
+  `--m-read-lh` tokens from `style.css` — never restate the numbers. The margin is
+  kindle-thin (the text fills the window), **prose justifies, and a verse line never
+  breaks**: on the collapsed one-column verse page the bn cells are `nowrap` and the fitter
+  at the foot of `translation-table.js` sets `--verse-fs` (shrinking from `--m-read-fs`,
+  floor 12.5px) so the page's longest line fits the screen — one size per page, re-run on
+  `md-loader-done`, font load, and resize. **Text precedes design on phones**: Panthea's
+  story sits above the map/plan plate (grid-row swap in `panthea.css`), and a trellis's
+  essay above its matrix (the `.trellis-page` wrapper + flex order in `trellis.css`);
+  `buildTOC` sorts targets by visual position so the সূচি reads the way the page does.
 
 ### The সূচি
 

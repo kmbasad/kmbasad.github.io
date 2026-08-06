@@ -847,27 +847,25 @@ body.pn-riding .pnf-core {
   transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
-/* ── Mobile: single column. The design panel still leads — but as a plate,
-      not a wall: it keeps to well under one screen so the story always
-      shows beneath it, and it never scrolls ── */
+/* ── Mobile: single column, READING FIRST — the story leads, the design
+      panel follows as a plate under it (well under one screen tall), and
+      it never scrolls ── */
 @media (max-width: 960px) {
   .pn-wrap {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     gap: 28px;
     padding-top: 10px;
   }
 
-  .pn-wrap .pn-left,
-  .pn-wrap .pn-right {
-    grid-column: auto;
-    grid-row: auto;
-  }
+  .pn-wrap .pn-right { grid-column: 1; grid-row: 1; }
+  .pn-wrap .pn-left  { grid-column: 1; grid-row: 2; }
 
   /* stacked: no mid-gap divider — the story takes the site's one mobile
-     reading margin and runs under the design plate */
+     reading margin and the design plate runs under it */
   .pn-wrap .pn-right {
     margin: 0;
-    padding: 0 var(--m-read-pad) 64px;
+    padding: 8px var(--m-read-pad) 8px;
     border-right: 0;
     max-width: 720px;
   }
@@ -875,7 +873,8 @@ body.pn-riding .pnf-core {
   .pn-left {
     position: static;
     height: min(58vh, 480px);
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    margin-bottom: 24px;
   }
 
   /* a floor's plan is a circle — its panel needs no more height than the
@@ -900,15 +899,13 @@ body.pn-riding .pnf-core {
   .pnf-scale-bar { width: 90px; }
 }
 
-/* phones: the one mobile reading column; ragged-right — justified Bangla
-   rivers in a narrow measure */
+/* phones: the one mobile reading column — prose stays justified, like the
+   printed page */
 @media (max-width: 760px) {
   .pn-prose {
     font-size: var(--m-read-fs);
     line-height: var(--m-read-lh);
   }
-
-  .pn-prose p { text-align: left; }
 
   .pn-story > p:first-child:not(.pn-story-empty) {
     font-size: var(--m-read-fs);

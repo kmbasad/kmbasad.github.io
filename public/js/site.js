@@ -244,6 +244,12 @@
     var bar = document.querySelector('.nav-inner');
     if (targets.length < 2 || !bar) return;
 
+    /* List and spy in VISUAL order, not DOM order — phones seat a trellis's
+       essay above its matrix, and the menu must read the way the page does. */
+    targets.sort(function (a, b) {
+      return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+    });
+
     var grid = document.body.dataset.tocStyle === 'grid' ||
       !!(window.TRANS_CONFIG && window.TRANS_CONFIG.tocStyle === 'grid');
 

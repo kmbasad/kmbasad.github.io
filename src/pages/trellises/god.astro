@@ -12,13 +12,16 @@ import Base from '../../layouts/Base.astro';
        the সূচি key beside it holds the matrices and the essay. This is the
        one file with two matrices, so trellis.js draws their names above
        them — everywhere else a single matrix goes unlabelled. -->
-  <div class="page-section">
-    <div id="trellis-mount"></div>
-  </div>
+  <!-- one wrapper so phones can seat the essay above the matrix -->
+  <div class="trellis-page">
+    <div class="page-section">
+      <div id="trellis-mount"></div>
+    </div>
 
-  <section class="trellis-essay">
-    <div id="essay-mount"></div>
-  </section>
+    <section class="trellis-essay">
+      <div id="essay-mount"></div>
+    </section>
+  </div>
 
   <script is:inline>
     window.TRELLIS_CONFIG = { data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' };

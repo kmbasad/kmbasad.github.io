@@ -460,10 +460,10 @@
 
 /* ── Mobile: the Bangla page ──────────────────────────────────────────────
    The parallel apparatus is desktop scholarship. On a phone the reader
-   gets the poem itself: one Bangla column set like a book page — larger
-   type, generous leading, wrapped lines with a hanging indent (which for
-   ghazal couplets doubles as the classic alternating misra indent), and
-   the ghazal number as a centred ॥ N ॥ manuscript mark.                  */
+   gets the poem itself: one Bangla column set like a book page. A verse
+   line NEVER breaks — the fitter in translation-table.js sets --verse-fs
+   (down from --m-read-fs) until the page's longest line fits the screen —
+   and the ghazal number is a centred ॥ N ॥ manuscript mark.              */
 @media (max-width: 640px) {
   .tt-table td.it,
   .tt-table td.fa,
@@ -489,14 +489,14 @@
   .tt-table { width: 100%; }
 
   .tt-table td.bn {
-    white-space: normal;
-    /* the site-wide mobile reading column (style.css tokens) */
-    font-size: var(--m-read-fs);
+    /* a verse line never wraps — the fitter sizes the page so it fits */
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: var(--verse-fs, var(--m-read-fs));
     line-height: var(--m-read-lh);
     border-right: none;
     background: transparent;
-    padding: 0.12rem var(--m-read-pad) 0.12rem calc(var(--m-read-pad) + 1.3em);
-    text-indent: -1.3em;
+    padding: 0.12rem var(--m-read-pad);
   }
 
   /* Verse spacing between tercets */

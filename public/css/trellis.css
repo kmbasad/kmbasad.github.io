@@ -787,6 +787,24 @@ thead th:not(:first-child):hover .th-name {
    required for position:sticky to work on table cells; left borders are
    dropped so the un-collapsed borders stay single, not doubled.           */
 @media (max-width: 767px) {
+  /* READING FIRST: the essay is seated above the matrix — the writing is
+     the phone's page, the grid follows as apparatus. (An empty essay is
+     display:none via :has, so a matrix-only trellis still opens on the
+     grid.) */
+  .trellis-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trellis-page .trellis-essay {
+    order: -1;
+    border-top: none;
+  }
+
+  .trellis-page .page-section {
+    border-top: 1px solid var(--border);
+  }
+
   .page-section {
     padding: 36px 14px 44px;
   }
@@ -796,7 +814,7 @@ thead th:not(:first-child):hover .th-name {
   }
 
   .trellis-essay {
-    padding: 40px 14px 52px;
+    padding: 40px var(--m-read-pad) 52px;
   }
 
   .article-legend {
