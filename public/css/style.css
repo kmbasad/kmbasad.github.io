@@ -66,9 +66,9 @@ html {
   --dur-slow: 0.42s;
   /* Tracking for uppercase micro-labels */
   --ls-label: 0.14em;
-  /* The menubar's height. Anything that sticks under the nav — the Panthea
-     topbar, the Gitabitan search rule, the book page's full-height panels —
-     measures from this, so the bar can be resized in exactly one place. */
+  /* The menubar's height. Anything that sticks under the nav — the book
+     page's full-height panels — measures from this, so the bar can be
+     resized in exactly one place. */
   --nav-h: 50px;
   /* …and what it draws back to once the page is moving. Anything that sticks
      under the bar measures from THIS one, because sticking only ever happens
@@ -78,6 +78,16 @@ html {
      .nav-tight while the page is scrolled, so a full-height panel beside
      the bar (the dual-panel translation pages) narrows with it. */
   --nav-now: var(--nav-h);
+  /* The tab bar's height — phones only. Anything fixed to the foot of the
+     screen, and the page's own bottom clearance, measures from this. */
+  --tab-h: 54px;
+  /* ── The one mobile reading column ──
+     Every section reads the same on a phone: same side margin, same Bangla
+     size, same leading. The section stylesheets consume these tokens in
+     their own phone blocks — never restate the numbers. */
+  --m-read-pad: 20px;
+  --m-read-fs: 17.5px;
+  --m-read-lh: 2.0;
 }
 
 body {
@@ -790,11 +800,11 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   }
 
   .essay {
-    padding: 0 20px;
+    padding: 0 var(--m-read-pad);
   }
 
   .poem {
-    padding: 22px 20px 26px;
+    padding: 22px var(--m-read-pad) 26px;
   }
 
   .essay-body {
@@ -812,8 +822,8 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   }
 
   .essay-body p {
-    font-size: 17px;
-    line-height: 1.85;
+    font-size: var(--m-read-fs);
+    line-height: var(--m-read-lh);
   }
 
   .poem-body {
@@ -1209,191 +1219,79 @@ body,
   transition: font-size var(--dur-slow) var(--ease-out);
 }
 
-/* ── The menu key — two rules that cross when the sheet is open ────────── */
-.nav-key {
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE TAB BAR — phones
+   ═══════════════════════════════════════════════════════════════════════════
+   The app answer to the section names: the four rooms fixed under the thumb,
+   set in Tiro on the same glass as the shelf above. The active room wears
+   the lapis and a short rail along the bar's top edge — the glide rail's
+   echo. Hidden above the fold breakpoint, where the names live in the bar. */
+
+.tab-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 95;
   display: none;
+  align-items: stretch;
+  height: calc(var(--tab-h) + env(safe-area-inset-bottom));
+  padding: 0 max(4px, env(safe-area-inset-left)) env(safe-area-inset-bottom)
+           max(4px, env(safe-area-inset-right));
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.25) blur(14px);
+  -webkit-backdrop-filter: saturate(1.25) blur(14px);
+  border-top: 1px solid var(--border);
+}
+
+.tab-item {
   position: relative;
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  margin-right: -8px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--bn-display);
+  font-size: 15.5px;
+  line-height: 1.35;
+  color: var(--text-2);
+  background-image: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.nav-key-bar {
-  position: absolute;
-  left: 10px;
-  width: 20px;
-  height: 1.5px;
-  background: var(--text-2);
-  border-radius: 1px;
-  transition: transform .34s var(--ease-out), width .34s var(--ease-out),
-              background-color var(--dur) ease;
-}
+.tab-item:active { color: var(--accent); }
 
-.nav-key-bar:nth-child(1) { top: 17px; }
-.nav-key-bar:nth-child(2) { top: 23px; width: 13px; }
+.tab-item.active { color: var(--accent); }
 
-.nav-key:hover .nav-key-bar { background: var(--accent); }
-.nav-key:hover .nav-key-bar:nth-child(2) { width: 20px; }
-
-.nav-key[aria-expanded="true"] .nav-key-bar {
-  background: var(--accent);
-  width: 21px;
-}
-.nav-key[aria-expanded="true"] .nav-key-bar:nth-child(1) { transform: translateY(3px) rotate(45deg); }
-.nav-key[aria-expanded="true"] .nav-key-bar:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   THE MENU SHEET — small screens
-   ═══════════════════════════════════════════════════════════════════════════
-   Not a dropdown: the page steps back behind frosted chalk and the four
-   sections stand at reading size, each under its own gloss, rising in
-   sequence. The mark is printed large behind them, the same limb the home
-   page carries — so the menu is unmistakably this site's, not a component. */
-
-.nav-sheet {
-  position: fixed;
-  inset: 0;
-  /* under the bar, never over it — the key that closes the sheet has to
-     stay reachable, and the glass shelf reads over the frosted page */
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: calc(var(--nav-h) + 24px) max(26px, env(safe-area-inset-left))
-           calc(34px + env(safe-area-inset-bottom)) max(26px, env(safe-area-inset-right));
-  background: color-mix(in srgb, var(--bg) 94%, transparent);
-  backdrop-filter: saturate(1.4) blur(22px);
-  -webkit-backdrop-filter: saturate(1.4) blur(22px);
-  opacity: 0;
-  transition: opacity .3s ease;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.nav-sheet.is-open { opacity: 1; }
-
-/* The limb, printed faint behind the names */
-.nav-sheet-plate {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(104vw, 560px);
-  height: min(104vw, 560px);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  overflow: visible;
-}
-
-.nav-sheet-plate .nm-ring {
-  fill: none;
-  stroke: rgba(29, 79, 155, 0.13);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-}
-
-.nav-sheet-plate .nm-ticks line {
-  stroke: rgba(29, 79, 155, 0.16);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-}
-
-.nav-sheet-plate .nm-zenith { fill: rgba(29, 79, 155, 0.24); r: 1.7; }
-
-.nav-sheet-list {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 480px;
-  /* auto margins centre it when there is room and let it scroll when not */
-  margin: auto;
-}
-
-.nav-sheet-list li { border-top: 1px solid var(--border); }
-.nav-sheet-list li:last-child { border-bottom: 1px solid var(--border); }
-
-.nav-sheet-item {
-  display: block;
-  padding: 17px 2px 16px;
-  background-image: none;
-  color: inherit;
-}
-
-.nav-sheet-label {
-  display: block;
-  font-family: var(--bn-display);
-  font-size: clamp(24px, 7.2vw, 31px);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--text);
-  transition: color var(--dur) ease;
-}
-
-.nav-sheet-gloss {
-  display: block;
-  margin-top: 2px;
-  font-family: var(--bn-display);
-  font-size: 13px;
-  letter-spacing: 0.01em;
-  color: var(--text-3);
-}
-
-/* The section you are in wears the lapis and a marker in the margin. */
-.nav-sheet-item.active { position: relative; }
-.nav-sheet-item.active .nav-sheet-label { color: var(--accent); }
-.nav-sheet-item.active::before {
+/* the rail: the glide rail's echo, dropped from the bar's top hairline */
+.tab-item.active::before {
   content: '';
   position: absolute;
-  left: -14px;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  margin-top: -8px;
-  border-radius: 50%;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2.5px;
+  border-radius: 0 0 3px 3px;
   background: var(--accent);
-}
-
-.nav-sheet-item:active .nav-sheet-label { color: var(--accent); }
-
-/* Each name rises after the one above it */
-.nav-sheet.is-open .nav-sheet-list li {
-  animation: sheet-rise .52s var(--ease-out) both;
-  animation-delay: calc(var(--i) * 55ms + 40ms);
-}
-
-@keyframes sheet-rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-sheet { transition: none; }
-  .nav-sheet.is-open .nav-sheet-list li { animation: none; }
-}
-
-/* While the sheet is open the page underneath must not scroll */
-body.nav-open { overflow: hidden; }
-
-/* ── Fold: below 760px the names live in the sheet ─────────────────────── */
-@media (max-width: 760px) {
-  .nav-links-wrap { display: none; }
-  .nav-key { display: block; }
-}
-
-@media (min-width: 761px) {
-  .nav-sheet { display: none; }
 }
 
 @media (max-width: 900px) {
   .nav-page-info { max-width: 240px; }
   /* the ancestors bow out on a narrow shelf — the gilt key stays */
   .nav-parent, .nav-sep { display: none; }
+}
+
+/* ── Fold: below 760px the names leave the shelf for the tab bar ───────── */
+@media (max-width: 760px) {
+  .nav-links-wrap { display: none; }
+  .nav-right { display: none; }
+  .tab-bar { display: flex; }
+
+  /* the breadcrumb gets the whole shelf — no more `৫…` */
+  .nav-page-info { flex: 1 1 auto; max-width: none; }
+
+  /* nothing may end its page under the tab bar */
+  body { padding-bottom: calc(var(--tab-h) + env(safe-area-inset-bottom)); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1450,8 +1348,8 @@ body.nav-open { overflow: hidden; }
 
 /* A সূচি jump must not land its target under the shelf. Sticking only ever
    happens after the bar has narrowed, so the offset is --nav-h-min; a page
-   with its own sticky rule under the bar (Panthea's topbar, গীতবিতান's search
-   rule) adds that rule's height to this in its own stylesheet. */
+   with its own sticky rule under the bar adds that rule's height to this in
+   its own stylesheet. */
 [data-toc] {
   scroll-margin-top: calc(var(--nav-h-min) + 12px);
 }
@@ -1542,6 +1440,61 @@ body.nav-open { overflow: hidden; }
   padding: 0.3rem 0;
   text-align: center;
   font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ── Phones: the সূচি is a bottom sheet ──────────────────────────────────
+   A dropdown under a finger is a desktop habit. On a phone the panel rises
+   from the foot of the screen instead — full width, a grab-bar at its head,
+   scrollable when long (the no-scrollbar rule is a desktop rule; a sheet
+   that scrolls is what a thumb expects). site.js skips its dropdown
+   positioning below the fold breakpoint, so no inline left/top fights this. */
+@media (max-width: 760px) {
+  .toc-menu {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    /* a sheet is a solid object — page text must never bleed through it */
+    background: var(--surface);
+    max-height: min(62vh, 480px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 16px 16px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -14px 44px rgba(14, 26, 43, 0.22);
+    padding: 0.55rem 0.8rem calc(0.9rem + env(safe-area-inset-bottom));
+    transform: translateY(18px);
+  }
+
+  .toc-menu::before {
+    content: '';
+    display: block;
+    width: 38px;
+    height: 4px;
+    margin: 4px auto 10px;
+    border-radius: 2px;
+    background: var(--border-2);
+  }
+
+  .toc-menu.is-open { transform: none; }
+
+  /* thumb-size entries; long lists keep at most two columns */
+  .toc-menu__link {
+    padding: 0.55rem 0.75rem;
+    font-size: 1.02rem;
+  }
+
+  .toc-menu--cols3 .toc-menu__list { columns: 2; }
+
+  /* the number grid spreads to the sheet's width */
+  .toc-menu--grid { width: 100%; }
+  .toc-menu--grid .toc-menu__list { gap: 6px; }
+  .toc-menu--grid .toc-menu__link { padding: 0.5rem 0; font-size: 1.02rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

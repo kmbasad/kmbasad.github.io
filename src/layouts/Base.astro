@@ -146,9 +146,9 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
           </div>
         )}
 
-        <!-- Far right: the site's four rooms, and the menu key that replaces
-             them on a narrow shelf. One glide rail follows the hovered item
-             and rests under the active one. -->
+        <!-- Far right: the site's four rooms. One glide rail follows the
+             hovered item and rests under the active one. On phones this row
+             hides and the same four rooms live in the tab bar at the foot. -->
         <div class="nav-right">
           <div class="nav-links-wrap">
             <span class="nav-glide" aria-hidden="true"></span>
@@ -160,18 +160,6 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
               ))}
             </ul>
           </div>
-
-          <button
-            class="nav-key"
-            id="nav-key"
-            type="button"
-            aria-expanded="false"
-            aria-controls="nav-sheet"
-            aria-label="মেনু খুলুন"
-          >
-            <span class="nav-key-bar" aria-hidden="true"></span>
-            <span class="nav-key-bar" aria-hidden="true"></span>
-          </button>
         </div>
 
       </div>
@@ -180,28 +168,17 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
       <span class="nav-progress" aria-hidden="true"></span>
     </nav>
 
-    <!-- The menu sheet — small screens only. Kept outside <nav> because the
-         nav's backdrop-filter would otherwise contain its fixed position. -->
-    <div class="nav-sheet" id="nav-sheet" hidden>
-      <svg class="nav-sheet-plate" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-        <circle class="nm-ring" cx="50" cy="50" r="42" />
-        <g class="nm-ticks">
-          {markTicks.map((t) => <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />)}
-        </g>
-        <circle class="nm-zenith" cx="50" cy="8" r="6.5" />
-      </svg>
-
-      <ul class="nav-sheet-list">
-        {links.map((l, i) => (
-          <li style={`--i:${i}`}>
-            <a href={l.href} class={l.active ? 'nav-sheet-item active' : 'nav-sheet-item'}>
-              <span class="nav-sheet-label">{l.label}</span>
-              <span class="nav-sheet-gloss">{l.gloss}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <!-- The tab bar — phones only. The four rooms under the thumb, app-wise,
+         fixed to the foot of the screen. Kept outside <nav> because the nav's
+         backdrop-filter would otherwise contain its fixed position. -->
+    <nav class="tab-bar" aria-label="বিভাগসমূহ">
+      {links.map((l) => (
+        <a href={l.href} class={l.active ? 'tab-item active' : 'tab-item'}
+           aria-current={l.active ? 'page' : undefined}>
+          <span class="tab-label">{l.label}</span>
+        </a>
+      ))}
+    </nav>
 
     <slot />
   </body>

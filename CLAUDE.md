@@ -8,7 +8,7 @@ Personal website for **Khan Muhammad Bin Asad** (astronomer at CASSA, IUB), host
 Pages. **Wholly public.** Built with **Astro** (static output). Four sections:
 
 - **Panthea** — the published stories of the Panthea epic (written in Bengali).
-- **Pangea** — land of the archive: canonical Bengali texts (e.g. Alaol's *Sapta Paykar*, modernized with parallel English; the complete *Gitabitan* — all Tagore songs with lyrics and YouTube renditions).
+- **Pangea** — land of the archive: canonical Bengali texts (e.g. Alaol's *Sapta Paykar*, modernized with parallel English).
 - **Translations** — world literature rendered into Bangla (Hafez's *Divan*, Dante's *Inferno*, Ovid's *Metamorphoses*).
 - **Trellises** — interactive matrix readings: philosophy/theology (Consciousness, God) and film (Ray, Kiarostami, Chan-wook), with essays.
 
@@ -61,7 +61,7 @@ engines** from the pre-Astro era, loaded at runtime.
   - **favicon** — `favicon.svg` (the mark), plus `favicon-32.png` / `apple-touch-icon.png`
     rendered from it with headless Chrome. Redraw all three together.
   - **`public/css/`** — `style.css` (design system), `home.css`, `trellis.css`,
-    `translation-table.css`, `trellis-flora.css`, `panthea.css`, `tagore-songs.css`, `book.css`.
+    `translation-table.css`, `trellis-flora.css`, `panthea.css`, `book.css`.
 
     **The palette — Lapis & Gold** (defined once in `style.css`'s `:root`, everything else
     derives from it): a cool chalk ground (`--bg #ebeff6`, the accent at ~7% over white) with
@@ -114,8 +114,7 @@ plain list of links.
 - **The breadcrumb** (left, beside the mark) carries the page's identity, **in every section**.
   A **text page has no in-page title at all** — no chapter head, no `h1`: the name is in the
   bar and nowhere else. (An **index or listing page keeps its `h1`** — it is a destination you
-  arrive at, and the heading tops the list under it. The one exception among text pages is a
-  গীতবিতান song, whose `h1` is its first line — the thing the bar's serial cannot carry.)
+  arrive at, and the heading tops the list under it.)
   **The ladder never shows the section root.** প্যান্থিয়া / প্যাঞ্জিয়া / অনুবাদ / মাচা are
   already in the left cluster with the glide rail under the active one, so `Base.astro` filters
   any ancestor whose href is one of the four (`SECTION_ROOTS`) out of the drawn crumbs — pages
@@ -138,16 +137,22 @@ plain list of links.
 - **Heights.** `--nav-h` (50px) at rest, `--nav-h-min` (42px) once scrolled; `--nav-now` is
   the live one, switched by `.nav-tight` on `<html>`. Anything full-height beside the bar uses
   `var(--nav-now)` (the dual-panel translation pages); anything that *sticks under* the bar
-  uses `var(--nav-h-min)`, because sticking only ever happens after the bar has narrowed
-  (the Panthea topbar, the Gitabitan search rule). Never hardcode the nav height again.
+  uses `var(--nav-h-min)`, because sticking only ever happens after the bar has narrowed.
+  Never hardcode the nav height again.
 - **Scroll source.** Some pages lock the viewport and scroll an inner column instead. Mark
   that column `data-page-scroll` and the bar reads it (`.book-text-panel` does).
 - **Type.** The chrome uses `--bn-display` (Tiro Bangla first), the page uses `--bn-font`
   (Noto Serif Bengali first). Tiro has one weight — never ask it for 500.
-- **Small screens** (≤760px): the names fold into `.nav-sheet`, a full-height frosted menu
-  with the names at reading size over their glosses. It lives **outside** `<nav>` (the nav's
-  `backdrop-filter` would otherwise contain its fixed position) and sits **under** the bar in
-  z-order, so the key that closes it stays reachable.
+- **Small screens** (≤760px): the section names leave the shelf for **the tab bar**
+  (`.tab-bar` in `Base.astro`) — the four rooms fixed to the foot of the screen, app-wise,
+  on the same glass as the shelf; the active room wears the lapis and a short rail dropped
+  from the bar's top hairline (the glide rail's echo). It lives **outside** `<nav>` (the
+  nav's `backdrop-filter` would otherwise contain its fixed position). `--tab-h` is its
+  height; below the fold breakpoint `<body>` carries that much bottom padding so no page
+  ends under it, and the breadcrumb gets the whole shelf (`max-width: none`). There is no
+  hamburger and no menu sheet — pure CSS, nothing to wire. **Mobile reading is one column
+  site-wide**: every section's phone styles consume the `--m-read-pad` / `--m-read-fs` /
+  `--m-read-lh` tokens from `style.css` — never restate the numbers.
 
 ### The সূচি
 
@@ -155,12 +160,15 @@ plain list of links.
 for `[data-toc]` elements; ≥ 2 and a **সূচি** key appears — **always in the left cluster with
 the breadcrumb**: inside the gilt key, or beside the mark on a page with no breadcrumb —
 opening a frosted panel that hangs under the shelf, aligned on the gilt key's **left** edge
-(JS sets `left` on open and clamps it to the viewport). The panel
+(JS sets `left` on open and clamps it to the viewport — desktop only). The dropdown
 **never scrolls** — past 14 entries the list folds into 2 columns, past 30 into 3 — or, with
 the grid style, becomes a 6-across grid of bare numbers (`tocStyle="grid"` on `Base`, which
 emits `data-toc-style` on `<body>`; `window.TRANS_CONFIG.tocStyle` still works, and is what
-the ghazals use). Scroll-spy marks the active entry, on the window or on a `data-page-scroll`
-column alike.
+the ghazals use). **On phones (≤760px) the same panel is a bottom sheet instead**: full
+width at the foot of the screen, grab-bar at its head, at most 2 columns, and it *does*
+scroll when long — `site.js` skips the dropdown positioning below the fold breakpoint and
+the stylesheet pins it down. Scroll-spy marks the active entry, on the window or on a
+`data-page-scroll` column alike.
 
 **The contract on a target:** `data-toc` is its label, and it carries the `id` the panel
 scrolls to. Its own text is never read. Four ways one gets stamped:
@@ -170,7 +178,7 @@ scrolls to. Its own text is never read. Four ways one gets stamped:
 - **`data-toc-scan="h2, h3"`** on a container — `site.js` stamps that container's own headings,
   labelling each from its text with any `em` stripped. All a page of build-time prose needs
   (Panthea's `.pn-story`);
-- or the page just writes `id` + `data-toc` into its markup (গীতবিতান's 22 পর্যায়).
+- or the page just writes `id` + `data-toc` into its own markup.
 
 **Anything injected or hidden after load must `document.dispatchEvent(new
 CustomEvent('content-ready'))`** — that is the site-wide "content changed, rebuild the chrome"
@@ -181,7 +189,7 @@ that outlives a build is registered once, in `boot()` — do not move them back 
 
 A সূচি jump must clear the sticky bar: `[data-toc]` carries a global `scroll-margin-top` of
 `--nav-h-min + 12px`, and a page with its own sticky rule under the bar adds that rule's height
-in its own stylesheet (`.pn-story h2/h3`, `.gb-section`).
+in its own stylesheet (`.pn-story h2/h3`).
 
 ### Loading the bespoke engines from an Astro page
 
@@ -259,20 +267,6 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   is rendered from the chapter list. Three-level breadcrumb (chapter — সপ্ত পয়কর — প্যাঞ্জিয়া),
   no in-page title, and a সূচি for free from the `## headings` in the `.md` (a chapter with
   fewer than two of them simply gets no সূচি key).
-- **Gitabitan (Tagore songs)** — the one Pangea work that does *not* use the runtime engines:
-  song data (lyrics, raga/tala metadata, YouTube rendition IDs) lives in
-  `src/data/tagore-songs/<section>.json` (emitted by `scripts/tagore_songs_scrape.py` from
-  tagoreweb.in) and is rendered **at build time**. `src/data/tagore-songs.js` holds the canonical
-  section order + loaders; `src/pages/pangea/tagore-songs/index.astro` is the searchable
-  সূচিপত্র — a title, a non-sticky search line, and the 22 পর্যায় as a 3-column list (2 under
-  1100px, 1 under 860px). Each `.gb-section` carries `id` + `data-toc` so the পর্যায় *are* the
-  সূচি, and the search re-fires `content-ready` so a filtered-out পর্যায় drops out of the menu.
-  (There was a পর্যায় chip-filter row here too; it was the same list as the সূচি, so it went.)
-  `[song].astro` statically generates
-  all ~2,270 song pages (lyrics use `white-space: pre-wrap` — the leading spaces in the JSON
-  are Gitabitan's indentation, don't strip them), and `public/css/tagore-songs.css` styles both.
-  A song page is the site's **one text page that keeps its `h1`** — the breadcrumb carries the
-  serial (`পূজা ১২৩`), so the first line has nowhere else to live.
 - **Panthea story text** — the prose panel of every Panthea page is **pure Markdown** in
   `src/stories/panthea/` (`index.md` for the home; optional `bhumi.md`, `minar/<n>.md`,
   `patal/<n>.md` per floor — missing file → the empty-floor stub line), rendered **at build
@@ -314,9 +308,7 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
 
 ## Scripts
 
-`scripts/` holds one-off Python content-prep pipelines (e.g. the Alaol chapter-splitter, and
-`tagore_songs_scrape.py`, which scrapes tagoreweb.in → `src/data/tagore-songs/*.json` in three
-resumable stages: `catalogue` / `songs` / `emit`; its HTML cache lives outside the repo). Dev
+`scripts/` holds one-off Python content-prep pipelines (e.g. the Alaol chapter-splitter). Dev
 tooling only — not served, not part of the build. Read before running; paths are hardcoded.
 Note: the Pangea `.md` files are now the hand-edited source of truth (e.g. the prologue's English
 was tightened by hand), so there is no live TSV→MD regeneration step to re-run.

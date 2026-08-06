@@ -847,13 +847,14 @@ body.pn-riding .pnf-core {
   transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
-/* ── Mobile: single column; the design panel keeps a fixed height so its
-      contents still fit entirely — it never scrolls ── */
+/* ── Mobile: single column. The design panel still leads — but as a plate,
+      not a wall: it keeps to well under one screen so the story always
+      shows beneath it, and it never scrolls ── */
 @media (max-width: 960px) {
   .pn-wrap {
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding-top: 16px;
+    gap: 28px;
+    padding-top: 10px;
   }
 
   .pn-wrap .pn-left,
@@ -862,19 +863,54 @@ body.pn-riding .pnf-core {
     grid-row: auto;
   }
 
-  /* stacked: no mid-gap divider — the design half becomes a full-width
-     surface band under the text instead */
+  /* stacked: no mid-gap divider — the story takes the site's one mobile
+     reading margin and runs under the design plate */
   .pn-wrap .pn-right {
     margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
+    padding: 0 var(--m-read-pad) 64px;
     border-right: 0;
     max-width: 720px;
   }
 
   .pn-left {
     position: static;
-    height: 76vh;
+    height: min(58vh, 480px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* a floor's plan is a circle — its panel needs no more height than the
+     screen is wide */
+  .pn-wrap--floor .pn-left {
+    height: min(92vw, 52vh);
+  }
+
+  /* the side-view locator shrinks to an inset stamp */
+  .pnf-locator {
+    top: 8px;
+    right: 10px;
+    height: 148px;
+  }
+
+  .pnf-diameter {
+    left: var(--m-read-pad);
+    bottom: 12px;
+    font-size: 12px;
+  }
+
+  .pnf-scale-bar { width: 90px; }
+}
+
+/* phones: the one mobile reading column; ragged-right — justified Bangla
+   rivers in a narrow measure */
+@media (max-width: 760px) {
+  .pn-prose {
+    font-size: var(--m-read-fs);
+    line-height: var(--m-read-lh);
+  }
+
+  .pn-prose p { text-align: left; }
+
+  .pn-story > p:first-child:not(.pn-story-empty) {
+    font-size: var(--m-read-fs);
   }
 }

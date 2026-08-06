@@ -64,7 +64,6 @@
        lock the viewport and scroll the text column instead. Any element
        marked [data-page-scroll] is treated as that page's scroller, and
        whichever one last moved is the one the bar reads. */
-    var open = false;                       /* set by the sheet, below */
     var docEl = document.documentElement;
     var panel = document.querySelector('[data-page-scroll]');
     var src = null;                         /* null = the window */
@@ -100,48 +99,8 @@
     if (panel) panel.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* — the menu sheet — */
-    var key   = document.getElementById('nav-key');
-    var sheet = document.getElementById('nav-sheet');
-    if (!key || !sheet) return;
-
-    var closeTimer = null;
-
-    function setOpen(next) {
-      if (next === open) return;
-      open = next;
-      key.setAttribute('aria-expanded', open ? 'true' : 'false');
-      key.setAttribute('aria-label', open ? 'মেনু বন্ধ করুন' : 'মেনু খুলুন');
-      document.body.classList.toggle('nav-open', open);
-      clearTimeout(closeTimer);
-
-      if (open) {
-        sheet.hidden = false;
-        /* one frame on the hidden side so the fade actually runs */
-        requestAnimationFrame(function () { sheet.classList.add('is-open'); });
-      } else {
-        sheet.classList.remove('is-open');
-        closeTimer = setTimeout(function () { sheet.hidden = true; }, reduceMotion ? 0 : 320);
-      }
-    }
-
-    key.addEventListener('click', function () { setOpen(!open); });
-
-    /* A tap on a name navigates; close so a bfcache restore isn't stuck open */
-    sheet.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && open) { setOpen(false); key.focus(); }
-    });
-
-    /* Rotating a phone past the fold must not leave the sheet stranded */
-    window.addEventListener('resize', function () {
-      if (open && window.innerWidth > 760) setOpen(false);
-    }, { passive: true });
-
-    window.addEventListener('pageshow', function () { setOpen(false); });
+    /* On phones the four section names live in the fixed tab bar at the
+       foot of the screen (built in Base.astro) — pure CSS, nothing to wire. */
   }
 
   /* ── সূচি — the table of contents in the menubar ──────────────────────────
@@ -158,7 +117,7 @@
        · trellis.js stamps them on each matrix and on the essay (মাচা);
        · a container marked [data-toc-scan="h2, h3"] has its own headings
          stamped here — all a page of build-time prose needs (Panthea);
-       · or a page simply writes id + data-toc into its markup (গীতবিতান).
+       · or a page simply writes id + data-toc into its own markup.
      The contract is the same everywhere: data-toc is the label, and the
      element carries the id the panel scrolls to. Anything injected after
      load must dispatch `content-ready` to be picked up.                      */
@@ -213,19 +172,28 @@
     tocKey.setAttribute('aria-expanded', tocOpen ? 'true' : 'false');
     tocKey.classList.toggle('is-open', tocOpen);
     if (tocOpen) {
-      /* Hang the panel under the gilt key, aligned on the key's LEFT edge —
-         the key sits beside the mark at the left of the shelf, and the bar's
-         inner row is centred within a max-width, so a viewport-pinned panel
-         would drift. Unhide first: the width must be real to clamp against. */
-      var anchor = tocHere || tocKey;
-      tocMenu.style.left = '0px';
-      tocMenu.style.right = 'auto';
-      tocMenu.style.maxWidth = (window.innerWidth - 20) + 'px';
-      tocMenu.hidden = false;
-      var box = anchor.getBoundingClientRect();
-      var left = Math.max(10, Math.min(box.left, window.innerWidth - tocMenu.offsetWidth - 10));
-      tocMenu.style.left = left + 'px';
-      tocMenu.style.maxWidth = (window.innerWidth - left - 10) + 'px';
+      if (window.innerWidth > 760) {
+        /* Hang the panel under the gilt key, aligned on the key's LEFT edge —
+           the key sits beside the mark at the left of the shelf, and the bar's
+           inner row is centred within a max-width, so a viewport-pinned panel
+           would drift. Unhide first: the width must be real to clamp against. */
+        var anchor = tocHere || tocKey;
+        tocMenu.style.left = '0px';
+        tocMenu.style.right = 'auto';
+        tocMenu.style.maxWidth = (window.innerWidth - 20) + 'px';
+        tocMenu.hidden = false;
+        var box = anchor.getBoundingClientRect();
+        var left = Math.max(10, Math.min(box.left, window.innerWidth - tocMenu.offsetWidth - 10));
+        tocMenu.style.left = left + 'px';
+        tocMenu.style.maxWidth = (window.innerWidth - left - 10) + 'px';
+      } else {
+        /* Phone: the stylesheet pins the panel to the foot of the screen as
+           a bottom sheet — clear anything a wider open left behind. */
+        tocMenu.style.left = '';
+        tocMenu.style.right = '';
+        tocMenu.style.maxWidth = '';
+        tocMenu.hidden = false;
+      }
       requestAnimationFrame(function () {
         if (tocMenu) tocMenu.classList.add('is-open');
       });

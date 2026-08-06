@@ -333,14 +333,18 @@ body.book-has-dict .tt-table td.fa .w {
     padding: 0.5rem 0 0;
   }
 
+  /* thumb-size chapter keys — the tab bar below already carries the site's
+     bottom clearance, so the footer only needs its own air */
   .book-nav {
-    padding: 1.8rem 1rem calc(1.6rem + env(safe-area-inset-bottom));
+    padding: 1.6rem var(--m-read-pad) 1.4rem;
     gap: 0.5rem;
   }
 
   .book-nav-btn {
-    padding: 0.55rem 0.7rem;
-    font-size: 0.72rem;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.88rem;
+    border-color: var(--border);
+    color: var(--text-3);
   }
 }
 
