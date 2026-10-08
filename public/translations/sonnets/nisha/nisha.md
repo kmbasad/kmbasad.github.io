@@ -460,7 +460,7 @@ lang: en
 | যে দেখাকে উপেক্ষা করে, মোহে হয় মশগুল। | Who, in despite of view, is pleased to dote. |  |
 | | | |
 | তোমার জিভের সুরে আমার কানও না মুগ্ধ; | Nor are mine ears with thy tongue's tune delighted; |  |
-| নরম অনুভূতিও, নিচু ছোঁয়ায় দিতে সাড়া, | Nor tender feeling, to base touches prone, |  |
+| নরম স্পর্শ-বোধও, নিচু ছোঁয়ায় দিতে সাড়া, | Nor tender feeling, to base touches prone, |  |
 | না স্বাদ, না ঘ্রাণ, নিমন্ত্রণ পেতে হয় লুব্ধ | Nor taste, nor smell, desire to be invited |  |
 | কোনো কামের ভোজে, যেখানে কেউ নেই তুমি ছাড়া: | To any sensual feast with thee alone: |  |
 | | | |
@@ -624,7 +624,7 @@ lang: en
 | কোথা থেকে পেলে তুমি মন্দকে মানায় যে সাজ, | Whence hast thou this becoming of things ill, |  |
 | যে তোমার কর্মের নিছক আবর্জনাতেও | That in the very refuse of thy deeds |  |
 | আছে এমন জোর, দক্ষতার নিশ্চিত কাজ, | There is such strength and warrantise of skill |  |
-| ভাবি তোমার মন্দ ছাড়িয়ে যায় সেরাকেও? | That, in my mind thy worst all best exceeds? |  |
+| আমার মনে তোমার মন্দ ছাড়ায় সেরাকেও? | That, in my mind thy worst all best exceeds? |  |
 | | | |
 | কে শিখিয়েছে কিভাবে আরো ভালোবাসাবে তোমায় | Who taught thee how to make me love thee more |  |
 | যত বেশি শুনি ও দেখি ঘৃণার ন্যায্য কারণ? | The more I hear and see just cause of hate? |  |
@@ -632,14 +632,14 @@ lang: en
 | অন্যের সাথে আমার দশা ঘৃণা করা বারণ। | With others thou shouldst not abhor my state. |  |
 | | | |
 | তোমার অযোগ্যতা যদি ভরায় প্রেমে এ মন, | If thy unworthiness raised love in me, |  |
-| তবে আমিই যোগ্য হতে তোমার প্রিয়জন। | More worthy I to be beloved of thee. |  |
+| তবে আমি যোগ্যতর হতে তোমার প্রিয়জন। | More worthy I to be beloved of thee. |  |
 | | | |
 | প্রেম খুবই কচি, জানে না সে বিবেক কাকে বলে, | Love is too young to know what conscience is, | 151 |
 | তবু কে না জানে, বিবেক জন্মায় প্রেমের থেকে? | Yet who knows not conscience is born of love? |  |
 | ও মিষ্টি প্রতারক, আমার দোষ ধ’রো না ছলে, | Then, gentle cheater, urge not my amiss, |  |
 | পাছে আমার দোষে দোষী দেখো, প্রিয়, তুমি নিজেকে। | Lest guilty of my faults thy sweet self prove. |  |
 | | | |
-| কারণ, তুমি আমায় ঠকালে, আমিও ঠকাই | For, thou betraying me, I do betray |  |
+| কারণ, তুমি আমায় ঠকালে, আমিও তো ঠকাই | For, thou betraying me, I do betray |  |
 | আমার সেরা অংশ স্থূল দেহের বেইমানিতে। | My nobler part to my gross body’s treason. |  |
 | আমার আত্মা বলে দেহকে যে, সে-ও পারে তাই | My soul doth tell my body that he may |  |
 | প্রেমে জিততে; দেহ আর মানে না কোনো যুক্তিতে, | Triumph in love; flesh stays no farther reason, |  |
@@ -652,23 +652,23 @@ lang: en
 | একে বিবেকের অভাব ভেবো না যদি আমি বলি | No want of conscience hold it that I call |  |
 | তাকে ‘প্রেম’, যার প্রিয় প্রেমে আমি উঠি আর ঢলি। | Her ‘love’ for whose dear love I rise and fall. |  |
 | | | |
-|  | In loving thee thou know’st I am forsworn, | 152 |
-|  | But thou art twice forsworn to me love swearing |  |
-|  | In act thy bed-vow broke, and new faith torn |  |
-|  | In vowing new hate after new love bearing. |  |
+| তোমায় ভালোবেসে, জানো তো, আমি ভেঙেছি শপথ, | In loving thee thou know’st I am forsworn, | 152 |
+| কিন্তু তুমি দুবার ভাঙো, প্রেমের কসম খেয়ে, | But thou art twice forsworn to me love swearing |  |
+| কাজে শয্যা-শপথ ভেঙে, ছিঁড়ে আস্থার পথ, | In act thy bed-vow broke, and new faith torn |  |
+| নতুন প্রেম পেয়ে নতুন ঘৃণার শপথ নিয়ে। | In vowing new hate after new love bearing. |  |
 | | | |
-|  | But why of two oaths’ breach do I accuse thee, |  |
-|  | When I break twenty? I am perjured most, |  |
-|  | For all my vows are oaths but to misuse thee, |  |
-|  | And all my honest faith in thee is lost. |  |
+| কিন্তু দুই শপথ ভাঙায় কেন দুষি তোমায়, | But why of two oaths’ breach do I accuse thee, |  |
+| যখন ভাঙি বিশটা? আমিই বড় শপথ-চোর, | When I break twenty? I am perjured most, |  |
+| সব শপথ শুধু তোমায় এবিউজের উপায়, | For all my vows are oaths but to misuse thee, |  |
+| তোমাতে আমার সৎ বিশ্বাস হারিয়েছে জোর। | And all my honest faith in thee is lost. |  |
 | | | |
-|  | For I have sworn deep oaths of thy deep kindness, |  |
-|  | Oaths of thy love, thy truth, thy constancy, |  |
-|  | And to enlighten thee gave eyes to blindness, |  |
-|  | Or made them swear against the thing they see. |  |
+| গভীর কসম খেয়েছি তোমার গভীর দয়ার, | For I have sworn deep oaths of thy deep kindness, |  |
+| তোমার প্রেম, তোমার সত্য, তোমার অটলতা, | Oaths of thy love, thy truth, thy constancy, |  |
+| তোমায় আলো দিতে চক্ষু দিলাম অন্ধতার, | And to enlighten thee gave eyes to blindness, |  |
+| বা চোখ দিয়ে বলালাম, যা দেখে তা মিথ্যা কথা। | Or made them swear against the thing they see. |  |
 | | | |
-|  | For I have sworn thee fair—more perjured eye |  |
-|  | To swear against the truth so foul a lie. |  |
+| বলেছি তুমি সুন্দর—চক্ষু আরো মিথ্যুক, | For I have sworn thee fair—more perjured eye |  |
+| সত্য-বিপক্ষে নোংরা মিথ্যায় দেয় মুখ। | To swear against the truth so foul a lie. |  |
 | | | |
 | কিউপিড ঘুমিয়ে পড়েছিল তার মশালের পাশে। | Cupid laid by his brand and fell asleep. | 153 |
 | ডায়ানার এক সাথী এই সুযোগ কাজে লাগায়, | A maid of Dian’s this advantage found, |  |
