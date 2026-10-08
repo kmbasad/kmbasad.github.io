@@ -101,35 +101,35 @@ lang: en
 | যদি না পাই পাওনা সুখ, সেরকম ভাবে যাকে | And the just pleasure lost, which is so deemed |  |
 | আমাদের অনুভূতি না বরং অন্যদের চোখ। | Not by our feeling but by others' seeing. |  |
 | | | |
-| অন্যদের পরকীয় ভণ্ড চোখ কেন ভাই | For why should others’ false adulterate eyes |  |
-| আমার কামনাকাতর রক্তকে দিবে আদাব? | Give salutation to my sportive blood? |  |
+| কেন অন্যের পরকীয় ভণ্ড চোখ সদাই | For why should others’ false adulterate eyes |  |
+| আমার কামনাকাতর রক্তকে দেবে আদাব? | Give salutation to my sportive blood? |  |
 | আমার দুর্বলতায় কেন আরো দুর্বলের স্পাই, | Or on my frailties why are frailer spies, |  |
 | যাদের উইলে আমি যা ভালো ভাবি তাই খারাপ? | Which in their wills count bad what I think good? |  |
 | | | |
 | না, আমি যা আমি তাই, অতএব যারা করে তাক | No, I am that I am, and they that level |  |
-| আমার কামের দিকে তারা নিজের গায়ে বিন্ধায়। | At my abuses reckon up their own. |  |
-| হয়ত আমি সোজা, ওদের ভিতরেই সব বাঁক; | I may be straight, though they themselves be bevel; |  |
+| আমার কামের দিকে তারা নিজেরই গায়ে বিঁধায়। | At my abuses reckon up their own. |  |
+| হয়তো আমি সোজা, ওদের ভিতরেই সব বাঁক; | I may be straight, though they themselves be bevel; |  |
 | আমার কর্ম দেখাতে পারে না ওরা নোংরা চিন্তায়, | By their rank thoughts my deeds must not be shown, |  |
 | | | |
 | যদি না তারা এই সাধারণ কুৎসিত কথা মানে: | Unless this general evil they maintain: |  |
 | সব মানুষ খারাপ, তাদের খারাপের শাসনে। | All men are bad and in their badness reign. |  |
 | | | |
-| তোমার গিফট, তোমার খাতা, আমার মাথায় পাবে | Thy gift, thy tables, are within my brain | 122 |
+| তোমার দান, তোমার খাতা, আমার মগজেই পাবে | Thy gift, thy tables, are within my brain | 122 |
 | বহু দিন টিকে থাকা স্মৃতির অক্ষরে লিখিত, | Full character'd with lasting memory, |  |
-| যা সেই সব অলস লিস্টের উপরে থেকে যাবে | Which shall above that idle rank remain |  |
+| যা সেই সব অলস তালিকার উপরে থেকে যাবে | Which shall above that idle rank remain |  |
 | সব সময় ছাড়িয়ে, এমনকি চিরকাল পর্যন্ত, | Beyond all date, even to eternity; |  |
 | | | |
 | অথবা অন্তত যত দিন এই মগজ আর হার্ট | Or at the least, so long as brain and heart |  |
 | প্রকৃতির স্বভাবে ক্ষমতা পাবে বেঁচে থাকার; | Have faculty by nature to subsist; |  |
 | যতদিন না তারা বিস্মৃতির ধ্বংসে তোমার পার্ট | Till each to razed oblivion yield his part |  |
-| তাদের মুছে, হারাতে পারবে না রেকর্ড তোমার। | Of thee, thy record never can be miss'd. |  |
+| তাদের মুছে, হারাতে পারবে না স্মৃতিলিপি তোমার। | Of thee, thy record never can be miss'd. |  |
 | | | |
 | ঐ করুণ স্মারক পারত না এত কিছু নিতে, | That poor retention could not so much hold, |  |
-| আর ট্যালিও লাগে না তোমার প্রিয় প্রেম মাপায়, | Nor need I tallies thy dear love to score; |  |
-| তাই আমার সাহস হয়েছিল সব দিয়ে দিতে, | Therefore to give them from me was I bold, |  |
+| আর হিসাব লাগে না তোমার প্রিয় প্রেম মাপায়, | Nor need I tallies thy dear love to score; |  |
+| তাই আমার সাহস হয়েছিল খাতা দিয়ে দিতে, | Therefore to give them from me was I bold, |  |
 | বিশ্বাস করতে সেই খাতা যে তোমাকে বেশি পায়: | To trust those tables that receive thee more: |  |
 | | | |
-| তোমার স্মৃতির জন্য বাড়তি কাউকে রাখা মানে | To keep an adjunct to remember thee |  |
+| তোমার স্মৃতির জন্য বাড়তি সহায় রাখা মানে | To keep an adjunct to remember thee |  |
 | শুধু ভুলে যাওয়ার সুযোগ আমদানি করা মনে। | Were to import forgetfulness in me. |  |
 | | | |
 | না, সময়, গর্ব করে বলবে না আমি বদলাই: | No, Time, thou shalt not boast that I do change! | 123 |
@@ -139,26 +139,26 @@ lang: en
 | | | |
 | আমাদের আয়ু কম, তারিফ করি সেজন্যই | Our dates are brief, and therefore we admire |  |
 | পুরাতন যাই তুমি চাপাও আমাদের উপর, | What thou dost foist upon us that is old, |  |
-| জোর করে আমাদের কামনায় সেই সব বই, | And rather make them born to our desire |  |
+| বরং আমাদের কামনায় জন্মাই সবই, | And rather make them born to our desire |  |
 | তাও ভাবি না আগেই শুনেছি এই কথার বহর। | Than think that we before have heard them told. |  |
 | | | |
-| তোমার নিবন্ধ বা তুমি কাউকেই আমি মানি না, | Thy registers and thee I both defy, |  |
-| অতীত বর্তমান কিছুতেই নাই বিস্ময়; | Not wondering at the present nor the past; |  |
-| আমরা যা দেখি ও তোমার রেকর্ড করে ছলনা, | For thy records and what we see doth lie, |  |
+| তোমার খতিয়ান বা তুমি কাউকেই আমি মানি না, | Thy registers and thee I both defy, |  |
+| অতীত বর্তমান কিছুতেই নেই বিস্ময়; | Not wondering at the present nor the past; |  |
+| আমরা যা দেখি ও তোমার সব নথি করে ছলনা, | For thy records and what we see doth lie, |  |
 | তোমার নিরন্তর তাড়ায় সব ছোট বড় হয়। | Made more or less by thy continual haste. |  |
 | | | |
 | এই শপথ করছি, এবং এই হবে সব ক্ষণে: | This I do vow, and this shall ever be: |  |
 | তোমার কাস্তে ও তুমি সত্ত্বেও থাকব সত্য মনে। | I will be true, despite thy scythe and thee. |  |
 | | | |
 | আমার প্রিয় প্রেম পরিস্থিতির পুত্র হলে | If my dear love were but the child of state, | 124 |
-| হয়ত নিয়তির জারজের মতো হতো ত্যাজ্য, | It might for Fortune's bastard be unfathered, |  |
+| হয়তো নিয়তির জারজের মতো হতো ত্যাজ্য, | It might for Fortune's bastard be unfathered, |  |
 | সময়ের ভালোবাসা বা সময়ের ঘৃণার ফলে, | As subject to Time's love or to Time's hate, |  |
 | ফুলের সাথে ফুল, আগাছায় আগাছার বর্জ্য। | Weeds among weeds or flowers with flowers gathered. |  |
 | | | |
 | না, তার নির্মাণ হয়নি কোনো দৈবের দানে; | No, it was builded far from accident; |  |
-| সে অমায়িক ঠাটের শিকার হয় না, বা আঘাত | It suffers not in smiling pomp, nor falls |  |
+| সে হাসিমুখ ঠাটের শিকার হয় না, বা আঘাত | It suffers not in smiling pomp, nor falls |  |
 | পায় না বন্দি অসন্তুষ্টির আক্রমণে | Under the blow of thralled discontent |  |
-| যেখানে আমাদের ফ্যাশন পায় কালের দাওয়াত। | Whereto th’inviting time our fashion calls. |  |
+| যেখানে আমাদের চলন পায় কালের দাওয়াত। | Whereto th’inviting time our fashion calls. |  |
 | | | |
 | সে ভয় করে না কূটনীতির, সেই ধর্মত্যাগী | It fears not policy, that heretic |  |
 | যে কাজ করে মাত্র কয়েক ঘণ্টার ভাড়ায়, | Which works on leases of short-numbered hours, |  |
@@ -176,31 +176,31 @@ lang: en
 | আমি কি দেখিনি রূপ আর নজরের বাসিন্দারা, | Have I not seen dwellers on form and favour |  |
 | বেশি ভাড়া দিয়ে যাদের আরো বেশি যায় হারিয়ে, | Lose all and more by paying too much rent, |  |
 | জটিল মিষ্টির লোভে বাঁচে সরল স্বাদ ছাড়া, | For compound sweet forgoing simple savour, |  |
-| উন্নতির ধান্দায় নিজের নজরেই যায় ফুরিয়ে? | Pitiful thrivers in their gazing spent? |  |
+| উন্নতির সাধনায় নিজের নজরেই যায় ফুরিয়ে? | Pitiful thrivers in their gazing spent? |  |
 | | | |
 | না, আমার সব নিষ্ঠা পাক শুধু তোমার হার্ট, | No, let me be obsequious in thy heart, |  |
-| আর তোমার হোক আমার অর্ঘ, গরিব কিন্তু ফ্রি, | And take thou my oblation, poor but free, |  |
-| কোনো দুই নাম্বারি নাই, জানে শুধু এক আর্ট: | Which is not mixed with seconds, knows no art |  |
+| আর তোমার হোক আমার অর্ঘ্য, গরিব কিন্তু ফ্রি, | And take thou my oblation, poor but free, |  |
+| কোনো ভেজাল মেশানো নেই, জানে শুধু এক আর্ট: | Which is not mixed with seconds, knows no art |  |
 | পারস্পরিক বিনিময়, শুধু তোমার জন্য আমি। | But mutual render, only me for thee. |  |
 | | | |
 | তাই, বেতনভুক গুপ্তচর! কোনো সত্য আত্মায় | Hence, thou suborned informer! a true soul |  |
 | যত দোষ পড়ে তত কম সে তোমার ক্ষমতায়। | When most impeached stands least in thy control. |  |
 | | | |
 | আমার অপূর্ব ছেলে, যে-তোমার নিজের বল | O thou, my lovely boy, who in thy power | 126 |
-| ধরে রাখে সময়ের অস্থির গ্লাস, কাস্তের কাল; | Dost hold Time's fickle glass, his sickle-hour; |  |
+| ধরে রাখে সময়ের অস্থির ঘড়ি, কাস্তের কাল; | Dost hold Time's fickle glass, his sickle-hour; |  |
 | যে ক্ষয়ের মাধ্যমে বেড়েছে, আর তাতে দেখায় | Who hast by waning grown, and therein show’st |  |
 | মিষ্টি আত্মার বৃদ্ধিতে তোমার প্রেমিকরা শুকায়— | Thy lovers withering as thy sweet self grow'st— |  |
 | | | |
-| যদি প্রকৃতি, অক্ষয় ঈশ্বরী শেওলার, | If Nature, sovereign mistress over wrack, |  |
+| যদি প্রকৃতি, যার হাতে সব ধ্বংসের ভার, | If Nature, sovereign mistress over wrack, |  |
 | তুমি সামনে গেলেও পিছনে টেনে আনে আবার, | As thou goest onwards still will pluck thee back, |  |
 | তবে তোমাকে রাখে এই লক্ষ্যে: তার দক্ষতা | She keeps thee to this purpose: that her skill |  |
 | যাতে লাঞ্ছিত কালের দুস্থ মিনিট করে হত্যা। | May time disgrace and wretched minutes kill. |  |
 | | | |
-| তাও তাকে ভয় করো, ওরে তার সুখের গোলাম! | Yet fear her, O thou minion of her pleasure! |  |
+| তাও তাকে ভয় করো, ওহে তার সুখের গোলাম! | Yet fear her, O thou minion of her pleasure! |  |
 | জিম্মি নিয়েও সে তার ধন করতে পারে নিলাম। | She may detain, but not still keep her treasure. |  |
 | | | |
 | সে হিসাবের জবাব নেবেই, যতই দেরি হোক, | Her audit, though delayed, answered must be, |  |
-| তার ঋণ পরিশোধ হলো তোমায় নিঃশেষে ভোগ। | And her quietus is to render thee. |  |
+| তার ঋণ পরিশোধ হলো খাতায় তোমার বিয়োগ। | And her quietus is to render thee. |  |
 | | | |
 | আগের কালে কালোকে মনে করা হতো না সুন্দর, | In the old age black was not counted fair, | 127 |
 | বা সে তা হলেও কখনো পেতো না বিউটির নাম; | Or if it were, it bore not beauty's name; |  |

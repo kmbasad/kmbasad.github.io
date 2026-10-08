@@ -44,7 +44,7 @@ lang: en
 | | | |
 | সেই ছোট ছোট অপরাধ স্বাধীনতা যা ঘটায় | Those pretty wrongs that liberty commits | 41 |
 | যখন থাকি না মাঝে-মাঝে তোমার হৃদয়ে আমি | When I am sometime absent from thy heart |  |
-| ﻿﻿তোমার বয়স আর রূপের সাথে খুব মানায়, | Thy beauty and thy years full well befits, |  |
+| তোমার বয়স আর রূপের সাথে খুব মানায়, | Thy beauty and thy years full well befits, |  |
 | এখনো তো পিছে ঘোরে মোহ যেখানেই থাকো তুমি। | For still temptation follows where thou art. |  |
 | | | |
 | ভদ্র তুমি, তোমাকে জয় করতে হয় তাই বলে, | Gentle thou art, and therefore to be won, |  |
