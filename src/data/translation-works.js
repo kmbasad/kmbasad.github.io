@@ -30,6 +30,7 @@ export const translationWorks = [
     title: 'হাফিজের দিওয়ান',
     parts: [
       { slug: 'prathama', title: 'প্রথমা: গজল ১ থেকে ৩৩' },
+      { slug: 'dvitiya',  title: 'দ্বিতীয়া: গজল ৩৪ থেকে ৩৬' },
     ],
   },
   {
