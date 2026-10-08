@@ -327,8 +327,8 @@ lang: en
 | যেখানে প্রত্যেক দাগ ঢেকে দেয় রূপের নেকাব, | Where beauty’s veil doth cover every blot, |  |
 | ও সব সুন্দর হয়ে যায় চোখের দৃষ্টির কাছে! | And all things turns to fair that eyes can see! |  |
 | | | |
-| মনে রেখো (প্রিয় হার্ট) এই অসামান্য অধিকার: | Take heed (dear heart) of this large privilege: |  |
-| খারাপ ইউজে সেরা ছুরিও হারায় তার ধার। | The hardest knife ill-used doth lose his edge. |  |
+| মনে রেখো (প্রিয় হৃদয়) এই অসামান্য অধিকার: | Take heed (dear heart) of this large privilege: |  |
+| অপপ্রয়োগে সেরা ছুরিও হারায় তার ধার। | The hardest knife ill-used doth lose his edge. |  |
 | | | |
 | কেউ বলে যৌবন তোমার দোষ, কেউ খেয়াল, | Some say thy fault is youth, some wantonness, | 96 |
 | কেউ বলে যৌবন তোমার গুণ, লীলার খেলা। | Some say thy grace is youth and gentle sport. |  |
@@ -385,30 +385,30 @@ lang: en
 | যেন তোমারই ছায়া, এদের সাথে যেতাম খেলে। | As with your shadow I with these did play. |  |
 | | | |
 | আগাম ভায়োলেটকে করছিলাম তিরস্কার: | The forward violet thus did I chide: | 99 |
-| ‘মধুচোর, কোত্থেকে করবা চুরি মিঠা সুবাস | ‘Sweet thief, whence did thou steal thy sweet that smells, |  |
+| ‘মধুচোর, কোথা থেকে করলে চুরি মিঠে সুবাস | ‘Sweet thief, whence did thou steal thy sweet that smells, |  |
 | না পেলে শ্বাস আমার প্রিয়র? লাল অহংকার, | If not from my love’s breath? The purple pride, |  |
 | যা তোমার সুকোমল গালের বর্ণে করে বাস, | Which on thy soft cheek for complexion dwells, |  |
 | আমার প্রেমের শিরা উপশিরা রঞ্জক তার।’ | In my love’s veins thou hast too grossly dyed.’ |  |
 | | | |
 | পদ্মকে অভিশাপ দিলাম তোমার হাত ভেবে, | The lily I condemnèd for thy hand, |  |
 | মার্জোরামের কুঁড়ি তোমার চুল করল চুরি, | And buds of marjoram had stol’n thy hair. |  |
-| গোলাপগুলা কাঁটার ভয়েই দাঁড়ায়েছিল সবে, | The roses fearfully on thorns did stand, |  |
+| গোলাপেরা কাঁটায় ভয়ে ভয়ে দাঁড়িয়েছিল সবে, | The roses fearfully on thorns did stand, |  |
 | কারো চোখে লাজ কারো বুকে নিরাশার শাদা ছুরি, | One blushing shame, another white despair, |  |
 | | | |
-| যে লাল না সাদাও না সে দুটাই করছে হরণ, | A third nor red, nor white, had stol’n of both, |  |
-| তার ডাকাতের দলে ভিড়ছে তোমার নিশ্বাস; | And to his robb’ry had annexed thy breath; |  |
+| যে লাল না সাদাও না সে দুটোই করেছে হরণ, | A third nor red, nor white, had stol’n of both, |  |
+| তার ডাকাতের দলে ভিড়েছে তোমার নিশ্বাস; | And to his robb’ry had annexed thy breath; |  |
 | তবে এই চুরি তার যৌবনে পতনের কারণ— | But for his theft, in pride of all his growth, |  |
 | তাকে আমরণ খাবে এক জিঘাংসু ভাইরাস। | A vengeful canker eat him up to death. |  |
 | | | |
-| দেখছি অনেক ফুল, তবে একটাও পাই নাই | More flowers I noted, yet I none could see |  |
-| যে তার বর্ণ গন্ধ তোমার থেকে নেয় নাই। | But sweet or colour it had stol’n from thee. |  |
+| দেখেছি অনেক ফুল, পাইনি একটাও এমন | More flowers I noted, yet I none could see |  |
+| যার রং গন্ধ তোমার থেকে হয়নি হরণ। | But sweet or colour it had stol’n from thee. |  |
 | | | |
 | কোথায় তুমি, মিউজ, যে এতকাল পড়ে না মনে, | Where art thou, Muse, that thou forget’st so long | 100 |
 | যে তোমায় শক্তি যোগায় তার কথা কেন ভোলো? | To speak of that which gives thee all thy might? |  |
-| তোমার রোষ ব্যয় করতেছ অর্থহীন গানে, | Spend’st thou thy fury on some worthless song, |  |
-| শক্তি করতেছ কালো শুধু কালোকে দিতে আলো? | Dark’ning thy pow’r to lend base subjects light? |  |
+| তোমার আবেগ ব্যয় করছ অর্থহীন গানে, | Spend’st thou thy fury on some worthless song, |  |
+| শক্তিকে করছ কালো শুধু হীনকে দিতে আলো? | Dark’ning thy pow’r to lend base subjects light? |  |
 | | | |
-| ফিরে আসো, বেভুল মিউজ, করো পুনরুদ্ধার | Return, forgetful Muse, and straight redeem |  |
+| ফিরে এসো, বেভুল মিউজ, করো পুনরুদ্ধার | Return, forgetful Muse, and straight redeem |  |
 | সুকুমার মাত্রায় সেই সব অলস সময়। | In gentle numbers time so idly spent. |  |
 | গাও সে-কানে যে করে তোমার কবিতার কদর, | Sing to the ear that doth thy lays esteem, |  |
 | আর তোমার কলমে দেয় কৌশল ও বিষয়। | And gives thy pen both skill and argument. |  |
@@ -421,23 +421,23 @@ lang: en
 | কাল প্রাণ নেয়ার আগে খ্যাতি দাও প্রেমকে আমার, | Give my love fame faster than Time wastes life, |  |
 | প্রতিরোধ ক’রে কাস্তে আর কুটিল ছুরি তার। | So thou prevent’st his scythe and crookèd knife. |  |
 | | | |
-| হে ফাঁকিবাজ মিউজ, কি দিয়ে করবা পরিশোধ | O truant Muse, what shall be thy amends | 101 |
+| হে ফাঁকিবাজ মিউজ, কী দিয়ে দেবে ক্ষতিপূরণ | O truant Muse, what shall be thy amends | 101 |
 | সুন্দরে রঞ্জিত সত্যের এই অপমান? | For thy neglect of truth in beauty dyed? |  |
-| সত্য ও সুন্দর আমার প্রেমের অনুরোধ; | Both truth and beauty on my love depends; |  |
+| সত্য-সুন্দর আমার প্রেমেই নেয় শরণ; | Both truth and beauty on my love depends; |  |
 | এবং তুমিও, তার মাঝেই তোমার সম্মান। | So dost thou too, and therein dignified. |  |
 | | | |
 | জবাব দাও, মিউজ: এই কি হবে না তোমার বুলি, | Make answer Muse: wilt thou not haply say, |  |
-| ‘লাগে না সত্যের রঙ, রঙ তার আশ্রিত, | ‘Truth needs no colour, with his colour fixed; |  |
+| ‘লাগে না সত্যের রঙ, রঙ তার সুস্থিত, | ‘Truth needs no colour, with his colour fixed; |  |
 | সুন্দরের সত্য সাজাতে সুন্দরের তুলি, | Beauty no pencil, beauty’s truth to lay; |  |
 | সেরা থাকে সেরা যদি না হয় কখনো মিশ্রিত’? | But best is best, if never intermixed?’ |  |
 | | | |
-| তার প্রশংসা লাগে না দেখে তুমি থাকবা বোবা? | Because he needs no praise, wilt thou be dumb? |  |
-| মৌনতা করিয়ো না জায়েজ, তোমারই তো দায় | Excuse not silence so, for't lies in thee |  |
-| সোনালি সমাধির চাইতে বেশি করা তার সেবা | To make him much outlive a gilded tomb |  |
+| তার প্রশংসা লাগে না দেখে তুমি থাকবে বোবা? | Because he needs no praise, wilt thou be dumb? |  |
+| মৌনতাকে কোরো না জায়েজ, তোমারই তো দায় | Excuse not silence so, for't lies in thee |  |
+| সোনালি সমাধির চেয়ে দীর্ঘ করা তার প্রভা | To make him much outlive a gilded tomb |  |
 | যাতে অনাগত সব যুগ তার কীর্তন গায়। | And to be praised of ages yet to be. |  |
 | | | |
-| তাহলে কাজ করো, মিউজ; আসো শিখাই কেমন | Then do thy office, Muse; I teach thee how |  |
-| করে মরে-ভূত তাকে রাখবা যেমন সে এখন। | To make him seem, long hence, as he shows now. |  |
+| তাহলে কাজ করো, মিউজ; এসো শেখাই কেমন | Then do thy office, Muse; I teach thee how |  |
+| করে বহুকাল পরে রাখবে যেমন সে এখন। | To make him seem, long hence, as he shows now. |  |
 | | | |
 | আমার প্রেম প্রবল হলেও দেখতে দুর্বল। | My love is strengthened, though more weak in seeming. | 102 |
 | কম ভালোবাসি না তবে প্রকাশ মনে হয় কম। | I love not less, though less the show appear. |  |
@@ -451,43 +451,43 @@ lang: en
 | | | |
 | তবে যখন তার শোকসুরে নীরব হতো রাত | Not that the summer is less pleasant now |  |
 | সে-তুলনায় গ্রীষ্ম কম মনোরম না এখন, | Than when her mournful hymns did hush the night, |  |
-| তবে ঐ বুনো গানে আজ সব শাখা কুপোকাত, | But that wild music burdens every bough, |  |
+| তবে ওই বুনো গানের ভারে নোয়ায় শাখা-পাত, | But that wild music burdens every bough, |  |
 | প্রিয় স্বাদ হারায় মিষ্টি হয়ে গেলে সাধারণ। | And sweets grown common lose their dear delight. |  |
 | | | |
 | তাই তার মতো আমি কখনো বন্ধ করি মুখ, | Therefore like her I sometime hold my tongue, |  |
 | চাই না আমার গানে নীরস হোক তোমার সুখ। | Because I would not dull you with my song. |  |
 | | | |
-| হায়, আমার মিউজ আজ বের করে কি দৈন্য, | Alack, what poverty my muse brings forth | 103 |
+| হায়, আমার মিউজ আজ বের করে কী দৈন্য, | Alack, what poverty my muse brings forth | 103 |
 | যেখানে তার শৈলী দেখানোর এমন সুযোগ | That, having such a scope to show her pride, |  |
 | সেখানে এই বিষয় আরো দামি পোশাকশূন্য | The argument all bare is of more worth |  |
-| আমার উপরি প্রশংসা যদি না হয় যোগ! | Than when it hath my added praise beside! |  |
+| আমার বাড়তি প্রশংসা যদি না হয় যোগ! | Than when it hath my added praise beside! |  |
 | | | |
 | আমাকে আর দোষ দিও না যদি লিখতে না পারি! | O blame me not if I no more can write! |  |
-| তোমার আয়নায় তাকালে দেখবা এমন ভাতি | Look in your glass and there appears a face |  |
+| তোমার আয়নায় তাকালে দেখবে এমন জ্যোতি | Look in your glass and there appears a face |  |
 | যা আমার সব সৃষ্টিকে অনায়াসে দেয় পাড়ি, | That overgoes my blunt invention quite, |  |
-| আমার লাইন ভোঁতা করে আমাকে দেয় কুখ্যাতি। | Dulling my lines and doing me disgrace. |  |
+| আমার চরণ ভোঁতা করে আমাকে দেয় কুখ্যাতি। | Dulling my lines and doing me disgrace. |  |
 | | | |
 | তবে কি এটা পাপ ছিল না, করতে গিয়ে সূক্ষ্ম | Were it not sinful then, striving to mend, |  |
-| সেই বিষয় নষ্ট করা যা আগেই ছিল ভালা?--- | To mar the subject that before was well?--- |  |
+| সেই বিষয় নষ্ট করা, যা ছিল নিখুঁত ঢালা?--- | To mar the subject that before was well?--- |  |
 | কারণ আমার কবিতার একমাত্র লক্ষ্য | For to no other pass my verses tend |  |
 | তোমার রহমত আর বরকতের কথা বলা; | Than of your graces and your gifts to tell; |  |
 | | | |
 | আমার কাব্য যা ধরে তার চেয়ে বহুগুণ হায় | And more, much more, than in my verse can sit |  |
 | তোমার আয়না তুমি তাকালেই তোমাকে দেখায়। | Your own glass shows you when you look in it. |  |
 | | | |
-| আমার কাছে, হে চারু বন্ধু, তুমি চিরনূতন; | To me, fair friend, you never can be old; | 104 |
+| আমার কাছে, হে চারু বন্ধু, তুমি চিরনতুন; | To me, fair friend, you never can be old; | 104 |
 | যখন তোমার চোখ প্রথম দেখে আমার চোখ | For as you were when first your eye I eyed, |  |
 | আজো তেমন তোমার রূপ। তিন শীতের কাঁপন | Such seems your beauty still. Three winters cold |  |
-| কানন থেকে ঝরায়ে নিছে তিন গ্রীষ্মের ঝোঁক; | Have from the forests shook three summers' pride; |  |
+| বন থেকে ঝরিয়ে নিয়েছে তিন গ্রীষ্মের ঝোঁক; | Have from the forests shook three summers' pride; |  |
 | | | |
 | তিন সুরূপ বসন্তের শরতে রূপান্তর, | Three beauteous springs to yellow autumn turned |  |
-| হলুদে বদল ঋতুর প্রগতিপথে দেখছি আমি, | In process of the seasons have I seen, |  |
+| হলুদে বদল ঋতুর প্রগতিপথে দেখেছি আমি, | In process of the seasons have I seen, |  |
 | তিন তপ্ত জুনে পুড়ল তিন বোশেখি আতর | Three April perfumes in three hot Junes burned |  |
 | প্রথম দেখার পর তোমাকে, আজো সবুজ তুমি। | Since first I saw you fresh, which yet are green. |  |
 | | | |
 | তবুও সৌন্দর্য ঘড়ির কাঁটার মতো হায় | Ah yet doth beauty, like a dial hand, |  |
 | তার ফিগার থেকে চোরের মতো নিভৃতে সরে; | Steal from his figure and no pace perceived; |  |
-| তাই তোমার মিষ্টি রঙ, যা ভাবি দাঁড়ায়ে ঠায়, | So your sweet hue, which methinks still doth stand, |  |
+| তাই তোমার মিষ্টি রঙ, যা ভাবি দাঁড়িয়ে ঠায়, | So your sweet hue, which methinks still doth stand, |  |
 | আসলে সচল, হয়ত আমার চোখ ভুল করে। | Hath motion, and mine eye may be deceived. |  |
 | | | |
 | এই ভয়ে, শুনে রাখো, হে যুগ যে এখনো অজাত, | For fear of which, hear this, thou age unbred: |  |
@@ -496,7 +496,7 @@ lang: en
 | আমার প্রেমকে যেন বলা না হয় মূর্তিপূজা, | Let not my love be call’d idolatry, | 105 |
 | বা আমার প্রেমিক যেন দেখতে না হয় মূর্তি, | Nor my beloved as an idol show, |  |
 | কারণ আমার সব গান ও প্রশংসার ধ্বজা | Since all alike my songs and praises be |  |
-| এক জনের লক্ষ্যে ছিল আছে ও থাকবে নিতি। | To one, of one, still such, and ever so. |  |
+| এক জনকে, এক জনের, চিরকাল এক রীতি। | To one, of one, still such, and ever so. |  |
 | | | |
 | সদয় আমার প্রেম আজ, থাকবে কালও সদয়, | Kind is my love to-day, to-morrow kind, |  |
 | সদা সুস্থির এক বিস্ময়কর শ্রেষ্ঠতায়; | Still constant in a wondrous excellence; |  |
@@ -506,10 +506,10 @@ lang: en
 | সুরূপ সদয় সত্য, এরাই আমার বিষয়, | “Fair, kind and true,” is all my argument, |  |
 | সুরূপ সদয় সত্য, যে-শব্দেই ডাকা হোক; | “Fair, kind, and true,” varying to other words; |  |
 | এই পরিবর্তনে আমার সব মেধার ক্ষয়, | And in this change is my invention spent, |  |
-| একে তিন থিম দেয় বিস্ময়কর সুযোগ। | Three themes in one, which wondrous scope affords. |  |
+| একে তিন ভাব দেয় বিস্ময়কর সুযোগ। | Three themes in one, which wondrous scope affords. |  |
 | | | |
-| সুরূপ সদয় সত্য, হামেশাই থাকছে একা, | “Fair, kind, and true,” have often liv’d alone, |  |
-| তবে একের মধ্যে তিন আগে যায় নাই দেখা। | Which three till now never kept seat in one. |  |
+| সুরূপ সদয় সত্য, প্রায়শই থেকেছে একা, | “Fair, kind, and true,” have often liv’d alone, |  |
+| তবে একের মধ্যে তিনকে আগে যায়নি দেখা। | Which three till now never kept seat in one. |  |
 | | | |
 | অপচিত সময়ের পঞ্জিকাতে আমি যখন | When in the chronicle of wasted time | 106 |
 | দেখি সুন্দরতম মানব মানবীর বয়ান, | I see descriptions of the fairest wights, |  |
@@ -524,18 +524,18 @@ lang: en
 | তাই তাদের সে-প্রশংসা কিছু না প্রফেসি ছাড়া | So all their praises are but prophecies |  |
 | আমাদের এ-যুগের, সব তোমার পূর্বাভাস, | Of this our time, all you prefiguring, |  |
 | আর দেখার কারণে শুধু প্রফেটের চোখ দ্বারা | And for they looked but with divining eyes |  |
-| তাদের ছিল না গুণ করে তোমার গুণ প্রকাশ; | They had not skill enough your worth to sing; |  |
+| ছিল না দক্ষতা তোমার গুণ করতে প্রকাশ; | They had not skill enough your worth to sing; |  |
 | | | |
-| এবং আমরা যারা জ্বালতেছি একালের দীপ | For we which now behold these present days |  |
-| চোখ থাকলেও নাই তাদের গুণ গাওয়ার জিভ। | Have eyes to wonder, but lack tongues to praise. |  |
+| আর আমরা যারা আজ দেখছি একালের দীপ | For we which now behold these present days |  |
+| চোখ থাকলেও নেই তোমার গুণ গাওয়ার জিভ। | Have eyes to wonder, but lack tongues to praise. |  |
 | | | |
 | আমার নিজের ভয় বা বিশাল বসুধার কোনো | Not mine own fears nor the prophetic soul | 107 |
 | প্রফেটিক আত্মা যে অনাগতের স্বপ্ন দেখে | Of the wide world dreaming on things to come |  |
 | আমার সত্য প্রেম দমাতে পারবে না এখনো | Can yet the lease of my true love control, |  |
 | বদ্ধ বিধির কাছে দেউলিয়া মনে হয় যাকে। | Supposed as forfeit to a confined doom. |  |
 | | | |
-| নশ্বর চাঁদ বাঁচে তার গ্রহণ গ্রাহ্য করে, | The mortal moon hath her eclipse endured, |  |
-| দুখের দৈবজ্ঞ হাসে শুনে নিজের অশনি; | And the sad augurs mock their own presage; |  |
+| নশ্বর চাঁদ বাঁচে তার গ্রহণ সহ্য করে, | The mortal moon hath her eclipse endured, |  |
+| দুঃখী দৈবজ্ঞ হাসে শুনে নিজের অশনি; | And the sad augurs mock their own presage; |  |
 | অনিশ্চয়তা আজ নিশ্চিতির মুকুট পরে, | Incertainties now crown themselves assured, |  |
 | শান্তি ঘোষণা করে অনন্ত অলিভের বাণী। | And peace proclaims olives of endless age. |  |
 | | | |
@@ -544,26 +544,26 @@ lang: en
 | সে সত্ত্বেও থাকব আমি এ গরিব কবিতায় | Since spite of him I’ll live in this poor rhyme |  |
 | যেখানে সে জয় করে নিষ্প্রাণ মূকদের ঝাড়, | While he insults o’er dull and speechless tribes, |  |
 | | | |
-| আর তুমি এখানেই পাবা তোমার মহাস্থান | And thou in this shalt find thy monument |  |
+| আর তুমি এখানেই পাবে তোমার মহাস্থান | And thou in this shalt find thy monument |  |
 | যখন বিলীন জালিমের সমাধি শিরস্ত্রাণ। | When tyrants’ crests and tombs of brass are spent. |  |
 | | | |
-| কালি চিনিয়ে দিতে পারে মাথায় কি আছে এমন | What's in the brain that ink may character | 108 |
+| কালি চিনিয়ে দিতে পারে মাথায় কী আছে এমন | What's in the brain that ink may character | 108 |
 | যা তোমাকে দেখায়নি আমার প্রকৃত আত্মা? | Which hath not figured to thee my true spirit? |  |
-| নতুন কি আছে বলার, লেখার কি আছে নূতন | What's new to speak, what new to register, |  |
+| বলার কী আছে নতুন, লেখার কী আছে নতুন | What's new to speak, what new to register, |  |
 | যা প্রকাশ করবে আমার প্রেম, তোমার যোগ্যতা? | That may express my love or thy dear merit? |  |
 | | | |
 | কিছু না, মিষ্টি ছেলে; পুণ্য প্রার্থনার মতো আমি | Nothing, sweet boy; but yet, like prayers divine, |  |
-| তাও প্রতিদিন বলবই এক জিনিস না মেনে | I must, each day say o'er the very same, |  |
-| পুরানোকে পুরাতন, আমি তোমার, আমার তুমি, | Counting no old thing old, thou mine, I thine, |  |
+| তবু প্রতিদিন বলবই এক জিনিস না মেনে | I must, each day say o'er the very same, |  |
+| পুরোনোকে পুরাতন, আমি তোমার, আমার তুমি, | Counting no old thing old, thou mine, I thine, |  |
 | যেমন বলেছি তোমার নাম প্রথম জপার দিনে। | Even as when first I hallow'd thy fair name. |  |
 | | | |
 | যাতে নতুন মোড়কে শাশ্বত প্রেমের এই সাজ | So that eternal love in love's fresh case |  |
-| এড়িয়ে যেতে পারে যুগের সব ধুলা আর ক্ষত, | Weighs not the dust and injury of age, |  |
+| এড়িয়ে যেতে পারে যুগের সব ধুলো আর ক্ষত, | Weighs not the dust and injury of age, |  |
 | তার উপর বসতে না দেয় অনিবার্য ভাঁজ, | Nor gives to necessary wrinkles place, |  |
-| বরং প্রাচীনকালকে বানায় তার পাতা ভৃত্য, | But makes antiquity for aye his page, |  |
+| বরং প্রাচীনকালকে বানায় তার চিরভৃত্য, | But makes antiquity for aye his page, |  |
 | | | |
 | সেখানেই জন্ম দিয়ে প্রেমের প্রথম অনুভূতি | Finding the first conceit of love there bred |  |
-| যেখানে তাকে মরা দেখায় সময় ও আকৃতি। | Where time and outward form would show it dead. |  |
+| যেখানে তাকে মৃত দেখায় সময় ও আকৃতি। | Where time and outward form would show it dead. |  |
 | | | |
 | কখনো বোলো না যে আমার মন ছিল বেইমান, | O, never say that I was false of heart, | 109 |
 | যদিও বিরহে আমার আগুন নিভু মনে হয়; | Though absence seem'd my flame to qualify. |  |
@@ -601,41 +601,41 @@ lang: en
 | দাও স্বাগত তবে, আমার স্বর্গের পরে সেরা, | Then give me welcome, next my heaven the best, |  |
 | তোমার পবিত্র, অতি অতি প্রেমের বুকে ঘেরা। | Even to thy pure and most most loving breast. |  |
 | | | |
-| হায় আমার জন্য তুমি দাও বকা ভাগ্যের সাথে | O, for my sake do you with Fortune chide, | 111 |
+| হায়, আমার হয়ে তুমি বিবাদ করো ভাগ্যের সাথে | O, for my sake do you with Fortune chide, | 111 |
 | আমার খারাপ সব কাজের অপরাধী দেবীকে | The guilty goddess of my harmful deeds, |  |
 | যে দেয়নি আর ভালো কিছু এই জীবনের পাতে, | That did not better for my life provide |  |
-| শুধু পাব্লিক অভ্যাসে যে উপায় বানায় পাব্লিকে। | Than public means which public manners breeds. |  |
+| কেবল জনতার জীবিকা, যা আচার শেখায় জনতাকে। | Than public means which public manners breeds. |  |
 | | | |
-| আর এই উপায়েই আমার নাম ব্র্যান্ড পেয়েছে, | Thence comes it that my name receives a brand, |  |
+| আর এ-কারণেই আমার নামে কালো দাগ লেগেছে, | Thence comes it that my name receives a brand, |  |
 | অনেকটা যে-কারণেই বশ মানে আমার প্রকৃতি | And almost thence my nature is subdued |  |
-| ডায়ারদের হাতের মতো তার চাকরির কাছে: | To what it works in, like the dyer's hand: |  |
+| রংরেজের হাতের মতো তার পেশারই কাছে: | To what it works in, like the dyer's hand: |  |
 | তাই দয়া করে করো আমার নবায়নের আকুতি; | Pity me then and wish I were renew'd; |  |
 | | | |
 | আর আমি পান করব ইচ্ছুক রোগীর মতো | Whilst, like a willing patient, I will drink |  |
-| আমার ইনফেকশন সারাতে ওষধি ভিনেগার, | Potions of eisel 'gainst my strong infection |  |
+| আমার এ সংক্রমণ সারাতে ওষধি ভিনেগার, | Potions of eisel 'gainst my strong infection |  |
 | কোনো তিক্ততাই আমার কাছে লাগবে না তেতো, | No bitterness that I will bitter think, |  |
-| শোধনের সংশোধনে হবে না প্রায়শ্চিত্ত আবার। | Nor double penance, to correct correction. |  |
+| না দ্বিগুণ প্রায়শ্চিত্ত, সংশোধন শোধাতে আবার। | Nor double penance, to correct correction. |  |
 | | | |
-| তবে দয়া করো, প্রিয় বন্ধু, নিশ্চিতি দিচ্ছি তোমাকে | Pity me then, dear friend, and I assure ye |  |
+| তবে দয়া করো, প্রিয় বন্ধু, আশ্বাস দিচ্ছি তোমাকে | Pity me then, dear friend, and I assure ye |  |
 | যে তোমার করুণাই যথেষ্ট সারাতে আমাকে। | Even that your pity is enough to cure me. |  |
 | | | |
 | তোমার প্রেম আর করুণা মুছে দেয় সেই ছাপ | Your love and pity doth the impression fill | 112 |
 | মামুলি কেলেঙ্কারিতে যা আমার কপালে বসে; | Which vulgar scandal stamp'd upon my brow; |  |
-| আমার কি কে আমায় বলে ভালো আর কে খারাপ, | For what care I who calls me well or ill, |  |
+| আমার কী, কে আমায় বলে ভালো আর কে খারাপ, | For what care I who calls me well or ill, |  |
 | যদি তুমি খারাপ ঢাকো ঘাসে, ভালোকে ভালোবেসে? | So you o'er-green my bad, my good allow? |  |
 | | | |
 | তুমি আমার সারা জাহান, আমি করবই সাধনা | You are my all the world, and I must strive |  |
 | তোমার ভাষায় জানতে আমার লজ্জা ও সুখ্যাতি: | To know my shames and praises from your tongue: |  |
-| আমার কাছে কেউ বা কারো কাছে আমি জ্যান্ত না, | None else to me, nor I to none alive, |  |
-| যে ভুল বা ঠিক পাল্টাবে আমার রুদ্ধ অনুভূতি। | That my steel'd sense or changes right or wrong. |  |
+| আমার কাছে কেউ বা কারো কাছে আমি জীবিত না, | None else to me, nor I to none alive, |  |
+| যে ভুল বা ঠিক পাল্টাবে আমার পাষাণ অনুভূতি। | That my steel'd sense or changes right or wrong. |  |
 | | | |
 | এত গভীর অতলে আমি ছুঁড়েছি সব সম্বন্ধ | In so profound abyss I throw all care |  |
-| অন্য সবার গলার, যে আমার এডারের কান | Of others' voices, that my adder's sense |  |
+| অন্য সবার গলার, যাতে আমার সাপের কান | Of others' voices, that my adder's sense |  |
 | নিন্দুক বা চাটুকার সবার কাছে সমান বন্ধ। | To critic and to flatterer stopped are. |  |
-| দেখো আমি কিভাবে দিব এই অবজ্ঞার বিধান: | Mark how with my neglect I do dispense: |  |
+| দেখো আমি কীভাবে দেব এই অবজ্ঞার বিধান: | Mark how with my neglect I do dispense: |  |
 | | | |
 | আমার লক্ষ্যে তুমি এত শক্তভাবে পাও জীবন | You are so strongly in my purpose bred |  |
-| যে সারা বিশ্ব ছেড়ে ভাবি নিশ্চিত হয়েছে মরণ। | That all the world besides, methinks, are dead. |  |
+| যে তুমি ছাড়া বাকি বিশ্বের, ভাবি, নিশ্চিত মরণ। | That all the world besides, methinks, are dead. |  |
 | | | |
 | আমার চোখ আমার মনে তোমাকে ছাড়ার পরে; | Since I left you, mine eye is in my mind; | 113 |
 | আমার চলাফেরায় যে চালকের আসনে বসে | And that which governs me to go about |  |
