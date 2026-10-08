@@ -547,7 +547,7 @@ lang: en
 | মেকি শিল্পকে বলে কি লাবণ্য ছিল আগে। | To show false Art what beauty was of yore. |  |
 | | | |
 | তোমার যেসব অংশ বিশ্ব দেখে নিজ চোখে, | Those parts of thee that the world’s eye doth view | 69 |
-| তাতে এমন অভাব নাই যে হৃদয় কিছু দেবে, | Want nothing that the thought of hearts can mend: |  |
+| তাতে এমন অভাব নেই যা মন শুধরে দেবে, | Want nothing that the thought of hearts can mend: |  |
 | জিভ, আত্মার কণ্ঠ, পাওনাই দেয় তোমাকে | All tongues, the voice of souls, give thee that due, |  |
 | শুধু সত্য বলে—তোমাকে শত্রুও ভালো ভাবে। | Utt’ring bare truth, even so as foes commend. |  |
 | | | |
@@ -565,16 +565,16 @@ lang: en
 | কারণ এই মাটিতে তুমি সাধারণের শামিল। | The soil is this, that thou dost common grow. |  |
 | | | |
 | তোমায় যে লোকে দোষ দেয় সে দোষ তোমার নয়, | That thou art blamed shall not be thy defect | 70 |
-| অপবাদ রূপসির দিকেই তো করা হয় তাক। | For slander’s mark was ever yet the fair. |  |
+| অপবাদ চিরকালই সুন্দরকে করে তাক। | For slander’s mark was ever yet the fair. |  |
 | সৌন্দর্যের অলঙ্কার মনের সংশয়, | The ornament of beauty is suspect, |  |
 | স্বর্গের মধুর বাতাসে উড়ে যাওয়া এক কাক। | A crow that flies in heaven’s sweetest air. |  |
 | | | |
-| তুমি যদি হও ভালো, কেলেঙ্কারি প্রমাণ করে | So thou be good, slander doth but approve |  |
+| তুমি যদি হও ভালো, কুৎসা শুধু প্রমাণ করে | So thou be good, slander doth but approve |  |
 | তুমি আরো ভালো, সময়ের সাথে যার অভিসার। | Thy worth the greater, being wooed of time. |  |
-| কারণ দোষ কীটের মতো মিষ্টি ফুলের ঘরে, | For canker vice the sweetest buds doth love, |  |
+| দোষ-কীট বাসা বাঁধে মিষ্টিতম কুঁড়ির ঘরে, | For canker vice the sweetest buds doth love, |  |
 | আর তুমি বিশুদ্ধ নিখুঁত যৌবনের উপহার। | And thou present’st a pure unstained prime. |  |
 | | | |
-| যুবকালের আক্রমণ তুমি করেছ জরিপ, | Thou hast passed by the ambush of young days, |  |
+| যুবকালের ওত-পাতা পেরিয়েছ যত হরিফ, | Thou hast passed by the ambush of young days, |  |
 | হয় আক্রান্ত হওনি, বা হলেও পেয়েছ জয়; | Either not assailed, or victor, being charged; |  |
 | তবে তোমার এ তারিফ নয় যথেষ্ট তারিফ | Yet this thy praise cannot be so thy praise |  |
 | যে বাঁধবে ঈর্ষাকে, সে দুর্বার সব সময়। | To tite up envy, evermore enlarged. |  |
@@ -582,19 +582,19 @@ lang: en
 | অশুভের সংশয়ে তোমার রূপ না পড়লে ঢাকা | If some suspect of ill masked not thy show |  |
 | হৃদয়ের সব রাজ্যের মালিক হতে তুমি একা। | Then thou alone kingdoms of hearts shouldst owe. |  |
 | | | |
-| যখনি তোমার শোক গাঢ় হবে আমি মারা গেলে, | No longer mourn for me when I am dead | 71 |
-| তখনি শুনবে গুমোট বিরূপ ঘণ্টা বেঘোরে | Than you shall hear the surly sullen bell |  |
+| শোক কোরো কেবল ততক্ষণ, আমি মারা গেলে, | No longer mourn for me when I am dead | 71 |
+| যতক্ষণ বাজে গুমোট বিরূপ ঘণ্টা জোরে | Than you shall hear the surly sullen bell |  |
 | জগৎকে জানাচ্ছে, পলাতক আমি গেছি চলে | Give warning to the world that I am fled |  |
 | নোংরা জগৎ ছেড়ে আরো নোংরা পোকার গোরে: | From this vile world with vilest worm to dwell: |  |
 | | | |
-| তখন এই চরণ যদি পড়ো, কোরো না স্মরণ | Nay, if you read this line, remember not |  |
+| বরং এই চরণ যদি পড়ো, কোরো না স্মরণ | Nay, if you read this line, remember not |  |
 | তাদের লেখককে, তোমাকে আমি এত ভালোবাসি | The hand that writ it, for I love you so |  |
 | যে তোমার সুমধুর ভাবনায় চাই না শরণ, | That I in your sweet thoughts would be forgot, |  |
 | যদি সে-চিন্তা হয় তোমার শোকের বারোমাসি। | If thinking on me then should make you woe. |  |
 | | | |
 | হায়, শোনো বলি, যদি তুমি তাকাও এই পদ্যে | O, if, I say, you look upon this verse |  |
-| যখন আমার, হয়ত বা, মাটিতে হইছে লয়, | When I, perhaps, compounded am with clay, |  |
-| এমনকি বাঁইধো না আমার নাম কোনো শব্দে; | Do not so much as my poor name rehearse; |  |
+| যখন আমার, হয়ত বা, মাটিতে হয়েছে লয়, | When I, perhaps, compounded am with clay, |  |
+| এমনকি গেঁথো না আমার তুচ্ছ নাম শব্দে; | Do not so much as my poor name rehearse; |  |
 | তোমার প্রেম আমার জীবনের সাথে হোক ক্ষয়, | But let your love even with my life decay, |  |
 | | | |
 | পাছে প্রাজ্ঞ পৃথিবী দেখে ফেলে তোমার দুঃখ, | Lest the wise world should look into your moan |  |
@@ -603,10 +603,10 @@ lang: en
 | হায়, পাছে বিশ্ব তোমাকে বলে গাইতে সরবে | O, lest the world should task you to recite | 72 |
 | তোমার ভালোবাসার যোগ্য আমার গুণগান | What merit lived in me that you should love |  |
 | আমি মরলে তাই, প্রেম, আমাকে ভুলিয়ো নীরবে, | After my death, dear love, forget me quite, |  |
-| কারণ আমার মাঝে পাবা না কিছু মূল্যবান, | For you in me can nothing worthy prove; |  |
+| কারণ আমার মাঝে পাবে না কিছু মূল্যবান, | For you in me can nothing worthy prove; |  |
 | | | |
-| যদি না পয়দা করো কোনো গুণভর্তি মিথ্যা, | Unless you would devise some virtuous lie, |  |
-| আমার জন্য করো আমার অসাধ্য সাধন, | To do more for me than mine own desert, |  |
+| যদি না রচনা করো কোনো গুণভর্তি মিথ্যা, | Unless you would devise some virtuous lie, |  |
+| আমার জন্য করো প্রাপ্যের বেশি আয়োজন, | To do more for me than mine own desert, |  |
 | আর মৃত আমাকে পরাও এত প্রশংসা বৃথা | And hang more praise upon deceased I |  |
 | যা সত্য স্বেচ্ছায় দিত না—সে এমন কৃপণ। | Than niggard truth would willingly impart. |  |
 | | | |
@@ -615,18 +615,18 @@ lang: en
 | তাই আমার দেহের গোরেই থাক নাম আমার, | My name be buried where my body is, |  |
 | আমায় তোমায় লাজ না দিক তার অস্তিত্ব। | And live no more to shame nor me, nor you. |  |
 | | | |
-| কারণ আমার সন্তান নিয়ে আমি লজ্জিত, | For I am shamed by that which I bring forth, |  |
-| হবা তুমিও, থাকলে তুচ্ছের সাথে পরিণীত। | And so should you, to love things nothing worth. |  |
+| কারণ আমার সৃষ্টি নিয়ে আমি যে লজ্জিত, | For I am shamed by that which I bring forth, |  |
+| হবে তুমিও, থাকলে তুচ্ছের সাথে পরিণীত। | And so should you, to love things nothing worth. |  |
 | | | |
 | বছরের তেমন সময় দেখতে পাবে আমায় | That time of year thou mayst in me behold | 73 |
-| যখন পাতা হলুদ, বা নাই, বা কিছু, ঝুলে থাকে | When yellow leaves, or none, or few, do hang |  |
+| যখন পাতা হলুদ, বা নেই, বা কিছু, ঝুলে থাকে | When yellow leaves, or none, or few, do hang |  |
 | শীতের দাপটে কাঁপা ঐ মলিন ডালপালায়, | Upon those boughs which shake against cold, |  |
-| রিক্ত জীর্ণ পালা, যেখানে গেয়েছে পাখি আগে। | Bare ruined choirs, where late the sweet birds sang. |  |
+| রিক্ত ভাঙা মঞ্চ, যেখানে গেয়েছে পাখি আগে। | Bare ruined choirs, where late the sweet birds sang. |  |
 | | | |
 | আমাতে দেখতে পাবে সেই সব দিনের গোধূলি— | In me thou seest the twilight of such day |  |
 | সূর্য ডুবে গেলে হারিয়ে যেতে থাকে পশ্চিমে, | As after sunset fadeth in the west, |  |
-| কালো নিশা একে একে কেড়ে নেয় যাদের আধুলি, | Which by and by black night doth take away, |  |
-| মৃত্যুর দোসর বিলীন করে সব নিঃসীমে। | Death’s second self, that seals up all in rest. |  |
+| কালো রাত একটু একটু করে ভরে তার ঝুলি, | Which by and by black night doth take away, |  |
+| মৃত্যুর দোসর, সব মুড়ে রাখে ঘুমের হিমে। | Death’s second self, that seals up all in rest. |  |
 | | | |
 | আমাতে দেখতে পাবে তেমন আগুনের কিরণ, | In mee thou seest the glowing of such fire |  |
 | ক্লান্ত শুয়ে থাকে নিজের যৌবনের ছাইয়ে, | That on the ashes of his youth doth lie, |  |
@@ -648,10 +648,10 @@ lang: en
 | | | |
 | তবে তুমি হারিয়েছ কেবল জীবনের তলানি, | So then thou hast but lost the dregs of life, |  |
 | কীটের শিকার, যেহেতু নিষ্প্রাণ আমার দেহ, | The prey of worms, my body being dead, |  |
-| এক পিশাচের কাপুরুষ ছুরিতে রাজ্যহানি, | The coward conquest of a wretch’s knife, |  |
+| এক অধমের ছুরির কাপুরুষ জয়ের গ্লানি, | The coward conquest of a wretch’s knife, |  |
 | এত নীচ যে পারে না পেতে তোমার স্মৃতির স্নেহ। | Too base of thee to be remembered. |  |
 | | | |
-| তার মূল্য তার আধেয়র মাঝে লুকিয়ে আছে, | The worth of that, is that which it contains, |  |
+| তার মূল্য শুধু সেটুকু, যা তার ভেতরে আছে, | The worth of that, is that which it contains, |  |
 | তা হলো এই পদ্য, যা রয়ে যাবে তোমার কাছে। | And that is this, and this with thee remains. |  |
 | | | |
 | আমার চিন্তায় তুমি, প্রাণের যেমন খাদ্য, | So are you to my thoughts as food to life, | 75 |
@@ -661,20 +661,20 @@ lang: en
 | | | |
 | এখন সে গর্বিত ভোক্তা, কিন্তু অচিরেই | Now proud as an enjoyer, and anon |  |
 | ছিঁচকে-চোর-বয়স কেড়ে নেবে ধন সেই ভয়: | Doubting the filching age will steal his treasure, |  |
-| আমি তোমার সাথে একা সময়ের হিসাব নেই, | Now counting best to be with you alone, |  |
-| ভাবি না পৃথিবী দেখল কি-না আমার উপচয়; | Then bettered that the world may see my pleasure; |  |
+| এখন চাই তোমার সাথে একা থাকি, কেউ নেই, | Now counting best to be with you alone, |  |
+| আবার ভাবি, পৃথিবী দেখুক আমার উপচয়; | Then bettered that the world may see my pleasure; |  |
 | | | |
 | কখনো তোমাকে দেখে চোখ করে উদরপূর্তি, | Sometime all full with feasting on your sight, |  |
 | কিন্তু অচিরেই আবার ক্ষুধিত দেখবে বলে। | And by and by clean starved for a look. |  |
-| অধিকার বা অনুধাবন কিছুতে নাই ফুর্তি— | Possessing or pursuing, no delight, |  |
-| শুধু তুমি যা দাও বা আমি যা ছিনাই কৌশলে। | Save what is had or must be from you took. |  |
+| অধিকারে বা অন্বেষণে কিছুতে নেই ফুর্তি— | Possessing or pursuing, no delight, |  |
+| কেবল তুমি যা দাও, বা যা কেড়ে নিই কৌশলে। | Save what is had or must be from you took. |  |
 | | | |
 | এভাবে প্রতিদিন ভুগি ক্ষুধা আর বিবমিষায়, | Thus do I pine and surfeit day by day, |  |
 | হয় পেটুকের মতো খাই, নয় সবই হারায়। | Or gluttoning on all, or all away. |  |
 | | | |
 | আমার পদ কেন সাজে না নতুন অলংকারে, | Why is my verse so barren of new pride, | 76 |
-| কেন বৈচিত্র বা পালাবদল এড়ায়ে চলে? | So far from variation or quick change? |  |
-| যুগের সাথে তাল মিলায়ে কেন চাই না ওপারে | Why with the time do I not glance aside |  |
+| কেন বৈচিত্র বা পালাবদল এড়িয়ে চলে? | So far from variation or quick change? |  |
+| যুগের সাথে তাল মিলিয়ে কেন চাই না ওপারে | Why with the time do I not glance aside |  |
 | অভিনব শৈলী বা অদ্ভুত যৌগের ছলে? | To new-found methods, and to compounds strange? |  |
 | | | |
 | কেন আমি লিখি সেই এক কাহিনি, চিরপুরাণ, | Why write I still all one, ever the same, |  |
@@ -685,26 +685,26 @@ lang: en
 | জানো তো, মধুর প্রেম, আমি তোমাকে নিয়েই লিখি, | O know, sweet love, I always write of you, |  |
 | আর তুমি আর প্রেম এখনও আমার বিষয়; | And you and love are still my argument; |  |
 | আমি নতুন পোশাকে সেই পুরাণ শব্দ ঢাকি, | So all my best is dressing old words new, |  |
-| যাপিত জিনিস আবার যাপন করি সাতিশয়: | Spending again what is already spent: |  |
+| যা ব্যয় হয়ে গেছে, আবার আমি করি তার ব্যয়: | Spending again what is already spent: |  |
 | | | |
 | সূর্য যেমন প্রতিদিন নতুন আর পুরাণ, | For as the sun is daily new and old, |  |
 | তেমনি আমার প্রেম, শুধু গেয়ে চলে গীত গান। | So is my love, still telling what is told. |  |
 | | | |
 | আয়না তোমাকে দেখাবে তোমার সুরূপের হ্রাস, | Thy glass will show thee how thy beauties wear, | 77 |
 | আর সূর্যঘড়ি তোমার মিনিটের অপচয়, | Thy dial how thy precious minutes waste, |  |
-| শূন্য পাতা বইবে তোমার মনের চাপরাশ, | The vacant leaves thy mind’s imprint will bear, |  |
+| শূন্য পাতা বইবে তোমার মনের নির্যাস, | The vacant leaves thy mind’s imprint will bear, |  |
 | আর এ-খাতায় পাবে এই বিদ্যার উপচয়: | And of this book this learning mayst thou taste: |  |
 | | | |
 | যেসব ভাঁজ তোমার আয়না সরাসরি দেখাবে, | The wrinkles which thy glass will truly show |  |
 | তোমার মনে আনবে তারা খোলা কবরের স্মৃতি; | Of mouthed graves will give thee memory; |  |
-| আর তোমার ঘড়ির ছায়াপথের গতি শেখাবে | Thou by thy dial’s shady stealth mayst know |  |
+| আর তোমার ঘড়ির ছায়ার চোরা গতি শেখাবে | Thou by thy dial’s shady stealth mayst know |  |
 | মহাকাল-পানে সময়ের চোরের মতো প্রগতি। | Time’s thievish progress to eternity. |  |
 | | | |
 | দেখো তোমার মন যা-কিছু রাখতে পারে না ধরে | Look what thy memory cannot contain, |  |
-| অর্পণ করো এ-খালি পাতায়—তোমার চিন্তা- | Commit to these waste blanks, and thou shalt find |  |
-| প্রসূত সেই সন্তানেরা দেখবা উঠছে বেড়ে, | Those children nursed, delivered from thy brain, |  |
-| আজ তারা হবে তোমার মনের নতুন মন্তা। | To take a new acquaintance of thy mind. |  |
+| অর্পণ করো এ-খালি পাতায়, দেখবে তখন | Commit to these waste blanks, and thou shalt find |  |
+| মগজ-প্রসূত শিশু, লালিত হয়ে উঠছে বেড়ে, | Those children nursed, delivered from thy brain, |  |
+| নতুন করে তারা চিনবে তোমার নিজের মন। | To take a new acquaintance of thy mind. |  |
 | | | |
-| তুমি পালন করবা যত বেশি এই দায়িত্ব, | These offices, so oft as thou wilt look, |  |
+| তুমি পালন করবে যত বেশি এই দায়িত্ব, | These offices, so oft as thou wilt look, |  |
 | লাভ হবে তোমার, তোমার খাতা হবে উন্নত। | Shall profit thee, and much enrich thy book. |  |
 | | | |
