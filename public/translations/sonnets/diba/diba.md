@@ -345,7 +345,7 @@ lang: en
 | দুঃখী দাসের মতো বসে ভাবি শুধু এ-চিন্তা: | But like a sad slave stay and think of naught |  |
 | তুমি কোথায় আছ বা পাচ্ছে সুখ কত ললনা। | Save where you are, how happy you make those. |  |
 | | | |
-| প্রেম এমনি সত্যপ্রিয় গাধা যে তোমার সাধ | So true a fool is love, that in your will, |  |
+| প্রেম এমনই বিশ্বস্ত বোকা যে তোমার সাধ | So true a fool is love, that in your will, |  |
 | যাই করুক না কেন, নেয় না কখনো অপরাধ। | Though you do anything, he thinks no ill. |  |
 | | | |
 | সেই খোদা না করুন, যিনি আমাকে তোমার দাস | That god forbid, that made me first your slave, | 58 |
@@ -407,7 +407,7 @@ lang: en
 | তুমি কামনা করো ডুবুক আমার ঘুমের ভেলা, | Dost thou desire my slumber should be broken, |  |
 | তোমার ছায়া আমার দিঠিকে ভেঙাক তামাসায়? | While shadows like to thee do mock my sight? |  |
 | | | |
-| এখানে কি পাঠাইছ প্রেতাত্মা বা ভূত তোমার | Is it thy spirit that thou send’st from thee |  |
+| এখানে কি পাঠিয়েছ প্রেতাত্মা বা ভূত তোমার | Is it thy spirit that thou send’st from thee |  |
 | বাড়ি থেকে এত দূরে চোখ রাখতে আমার কাজে, | So far from home into my deeds to pry, |  |
 | খুঁজতে যত লজ্জা বা অলস সময় আমার, | To find out shames and idle hours in me, |  |
 | যে-এখতিয়ার শুধু তোমার ঈর্ষাকেই সাজে? | The scope and tenure of thy jealousy? |  |
@@ -423,10 +423,10 @@ lang: en
 | আত্মপ্রেম দখল করছে আমার দুই চোখ, | Sin of self-love possesseth all mine eye, | 62 |
 | আমার সারা আত্মা, আমার অঙ্গ সমুদয়; | And all my soul, and all my every part; |  |
 | সারায় না কোনো প্রতিষেধক এই পাপের রোগ, | And for this sin there is no remedy, |  |
-| এত গভীরে জায়গা দিছে তাকে আমার হৃদয়। | It is so grounded inward in my heart. |  |
+| এত গভীরে ঠাঁই দিয়েছে তাকে আমার হৃদয়। | It is so grounded inward in my heart. |  |
 | | | |
 | আমি ভাবি কোনো মুখ নয় আমার চেয়ে শোভন, | Methinks no face so gracious is as mine, |  |
-| কোনো রূপ এত খাঁটি, কোনো সত্য এত সুরম; | No shape so true, no truth of such account, |  |
+| কোনো রূপ এত খাঁটি, কোনো সত্য এত পরম; | No shape so true, no truth of such account, |  |
 | নিজের জন্য নিজ মূল্য করি নির্ধারণ, | And for myself mine own worth do define |  |
 | যেন মূল্যে আমি সবাইকে করি অতিক্রম। | As I all other in all worths surmount. |  |
 | | | |
@@ -435,7 +435,7 @@ lang: en
 | নিজ আত্মপ্রেম তখন অন্য রকম পড়ি; | Mine own self-love quite contrary I read; |  |
 | আত্মকে আত্মপ্রেমে ডুবানো সত্যিই পাপ: | Self so self-loving were iniquity: |  |
 | | | |
-| আমার বয়স রাঙায়ে তোমার দিবসের রূপে | ’Tis thee (my self) that for myself I praise, |  |
+| আমার বয়স রাঙিয়ে তোমার দিবসের রূপে | ’Tis thee (my self) that for myself I praise, |  |
 | গাইলে আমার গুণ তুমিই (আমি) শংসা পাবে। | Painting my age with beauty of thy days. |  |
 | | | |
 | যখন আমার প্রেম হবে যেমন আমি এখন, | Against my love shall be as I am now, | 63 |
@@ -443,7 +443,7 @@ lang: en
 | যখন প্রহর শুকাবে তার রক্ত, ভ্রু পূরণ | When hours have drained his blood and filled his brow |  |
 | হবে রেখা আর ভাঁজে, তার যৌবনময় উষা | With lines and wrinkles, when his youthful morn |  |
 | | | |
-| পার হয়ে যাবে বয়সের অতলান্তিক নিশা, | Hath travelled on to age’s steepy night |  |
+| পার হয়ে যাবে বয়সের খাড়া অতলের নিশা, | Hath travelled on to age’s steepy night |  |
 | আজ যত সৌন্দর্যের সে নিরঙ্কুশ রাজা, | And all those beauties whereof now he’s king |  |
 | দৃষ্টির আড়াল হবে, বা হতে থাকবে ঝাপসা, | Are vanishing, or vanished out of sight, |  |
 | চুরি হয়ে যাবে তার বসন্তের সাজসজ্জা: | Stealing away the treasure of his spring: |  |
@@ -481,7 +481,7 @@ lang: en
 | | | |
 | হায়, কিভাবে টিকবে গ্রীষ্মের মধুনিশ্বাস | O how shall summer’s honey breath hold out |  |
 | হানাদার দিনের আগ্রাসী অবরোধের মুখে, | Against the wrackful siege of batt’ring days, |  |
-| যেখানে দুর্জয় পাথরও হয় হতাশ্বাস, | When rocks impregnable are not so stout, |  |
+| যেখানে দুর্জয় পাথরও হারায় বিশ্বাস, | When rocks impregnable are not so stout, |  |
 | ইস্পাত-তোরণেরও ক্ষমতা নাই ক্ষয় রুখে? | Nor gates of steel so strong, but time decays? |  |
 | | | |
 | হায়রে ভয়ংকর ধ্যান; সময়ের সেরা ধন | O fearful meditation; where, alack, |  |
@@ -489,17 +489,17 @@ lang: en
 | কার শক্ত হাত থামাবে তার চপল চরণ, | Or what strong hand can hold his swift foot back, |  |
 | এ-লাবণ্যের লুণ্ঠন তার কে-ই বা ঠেকাবে? | Or who his spoil of beauty can forbid? |  |
 | | | |
-| কেউ না, যদি না এই মিরাকলের হয় শক্তি— | O none, unless this miracle have might, |  |
-| কালো কালিতে আমার প্রেম পায় শুভ্র ব্যক্তি। | That in black ink my love may still shine bright. |  |
+| কেউ না, যদি না এ-অলৌকিকের হয় শক্তি— | O none, unless this miracle have might, |  |
+| কালো কালিতে আমার প্রেম পায় শুভ্র দীপ্তি। | That in black ink my love may still shine bright. |  |
 | | | |
 | এ-সবের ভারে কামনা করি শান্তির মৃত্যু: | Tired with all these, for restful death I cry: | 66 |
 | যেমন যোগ্য নেয় ভিক্ষুকের ঘরে জন্ম, | As to behold desert a beggar born, |  |
 | আর যোগ্যতাশূন্য পায় মহামূল্য বস্তু, | And needy nothing trimmed in jollity, |  |
-| আর বিশুদ্ধ বিশ্বাস অশান্তিতে মগ্ন, | And purest faith unhappily forsworn, |  |
+| আর বিশুদ্ধ বিশ্বাস দুর্ভাগ্যে ভগ্ন, | And purest faith unhappily forsworn, |  |
 | | | |
-| আর অম্লান সম্মান লজ্জায় বিচ্যুত, | And gilded honour shamefully misplaced, |  |
-| আর সুকুমার গুণ মানে পতিতার আসঙ্গ, | And maiden virtue rudely strumpeted, |  |
-| আর নিপুণ শৈলী পঙ্কিলতায় লাঞ্ছিত, | And right perfection wrongfully disgraced, |  |
+| আর স্বর্ণিল সম্মান লজ্জায় বিচ্যুত, | And gilded honour shamefully misplaced, |  |
+| আর কুমারীর গুণ ভোগে পতিতার আসঙ্গ, | And maiden virtue rudely strumpeted, |  |
+| আর খাঁটি পূর্ণতা অন্যায়ভাবে লাঞ্ছিত, | And right perfection wrongfully disgraced, |  |
 | আর শক্তি পঙ্গু-পালের হাতে বিকলাঙ্গ, | And strength by limping sway disablèd, |  |
 | | | |
 | আর শিল্পকণ্ঠ রোধ করে কর্তৃপক্ষ, | And art made tongue-tied by authority, |  |
@@ -512,16 +512,16 @@ lang: en
 | | | |
 | হায়, কেন এত দূষণের সাথে ও থাকবে বেঁচে, | Ah, wherefore with infection should he live | 67 |
 | শুধু উপস্থিতিতে তোষণ করবে অধর্ম, | And with his presence grace impiety, |  |
-| যাতে করে পাপ বড়লোক হতে পারে ওকে বেচে, | That sin by him advantage should achieve |  |
+| যাতে করে পাপ লাভবান হতে পারে ওকে বেচে, | That sin by him advantage should achieve |  |
 | ওর সমাজ দিয়ে বানাতে পারে শোভন বর্ম? | And lace itself with his society? |  |
 | | | |
 | কেন মিথ্যা চিত্র নকল করবে ওর গাল, | Why should false painting imitate his cheek |  |
-| ওর জ্যান্ত রঙ থেকে চুরি করবে মৃত রূপ? | And steal dead seeming of his living hue? |  |
+| ওর সজীব রঙ থেকে চুরি করবে মৃত রূপ? | And steal dead seeming of his living hue? |  |
 | কেন দরিদ্র রূপ খুঁজবে রেখে অন্তরাল | Why should poor beauty indirectly seek |  |
 | ছায়াগোলাপ, যেখানে ওর গোলাপ সত্য খুব? | Roses of shadow, since his rose is true? |  |
 | | | |
 | কেন ও থাকবে বেঁচে যেখানে প্রকৃতি দেউলে | Why should he live now nature bankrupt is, |  |
-| হারায়ে উচ্ছল শিরায় উদ্বেলিত রক্ত, | Beggared of blood to blush through lively veins, |  |
+| হারিয়ে উচ্ছল শিরায় উদ্বেলিত রক্ত, | Beggared of blood to blush through lively veins, |  |
 | যেহেতু ও ছাড়া আর কিছু নাই তার টাকশালে, | For she hath no exchequer now but his, |  |
 | রত্নগর্ভা সে এখন ওর সুদেই জীবিত? | And proud of many, lives upon his gains? |  |
 | | | |
@@ -531,9 +531,9 @@ lang: en
 | সুতরাং ওর গাল গত যুগের মানচিত্র, | Thus is his cheek the map of days outworn, | 68 |
 | যখন রূপ বাঁচত মরত, আজ যা করে ফুল, | When beauty lived and died as flowers do now, |  |
 | যখনো জন্মে নাই কান্তির জারজ সূত্র, | Before these bastard signs of fair were born, |  |
-| সাহস করে নাই দখল করতে জ্যান্ত চুল: | Or durst inhabit on a living brow: |  |
+| সাহস করে নাই দখল করতে সজীব চুল: | Or durst inhabit on a living brow: |  |
 | | | |
-| যখনো শাদা শবের সোনালি চুলের চারুবন, | Before the golden tresses of the dead, |  |
+| যখনো সাদা শবের সোনালি চুলের চারুবন, | Before the golden tresses of the dead, |  |
 | পুণ্যসমাধির সম্পত্তি, কেউ কাটতো না, | The right of sepulchres, were shorn away, |  |
 | দ্বিতীয় কারো মাথায় দিতে দ্বিতীয় এক জীবন, | To live a second life on second head, |  |
 | সৌন্দর্যের মরা ঊর্না কারো সুখ হতো না: | Ere beauty’s dead fleece made another gay: |  |
