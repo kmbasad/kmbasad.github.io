@@ -223,7 +223,7 @@ lang: en
 | কত বার, আমার গান, যখন তুলেছ মিউজিক, | How oft when thou, my music, music play'st, | 128 |
 | সেই ধন্য কাঠের উপর বাজে যার গতি লয় | Upon that blessed wood whose motion sounds |  |
 | তোমার মিষ্টি আঙুলে, যখন তুমি দোলাও খানিক | With thy sweet fingers when thou gently sway'st |  |
-| তারের মিলন যা আমার কানে মিশায় বিস্ময়, | The wiry concord that mine ear confounds, |  |
+| তারের মিলন যা আমার কানে মেশায় বিস্ময়, | The wiry concord that mine ear confounds, |  |
 | | | |
 | ঐ সব কীকে ঈর্ষা করব যারা ছুঁলেই লাফায় | Do I envy those jacks that nimble leap, |  |
 | তোমার হাতের নিচের নরম ত্বকে চুমু খেতে, | To kiss the tender inward of thy hand, |  |
@@ -238,9 +238,9 @@ lang: en
 | যেহেতু বেহায়া সব কী এতে মরে খুশির চোটে, | Since saucy jacks so happy are in this, |  |
 | ওদের আঙুল দাও, আমায় চুমু তোমার ঠোঁটে। | Give them thy fingers, me thy lips to kiss. |  |
 | | | |
-| লজ্জার কামড়ে প্রাণের বীর্য বিসর্জন | The expense of spirit in a waste of shame | 129 |
+| লজ্জার মরুতে প্রাণের বীর্য বিসর্জন | The expense of spirit in a waste of shame | 129 |
 | হলো কামের কাম; অতএব কামের আগে কাম | Is lust in action; and till action, lust |  |
-| নকল, খুনি, রক্তাক্ত, সব দোষের বাহন, | Is perjured, murderous, bloody, full of blame, |  |
+| মিথ্যা, খুনি, রক্তাক্ত, সব দোষের বাহন, | Is perjured, murderous, bloody, full of blame, |  |
 | বর্বর আর অসভ্য, নির্দয়, অবিশ্বস্ত, উদ্দাম, | Savage, extreme, rude, cruel, not to trust, |  |
 | | | |
 | ভোগ শেষ হতে না হতেই সোজা ঘৃণায় নিহত, | Enjoyed no sooner but despised straight, |  |
@@ -251,7 +251,7 @@ lang: en
 | ধাবনে যেমন উন্মাদ ধারণেও ঠিক তত, | Mad in pursuit and in possession so, |  |
 | পাওয়ার পরে, ধরায়, ও তাড়ায় সমান চরম; | Had, having, and in quest to have, extreme; |  |
 | এক আনন্দ প্রমাণে, প্রমাণিত হলে ভারী কষ্ট; | A bliss in proof and proved, a very woe; |  |
-| সামনে সুখের প্রস্তাব ও পিছনে স্বপ্নের শম। | Before, a joy proposed; behind, a dream. |  |
+| সামনে সুখের প্রস্তাব ও পিছনে স্বপ্নের ভ্রম। | Before, a joy proposed; behind, a dream. |  |
 | | | |
 | এই সব বিশ্ব ভালো জানে, জানে না কোন সড়কে | All this the world well knows, yet none knows well |  |
 | সে স্বর্গকে এড়াবে যে মানুষকে টানে এই নরকে। | To shun the heaven that leads men to this hell. |  |
@@ -268,7 +268,7 @@ lang: en
 | | | |
 | তার কথা বলা ভালোবাসি, যদিও ভালোই জানি | I love to hear her speak, yet well I know |  |
 | তার চেয়ে ঢের বেশি মধুর শব্দ সঙ্গীতে। | That music hath a far more pleasing sound. |  |
-| মানছি যে আমি কোনো দেবীকে দৌড়াতে দেখিনি: | I grant I never saw a goddess go: |  |
+| মানছি যে আমি কোনো দেবীকেই চলতে দেখিনি: | I grant I never saw a goddess go: |  |
 | আমার মিস্ট্রেস হাঁটলে হাঁটে কেবল মাটিতে। | My mistress when she walks treads on the ground. |  |
 | | | |
 | তবু স্বর্গের শপথ, আমার প্রেম তত বিরল | And yet by heaven, I think my love as rare |  |
@@ -277,9 +277,9 @@ lang: en
 | তুমি তেমন স্বৈরাচার যেমনটা তুমি নিজে, | Thou art as tyrannous, so as thou art | 131 |
 | তাদের মতো যাদের রূপের গর্বে তারা নিষ্ঠুর, | As those whose beauties proudly make them cruel, |  |
 | কারণ তুমি জানো আমার দুর্বল দিলের খাঁজে | For well thou know’st to my dear doting heart |  |
-| তুমি সবচেয়ে দামী আর সুন্দর মুক্তার চুর। | Thou art the fairest and most precious jewel. |  |
+| তুমি সবচেয়ে দামী আর সুন্দর এক কোহিনুর। | Thou art the fairest and most precious jewel. |  |
 | | | |
-| তবু আস্থা নিয়ে যারা তোমায় দেখেছে তারা ভাবে | Yet, in good faith, some say that thee behold |  |
+| তবু সরল মনে যারা তোমায় দেখেছে তারা ভাবে | Yet, in good faith, some say that thee behold |  |
 | তোমার মুখের শক্তি নেই প্রেমকে কাঁদায় মিছে। | Thy face hath not the power to make love groan. |  |
 | তারা ভুল তা বলার মতো সাহস করি না, তবে | To say they err I dare not be so bold, |  |
 | আমি তাই প্রতিজ্ঞা করি আমার নিজের কাছে; | Although I swear it to myself alone; |  |
@@ -293,8 +293,8 @@ lang: en
 | মনে হয় এ থেকেই কলঙ্কের শিকার হও। | And thence this slander, as I think, proceeds. |  |
 | | | |
 | তোমার চোখ ভালোবাসি, তারা যেন করুণা ক’রে— | Thine eyes I love, and they, as pitying me— | 132 |
-| জেনে যে তোমার দিল আমাকে পুড়ায় ঘৃণা দিয়ে— | Knowing thy heart torments me with disdain— |  |
-| মায়াবী শোকার্ত হতে চায় কালো পোশাক প’রে, | Have put on black, and loving mourners be, |  |
+| জেনে যে তোমার দিল আমাকে পোড়ায় ঘৃণা দিয়ে— | Knowing thy heart torments me with disdain— |  |
+| মমতাভরা শোকার্ত হয় কালো পোশাক প’রে, | Have put on black, and loving mourners be, |  |
 | আমার কষ্টের দিকে অপরূপ দরদে তাকিয়ে; | Looking with pretty ruth upon my pain; |  |
 | | | |
 | আর সত্যি পারে না সকালের সূর্য স্বর্গে | And truly, not the morning sun of heaven |  |
@@ -303,7 +303,7 @@ lang: en
 | শান্ত পশ্চিমকে তার অর্ধেক গরিমাও দিতে, | Doth half that glory to the sober west, |  |
 | | | |
 | যেমন তোমার মুখে দেয় শোকাতুর দুই চোখ। | As those two mourning eyes become thy face. |  |
-| ও, তবে তাই উচিত যাতে মানায় তোমার হার্ট | O, let it then as well beseem thy heart |  |
+| ও, তাহলে তেমনই যেন মানায় তোমার হার্ট | O, let it then as well beseem thy heart |  |
 | আমার শোকে, কারণ তোমায় সুন্দর করে শোক, | To mourn for me, since mourning doth thee grace, |  |
 | করুণাও সে পোশাক পাক যা পায় প্রত্যেক পার্ট। | And suit thy pity like in every part. |  |
 | | | |
@@ -320,7 +320,7 @@ lang: en
 | সে, আমি নিজে, আর তুমি সবাই ছেড়েছে আমাকে— | Of him, myself, and thee I am forsaken— |  |
 | তিন বার তিন গুণ এ যন্ত্রণায় আমি ফাঁসি। | A torment thrice threefold thus to be crossed. |  |
 | | | |
-| বন্দি করো আমার দিল তোমার স্টিলের জেলে, | Prison my heart in thy steel bosom’s ward, |  |
+| বন্দি করো আমার দিল তোমার লোহার জেলে, | Prison my heart in thy steel bosom’s ward, |  |
 | আমার দুস্থ দিল হোক বন্ধুর দিলের জামিন; | But then my friend’s heart let my poor heart bail; |  |
 | যে আমায় রাখে সে দারোয়ান পাক আমার দিলে; | Whoe’er keeps me, let my heart be his guard; |  |
 | তবে আমার জেলে তুমি হতে পারবে না কঠিন। | Thou canst not then use rigour in my jail. |  |
@@ -344,7 +344,7 @@ lang: en
 | তাই তাকে হারাই আমার নির্দয় এবিউজে। | So him I lose through my unkind abuse. |  |
 | | | |
 | হারিয়েছি তাকে; আমাকে আর তাকে পেয়েছ তুমি; | Him have I lost; thou hast both him and me; |  |
-| সব ভর্তি করে শোধ দেয় সে, তাও মুক্ত না আমি। | He pays the whole, and yet am I not free. |  |
+| সবটুকুই শোধ করে দেয় সে, তাও মুক্ত না আমি। | He pays the whole, and yet am I not free. |  |
 | | | |
 | সবার থাকুক ইচ্ছা, তোমার আছে তোমার উইল, | Whoever hath her wish, thou hast thy Will, | 135 |
 | এবং উইলের উপরে উইল, সব থেকে বড়; | And Will to boot, and Will in over-plus; |  |
@@ -353,7 +353,7 @@ lang: en
 | | | |
 | তবে তুমি, যার ইচ্ছা এত বড় আর বিস্তৃত, | Wilt thou, whose will is large and spacious, |  |
 | একবারও তোমার ইচ্ছায় আমারটা লুকাবে না? | Not once vouchsafe to hide my will in thine? |  |
-| অন্যদের ইচ্ছা হতে হবে ঠিক আর নিবেদিত | Shall will in others seem right gracious, |  |
+| অন্যদের ইচ্ছা মনে হবে ঠিক আর সমাদৃত | Shall will in others seem right gracious, |  |
 | যেখানে আমার ইচ্ছা ভালো স্বীকৃতি পাবে না? | And in my will no fair acceptance shine? |  |
 | | | |
 | সাগর সম্পূর্ণ পানি, তবু তো পায় বৃষ্টির মিল, | The sea, all water, yet receives rain still, |  |
@@ -362,7 +362,7 @@ lang: en
 | আমার একটা ইচ্ছা, তোমার ইচ্ছা যাতে আরো বাড়ে। | One will of mine, to make thy large will more. |  |
 | | | |
 | নির্মমতায় খুন করো না কোনো প্রার্থীর দিল; | Let no unkind, no fair beseechers kill; |  |
-| শুধু এক কথা ভাবো, আমায় দেখাবে যে উইল। | Think all but one, and me in that one Will. |  |
+| সবাইকে এক ভাবো, আর আমি সে এক উইল। | Think all but one, and me in that one Will. |  |
 | | | |
 | যদি আমি কাছে গেলে তোমাকে তোমার আত্মা বকে, | If thy soul check thee that I come so near, | 136 |
 | অন্ধ আত্মাকে দিব্যি দিয়ে বলো আমি তোমার উইল, | Swear to thy blind soul that I was thy Will, |  |
@@ -372,10 +372,10 @@ lang: en
 | উইল ভর্তি করে দেবে তোমার প্রেমের দেরাজে, | Will will fulfil the treasure of thy love, |  |
 | হ্যাঁ, তা ইচ্ছায় পূর্ণ করো, আমারো এক ইচ্ছা তাতে। | Ay, fill it full with wills, and my will one. |  |
 | বিশাল সব ব্যাপারে প্রমাণ পাওয়া যায় সহজে | In things of great receipt with ease we prove |  |
-| এক নাম্বারের মধ্যে কেউ পারে না গণ্য হতে। | Among a number one is reckoned none. |  |
+| বড় সংখ্যার ভিড়ে একজন পারে না গণ্য হতে। | Among a number one is reckoned none. |  |
 | | | |
-| তবে আমাকে অগণিত নাম্বারে বিলীন হতে দাও, | Then in the number let me pass untold, |  |
-| যদিও নিব তোমার সঞ্চয়ী হিসাবের পিছু; | Though in thy store’s account I one must be; |  |
+| তবে আমাকে অগণিত সংখ্যায় বিলীন হতে দাও, | Then in the number let me pass untold, |  |
+| যদিও নেব তোমার সঞ্চয়ী হিসাবের পিছু; | Though in thy store’s account I one must be; |  |
 | কিছু-না আমাকে ধরো, যদি এই ধরে সুখ পাও | For nothing hold me, so it please thee hold |  |
 | যে কিছু-না আমিই তোমার কাছে, মিষ্টি, কিছু। | That nothing me a something, sweet, to thee. |  |
 | | | |
@@ -384,15 +384,15 @@ lang: en
 | | | |
 | অন্ধ বোকা প্রেম তুমি কি করো আমার নয়নে | Thou blind fool love, what dost thou to mine eyes | 137 |
 | যে তারা লক্ষ করে দেখে না যা তারা দেখে? | That they behold and see not what they see? |  |
-| তারা জানে বিউটি কি, দেখে তার বাস কোনখানে, | They know what beauty is, see where it lies, |  |
+| তারা জানে বিউটি কী, দেখে তার বাস কোনখানে, | They know what beauty is, see where it lies, |  |
 | তবু সবচেয়ে ভালো ভাবে সবচেয়ে খারাপকে। | Yet what the best is take the worst to be. |  |
 | | | |
 | যদি অতিপাক্ষিক নজর কলুষিত করে চোখ | If eyes corrupt by over-partial looks |  |
-| সেই বন্দরে নোঙ্গর ফেলো যেখানে সবাই চড়ে, | Be anchored in the bay where all men ride, |  |
+| সেই বন্দরেই নোঙর ফেলে যেখানে সবাই চড়ে, | Be anchored in the bay where all men ride, |  |
 | চোখের মিথ্যা হাপরে পিটিয়ে কেন বানাও হুক | Why of eyes’ falsehood hast thou forged hooks |  |
 | যার সাথে আমার হৃদয়ের বিচার বাঁধা পড়ে? | Whereto the judgment of my heart is tied? |  |
 | | | |
-| আমার হার্ট কেন তাকে প্রাইভেট প্লট ভাববে | Why should my heart think that a several plot |  |
+| আমার হার্ট কেন তাকে নিজস্ব জমি ভাববে | Why should my heart think that a several plot |  |
 | যা দিল জানে আসলে সারা দুনিয়ার খেলাঘর?— | Which my heart knows the wide world’s common place?— |  |
 | বা কেন আমার চোখ তাকে দেখে তা নয় বলবে, | Or mine eyes, seeing this, say this is not, |  |
 | সুন্দর সত্য বসাতে এত বিশ্রী মুখের উপর? | To put fair truth upon so foul a face? |  |
@@ -568,11 +568,11 @@ lang: en
 | অনিশ্চিত আর অসুস্থ ক্ষুধাকে দিতে আরো সুখ। | Th’uncertain sickly appetite to please. |  |
 | | | |
 | আর আমার বুদ্ধি, আমার প্রেমের ডাক্তার, | My reason, the physician to my love, |  |
-| তার দেয়া প্রেস্ক্রিপশন না মানায় রাগ করে | Angry that his prescriptions are not kept, |  |
+| তার দেয়া পথ্যবিধান না মানায় রাগ করে | Angry that his prescriptions are not kept, |  |
 | আমায় ছেড়ে গেছে, বেপরোয়া হয়ে করি স্বীকার | Hath left me, and I desperate now approve |  |
 | কামনা মানে মৃত্যু, যে ওষুধ দিয়েছিল ছুঁড়ে। | Desire is death, which physic did except. |  |
 | | | |
-| এর নেই চিকিৎসা, তাই মনে চিন্তা নাই, | Past cure I am, now Reason is past care, |  |
+| এর নেই চিকিৎসা, বুদ্ধির চিন্তা নাই, | Past cure I am, now Reason is past care, |  |
 | সারাক্ষণের অস্থিরতায় আমি উন্মাদ উদ্বেগে। | And frantic mad with evermore unrest. |  |
 | আমার চিন্তা আর কথা পাগলের মতো তাই | My thoughts and my discourse as madmen’s are, |  |
 | সত্যের পথ ফেলে ছুটে যায় ব্যর্থ আবেগে। | At random from the truth vainly expressed; |  |
@@ -580,22 +580,22 @@ lang: en
 | কারণ তোমাকে বলেছি ফর্সা, ভেবেছি তীব্র আলো, | For I have sworn thee fair, and thought thee bright, |  |
 | যে রাতের মতো অন্ধকার, নরকের মতো কালো। | Who art as black as hell, as dark as night. |  |
 | | | |
-| হায়রে আমি, কি চোখ দিল প্রেম আমার মাথায়, | O me! what eyes hath love put in my head, | 148 |
-| যার সাথে কোনো মিল নাই সত্য বাস্তবতার! | Which have no correspondence with true sight! |  |
+| হায় আমি! কী চোখ যে দিল প্রেম আমার মাথায়, | O me! what eyes hath love put in my head, | 148 |
+| যার সাথে কোনো মিল নেই সত্য বাস্তবতার! | Which have no correspondence with true sight! |  |
 | বা যদি থাকে, আমার বুদ্ধি পালিয়েছে কোথায় | Or if they have, where is my judgment fled, |  |
-| যে সে যা ঠিক দেখেছে তা করে ভুলভাবে বিচার? | That censures falsely what they see aright? |  |
+| যে তারা যা ঠিক দেখে তা করে ভুলভাবে বিচার? | That censures falsely what they see aright? |  |
 | | | |
 | সে যদি সুন্দর হয় আমার চোখ অন্ধ যার ঘোরে | If that be fair whereon my false eyes dote, |  |
-| সারা দুনিয়ার তাকে সুন্দর না বলার কি অর্থ? | What means the world to say it is not so? |  |
+| সারা দুনিয়ার তাকে সুন্দর না বলার কী অর্থ? | What means the world to say it is not so? |  |
 | যদি সে তা না হয়, তবে প্রেম ভালো প্রমাণ করে | If it be not, then love doth well denote |  |
 | যে প্রেমের তুলনায় মানুষের চোখ বেশি সত্য। | Love’s eye is not so true as all men’s. No, |  |
 | | | |
-| কেন হবে না, প্রেমের চোখ কিভাবে সত্য হবে | How can it, O, how can love’s eye be true, |  |
-| যদি কান্না আর দৃষ্টি তাকে এত বেশি ব্যস্ত রাখে? | That is so vexed with watching and with tears? |  |
+| কেন হবে না, প্রেমের চোখ কীভাবে সত্য হবে | How can it, O, how can love’s eye be true, |  |
+| যদি কান্না আর জাগরণ তাকে এমন ব্যস্ত রাখে? | That is so vexed with watching and with tears? |  |
 | যদি আমি ভুল দেখি কি আর আশ্চর্য তবে: | No marvel then though I mistake my view: |  |
 | আকাশ পরিষ্কার না হলে সূর্যও কি দেখে? | The sun itself sees not till heaven clears. |  |
 | | | |
-| চালাক প্রেম, চোখের পানিতে করে রেখেছ বুঁদ | O cunning love, with tears thou keep'st me blind |  |
+| ধূর্ত প্রেম, চোখের পানিতে করে রেখেছ বুঁদ | O cunning love, with tears thou keep'st me blind |  |
 | যাতে ভালো-দেখা চোখ না পায় নোংরা তোমার খুঁত। | Lest eyes well-seeing thy foul faults should find. |  |
 | | | |
 | ও নির্দয়, ভালোবাসি না তা বলতে পারো না তুমি | Canst thou, O cruel, say I love thee not | 149 |
@@ -604,11 +604,11 @@ lang: en
 | নিজেকে নিষ্ঠুরভাবে কেবল তোমার স্বার্থে? | Am of my self, all-tyrant, for thy sake? |  |
 | | | |
 | তোমাকে ঘৃণা করে এমন কাকে আমি বন্ধু ডাকি? | Who hateth thee that I do call my friend? |  |
-| দেখলে ভ্রু কুঁচকাও আমি তেলাই কাকে এমন? | On whom frown’st thou that I do fawn upon? |  |
+| দেখলে ভ্রু কুঁচকাও, তোয়াজ করি কাকে এমন? | On whom frown’st thou that I do fawn upon? |  |
 | না, তুমি আমার প্রতি রাগলে ভয়ানকভাবে কি | Nay, if thou lour’st on me, do I not spend |  |
 | নিজের উপর প্রতিশোধ নেই না কষ্টে তখন? | Revenge upon myself with present moan? |  |
 | | | |
-| আমার মাঝে কি যোগ্যতা ভাবতে পারি অতুল | What merit do I in myself respect, |  |
+| আমার মাঝে কী যোগ্যতা ভাবতে পারি অতুল | What merit do I in myself respect, |  |
 | যার এত গর্ব যে ঘৃণা করে তোমার চাকরি | That is so proud thy service to despise, |  |
 | যদি আমার সব ভালো পূজা করে তোমার ভুল | When all my best doth worship thy defect, |  |
 | যখন হুকুম করে তোমার দুচোখের চরকি? | Commanded by the motion of thine eyes? |  |
@@ -672,17 +672,17 @@ lang: en
 | | | |
 | কিউপিড ঘুমিয়ে পড়েছিল তার মশালের পাশে। | Cupid laid by his brand and fell asleep. | 153 |
 | ডায়ানার এক সাথী এই সুযোগ কাজে লাগায়, | A maid of Dian’s this advantage found, |  |
-| তার প্রেম-জ্বালানো আগুন তাড়াতাড়ি ডুবায় সে | And his love-kindling fire did quickly steep |  |
-| সেখানের সমতলে বয়ে চলা শীতল ঝরনায়, | In a cold valley-fountain of that ground, |  |
+| তার প্রেম-জ্বালানো আগুন তাড়াতাড়ি ডোবায় সে | And his love-kindling fire did quickly steep |  |
+| সেই উপত্যকায় বয়ে চলা শীতল ঝরনায়, | In a cold valley-fountain of that ground, |  |
 | | | |
 | যা প্রেমের এ পবিত্র আগুনের থেকে ধারে আনে | Which borrowed from this holy fire of Love |  |
 | এক শাশ্বত সজীব তাপ, যাতে না হয় বিলয়, | A dateless lively heat, still to endure, |  |
-| আর বানায় এত ফেনার বাথ যা, পুরুষ জানে, | And grew a seething bath which yet men prove |  |
+| আর বানায় ফুটন্ত স্নান যা, পুরুষরা জানে, | And grew a seething bath which yet men prove |  |
 | অপরিচিত সব রোগের চূড়ান্ত নিরাময়। | Against strange maladies a sovereign cure. |  |
 | | | |
 | আমার মিস্ট্রেসের চোখে নতুন প্রেমের শিখা | But at my mistress’ eye love’s brand new fired, |  |
-| পরখ করতে ছেলেটা দেয় আমার বুকে ছুঁয়ে। | The boy for trial needs would touch my breast. |  |
-| রোগে কাতর আমি চাই সহযোগী স্নানের দেখা, | I, sick withal, the help of bath desired, |  |
+| পরখ করতে বালক দেয় আমার বুকে ছুঁয়ে। | The boy for trial needs would touch my breast. |  |
+| রোগে কাতর আমি চাই উপকারী স্নানের দেখা, | I, sick withal, the help of bath desired, |  |
 | ও দ্রুত যাই সেখানে অসুস্থ দুখী অতিথি হয়ে, | And thither hied, a sad distempered guest, |  |
 | | | |
 | ওষুধ পাইনি; আজো সেই স্নান, যা সারাত রোগ, | But found no cure; the bath for my help lies |  |
@@ -691,18 +691,18 @@ lang: en
 | ছোট্ট প্রেমের দেবতা শুয়ে ঘুমিয়ে পড়ার পরই, | The little love-god lying once asleep | 154 |
 | তার সেই দিলজ্বালানো মশাল রেখে তার সাথে, | Laid by his side his heart-inflaming brand, |  |
 | সারা জীবন সতী থাকতে চাওয়া অনেক পরী | Whilst many nymphs that vowed chaste life to keep |  |
-| এসেছিল দৌড়িয়ে; কিন্তু নিজের কুমারী হাতে | Came tripping by; but in her maiden hand |  |
+| এসেছিল লঘু পায়ে; কিন্তু নিজের কুমারী হাতে | Came tripping by; but in her maiden hand |  |
 | | | |
-| আগুনটা নেয় তাদের মধ্যে যে সবচে’ রূপবতী, | The fairest votary took up that fire |  |
-| যা গরম সত্য হৃদয়ের বহু বাহিনীর তাতে, | Which many legions of true hearts had warmed, |  |
+| সে আগুন নেয় তাদের মধ্যে যে সবচে’ রূপবতী, | The fairest votary took up that fire |  |
+| যা সত্য হৃদয়ের বহু বাহিনী জানত তাতাতে, | Which many legions of true hearts had warmed, |  |
 | সুতরাং সেইখানে তপ্ত তৃষ্ণার সেনাপতি | And so the general of hot desire |  |
-| ঘুমাচ্ছিল হাতিয়ার হারিয়ে ভার্জিনের হাতে। | Was sleeping by a virgin hand disarmed. |  |
+| ঘুমাচ্ছিল নিরস্ত্র হয়ে এক কুমারীর হাতে। | Was sleeping by a virgin hand disarmed. |  |
 | | | |
-| এ মশাল সে নিভায় পাশের এক ঠাণ্ডা কুয়ায়, | This brand she quenched in a cool well by, |  |
-| যা প্রেমের আগুন থেকে নিচ্ছিল অনন্ত হুতাশ, | Which from love’s fire took heat perpetual, |  |
-| আর সুস্বাস্থ্যের সহযোগী একটি বাথ বানায় | Growing a bath and healthful remedy |  |
+| এ মশাল সে নেভায় পাশের এক ঠাণ্ডা কুয়ায়, | This brand she quenched in a cool well by, |  |
+| যা প্রেমের আগুন থেকে নিত চিরতপ্ত উচ্ছ্বাস, | Which from love’s fire took heat perpetual, |  |
+| আর সুস্বাস্থ্যের সহযোগী একটি স্নান বানায় | Growing a bath and healthful remedy |  |
 | রোগী পুরুষের জন্য; কিন্তু আমি, মিস্ট্রেসের দাস, | For men diseased; but I, my mistress’ thrall, |  |
 | | | |
 | সেখানে যাই ওষুধ পেতে; যা এই প্রমাণ করে: | Came there for cure; and this by that I prove: |  |
-| প্রেম পানিতে নিভে না, প্রেমের আগুনে পানি পুড়ে। | Love’s fire heats water, water cools not love. |  |
+| প্রেম পানিতে নেভে না, প্রেমের আগুনে পানি পোড়ে। | Love’s fire heats water, water cools not love. |  |
 | | | |
