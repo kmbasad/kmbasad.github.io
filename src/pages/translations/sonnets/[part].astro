@@ -42,6 +42,7 @@ const { work, part, prev, next } = Astro.props;
   <BookReader
     config={{
       src: `${part.slug}.md`,
+      dict: `${part.slug}-words.md`,
       dictLang: 'en',
       tocStyle: 'grid',
       toc: '/translations/sonnets/',

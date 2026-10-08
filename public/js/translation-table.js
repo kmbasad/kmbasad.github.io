@@ -104,9 +104,13 @@
    * Span wrapping — inject <span class="w" data-w="KEY"> around tokens
    * ═══════════════════════════════════════════════════════════════════ */
 
-  function wrapTd(td, ln, gids, colName) {
+  function wrapTd(td, ln, gids, colName, dict) {
     if (td.querySelector(".w")) return;          // already wrapped
     var seg = 0, tok = 0;
+    // dict: the word→group map for this cell — a line-scoped one when the
+    // row carries data-key and the page's word-list has that line, else
+    // the page-wide TT_DICT, else none (positional groups).
+    dict = dict || window.TT_DICT;
     (function walk(node) {
       if (node.nodeType === Node.TEXT_NODE) {
         var t = node.nodeValue || "";
@@ -119,7 +123,7 @@
           var span = document.createElement("span");
           span.className = "w";
           
-          if (window.TT_DICT && window.TT_DICT[colName]) {
+          if (dict && dict[colName]) {
             // Normalise: NFC (Bengali nukta forms), strip punctuation,
             // Arabic tashkeel, lowercase \u2014 mirror md-loader's normWord
             var wRaw = parts[p];
@@ -128,7 +132,7 @@
                                .replace(/[\u064B-\u065F\u0670]/gu, '')
                                .toLowerCase();
             var wNoHyphens = wStripped.replace(/-/g, '');
-            var dictCol = window.TT_DICT[colName];
+            var dictCol = dict[colName];
             var matched = dictCol[wNoHyphens];
 
             // Try without Arabic definite article ال
@@ -146,7 +150,7 @@
             }
 
             span.dataset.w = matched || ("U_" + ln + "_" + seg + "_" + tok + "_" + colName);
-          } else if (window.TT_DICT) {
+          } else if (dict) {
             // Column not in dictionary — unique ID
             span.dataset.w = "U_" + ln + "_" + seg + "_" + tok + "_" + colName;
           } else {
@@ -265,9 +269,11 @@
         }
       }
 
-      // Wrap each column's tokens with shared keys
+      // Wrap each column's tokens with shared keys — line-scoped alignment
+      // when the row has one (sonnets), page-wide otherwise
+      var rowDict = (window.TT_DICT_LINES && tr.dataset.key) ? window.TT_DICT_LINES[tr.dataset.key] : null;
       for (var ci = 0; ci < cols.length; ci++) {
-        if (rowTds[cols[ci]]) wrapTd(rowTds[cols[ci]], lineNum, gids[cols[ci]], cols[ci]);
+        if (rowTds[cols[ci]]) wrapTd(rowTds[cols[ci]], lineNum, gids[cols[ci]], cols[ci], rowDict);
       }
       lineNum++;
     }

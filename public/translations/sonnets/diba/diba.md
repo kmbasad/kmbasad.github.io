@@ -463,7 +463,7 @@ lang: en
 | | | |
 | আমি যখন দেখছি সমুদ্র ক্ষুধিত পাষাণ | When I have seen the hungry ocean gain |  |
 | সৈকতের রাজ্য দিয়ে করে উদরপূর্তি, | Advantage on the kingdom of the shore, |  |
-| আর সুদৃঢ় ভূমি কেড়ে নেয় জলধির প্রাণ, | And the firm soil win of the wat’ry main |  |
+| আর সুকঠিন ভূমি কেড়ে নেয় জলধির প্রাণ, | And the firm soil win of the wat’ry main |  |
 | ক্ষতি দিয়ে বাড়ে লাভ আর সেই লাভ দিয়ে ক্ষতি; | Increasing store with loss and loss with store; |  |
 | | | |
 | আমি যখন দেখছি রাজ্যে এত পালাবদল, | When I have seen such interchange of state |  |

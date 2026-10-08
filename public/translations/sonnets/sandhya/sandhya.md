@@ -371,7 +371,7 @@ lang: en
 | সবার চিত্ত কাড়ে নবজীবনের আনন্দে— | Hath put a spirit of youth in every thing, |  |
 | রাশভারী শনির মনেও লাগে সুখের আগুন। | That heavy Saturn laughed and leapt with him. |  |
 | | | |
-| অথচ পাখির কূজন অথবা অথৈ সুগন্ধ | Yet nor the lays of birds, nor the sweet smell |  |
+| অথচ পাখির গান অথবা অথৈ সুগন্ধ | Yet nor the lays of birds, nor the sweet smell |  |
 | নানান রঙের নানা বর্ণের বাহারি ফুলের, | Of different flowers in odour and in hue, |  |
 | কেউ আমাকে লিখাতে পারে নাই গ্রীষ্ম-ছন্দ, | Could make me any summer’s story tell, |  |
 | পারে নাই মায়া ছাড়তে তাদের গর্বী কোলের। | Or from their proud lap pluck them where they grew. |  |
@@ -565,41 +565,41 @@ lang: en
 | সেখানেই জন্ম দিয়ে প্রেমের প্রথম অনুভূতি | Finding the first conceit of love there bred |  |
 | যেখানে তাকে মরা দেখায় সময় ও আকৃতি। | Where time and outward form would show it dead. |  |
 | | | |
-|  | O, never say that I was false of heart, | 109 |
-|  | Though absence seem'd my flame to qualify. |  |
-|  | As easy might I from myself depart |  |
-|  | As from my soul, which in thy breast doth lie: |  |
+| কখনো বোলো না যে আমার মন ছিল বেইমান, | O, never say that I was false of heart, | 109 |
+| যদিও বিরহে আমার আগুন নিভু মনে হয়; | Though absence seem'd my flame to qualify. |  |
+| ততই সহজে আমি ছাড়তে পারি নিজের প্রাণ | As easy might I from myself depart |  |
+| যেমন আত্মা থেকে, যা তোমার বুকেতেই রয়: | As from my soul, which in thy breast doth lie: |  |
 | | | |
-|  | That is my home of love: if I have ranged, |  |
-|  | Like him that travels I return again, |  |
-|  | Just to the time, not with the time exchanged, |  |
-|  | So that myself bring water for my stain. |  |
+| সেই আমার প্রেমের ঘর: যদি ঘুরে থাকি দূরে, | That is my home of love: if I have ranged, |  |
+| মুসাফিরের মতো আমি ঘরে ফিরে আসি আবার, | Like him that travels I return again, |  |
+| ঠিক সময়মতো, বদলাইনি সময়ের সুরে, | Just to the time, not with the time exchanged, |  |
+| যাতে নিজেই আনি জল ধুতে কলঙ্ক আমার। | So that myself bring water for my stain. |  |
 | | | |
-|  | Never believe, though in my nature reign'd |  |
-|  | All frailties that besiege all kinds of blood, |  |
-|  | That it could so preposterously be stain'd, |  |
-|  | To leave for nothing all thy sum of good; |  |
+| কভু বিশ্বাস কোরো না, যদিও আমার স্বভাবে | Never believe, though in my nature reign'd |  |
+| রাজ করে সব দুর্বলতা যা রক্তকে ঘেরে, | All frailties that besiege all kinds of blood, |  |
+| যে সেটা হতে পারে কলঙ্কিত উদ্ভট ভাবে, | That it could so preposterously be stain'd, |  |
+| তুচ্ছে তোমার সব পুণ্যের পুঁজি দিতে ছেড়ে; | To leave for nothing all thy sum of good; |  |
 | | | |
-|  | For nothing this wide universe I call, |  |
-|  | Save thou, my rose; in it thou art my all. |  |
+| কারণ এ বিশাল বিশ্বকে আমি বলি অসার, | For nothing this wide universe I call, |  |
+| তুমি ছাড়া, হে গোলাপ; তুমিই এতে সব আমার। | Save thou, my rose; in it thou art my all. |  |
 | | | |
 | হায় এটা সত্য যে আমি গিয়েছি এখানে সেখানে | Alas, 'tis true I have gone here and there | 110 |
 | আর নিজেকে করেছি অনেকের হাসির পাত্র, | And made myself a motley to the view, |  |
 | করেছি চিন্তার ক্ষতি প্রিয়কে বেচে সস্তা দোকানে, | Gored mine own thoughts, sold cheap what is most dear, |  |
 | প্রাচীন অনেক পাপ করেছি নতুন | Made old offences of affections new; |  |
 | | | |
-|  | Most true it is that I have look'd on truth |  |
-|  | Askance and strangely: but, by all above, |  |
-|  | These blenches gave my heart another youth, |  |
-|  | And worse essays proved thee my best of love. |  |
+| এও খুব সত্য যে সত্যকে দেখেছি এমন | Most true it is that I have look'd on truth |  |
+| বাঁকা চোখে, অচেনার মতো: তবে খোদার কসম, | Askance and strangely: but, by all above, |  |
+| এ বিচ্যুতি হার্টকে দিল নতুন যৌবন, | These blenches gave my heart another youth, |  |
+| মন্দ পরখে প্রমাণ, তুমিই প্রেমের চরম। | And worse essays proved thee my best of love. |  |
 | | | |
-|  | Now all is done, have what shall have no end: |  |
-|  | Mine appetite I never more will grind |  |
-|  | On newer proof, to try an older friend, |  |
-|  | A god in love, to whom I am confined. |  |
+| এখন সব শেষ, নাও তা যা হবে না কভু সারা: | Now all is done, have what shall have no end: |  |
+| আমার লালসায় আর কক্ষনো দিব না শান | Mine appetite I never more will grind |  |
+| পরখ করতে পুরানো বন্ধু নতুনের দ্বারা, | On newer proof, to try an older friend, |  |
+| প্রেমের দেবতা, যার কাছে বন্দি আমার প্রাণ। | A god in love, to whom I am confined. |  |
 | | | |
-|  | Then give me welcome, next my heaven the best, |  |
-|  | Even to thy pure and most most loving breast. |  |
+| দাও স্বাগত তবে, আমার স্বর্গের পরে সেরা, | Then give me welcome, next my heaven the best, |  |
+| তোমার পবিত্র, অতি অতি প্রেমের বুকে ঘেরা। | Even to thy pure and most most loving breast. |  |
 | | | |
 | হায় আমার জন্য তুমি দাও বকা ভাগ্যের সাথে | O, for my sake do you with Fortune chide, | 111 |
 | আমার খারাপ সব কাজের অপরাধী দেবীকে | The guilty goddess of my harmful deeds, |  |
@@ -647,47 +647,47 @@ lang: en
 | মন পায় না তার আবেগী বস্তুর কোনো পার্ট, | Of his quick objects hath the mind no part, |  |
 | সেও তার দৃষ্টি যা ধরে তা রাখতে পারে না স্থির: | Nor his own vision holds what it doth catch: |  |
 | | | |
-|  | For if it see the rudest or gentlest sight, |  |
-|  | The most sweet favour or deformed'st creature, |  |
-|  | The mountain or the sea, the day or night, |  |
-|  | The crow or dove, it shapes them to your feature: |  |
+| কারণ যদি করে রুক্ষ বা মৃদু দৃষ্টিপাত, | For if it see the rudest or gentlest sight, |  |
+| মধুরতম চেহারা বা সবচেয়ে বিকৃত প্রাণী, | The most sweet favour or deformed'st creature, |  |
+| পাহাড় বা সমুদ্র, হোক সে দিন কিংবা রাত, | The mountain or the sea, the day or night, |  |
+| কাক বা ঘুঘু, সবকে তোমার আদলে নেয় টানি: | The crow or dove, it shapes them to your feature: |  |
 | | | |
-|  | Incapable of more, replete with you, |  |
-|  | My most true mind thus makes mine eye untrue. |  |
+| অক্ষম আর কিছুতেই, ভরা শুধুই তোমাতে, | Incapable of more, replete with you, |  |
+| আমার সত্য মন চোখকে মিথ্যা করে তাতে। | My most true mind thus makes mine eye untrue. |  |
 | | | |
-|  | Or whether doth my mind, being crown'd with you, | 114 |
-|  | Drink up the monarch's plague, this flattery, |  |
-|  | Or whether shall I say, mine eye saith true, |  |
-|  | And that your love taught it this alchemy, |  |
+| নাকি আমার মন, তুমিই যার মুকুট মাথায়, | Or whether doth my mind, being crown'd with you, | 114 |
+| পান করে রাজা-বাদশার ব্যাধি, এই খোশামোদ, | Drink up the monarch's plague, this flattery, |  |
+| নাকি বলব, আমার চোখ সত্যই বলে যায়, | Or whether shall I say, mine eye saith true, |  |
+| আর তোমার প্রেম তাকে শিখাল কিমিয়ার বোধ, | And that your love taught it this alchemy, |  |
 | | | |
-|  | To make of monsters and things indigest |  |
-|  | Such cherubins as your sweet self resemble, |  |
-|  | Creating every bad a perfect best, |  |
-|  | As fast as objects to his beams assemble? |  |
+| যাতে দানব আর অপাচ্য সব জিনিস থেকে | To make of monsters and things indigest |  |
+| তোমার মিষ্টি রূপের মতো ফেরেশতা গড়ে সে, | Such cherubins as your sweet self resemble, |  |
+| প্রতিটা খারাপকে নিখুঁত শ্রেষ্ঠ বানিয়ে রেখে, | Creating every bad a perfect best, |  |
+| যত দ্রুত বস্তুরা তার রশ্মির কাছে আসে? | As fast as objects to his beams assemble? |  |
 | | | |
-|  | O,'tis the first; 'tis flattery in my seeing, |  |
-|  | And my great mind most kingly drinks it up: |  |
-|  | Mine eye well knows what with his gust is 'greeing, |  |
-|  | And to his palate doth prepare the cup: |  |
+| হায়, প্রথমটাই; আমার দেখায় চাটুকারিতা, | O,'tis the first; 'tis flattery in my seeing, |  |
+| আমার মহৎ মন রাজার মতো তা করে পান: | And my great mind most kingly drinks it up: |  |
+| আমার চোখ ভালোই জানে কী তার রুচির মিতা, | Mine eye well knows what with his gust is 'greeing, |  |
+| আর তার রসনা বুঝেই পেয়ালাটা করে দান: | And to his palate doth prepare the cup: |  |
 | | | |
-|  | If it be poison'd, 'tis the lesser sin |  |
-|  | That mine eye loves it and doth first begin. |  |
+| যদি বিষ মেশানো থাকে, তবে লঘু পাপ এবার: | If it be poison'd, 'tis the lesser sin |  |
+| যে চোখ ভালোবাসে তা, চুমুক দেয় প্রথমবার। | That mine eye loves it and doth first begin. |  |
 | | | |
-|  | Those lines that I before have writ do lie, | 115 |
-|  | Even those that said I could not love you dearer: |  |
-|  | Yet then my judgment knew no reason why |  |
-|  | My most full flame should afterwards burn clearer. |  |
+| আগে যে লাইনগুলো আমি লিখেছি মিথ্যা বলে, | Those lines that I before have writ do lie, | 115 |
+| তাও, যা বলেছে পারব না বাসতে গভীরতর: | Even those that said I could not love you dearer: |  |
+| তবু বিচার আমার তখন জানত না কী বলে | Yet then my judgment knew no reason why |  |
+| পূর্ণ শিখা পরে জ্বলবে আরো উজ্জ্বলতর। | My most full flame should afterwards burn clearer. |  |
 | | | |
-|  | But reckoning time, whose million'd accidents |  |
-|  | Creep in 'twixt vows and change decrees of kings, |  |
-|  | Tan sacred beauty, blunt the sharp'st intents, |  |
-|  | Divert strong minds to the course of altering things; |  |
+| কিন্তু হিসাবি সময়, যার লাখো দুর্ঘটনা | But reckoning time, whose million'd accidents |  |
+| শপথের ফাঁকে ঢুকে, রদ করে শাহি ফরমান, | Creep in 'twixt vows and change decrees of kings, |  |
+| পোড়ায় পুণ্য রূপ, ভোঁতা করে তীক্ষ্ণ বাসনা, | Tan sacred beauty, blunt the sharp'st intents, |  |
+| দৃঢ় মনকে ঠেলে দেয় যেদিকে বদলের টান; | Divert strong minds to the course of altering things; |  |
 | | | |
-|  | Alas, why, fearing of time's tyranny, |  |
-|  | Might I not then say 'Now I love you best,' |  |
-|  | When I was certain o'er incertainty, |  |
-|  | Crowning the present, doubting of the rest? |  |
+| হায়, কেন তবে, সময়ের জুলুমটাকে ডরিয়ে, | Alas, why, fearing of time's tyranny, |  |
+| পারতাম না বলতে, ‘তোমাকে এখন বাসি সেরা,’ | Might I not then say 'Now I love you best,' |  |
+| যখন নিশ্চিত ছিলাম সংশয়কে ছাপিয়ে, | When I was certain o'er incertainty, |  |
+| বর্তমানে মুকুট দিয়ে, বাকি সন্দেহে ঘেরা? | Crowning the present, doubting of the rest? |  |
 | | | |
-|  | Love is a babe; then might I not say so, |  |
-|  | To give full growth to that which still doth grow? |  |
+| প্রেম এক শিশু; তবে কি পারতাম না বলতে তা, | Love is a babe; then might I not say so, |  |
+| যা বেড়েই চলছে তাকে দিতে পূর্ণ পূর্ণতা? | To give full growth to that which still doth grow? |  |
 | | | |

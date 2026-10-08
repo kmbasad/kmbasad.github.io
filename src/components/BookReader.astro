@@ -36,11 +36,16 @@ const { config } = Astro.props;
     </div>
   </div>
 
+  <!-- Desktop: drag this seam to resize the শব্দকোষ (book.js); double-click
+       it to restore the default width. -->
+  <div class="book-dict-grip" id="book-dict-grip" role="separator" aria-orientation="vertical"
+       aria-label="শব্দকোষের প্রস্থ" tabindex="0" title="টেনে প্রস্থ বদলান · দুই ক্লিকে আগের মাপ"></div>
+
   <aside class="book-dict" id="book-dict" aria-label="শব্দকোষ">
     <div class="dict-inner">
       <div class="dict-top">
         <span class="dict-kicker">শব্দকোষ</span>
-        <button class="dict-close" id="dict-close" type="button" aria-label="শব্দকোষ বন্ধ করুন">×</button>
+        <button class="dict-close" id="dict-close" type="button" aria-label="শব্দকোষ গুটিয়ে রাখুন" title="গুটিয়ে রাখুন">×</button>
       </div>
       <h2 class="dict-word" id="dict-word">অভিধান</h2>
       <p class="dict-hint" id="dict-hint">মূল পাঠের যেকোনো শব্দে ক্লিক করুন — অর্থ এখানে আসবে।</p>
@@ -48,6 +53,12 @@ const { config } = Astro.props;
       <nav class="dict-links" id="dict-links" hidden aria-label="বাইরের অভিধান"></nav>
     </div>
   </aside>
+
+  <!-- Desktop: the folded panel's tab on the page's right edge — press it to
+       open the শব্দকোষ again. -->
+  <button class="dict-reopen" id="dict-reopen" type="button" aria-label="শব্দকোষ খুলুন" hidden>
+    <span>শব্দকোষ</span>
+  </button>
 </div>
 
 <script is:inline define:vars={{ config }}>

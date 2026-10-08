@@ -218,19 +218,26 @@
 
       var groups = { bn: {} };
       groups[srcCls] = {};
+      // Line-scoped pairs: a three-column row `| sonnet.line | bn | src |`
+      // aligns words within that one line only (rows carry data-key).
+      var lineGroups = {}, hasLines = false, hasGlobal = false;
       var counter = 0;
       var dlines = t.split('\n');
       var dictTable = isTableBody(dlines);
       dlines.forEach(function (line) {
         var s = line.trim();
         if (!s) return;
-        var bnRaw, swRaw;
+        var bnRaw, swRaw, key = null;
         if (dictTable) {
           if (s.charAt(0) !== '|') return;
           // Skip a (legacy) GFM separator row if one is still present.
           if (s.indexOf('-') !== -1 && /^\|[-:\s|]+\|$/.test(s)) return;
           var cells = s.slice(1, -1).split('|').map(function (c) { return unescPipe(c.trim()); });
-          bnRaw = cells[0] || ''; swRaw = cells[1] || '';
+          if (cells.length >= 3 && /^[0-9]+\.[0-9]+$/.test(cells[0])) {
+            key = cells[0]; bnRaw = cells[1] || ''; swRaw = cells[2] || '';
+          } else {
+            bnRaw = cells[0] || ''; swRaw = cells[1] || '';
+          }
         } else {
           var di = s.indexOf(DELIM);
           if (di === -1) return;
@@ -238,11 +245,20 @@
         }
         var bn = normWord(bnRaw), sw = normWord(swRaw);
         if (!bn || !sw) return;
-        var g = groups.bn[bn] || groups[srcCls][sw] || ('DICT_' + (++counter));
-        groups.bn[bn] = g;
-        groups[srcCls][sw] = g;
+        var tgt = groups;
+        if (key) {
+          hasLines = true;
+          if (!lineGroups[key]) { lineGroups[key] = { bn: {} }; lineGroups[key][srcCls] = {}; }
+          tgt = lineGroups[key];
+        } else {
+          hasGlobal = true;
+        }
+        var g = tgt.bn[bn] || tgt[srcCls][sw] || ('DICT_' + (++counter));
+        tgt.bn[bn] = g;
+        tgt[srcCls][sw] = g;
       });
-      window.TT_DICT = groups;
+      if (hasGlobal) window.TT_DICT = groups;
+      if (hasLines) window.TT_DICT_LINES = lineGroups;
     } catch (e) {
       console.warn('md-loader: could not load dictionary', src, e);
     }
@@ -428,7 +444,8 @@
         if (li === 0 || v.gapBefore) cls.push('quatrain-start');
         if (s.rows.length >= 14 && li >= s.rows.length - 2) cls.push('sonnet-couplet');
         if (!v.bn) cls.push('line-missing');
-        var attrs = ' data-sonnet="' + esc(n) + '"';
+        // data-key = "sonnet.line" — the line-scoped word-alignment key
+        var attrs = ' data-sonnet="' + esc(n) + '" data-key="' + esc(n) + '.' + (li + 1) + '"';
         if (v.srcLine != null) attrs += ' data-mdline="' + v.srcLine + '"';
         var bnHtml = v.bn ? esc(v.bn)
           : '<span class="bn-missing" role="img" aria-label="অনূদিত হয়নি"></span>';

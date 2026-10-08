@@ -6,95 +6,95 @@ lang: en
 
 | বাংলা | ইংলিশ | # |
 | :-- | :-- | --: |
-|  | Let me not to the marriage of true minds | 116 |
-|  | Admit impediments. Love is not love |  |
-|  | Which alters when it alteration finds, |  |
-|  | Or bends with the remover to remove: |  |
+| সত্য মনের মিলনে আমি যেন না দিই সায় | Let me not to the marriage of true minds | 116 |
+| কোনো বাধায়। সেই প্রেম তো প্রেমই নয় আসলে | Admit impediments. Love is not love |  |
+| যা বদলে যায় যখনই বদল দেখতে পায়, | Which alters when it alteration finds, |  |
+| অথবা সরানেওয়ালার সাথে নিজেই সরে চলে: | Or bends with the remover to remove: |  |
 | | | |
-|  | O no! it is an ever-fixed mark |  |
-|  | That looks on tempests and is never shaken; |  |
-|  | It is the star to every wandering bark, |  |
-|  | Whose worth's unknown, although his height be taken. |  |
+| আরে না! এ তো এক চির-অবিচল নিশানা স্থির | O no! it is an ever-fixed mark |  |
+| যে তুফান দেখে, তবু কখনো হয় না কম্পিত; | That looks on tempests and is never shaken; |  |
+| এ হলো সেই ধ্রুবতারা প্রতি দিশাহারা তরীর, | It is the star to every wandering bark, |  |
+| যার দাম অজানা, যদিও উচ্চতা পরিমিত। | Whose worth's unknown, although his height be taken. |  |
 | | | |
-|  | Love's not Time's fool, though rosy lips and cheeks |  |
-|  | Within his bending sickle's compass come: |  |
-|  | Love alters not with his brief hours and weeks, |  |
-|  | But bears it out even to the edge of doom. |  |
+| প্রেম কালের ভাঁড় নয়, যদিও রাঙা ঠোঁট-গাল | Love's not Time's fool, though rosy lips and cheeks |  |
+| তার বাঁকা কাস্তের সীমানার মাঝে এসে যায়; | Within his bending sickle's compass come: |  |
+| প্রেম বদলায় না তার ঘণ্টা-হপ্তার তাল, | Love alters not with his brief hours and weeks, |  |
+| বরং সে টিকে থাকে কিয়ামতেরও কিনারায়। | But bears it out even to the edge of doom. |  |
 | | | |
-|  | If this be error and upon me proved, |  |
-|  | I never writ, nor no man ever loved. |  |
+| এ যদি হয় ভুল, ও প্রমাণিত আমার উপর, | If this be error and upon me proved, |  |
+| তবে আমি লিখিনি কভু, ভালোবাসেনি কোনো নর। | I never writ, nor no man ever loved. |  |
 | | | |
-|  | Accuse me thus: that I have scanted all | 117 |
-|  | Wherein I should your great deserts repay, |  |
-|  | Forgot upon your dearest love to call, |  |
-|  | Whereto all bonds do tie me day by day; |  |
+| এভাবে আমায় দোষ দাও: করেছি যে কৃপণতা | Accuse me thus: that I have scanted all | 117 |
+| সবকিছুতে, যেখানে তোমার ঋণ শোধার দায়, | Wherein I should your great deserts repay, |  |
+| ভুলেছি তোমার প্রিয়তম প্রেমকে ডাকার কথা, | Forgot upon your dearest love to call, |  |
+| যার সাথে সব বাঁধন আমাকে রোজ বেঁধে যায়; | Whereto all bonds do tie me day by day; |  |
 | | | |
-|  | That I have frequent been with unknown minds |  |
-|  | And given to time your own dear-purchased right |  |
-|  | That I have hoisted sail to all the winds |  |
-|  | Which should transport me farthest from your sight. |  |
+| যে অচেনা সব মনের সাথেই কাটিয়েছি বেশ, | That I have frequent been with unknown minds |  |
+| দিয়েছি কালকে তোমার দামেই কেনা অধিকার, | And given to time your own dear-purchased right |  |
+| যে সব বাতাসে তুলেছি পাল আমি নির্বিশেষ | That I have hoisted sail to all the winds |  |
+| যা আমাকে নেবে তোমার দৃষ্টির বহু ওপার। | Which should transport me farthest from your sight. |  |
 | | | |
-|  | Book both my wilfulness and errors down |  |
-|  | And on just proof surmise accumulate; |  |
-|  | Bring me within the level of your frown, |  |
-|  | But shoot not at me in your waken'd hate; |  |
+| লিখে রাখো আমার জেদ আর ভুল সব খাতায় | Book both my wilfulness and errors down |  |
+| আর খাঁটি প্রমাণের উপর জমাও অনুমান; | And on just proof surmise accumulate; |  |
+| আমাকে এনে রাখো তোমার ভ্রুকুটির পাল্লায়, | Bring me within the level of your frown, |  |
+| কিন্তু জাগা ঘৃণায় আমার দিকে ছুঁড়ো না বাণ; | But shoot not at me in your waken'd hate; |  |
 | | | |
-|  | Since my appeal says I did strive to prove |  |
-|  | The constancy and virtue of your love. |  |
+| আমার আর্জি বলে: চেয়েছি করতে প্রমাণিত | Since my appeal says I did strive to prove |  |
+| তোমার প্রেম কতটা অটল, কত পুণ্যে স্থিত। | The constancy and virtue of your love. |  |
 | | | |
-|  | Like as, to make our appetites more keen, | 118 |
-|  | With eager compounds we our palate urge, |  |
-|  | As, to prevent our maladies unseen, |  |
-|  | We sicken to shun sickness when we purge, |  |
+| যেমন, আমাদের খিদেটাকে আরো চাঙা করতে, | Like as, to make our appetites more keen, | 118 |
+| ঝাঁঝালো মশলার মিশেলে আমরা জিভ খোঁচাই, | With eager compounds we our palate urge, |  |
+| যেমন, অদৃশ্য অসুখ যেন না পারে ধরতে, | As, to prevent our maladies unseen, |  |
+| রোগ এড়াতেই রোগী হই যখন জোলাপ খাই; | We sicken to shun sickness when we purge, |  |
 | | | |
-|  | Even so, being tuff of your ne'er-cloying sweetness, |  |
-|  | To bitter sauces did I frame my feeding |  |
-|  | And, sick of welfare, found a kind of meetness |  |
-|  | To be diseased ere that there was true needing. |  |
+| তেমনি, তোমার কভু-না-একঘেয়ে মধুতে ভরা, | Even so, being tuff of your ne'er-cloying sweetness, |  |
+| তিক্ত চাটনিতেই সাজালাম আমার আহার, | To bitter sauces did I frame my feeding |  |
+| আর, সুখে কাতর হয়ে, ভাবলাম এ ঠিক ধারা— | And, sick of welfare, found a kind of meetness |  |
+| প্রকৃত প্রয়োজন ছাড়াই ব্যাধিতে পড়া আমার। | To be diseased ere that there was true needing. |  |
 | | | |
-|  | Thus policy in love, to anticipate |  |
-|  | The ills that were not, grew to faults assured |  |
-|  | And brought to medicine a healthful state |  |
-|  | Which, rank of goodness, would by ill be cured: |  |
+| তাই প্রেমের এই কৌশল, আগেভাগে ঠেকাতে | Thus policy in love, to anticipate |  |
+| যে অসুখ ছিল না, তা হলো নিশ্চিত অপরাধ | The ills that were not, grew to faults assured |  |
+| আর সুস্থ দশাকে এনে দিল ওষুধের হাতে | And brought to medicine a healthful state |  |
+| যা, ভালোয় ফেঁপে, মন্দেতে চাইত সারার সাধ: | Which, rank of goodness, would by ill be cured: |  |
 | | | |
-|  | But thence I learn, and find the lesson true, |  |
-|  | Drugs poison him that so fell sick of you. |  |
+| তবে এ থেকে শিখি, আর জানি এই শিক্ষা খাঁটি: | But thence I learn, and find the lesson true, |  |
+| যে তোমার রোগে পড়ে, ওষুধ তার বিষের বাটি। | Drugs poison him that so fell sick of you. |  |
 | | | |
-|  | What potions have I drunk of Siren tears, | 119 |
-|  | Distill'd from limbecks foul as hell within, |  |
-|  | Applying fears to hopes and hopes to fears, |  |
-|  | Still losing when I saw myself to win! |  |
+| কী সাইরেন-অশ্রুর শরবত করেছি পান, | What potions have I drunk of Siren tears, | 119 |
+| নরকের মতোই নোংরা ভাঁটিতে চোলাই করা, | Distill'd from limbecks foul as hell within, |  |
+| ভয়কে আশায় আর আশাকে ভয়েতে করে দান, | Applying fears to hopes and hopes to fears, |  |
+| যখন দেখলাম জিতছি তখনই গেছি হারা! | Still losing when I saw myself to win! |  |
 | | | |
-|  | What wretched errors hath my heart committed, |  |
-|  | Whilst it hath thought itself so blessed never! |  |
-|  | How have mine eyes out of their spheres been fitted |  |
-|  | In the distraction of this madding fever! |  |
+| কত হীন ভুলই করেছে আমার হৃদয়-মন, | What wretched errors hath my heart committed, |  |
+| যখন সে ভেবেছে এত সুখী ছিল না কোনোদিন! | Whilst it hath thought itself so blessed never! |  |
+| কক্ষ ছেড়ে কেমন ছিটকে গেছে এই নয়ন | How have mine eyes out of their spheres been fitted |  |
+| এই পাগল-করা জ্বরের ঘোরে হয়ে দিশাহীন! | In the distraction of this madding fever! |  |
 | | | |
-|  | O benefit of ill! now I find true |  |
-|  | That better is by evil still made better; |  |
-|  | And ruin'd love, when it is built anew, |  |
-|  | Grows fairer than at first, more strong, far greater. |  |
+| আহা মন্দের মুনাফা! এখন বুঝি তা সত্যি | O benefit of ill! now I find true |  |
+| যে ভালো মন্দেরই গুণে হয় আরো ভালোতর; | That better is by evil still made better; |  |
+| আর ভাঙা প্রেম, যদি নতুন করে গড়ে ভিত্তি, | And ruin'd love, when it is built anew, |  |
+| আগের চেয়ে রূপসী, দৃঢ়, অনেক বৃহত্তর। | Grows fairer than at first, more strong, far greater. |  |
 | | | |
-|  | So I return rebuked to my content |  |
-|  | And gain by ill thrice more than I have spent. |  |
+| তাই বকা খেয়ে আমি ফিরি আমার সুখের কাছে, | So I return rebuked to my content |  |
+| আর খরচের তিনগুণ লাভ মন্দেই আছে। | And gain by ill thrice more than I have spent. |  |
 | | | |
-|  | That you were once unkind befriends me now, | 120 |
-|  | And for that sorrow which I then did feel |  |
-|  | Needs must I under my transgression bow, |  |
-|  | Unless my nerves were brass or hammer'd steel. |  |
+| তুমি নিষ্ঠুর ছিলে আগে, তা আজ আমার সখা, | That you were once unkind befriends me now, | 120 |
+| আর তখন যে ব্যথার সাথে হয়েছে সাক্ষাৎ, | And for that sorrow which I then did feel |  |
+| তাতে নিজ অপরাধের ভারে মাথা নুইয়ে রাখা | Needs must I under my transgression bow, |  |
+| দায়, যদি না স্নায়ু পিতল কি পিটানো ইস্পাত। | Unless my nerves were brass or hammer'd steel. |  |
 | | | |
-|  | For if you were by my unkindness shaken |  |
-|  | As I by yours, you've pass'd a hell of time, |  |
-|  | And I, a tyrant, have no leisure taken |  |
-|  | To weigh how once I suffered in your crime. |  |
+| আমার নিষ্ঠুরতা যদি তোমাকে করে কাতর | For if you were by my unkindness shaken |  |
+| যেমন আমি তোমারটায়, সয়েছ নরক-কাল, | As I by yours, you've pass'd a hell of time, |  |
+| আর আমি, জালিম, নিইনি এতটুকু অবসর | And I, a tyrant, have no leisure taken |  |
+| মাপতে, তোমার অপরাধে কী ছিল আমার হাল। | To weigh how once I suffered in your crime. |  |
 | | | |
-|  | O, that our night of woe might have remember'd |  |
-|  | My deepest sense, how hard true sorrow hits, |  |
-|  | And soon to you, as you to me, then tender'd |  |
-|  | The humble slave which wounded bosoms fits! |  |
+| আহা, আমাদের দুখের রাত যদি মনে করাত | O, that our night of woe might have remember'd |  |
+| গভীরতম বোধকে, খাঁটি দুঃখ কেমন বাজে, | My deepest sense, how hard true sorrow hits, |  |
+| তোমাকে, তুমি যেমন আমাকে, দিতাম সওগাত | And soon to you, as you to me, then tender'd |  |
+| সেই বিনীত মলম যা আহত বুকেরই কাজে! | The humble slave which wounded bosoms fits! |  |
 | | | |
-|  | But that your trespass now becomes a fee; |  |
-|  | Mine ransoms yours, and yours must ransom me. |  |
+| কিন্তু তোমার পাপ এখন হলো মুক্তিপণ; | But that your trespass now becomes a fee; |  |
+| আমারটা তোমার পণ, তোমারটা আমার পণ। | Mine ransoms yours, and yours must ransom me. |  |
 | | | |
 | খারাপ হওয়া ভালো খারাপ খ্যাতি পাওয়ার থেকে, | Tis better to be vile than vile esteemed, | 121 |
 | যদি না হওয়াকে শুনতে হয় হওয়ার অভিযোগ, | When not to be receives reproach of being, |  |
@@ -405,147 +405,147 @@ lang: en
 | যাতে সে মনে করে আমি অশিক্ষিত এক ছোঁড়া, | That she might think me some untutored youth, |  |
 | অজ্ঞ দুনিয়ার যত মিথ্যা কৌশলে ছলে। | Unlearned in the world's false subtleties. |  |
 | | | |
-| এভাবে বৃথা ভেবে যে সে আমায় ভাবে তরুণ, | Thus vainly thinking that she thinks me young, |  |
+| এভাবে বৃথাই ভেবে যে সে আমায় ভাবে তরুণ, | Thus vainly thinking that she thinks me young, |  |
 | যদিও সে জানে পেরিয়ে গেছে আমার সেরা কাল, | Although she knows my days are past the best, |  |
 | সরলভাবে মানি তার মিথ্যুক জিভের গুণ: | Simply I credit her false-speaking tongue: |  |
-| দুদিকে এভাবে সরল সত্য হয় নাকাল: | On both sides thus is simple truth suppressed: |  |
+| দুই দিকে এভাবে সরল সত্য হয় নাকাল: | On both sides thus is simple truth suppressed: |  |
 | | | |
-| কিন্তু কেন বলে না সে যে সে করে অন্যায়? | But wherefore says she not she is unjust? |  |
+| কিন্তু কেন সে বলে না যে সে করছে অন্যায়? | But wherefore says she not she is unjust? |  |
 | আর কেন আমি বলি না যে আমি হয়ে গেছি বুড়ো? | And wherefore say not I that I am old? |  |
-| ও! প্রেমের সেরা সাজ আস্থার ভঙ্গিমায়, | O! love's best habit is in seeming trust, |  |
-| প্রেমে বয়স চায় না গুনুক বছর পুরো: | And age in love, loves not to have years told: |  |
+| ও! প্রেমের সেরা সাজটি আস্থার ভঙ্গিমায়, | O! love's best habit is in seeming trust, |  |
+| প্রেমে বয়স চায় না কেউ গুনুক বছর পুরো: | And age in love, loves not to have years told: |  |
 | | | |
 | তাই আমি শুই তার সাথে, আর সে আমার সাথে, | Therefore I lie with her, and she with me, |  |
-| দোষে আমরা মিথ্যায় তোষামোদ পাই তাতে। | And in our faults by lies we flattered be. |  |
+| দোষে আমরা মিথ্যায় তোষামোদ পাই যে তাতে। | And in our faults by lies we flattered be. |  |
 | | | |
-| ও! ডেকো না আমায় অন্যায়ের সমর্থনে | O! call not me to justify the wrong | 139 |
-| যা তোমার নিষ্ঠুরতা দেয় আমার হার্টে; | That thy unkindness lays upon my heart; |  |
+| ও! ডেকো না আমায় সেই অন্যায় সমর্থনে | O! call not me to justify the wrong | 139 |
+| যা তোমার নিষ্ঠুরতা চাপায় আমার হার্টে; | That thy unkindness lays upon my heart; |  |
 | চোখে আঘাত ক’রো না, করো তোমার জিভের বাণে: | Wound me not with thine eye but with thy tongue: |  |
 | শক্তির সাথে শক্তি খাটাও, মেরো না আর্টে। | Use power with power, and slay me not by art. |  |
 | | | |
 | বলো অন্যখানে প্রেম করো; কিন্তু দৃষ্টিতে, | Tell me thou lov'st elsewhere; but in my sight, |  |
-| প্রিয় দিল, বিরত থাকো চোখ সরিয়ে তাকাতে: | Dear heart, forbear to glance thine eye aside: |  |
+| প্রিয় হার্ট, বিরত থাকো চোখ সরিয়ে তাকাতে: | Dear heart, forbear to glance thine eye aside: |  |
 | ছলের আঘাত কেন, যখন তোমার শক্তিতে | What need'st thou wound with cunning when thy might |  |
-| তুমি এত বড়, আমার ঢাল পারে না ঠেকাতে? | Is more than my o'erpressed defence can bide? |  |
+| তুমি এতই বড়, আমার ঢাল পারে না ঠেকাতে? | Is more than my o'erpressed defence can bide? |  |
 | | | |
-| আমি মাফ করি তোমায়: ‘আহা! প্রিয়া ভালো জানে | Let me excuse thee: ‘Ah! my love well knows |  |
+| আমি তোমায় মাফ করি: ‘আহা! প্রিয়া ভালোই জানে | Let me excuse thee: ‘Ah! my love well knows |  |
 | তার মিষ্টি চাহনি হয়েছে আমার দুশমন, | Her pretty looks have been mine enemies, |  |
-| তাই মুখ থেকে শত্রু ফেরায় অন্যখানে, | And therefore from my face she turns my foes, |  |
+| তাই মুখ থেকে শত্রুকে ফেরায় অন্যখানে, | And therefore from my face she turns my foes, |  |
 | যাতে অন্যখানে করে তারা আঘাত বর্ষণ।’ | That they elsewhere might dart their injuries.’ |  |
 | | | |
-| তবু এমন ক’রো না; যেহেতু আমি প্রায় মৃত, | Yet do not so; but since I am near slain, |  |
+| তবু এমনটা ক’রো না; যেহেতু আমি প্রায় মৃত, | Yet do not so; but since I am near slain, |  |
 | চাহনিতে মারো সোজা, যন্ত্রণা করো দূরীভূত। | Kill me outright with looks, and rid my pain. |  |
 | | | |
-|  | Be wise as thou art cruel; do not press | 140 |
-|  | My tongue-tied patience with too much disdain; |  |
-|  | Lest sorrow lend me words, and words express |  |
-|  | The manner of my pity-wanting pain. |  |
+| যত নিষ্ঠুর তত বিজ্ঞ হও; চাপ দিও না | Be wise as thou art cruel; do not press | 140 |
+| আমার বোবা ধৈর্যটাকে বেশি অবজ্ঞায়; | My tongue-tied patience with too much disdain; |  |
+| পাছে দুঃখ দেয় কথা, সে কথা করে বর্ণনা | Lest sorrow lend me words, and words express |  |
+| আমার দয়া-না-পাওয়া ব্যথার ধরনটা ভাষায়। | The manner of my pity-wanting pain. |  |
 | | | |
-|  | If I might teach thee wit, better it were, |  |
-|  | Though not to love, yet, love to tell me so; |  |
-|  | As testy sick men, when their deaths be near, |  |
-|  | No news but health from their physicians know; |  |
+| বুদ্ধি শেখাতে পারলে তোমায় ভালো হতো আরো, | If I might teach thee wit, better it were, |  |
+| ভালো না বাসলেও, প্রেম, অন্তত তাই শোনাতে; | Though not to love, yet, love to tell me so; |  |
+| যেমন খিটখিটে রোগী, মৃত্যু কাছে এলে কারো, | As testy sick men, when their deaths be near, |  |
+| ডাক্তার শুধু সুখবর পারে তাদের জানাতে; | No news but health from their physicians know; |  |
 | | | |
-|  | For, if I should despair, I should grow mad, |  |
-|  | And in my madness might speak ill of thee; |  |
-|  | Now this ill-wresting world is grown so bad, |  |
-|  | Mad slanderers by mad ears believed be. |  |
+| কারণ, হতাশ হলে হয়ে যাব বদ্ধ পাগল, | For, if I should despair, I should grow mad, |  |
+| আর পাগলামিতে তোমার নিন্দা করতে পারি; | And in my madness might speak ill of thee; |  |
+| এখন সব-বাঁকানো দুনিয়া এত হয়েছে খল, | Now this ill-wresting world is grown so bad, |  |
+| খ্যাপা কানে বিশ্বাস পায় খ্যাপাটে নিন্দাকারী। | Mad slanderers by mad ears believed be. |  |
 | | | |
-|  | That I may not be so, nor thou belied, |  |
-|  | Bear thine eyes straight, though thy proud heart go wide. |  |
+| যাতে আমি তা না হই, তুমিও না পাও বদনাম, | That I may not be so, nor thou belied, |  |
+| চোখ রাখো সোজা, গর্বী দিল হোক না বেলাগাম। | Bear thine eyes straight, though thy proud heart go wide. |  |
 | | | |
-|  | In faith I do not love thee with mine eyes, | 141 |
-|  | For they in thee a thousand errors note; |  |
-|  | But 'tis my heart that loves what they despise, |  |
-|  | Who, in despite of view, is pleased to dote. |  |
+| সত্যি বলছি, তোমায় ভালোবাসি না চোখ দিয়ে, | In faith I do not love thee with mine eyes, | 141 |
+| কারণ তারা তোমার মাঝে দেখে হাজারটা ভুল; | For they in thee a thousand errors note; |  |
+| কিন্তু দিল ভালোবাসে তারা যা দেখে ঘৃণা নিয়ে, | But 'tis my heart that loves what they despise, |  |
+| যে দেখাকে উপেক্ষা করে, মোহে হয় মশগুল। | Who, in despite of view, is pleased to dote. |  |
 | | | |
-|  | Nor are mine ears with thy tongue's tune delighted; |  |
-|  | Nor tender feeling, to base touches prone, |  |
-|  | Nor taste, nor smell, desire to be invited |  |
-|  | To any sensual feast with thee alone: |  |
+| তোমার জিভের সুরে আমার কানও না মুগ্ধ; | Nor are mine ears with thy tongue's tune delighted; |  |
+| নরম অনুভূতিও, নিচু ছোঁয়ায় দিতে সাড়া, | Nor tender feeling, to base touches prone, |  |
+| না স্বাদ, না ঘ্রাণ, নিমন্ত্রণ পেতে হয় লুব্ধ | Nor taste, nor smell, desire to be invited |  |
+| কোনো কামের ভোজে, যেখানে কেউ নেই তুমি ছাড়া: | To any sensual feast with thee alone: |  |
 | | | |
-|  | But my five wits nor my five senses can |  |
-|  | Dissuade one foolish heart from serving thee, |  |
-|  | Who leaves unswayed the likeness of a man, |  |
-|  | Thy proud heart's slave and vassal wretch to be: |  |
+| কিন্তু না পাঁচ বুদ্ধি, না পাঁচ ইন্দ্রিয় পারে | But my five wits nor my five senses can |  |
+| একটি বোকা দিলকে ঠেকাতে তোমারই সেবায়, | Dissuade one foolish heart from serving thee, |  |
+| যে শাসনবিহীন রেখে যায় মানুষের আকারে | Who leaves unswayed the likeness of a man, |  |
+| তোমার গর্বিত দিলের দাস, প্রজা হতে যায়: | Thy proud heart's slave and vassal wretch to be: |  |
 | | | |
-|  | Only my plague thus far I count my gain, |  |
-|  | That she that makes me sin awards me pain. |  |
+| শুধু এতটুকু আমার প্লেগকে লাভ বলে মানি, | Only my plague thus far I count my gain, |  |
+| যে পাপ করায়, সে নিজেই দেয় শাস্তির গ্লানি। | That she that makes me sin awards me pain. |  |
 | | | |
-|  | Love is my sin, and thy dear virtue hate, | 142 |
-|  | Hate of my sin, grounded on sinful loving: |  |
-|  | O! but with mine compare thou thine own state, |  |
-|  | And thou shalt find it merits not reproving; |  |
+| প্রেম আমার পাপ, আর তোমার ভার্চু ঘৃণার, | Love is my sin, and thy dear virtue hate, | 142 |
+| আমার পাপের ঘৃণা, পাপী প্রেমেই যার ভিত্তি: | Hate of my sin, grounded on sinful loving: |  |
+| ও! তবে আমার সাথে মেলাও নিজ অবস্থার, | O! but with mine compare thou thine own state, |  |
+| দেখবে যে তা পায় না কোনো ভর্ৎসনার যুক্তি; | And thou shalt find it merits not reproving; |  |
 | | | |
-|  | Or, if it do, not from those lips of thine, |  |
-|  | That have profaned their scarlet ornaments |  |
-|  | And sealed false bonds of love as oft as mine, |  |
-|  | Robbed others' beds' revenues of their rents. |  |
+| বা, যদি পায়, তবে তা যেন না আসে তোমার ঠোঁটে, | Or, if it do, not from those lips of thine, |  |
+| যারা নাপাক করেছে তাদের লাল অলংকার | That have profaned their scarlet ornaments |  |
+| আর আমার মতো প্রেমের মিথ্যা চুক্তি সেঁটে, | And sealed false bonds of love as oft as mine, |  |
+| অন্যের বিছানার আয় লুটেছে ভাড়ার ভার। | Robbed others' beds' revenues of their rents. |  |
 | | | |
-|  | Be it lawful I love thee, as thou lov'st those |  |
-|  | Whom thine eyes woo as mine importune thee: |  |
-|  | Root pity in thy heart, that, when it grows, |  |
-|  | Thy pity may deserve to pitied be. |  |
+| হালাল হোক ভালোবাসা, যেমন বাসো তুমি যারে | Be it lawful I love thee, as thou lov'st those |  |
+| তোমার চোখ সাধে, যেমন আমার চোখ তোমাকে: | Whom thine eyes woo as mine importune thee: |  |
+| দিলে দয়ার শিকড় গাড়ো, যাতে তা যখন বাড়ে, | Root pity in thy heart, that, when it grows, |  |
+| তোমার দয়াও যেন দয়া পাওয়ার যোগ্য থাকে। | Thy pity may deserve to pitied be. |  |
 | | | |
-|  | If thou dost seek to have what thou dost hide, |  |
-|  | By self-example mayst thou be denied! |  |
+| যদি তুমি পেতে চাও, যা তুমি নিজে নিজে লুকাও, | If thou dost seek to have what thou dost hide, |  |
+| তোমার নিজের উদাহরণে তুমিও তা না পাও! | By self-example mayst thou be denied! |  |
 | | | |
-|  | Lo, as a careful housewife runs to catch | 143 |
-|  | One of her feathered creatures broke away, |  |
-|  | Sets down her babe and makes all swift dispatch |  |
-|  | In pursuit of the thing she would have stay, |  |
+| দেখো, যেমন যত্নশীল গৃহিণী ছোটে ধরতে | Lo, as a careful housewife runs to catch | 143 |
+| তার পালকওয়ালা একটি প্রাণী যে গেছে পালিয়ে, | One of her feathered creatures broke away, |  |
+| শিশুকে নামিয়ে রাখে আর ছোটে তীব্র গতিতে | Sets down her babe and makes all swift dispatch |  |
+| ধাওয়া করে তাকে যাকে সে চায় রাখতে আটকিয়ে, | In pursuit of the thing she would have stay, |  |
 | | | |
-|  | Whilst her neglected child holds her in chase, |  |
-|  | Cries to catch her whose busy care is bent |  |
-|  | To follow that which flies before her face, |  |
-|  | Not prizing her poor infant's discontent: |  |
+| যখন তার অবহেলিত শিশু তাড়া করে তাকে, | Whilst her neglected child holds her in chase, |  |
+| কেঁদে ধরতে চায় তাকে, যার ব্যস্ত সারা মন | Cries to catch her whose busy care is bent |  |
+| ছুটতে তার পিছে যা ওড়ে মুখের সামনে থেকে, | To follow that which flies before her face, |  |
+| না গুনে তার দুখী শিশুর অসন্তোষ তখন: | Not prizing her poor infant's discontent: |  |
 | | | |
-|  | So runn'st thou after that which flies from thee, |  |
-|  | Whilst I thy babe chase thee afar behind; |  |
-|  | But if thou catch thy hope, turn back to me |  |
-|  | And play the mother's part: kiss me, be kind. |  |
+| তেমনি তুমিও ছোটো তার পিছে যে দূরে পালায়, | So runn'st thou after that which flies from thee, |  |
+| যখন আমি, তোমার শিশু, পিছে ছুটি দূর থেকে; | Whilst I thy babe chase thee afar behind; |  |
+| কিন্তু আশা ধরা পড়লে, ফিরে তাকাও আমায় | But if thou catch thy hope, turn back to me |  |
+| আর মায়ের পার্ট খেলো: চুমু দাও, দয়া রেখে। | And play the mother's part: kiss me, be kind. |  |
 | | | |
-|  | So will I pray that thou mayst have thy Will |  |
-|  | If thou turn back and my loud crying still. |  |
+| তাই প্রার্থনা করি যেন পাও তোমার উইল, | So will I pray that thou mayst have thy Will |  |
+| যদি ফিরে থামাও আমার কান্নাভরা এ দিল। | If thou turn back and my loud crying still. |  |
 | | | |
-|  | Two loves I have of comfort and despair, | 144 |
-|  | Which like two spirits do suggest me still. |  |
-|  | The better angel is a man right fair, |  |
-|  | The worser spirit a woman coloured ill. |  |
+| আমার দুই প্রেম আছে, শান্তি আর হতাশার, | Two loves I have of comfort and despair, | 144 |
+| যারা দুই প্রেতের মতো ফুসলায় অনুক্ষণ। | Which like two spirits do suggest me still. |  |
+| ভালো ফেরেশতাটি পুরুষ, সুন্দর চেহারার, | The better angel is a man right fair, |  |
+| খারাপ আত্মাটি এক নারী, যার কালো বরন। | The worser spirit a woman coloured ill. |  |
 | | | |
-|  | To win me soon to hell my female evil |  |
-|  | Tempteth my better angel from my side, |  |
-|  | And would corrupt my saint to be a devil, |  |
-|  | Wooing his purity with her foul pride. |  |
+| নরকেতে আমায় নিতে আমার নারী-পাপ দ্রুত | To win me soon to hell my female evil |  |
+| লোভ দেখিয়ে ভালো ফেরেশতাকে পাশ থেকে টানে, | Tempteth my better angel from my side, |  |
+| আর সাধুকে বানাতে চায় সে শয়তানের দূত, | And would corrupt my saint to be a devil, |  |
+| তার শুচিতাকে সাধে নিজের নোংরা অভিমানে। | Wooing his purity with her foul pride. |  |
 | | | |
-|  | And whether that my angel be turned fiend |  |
-|  | Suspect I may, yet not directly tell; |  |
-|  | But being both from me, both to each friend, |  |
-|  | I guess one angel in another's hell. |  |
+| আর আমার ফেরেশতা পিশাচ হয়ে গেছে কি না | And whether that my angel be turned fiend |  |
+| সন্দেহ জাগে, যদিও সরাসরি দেখি না চোখে; | Suspect I may, yet not directly tell; |  |
+| কিন্তু দুজনেই দূরে, দুজন দুজনার চেনা, | But being both from me, both to each friend, |  |
+| ধারণা করি এক ফেরেশতা অন্যের দোজখে। | I guess one angel in another's hell. |  |
 | | | |
-|  | Yet this shall I ne'er know, but live in doubt |  |
-|  | Till my bad angel fire my good one out. |  |
+| এটা কখনো জানব না, থাকব শুধু সন্দেহে | Yet this shall I ne'er know, but live in doubt |  |
+| যতদিন না খারাপটা ভালোটাকে পোড়ায় দাহে। | Till my bad angel fire my good one out. |  |
 | | | |
-|  | Those lips that Love’s own hand did make | 145 |
-|  | Breathed forth the sound that said ‘I hate’ |  |
-|  | To me that languished for her sake; |  |
-|  | But when she saw my woeful state, |  |
+| প্রেম নিজের হাতেই গড়েছিল যেই ঠোঁট দুটি | Those lips that Love’s own hand did make | 145 |
+| শ্বাসে ছাড়ল সেই শব্দ, বলে: ‘আমি ঘৃণা করি’ | Breathed forth the sound that said ‘I hate’ |  |
+| আমায়, যে তার জন্য ক্ষয়ে যাই, মাটিতে লুটি; | To me that languished for her sake; |  |
+| কিন্তু দেখে সে আমার দুঃখী অবস্থা ভারী, | But when she saw my woeful state, |  |
 | | | |
-|  | Straight in her heart did mercy come, |  |
-|  | Chiding that tongue that ever sweet |  |
-|  | Was used in giving gentle doom, |  |
-|  | And taught it thus anew to greet: |  |
+| তখনই তার দিলের ভিতর দয়া এলো নেমে, | Straight in her heart did mercy come, |  |
+| বকল সেই জিভকে যা চিরকাল মিষ্টি থেকে | Chiding that tongue that ever sweet |  |
+| নরম রায় দিতেই অভ্যস্ত ছিল যা প্রেমে, | Was used in giving gentle doom, |  |
+| আর নতুন করে শেখাল সম্ভাষণটা, ডেকে: | And taught it thus anew to greet: |  |
 | | | |
-|  | ‘I hate’ she altered with an end |  |
-|  | That followed it as gentle day |  |
-|  | Doth follow night who, like a fiend, |  |
-|  | From heaven to hell is flown away. |  |
+| ‘আমি ঘৃণা করি’ সে বদলাল নতুন এক শেষে | ‘I hate’ she altered with an end |  |
+| যা তার পিছে পিছে এলো, যেমন মৃদু দিন আসে | That followed it as gentle day |  |
+| রাতের পিছু পিছু, যে রাত এক পিশাচের বেশে | Doth follow night who, like a fiend, |  |
+| স্বর্গ থেকে উড়ে চলে যায় নরকেরই পাশে। | From heaven to hell is flown away. |  |
 | | | |
-|  | I hate', from hate away she threw, |  |
-|  | And saved my life, saying ‘not you.’ |  |
+| ‘আমি ঘৃণা করি’ থেকে ঘৃণাটাকে ছুঁড়ে ফেলল সে, | I hate', from hate away she threw, |  |
+| বাঁচাল সে আমার প্রাণ, বলে ‘তোমাকে নয়’ হেসে। | And saved my life, saying ‘not you.’ |  |
 | | | |
 | হতভাগা আত্মা, আমার পাপের পৃথিবীর কেন্দ্র, | Poor soul, the centre of my sinful earth, | 146 |
-| [         ] এই বিদ্রোহী শক্তিরা যাকে ঢাকে; | [       ] these rebel powers that thee array; |  |
+| ক্রীতদাস, এই বিদ্রোহী শক্তিরা যাকে ঢাকে; | [       ] these rebel powers that thee array; |  |
 | কেন ভিতরে ভিতরে পোড়ো বা অভাব ভোগ করো | Why dost thou pine within and suffer dearth, |  |
 | রঙ করে বাইরের দেয়াল এমন দামি সুখে? | Painting thy outward walls so costly gay? |  |
 | | | |
@@ -616,41 +616,41 @@ lang: en
 | কিন্তু, প্রেম, করো ঘৃণা; এখন তোমার মন জানি। | But, love, hate on; for now I know thy mind. |  |
 | তোমাকে যারা দেখে ভালোবাসে, আমার চোখে ছানি। | Those that can see thou lov’st, and I am blind. |  |
 | | | |
-|  | O, from what power hast thou this powerful might | 150 |
-|  | With insufficiency my heart to sway? |  |
-|  | To make me give the lie to my true sight, |  |
-|  | And swear that brightness doth not grace the day? |  |
+| ও, কোন শক্তি থেকে পেলে এই প্রবল ক্ষমতা, | O, from what power hast thou this powerful might | 150 |
+| অপূর্ণতা দিয়ে আমার এ দিলকে দোলাবার? | With insufficiency my heart to sway? |  |
+| যাতে মিথ্যুক বলি আমার চোখের সত্যতা, | To make me give the lie to my true sight, |  |
+| শপথ করি যে দিনকে শোভা দেয় না আলো তার? | And swear that brightness doth not grace the day? |  |
 | | | |
-|  | Whence hast thou this becoming of things ill, |  |
-|  | That in the very refuse of thy deeds |  |
-|  | There is such strength and warrantise of skill |  |
-|  | That, in my mind thy worst all best exceeds? |  |
+| কোথা থেকে পেলে তুমি মন্দকে মানায় যে সাজ, | Whence hast thou this becoming of things ill, |  |
+| যে তোমার কর্মের নিছক আবর্জনাতেও | That in the very refuse of thy deeds |  |
+| আছে এমন জোর, দক্ষতার নিশ্চিত কাজ, | There is such strength and warrantise of skill |  |
+| ভাবি তোমার মন্দ ছাড়িয়ে যায় সেরাকেও? | That, in my mind thy worst all best exceeds? |  |
 | | | |
-|  | Who taught thee how to make me love thee more |  |
-|  | The more I hear and see just cause of hate? |  |
-|  | O, though I love what others do abhor, |  |
-|  | With others thou shouldst not abhor my state. |  |
+| কে শিখিয়েছে কিভাবে আরো ভালোবাসাবে তোমায় | Who taught thee how to make me love thee more |  |
+| যত বেশি শুনি ও দেখি ঘৃণার ন্যায্য কারণ? | The more I hear and see just cause of hate? |  |
+| ও, যদিও ভালোবাসি যা অন্যদের ঘৃণা, হায়, | O, though I love what others do abhor, |  |
+| অন্যের সাথে আমার দশা ঘৃণা করা বারণ। | With others thou shouldst not abhor my state. |  |
 | | | |
-|  | If thy unworthiness raised love in me, |  |
-|  | More worthy I to be beloved of thee. |  |
+| তোমার অযোগ্যতা যদি ভরায় প্রেমে এ মন, | If thy unworthiness raised love in me, |  |
+| তবে আমিই যোগ্য হতে তোমার প্রিয়জন। | More worthy I to be beloved of thee. |  |
 | | | |
-|  | Love is too young to know what conscience is, | 151 |
-|  | Yet who knows not conscience is born of love? |  |
-|  | Then, gentle cheater, urge not my amiss, |  |
-|  | Lest guilty of my faults thy sweet self prove. |  |
+| প্রেম খুবই কচি, জানে না সে বিবেক কাকে বলে, | Love is too young to know what conscience is, | 151 |
+| তবু কে না জানে, বিবেক জন্মায় প্রেমের থেকে? | Yet who knows not conscience is born of love? |  |
+| ও মিষ্টি প্রতারক, আমার দোষ ধ’রো না ছলে, | Then, gentle cheater, urge not my amiss, |  |
+| পাছে আমার দোষে দোষী দেখো, প্রিয়, তুমি নিজেকে। | Lest guilty of my faults thy sweet self prove. |  |
 | | | |
-|  | For, thou betraying me, I do betray |  |
-|  | My nobler part to my gross body’s treason. |  |
-|  | My soul doth tell my body that he may |  |
-|  | Triumph in love; flesh stays no farther reason, |  |
+| কারণ, তুমি আমায় ঠকালে, আমিও ঠকাই | For, thou betraying me, I do betray |  |
+| আমার সেরা অংশ স্থূল দেহের বেইমানিতে। | My nobler part to my gross body’s treason. |  |
+| আমার আত্মা বলে দেহকে যে, সে-ও পারে তাই | My soul doth tell my body that he may |  |
+| প্রেমে জিততে; দেহ আর মানে না কোনো যুক্তিতে, | Triumph in love; flesh stays no farther reason, |  |
 | | | |
-|  | But rising at thy name doth point out thee |  |
-|  | As his triumphant prize. Proud of this pride, |  |
-|  | He is contented thy poor drudge to be, |  |
-|  | To stand in thy affairs, fall by thy side. |  |
+| বরং তোমার নাম শুনে উঠে দেখায় তোমায় | But rising at thy name doth point out thee |  |
+| জয়ের পুরস্কার ব’লে। এ গর্বে গর্বিত, | As his triumphant prize. Proud of this pride, |  |
+| সে সন্তুষ্ট তোমার গরিব গোলাম হওয়ায়, | He is contented thy poor drudge to be, |  |
+| তোমার কাজে দাঁড়াতে, তোমার পাশে হতে পতিত। | To stand in thy affairs, fall by thy side. |  |
 | | | |
-|  | No want of conscience hold it that I call |  |
-|  | Her ‘love’ for whose dear love I rise and fall. |  |
+| একে বিবেকের অভাব ভেবো না যদি আমি বলি | No want of conscience hold it that I call |  |
+| তাকে ‘প্রেম’, যার প্রিয় প্রেমে আমি উঠি আর ঢলি। | Her ‘love’ for whose dear love I rise and fall. |  |
 | | | |
 |  | In loving thee thou know’st I am forsworn, | 152 |
 |  | But thou art twice forsworn to me love swearing |  |

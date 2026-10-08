@@ -177,10 +177,99 @@
   }
 
   function openSheet() {
-    if (MQ_NARROW.matches && dictEl) dictEl.classList.add('is-open');
+    if (!dictEl) return;
+    if (MQ_NARROW.matches) dictEl.classList.add('is-open');
+    else setCollapsed(false);            // a lookup always unfolds the panel
   }
   function closeSheet() {
-    if (dictEl) dictEl.classList.remove('is-open');
+    if (!dictEl) return;
+    if (MQ_NARROW.matches) dictEl.classList.remove('is-open');
+    else setCollapsed(true);
+  }
+
+  /* ── Desktop panel geometry — foldable, and resizable by its seam ──────
+     Both remembered in localStorage (per browser). The width lives in
+     --book-dict-w on <html>; book.css lays the panel out from it. */
+  var KEY_W = 'book-dict-w', KEY_FOLD = 'book-dict-folded';
+  var DICT_MIN = 240, DICT_MAX_FRAC = 0.6, DICT_DEFAULT = 344;   // px
+  var reopenBtn = $('dict-reopen');
+
+  function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, String(v)); } catch (e) {} }
+  function recall(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+  function setCollapsed(on) {
+    document.body.classList.toggle('dict-collapsed', !!on);
+    if (reopenBtn) reopenBtn.hidden = !on;
+    store(KEY_FOLD, on ? '1' : null);
+  }
+
+  function clampW(px) {
+    var max = Math.max(DICT_MIN, Math.floor(window.innerWidth * DICT_MAX_FRAC));
+    return Math.min(max, Math.max(DICT_MIN, Math.round(px)));
+  }
+
+  function setWidth(px, persist) {
+    if (px == null) {
+      document.documentElement.style.removeProperty('--book-dict-w');
+      if (persist) store(KEY_W, null);
+      return;
+    }
+    px = clampW(px);
+    document.documentElement.style.setProperty('--book-dict-w', px + 'px');
+    if (persist) store(KEY_W, px);
+  }
+
+  function setupPanelGeometry() {
+    if (!dictEl || !LANG) return;
+    var grip = $('book-dict-grip');
+
+    var w = parseInt(recall(KEY_W), 10);
+    if (w) setWidth(w, false);
+    if (recall(KEY_FOLD) === '1') setCollapsed(true);
+    else if (reopenBtn) reopenBtn.hidden = true;
+
+    if (reopenBtn) reopenBtn.addEventListener('click', function () { setCollapsed(false); });
+
+    if (!grip) return;
+    var dragging = false, startX = 0, startW = 0;
+
+    grip.addEventListener('pointerdown', function (ev) {
+      if (MQ_NARROW.matches) return;
+      dragging = true;
+      startX = ev.clientX;
+      startW = dictEl.getBoundingClientRect().width;
+      document.body.classList.add('dict-resizing');
+      grip.setPointerCapture(ev.pointerId);
+      ev.preventDefault();
+    });
+    grip.addEventListener('pointermove', function (ev) {
+      if (!dragging) return;
+      setWidth(startW + (startX - ev.clientX), false);   // seam moves left → wider
+    });
+    function endDrag(ev) {
+      if (!dragging) return;
+      dragging = false;
+      document.body.classList.remove('dict-resizing');
+      try { grip.releasePointerCapture(ev.pointerId); } catch (e) {}
+      store(KEY_W, clampW(dictEl.getBoundingClientRect().width));
+    }
+    grip.addEventListener('pointerup', endDrag);
+    grip.addEventListener('pointercancel', endDrag);
+    grip.addEventListener('dblclick', function () { setWidth(null, true); });
+
+    // keyboard: ←/→ nudge the seam, Home restores, Enter/Space folds
+    grip.addEventListener('keydown', function (ev) {
+      var cur = dictEl.getBoundingClientRect().width;
+      if (ev.key === 'ArrowLeft')       { setWidth(cur + 24, true); ev.preventDefault(); }
+      else if (ev.key === 'ArrowRight') { setWidth(cur - 24, true); ev.preventDefault(); }
+      else if (ev.key === 'Home')       { setWidth(null, true); ev.preventDefault(); }
+      else if (ev.key === 'Enter' || ev.key === ' ') { setCollapsed(true); ev.preventDefault(); }
+    });
+
+    window.addEventListener('resize', function () {
+      var cur = parseInt(recall(KEY_W), 10);
+      if (cur) setWidth(cur, false);
+    }, { passive: true });
   }
 
   var lookupSeq = 0;
@@ -696,6 +785,7 @@
   /* ── Init ──────────────────────────────────────────────────────────── */
 
   setupDict();
+  setupPanelGeometry();
   setupMeters();
   buildFooterNav();
   setupKeyboard();

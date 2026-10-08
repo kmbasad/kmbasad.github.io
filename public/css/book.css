@@ -44,12 +44,103 @@
 
   .book-dict {
     flex: 0 0 var(--book-dict-w);
+    width: var(--book-dict-w);
+    min-width: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     border-left: 1px solid var(--border);
     background: var(--surface);
   }
 
-  .dict-close { display: none; }
+  /* The seam between the poem and the শব্দকোষ — a drag handle. A hairline
+     at rest; the lapis shows on hover and while dragging. */
+  .book-dict-grip {
+    flex: 0 0 7px;
+    margin-right: -4px;           /* sit over the panel's border */
+    position: relative;
+    z-index: 2;
+    cursor: col-resize;
+    background: transparent;
+  }
+
+  .book-dict-grip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 3px;
+    width: 1px;
+    background: transparent;
+    transition: background var(--dur) var(--ease);
+  }
+
+  .book-dict-grip:hover::before,
+  .book-dict-grip:focus-visible::before,
+  body.dict-resizing .book-dict-grip::before {
+    background: var(--accent);
+  }
+
+  .book-dict-grip:focus-visible { outline: none; }
+
+  body.dict-resizing {
+    cursor: col-resize;
+    user-select: none;
+  }
+
+  body.dict-resizing .book-dict,
+  body.dict-resizing .book-text-panel {
+    pointer-events: none;
+  }
+
+  /* Folded: the panel and its seam leave the room; a small tab on the
+     page's right edge brings it back. */
+  body.dict-collapsed .book-dict,
+  body.dict-collapsed .book-dict-grip {
+    display: none;
+  }
+
+  .dict-reopen {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 310;
+    transform: translateY(-50%);
+    padding: 0.75rem 0.42rem 0.75rem 0.5rem;
+    border: 1px solid var(--accent-mid);
+    border-right: none;
+    border-radius: var(--r) 0 0 var(--r);
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--accent);
+    cursor: pointer;
+    box-shadow: var(--sh-sm);
+    transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  }
+
+  .dict-reopen span {
+    display: block;
+    writing-mode: vertical-rl;
+    font-family: var(--bn-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+
+  .dict-reopen:hover {
+    background: var(--surface);
+    border-color: var(--accent);
+  }
+
+  /* On the desktop the × folds the panel (book.js) — so it stays visible */
+  .dict-close { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+/* The seam and the tab are desktop furniture only */
+@media (max-width: 899px) {
+  .book-dict-grip,
+  .dict-reopen {
+    display: none !important;
+  }
 }
 
 /* ── Tablet & phone: one flowing page ──────────────────────────────────── */
