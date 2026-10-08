@@ -270,9 +270,16 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   scroll column (`data-page-scroll`) and the শব্দকোষ dictionary aside — no chapter head; the
   work's name lives in the menubar breadcrumb, the TOC behind the সূচি key. It loads
   `md-loader.js` + `translation-table.js` + `book.js` with the `config` prop as `TRANS_CONFIG`
-  (`src`, `dict?`, `dictLang: 'la'|'it'|'fa'`, `meters?: { matra: [8,16], feet: true }`,
-  `marginSections?`, `tocStyle?`, `toc`). Desktop is a two-pane reading room; below
-  900px the শব্দকোষ becomes a bottom sheet, and phones read the Bangla alone. **Dev-only
+  (`src`, `dict?`, `dictLang: 'la'|'it'|'fa'|'en'`, `meters?: { matra: [8,16], feet: true }`,
+  `marginSections?`, `tocStyle?`, `toc`). Desktop is a two-pane reading room — the শব্দকোষ
+  **folds** (its ×; a tab on the page's right edge reopens it) and **resizes** by dragging
+  the seam (`.book-dict-grip`; double-click restores, ←/→ nudge), both remembered in
+  localStorage by `setupPanelGeometry()` in `book.js`; below 900px the শব্দকোষ becomes a
+  bottom sheet, and phones read the Bangla alone. A `dict` word-list may be **line-scoped**:
+  a three-column row `| sonnet.line | bn | src |` pairs words within that one line only —
+  rows carry `data-key="sonnet.line"` and `translation-table.js` aligns such a row from
+  `window.TT_DICT_LINES[key]` alone (the Sonnets use this; the older works keep page-wide
+  two-column lists). **Dev-only
   in-browser verse editing** (the `transEditor` integration in `astro.config.mjs` +
   `src/dev/trans-edit.js`): on `npm run dev`, Ctrl+double-click a বাংলা cell to edit it in
   place (rows carry `data-mdline`, their line in the source .md), Ctrl+Enter saves back to
