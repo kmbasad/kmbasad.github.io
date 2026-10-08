@@ -1,0 +1,23 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { translationWorks } from '../../../data/translation-works.js';
+
+const work = translationWorks.find((w) => w.slug === 'sonnets')!;
+---
+
+<Base section="translations"
+  navTitle={work.title} navParentHref="/translations/" navParentLabel="অনুবাদ"
+>
+
+  <div class="main">
+    <h1 class="work-title">{work.title}</h1>
+
+    <div class="listing-box">
+      {work.parts!.map((p) => (
+        <a href={`/translations/sonnets/${p.slug}/`} class="listing-item">
+          <span class="title">{p.title}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

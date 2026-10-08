@@ -9,7 +9,7 @@ Pages. **Wholly public.** Built with **Astro** (static output). Four sections:
 
 - **Panthea** — the published stories of the Panthea epic (written in Bengali).
 - **Pangea** — land of the archive: canonical Bengali texts (e.g. Alaol's *Sapta Paykar*, modernized with parallel English).
-- **Translations** — world literature rendered into Bangla (Hafez's *Divan*, Dante's *Inferno*, Ovid's *Metamorphoses*).
+- **Translations** — world literature rendered into Bangla (Hafez's *Divan*, Dante's *Inferno*, Ovid's *Metamorphoses*, Shakespeare's *Sonnets*).
 - **Trellises** — interactive matrix readings: philosophy/theology (Consciousness, God) and film (Ray, Kiarostami, Chan-wook), with essays.
 
 > The **private workshop** for the Panthea project (drafts, world-bible, copyrighted source
@@ -232,7 +232,19 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   class `tt-secstart` — on phones the label surfaces as a centred line above the verse);
   without it (Alaol) headings stay full `tt-section` rows. Ghazal builds stamp every ghazal
   with `data-toc` = its Bangla numeral, which with `tocStyle: 'grid'` renders the সূচি as a
-  number grid. Renders the parallel table: Bangla · source · line-no (small, English
+  number grid. **`type: sonnet`** (Shakespeare, `public/translations/sonnets/<part>/<part>.md`,
+  four parts ঊষা/দিবা/সন্ধ্যা/নিশা = sonnets 1–38/39–77/78–115/116–154, one dynamic route
+  `src/pages/translations/sonnets/[part].astro`): a number in the `#` column opens a sonnet,
+  blank rows inside it are the quatrain breaks; `buildSonnet` draws a centred gold numeral
+  head row (`tr.sonnet-head`, the সূচি target, `॥ ১ ॥` on phones), the rhyme letters of the
+  scheme (abab cdcd efef gg; 99 is 15 lines, 126 is 12) in the margin column, a stepped-in
+  closing couplet, and **an empty বাংলা cell as a dotted leader** (`.bn-missing`) — a sonnet
+  not yet translated stays in the file with its English and shows as a gap; a head with no
+  Bangla is dimmed. `dictLang: 'en'` gives the শব্দকোষ Wiktionary English + Shakespeare's
+  Words/Etymonline/OED. The text came from the author's Google Sheet "শেকস্পিয়ারের সনেটধারা"
+  (one verse line per row; a verse line is **18 matras of matrabritta**, the English rhyme
+  scheme reproduced in Bangla, register formal modern চলিত); the `.md` files are now the
+  hand-edited source of truth. Renders the parallel table: Bangla · source · line-no (small, English
   numerals). The `.md` is a **real, previewable GFM table** — frontmatter (`title`,
   `type: tercet|ghazal`, `lang: it|la|fa|en`), then `| বাংলা | মূল | # |` rows with a header +
   `|---|` delimiter row (the loader skips both). A `# Title` line renders a prominent chapter

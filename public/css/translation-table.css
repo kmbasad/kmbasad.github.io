@@ -425,6 +425,91 @@
   font-style: italic;
 }
 
+/* ── Sonnet (type: sonnet) ─────────────────────────────────────────────
+   Fourteen lines under a centred gold numeral; the quatrains breathe,
+   the closing couplet steps in, and the Shakespearean rhyme letters
+   (abab cdcd efef gg) ride the margin column in gold italic. A line
+   not yet translated is a dotted leader; a sonnet with none is dimmed
+   at its head so the gap is visible from a distance. */
+.tt-table tr.sonnet-head td {
+  padding: 3.4rem 0.9rem 1.1rem;
+  text-align: center;
+  background: transparent;
+  border: none;
+  white-space: normal;
+}
+
+.tt-table tbody tr:first-child.sonnet-head td {
+  padding-top: 0.6rem;
+}
+
+.tt-table .snum {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--tt-lnum);
+  font-variant-numeric: lining-nums;
+}
+
+/* a hairline either side of the number — the sonnet's rule */
+.tt-table .snum::before,
+.tt-table .snum::after {
+  content: '';
+  width: 3.2rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--tt-rule-strong));
+}
+
+.tt-table .snum::after {
+  background: linear-gradient(to left, transparent, var(--tt-rule-strong));
+}
+
+.tt-table tr.sonnet-head.is-missing .snum { opacity: 0.45; }
+.tt-table tr.sonnet-head.is-partial .snum { opacity: 0.75; }
+
+.tt-table tr[data-sonnet] td {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.tt-table tr[data-sonnet].quatrain-start td {
+  padding-top: 1.05rem;
+}
+
+.tt-table tr.sonnet-head + tr[data-sonnet].quatrain-start td {
+  padding-top: 0.1rem;
+}
+
+/* the volta's answer: the couplet steps in by an em */
+.tt-table tr.sonnet-couplet td.bn,
+.tt-table tr.sonnet-couplet td.en {
+  padding-left: 1.9rem;
+}
+
+/* rhyme letter in the margin — gold, italic, tabular */
+.tt-table td.ln-col .rhyme {
+  display: inline-block;
+  min-width: 1em;
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  opacity: 0.85;
+}
+
+/* an untranslated line: a dotted leader the width of the column */
+.tt-table .bn-missing {
+  display: inline-block;
+  width: 14rem;
+  max-width: 100%;
+  height: 1em;
+  vertical-align: baseline;
+  border-bottom: 1px dotted rgba(169, 124, 24, 0.55);
+}
+
 /* ── Responsive: tablet ───────────────────────────────── */
 @media (max-width: 900px) {
   .tt-table td {
@@ -536,6 +621,37 @@
     letter-spacing: 0.08em;
     color: var(--tt-lnum);
   }
+
+  /* Sonnets: the head is a centred ॥ number ॥ manuscript mark; rhyme
+     letters are desktop marginalia and go */
+  .tt-table tr.sonnet-head td.bn {
+    padding: 2.3rem var(--m-read-pad) 0.7rem;
+    text-align: center;
+    overflow: visible;
+  }
+
+  .tt-table tbody tr:first-child.sonnet-head td.bn { padding-top: 0.6rem; }
+
+  .tt-table .snum { font-size: 0; gap: 0; }
+  .tt-table .snum::before,
+  .tt-table .snum::after { display: none; }
+
+  .tt-table .snum::before {
+    display: inline;
+    content: '॥ ' attr(data-bn) ' ॥';
+    width: auto;
+    height: auto;
+    background: none;
+    font-family: var(--bn-font);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--tt-lnum);
+  }
+
+  .tt-table tr[data-sonnet].quatrain-start td.bn { padding-top: 0.9rem; }
+  .tt-table tr.sonnet-head + tr[data-sonnet].quatrain-start td.bn { padding-top: 0.12rem; }
+  .tt-table tr.sonnet-couplet td.bn { padding-left: calc(var(--m-read-pad) + 1.2rem); }
 
   /* Chapter title */
   .tt-table tr.tt-title td {

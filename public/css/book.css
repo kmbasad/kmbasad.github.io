@@ -147,7 +147,8 @@
 
 /* Source-language words invite the শব্দকোষ */
 body.book-has-dict .tt-table td.it .w,
-body.book-has-dict .tt-table td.fa .w {
+body.book-has-dict .tt-table td.fa .w,
+body.book-has-dict .tt-table td.en .w {
   cursor: pointer;
 }
 

@@ -1,0 +1,52 @@
+---
+/**
+ * One reading page per watch of the sonnet sequence (ঊষা · দিবা · সন্ধ্যা ·
+ * নিশা). The data file sits at public/translations/sonnets/<part>/<part>.md,
+ * so the page's own URL resolves the relative `src`. The prev/next keys in
+ * the footer walk the four parts in catalogue order.
+ */
+import Base from '../../../layouts/Base.astro';
+import BookReader from '../../../components/BookReader.astro';
+import { translationWorks } from '../../../data/translation-works.js';
+
+export function getStaticPaths() {
+  const work = translationWorks.find((w) => w.slug === 'sonnets')!;
+  return work.parts!.map((p, i) => ({
+    params: { part: p.slug },
+    props: {
+      work,
+      part: p,
+      prev: i > 0 ? work.parts![i - 1] : null,
+      next: i < work.parts!.length - 1 ? work.parts![i + 1] : null,
+    },
+  }));
+}
+
+const { work, part, prev, next } = Astro.props;
+---
+
+<Base
+  section="translations"
+  bodyClass="book-page sonnet-page"
+  styles={['/css/translation-table.css', '/css/book.css']}
+  navTitle={part.title} navParentHref="/translations/sonnets/" navParentLabel={work.title}
+  tocStyle="grid"
+>
+  <Fragment slot="head">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </Fragment>
+
+  <BookReader
+    config={{
+      src: `${part.slug}.md`,
+      dictLang: 'en',
+      tocStyle: 'grid',
+      toc: '/translations/sonnets/',
+      prev: prev ? `/translations/sonnets/${prev.slug}/` : '',
+      next: next ? `/translations/sonnets/${next.slug}/` : '',
+    }}
+  />
+</Base>

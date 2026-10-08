@@ -32,4 +32,15 @@ export const translationWorks = [
       { slug: 'prathama', title: 'প্রথমা: গজল ১ থেকে ৩৩' },
     ],
   },
+  {
+    slug: 'sonnets',
+    title: 'শেকস্পিয়ারের সনেটধারা',
+    // the four watches of the day the author sorted the 154 sonnets into
+    parts: [
+      { slug: 'usha',    title: 'ঊষা: সনেট ১ থেকে ৩৮',      from: 1,   to: 38 },
+      { slug: 'diba',    title: 'দিবা: সনেট ৩৯ থেকে ৭৭',    from: 39,  to: 77 },
+      { slug: 'sandhya', title: 'সন্ধ্যা: সনেট ৭৮ থেকে ১১৫', from: 78,  to: 115 },
+      { slug: 'nisha',   title: 'নিশা: সনেট ১১৬ থেকে ১৫৪',  from: 116, to: 154 },
+    ],
+  },
 ];

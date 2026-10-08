@@ -180,7 +180,11 @@
 
   for (var ti = 0; ti < tables.length; ti++) {
     var table = tables[ti];
-    var firstRow = table.querySelector("tbody tr");
+    // The first *verse* row sets the column shape — a sonnet head (one
+    // spanning cell) must not be read as a one-column table.
+    var firstRow = Array.from(table.querySelectorAll("tbody tr")).find(function (r) {
+      return r.querySelectorAll("td").length >= 2;
+    });
     if (!firstRow) continue;
 
     // Detect language columns (DOM order)

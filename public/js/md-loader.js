@@ -197,6 +197,7 @@
 
   /* ── render ────────────────────────────────────────────────────── */
   if (type === 'ghazal') buildGhazal(records, colCls);
+  else if (type === 'sonnet') buildSonnet(records, colCls);
   else buildTercet(records, colCls);
 
   if (window.TranslationTable && typeof window.TranslationTable.init === 'function') {
@@ -371,6 +372,71 @@
           '<td class="bn">' + bn + '</td>' +
           '<td class="' + langCls + '">' + src + '</td>' +
           '<td class="ln-col">' + lbl + '</td></tr>';
+      }
+    }
+    tbody.innerHTML = html;
+  }
+
+  /* ── SONNET: a number in the # column opens a sonnet; blank rows inside
+     it are the quatrain breaks. Each sonnet gets a head row (its number,
+     centred — the সূচি target), fourteen verse rows carrying the rhyme
+     letter of the Shakespearean scheme (abab cdcd efef gg) in the margin
+     column, a `quatrain-start` on lines 1/5/9/13 and `sonnet-couplet` on
+     13–14. An empty বাংলা cell is a line not yet translated: it is drawn
+     as a dotted leader (.bn-missing) and the sonnet head is marked. ──── */
+  function buildSonnet(records, langCls) {
+    var tbody = document.querySelector('.tt-table tbody');
+    if (!tbody) return;
+
+    function toBn(n) {
+      return String(n).replace(/[0-9]/g, function (d) { return '০১২৩৪৫৬৭৮৯'[+d]; });
+    }
+    // rhyme letters by line count: the Shakespearean 14; 99 runs to 15
+    // (ababa cdcd efef gg); 126 is six couplets
+    var SCHEMES = { 14: 'ababcdcdefefgg', 15: 'ababacdcdefefgg', 12: 'aabbccddeeff' };
+
+    // group: a numbered row starts a sonnet; a blank inside one marks a gap
+    var sonnets = [], cur = null, gapNext = false;
+    for (var i = 0; i < records.length; i++) {
+      var r = records[i];
+      if (r.blank) { gapNext = true; continue; }
+      if (r.heading || r.title || r.marker) continue;
+      if (r.num || !cur) {
+        cur = { num: r.num || String(sonnets.length + 1), rows: [] };
+        sonnets.push(cur);
+        gapNext = false;
+      }
+      r.gapBefore = gapNext && cur.rows.length > 0;
+      gapNext = false;
+      cur.rows.push(r);
+    }
+
+    var html = '';
+    for (var si = 0; si < sonnets.length; si++) {
+      var s = sonnets[si], n = s.num;
+      var missing = s.rows.filter(function (x) { return !x.bn; }).length;
+      var state = missing === 0 ? '' : (missing === s.rows.length ? ' is-missing' : ' is-partial');
+
+      html += '<tr class="sonnet-head' + state + '" id="s' + esc(n) + '" data-toc="' + toBn(esc(n)) + '"' +
+        ' data-sonnet="' + esc(n) + '">' +
+        '<td class="bn" colspan="' + (noSource ? 2 : 3) + '">' +
+        '<span class="snum" data-bn="' + toBn(esc(n)) + '">' + esc(n) + '</span></td></tr>';
+
+      for (var li = 0; li < s.rows.length; li++) {
+        var v = s.rows[li];
+        var cls = [];
+        if (li === 0 || v.gapBefore) cls.push('quatrain-start');
+        if (s.rows.length >= 14 && li >= s.rows.length - 2) cls.push('sonnet-couplet');
+        if (!v.bn) cls.push('line-missing');
+        var attrs = ' data-sonnet="' + esc(n) + '"';
+        if (v.srcLine != null) attrs += ' data-mdline="' + v.srcLine + '"';
+        var bnHtml = v.bn ? esc(v.bn)
+          : '<span class="bn-missing" role="img" aria-label="অনূদিত হয়নি"></span>';
+        var rhyme = (SCHEMES[s.rows.length] || '').charAt(li);
+        html += '<tr class="' + cls.join(' ') + '"' + attrs + '>' +
+          '<td class="bn">' + bnHtml + '</td>' +
+          (noSource ? '' : '<td class="' + langCls + '">' + esc(v.src) + '</td>') +
+          '<td class="ln-col"><span class="rhyme">' + rhyme + '</span></td></tr>';
       }
     }
     tbody.innerHTML = html;

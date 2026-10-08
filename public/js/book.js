@@ -18,7 +18,7 @@
  *   · Footer nav (আগের / সূচিপত্র / পরের) + Ctrl←/→ chapter keys.
  *
  * Config (window.TRANS_CONFIG, shared with md-loader.js):
- *   dictLang: 'la' | 'it' | 'fa'   — the source language of this page
+ *   dictLang: 'la' | 'it' | 'fa' | 'en'   — the source language of this page
  *   meters:   { matra: [8,16], feet: true }   — which toggles to offer
  *   toc, prev, next, tocLabel      — footer navigation
  */
@@ -55,6 +55,16 @@
         ['Treccani',      function (w) { return 'https://www.treccani.it/vocabolario/ricerca/' + eu(w) + '/'; }],
         ['WordReference', function (w) { return 'https://www.wordreference.com/definizione/' + eu(w); }],
         ['Wiktionary',    function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#Italian'; }]
+      ]
+    },
+    en: {
+      wikt: 'English',
+      hint: 'শেকস্পিয়ারের যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
+      links: [
+        ['Shakespeare’s Words', function (w) { return 'https://www.shakespeareswords.com/Public/Glossary.aspx?letter=' + eu(w.charAt(0).toLowerCase()) + '&q=' + eu(w); }],
+        ['Etymonline', function (w) { return 'https://www.etymonline.com/search?q=' + eu(w); }],
+        ['OED',        function (w) { return 'https://www.oed.com/search/dictionary/?q=' + eu(w); }],
+        ['Wiktionary', function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#English'; }]
       ]
     },
     fa: {
