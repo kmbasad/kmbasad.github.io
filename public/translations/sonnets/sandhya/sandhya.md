@@ -586,7 +586,7 @@ lang: en
 | হায় এটা সত্য যে আমি গিয়েছি এখানে সেখানে | Alas, 'tis true I have gone here and there | 110 |
 | আর নিজেকে করেছি অনেকের হাসির পাত্র, | And made myself a motley to the view, |  |
 | করেছি চিন্তার ক্ষতি প্রিয়কে বেচে সস্তা দোকানে, | Gored mine own thoughts, sold cheap what is most dear, |  |
-| প্রাচীন অনেক পাপ করেছি নতুন | Made old offences of affections new; |  |
+| নতুন প্রেমে পুরোনো পাপই ঘটিয়েছি মাত্র। | Made old offences of affections new; |  |
 | | | |
 | এও খুব সত্য যে সত্যকে দেখেছি এমন | Most true it is that I have look'd on truth |  |
 | বাঁকা চোখে, অচেনার মতো: তবে খোদার কসম, | Askance and strangely: but, by all above, |  |
