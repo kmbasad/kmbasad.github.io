@@ -100,6 +100,8 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
     {styles.map((href) => <link rel="stylesheet" href={href} />)}
 
     <script is:inline defer src="/js/site.js"></script>
+    {/* dev only: Ctrl+click any text to edit it in place (src/dev/edit.js) */}
+    {import.meta.env.DEV && <script is:inline defer src="/__edit/edit.js"></script>}
 
     <slot name="head" />
   </head>

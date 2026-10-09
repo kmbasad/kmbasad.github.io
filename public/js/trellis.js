@@ -796,7 +796,8 @@
     function inlineMarkup(s) {
       return s
         .replace(/\[([^\]]+)\]\(#(?:(\d+)-)?(\d)(\d)\)/g, function (_, t, m, r, c) {
-          return '<a class="cell-ref" href="#mx-' + (m || 1) + '" data-mx="' + (m || 1) +
+          return '<a class="cell-ref" href="#mx-' + (m || 1) + '" data-ref="' + (m ? m + '-' : '') + r + c +
+            '" data-mx="' + (m || 1) +
             '" data-r="' + r + '" data-c="' + c + '">' + t +
             '<span class="cell-ref-num">' + r + c + '</span></a>';
         })

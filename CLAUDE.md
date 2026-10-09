@@ -267,6 +267,22 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   matrix — which `renderEssay` turns into `a.cell-ref` links that open that cell's panel over
   the essay.
 
+### The in-place editor (dev only)
+
+On `npm run dev`, **Ctrl+click any text on any page** and it becomes editable where it stands:
+a caret appears at the click and nothing else changes. **Ctrl+Enter** writes it back to its
+source file and the page stays put (the dev server's reload is held back), **Esc** cancels,
+Enter adds a line only inside a multi-line verse. One client, `src/dev/edit.js`, loaded by
+`Base.astro` in DEV only; one integration, `inPlaceEditor` in `astro.config.mjs`, with two
+endpoints. **Verses** (Translations, Pangea) go by `data-mdline`: the clicked cell, Bangla *or*
+the source column (Pangea's English, OCR'd Bangla, a sonnet's English), is written into those
+exact `.md` table lines. **Everything else** (essays, trellis panels, Panthea stories, text
+written straight into an `.astro` page) is rendered back to Markdown (`*em*`, `**strong**`,
+cell links via `data-ref`) and found once in the page's own sources, then in the site's
+(`public/{translations,pangea,trellises}`, `src/{stories,pages,components,layouts,data}`);
+several matches are refused unless exactly one is a whole line, heading label or quoted value.
+None of it ships: no endpoint, no script and no `data-md` attribute in the production build.
+
 ## Page patterns
 
 - **Translation page** — one `<BookReader …/>` (`src/components/BookReader.astro`) inside
@@ -284,12 +300,7 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   a three-column row `| sonnet.line | bn | src |` pairs words within that one line only —
   rows carry `data-key="sonnet.line"` and `translation-table.js` aligns such a row from
   `window.TT_DICT_LINES[key]` alone (the Sonnets use this; the older works keep page-wide
-  two-column lists). **Dev-only
-  in-browser verse editing** (the `transEditor` integration in `astro.config.mjs` +
-  `src/dev/trans-edit.js`): on `npm run dev`, Ctrl+double-click a বাংলা cell to edit it in
-  place (rows carry `data-mdline`, their line in the source .md), Ctrl+Enter saves back to
-  `public/translations/**.md` and reloads at the same scroll position, Esc cancels — none of
-  it ships in the production build. (`book-i-prose.md` beside the Metamorphoses source is an
+  two-column lists). Editable in place on `npm run dev` (see *The in-place editor*). (`book-i-prose.md` beside the Metamorphoses source is an
   unrendered archive of the literal prose crib from the retired books workshop.)
 - **Pangea chapter** — empty `<table class="tt-table">` inside a centred `.pangea-page` (narrow
   blended column, no image panel); set `TRANS_CONFIG` (`noSource: true` for Bengali-only chapters);
@@ -305,11 +316,7 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   time** (imported in `index.astro` / globbed in `PantheaFloor.astro`). Conventions instead of
   HTML: first paragraph = lede, `*…*` inside a heading = the small floor-range tag
   (`### মারিনা *তলা ১–১০০*`), a `>` blockquote = the italic coda — styled in
-  `public/css/panthea.css`. **Dev-only in-browser editing** (the `pantheaEditor` integration in
-  `astro.config.mjs` + `src/dev/panthea-edit.js`): on `npm run dev`, Ctrl+double-click a story
-  panel to open its Markdown in place at the clicked paragraph, Ctrl+Enter saves to disk and
-  reloads at the same spot, Esc cancels. None of this ships in the production build — no
-  endpoints, no `data-md` attribute, no editor script. The story container carries
+  `public/css/panthea.css`. Editable in place on `npm run dev` like everything else (see *The in-place editor*). The story container carries
   `data-toc-scan="h2, h3"`, which is the whole of Panthea's সূচি — a floor whose Markdown does
   not exist has no headings and so no সূচি key.
 - **Panthea chrome** — there is **no second bar under the menubar**; the old `.pn-topbar` is
