@@ -1,35 +1,31 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import Painting from '../../../components/Painting.astro';
 import { alaolChapters } from '../../../data/alaol-chapters.js';
 import { pangeaWorks } from '../../../data/pangea-works.js';
+import { compositions, INK } from '../../../data/compositions.js';
 
 const work = pangeaWorks.find((w) => w.slug === 'alaol-sapta-paykar')!;
+// seven planes for the seven pavilions: see compositions.js
+const art = compositions['alaol-sapta-paykar'];
 ---
 
-<Base title={work.title} section="pangea"
+<Base title={work.title} section="pangea" bodyClass="painting-page" styles={['/css/painting.css']}
   navTitle="সপ্ত পয়কর" navParentHref="/pangea/" navParentLabel="প্যাঞ্জিয়া"
 >
-  <Fragment slot="head">
-    <style is:global>
-      .alaol-listing .listing-item .title { font-family: var(--bn-font); letter-spacing: 0; }
-      .alaol-listing .listing-item .desc {
-        letter-spacing: 0.04em; text-transform: uppercase; font-style: normal;
-      }
-    </style>
-  </Fragment>
-
-  <div class="main">
-    <h1 class="work-title">{work.title}</h1>
-
-    <div class="listing-box alaol-listing">
-      {
-        alaolChapters.map((c) => (
-          <a class="listing-item" href={`/pangea/alaol-sapta-paykar/${c.slug}/`}>
-            <span class="title">{c.bn}</span>
-            <span class="desc">{c.en}</span>
+  <Painting planes={art.planes} sheet={art.sheet} gap={12} ground={INK} label={art.label}>
+    <h1>{work.title}</h1>
+    <ul class="pt-list">
+      {alaolChapters.map((c) => (
+        <li>
+          <a href={`/pangea/alaol-sapta-paykar/${c.slug}/`} style={`--m:${art.pavilions[c.slug.split('-')[1]] ?? art.marks[0]}`}>
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{c.bn}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+            <span class="pt-desc">{c.en}</span>
           </a>
-        ))
-      }
-    </div>
-  </div>
+        </li>
+      ))}
+    </ul>
+  </Painting>
 </Base>

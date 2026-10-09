@@ -1,19 +1,46 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Painting from '../../components/Painting.astro';
 import { pangeaWorks } from '../../data/pangea-works.js';
+
+// After Mondrian, "Composition with Large Red Plane, Yellow, Black, Gray and
+// Blue" (1921): a large red plane, settled greys, a yellow corner, a black
+// block and a blue one, heavy black lines. The archive's works are listed in
+// the long white plane between the greys and the red.
+const TITLE = 'প্যাঞ্জিয়া';
+const R = '#c23b2e', Y = '#e8c444', B = '#2b4f8c', G = '#c8c8c2', G2 = '#d9d8d2', W = '#f1eee5', K = '#141518';
+// a plane with no part in the phone composition is parked under the sheet
+const UNDER = [0, 0, 40, 40];
+const planes = [
+  { bg: G, d: [0, 0, 18, 26], p: UNDER },
+  { bg: G2, d: [0, 26, 18, 40], p: UNDER },
+  { bg: Y, d: [0, 66, 18, 34], p: [86, 40, 14, 20] },
+  { bg: W, d: [18, 0, 40, 100], p: UNDER },
+  { bg: R, d: [58, 0, 30, 60], p: [86, 0, 14, 40] },
+  { bg: G2, d: [88, 0, 12, 22], p: UNDER },
+  { bg: W, d: [88, 22, 12, 38], p: UNDER },
+  { bg: W, d: [58, 60, 30, 40], p: UNDER },
+  { bg: K, d: [88, 60, 12, 14], p: [86, 60, 14, 10] },
+  { bg: B, d: [88, 74, 12, 26], p: [86, 70, 14, 30] },
+];
+const MARKS = [R, Y, B, K];
 ---
 
-<Base title="প্যাঞ্জিয়া" section="pangea">
-
-  <div class="main">
-    <h1 class="work-title">প্যাঞ্জিয়া</h1>
-    <div class="listing-box">
-      {pangeaWorks.map((w) => (
-        <a class="listing-item" href={`/pangea/${w.slug}/`}>
-          <span class="title">{w.title}</span>
-          {w.desc && <span class="desc">{w.desc}</span>}
-        </a>
+<Base title={TITLE} section="pangea" bodyClass="painting-page" styles={['/css/painting.css']}>
+  <Painting planes={planes} sheet={{ d: [18, 40], p: [0, 86] }} gap={12} ground={K}
+            label="Mondrian, Composition with Large Red Plane, Yellow, Black, Gray and Blue (1921)">
+    <h1>{TITLE}</h1>
+    <ul class="pt-list">
+      {pangeaWorks.map((w, i) => (
+        <li>
+          <a href={`/pangea/${w.slug}/`} style={`--m:${MARKS[i % MARKS.length]}`}>
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{w.title}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+            {w.desc && <span class="pt-desc">{w.desc}</span>}
+          </a>
+        </li>
       ))}
-    </div>
-  </div>
+    </ul>
+  </Painting>
 </Base>

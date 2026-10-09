@@ -56,6 +56,35 @@
       }
     }
 
+    /* — the burger (phones): the sheet comes down over the whole screen — */
+    var burger = nav.querySelector('.nav-burger');
+    var sheet = document.getElementById('nav-sheet');
+    var root = document.documentElement;
+    if (burger && sheet) {
+      var setSheet = function (open) {
+        root.classList.toggle('sheet-open', open);
+        burger.setAttribute('aria-expanded', String(open));
+        burger.setAttribute('aria-label', open ? 'মেনু বন্ধ' : 'মেনু');
+        sheet.setAttribute('aria-hidden', String(!open));
+      };
+      burger.addEventListener('click', function () {
+        setSheet(!root.classList.contains('sheet-open'));
+      });
+      sheet.addEventListener('click', function (e) {
+        if (e.target.closest('a') || e.target === sheet) setSheet(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && root.classList.contains('sheet-open')) {
+          setSheet(false);
+          burger.focus();
+        }
+      });
+      /* grown past the phone breakpoint with the sheet open: let it go */
+      window.matchMedia('(min-width: 761px)').addEventListener('change', function (m) {
+        if (m.matches) setSheet(false);
+      });
+    }
+
     /* — the bar answers the scroll —
        It narrows and firms up as soon as the paper moves, and draws how far
        through the page you are along its edge. It stays put throughout.
@@ -76,10 +105,12 @@
       var t = e && e.target;
       src = (t && t.nodeType === 1 && t !== docEl && t !== document.body) ? t : null;
       var y = src ? src.scrollTop : window.scrollY;
-      lastY = y < 0 ? 0 : y;
+      y = y < 0 ? 0 : y;
 
-      nav.classList.toggle('is-scrolled', lastY > 6);
-      docEl.classList.toggle('nav-tight', lastY > 6);
+      nav.classList.toggle('is-scrolled', y > 6);
+      docEl.classList.toggle('nav-tight', y > 6);
+
+      lastY = y;
 
       if (!queued) { queued = true; requestAnimationFrame(readProgress); }
     }
@@ -277,12 +308,11 @@
         });
       }
     } else {
-      /* No breadcrumb on this page — but the সূচি still belongs to the left
-         cluster, never to the section names on the right. Sit it directly
-         after the mark, where the gilt key would have been. */
-      var mark = bar.querySelector('.nav-mark');
-      if (mark && mark.nextSibling) bar.insertBefore(tocKey, mark.nextSibling);
-      else bar.insertBefore(tocKey, bar.firstChild);
+      /* No breadcrumb on this page — but the সূচি is still this page's, so
+         it sits in the page's half of the bar, after the divider. */
+      var pageSide = bar.querySelector('.nav-page');
+      if (pageSide) pageSide.appendChild(tocKey);
+      else bar.appendChild(tocKey);
     }
     tocKey.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -344,6 +374,26 @@
        own সূচি targets. (`md-loader-done` stays as md-loader's own event:
        book.js and the dev verse editor listen for it.) */
     document.addEventListener('content-ready', buildTOC);
+
+    /* A link to a place that is only built after load (a matrix, a ghazal,
+       a sonnet: #mx-1, #g12, #s40) lands nowhere on first paint, because
+       the browser looks for it too early. Once the content is in, go there
+       — once, and only if the reader has not scrolled meanwhile. */
+    var wantHash = location.hash && location.hash.length > 1 ? location.hash.slice(1) : '';
+    var startY = window.scrollY;
+    document.addEventListener('content-ready', function goToHash() {
+      if (!wantHash) return;
+      var el = document.getElementById(decodeURIComponent(wantHash));
+      if (!el) return;
+      document.removeEventListener('content-ready', goToHash);
+      var col = document.querySelector('[data-page-scroll]');
+      if ((col ? col.scrollTop : window.scrollY) !== startY && window.scrollY !== startY) return;
+      el.scrollIntoView({ block: 'start' });
+      wantHash = '';
+    });
+    /* the content may already be in by the time this script boots */
+    if (wantHash && document.getElementById(decodeURIComponent(wantHash)))
+      document.dispatchEvent(new CustomEvent('content-ready'));
 
     /* Registered once, not per build: a rebuild replaces the key and the
        panel, so handlers bound inside buildTOC would pile up and the stale

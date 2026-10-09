@@ -1,0 +1,57 @@
+---
+// A sparing Mondrian at the edges of a reading page: one thin strip down
+// each side of the screen, a few planes in it (mostly paper and grey, one
+// colour each), divided by black lines and closed by a black line on the
+// side that faces the text. It frames a centred column the way a Mondrian
+// frames its centre, and keeps well away from the words: wide screens only.
+interface Props { seed?: string }
+const { seed = 'edge' } = Astro.props;
+
+const PALE = ['#f2efe6', '#e6e3dc', '#d7d5d0', '#ece6d6'];
+const BRIGHT = ['#c8302c', '#1f3f8a', '#efc93a'];
+let h = [...seed].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
+const rnd = () => ((h = (h * 1103515245 + 12345) % 2147483648) / 2147483648);
+
+// one strip: five or six planes of varied height, one of them bright
+const strip = () => {
+  const n = 5 + Math.floor(rnd() * 2);
+  const bright = Math.floor(rnd() * n);
+  const weights = Array.from({ length: n }, () => 0.6 + rnd() * 1.6);
+  const total = weights.reduce((a, b) => a + b, 0);
+  return weights.map((w, i) => ({
+    h: ((w / total) * 100).toFixed(2),
+    c: i === bright ? BRIGHT[Math.floor(rnd() * BRIGHT.length)] : PALE[Math.floor(rnd() * PALE.length)],
+  }));
+};
+const left = strip(), right = strip();
+---
+
+<div class="m-edge m-edge--left" aria-hidden="true">
+  {left.map((p) => <span style={`height:${p.h}%;background:${p.c}`}></span>)}
+</div>
+<div class="m-edge m-edge--right" aria-hidden="true">
+  {right.map((p) => <span style={`height:${p.h}%;background:${p.c}`}></span>)}
+</div>
+
+<style is:global>
+  .m-edge {
+    position: fixed;
+    top: calc(var(--nav-now) + var(--m-rule));
+    bottom: 0;
+    z-index: 0;
+    width: 22px;
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    background: #141518;
+    pointer-events: none;
+  }
+
+  .m-edge--left { left: 0; border-right: 3px solid #141518; }
+  .m-edge--right { right: 0; border-left: 3px solid #141518; }
+  .m-edge span { display: block; flex: none; }
+
+  @media (min-width: 1100px) {
+    .m-edge { display: flex; }
+  }
+</style>

@@ -1,10 +1,10 @@
 ---
-// The 1000 tower floors — /panthea/minar/1/ … /panthea/minar/1000/
+// The 700 tower floors — /panthea/minar/1/ … /panthea/minar/700/
 import PantheaFloor from '../../../components/PantheaFloor.astro';
-import { towerSegmentOf } from '../../../data/panthea-tiers.js';
+import { towerSegmentOf, TOWER_FLOORS } from '../../../data/panthea-tiers.js';
 
 export function getStaticPaths() {
-  return Array.from({ length: 1000 }, (_, i) => ({
+  return Array.from({ length: TOWER_FLOORS }, (_, i) => ({
     params: { floor: String(i + 1) },
   }));
 }

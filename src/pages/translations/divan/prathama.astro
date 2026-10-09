@@ -22,7 +22,7 @@ const part = work.parts!.find((p) => p.slug === 'prathama')!;
     />
   </Fragment>
 
-  <BookReader
+  <BookReader title={part.title} work={work.title}
     config={{
       src: 'prathama.md',
       dict: 'prathama-words.md',

@@ -1,0 +1,53 @@
+---
+// A section page that is a painting. The painting (a Mondrian, or a Klee) is
+// the page's fixed background, a canvas of planes placed in percent of the
+// screen, the ground showing between them as its lines; a plane that touches
+// the screen's edge runs off it, so the painting is never framed in a box.
+//
+// The page's content is not spread over the planes — a section may hold
+// dozens of works, and a plane each would not survive that. It sits in one
+// long white plane of the painting, the "sheet", a column the composition
+// leaves for it (`sheet.d` = [x, w] in percent on desktop, `sheet.p` on
+// phones), bounded by the painting's own lines, and it scrolls over the
+// still painting however long the list grows.
+interface Plane {
+  d: number[];            // [x, y, w, h] in percent, desktop
+  p?: number[];           // the same, phones (defaults to d)
+  bg: string;
+}
+interface Props {
+  planes: Plane[];
+  sheet: { d: number[]; p?: number[] };
+  gap?: number;
+  ground?: string;
+  paper?: string;
+  rule?: string;          // the sheet's ink and rules (defaults to the ground)
+  label?: string;         // the painting's name, for the accessible label
+}
+
+const { planes, sheet, gap = 10, ground = '#141518', paper = '#f2efe6', rule = ground, label = '' } = Astro.props;
+
+// half a line in from each neighbour; at the screen's edge, past it
+const box = (r, k) => {
+  const [x, y, w, h] = r;
+  const L = x <= 0 ? `-${gap}px` : `calc(${x}% + ${gap / 2}px)`;
+  const T = y <= 0 ? `-${gap}px` : `calc(${y}% + ${gap / 2}px)`;
+  const R = x + w >= 100 ? `-${gap}px` : `calc(${100 - x - w}% + ${gap / 2}px)`;
+  const B = y + h >= 100 ? `-${gap}px` : `calc(${100 - y - h}% + ${gap / 2}px)`;
+  return `--${k}l:${L};--${k}t:${T};--${k}r:${R};--${k}b:${B}`;
+};
+const sp = sheet.p ?? sheet.d;
+const sheetStyle =
+  `--sx:${sheet.d[0]}%;--sw:${sheet.d[1]}%;--spx:${sp[0]}%;--spw:${sp[1]}%;` +
+  `--gap:${gap}px;--ground:${ground};--paper:${paper};--rule:${rule}`;
+---
+
+<div class="pt" style={`--gap:${gap}px;--ground:${ground}`} role="img" aria-label={label || undefined}>
+  {planes.map((p) => (
+    <span class="pt-plane" style={`${box(p.d, 'd')};${box(p.p ?? p.d, 'p')};--bg:${p.bg}`}></span>
+  ))}
+</div>
+
+<main class="pt-sheet" style={sheetStyle}>
+  <slot />
+</main>

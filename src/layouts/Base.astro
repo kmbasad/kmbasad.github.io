@@ -1,5 +1,6 @@
 ---
 import NavChevron from '../components/NavChevron.astro';
+import SiteFoot from '../components/SiteFoot.astro';
 
 interface Props {
   title?: string;
@@ -13,6 +14,8 @@ interface Props {
   navGrandParentHref?: string;  // optional grandparent URL
   navGrandParentLabel?: string; // optional grandparent label
   tocStyle?: '' | 'grid';       // সূচি shape: a list of names, or a grid of numbers
+  footPrev?: string | null;     // the foot's ← (dimmed when absent)
+  footNext?: string | null;     // the foot's →
 }
 
 const {
@@ -27,6 +30,8 @@ const {
   navGrandParentHref = '',
   navGrandParentLabel = '',
   tocStyle = '',
+  footPrev = null,
+  footNext = null,
 } = Astro.props;
 
 const isHome = Astro.url.pathname === '/';
@@ -51,16 +56,17 @@ const links = [
   { href: '/trellises/',   label: 'মাচা',       gloss: 'চিন্তার মাচায় লেখা প্রবন্ধ',   active: section === 'trellises' },
 ];
 
-/* The breadcrumb's ancestors, outermost first — minus the section root.
-   The four section names are already in the bar's left cluster with the glide
-   rail resting under the active one, so repeating one as the ladder's top step
-   says nothing twice. It stays in the tab title, where there is no such
-   cluster to read it from. */
-const SECTION_ROOTS = new Set(links.map((l) => l.href));
+/* Each room wears its own tint from the home page's painting, in the bar
+   and in the phone sheet alike; the chosen room wears the deeper one. */
+const TINTS = { '/panthea/': 'blue', '/pangea/': 'pink', '/translations/': 'ochre', '/trellises/': 'sage' };
+
+/* The breadcrumb's ancestors, outermost first, from the section root: the
+   page's half of the bar reads as a whole trail (প্যান্থিয়া › ধাপ ৩ › তলা
+   ২৫১), apart from the site's half where the same section is a room. */
 const ancestors = [
   { href: navGrandParentHref, label: navGrandParentLabel },
   { href: navParentHref,      label: navParentLabel },
-].filter((a) => a.href && a.label && !SECTION_ROOTS.has(a.href));
+].filter((a) => a.href && a.label);
 
 /* The mark — the same graduated limb the home page prints large, cut down to
    an eight-division rose with the zenith dot at its head — the identical
@@ -84,7 +90,7 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
 
-    <!-- Bengali-forward typography (the work is written in Bangla) -->
+    <!-- Bangla type: Noto Serif Bengali for every word on the site, Tiro Bangla for the menubar alone -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -110,7 +116,27 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
     <nav class="nav" id="site-nav">
       <div class="nav-inner">
 
-        <!-- The mark — links home; its dial turns on hover -->
+        <!-- Three things, the middle one at the bar's exact centre: the four
+             rooms (the site), the mark (the way home, and the divider), and
+             this page's trail and controls. On phones the rooms leave for the
+             sheet behind the burger, and the rest sits left-aligned. -->
+        <div class="nav-site">
+          <!-- one solid plane of the painting's lavender, to the screen's edge -->
+          <div class="nav-paint" aria-hidden="true"></div>
+          <div class="nav-links-wrap">
+            <span class="nav-glide" aria-hidden="true"></span>
+            <ul class="nav-links">
+              {links.map((l) => (
+                <li>
+                  <a href={l.href} class:list={[`room-${TINTS[l.href]}`, l.active && 'active']}>{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- the centre of the bar is the way home: the mark, in a wide cell of
+             its own, divides the site (left) from this page (right) -->
         <a class:list={['nav-mark', isHome && 'is-here']} href="/" aria-label="খান মুহাম্মদ বিন আসাদ — প্রথম পাতা">
           <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
             <circle class="nm-ring" cx="50" cy="50" r="42" />
@@ -121,67 +147,69 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
           </svg>
         </a>
 
-        <!-- Beside the mark: where you are. The mark says whose site this is
-             and the breadcrumb says which page — one cluster, read left to
-             right, before any of the site's other rooms are offered. -->
-        {navTitle && (
-          <div class="nav-page-info">
-            {ancestors.map((a) => (
-              <>
-                <a class="nav-parent" href={a.href}>{a.label}</a>
-                <NavChevron />
-              </>
-            ))}
-
-            <!-- a section may step in one more crumb of its own here — it
-                 need not be a link (Panthea's স্তর key opens the floor grid);
-                 it draws its own trailing <NavChevron /> -->
-            <slot name="nav-crumbs" />
-
-            <span class="nav-here">
-              <!-- site.js slots the সূচি inside this gilt key; the whole
-                   key then opens the table of contents. The title is the
-                   default — a section needing controls beside it (Panthea's
-                   ↑ ৫০০ ↓) replaces the whole content, keeping .nav-cur. -->
-              <slot name="nav-here"><span class="nav-cur">{navTitle}</span></slot>
-            </span>
-          </div>
-        )}
-
-        <!-- Far right: the site's four rooms. One glide rail follows the
-             hovered item and rests under the active one. On phones this row
-             hides and the same four rooms live in the tab bar at the foot. -->
-        <div class="nav-right">
-          <div class="nav-links-wrap">
-            <span class="nav-glide" aria-hidden="true"></span>
-            <ul class="nav-links">
-              {links.map((l) => (
-                <li>
-                  <a href={l.href} class={l.active ? 'active' : undefined}>{l.label}</a>
-                </li>
+        <!-- this page: breadcrumb and gilt key; site.js adds the সূচি here
+             (inside the gilt key, or on its own when there is no breadcrumb) -->
+        <div class="nav-page">
+          {!navTitle && isHome && <span class="nav-site-name">{SITE_NAME}</span>}
+          {navTitle && (
+            <div class="nav-page-info">
+              {ancestors.map((a) => (
+                <>
+                  <a class="nav-parent" href={a.href}>{a.label}</a>
+                  <NavChevron />
+                </>
               ))}
-            </ul>
-          </div>
+
+              <!-- a section may step in one more crumb of its own here — it
+                   need not be a link (Panthea's ধাপ key opens the floor grid);
+                   it draws its own trailing <NavChevron /> -->
+              <slot name="nav-crumbs" />
+
+              <span class="nav-here">
+                <!-- site.js slots the সূচি inside this gilt key; the whole
+                     key then opens the table of contents. The title is the
+                     default — a section needing controls beside it (Panthea's
+                     ↑ তলা ২৫১ ↓) replaces the whole content, keeping .nav-cur. -->
+                <slot name="nav-here"><span class="nav-cur">{navTitle}</span></slot>
+              </span>
+            </div>
+          )}
         </div>
+
+        <!-- phones only: the burger, which brings the sheet down -->
+        <button class="nav-burger" type="button" aria-expanded="false"
+                aria-controls="nav-sheet" aria-label="মেনু">
+          <span></span><span></span><span></span>
+        </button>
 
       </div>
 
-      <!-- how far through the page you are — drawn along the shelf's edge -->
+      <!-- how far through the page you are — drawn along the bar's edge -->
       <span class="nav-progress" aria-hidden="true"></span>
     </nav>
 
-    <!-- The tab bar — phones only. The four rooms under the thumb, app-wise,
-         fixed to the foot of the screen. Kept outside <nav> because the nav's
-         backdrop-filter would otherwise contain its fixed position. -->
-    <nav class="tab-bar" aria-label="বিভাগসমূহ">
-      {links.map((l) => (
-        <a href={l.href} class={l.active ? 'tab-item active' : 'tab-item'}
-           aria-current={l.active ? 'page' : undefined}>
-          <span class="tab-label">{l.label}</span>
+    <!-- The sheet — phones only. The burger brings it down over the whole
+         screen: the site's rooms, large, each with its gloss. Kept outside
+         <nav> so its fixed position answers to the viewport. -->
+    <div class="nav-sheet" id="nav-sheet" aria-hidden="true">
+      <nav class="nav-sheet-inner" aria-label="বিভাগসমূহ">
+        <a class:list={['nav-sheet-item', isHome && 'active']} href="/">
+          <span class="nav-sheet-label">প্রথম পাতা</span>
+          <span class="nav-sheet-gloss">যৌথ অচেতন</span>
         </a>
-      ))}
-    </nav>
+        {links.map((l) => (
+          <a class:list={['nav-sheet-item', `room-${TINTS[l.href]}`, l.active && 'active']} href={l.href}
+             aria-current={l.active ? 'page' : undefined}>
+            <span class="nav-sheet-label">{l.label}</span>
+            <span class="nav-sheet-gloss">{l.gloss}</span>
+          </a>
+        ))}
+      </nav>
+    </div>
 
     <slot />
+
+    <!-- the foot of every page, full width at the very bottom (SiteFoot) -->
+    <SiteFoot prev={footPrev || null} next={footNext || null} />
   </body>
 </html>

@@ -1,71 +1,141 @@
 ---
 import Base from '../layouts/Base.astro';
 
-/* The graduated limb of an instrument, printed faint behind the name — the
-   one mark of the astronomer on an otherwise plain page. Degrees every 5°,
-   the long ticks every 30°, and a dot at the zenith. */
-const R = 250, R_IN = 232;
-const ticks = Array.from({ length: 72 }, (_, i) => {
-  const deg = i * 5;
-  const rad = (deg - 90) * Math.PI / 180;
-  const inner = deg % 30 === 0 ? 228 : 240;
-  return {
-    x1: 300 + R * Math.cos(rad), y1: 300 + R * Math.sin(rad),
-    x2: 300 + inner * Math.cos(rad), y2: 300 + inner * Math.sin(rad),
-    long: deg % 30 === 0,
-  };
-});
+/* The front door is one painting, after Mondrian's "Composition in Blue,
+   Gray and Pink" (1913): a dense, irregular grid of small planes in powder
+   blue, lavender grey, dusty pink, pale ochre, sage and cream, crowded at the
+   centre and dissolving toward the edges, where the charcoal lines thin,
+   stop short and melt into a pale grey-blue ground.
+
+   The composition is generated here, at build time, from a fixed seed, so it
+   never reshuffles. A few planes are reserved and carry the page: the name
+   and tagline in the large central plane, the four rooms in four planes
+   beneath it (each in its own tint, the tint the menubar gives it too), the
+   contact links in a small plane below. Everything else is the painting.
+   Phones get a composition of their own, narrower and taller, with the same
+   planes stacked. */
+
+const NAME = 'খান মুহাম্মদ বিন আসাদ';
+const TAGLINE = 'মানুষের যৌথ অচেতনে ব্যক্তিগত অভিযান';
+const sections = [
+  { href: '/panthea/', label: 'প্যান্থিয়া', sub: 'গল্পের ধারা', tint: 'blue' },
+  { href: '/pangea/', label: 'প্যাঞ্জিয়া', sub: 'বাংলা সাহিত্যের আর্কাইভ', tint: 'pink' },
+  { href: '/translations/', label: 'অনুবাদ', sub: 'বিশ্বসাহিত্যের অনুবাদ', tint: 'ochre' },
+  { href: '/trellises/', label: 'মাচা', sub: 'প্রবন্ধ', tint: 'sage' },
+];
+
+// a small seeded generator: the painting is the same on every build
+const seeded = (seed) => () => {
+  seed = (seed + 0x6d2b79f5) | 0;
+  let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+};
+
+// the palette of the painting, with weights: mostly pale blue, lavender and
+// cream; pink, ochre and sage are the rarer notes
+const PALETTE = [
+  ['#a9c3d8', 24], ['#c3d3e0', 14], ['#bcb7d3', 16], ['#e8e1cd', 18],
+  ['#d4b8c4', 10], ['#d8bd72', 10], ['#b3b786', 7], ['#cdd0d6', 6],
+];
+const pick = (rnd) => {
+  let r = rnd() * PALETTE.reduce((a, [, w]) => a + w, 0);
+  for (const [c, w] of PALETTE) if ((r -= w) <= 0) return c;
+  return PALETTE[0][0];
+};
+
+/* Fill a grid of units with irregular planes, leaving the reserved ones
+   alone. Scan the units in order; at each free one, grow a plane of a
+   random size until it would run into something already placed. */
+const compose = ({ cols, rows, reserved, maxW, maxH, seed }) => {
+  const rnd = seeded(seed);
+  const taken = Array.from({ length: rows }, () => Array(cols).fill(false));
+  for (const r of reserved)
+    for (let y = r.y; y < r.y + r.h; y++)
+      for (let x = r.x; x < r.x + r.w; x++) taken[y][x] = true;
+  const planes = [];
+  for (let y = 0; y < rows; y++)
+    for (let x = 0; x < cols; x++) {
+      if (taken[y][x]) continue;
+      let w = 1 + Math.floor(rnd() * maxW), h = 1 + Math.floor(rnd() * maxH);
+      w = Math.min(w, cols - x);
+      for (let i = 1; i < w; i++) if (taken[y][x + i]) { w = i; break; }
+      h = Math.min(h, rows - y);
+      for (let j = 1; j < h; j++)
+        if (taken[y + j].slice(x, x + w).some(Boolean)) { h = j; break; }
+      for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) taken[y + j][x + i] = true;
+      // the further from the centre, the fainter: colour and line both
+      const cx = (x + w / 2) / cols - 0.5, cy = (y + h / 2) / rows - 0.5;
+      const d = Math.min(1, Math.hypot(cx * 1.9, cy * 2.1));
+      const fill = Math.max(0.22, 1 - d * 0.75) * (0.8 + rnd() * 0.2);
+      const line = d > 0.95 && rnd() < 0.5 ? 0 : Math.max(0.12, 1 - d * 0.85);
+      const round = rnd() < 0.08 ? 10 : rnd() < 0.3 ? 4 : 1;
+      planes.push({ x, y, w, h, c: pick(rnd), fill: fill.toFixed(2), line: line.toFixed(2), round });
+    }
+  return planes;
+};
+
+const pct = (n, of) => `${((n / of) * 100).toFixed(3)}%`;
+const place = (p, cols, rows) =>
+  `left:${pct(p.x, cols)};top:${pct(p.y, rows)};width:${pct(p.w, cols)};height:${pct(p.h, rows)}`;
+
+// desktop: a wide field, the content at its heart
+const D = { cols: 56, rows: 32 };
+const dName = { x: 17, y: 8, w: 22, h: 8 };
+const dSecs = [0, 1, 2, 3].map((i) => ({ x: 12 + i * 8, y: 17, w: 8, h: 5 }));
+const dMeta = { x: 20, y: 23, w: 16, h: 3 };
+const desktop = compose({ ...D, reserved: [dName, ...dSecs, dMeta], maxW: 4, maxH: 2, seed: 1913 });
+
+// phones: a tall field, the same planes stacked
+const P = { cols: 14, rows: 36 };
+const pName = { x: 1, y: 4, w: 12, h: 8 };
+const pSecs = [0, 1, 2, 3].map((i) => ({ x: 1 + (i % 2) * 6, y: 13 + Math.floor(i / 2) * 6, w: 6, h: 6 }));
+const pMeta = { x: 1, y: 26, w: 12, h: 3 };
+const phone = compose({ ...P, reserved: [pName, ...pSecs, pMeta], maxW: 3, maxH: 2, seed: 1914 });
+
+// each content plane carries both placements as custom properties; the
+// stylesheet picks the desktop or the phone one
+const vars = (r, g, k) =>
+  `--${k}l:${pct(r.x, g.cols)};--${k}t:${pct(r.y, g.rows)};--${k}w:${pct(r.w, g.cols)};--${k}h:${pct(r.h, g.rows)}`;
+const both = (d, p) => `${vars(d, D, 'd')};${vars(p, P, 'p')}`;
 ---
 
-<Base title="যৌথ অচেতন" bodyClass="home-page" styles={['/css/home.css']}>
-  <div class="home-stage">
-    <div class="home-center">
-      <svg class="home-plate" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
-        <circle class="home-plate-ring" cx="300" cy="300" r={R} />
-        <circle class="home-plate-ring home-plate-ring--in" cx="300" cy="300" r={R_IN} />
-        {ticks.map((t) => (
-          <line class={t.long ? 'home-plate-tick home-plate-tick--long' : 'home-plate-tick'}
-                x1={t.x1.toFixed(2)} y1={t.y1.toFixed(2)}
-                x2={t.x2.toFixed(2)} y2={t.y2.toFixed(2)} />
-        ))}
-        <circle class="home-plate-zenith" cx="300" cy={300 - R} r="4" />
-      </svg>
-
-      <h1 class="home-name">খান মুহাম্মদ বিন আসাদ</h1>
-      <p class="home-tagline">মানুষের যৌথ অচেতনে ব্যক্তিগত অভিযান</p>
-
-      <div class="home-divider"></div>
-
-      <nav class="home-sections">
-        <a href="/panthea/" class="home-section">
-          <span class="home-section-label">প্যান্থিয়া</span>
-          <span class="home-section-sub">গল্পের ধারা</span>
-        </a>
-        <a href="/pangea/" class="home-section">
-          <span class="home-section-label">প্যাঞ্জিয়া</span>
-          <span class="home-section-sub">বাংলা সাহিত্যের আর্কাইভ</span>
-        </a>
-        <a href="/translations/" class="home-section">
-          <span class="home-section-label">অনুবাদ</span>
-          <span class="home-section-sub">বিশ্বসাহিত্যের অনুবাদ</span>
-        </a>
-        <a href="/trellises/" class="home-section">
-          <span class="home-section-label">মাচা</span>
-          <span class="home-section-sub">প্রবন্ধ</span>
-        </a>
-      </nav>
-
-      <div class="home-meta">
-        <a href="mailto:kasad@iub.edu.bd">kasad@iub.edu.bd</a>
-        <span class="home-meta-sep">·</span>
-        <a href="https://cassa.bd/people/asad/">cassa.bd/people/asad</a>
-        <span class="home-meta-sep">·</span>
-        <a href="https://www.facebook.com/kmbasad">Facebook</a>
-      </div>
-
-      <p class="home-license">
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
-      </p>
+<Base title='যৌথ অচেতন' bodyClass="home-page" styles={['/css/home.css']}>
+  <main class="home-canvas">
+    <!-- the painting -->
+    <div class="home-field home-field--desktop" aria-hidden="true">
+      {desktop.map((p) => (
+        <span class="mc" style={`${place(p, D.cols, D.rows)};--c:${p.c};--f:${p.fill};--l:${p.line};--r:${p.round}px`}></span>
+      ))}
     </div>
-  </div>
+    <div class="home-field home-field--phone" aria-hidden="true">
+      {phone.map((p) => (
+        <span class="mc" style={`${place(p, P.cols, P.rows)};--c:${p.c};--f:${p.fill};--l:${p.line};--r:${p.round}px`}></span>
+      ))}
+    </div>
+
+    <!-- the planes that carry the page -->
+    <section class="hp hp--name" style={both(dName, pName)}>
+      <h1 class="home-name">{NAME}</h1>
+      <p class="home-tagline">{TAGLINE}</p>
+    </section>
+
+    <nav class="home-rooms" aria-label="sections">
+      {sections.map((s, i) => (
+        <a class={`hp hp--room hp--${s.tint}`} href={s.href} style={both(dSecs[i], pSecs[i])}>
+          <span class="home-room-label">{s.label}</span>
+          <span class="home-room-sub">{s.sub}</span>
+        </a>
+      ))}
+    </nav>
+
+    <footer class="hp hp--meta" style={both(dMeta, pMeta)}>
+      <span class="home-meta">
+        <a href="mailto:kasad@iub.edu.bd">kasad@iub.edu.bd</a>
+        <a href="https://cassa.bd/people/asad/">cassa.bd/people/asad</a>
+        <a href="https://www.facebook.com/kmbasad">Facebook</a>
+      </span>
+      <a class="home-license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </footer>
+  </main>
 </Base>

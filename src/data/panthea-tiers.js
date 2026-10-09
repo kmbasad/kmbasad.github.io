@@ -1,30 +1,32 @@
 // প্যান্থিয়া — the name of the whole construction: an island in the open sea,
-// a 1000-floor mountain-tower (মিনার, 4 km high) rising from it, the ground
-// floor (গ্রাউন্ড) at sea level, and a 1000-floor underworld (পাতাল, 4 km deep)
-// mirrored beneath. The section is an exact reflection in *height*: tower floor
+// a 700-floor mountain-tower (মিনার, 2.8 km high) rising from it, its ১ তলা on
+// the ground, and a 700-floor underworld (পাতাল, 2.8 km deep) mirrored straight
+// beneath it from −১ তলা down. There is no zero floor. The section is an exact reflection in *height*: tower floor
 // n sits at 4n metres up, patal floor n at 4n metres down — floor for floor,
 // boundary for boundary. In *plan* the two worlds are not twins; see the
 // geometry note below.
 //
-// Both worlds are divided into fourteen segments that thin toward the
-// extremes (wide neighbourhoods near the ground, small ones at summit and
-// nadir), so no segment holds more than 100 floors. The segments carry only
+// Both worlds are divided into seven ধাপ of a hundred floors each. The segments carry only
 // their numbers for now; they will be named as the stories are written.
 //
 // This file is the single source of truth: the map-TOC SVGs on /panthea/, the
-// floor routes (/panthea/minar/[floor], /panthea/patal/[floor], /panthea/bhumi)
+// floor routes (/panthea/minar/[floor], /panthea/patal/[floor])
 // and the floor-page headers all derive from it.
 
 export const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
 export const toBn = (n) => String(n).replace(/\d/g, (d) => bnDigits[d]);
 
-export const TOWER_FLOORS = 1000;  // floors above ground
-export const PATAL_FLOORS = 1000;  // floors below ground
-export const TOWER_FLOOR_M = 4;    // metres per tower floor  → 4000 m summit
-export const PATAL_FLOOR_M = 4;    // metres per patal floor  → 4000 m nadir
+// Seven ধাপ each way of exactly one hundred floors, so that every ধাপ's lift
+// is a ten-by-ten panel: 700 floors up, 700 down.
+export const SEG_FLOORS = 100;
+export const SEG_COUNT = 7;
+export const TOWER_FLOORS = SEG_COUNT * SEG_FLOORS;  // 700 floors above ground
+export const PATAL_FLOORS = SEG_COUNT * SEG_FLOORS;  // 700 floors below ground
+export const TOWER_FLOOR_M = 4;    // metres per tower floor  → 2800 m summit
+export const PATAL_FLOOR_M = 4;    // metres per patal floor  → 2800 m nadir
 
-export const TOWER_HEIGHT_M = TOWER_FLOORS * TOWER_FLOOR_M;  // 4000
-export const PATAL_DEPTH_M = PATAL_FLOORS * PATAL_FLOOR_M;   // 4000
+export const TOWER_HEIGHT_M = TOWER_FLOORS * TOWER_FLOOR_M;  // 2800
+export const PATAL_DEPTH_M = PATAL_FLOORS * PATAL_FLOOR_M;   // 2800
 
 // ── Plan geometry — the section, designed rather than assumed ──
 // Circular in plan at every level, so a floor is fully described by one
@@ -32,51 +34,49 @@ export const PATAL_DEPTH_M = PATAL_FLOORS * PATAL_FLOOR_M;   // 4000
 // profile is not a straight cone. Four things set it, and none of them is a
 // straight line:
 //
-//   1. THE SPINE. One shaft runs the whole 8 km, summit to nadir — a 60 m
+//   1. THE SPINE. One shaft runs the whole 5.6 km, summit to nadir — a 60 m
 //      drum holding 24 ropeless maglev guideways in a ring (12 climbing, 12
-//      falling, cars circulating in a loop, ~20 m/s → some seven minutes end
-//      to end) around a 16 m pressurised column of stairs, air, water, power.
+//      falling, cars circulating in a loop, ~20 m/s → under five minutes
+//      end to end) around a 16 m pressurised column of stairs, air, water, power.
 //      Nothing else in প্যান্থিয়া touches every floor. It never tapers: it is
 //      the datum the two worlds are hung on.
 //   2. THE TIP FOLLOWS FROM THE SPINE. Both ends close at 100 m — the core
 //      plus a 20 m landing gallery all round, the least a floor can be and
 //      still be a floor. The summit crown and the nadir's last cell are the same
 //      size, and that is the one plan dimension the two worlds share.
-//   3. ABOVE, THE LIMIT IS WIND, NOT WEIGHT. At 4 km, gravity is not what
+//   3. ABOVE, THE LIMIT IS WIND, NOT WEIGHT. At 2.8 km, gravity is not what
 //      shapes a tower — with modern high-strength concrete the base need only
 //      be some 1.8× the crown's area to carry it. Overturning is. So the
-//      মিনার stands on a 1600 m base (1 : 2.5 against its height, stout by any
+//      মিনার stands on a 1120 m base (1 : 2.5 against its height, stout by any
 //      standard) and tapers on a power curve, p = 1.6: a flared root that
 //      stiffens the first kilometre, a long gentle spire above, and a
 //      continuously changing diameter that never lets the wind settle into
 //      one shedding frequency. The wide lower plates are read as rings and
-//      light-wells, not slabs — no habitable room sits 800 m from a window.
+//      light-wells, not slabs — no habitable room sits 560 m from a window.
 //   4. BELOW, THE LIMIT IS ROCK. Free span at depth is governed by the
-//      overburden: ~106 MPa of vertical stress at 4 km. So the পাতাল is not
-//      the মিনার upside down. It opens as a 600 m well through the island's
+//      overburden: ~74 MPa of vertical stress at 2.8 km. So the পাতাল is not
+//      the মিনার upside down. It opens as a 420 m well through the island's
 //      crust — narrow, because the tower's foundation ring has to land on
 //      solid ground outside it, and because a well that size still drops
-//      daylight into the patal's upper floors — then swells beneath the crust to a 1400 m belly
-//      at 600 m depth, where the rock is strong and unloaded, and tapers away
-//      from there as stress climbs. A flask, not a cone.
+//      daylight into the patal's upper floors — then swells beneath the crust
+//      to a 980 m belly at 420 m depth, where the rock is strong and unloaded,
+//      and tapers away from there as stress climbs. A flask, not a cone.
+//
+//   (When the building went from 1000 floors each way to 700, every plan
+//   dimension but the spine and the tip was scaled by the same 0.7, so the
+//   proportions above, and the drawn shape, are unchanged.)
 export const CORE_DIAMETER_M = 60;    // the spine — constant, summit to nadir
 export const CORE_GALLERY_M = 20;     // minimum landing ring around it
 export const TIP_DIAMETER_M = CORE_DIAMETER_M + 2 * CORE_GALLERY_M;  // 100
-export const MINAR_BASE_M = 1600;     // envelope where the tower meets ground
-// The island is wider than the tower's foot, and deliberately: a 1600 m base
-// has to land on solid ground with room to spare, and the শোর ring is where
-// the jetties and docks are. So the ground plate is the widest thing in the section
-// and outreaches the ১৬০০ that the base is dimensioned at — every drawing
-// labels the two separately rather than letting the plate read as an overrun.
-export const ISLAND_DIAMETER_M = 3000;  // the island the whole thing stands on
-export const ISLAND_SHORE_M = 200;      // the shore ring: the island is widest
-                                        // at the waterline and tapers by this
-                                        // much to its flat crown (2600 m) and,
-                                        // going the other way, to its
-                                        // submerged flank
-export const WELL_MOUTH_M = 600;      // the পাতাল's mouth in the ground plate
-export const PATAL_BELLY_M = 1400;    // its widest floors …
-export const PATAL_BELLY_DEPTH_M = 600;  // … at this depth
+export const MINAR_BASE_M = 1120;     // envelope where the tower meets ground
+// The island is wider than the tower's foot, and deliberately: the base has
+// to land on solid ground with room to spare, and the shore ring is where the
+// jetties and docks are.
+export const ISLAND_DIAMETER_M = 2100;  // the island the whole thing stands on
+export const ISLAND_SHORE_M = 140;      // the shore ring, widest at the waterline
+export const WELL_MOUTH_M = 420;      // the পাতাল's mouth through the crust
+export const PATAL_BELLY_M = 980;     // its widest floors …
+export const PATAL_BELLY_DEPTH_M = 420;  // … at this depth
 const MINAR_TAPER = 1.6;
 const PATAL_TAPER = 1.8;
 
@@ -101,12 +101,9 @@ export const diameterAt = (kind, m) => {
   return TIP_DIAMETER_M + (MINAR_BASE_M - TIP_DIAMETER_M) * (1 - h / TOWER_HEIGHT_M) ** MINAR_TAPER;
 };
 
-// A floor's own diameter, measured at its mid-height. গ্রাউন্ড is the ground
-// plate itself: the tower's full base, with the well's mouth cut out of it.
+// A floor's own diameter, measured at its mid-height.
 export const floorDiameter = (kind, floor) =>
-  kind === 'bhumi'
-    ? MINAR_BASE_M
-    : Math.round(diameterAt(kind, (floor - 0.5) * (kind === 'patal' ? PATAL_FLOOR_M : TOWER_FLOOR_M)));
+  Math.round(diameterAt(kind, (floor - 0.5) * (kind === 'patal' ? PATAL_FLOOR_M : TOWER_FLOOR_M)));
 
 // Where a floor sits on its own axis — its mid-height above ground / below it.
 export const floorMetres = (kind, floor) =>
@@ -121,36 +118,51 @@ export const profileSamples = (kind, from, to, steps = 10) =>
   });
 
 // ── The level axis ──
-// The whole construction is one shaft of 2001 stops, so it is one number:
-// +1000 at the summit, 0 at গ্রাউন্ড, −1000 at the nadir, with the roof
-// (the Panthea home) one step above the top. Both the ↑/↓ links and the
-// ctrl+arrow elevator ride step along it, which is what lets a ride pass
-// through গ্রাউন্ড into the other world without a special case.
+// The whole construction is one shaft of 1400 stops, so it is one number:
+// +700 at the summit down to +1, the floor on the ground, then −1 straight
+// beneath it down to −700 at the nadir. There is no zero. The roof (the
+// Panthea home) sits one step above the top.
+//
+// Stepping goes through levelAdd, which skips the zero that is not there:
+// that is what lets the ↑/↓ links and the ctrl+arrow ride pass from +1 to −1
+// without a special case anywhere else.
 export const LEVEL_MAX = TOWER_FLOORS;
 export const LEVEL_MIN = -PATAL_FLOORS;
-export const levelKind = (l) => (l > 0 ? 'minar' : l < 0 ? 'patal' : 'bhumi');
+export const levelKind = (l) => (l > 0 ? 'minar' : 'patal');
 export const levelFloor = (l) => Math.abs(l);
-export const levelOf = (kind, floor) =>
-  kind === 'minar' ? floor : kind === 'patal' ? -floor : 0;
+export const levelOf = (kind, floor) => (kind === 'patal' ? -floor : floor);
+// 0 … 1399, nadir to summit
+const levelIndex = (l) => (l > 0 ? l + PATAL_FLOORS - 1 : l + PATAL_FLOORS);
+const indexLevel = (i) => (i >= PATAL_FLOORS ? i - PATAL_FLOORS + 1 : i - PATAL_FLOORS);
+export const levelAdd = (l, n) =>
+  indexLevel(Math.min(PATAL_FLOORS + TOWER_FLOORS - 1, Math.max(0, levelIndex(l) + n)));
 export const levelHref = (l) =>
   l > LEVEL_MAX ? '/panthea/'
   : l > 0 ? `/panthea/minar/${l}/`
-  : l === 0 ? '/panthea/bhumi/'
   : `/panthea/patal/${-l}/`;
 
-// ── The locator glyph on floor pages ──
-// Its constants and its two mappings live here, not in the component, because
-// the elevator ride redraws the same glyph in the browser: a floor rendered at
-// build time and a floor scrubbed to with ctrl+↑ must land on identical
-// geometry.
-export const PLAN_R = 496;   // the plan circle's radius in its own viewBox
+// ── The section: one drawing, summit to nadir ──
+// The home page's navigator and every floor page's corner inset are the SAME
+// drawing at two sizes (src/components/PantheaSection.astro), and the elevator
+// ride redraws it in the browser — so its constants and mappings live here:
+// a floor rendered at build time and a floor scrubbed to with ctrl+↑ must land
+// on identical geometry.
+//
+// Height is true and the same both ways — 2800 m is 210 units up and 210 down,
+// meeting at the ground line. Width is exaggerated by SECTION_WIDEN: at true
+// scale the crown is a hairline nobody could point at, at 2.5× the tower turns
+// squat. 1.6 keeps the spire a spire.
+const SECTION_V = 210 / TOWER_HEIGHT_M;   // units per metre, vertically
+export const SECTION_WIDEN = 1.6;
+// The tower's ১ তলা stands on the ground line (Y_GROUND) and the পাতাল's −১
+// hangs straight under it (Y_MOUTH, the same line): no floor between.
 export const GLYPH = {
   CX: 150,
   Y_SUMMIT: 40,
   Y_GROUND: 250,
-  Y_MOUTH: 260,
+  Y_MOUTH: 250,
   Y_NADIR: 460,
-  U: 108 / (MINAR_BASE_M / 2),   // glyph units per metre of radius
+  U: SECTION_V * SECTION_WIDEN,   // units per metre of radius
 };
 export const glyphY = (kind, m) =>
   kind === 'patal'
@@ -172,8 +184,8 @@ export const glyphOutline = (kind, m0, m1, steps = 24) => {
   return [...left, ...right.reverse()].join(' ');
 };
 
-// Floors per segment, ground outward — sums to 1000, max 100, gently tapering.
-const SHARES = [100, 95, 90, 85, 80, 75, 75, 70, 70, 65, 60, 50, 45, 40];
+// Floors per ধাপ, ground outward: a hundred each, seven each way.
+const SHARES = Array(SEG_COUNT).fill(SEG_FLOORS);
 
 const spansFrom = (shares) => {
   let lo = 1;
@@ -184,19 +196,23 @@ const spansFrom = (shares) => {
   });
 };
 
-const TOWER_SPANS = spansFrom(SHARES);  // 1–100 … 961–1000
-const PATAL_SPANS = spansFrom(SHARES);  // 1–100 … 961–1000
+const TOWER_SPANS = spansFrom(SHARES);  // 1–100 … 601–700
+const PATAL_SPANS = spansFrom(SHARES);  // 1–100 … 601–700
 
-// The segments are unnamed for now: each one is its number, a স্তর, until the
-// stories name it. Slugs are positional (t1…t14 up, p1…p14 down).
-const numbered = (prefix) => SHARES.map((_, i) => ({
+// The ধাপ carry only their numbers, signed like the floors: প্যান্থিয়া is
+// the one name for the whole building, so the ধাপ above the ground are ধাপ
+// ১…৭ and those beneath it ধাপ −১…−৭. A ধাপ is named only when its stories
+// name it. Slugs are positional (t1…t7 up, p1…p7 down).
+export const SEG_WORD = 'ধাপ';
+export const MINUS = '−';
+const numbered = (prefix, sign) => SHARES.map((_, i) => ({
   slug: `${prefix}${i + 1}`,
-  bn: `স্তর ${toBn(i + 1)}`,
+  bn: `${SEG_WORD} ${sign}${toBn(i + 1)}`,
 }));
-const TOWER_NAMES = numbered('t');
-const PATAL_NAMES = numbered('p');
+const TOWER_NAMES = numbered('t', '');
+const PATAL_NAMES = numbered('p', MINUS);
 
-const buildSegments = (names, spans, floorM) =>
+const buildSegments = (names, spans, floorM, floorBn) =>
   names.map((n, i) => {
     const floors = spans[i];
     const metres = [(floors[0] - 1) * floorM, floors[1] * floorM];
@@ -207,29 +223,22 @@ const buildSegments = (names, spans, floorM) =>
       count: floors[1] - floors[0] + 1,
       metres,
       floorsBn: `${toBn(floors[0])}–${toBn(floors[1])}`,
+      floorsLabel: `তলা ${floorBn(floors[0])} থেকে ${floorBn(floors[1])}`,
       metresBn: `${toBn(metres[0])}–${toBn(metres[1])} মিটার`,
     };
   });
 
-export const towerSegments = buildSegments(TOWER_NAMES, TOWER_SPANS, TOWER_FLOOR_M);
-export const patalSegments = buildSegments(PATAL_NAMES, PATAL_SPANS, PATAL_FLOOR_M);
-
-export const ground = {
-  slug: 'bhumi',
-  bn: 'গ্রাউন্ড',
-  originBn: 'তলা ০',
-};
+// a floor's number as it is written: those beneath the ground carry the minus
+export const towerSegments = buildSegments(TOWER_NAMES, TOWER_SPANS, TOWER_FLOOR_M, (f) => toBn(f));
+export const patalSegments = buildSegments(PATAL_NAMES, PATAL_SPANS, PATAL_FLOOR_M, (f) => MINUS + toBn(f));
 
 export const towerSegmentOf = (floor) =>
   towerSegments.find((s) => floor >= s.floors[0] && floor <= s.floors[1]);
 export const patalSegmentOf = (floor) =>
   patalSegments.find((s) => floor >= s.floors[0] && floor <= s.floors[1]);
 
-// the level axis, named: the roof sits one step above the tower's last floor
-export const levelTitle = (l) =>
-  l > LEVEL_MAX ? 'ছাদ'
-  : l > 0 ? `তলা ${toBn(l)}`
-  : l === 0 ? ground.bn
-  : `পাতাল ${toBn(-l)}`;
-export const levelSegment = (l) =>
-  l > 0 ? towerSegmentOf(l) : l < 0 ? patalSegmentOf(-l) : null;
+// the level axis, named as the ধাপ are, word then number: তলা ২৫১ beside
+// ধাপ ৩, and beneath the ground তলা −৫. The roof is ছাদ.
+export const levelNum = (l) => (l < 0 ? MINUS + toBn(-l) : toBn(l));
+export const levelTitle = (l) => (l > LEVEL_MAX ? 'ছাদ' : `তলা ${levelNum(l)}`);
+export const levelSegment = (l) => (l > 0 ? towerSegmentOf(l) : patalSegmentOf(-l));

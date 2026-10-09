@@ -23,7 +23,7 @@ const canticle = work.canticles!.find((c) => c.slug === 'inferno')!;
     />
   </Fragment>
 
-  <BookReader
+  <BookReader title={`${canticle.title} ১`} work={work.title}
     config={{
       src: 'inferno-01.md',
       dict: 'inferno-01-words.md',

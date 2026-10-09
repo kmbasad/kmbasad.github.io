@@ -1,0 +1,244 @@
+---
+// প্যান্থিয়া in section: the building and nothing else, summit to nadir. The
+// tower in glass standing on its ১ তলা, the পাতাল in stone hanging straight
+// beneath from −১ and darkening with depth, both lit from the same side; the spine through all of
+// it. No sky, no sea, no rock: the page around it is empty.
+//
+// It is Panthea's only navigator, drawn at two sizes:
+//
+//   variant="map"    the home page's left column, with a scale in powers of
+//                    ten in its left margin and nothing written on the
+//                    building itself
+//   variant="inset"  a floor page's corner, bare, with your ধাপ outlined and
+//                    your floor a gold hairline across it
+//
+// Every ধাপ is a band you can press (data-world, data-index, data-key); what
+// a press does is the page's business. All
+// geometry walks the profile in panthea-tiers.js through the same GLYPH
+// mappings the elevator ride uses to redraw the inset in the browser.
+import {
+  toBn,
+  towerSegments,
+  patalSegments,
+  GLYPH,
+  glyphY,
+  glyphHalf,
+  glyphOutline,
+  floorMetres,
+  levelKind,
+  levelFloor,
+  levelSegment,
+  levelNum,
+  TOWER_HEIGHT_M,
+  PATAL_DEPTH_M,
+  TOWER_FLOOR_M,
+  CORE_DIAMETER_M,
+} from '../data/panthea-tiers.js';
+
+interface Props {
+  variant: 'map' | 'inset';
+  level?: number | null;     // inset only: where you are standing
+}
+
+const { variant, level = null } = Astro.props;
+const map = variant === 'map';
+const id = (n) => `pn-${variant}-${n}`;       // gradient ids, one set per drawing
+const url = (n) => `url(#${id(n)})`;
+
+const R = (n) => Math.round(n * 100) / 100;
+const { CX, Y_SUMMIT, Y_GROUND, Y_MOUTH, Y_NADIR, U } = GLYPH;
+
+// ── the frame: the building's own width, and on the map a margin each side
+// for its two scales ──
+const HALF = 74;                               // a little past the tower's foot
+const SCENE_L = CX - HALF, SCENE_R = CX + HALF;
+const TOP = Y_SUMMIT - 16, BOTTOM = Y_NADIR + 16;
+const viewBox = map
+  ? `${SCENE_L - 26} ${TOP} ${2 * HALF + 32} ${BOTTOM - TOP}`
+  : `${SCENE_L} ${Y_SUMMIT - 4} ${2 * HALF} ${Y_NADIR - Y_SUMMIT + 8}`;
+
+// ── where you are (inset only) ──
+const hereKind = level === null ? null : levelKind(level);
+const hereSeg = level === null ? null : levelSegment(level);
+
+// ── the ধাপ, seven up and seven down ──
+const bands = [
+  ...towerSegments.map((s) => ({ s, kind: 'minar', key: `t${s.index}` })),
+  ...patalSegments.map((s) => ({ s, kind: 'patal', key: `u${s.index}` })),
+].map(({ s, kind, key }) => ({
+  kind,
+  key,
+  index: s.index,
+  tip: `${s.bn} · ${s.floorsLabel}`,
+  points: glyphOutline(kind, s.metres[0], s.metres[1], 16),
+  here: hereKind === kind && hereSeg?.index === s.index,
+  y0: R(glyphY(kind, s.metres[kind === 'patal' ? 0 : 1])),
+  y1: R(glyphY(kind, s.metres[kind === 'patal' ? 1 : 0])),
+}));
+const tower = bands.filter((b) => b.kind === 'minar');
+const patal = bands.filter((b) => b.kind === 'patal');
+const towerOutline = glyphOutline('minar', 0, TOWER_HEIGHT_M, 48);
+const patalOutline = glyphOutline('patal', 0, PATAL_DEPTH_M, 48);
+
+// mechanical floors: a darker line at every ধাপ boundary, as on a real tower
+const seams = bands
+  .filter((b) => b.index < towerSegments.length)
+  .map((b) => {
+    const s = (b.kind === 'minar' ? towerSegments : patalSegments)[b.index - 1];
+    const m = s.metres[1];
+    return { y: R(glyphY(b.kind, m)), h: R(glyphHalf(b.kind, m)), kind: b.kind };
+  });
+
+const coreHalf = (CORE_DIAMETER_M / 2) * U;
+
+// floor texture: one line every ten floors
+const TEX = 10 * TOWER_FLOOR_M * (GLYPH.Y_GROUND - GLYPH.Y_SUMMIT) / TOWER_HEIGHT_M;
+
+// ── your floor, as a hairline across its band (inset only) ──
+const hereFloor = hereKind ? levelFloor(level) : 0;
+const hairM = hereFloor ? floorMetres(hereKind, hereFloor) : 0;
+const hair = hereFloor
+  ? { y: R(glyphY(hereKind, hairM)), h: R(glyphHalf(hereKind, hairM)) }
+  : { y: Y_GROUND, h: 0 };
+
+// ── the margin (map only): a scale of the cosmos, in powers of ten ──
+// The building's height is not measured in metres but in what it reaches.
+// The ground is the human, one metre (10^0). Above, the tower climbs to the
+// largest thing that can be observed at all, the observable universe
+// (8.8e26 m, so 10^27). Beneath, the পাতাল descends by the same twenty-seven
+// powers to 10^-27: the scale is a mirror held at the human, who stands at
+// its exact centre, as far from the smallest as from the largest (Pascal's
+// milieu entre rien et tout). Each ধাপ is the same step, 27/7 of a power
+// (about ×7,200), so the seven ধাপ above and the seven beneath are seven equal
+// strides each way. Drawn faint, like a slide rule: a hairline graduated at
+// every power and, finer, at 2…9 within each (the log spacing is what says
+// "logarithmic" at a glance), a longer tick at every ধাপ seam, and only the
+// exponents, light and haloed, at every third power (0, ±3 … ±27) under a lone log₁₀.
+// No words. (A ধাপ colour strip, a metre ruler, floor numbers, a scale in
+// cubits, 10ⁿ written out at every figure, and named ends were each tried and
+// dropped.)
+const POW = 27;
+const SCALE_X = SCENE_L - 20;               // well clear of the building; the svg lets it overflow
+const powY = (p) => R(p >= 0
+  ? Y_GROUND - (p / POW) * (Y_GROUND - Y_SUMMIT)
+  : Y_MOUTH + (-p / POW) * (Y_NADIR - Y_MOUTH));
+const DECADE = (Y_GROUND - Y_SUMMIT) / POW;   // equal both ways
+const scaleTicks = [];
+for (let p = -POW; p <= POW; p++) {
+  scaleTicks.push({ y: powY(p), label: p % 3 === 0 ? p : null });
+}
+const fineTicks = [];
+for (let p = -POW; p < POW; p++) {
+  for (let n = 2; n <= 9; n++) fineTicks.push(R(powY(p) - Math.log10(n) * DECADE));
+}
+const seamTicks = seams.map((s) => s.y);
+const supBn = (p) => (p < 0 ? '\u2212' : '') + toBn(Math.abs(p));
+
+const label = map
+  ? 'প্যান্থিয়ার প্রস্থচ্ছেদ, চূড়া থেকে তলদেশ'
+  : 'প্যান্থিয়ায় আপনার অবস্থান';
+---
+
+<svg class:list={['pn-section', `pn-section--${variant}`]} viewBox={viewBox}
+     preserveAspectRatio="xMidYMid slice" role="img" aria-label={label}>
+  <defs>
+    <!-- the tower's glass, lit from the upper left: a cylinder's falloff -->
+    <linearGradient id={id('glass')} x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a6589" />
+      <stop offset="0.16" stop-color="#8eaad0" />
+      <stop offset="0.33" stop-color="#e2ebf7" />
+      <stop offset="0.5" stop-color="#b1c6e2" />
+      <stop offset="0.8" stop-color="#6883a9" />
+      <stop offset="1" stop-color="#3a5276" />
+    </linearGradient>
+    <!-- the higher, the hazier -->
+    <linearGradient id={id('haze')} gradientUnits="userSpaceOnUse" x1="0" y1={Y_SUMMIT} x2="0" y2={Y_GROUND}>
+      <stop offset="0" stop-color="#eef3fa" stop-opacity="0.55" />
+      <stop offset="0.6" stop-color="#eef3fa" stop-opacity="0.12" />
+      <stop offset="1" stop-color="#eef3fa" stop-opacity="0" />
+    </linearGradient>
+    <!-- the পাতাল's stone: pale at the mouth, the site's ink at the nadir -->
+    <linearGradient id={id('deep')} gradientUnits="userSpaceOnUse" x1="0" y1={Y_MOUTH} x2="0" y2={Y_NADIR}>
+      <stop offset="0" stop-color="#b9c0d3" />
+      <stop offset="0.2" stop-color="#8d95b1" />
+      <stop offset="0.6" stop-color="#535a7c" />
+      <stop offset="1" stop-color="#1c1d30" />
+    </linearGradient>
+    <!-- the same light the glass takes, laid over the stone -->
+    <linearGradient id={id('shade')} x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b0d16" stop-opacity="0.5" />
+      <stop offset="0.16" stop-color="#0b0d16" stop-opacity="0.12" />
+      <stop offset="0.33" stop-color="#ffffff" stop-opacity="0.22" />
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="0.8" stop-color="#0b0d16" stop-opacity="0.24" />
+      <stop offset="1" stop-color="#0b0d16" stop-opacity="0.5" />
+    </linearGradient>
+    <pattern id={id('floors')} patternUnits="userSpaceOnUse" width="8" height={R(TEX)}>
+      <rect width="8" height={R(TEX * 0.16)} fill="#0e1a2b" fill-opacity="0.13" />
+    </pattern>
+  </defs>
+
+  <g>
+    <!-- the পাতাল: stone, banded at each ধাপ, lit like the tower -->
+    <polygon points={patalOutline} fill={url('deep')} />
+    {patal.map((b) => <polygon points={b.points} fill={url('shade')} />)}
+    <polygon points={patalOutline} fill={url('floors')} />
+    <polygon points={patalOutline} class="pn-skin pn-skin--deep" />
+
+    <!-- the মিনার: glass, banded at each ধাপ, hazed with height -->
+    {tower.map((b) => <polygon points={b.points} fill={url('glass')} />)}
+    <polygon points={towerOutline} fill={url('floors')} />
+    <polygon points={towerOutline} fill={url('haze')} />
+    <polygon points={towerOutline} class="pn-skin" />
+
+    <g class="pn-seams">
+      {seams.map((s) => (
+        <line class={`pn-seam-${s.kind}`} x1={R(CX - s.h)} y1={s.y} x2={R(CX + s.h)} y2={s.y} />
+      ))}
+    </g>
+
+    <!-- the spine: one shaft, summit to nadir, faintly lit from inside -->
+    <rect class="pn-spine" x={R(CX - coreHalf)} y={Y_SUMMIT}
+          width={R(coreHalf * 2)} height={Y_NADIR - Y_SUMMIT} />
+
+    <!-- the targets: invisible until hovered, pressed, or yours -->
+    {bands.map((b) => (
+      <polygon class:list={['pn-band', { 'pn-here': b.here }]} points={b.points}
+               data-world={b.kind} data-index={b.index} data-key={b.key}
+               data-y0={b.y0} data-y1={b.y1}>
+        <title>{b.tip}</title>
+      </polygon>
+    ))}
+
+    <!-- the probe (map only): the floor under the pointer on the lift, shown
+         at its true height on the building; the home's script moves it -->
+    {map && <line class="pn-probe" x1="0" y1="0" x2="0" y2="0" />}
+
+    {!map && (
+      <line class:list={['pn-hair', { 'pnf-off': !hereFloor }]}
+            x1={R(CX - hair.h - 3)} y1={hair.y} x2={R(CX + hair.h + 3)} y2={hair.y} />
+    )}
+  </g>
+
+  <!-- the scale of the cosmos (map only): faint, on the left, figures only -->
+  {map && (
+    <g class="pn-hats" aria-hidden="true">
+      <line class="pn-hats-line" x1={SCALE_X} y1={Y_SUMMIT} x2={SCALE_X} y2={Y_NADIR} />
+      {seamTicks.map((y) => (
+        <line class="pn-hats-tick long" x1={SCALE_X - 3} y1={y} x2={SCALE_X} y2={y} />
+      ))}
+      {fineTicks.map((y) => (
+        <line class="pn-hats-tick fine" x1={SCALE_X - 0.9} y1={y} x2={SCALE_X} y2={y} />
+      ))}
+      {scaleTicks.map((t) => (
+        <>
+          <line class="pn-hats-tick" x1={SCALE_X - 1.8} y1={t.y} x2={SCALE_X} y2={t.y} />
+          {t.label !== null && (
+            <text class:list={['pn-hats-num', { ground: t.label === 0 }]} x={SCALE_X - 3.5} y={t.y} text-anchor="end">{supBn(t.label)}</text>
+          )}
+        </>
+      ))}
+      <text class="pn-hats-num pn-hats-log" x={SCALE_X} y={Y_SUMMIT - 9} text-anchor="middle">log<tspan class="pn-hats-sub" dy="0.35em">১০</tspan></text>
+    </g>
+  )}
+</svg>

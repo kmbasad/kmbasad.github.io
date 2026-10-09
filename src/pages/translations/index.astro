@@ -1,18 +1,43 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Painting from '../../components/Painting.astro';
 import { translationWorks } from '../../data/translation-works.js';
+
+// After Mondrian, "Composition with Red, Blue and Yellow" (1930): one great
+// red plane, a blue one low on the left, a small yellow in the far corner,
+// white planes between, heavy black lines. The list of works lives in the
+// long white plane left of the red; each work wears a block of one of the
+// painting's three colours.
+const TITLE = 'অনুবাদ';
+const R = '#c8302c', B = '#1f3f8a', Y = '#efc93a', W = '#f2efe6', K = '#141518';
+// a plane with no part in the phone composition is parked under the sheet
+const UNDER = [0, 0, 40, 40];
+const planes = [
+  { bg: W, d: [0, 0, 8, 60], p: UNDER },
+  { bg: W, d: [8, 0, 40, 100], p: UNDER },
+  { bg: R, d: [48, 0, 52, 70], p: [86, 0, 14, 50] },
+  { bg: W, d: [48, 70, 40, 30], p: UNDER },
+  { bg: W, d: [88, 70, 12, 15], p: UNDER },
+  { bg: Y, d: [88, 85, 12, 15], p: [86, 80, 14, 20] },
+  { bg: B, d: [0, 60, 8, 40], p: [86, 50, 14, 30] },
+];
+const MARKS = [R, B, Y];
 ---
 
-<Base title="অনুবাদ" section="translations">
-
-  <div class="main">
-    <h1 class="work-title">অনুবাদ</h1>
-    <div class="listing-box">
-      {translationWorks.map((w) => (
-        <a class="listing-item" href={`/translations/${w.slug}/`}>
-          <span class="title">{w.title}</span>
-        </a>
+<Base title={TITLE} section="translations" bodyClass="painting-page" styles={['/css/painting.css']}>
+  <Painting planes={planes} sheet={{ d: [8, 40], p: [0, 86] }} gap={12} ground={K}
+            label="Mondrian, Composition with Red, Blue and Yellow (1930)">
+    <h1>{TITLE}</h1>
+    <ul class="pt-list">
+      {translationWorks.map((w, i) => (
+        <li>
+          <a href={`/translations/${w.slug}/`} style={`--m:${MARKS[i % MARKS.length]}`}>
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{w.title}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+          </a>
+        </li>
       ))}
-    </div>
-  </div>
+    </ul>
+  </Painting>
 </Base>

@@ -24,7 +24,8 @@
 
   .book-layout {
     display: flex;
-    height: calc(100vh - var(--nav-now));
+    flex: none;
+    height: calc(100svh - var(--nav-now) - var(--m-rule) - var(--foot-h));
     transition: height var(--dur-slow) var(--ease-out);
     overflow: hidden;
   }
@@ -371,48 +372,48 @@ body.book-has-dict .tt-table td.en .w {
   text-decoration: underline;
 }
 
-/* ── Bottom chapter navigation ──────────────────────────────────────────── */
+/* ── The foot of the page: three arrows, nothing else ──
+   Previous, back to the top, next: three square cells joined edge to edge
+   by the site's charcoal lines, centred, each filling with one of the
+   painting's tints under the pointer. (The contents are in the menubar.) */
 .book-nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2.5rem 0 2rem;
-  border-top: 1px solid var(--border);
-  margin-top: 2rem;
+  justify-content: center;
+  margin: 3rem auto 2.5rem;
 }
 
 .book-nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0.7rem;
-  font-size: 0.82rem;
-  font-family: var(--bn-display);
-  color: var(--text-4);
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-left: -2px;
+  font: inherit;
+  color: var(--t-line);
   text-decoration: none;
+  background: var(--surface);
   background-image: none;
-  border: 1px solid transparent;
-  border-radius: var(--r-sm);
+  border: 2px solid var(--t-line);
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: background 0.2s ease, transform 0.2s var(--ease-out);
 }
 
-.book-nav-btn:not(.book-nav-disabled):hover {
-  color: var(--text-2);
-  border-color: var(--border);
-}
+.book-nav-btn:first-child { margin-left: 0; }
+
+.book-nav-prev:not(.book-nav-disabled):hover { background: var(--t-blue-d); }
+.book-nav-top:hover { background: var(--t-ochre-d); }
+.book-nav-next:not(.book-nav-disabled):hover { background: var(--t-pink-d); }
+.book-nav-btn:not(.book-nav-disabled):active { transform: translateY(1px); }
 
 .book-nav-disabled {
-  opacity: 0.2;
   cursor: default;
+  color: var(--text-4);
+  background: transparent;
 }
 
-.book-nav-toc { color: var(--text-3); }
-
 .book-nav-arrow {
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1;
-  opacity: 0.7;
 }
 
 /* ── Phones ──────────────────────────────────────────────────────────────
@@ -425,19 +426,6 @@ body.book-has-dict .tt-table td.en .w {
     padding: 0.5rem 0 0;
   }
 
-  /* thumb-size chapter keys — the tab bar below already carries the site's
-     bottom clearance, so the footer only needs its own air */
-  .book-nav {
-    padding: 1.6rem var(--m-read-pad) 1.4rem;
-    gap: 0.5rem;
-  }
-
-  .book-nav-btn {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.88rem;
-    border-color: var(--border);
-    color: var(--text-3);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -446,3 +434,72 @@ body.book-has-dict .tt-table td.en .w {
     transition: none;
   }
 }
+
+/* ── The page's own title ──
+   On a wide screen it stands upright in a narrow column of its own at the
+   text's left, read from the foot up, like the name on a book's spine: the
+   work's name small, the part's name larger, a short ochre bar at its head
+   (a plane of the painting) — and it stays in view while the poem scrolls,
+   costing the reading column no height. On a narrower screen it simply
+   opens the page, compact, above the poem. */
+.book-spine {
+  margin: 0 0 1.4rem;
+  padding: 0.2rem 0 0.9rem;
+  border-bottom: 2px solid var(--t-line);
+}
+
+.book-spine-work {
+  display: block;
+  font-family: var(--bn-font);
+  font-size: 0.85rem;
+  color: var(--text-3);
+}
+
+.book-spine-title {
+  margin: 0.15rem 0 0;
+  font-family: var(--bn-display);
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--t-line);
+  text-align: left;
+}
+
+@media (min-width: 1200px) {
+  .book-spine {
+    position: fixed;
+    top: calc(var(--nav-now) + var(--m-rule) + 28px);
+    left: 46px;
+    z-index: 3;
+    margin: 0;
+    padding: 18px 0 0;
+    border-bottom: none;
+    border-top: 6px solid var(--t-ochre-d);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-height: calc(100svh - var(--nav-now) - 80px);
+  }
+
+  .book-spine-work,
+  .book-spine-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+
+  .book-spine-work { font-size: 0.9rem; order: 2; }
+  .book-spine-title { margin: 0; font-size: 1.55rem; order: 1; }
+}
+
+/* on a phone the poem's cells carry their own margins, so the title takes
+   the site's reading margin itself */
+@media (max-width: 760px) {
+  .book-spine { padding-left: var(--m-read-pad); padding-right: var(--m-read-pad); }
+}
+
+/* The title is on the page, so the menubar need not say it again: on a
+   reading page the bar keeps the trail and the contents key alone. */
+body.book-page .nav-here .nav-cur { display: none; }
+body.book-page .nav .nav-here .toc-key { border-left: none; margin-left: 0; padding-left: 4px; }

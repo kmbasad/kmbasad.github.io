@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Section pages that are paintings (src/components/Painting.astro): the
+   painting is the fixed background; the content is a list in one long white
+   plane of it — the sheet — bounded by the painting's own lines, scrolling
+   over the still painting however long the list grows.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.pt {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(var(--nav-now) + var(--m-rule));
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--ground);
+}
+
+.pt-plane {
+  position: absolute;
+  left: var(--dl);
+  top: var(--dt);
+  right: var(--dr);
+  bottom: var(--db);
+  background: var(--bg);
+}
+
+/* ── the sheet: a white plane of the painting, its lines either side ── */
+.pt-sheet {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  margin-left: var(--sx);
+  width: var(--sw);
+  min-height: calc(100svh - var(--nav-now) - var(--m-rule) - var(--foot-h));
+  padding: clamp(36px, 7vh, 80px) clamp(24px, 3.4vw, 56px) 80px;
+  background: var(--paper);
+  border-left: var(--gap) solid var(--ground);
+  border-right: var(--gap) solid var(--ground);
+}
+
+.pt-sheet h1 {
+  margin: 0 0 0.25em;
+  font-family: var(--bn-display);
+  font-size: clamp(38px, 4.2vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  text-align: left;
+  color: var(--rule);
+}
+
+.pt-lede {
+  margin: 0 0 1.6rem;
+  max-width: 30em;
+  font-family: var(--bn-display);
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.55;
+  color: #3a3d44;
+}
+
+/* ── the list: rows ruled by the painting's line, each with a small block
+      of one of its colours ── */
+.pt-list {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  border-top: 3px solid var(--rule);
+}
+
+.pt-list li { border-bottom: 1.5px solid var(--rule); }
+
+.pt-list a {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  column-gap: 16px;
+  padding: 15px 4px 16px 0;
+  text-decoration: none;
+  background-image: none;
+  color: var(--rule);
+  transition: padding 0.25s var(--ease-out), background 0.2s ease;
+}
+
+.pt-mark {
+  width: 22px;
+  height: 22px;
+  background: var(--m);
+  box-shadow: 0 0 0 2px var(--rule);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.pt-name {
+  font-family: var(--bn-display);
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.3;
+}
+
+.pt-desc {
+  grid-column: 2;
+  font-family: var(--bn-font);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5b5f68;
+}
+
+.pt-go {
+  grid-row: 1;
+  grid-column: 3;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.25s var(--ease-out);
+}
+
+.pt-list a:hover,
+.pt-list a:focus-visible {
+  padding-left: 8px;
+  background: color-mix(in srgb, var(--m) 14%, transparent);
+  outline: none;
+}
+
+.pt-list a:hover .pt-mark,
+.pt-list a:focus-visible .pt-mark { transform: scale(1.25) rotate(8deg); }
+.pt-list a:hover .pt-go,
+.pt-list a:focus-visible .pt-go { opacity: 0.7; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-list a, .pt-mark, .pt-go { transition: none; }
+}
+
+/* ── phones: the painting's own tall composition, the sheet across most of
+      the width ── */
+@media (max-width: 760px) {
+  .pt-plane {
+    left: var(--pl);
+    top: var(--pt);
+    right: var(--pr);
+    bottom: var(--pb);
+  }
+
+  /* the sheet starts at the screen's edge here: no line to draw there */
+  .pt-sheet {
+    margin-left: var(--spx);
+    width: var(--spw);
+    padding: 28px 18px 60px;
+    border-left-width: 0;
+  }
+
+  .pt-sheet h1 { font-size: clamp(36px, 11vw, 48px); }
+  .pt-name { font-size: 18px; }
+}

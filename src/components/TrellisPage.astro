@@ -6,12 +6,19 @@
    No in-page title: the name lives in the breadcrumb, and the সূচি beside it
    holds the matrices and the essay. */
 import Base from '../layouts/Base.astro';
+import { trellisOrder } from '../data/trellis-order.js';
 
 const { title } = Astro.props;
+// the neighbours, for the footer's arrows
+const slug = (Astro.url.pathname.match(/trellises\/([^/]+)/) || [])[1];
+const at = trellisOrder.indexOf(slug);
+const prev = at > 0 ? `/trellises/${trellisOrder[at - 1]}/` : null;
+const next = at >= 0 && at < trellisOrder.length - 1 ? `/trellises/${trellisOrder[at + 1]}/` : null;
 ---
 
 <Base section="trellises" styles={['/css/trellis.css']}
   navTitle={title} navParentHref="/trellises/" navParentLabel="মাচা"
+  footPrev={prev} footNext={next}
 >
   <div class="trellis-page">
     <section class="trellis-hero">

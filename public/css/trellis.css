@@ -766,7 +766,7 @@ thead th:not(:first-child):hover .th-name {
 }
 
 .section-intro {
-  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-family: 'Spectral', 'Noto Serif Bengali', Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-size: 15px;
   color: var(--text-3);
@@ -1060,11 +1060,269 @@ a.cell-ref:hover {
   background: var(--accent-light);
 }
 .cell-ref-num {
-  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-family: 'DM Sans', 'Noto Serif Bengali', -apple-system, sans-serif;
   font-size: .6em;
   vertical-align: super;
   line-height: 0;
   margin-left: 2px;
   color: var(--accent-2);
   font-variant-numeric: tabular-nums;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   The matrix as a Mondrian of the Paris years
+   ═══════════════════════════════════════════════════════════════════════════
+   trellis.js (paintKlee) gives every cell its colour as --k-bg, and the ink
+   that reads on it as --k-ink / --k-soft. Here the table becomes the
+   painting: the cells are patches of colour on a warm paper ground that
+   shows between them as a seam, the headers are the deep framing tones, the
+   diagonal glows toward gold, and a touched cell is outlined in its own ink
+   rather than repainted, so the painting is never lost. ([class][class]
+   keeps these rules above the older matrix rules whatever their order.) */
+.matrix-container.is-klee[class][class] table {
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+/* the lines: heavy charcoal round each rectangle of the composition, fine
+   between the cells inside one (each cell's four edges set by trellis.js as
+   --k-lines, inset, so two neighbours make one line); the headers stay
+   outside the painting on the plain page */
+.matrix-container.is-klee[class][class] tbody td,
+.matrix-container.is-klee[class][class] tbody tr:nth-child(even) td,
+.matrix-container.is-klee[class][class] tbody tr td.is-diagonal {
+  box-shadow: var(--k-lines);
+}
+
+/* the cell's number: row then column, in Bangla, counted from one — clear
+   enough to find a cell by, quiet enough not to compete with its words */
+.matrix-container.is-klee[class][class] .cell-num {
+  top: 6px;
+  right: 7px;
+  font-family: var(--bn-display);
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.matrix-container.is-klee[class][class] thead th,
+.matrix-container.is-klee[class][class] tbody th,
+.matrix-container.is-klee[class][class] .corner-th,
+.matrix-container.is-klee[class][class] tbody td,
+.matrix-container.is-klee[class][class] tbody tr:nth-child(even) td,
+.matrix-container.is-klee[class][class] tbody tr td.is-diagonal {
+  background: var(--k-bg);
+  border: none;
+  color: var(--k-ink);
+}
+
+/* every word on a patch takes the patch's own ink */
+.matrix-container.is-klee[class][class] .th-name,
+.matrix-container.is-klee[class][class] .prop-name,
+.matrix-container.is-klee[class][class] .cell-btn { color: var(--k-ink); }
+
+.matrix-container.is-klee[class][class] .th-dates,
+.matrix-container.is-klee[class][class] .th-culture,
+.matrix-container.is-klee[class][class] .prop-desc,
+.matrix-container.is-klee[class][class] .th-num,
+.matrix-container.is-klee[class][class] .cell-num,
+.matrix-container.is-klee[class][class] .corner-row-label,
+.matrix-container.is-klee[class][class] .corner-col-label,
+.matrix-container.is-klee[class][class] .matrix-fs-btn { color: var(--k-soft); }
+
+.matrix-container.is-klee[class][class] .cell-btn { background: transparent; }
+
+/* the diagonal's number like any other */
+.matrix-container.is-klee[class][class] tbody tr td.is-diagonal .cell-num { color: var(--k-soft); }
+
+/* Touched or chosen, the cell moves as a whole, never a ring drawn round
+   its words: under the pointer the whole cell brightens, rises a hair and
+   casts a shadow; chosen, its black edge doubles. The button inside stays
+   transparent in every state. */
+.matrix-container.is-klee[class][class] .cell-btn,
+.matrix-container.is-klee[class][class] .cell-btn:hover,
+.matrix-container.is-klee[class][class] .cell-btn.active,
+.matrix-container.is-klee[class][class] tbody tr td.is-diagonal .cell-btn,
+.matrix-container.is-klee[class][class] tbody tr td.is-diagonal .cell-btn:hover,
+.matrix-container.is-klee[class][class] tbody tr td.is-diagonal .cell-btn.active {
+  background: transparent;
+  color: var(--k-ink);
+  box-shadow: none;
+  outline: none;
+}
+
+.matrix-container.is-klee[class][class] tbody td:hover {
+  position: relative;
+  z-index: 2;
+  filter: brightness(1.07) saturate(1.1);
+  transform: scale(1.04);
+  box-shadow: var(--k-lines), 0 12px 24px -10px rgba(20, 21, 24, 0.6);
+}
+
+.matrix-container.is-klee[class][class] tbody td:has(.cell-btn.active) {
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 0 0 4px #2a2a2c, 0 10px 20px -12px rgba(20, 21, 24, 0.55);
+}
+
+.matrix-container.is-klee[class][class] tbody th:hover,
+.matrix-container.is-klee[class][class] thead th:not(:first-child):hover,
+.matrix-container.is-klee[class][class] tbody th.row-cross,
+.matrix-container.is-klee[class][class] thead th.col-cross,
+.matrix-container.is-klee[class][class] tbody th.row-active,
+.matrix-container.is-klee[class][class] thead th.col-active {
+  background: var(--k-bg);
+  box-shadow: inset 0 0 0 2px var(--k-ink);
+}
+
+.matrix-container.is-klee[class][class] tbody th:hover .prop-name,
+.matrix-container.is-klee[class][class] thead th:not(:first-child):hover .th-name,
+.matrix-container.is-klee[class][class] tbody th.row-cross .prop-name,
+.matrix-container.is-klee[class][class] thead th.col-cross .th-name,
+.matrix-container.is-klee[class][class] tbody th.row-active .prop-name,
+.matrix-container.is-klee[class][class] thead th.col-active .th-name,
+.matrix-container.is-klee[class][class] thead th.col-active .th-culture { color: var(--k-ink); }
+
+
+/* ── the headers are signposts, not cells ──
+   The 7×7 is the matrix and the painting; the header row and column are
+   only there to say what its rows and columns are. So they are not patches
+   of colour: each is a name on the paper, with a short bar of its own deep
+   tone on the side that faces the matrix — under a column's name, to the
+   right of a row's. The header row is a thin strip, the header column a
+   narrow one, and only the name is shown; dates, places, descriptions and
+   numbers open in the panel on a click. */
+.matrix-container.is-klee[class][class] thead th,
+.matrix-container.is-klee[class][class] tbody th,
+.matrix-container.is-klee[class][class] .corner-th,
+.matrix-container.is-klee[class][class] tbody th:hover,
+.matrix-container.is-klee[class][class] thead th:not(:first-child):hover,
+.matrix-container.is-klee[class][class] tbody th.row-cross,
+.matrix-container.is-klee[class][class] thead th.col-cross,
+.matrix-container.is-klee[class][class] tbody th.row-active,
+.matrix-container.is-klee[class][class] thead th.col-active {
+  background: transparent;
+  color: #1d1f24;
+}
+
+.matrix-container.is-klee[class][class] .th-dates,
+.matrix-container.is-klee[class][class] .th-culture,
+.matrix-container.is-klee[class][class] .prop-desc,
+.matrix-container.is-klee[class][class] .th-num,
+.matrix-container.is-klee[class][class] .corner-row-label,
+.matrix-container.is-klee[class][class] .corner-col-label { display: none; }
+
+/* the header row: thin, the name centred over its column, the bar beneath */
+.matrix-container.is-klee[class][class] thead th .th-inner {
+  min-height: 0;
+  height: 100%;
+  padding: 6px 8px 9px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.matrix-container.is-klee[class][class] thead th:not(:first-child) {
+  box-shadow: inset 0 -4px 0 var(--k-bg);
+  vertical-align: bottom;
+}
+
+.matrix-container.is-klee[class][class] .corner-inner { min-height: 0; }
+
+/* the header column: the names stand upright, read from the foot up, so
+   the column is only as wide as a line of type (a long name takes a second
+   line rather than widening it); the bar at its right */
+.matrix-container.is-klee[class][class] .corner-th,
+.matrix-container.is-klee[class][class] tbody th {
+  width: 44px;
+  min-width: 44px;
+}
+
+.matrix-container.is-klee[class][class] tbody th {
+  padding: 6px 10px 6px 4px;
+  vertical-align: middle;
+  text-align: center;
+  box-shadow: inset -4px 0 0 var(--k-bg);
+}
+
+.matrix-container.is-klee[class][class] tbody th .prop-name {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  max-height: calc(var(--fs-cell-h, 96px) - 12px);
+  text-align: center;
+}
+
+.matrix-container.is-klee[class][class] .th-name,
+.matrix-container.is-klee[class][class] .prop-name {
+  font-family: var(--bn-display);
+  font-size: 14px;
+  line-height: 1.3;
+  color: #1d1f24;
+}
+
+/* Touched or chosen, a signpost fills: its bar grows across the whole
+   label in the header's own deep tone (eased, from the matrix's side), and
+   the name turns to light type on it. The matrix answers the touch: its
+   row or column stays in full colour, a hair forward, while the rest of the
+   7×7 recedes (trellis.js sets .k-focus on the table, .k-lit on the cells). */
+.matrix-container.is-klee[class][class] thead th:not(:first-child),
+.matrix-container.is-klee[class][class] tbody th {
+  transition: box-shadow 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.matrix-container.is-klee[class][class] thead th:not(:first-child):hover,
+.matrix-container.is-klee[class][class] thead th.col-cross,
+.matrix-container.is-klee[class][class] thead th.col-active {
+  box-shadow: inset 0 -80px 0 var(--k-bg);
+}
+
+.matrix-container.is-klee[class][class] tbody th:hover,
+.matrix-container.is-klee[class][class] tbody th.row-cross,
+.matrix-container.is-klee[class][class] tbody th.row-active {
+  box-shadow: inset -80px 0 0 var(--k-bg);
+}
+
+.matrix-container.is-klee[class][class] tbody td {
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.matrix-container.is-klee[class][class] table.k-focus tbody td {
+  opacity: 0.38;
+  filter: saturate(0.5);
+}
+
+.matrix-container.is-klee[class][class] table.k-focus tbody td.k-lit {
+  opacity: 1;
+  filter: saturate(1.15);
+  transform: scale(1.03);
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--k-lines), 0 8px 18px -10px rgba(20, 21, 24, 0.55);
+}
+
+.matrix-container.is-klee[class][class] .matrix-fs-btn { color: rgba(29, 31, 36, 0.55); }
+
+/* a signpost's name is ink on the paper, and the band's own light ink once
+   the band has filled it (the cell states above gave names the patch's ink) */
+.matrix-container.is-klee[class][class] tbody th .prop-name,
+.matrix-container.is-klee[class][class] tbody th:hover .prop-name,
+.matrix-container.is-klee[class][class] tbody th.row-cross .prop-name,
+.matrix-container.is-klee[class][class] tbody th.row-active .prop-name,
+.matrix-container.is-klee[class][class] thead th .th-name,
+.matrix-container.is-klee[class][class] thead th:not(:first-child):hover .th-name,
+.matrix-container.is-klee[class][class] thead th.col-cross .th-name,
+.matrix-container.is-klee[class][class] thead th.col-active .th-name {
+  color: #1d1f24;
+}
+
+.matrix-container.is-klee[class][class] tbody th:hover .prop-name,
+.matrix-container.is-klee[class][class] tbody th.row-cross .prop-name,
+.matrix-container.is-klee[class][class] tbody th.row-active .prop-name,
+.matrix-container.is-klee[class][class] thead th:not(:first-child):hover .th-name,
+.matrix-container.is-klee[class][class] thead th.col-cross .th-name,
+.matrix-container.is-klee[class][class] thead th.col-active .th-name {
+  color: var(--k-ink);
+  transition: color 0.2s ease 0.08s;
 }

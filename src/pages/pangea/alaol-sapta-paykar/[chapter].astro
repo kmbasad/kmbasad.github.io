@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import MondrianEdge from '../../../components/MondrianEdge.astro';
 import { alaolChapters } from '../../../data/alaol-chapters.js';
 
 export function getStaticPaths() {
@@ -27,6 +28,8 @@ const { en, bn, hasEn, prev, next } = Astro.props;
   navParentLabel="সপ্ত পয়কর"
   navGrandParentHref="/pangea/"
   navGrandParentLabel="প্যাঞ্জিয়া"
+  footPrev={prev ? `/pangea/alaol-sapta-paykar/${prev.slug}/` : null}
+  footNext={next ? `/pangea/alaol-sapta-paykar/${next.slug}/` : null}
 >
   <Fragment slot="head">
     <link
@@ -39,22 +42,6 @@ const { en, bn, hasEn, prev, next } = Astro.props;
     <table class="tt-table">
       <tbody></tbody>
     </table>
-
-    <div class="book-nav">
-      {prev
-        ? <a href={`/pangea/alaol-sapta-paykar/${prev.slug}/`} class="book-nav-btn book-nav-prev">
-            <span class="book-nav-arrow" aria-hidden="true">←</span>&nbsp;{prev.bn}
-          </a>
-        : <span class="book-nav-btn book-nav-disabled" aria-hidden="true">←</span>
-      }
-      <a href="/pangea/alaol-sapta-paykar/" class="book-nav-btn book-nav-toc">সপ্ত পয়কর</a>
-      {next
-        ? <a href={`/pangea/alaol-sapta-paykar/${next.slug}/`} class="book-nav-btn book-nav-next">
-            {next.bn}&nbsp;<span class="book-nav-arrow" aria-hidden="true">→</span>
-          </a>
-        : <span class="book-nav-btn book-nav-disabled" aria-hidden="true">→</span>
-      }
-    </div>
   </div>
 
   <!-- Centred, narrow reading column; blended table (transparent cells, no
@@ -74,19 +61,11 @@ const { en, bn, hasEn, prev, next } = Astro.props;
       background: transparent !important;
       border-right: none;
     }
-    .pangea-page .book-nav {
-      max-width: 100%;
-      margin-top: 2rem;
-    }
     @media (max-width: 640px) {
       /* Verse cells carry their own side padding on phones (≤640 block in
          translation-table.css), so the column goes edge-to-edge. */
       .pangea-page { padding: 12px 0 48px; }
-      .pangea-page .book-nav {
-        padding-left: 1rem;
-        padding-right: 1rem;
       }
-    }
   </style>
 
   <script is:inline define:vars={{ src: `${chapter}.md`, noSource: !hasEn }}>
@@ -94,4 +73,6 @@ const { en, bn, hasEn, prev, next } = Astro.props;
   </script>
   <script is:inline src="/js/md-loader.js"></script>
   <script is:inline src="/js/translation-table.js"></script>
+  <!-- a sparing Mondrian at the screen's edges, framing the column -->
+  <MondrianEdge seed={`alaol-${Astro.params.chapter}`} />
 </Base>

@@ -10,3 +10,6 @@ dist/
 
 # books workshop — private working material, not for the public repo
 books/
+
+# python bytecode
+__pycache__/

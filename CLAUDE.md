@@ -42,7 +42,7 @@ engines** from the pre-Astro era, loaded at runtime.
 
 - **`public/`** — served verbatim at the site root. Holds:
   - **`public/js/`** — the bespoke engines: `trellis.js` (renders the **Trellises** matrices; it
-    loads `trellis-flora.js` itself to paint the woven-vine layer, and renders the per-trellis
+    paints each matrix as a Mondrian of the Paris years (`paintKlee`: the early Mondrian, the 1913-14 Paris grids coloured with the vivid palette of his Domburg years, every cell filled, about half the groups light (off-white, greys, cream, pale tints of the trellis's colours) and the rest solid from its own nine-colour palette, never white with a few primary blocks (the later manner, rejected), the 7×7 cut into irregular rectangles of one to six cells, heavy charcoal lines round each rectangle and fine ones inside it; no diagonal marker; cells numbered row-then-column in Bangla from ১১ to ৭৭; a cell under the pointer brightens and lifts as a whole; the 7×7 is the painting, the header row and column are thin signposts — names only, upright in the column, a bar of the row's or column's deep tone facing the matrix, which on hover or selection fills the whole label with that tone, the name in light type, while the matrix recedes except that row or column (`.k-focus` / `.k-lit`); details open in the panel), and renders the per-trellis
     essay), `translation-table.js` (the shared parallel-table renderer with word-alignment
     hover-highlighting), its data loader `md-loader.js` (builds the parallel table from Markdown
     for **both** the **Translations** and the **Pangea** sections; stamps each verse row with
@@ -61,13 +61,13 @@ engines** from the pre-Astro era, loaded at runtime.
   - **favicon** — `favicon.svg` (the mark), plus `favicon-32.png` / `apple-touch-icon.png`
     rendered from it with headless Chrome. Redraw all three together.
   - **`public/css/`** — `style.css` (design system), `home.css`, `trellis.css`,
-    `translation-table.css`, `trellis-flora.css`, `panthea.css`, `book.css`.
+    `translation-table.css`, `panthea.css`, `book.css`.
 
     **The palette — Lapis & Gold** (defined once in `style.css`'s `:root`, everything else
     derives from it): a cool chalk ground (`--bg #ebeff6`, the accent at ~7% over white) with
     near-white reading surfaces (`--surface`, `--tt-paper`) lifted off it, navy-black ink
     (`--text #0e1a2b`), **lapis** `--accent #1d4f9b` for all structure and interaction (links,
-    active nav, matrix cells, the flora vine, the Panthea beacon), and **gold** `--accent-2
+    active nav, matrix cells, the Panthea beacon), and **gold** `--accent-2
     #a97c18` for marginalia and emphasis only — line numbers, section headings, a trellis's
     diagonal, the zenith crown. Gold is never a surface and never a paragraph. Warm browns,
     cream and terracotta are gone; the only warm values left in the CSS are the gold family.
@@ -93,74 +93,71 @@ engines** from the pre-Astro era, loaded at runtime.
 
 ### The menubar
 
-A glass shelf, sticky on **every** page, holding three things in this order: the **mark**
-(far left, links home), the **breadcrumb** for where you are — immediately beside the mark, so
-the two read as one cluster: whose site, then which page — and the four **section names**,
-pushed to the **far right** (`.nav-right { margin-left: auto }`, which is what drives the whole
-bar's shape). **The সূচি is part of the breadcrumb and therefore always on the left**, never
-out among the section names; on a page with no breadcrumb `site.js` still sits it beside the
-mark. Behaviour lives in `setupNav()` in `site.js` and is pure enhancement — without JS it is a
-plain list of links.
+**The top row of the home page's painting.** The site's palette now comes from Mondrian's
+*Composition in Blue, Gray and Pink* (1913) — tokens `--t-*` in `style.css` (`--t-line` soft
+charcoal, `--t-slate`, `--t-cream`, and a tint plus a deeper `-d` tint for each room: blue,
+pink, ochre, sage), page ground `--bg` the painting's pale grey-blue. The author's painters are
+Mondrian and Paul Klee: think from them for any colour or layout decision. The bar is thin
+(`--nav-h` 40px, 36px scrolled), closed by a charcoal rule, and **hinged at its exact centre
+on the mark** — the way home, in a wide cream cell of its own (`--mark-w`, `.nav-inner` is a
+grid `1fr auto 1fr`, the mark the middle column) — which divides it into two fields that
+cannot be mistaken for each other:
+
+- **left: the site, painted** (`.nav-site`) — the four rooms' cells, **all one width**
+  (`--room-w`) whatever their names, each **filled edge to edge with its own tint**
+  (`.room-blue/-pink/-ochre/-sage`, set in `Base.astro` by `TINTS`), the chosen room in the
+  deeper tint with a charcoal bar on its foot; charcoal lines between the cells, full height.
+  Right-aligned against the mark, so the rooms and the mark never move from page to page.
+  Left of the rooms, to the screen's edge, **one solid plane of lavender grey** (`.nav-paint`,
+  `--t-lav`): calmer than any room's tint, and a broad plane answering the slate on the right.
+  (A strip of many small planes there was tried and rejected as too busy.)
+- **right: this page, a slate field** (`.nav-page`, the bar's background is ground on the left
+  half and `--t-slate` on the right) — the trail in light grey, lavender chevrons, the current
+  page in pale ochre, the TOC key in lavender. On the home, where there is no trail, it shows
+  the site's name (`.nav-site-name`).
+
+**Phones (<=760px)** — left-aligned: the mark's cell, the slate field, and a **burger** at the
+end that brings the **sheet** (`.nav-sheet`, outside `<nav>`) down over the whole screen: the
+home and the four rooms as planes of the painting, each in its tint, the current one deeper.
+`setupNav()` in `site.js` wires it (`html.sheet-open`, Esc closes). There is no tab bar. Page
+changes **crossfade** with the bar held still (`@view-transition`, Chrome only).
+
+**The site home** (`src/pages/index.astro` + `public/css/home.css`) is one screen, one
+painting in that 1913 manner: a seeded field of irregular planes generated at build time
+(`compose()`), dense at the centre and fading at the edges, with reserved planes carrying the
+page — the name and tagline, the four rooms (each in its tint, deepening and lifting on hover),
+the contact links. Phones get their own taller composition with the same planes stacked.
 
 - **The mark** is the site's one piece of identity: a graduated limb with a dot at the zenith,
   drawn at three sizes from the same geometry — `public/favicon.svg` (+ the two PNGs rendered
-  from it), the nav mark (`markTicks` in `Base.astro`), and the watermark behind the menu
-  sheet. The home page prints the full instrument (72 graduations, `.home-plate` in
-  `index.astro`). Its dial turns a quarter-turn across the page's scroll, plus a kick on hover.
-  There is no হোম link — the mark is the way home, and it goes lapis on the home page.
-- **The glide rail** (`.nav-glide`) is the only state indicator: it rests under the active
-  section and follows the pointer. JS measures and moves it, and re-measures once the Bengali
-  webfonts land.
-- **The breadcrumb** (left, beside the mark) carries the page's identity, **in every section**.
-  A **text page has no in-page title at all** — no chapter head, no `h1`: the name is in the
-  bar and nowhere else. (An **index or listing page keeps its `h1`** — it is a destination you
-  arrive at, and the heading tops the list under it.)
-  **The ladder never shows the section root.** প্যান্থিয়া / প্যাঞ্জিয়া / অনুবাদ / মাচা are
-  already in the left cluster with the glide rail under the active one, so `Base.astro` filters
-  any ancestor whose href is one of the four (`SECTION_ROOTS`) out of the drawn crumbs — pages
-  still *pass* their full ladder, and it still reaches the tab title, where there is no such
-  cluster to read it from. A page therefore shows at most work › part.
-  Two **slots** let a section put its own controls in the bar: `nav-crumbs` steps in an extra
-  crumb after the ancestors (it need not be a link — Panthea's স্তর key opens a floor grid; it
-  draws its own trailing `<NavChevron />`), and `nav-here` replaces the gilt key's contents,
-  which must still contain `.nav-cur`.
-  Everything on the bar shares **one type size** (`--nav-fs`: 16.5px,
-  15.5px scrolled — section names and breadcrumb alike, all Tiro). Ancestor links are glass
-  keys (hairline border, soft radius, surface wash; lapis on hover) stepped apart by drawn
-  **gold SVG chevrons**. The current page is the one **gilt key** (`.nav-here`, gold hairline
-  frame): the title in `.nav-cur`, then — when the page has সূচি targets — a thin
-  inner divider and the **সূচি** action in lapis; `site.js` injects the সূচি there and makes
-  the whole gilt key the trigger (press it anywhere → the TOC opens). The dropdown hangs
-  directly under the gilt key (positioned by JS on open); ancestors hide ≤900px, the gilt key
-  stays. A page with **no** breadcrumb (the section roots) puts a bare সূচি key beside the mark
-  instead — still on the left, never among the section names.
-- **Heights.** `--nav-h` (50px) at rest, `--nav-h-min` (42px) once scrolled; `--nav-now` is
+  from it), the nav mark (`markTicks` in `Base.astro`), and the home page's full instrument
+  (72 graduations, `.home-plate` in `index.astro`). On the bar it is chalk with a gold zenith;
+  its dial turns a quarter-turn across the page's scroll, plus a kick on hover.
+- **The breadcrumb** carries the page's identity, **in every section**, as the **whole trail
+  from the section root** (প্যান্থিয়া › ধাপ ৩ › তলা ২৫১; অনুবাদ › work › part). A **text page has
+  no in-page title at all** — the name is in the bar and nowhere else. (An **index or listing
+  page keeps its `h1`**.) Ancestors are quiet grey words, stepped apart by drawn
+  chevrons; the current page is the **yellow cell** (`.nav-here` / `.nav-cur`),
+  then — when the page has সূচি targets — a thin gold divider and the **সূচি** in light lapis;
+  the whole gilt word opens the TOC. Ancestors bow out ≤1100px; the gilt word stays. Two
+  **slots** let a section put its own controls in: `nav-crumbs` (Panthea's ধাপ key; it draws
+  its own trailing `<NavChevron />`) and `nav-here` (must still contain `.nav-cur`).
+- **One type size** for the whole bar (`--nav-fs`: 15px, 14.5px scrolled), all Tiro.
+- **Heights.** `--nav-h` (40px) at rest, `--nav-h-min` (36px) once scrolled; `--nav-now` is
   the live one, switched by `.nav-tight` on `<html>`. Anything full-height beside the bar uses
-  `var(--nav-now)` (the dual-panel translation pages); anything that *sticks under* the bar
-  uses `var(--nav-h-min)`, because sticking only ever happens after the bar has narrowed.
-  Never hardcode the nav height again.
+  `var(--nav-now)`; anything that *sticks under* the bar uses `var(--nav-h-min)`. Never
+  hardcode the nav height.
 - **Scroll source.** Some pages lock the viewport and scroll an inner column instead. Mark
   that column `data-page-scroll` and the bar reads it (`.book-text-panel` does).
 - **Type.** The chrome uses `--bn-display` (Tiro Bangla first), the page uses `--bn-font`
   (Noto Serif Bengali first). Tiro has one weight — never ask it for 500.
-- **Small screens** (≤760px): the section names leave the shelf for **the tab bar**
-  (`.tab-bar` in `Base.astro`) — the four rooms fixed to the foot of the screen, app-wise,
-  on the same glass as the shelf; the active room wears the lapis and a short rail dropped
-  from the bar's top hairline (the glide rail's echo). It lives **outside** `<nav>` (the
-  nav's `backdrop-filter` would otherwise contain its fixed position). `--tab-h` is its
-  height; below the fold breakpoint `<body>` carries that much bottom padding so no page
-  ends under it, and the breadcrumb gets the whole shelf (`max-width: none`). There is no
-  hamburger and no menu sheet — pure CSS, nothing to wire. **Mobile reading is one column
-  site-wide**: every section's phone styles consume the `--m-read-pad` / `--m-read-fs` /
-  `--m-read-lh` tokens from `style.css` — never restate the numbers. The margin is
-  kindle-thin (the text fills the window), **prose justifies, and a verse line never
-  breaks**: on the collapsed one-column verse page the bn cells are `nowrap` and the fitter
-  at the foot of `translation-table.js` sets `--verse-fs` (shrinking from `--m-read-fs`,
-  floor 12.5px) so the page's longest line fits the screen — one size per page, re-run on
-  `md-loader-done`, font load, and resize. **Text precedes design on phones**: Panthea's
-  story sits above the map/plan plate (grid-row swap in `panthea.css`), and a trellis's
-  essay above its matrix (the `.trellis-page` wrapper + flex order in `trellis.css`);
-  `buildTOC` sorts targets by visual position so the সূচি reads the way the page does.
+- **Mobile reading is one column site-wide**: every section's phone styles consume the
+  `--m-read-pad` / `--m-read-fs` / `--m-read-lh` tokens from `style.css` — never restate the
+  numbers. The margin is kindle-thin, **prose justifies, and a verse line never breaks**: on
+  the collapsed one-column verse page the bn cells are `nowrap` and the fitter at the foot of
+  `translation-table.js` sets `--verse-fs` (shrinking from `--m-read-fs`, floor 12.5px) so the
+  page's longest line fits the screen. **Text precedes design on phones**: a trellis's essay
+  sits above its matrix; `buildTOC` sorts targets by visual position.
 
 ### The সূচি
 
@@ -285,7 +282,7 @@ None of it ships: no endpoint, no script and no `data-md` attribute in the produ
 
 ## Page patterns
 
-- **Translation page** — one `<BookReader …/>` (`src/components/BookReader.astro`) inside
+- **Translation page** — one `<BookReader title={…} work={…} …/>` (`src/components/BookReader.astro`) inside
   `Base` with `bodyClass="book-page"` and `styles={['/css/translation-table.css',
   '/css/book.css']}`. The component renders **only the poem**: the parallel table in its own
   scroll column (`data-page-scroll`) and the শব্দকোষ dictionary aside — no chapter head; the
@@ -302,6 +299,29 @@ None of it ships: no endpoint, no script and no `data-md` attribute in the produ
   `window.TT_DICT_LINES[key]` alone (the Sonnets use this; the older works keep page-wide
   two-column lists). Editable in place on `npm run dev` (see *The in-place editor*). (`book-i-prose.md` beside the Metamorphoses source is an
   unrendered archive of the literal prose crib from the retired books workshop.)
+- **Reading pages, common to all translations:** the page's title is its own again —
+  `BookReader`'s `title`/`work` props render it: on a wide screen (>=1200px) upright in a
+  narrow spine column at the text's left, under a short ochre bar, fixed while the poem
+  scrolls; below that, compact at the top of the page. The menubar therefore drops the title
+  on reading pages and keeps the trail and the contents key (`body.book-page .nav-cur` hidden).
+  **Every page**, the home and every index included, ends with **one footer**,
+  `src/components/SiteFoot.astro`, rendered by `Base.astro` as the last thing in `<body>`: a thin
+  full-width slate bar at the very bottom — the author's name in English far left, the licence
+  (© CC BY-NC-SA) far right, and in the middle three small cells: previous, back to the top,
+  next (a page passes `footPrev` / `footNext` to `Base`; a missing one is dimmed). Never place it
+  yourself. Its height is `--foot-h` (style.css): a page that holds itself to one screen (the
+  home, the Panthea home, the reading room) subtracts it so the foot is always in view; on a
+  scrolling page it closes the page, and on a short one it is pushed to the screen's bottom. No contents link (that is
+  in the bar). Author and licence live in `src/data/site.js`; the trellises' order in
+  `src/data/trellis-order.js`.
+  The **dictionary panel starts folded on every visit** (only its width is remembered), and a
+  sparing Mondrian runs down the screen's edges (`MondrianEdge`).
+- **Numbers on reading pages** are in **Bangla digits** and always in the **same place, the
+  margin column**: line numbers for works counted by line (Metamorphoses, Inferno), and a
+  poem's own number (`.pnum`) beside its first line for works counted by poem (ghazals,
+  sonnets — no head rows, no rhyme letters). On phones a poem's number rises above its first
+  line as a centred ॥ number ॥. The gap between units — ghazal to ghazal, sonnet to sonnet,
+  verse paragraph to verse paragraph — is one token, `--tt-unit-gap` (translation-table.css).
 - **Pangea chapter** — empty `<table class="tt-table">` inside a centred `.pangea-page` (narrow
   blended column, no image panel); set `TRANS_CONFIG` (`noSource: true` for Bengali-only chapters);
   load `md-loader.js` + `translation-table.js`. The Alaol chapters use the dynamic route
@@ -310,28 +330,37 @@ None of it ships: no endpoint, no script and no `data-md` attribute in the produ
   is rendered from the chapter list. Three-level breadcrumb (chapter — সপ্ত পয়কর — প্যাঞ্জিয়া),
   no in-page title, and a সূচি for free from the `## headings` in the `.md` (a chapter with
   fewer than two of them simply gets no সূচি key).
-- **Panthea story text** — the prose panel of every Panthea page is **pure Markdown** in
-  `src/stories/panthea/` (`index.md` for the home; optional `bhumi.md`, `minar/<n>.md`,
-  `patal/<n>.md` per floor — missing file → the empty-floor stub line), rendered **at build
-  time** (imported in `index.astro` / globbed in `PantheaFloor.astro`). Conventions instead of
-  HTML: first paragraph = lede, `*…*` inside a heading = the small floor-range tag
-  (`### স্তর ১ *তলা ১–১০০*`), a `>` blockquote = the italic coda — styled in
-  `public/css/panthea.css`. Editable in place on `npm run dev` like everything else (see *The in-place editor*). The story container carries
-  `data-toc-scan="h2, h3"`, which is the whole of Panthea's সূচি — a floor whose Markdown does
-  not exist has no headings and so no সূচি key.
-- **Panthea chrome** — there is **no second bar under the menubar**; the old `.pn-topbar` is
-  gone and every Panthea page is two panels only (story left, design right). All navigation is
-  in the breadcrumb: a floor page reads `[↑ স্তর ↓] › [↑ number ↓]` — the স্তর key opens the
-  floor grid and its arrows cross into the neighbouring স্তর, the gilt key's arrows step one
-  তলা, and `.nav-cur` holds the **bare number** (the স্তর beside it says which world; `navTitle`
-  still carries the full `তলা ৫০০` so the tab reads properly). The home is the roof and gets
-  the same gilt key with a single ↓. Both arrow pairs are lapis, full-height and wide — they
-  are the way through 2001 pages. A design panel with more than one view floats its view keys
-  over its own foot (`.pn-views`, the home's মিনার/পাতাল) rather than taking a bar.
+- **Panthea** — **প্যান্থিয়া is the one name for the whole building** (no মিনার, no পাতাল in
+  anything a reader sees). Seven ধাপ of exactly 100 floors each way, signed like the floors:
+  ধাপ ১…৭ above the ground (তলা ১…৭০০), ধাপ −১…−৭ beneath (তলা −১…−৭০০), **no zero floor**.
+  Floors are named word-first like the ধাপ: **তলা ২৫১**, **তলা −৫**. (`minar/` and `patal/`
+  survive only as internal URL folders.) All geometry is `src/data/panthea-tiers.js` (load the `panthea` skill).
+  **The home** (`src/pages/panthea/index.astro`) is only a navigator and exactly **one screen,
+  never a scroll**: two halves of equal width on the bare page (no frames), meeting at the
+  centre — the building in section on the left (`PantheaSection.astro`, `variant="map"`, with
+  only a faint **scale of the cosmos** at its left: a slide rule in powers of ten, the human
+  (1 m, exponent ০) at the ground, ২৭ at the summit (the observable universe), −২৭ at the nadir,
+  a mirror held at the human, each ধাপ the same 27/7 of a power; only the exponents are written,
+  small, every third power, under a lone log₁₀ — no words, no metres, no floor numbers. Hidden on
+  phones. A ধাপ colour strip, a cubit scale and named ends (the Planck length) were tried and
+  dropped. The lift paintings live in `src/data/lift-paintings.js`),
+  and on the right the title প্যান্থিয়া over the pressed ধাপ as a **10×10 lift matrix**
+  (cells touching, hairline-divided) (one row per decade, last digit
+  fixed by column; hover a floor → its গল্প's title + synopsis in the caption beneath and a
+  gold line at its true height on the building; press → that floor). **A floor page**
+  (`PantheaFloor.astro`) is the story alone in one centred column, with the same section drawn
+  small top-right as the only other thing (`variant="inset"`, your ধাপ outlined, your floor a
+  gold hairline; pressing a ধাপ there opens the home on it, `/panthea/#t3`). The story is
+  **pure Markdown** in `src/stories/panthea/{minar,patal}/<n>.md` (a পাতাল floor without the
+  minus), rendered at build time; its frontmatter `title` / `synopsis` are what the home's lift
+  shows, and a floor with a file is lit gold there. Missing file → the stub line. Conventions:
+  first paragraph = lede, `*…*` inside a heading = small tag, `>` blockquote = coda; the
+  container's `data-toc-scan="h2, h3"` is Panthea's whole সূচি. The breadcrumb reads
+  `প্যান্থিয়া › [↑ ধাপ ৩ ↓] › [↑ তলা ২৫১ ↓]` — the ধাপ word drops the floor grid, its arrows cross ধাপ,
+  the gilt word's arrows step one তলা, ctrl+↑/↓ rides; the home is the roof, with a single ↓.
 - **Trellis** — the whole page is `<TrellisPage title="…" />` (`src/components/TrellisPage.astro`):
   a `.trellis-hero` holding `#trellis-mount` and a প্রবন্ধ ↓ cue, then
-  `.trellis-essay > #essay-mount`, with `TRELLIS_CONFIG` set and `trellis.js` loaded (it pulls in
-  `trellis-flora.js`). No in-page title. **On desktop the matrix is the hero**: exactly one
+  `.trellis-essay > #essay-mount`, with `TRELLIS_CONFIG` set and `trellis.js` loaded. No in-page title. **On desktop the matrix is the hero**: exactly one
   screen under the bar at rest (`100svh - --nav-h`), full width, the grid's cells sized by JS
   (`fit` → `--fs-cell-w/-h`, the same arithmetic as pseudo-fullscreen) so the 7×7 fills it; the
   essay is one scroll below. **A file with several matrices becomes a slider** in the hero
@@ -339,6 +368,34 @@ None of it ships: no endpoint, no script and no `data-md` attribute in the produ
   the সূচি's scrollIntoView work natively; phones turn it by the tabs only). Each matrix's
   `# Title` is its সূচি label; `h2.matrix-title` is no longer drawn. Phones keep reading-first
   (essay above, natural-size grid after).
+- **The Trellises index** (`src/pages/trellises/index.astro`) carries no instructions: under
+  its `h1` a one-line description, and a key that slides open a reading panel (from the
+  right; full screen on phones) with the fuller account of the idea, philosophy and poetry of
+  the 7×7 trellises. Both come from `src/stories/trellises/about.md` — frontmatter `lede`
+  (the one-liner), `more` (the key's label), `title` (the panel's heading), then plain
+  paragraphs.
+- **Section pages are paintings** (`src/components/Painting.astro` + `public/css/painting.css`):
+  each section's index is composed after one painting, fixed as the page's background — Pangea
+  after Mondrian's *Composition with Large Red Plane, Yellow, Black, Gray and Blue* (1921), the
+  Translations after *Composition with Red, Blue and Yellow* (1930), the Trellises after Klee's
+  *Castle and Sun* (1928, a seeded mosaic), the Panthea home with a faint *Broadway Boogie
+  Woogie* behind its navigator. The content is **not** spread over the planes (a section will
+  hold dozens of works): it is a **list in one long white plane of the painting** (the sheet,
+  `sheet: { d: [x, w], p: [x, w] }`), bounded by the painting's lines, scrolling over the still
+  painting; each entry wears a small block of one of the painting's colours (`--m`). A new
+  work is one more `<li>` — or, for data-driven lists, one more entry in the data file.
+  **Every index page does this**, the works' own indexes too: their paintings live in
+  `src/data/compositions.js` (Metamorphoses after the 1921 *Large Blue Plane*, the Divan after
+  *Composition with Yellow, Blue and Red*, the Sonnets after *Composition No. 10*, the Divine
+  Comedy in three zones red/grey/blue-gold, Alaol's *Sapta Paykar* in its seven pavilion
+  colours, each day's chapter wearing its pavilion's colour). Reading pages with a centred
+  column (Pangea chapters, Panthea floors) carry a sparing Mondrian at the screen's edges
+  (`src/components/MondrianEdge.astro`, wide screens only).
+- **Fonts:** every Bangla word is **Noto Serif Bengali** (`--bn-font`, `--bn-display`; every
+  Latin stack carries it too); the menubar alone is **Tiro Bangla** (`--bn-bar`). Anek Bangla
+  and Galada were tried and rejected. The author would like *Charukola* (Chandan Acharja,
+  Charu Chandan) for the bar, but its web copy is licensed for preview and print only: use it
+  only once he has the designer's permission.
 - **Section / work listing** — `.page-header > .breadcrumb` then `.listing-box > a.listing-item`.
   Listing and index pages are the ones that **keep** their `h1.work-title`.
 

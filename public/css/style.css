@@ -33,32 +33,45 @@ html {
   --accent-2: #a97c18;          /* gold — illumination, marginalia */
   --accent-light: rgba(29, 79, 155, 0.09);
   --accent-mid: rgba(29, 79, 155, 0.32);
-  --text: #0e1a2b;              /* ink */
-  --text-2: #2c3e57;
-  --text-3: #5a6b85;
-  --text-4: #8b99ae;
-  --surface: #fbfcfe;           /* fresh paper — panels, cards, the nav */
-  --surface-2: #e0e5ef;
-  --surface-3: #cfd7e5;
-  --border: rgba(14, 26, 43, 0.13);
-  --border-2: rgba(14, 26, 43, 0.26);
-  --bg: #ebeff6;                /* chalk ground */
+  --text: #111317;              /* ink */
+  --text-2: #2b2f37;
+  --text-3: #5e646e;
+  --text-4: #969ba4;
+  --surface: #ffffff;           /* fresh paper — panels, cards, the nav */
+  --surface-2: #e6e6e2;
+  --surface-3: #d5d5d0;
+  --border: rgba(17, 19, 23, 0.13);
+  --border-2: rgba(17, 19, 23, 0.26);
+  --bg: #eceef2;                /* the painting's ground: pale grey-blue */
+  /* The tints of Mondrian's "Composition in Blue, Gray and Pink" (1913):
+     the home page is painted in them, and the menubar wears them too.
+     Each room has a tint and a deeper one for when it is chosen. */
+  --t-line: #2a2d33;            /* soft charcoal, the painting's line */
+  --t-slate: #30343c;           /* the page's field on the bar */
+  --t-cream: #f1eee5;
+  --t-blue: #bcd0df;   --t-blue-d: #93b3cb;
+  --t-pink: #dcc8d0;   --t-pink-d: #c8a5b3;
+  --t-ochre: #e0c987;  --t-ochre-d: #cfae5a;
+  --t-sage: #c2c597;   --t-sage-d: #a4a872;
+  --t-lav: #c9c5da;                /* chalk ground */
   --r: 8px;
   --r-sm: 4px;
   --sh-sm: 0 1px 2px rgba(14, 26, 43, .06), 0 1px 1px rgba(14, 26, 43, .04);
   --sh: 0 6px 24px rgba(14, 26, 43, .10), 0 1px 3px rgba(14, 26, 43, .06);
   /* Type system */
-  --display-font: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --serif-font: 'Spectral', Georgia, 'Times New Roman', serif;
-  --ui-font: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  /* Unified Bangla stack — Tiro Bangla (designed for literary reading) as
-     primary; Noto Serif Bengali covers weights Tiro lacks; system fonts last. */
-  --bn-font: 'Noto Serif Bengali', 'Tiro Bangla', 'Kalpurush', 'SolaimanLipi', Georgia, serif;
-  /* The chrome speaks in a different Bangla voice from the page: Tiro Bangla
-     leads here (the page leads with Noto Serif Bengali), so the menubar and
-     the menu sheet read as lettering rather than as UI. One weight only —
-     never ask it for 500, that is a synthetic bold and it muddies. */
-  --bn-display: 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif;
+  --display-font: 'Fraunces', 'Noto Serif Bengali', Georgia, 'Times New Roman', serif;
+  --serif-font: 'Spectral', 'Noto Serif Bengali', Georgia, 'Times New Roman', serif;
+  --ui-font: 'DM Sans', 'Noto Serif Bengali', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* One Bangla face for every word on the site: Noto Serif Bengali,
+     compact and readable at length, text and headings alike. Every Latin
+     stack carries it too, so no Bangla glyph ever falls to a system font.
+     (Anek Bangla, a sans, was tried here and rejected as hard to read.) */
+  --bn-font: 'Noto Serif Bengali', 'Kalpurush', 'SolaimanLipi', Georgia, serif;
+  --bn-display: 'Noto Serif Bengali', 'Kalpurush', Georgia, serif;
+  /* The menubar alone speaks in a different hand: Tiro Bangla, lettering
+     rather than text. One weight only: never ask it for 500. (Galada was
+     tried here and rejected.) */
+  --bn-bar: 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif;
   /* Motion */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -69,18 +82,16 @@ html {
   /* The menubar's height. Anything that sticks under the nav — the book
      page's full-height panels — measures from this, so the bar can be
      resized in exactly one place. */
-  --nav-h: 50px;
+  --nav-h: 40px;
+  --foot-h: 40px;              /* SiteFoot, the bar at the foot of every page */
   /* …and what it draws back to once the page is moving. Anything that sticks
      under the bar measures from THIS one, because sticking only ever happens
      after the bar has already narrowed. */
-  --nav-h-min: 42px;
+  --nav-h-min: 36px;
   /* …and the one the layout should actually use right now. <html> carries
      .nav-tight while the page is scrolled, so a full-height panel beside
      the bar (the dual-panel translation pages) narrows with it. */
   --nav-now: var(--nav-h);
-  /* The tab bar's height — phones only. Anything fixed to the foot of the
-     screen, and the page's own bottom clearance, measures from this. */
-  --tab-h: 54px;
   /* ── The one mobile reading column ──
      Every section reads the same on a phone: same side margin, same Bangla
      size, same leading. The section stylesheets consume these tokens in
@@ -166,41 +177,68 @@ a:hover {
   border-radius: 3px;
 }
 
+/* Moving between pages feels like one app, not a reload: where the browser
+   can, the page crossfades while the bar holds perfectly still. */
+@view-transition { navigation: auto; }
+.nav { view-transition-name: site-nav; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 0.28s; }
+
+/* no grey flash under a finger — the controls answer for themselves */
+a, button { -webkit-tap-highlight-color: transparent; }
+
 /* ═══════════════════════════════════════════════════════════════════════════
    THE MENUBAR
    ═══════════════════════════════════════════════════════════════════════════
-   A single hairline shelf that floats over the paper. Three parts: the mark
-   (home, and a dial that turns when you touch it), the section names, and
-   the page you are on. One glide rail does all the state — it rests under
-   the active section and follows the pointer, so nothing else has to move.
-   Below 760px the names fold into the menu sheet at the end of this file. */
+   The top row of the home page's painting (Mondrian, "Composition in Blue,
+   Gray and Pink", 1913). Thin, and hinged at its exact centre on the mark —
+   the way home, in a wide cream cell of its own — which divides it into two
+   fields that could not be mistaken for each other:
+
+     left   the SITE, painted — the four rooms' cells, all of one width
+            whatever their names, each filled edge to edge with its tint (blue, pink,
+            ochre, sage), the chosen one in the deeper tint; soft charcoal
+            lines between the cells, running the bar's full height
+     right  this PAGE, a single slate field (the painting's line colour, so
+            the right half reads as one broad stroke) with the trail on it in
+            light type, the current page in pale ochre, the সূচি in lavender
+
+   The mark never moves: the rooms are right-aligned against it on every
+   page, so only the slate field's contents change as you go.
+   On phones (≤760px) the rooms leave for the sheet behind the burger; the
+   mark's cell, the slate field and the burger remain, left-aligned. */
+
+:root {
+  --m-rule: 2px;               /* the weight of the bar's lines */
+  --room-w: 108px;             /* every room's cell, whatever its name */
+  --mark-w: 92px;              /* the mark's cell, the hinge at the centre */
+}
 
 .nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  /* Slick, not frosted: the chalk held thin over a light blur, closed by a
-     single hairline. The same shelf on every page, home included. */
-  background: color-mix(in srgb, var(--bg) 76%, transparent);
-  backdrop-filter: saturate(1.25) blur(14px);
-  -webkit-backdrop-filter: saturate(1.25) blur(14px);
-  border-bottom: 1px solid var(--border);
-  transition: background var(--dur) ease, border-color var(--dur) ease,
-              box-shadow var(--dur) ease;
+  /* the ground on the left, the slate on the right, meeting at the centre */
+  background: linear-gradient(90deg, var(--bg) 50%, var(--t-slate) 50%);
+  border-bottom: var(--m-rule) solid var(--t-line);
+  color: var(--t-line);
+  transition: box-shadow var(--dur) ease;
 }
 
-/* The shelf never leaves — on any page, at any scroll depth. What changes
-   is its height, its glass, and the progress it draws along its edge. */
+.nav.is-scrolled {
+  box-shadow: 0 10px 24px -18px rgba(42, 45, 51, 0.45);
+}
 
+/* the reading progress: ochre drawn over the rule along the foot */
 .nav-progress {
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: calc(-1 * var(--m-rule));
   width: 100%;
-  height: 1.5px;
+  height: var(--m-rule);
   transform-origin: left center;
   transform: scaleX(var(--p, 0));
-  background: var(--accent);
+  background: var(--t-ochre-d);
   opacity: 0;
   transition: opacity .3s ease;
   pointer-events: none;
@@ -208,66 +246,76 @@ a:hover {
 
 .nav.is-scrolled .nav-progress { opacity: 1; }
 
-/* Once the paper starts moving under it the shelf tightens: a touch more
-   body so text cannot ghost through, and the faintest lift off the page. */
-.nav.is-scrolled {
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  box-shadow: 0 10px 22px -22px rgba(14, 26, 43, 0.65);
-}
-
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
   height: var(--nav-now);
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  /* no padding: the painted strip runs to the left edge, the slate to the
+     right one */
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
   transition: height var(--dur-slow) var(--ease-out);
 }
 
-/* Narrower once the paper is moving: the shelf gives its height back to
-   the page and holds at the top. */
 html.nav-tight { --nav-now: var(--nav-h-min); }
 
-/* ── The mark ──────────────────────────────────────────────────────────── */
+/* One type size for the whole bar, breathing in when it narrows. */
+.nav { --nav-fs: 16px; }
+.nav.is-scrolled { --nav-fs: 15px; }
+
+/* ── the left field: painted cells ── */
+.nav-site {
+  justify-self: stretch;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+/* the far left: one solid plane of the painting's lavender grey, from the
+   screen's edge to the rooms — calmer than any room's tint, so the rooms
+   stay foremost, and a broad plane to answer the slate on the right */
+.nav-paint {
+  flex: 1 1 0;
+  min-width: 0;
+  background: var(--t-lav);
+}
 
 .nav-mark {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Sized against the shelf, not chosen freely: 34 of the resting 50px and
-     29 of the tightened 42px leave the same breathing ring above and below,
-     so the dial keeps its place as the bar narrows. */
-  width: 34px;
-  height: 34px;
+  width: var(--mark-w);
+  padding: 0;
+  background: var(--t-cream);
   background-image: none;
-  border-radius: 50%;
-  transition: width var(--dur-slow) var(--ease-out), height var(--dur-slow) var(--ease-out);
+  border-left: var(--m-rule) solid var(--t-line);
+  border-right: var(--m-rule) solid var(--t-line);
+  transition: background 0.2s ease;
 }
 
-.nav.is-scrolled .nav-mark { width: 29px; height: 29px; }
+.nav-mark:hover { background: var(--t-lav); }
 
 .nav-mark svg {
-  width: 100%;
-  height: 100%;
+  width: calc(var(--nav-now) - 14px);
+  height: calc(var(--nav-now) - 14px);
   overflow: visible;
+  transition: width var(--dur-slow) var(--ease-out), height var(--dur-slow) var(--ease-out);
 }
 
 .nav-mark .nm-ring {
   fill: none;
-  stroke: var(--text-4);
-  stroke-width: 1.4;
+  stroke: var(--t-line);
+  stroke-width: 1.5;
   vector-effect: non-scaling-stroke;
-  transition: stroke var(--dur) ease;
 }
 
 .nav-mark .nm-ticks line {
-  stroke: var(--text-3);
-  stroke-width: 1.4;
+  stroke: var(--t-line);
+  stroke-width: 1.3;
   vector-effect: non-scaling-stroke;
-  transition: stroke var(--dur) ease;
 }
 
 /* The dial reads the page: a quarter turn from the top of the document to
@@ -280,33 +328,23 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
 }
 
 .nav-mark .nm-zenith {
-  fill: var(--accent);
+  fill: var(--t-ochre-d);
   r: 8;
   transform-box: fill-box;
   transform-origin: center;
-  transition: transform var(--dur) var(--ease), fill var(--dur) ease;
+  transition: transform var(--dur) var(--ease);
 }
 
 .nav-mark:hover,
-.nav-mark:focus-visible           { --kick: 45deg; }
-.nav-mark:hover .nm-ring          { stroke: var(--accent); }
-.nav-mark:hover .nm-ticks line    { stroke: var(--accent-mid); }
-.nav-mark:hover .nm-zenith        { transform: scale(1.28); }
-
-/* On the home page the mark itself is the active item. */
-.nav-mark.is-here .nm-ring { stroke: var(--accent); }
-.nav-mark.is-here .nm-ticks line { stroke: var(--accent-mid); }
+.nav-mark:focus-visible { --kick: 45deg; }
+.nav-mark:hover .nm-zenith { transform: scale(1.25); }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav,
   .nav-inner,
-  .nav-links a,
   .nav-mark,
   .nav-mark .nm-ticks { transition: none; }
   .nav-mark .nm-ticks { transform: none; }
 }
-
-/* ── The section names ─────────────────────────────────────────────────── */
 
 .nav-links-wrap {
   position: relative;
@@ -314,62 +352,264 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   min-width: 0;
 }
 
+/* no sliding block any more: every cell is filled edge to edge, itself */
+.nav-glide { display: none; }
+
 .nav-links {
   display: flex;
-  gap: 2px;
+  align-items: stretch;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* One type size for everything on the shelf — section names, breadcrumb,
-   সূচি — carried by --nav-fs so the whole bar breathes in and out together
-   when it narrows on scroll. */
-.nav { --nav-fs: 16.5px; }
-.nav.is-scrolled { --nav-fs: 15.5px; }
+.nav-links li {
+  display: flex;
+  flex: 0 0 var(--room-w);
+  border-left: var(--m-rule) solid var(--t-line);
+}
 
 .nav-links a {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 6px 14px 7px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px 1px;
+  font-family: var(--bn-bar);
   font-size: var(--nav-fs);
-  font-weight: 400;
-  font-family: var(--bn-display);
-  letter-spacing: 0.015em;
+  letter-spacing: 0.02em;
   line-height: 1.35;
-  transition: color var(--dur) ease, font-size var(--dur-slow) var(--ease-out);
-  color: var(--text-2);
+  color: var(--t-line);
   white-space: nowrap;
+  background: var(--tint);
+  background-image: none;
+  transition: background 0.25s ease, font-size var(--dur-slow) var(--ease-out);
 }
+
+.room-blue  { --tint: var(--t-blue);  --tint-d: var(--t-blue-d); }
+.room-pink  { --tint: var(--t-pink);  --tint-d: var(--t-pink-d); }
+.room-ochre { --tint: var(--t-ochre); --tint-d: var(--t-ochre-d); }
+.room-sage  { --tint: var(--t-sage);  --tint-d: var(--t-sage-d); }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--accent); }
+.nav-links a.active { background: var(--tint-d); }
 
-/* The rail: a soft wash with a lapis rule along its foot. JS sizes and
-   moves it; before it is measured it stays invisible, so nothing flashes. */
-.nav-glide {
-  position: absolute;
-  left: 0;
-  top: 3px;
-  bottom: 2px;
-  width: 0;
-  border-radius: 3px 3px 0 0;
-  /* a rule with the faintest light standing on it — not a button */
-  background: linear-gradient(to bottom,
-    transparent 42%, rgba(29, 79, 155, 0.07) 100%);
-  box-shadow: inset 0 -1.5px 0 var(--accent);
-  opacity: 0;
-  pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  transition: transform .42s var(--ease-out), width .42s var(--ease-out),
-              opacity .22s ease;
+/* the chosen room: deeper, and a charcoal bar standing on its foot */
+.nav-links a.active { box-shadow: inset 0 -4px 0 var(--t-line); }
+
+
+/* ── the right field: one slate stroke, light type on it ── */
+.nav-page {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  padding-left: 18px;
+  color: #d6dae2;
 }
 
-.nav-glide.is-on { opacity: 1; }
+.nav-site-name {
+  font-family: var(--bn-bar);
+  font-size: var(--nav-fs);
+  color: var(--t-ochre);
+  letter-spacing: 0.02em;
+}
+
+.nav-page-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  font-family: var(--bn-bar);
+  font-size: var(--nav-fs);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav-parent {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 4px 4px;
+  border: none;
+  background: none;
+  font-family: var(--bn-bar);
+  font-size: var(--nav-fs);
+  color: #aeb4c0;
+  text-decoration: none;
+  transition: color var(--dur) ease;
+}
+
+.nav-parent:hover { color: #fff; }
+
+.nav-sep {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  color: var(--t-lav);
+  opacity: 0.7;
+}
+
+.nav-sep svg { display: block; }
+
+.nav-here {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav-here.has-toc { cursor: pointer; }
+
+/* the current page: pale ochre, the one warm note on the slate */
+.nav-cur {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 4px 4px;
+  font-size: var(--nav-fs);
+  color: var(--t-ochre);
+  transition: font-size var(--dur-slow) var(--ease-out), color var(--dur) ease;
+}
+
+.nav-here.has-toc:hover .nav-cur { color: #f3e2ae; }
+
+.nav .toc-key {
+  color: var(--t-lav);
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  margin-left: 10px;
+  padding: 1px 4px 2px 12px;
+  background: none;
+}
+
+.nav .toc-key:hover,
+.nav .nav-here.has-toc:hover .toc-key,
+.nav .toc-key.is-open { color: #fff; background: none; }
+
+.nav-page > .toc-key { border-left: none; margin-left: 0; padding-left: 4px; }
+
+/* the burger: phones only */
+.nav-burger { display: none; }
+
+/* a narrow desktop: the ancestors bow out, the current page stays (and so
+   does a section's own crumb, which is a control, not an ancestor) */
+@media (max-width: 1100px) {
+  .nav-page-info > .nav-parent,
+  .nav-page-info > .nav-sep { display: none; }
+}
+
+/* ═══ Phones: the mark's cell, the slate field, the burger ═══ */
+@media (max-width: 760px) {
+  .nav { background: var(--t-slate); }
+
+  .nav-inner {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0 0 env(safe-area-inset-left);
+  }
+
+  .nav-site { display: none; }
+  .nav-mark { order: -1; width: 48px; border-left: none; }
+
+  .nav-page { flex: 1 1 auto; padding-left: 12px; }
+  .nav-page-info { flex: 1 1 auto; }
+
+  .nav-burger {
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 48px;
+    margin-left: auto;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    background: none;
+    cursor: pointer;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #e7eaf0;
+    transition: transform 0.3s var(--ease-out), opacity 0.2s ease;
+  }
+
+  .nav-burger span:nth-child(2) { width: 14px; justify-self: end; background: var(--t-ochre); }
+
+  html.sheet-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  html.sheet-open .nav-burger span:nth-child(2) { opacity: 0; }
+  html.sheet-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* ── The sheet: the burger brings it down over the whole screen — the rooms
+      as planes of the painting, each in its tint ── */
+.nav-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: none;
+  padding: calc(var(--nav-now) + var(--m-rule)) 0 calc(28px + env(safe-area-inset-bottom));
+  background: var(--bg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.45s cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+@media (max-width: 760px) {
+  .nav-sheet { display: block; }
+}
+
+html.sheet-open .nav-sheet { clip-path: inset(0 0 0 0); }
+html.sheet-open,
+html.sheet-open body { overflow: hidden; }
+
+.nav-sheet-inner { display: grid; }
+
+.nav-sheet-item {
+  display: grid;
+  gap: 2px;
+  padding: 18px max(22px, env(safe-area-inset-left)) 19px;
+  border-bottom: var(--m-rule) solid var(--t-line);
+  background: var(--tint, var(--t-cream));
+  text-decoration: none;
+  background-image: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.35s ease, transform 0.45s var(--ease-out), background 0.2s ease;
+}
+
+html.sheet-open .nav-sheet-item { opacity: 1; transform: none; }
+html.sheet-open .nav-sheet-item:nth-child(2) { transition-delay: 0.04s; }
+html.sheet-open .nav-sheet-item:nth-child(3) { transition-delay: 0.08s; }
+html.sheet-open .nav-sheet-item:nth-child(4) { transition-delay: 0.12s; }
+html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
+
+.nav-sheet-label {
+  font-family: var(--bn-bar);
+  font-size: 28px;
+  line-height: 1.25;
+  color: var(--t-line);
+}
+
+.nav-sheet-gloss {
+  font-family: var(--bn-font);
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+
+.nav-sheet-item.active,
+.nav-sheet-item:active { background: var(--tint-d, var(--t-lav)); }
+.nav-sheet-item.active { box-shadow: inset 6px 0 0 var(--t-line); }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav-glide { transition: opacity .2s ease; }
+  .nav-sheet, .nav-sheet-item { transition: none; }
 }
 
 /* PAGE INTRO — title block at the top of each page's content area */
@@ -504,7 +744,7 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   color: var(--text-3);
   margin-top: 2px;
   font-style: italic;
-  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-family: 'Spectral', 'Noto Serif Bengali', Georgia, 'Times New Roman', serif;
 }
 
 .listing-item .tag {
@@ -688,7 +928,7 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
 }
 
 .essay-body p {
-  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-family: 'Spectral', 'Noto Serif Bengali', Georgia, 'Times New Roman', serif;
   font-size: 20px;
   font-weight: 300;
   line-height: 1.88;
@@ -712,7 +952,7 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
 }
 
 .essay-body strong {
-  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-family: 'Spectral', 'Noto Serif Bengali', Georgia, 'Times New Roman', serif;
   font-weight: 600;
   color: var(--text);
   letter-spacing: -0.01em;
@@ -1040,7 +1280,7 @@ html.nav-tight { --nav-now: var(--nav-h-min); }
   /* Dark background */
   color: var(--surface);
   /* White text */
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'DM Sans', 'Noto Serif Bengali', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 13px;
   line-height: 1.5;
   white-space: nowrap;
@@ -1119,186 +1359,6 @@ body,
               box-shadow .3s ease;
 }
 
-/* ── Nav right side: where you are, and the menu key ───────────────────── */
-/* The far-right cluster: the four section names, and the menu key that
-   replaces them below the fold breakpoint. `margin-left: auto` is what drives
-   the whole bar's shape — mark and breadcrumb held together at the left, the
-   site's rooms pushed to the opposite end. */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-left: auto;
-  flex-shrink: 0;
-  min-width: 0;
-}
-
-/* Current-page breadcrumb: Grandparent › Parent › [ Title │ সূচি ].
-   Glass keys on the glass shelf, all set at the bar's one type size.
-   Ancestors are quiet surface keys with a hairline border; small gold
-   chevrons step between them. The current page is the one gilt key — a
-   gold hairline frame, the title in Tiro true italic, and (when the page
-   has a TOC) the সূচি beyond a thin divider inside the same key. The whole
-   gilt key is one target: press it anywhere and the সূচি opens — this page
-   and its contents are one thing, the ancestors are other pages. */
-/* It sits immediately after the mark, so the two read as one cluster: whose
-   site, then which page. It yields before the section names do. */
-.nav-page-info {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: 0 1 auto;
-  font-family: var(--bn-display);
-  font-size: var(--nav-fs);
-  letter-spacing: 0.01em;
-  line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 520px;
-}
-
-.nav-parent {
-  flex-shrink: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 3px 13px 4px;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  background: color-mix(in srgb, var(--surface) 20%, transparent);
-  color: var(--text-2);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color var(--dur) ease, border-color var(--dur) ease,
-              background var(--dur) ease, box-shadow var(--dur) ease,
-              font-size var(--dur-slow) var(--ease-out);
-}
-
-.nav-parent:hover {
-  color: var(--accent);
-  border-color: var(--accent-mid);
-  background: color-mix(in srgb, var(--surface) 65%, transparent);
-  box-shadow: var(--sh-sm);
-}
-
-/* the step marks — drawn gold chevrons, unmissable but fine-lined */
-.nav-sep {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  color: var(--accent-2);
-}
-
-.nav-sep svg { display: block; }
-
-/* the gilt key: current page + its সূচি behind one gold hairline frame */
-.nav-here {
-  display: inline-flex;
-  align-items: stretch;
-  min-width: 0;
-  border: 1px solid color-mix(in srgb, var(--accent-2) 48%, transparent);
-  border-radius: var(--r);
-  background: color-mix(in srgb, var(--accent-2) 5%, transparent);
-  overflow: hidden;
-  transition: border-color var(--dur) ease, background var(--dur) ease,
-              box-shadow var(--dur) ease;
-}
-
-.nav-here.has-toc { cursor: pointer; }
-
-.nav-here.has-toc:hover,
-.nav-here.has-toc:focus-within {
-  border-color: color-mix(in srgb, var(--accent-2) 80%, transparent);
-  background: color-mix(in srgb, var(--accent-2) 9%, transparent);
-  box-shadow: var(--sh-sm);
-}
-
-.nav-cur {
-  flex-shrink: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 3px 13px 4px;
-  font-size: var(--nav-fs);
-  font-weight: 400;
-  color: var(--text);
-  transition: font-size var(--dur-slow) var(--ease-out);
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   THE TAB BAR — phones
-   ═══════════════════════════════════════════════════════════════════════════
-   The app answer to the section names: the four rooms fixed under the thumb,
-   set in Tiro on the same glass as the shelf above. The active room wears
-   the lapis and a short rail along the bar's top edge — the glide rail's
-   echo. Hidden above the fold breakpoint, where the names live in the bar. */
-
-.tab-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 95;
-  display: none;
-  align-items: stretch;
-  height: calc(var(--tab-h) + env(safe-area-inset-bottom));
-  padding: 0 max(4px, env(safe-area-inset-left)) env(safe-area-inset-bottom)
-           max(4px, env(safe-area-inset-right));
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(1.25) blur(14px);
-  -webkit-backdrop-filter: saturate(1.25) blur(14px);
-  border-top: 1px solid var(--border);
-}
-
-.tab-item {
-  position: relative;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--bn-display);
-  font-size: 15.5px;
-  line-height: 1.35;
-  color: var(--text-2);
-  background-image: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.tab-item:active { color: var(--accent); }
-
-.tab-item.active { color: var(--accent); }
-
-/* the rail: the glide rail's echo, dropped from the bar's top hairline */
-.tab-item.active::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2.5px;
-  border-radius: 0 0 3px 3px;
-  background: var(--accent);
-}
-
-@media (max-width: 900px) {
-  .nav-page-info { max-width: 240px; }
-  /* the ancestors bow out on a narrow shelf — the gilt key stays */
-  .nav-parent, .nav-sep { display: none; }
-}
-
-/* ── Fold: below 760px the names leave the shelf for the tab bar ───────── */
-@media (max-width: 760px) {
-  .nav-links-wrap { display: none; }
-  .nav-right { display: none; }
-  .tab-bar { display: flex; }
-
-  /* the breadcrumb gets the whole shelf — no more `৫…` */
-  .nav-page-info { flex: 1 1 auto; max-width: none; }
-
-  /* nothing may end its page under the tab bar */
-  body { padding-bottom: calc(var(--tab-h) + env(safe-area-inset-bottom)); }
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    সূচি — the table of contents lives in the menubar (site.js injects the key
@@ -1319,8 +1379,9 @@ body,
   color: var(--accent);
   background: none;
   border: none;
-  border-left: 1px solid var(--border);   /* the divider inside the gilt key */
-  padding: 3px 12px 4px;
+  border-left: 1px solid var(--border);   /* the divider after the gilt word */
+  margin-left: 8px;
+  padding: 1px 4px 2px 12px;
   cursor: pointer;
   transition: color var(--dur) var(--ease), background var(--dur) var(--ease),
               font-size var(--dur-slow) var(--ease-out);
@@ -1329,16 +1390,15 @@ body,
 .toc-key:hover,
 .nav-here.has-toc:hover .toc-key,
 .toc-key.is-open {
-  background: var(--accent-light);
+  color: var(--accent-hover, var(--accent));
 }
 
-/* a সূচি key standing alone (page with a TOC but no breadcrumb) gets its
-   own full frame instead of the gilt key's inner divider */
 /* the standalone সূচি on a page with no breadcrumb: it still sits in the left
-   cluster beside the mark, so it wears a key's own frame */
+   cluster beside the mark, as a word like the rest, with no divider */
 .nav-inner > .toc-key {
-  border: 1px solid var(--border);
-  border-radius: var(--r);
+  border-left: none;
+  margin-left: 0;
+  padding-left: 4px;
 }
 
 .toc-key-caret {

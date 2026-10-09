@@ -1,23 +1,29 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import Painting from '../../../components/Painting.astro';
 import { translationWorks } from '../../../data/translation-works.js';
+import { compositions, INK } from '../../../data/compositions.js';
 
 const work = translationWorks.find((w) => w.slug === 'sonnets')!;
+// the painting behind this index, chosen for the work: see compositions.js
+const art = compositions['sonnets'];
 ---
 
-<Base section="translations"
+<Base section="translations" bodyClass="painting-page" styles={['/css/painting.css']}
   navTitle={work.title} navParentHref="/translations/" navParentLabel="অনুবাদ"
 >
-
-  <div class="main">
-    <h1 class="work-title">{work.title}</h1>
-
-    <div class="listing-box">
-      {work.parts!.map((p) => (
-        <a href={`/translations/sonnets/${p.slug}/`} class="listing-item">
-          <span class="title">{p.title}</span>
-        </a>
+  <Painting planes={art.planes} sheet={art.sheet} gap={12} ground={INK} label={art.label}>
+    <h1>{work.title}</h1>
+    <ul class="pt-list">
+      {work.parts!.map((p, i) => (
+        <li>
+          <a href={`/translations/sonnets/${p.slug}/`} style={`--m:${art.marks[i % art.marks.length]}`}>
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{p.title}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+          </a>
+        </li>
       ))}
-    </div>
-  </div>
+    </ul>
+  </Painting>
 </Base>

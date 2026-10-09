@@ -23,7 +23,7 @@
     '.section-title', '.section-intro', '.th-name', '.prop-name', '.prop-desc',
     '.title', '.work-title', '.macha-cue',
   ].join(', ');
-  const NEVER = 'nav, .tab-bar, .cell-btn, .toc-panel, .mx-tabs, script, style, [data-no-edit]';
+  const NEVER = 'nav, .nav-sheet, .cell-btn, .toc-panel, .mx-tabs, script, style, [data-no-edit]';
   const RESTORE = 'kmba-edit-restore';
 
   // ── the page's own sources, tried before the whole site ─────────────────

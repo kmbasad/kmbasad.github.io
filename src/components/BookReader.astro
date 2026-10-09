@@ -12,27 +12,43 @@
  *
  * Word-hover cross-highlighting between the Bangla and the source is
  * translation-table.js, unchanged. No image panel — the plates will
- * return in another form later. No chapter head either: the page is the
- * poem alone — the work's name lives in the menubar breadcrumb, and the
- * সূচি key beside it (built by site.js from the rows' data-toc) holds
- * the table of contents.
+ * return in another form later. The page's title is its own again: on
+ * a phone it opens the page, on a wide screen it stands upright beside the
+ * text like a book's spine (`title`, `work`); the menubar keeps the trail
+ * and the contents key.
  *
- * Props: `config`, which becomes window.TRANS_CONFIG (src, dict?,
+ * Props: `title`, `work`, and `config`, which becomes window.TRANS_CONFIG (src, dict?,
  * dictLang, meters?, marginSections?, tocStyle?, toc/prev/next…).
  */
 interface Props {
   config: Record<string, unknown>;
+  title?: string;     // this part's name (the same the menubar carries)
+  work?: string;      // the work it belongs to
 }
-const { config } = Astro.props;
+const { config, title, work } = Astro.props;
+import MondrianEdge from './MondrianEdge.astro';
 ---
+
+<!-- the dictionary starts folded on every visit: fold it before first
+     paint so it never flashes open (book.js keeps it so until a lookup) -->
+<script is:inline>document.body.classList.add('dict-collapsed');</script>
 
 <div class="book-layout">
   <div class="book-text-panel" data-page-scroll>
     <div class="book-text-body">
+      <!-- The page's own title. On a phone it opens the page, compact; on a
+           wide screen it stands upright in a narrow column of its own at the
+           text's left, like the name on a book's spine, and stays in view as
+           the poem scrolls (book.css). -->
+      {title && (
+        <header class="book-spine">
+          {work && <span class="book-spine-work">{work}</span>}
+          <h1 class="book-spine-title">{title}</h1>
+        </header>
+      )}
       <table class="tt-table">
         <tbody></tbody>
       </table>
-      <!-- book.js appends the footer prev/সূচিপত্র/next nav here -->
     </div>
   </div>
 
@@ -60,6 +76,9 @@ const { config } = Astro.props;
     <span>শব্দকোষ</span>
   </button>
 </div>
+
+<!-- a sparing Mondrian at the screen's edges -->
+<MondrianEdge seed={`book-${title ?? ''}`} />
 
 <script is:inline define:vars={{ config }}>
   window.TRANS_CONFIG = config;

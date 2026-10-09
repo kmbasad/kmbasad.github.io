@@ -1,27 +1,163 @@
 (function () {
   'use strict';
 
-  // ── Auto-load the trellis flora layer ──
-  // Side-effect: drop the woven-trellis stylesheet + JS into the page so
-  // every matrix on the site picks up flora. Opt-out per mount with
-  // data-flora="off". (Safe to omit if you've already linked them by hand.)
-  (function loadFlora() {
-    var head = document.head;
-    if (!document.querySelector('link[href="/css/trellis-flora.css"]')) {
-      var l = document.createElement('link');
-      l.rel = 'stylesheet';
-      l.href = '/css/trellis-flora.css';
-      head.appendChild(l);
+  /* ── Each trellis is a Mondrian of the Paris years ──
+     After the grids of 1913–14 (Composition No. II, the oval compositions)
+     and the colour of the early years before them: every cell coloured,
+     light and colour together (about half the groups off-white, grey,
+     cream or a pale tint, the rest the trellis's colours, solid), never
+     white with a few primary blocks (that later manner was rejected), and
+     the structure
+     in how the planes group and how the lines weigh. The 7×7 is cut into
+     irregular rectangles of one to six cells; the cells of a rectangle share
+     a colour (each laid a little differently, by hand), heavy charcoal lines
+     run round each rectangle and fine ones between the cells inside it.
+     Every trellis has its own palette. The header row and column are
+     signposts with a bar of colour facing the matrix. Text takes ink or
+     chalk by each cell's lightness. Seeded by the page and the matrix, so a
+     trellis is always the same painting. (Kept under the old name
+     paintKlee.) ── */
+  // The palettes are the early Mondrian's, the colourist of Domburg and the
+  // red tree (1908-10), laid into the Paris grid: nine colours each, warm
+  // and cool, in every trellis's own key.
+  var PARIS = {
+    ray:           ['#d9a441', '#c8553d', '#e8c07a', '#7a9a6b', '#4f7ea8', '#d98a6a', '#b8b06a', '#e6d3a3', '#9b6b8f'],
+    'chan-wook':   ['#b33a3a', '#d97b5c', '#7b2f4a', '#e0b45a', '#4a5d8f', '#c46a8a', '#8a9a7b', '#e8c9b0', '#5a3f5f'],
+    consciousness: ['#4f72a8', '#8fb0d6', '#c9a3c4', '#7a5ea8', '#e3c47a', '#5f9aa0', '#d98a8a', '#b8c8e0', '#3f4f7a'],
+    god:           ['#e09a3a', '#f0c75a', '#d96a4a', '#e8a3a0', '#6f9ad0', '#9b6fb0', '#f2e0b0', '#c94f3a', '#7fae9a'],
+    kiarostami:    ['#c9a25a', '#8fae6a', '#6f9ab8', '#d9b98a', '#a8743f', '#b8c88a', '#e0cfa0', '#7b8a5f', '#c97a4f']
+  };
+  var NEUTRALS = ['#f4f1e8', '#efeadf', '#e6e3dc', '#d7d5d0', '#ece6d6', '#e3e6ea'];
+  var PARIS_DEFAULT = ['#d9a441', '#4f72a8', '#c8553d', '#7a9a6b', '#9b6fb0', '#e8c07a', '#5f9aa0', '#d98a8a', '#e6d3a3'];
+  var LINE = '#2a2a2c';
+
+  // the matrix counts in Bangla, from one
+  function bnNum(n) {
+    return String(n).replace(/[0-9]/g, function (d) { return String.fromCharCode(0x09E6 + +d); });
+  }
+
+  function kleeRng(str) {
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+    return function () {
+      h = Math.imul(h ^ (h >>> 15), 2246822507);
+      h = Math.imul(h ^ (h >>> 13), 3266489909);
+      return ((h ^= h >>> 16) >>> 0) / 4294967296;
+    };
+  }
+  function kRgb(hex) { return [1, 3, 5].map(function (i) { return parseInt(hex.slice(i, i + 2), 16); }); }
+  function kMix(a, b, k) { return a.map(function (v, i) { return v + (b[i] - v) * k; }); }
+  function kCss(c) { return 'rgb(' + c.map(function (v) { return Math.round(Math.max(0, Math.min(255, v))); }).join(',') + ')'; }
+  function kLuma(c) { return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]; }
+  function kPaint(el, c) {
+    el.style.setProperty('--k-bg', kCss(c));
+    el.style.setProperty('--k-ink', kLuma(c) > 150 ? '#1d1f24' : '#f6f1e6');
+    el.style.setProperty('--k-soft', kLuma(c) > 150 ? 'rgba(29,31,36,.62)' : 'rgba(246,241,230,.78)');
+  }
+
+  function paintKlee(container, table, nRows, nCols, key) {
+    var slug = (location.pathname.match(/trellises\/([^/]+)/) || [])[1] || '';
+    var pal = PARIS[slug] || PARIS_DEFAULT;
+    // the light half: neutral whites and greys, and pale tints of the palette
+    var lights = NEUTRALS.concat(pal.slice(0, 4).map(function (h) {
+      var t = kMix(kRgb(h), [255, 255, 255], 0.68);
+      return '#' + t.map(function (v) { return Math.round(v).toString(16).padStart(2, '0'); }).join('');
+    }));
+    var rnd = kleeRng(slug + '|' + key);
+    container.classList.add('is-klee');
+
+    // cut the 7×7 into irregular rectangles: split the longer side at a
+    // random place while a piece is larger than six cells, and now and then
+    // even when it is not, so the sizes vary from single cells to slabs
+    var pieces = [];
+    (function cut(x, y, w, h) {
+      var area = w * h;
+      if (area === 1 || (area <= 6 && rnd() < 0.55) || (area <= 3 && rnd() < 0.8)) { pieces.push([x, y, w, h]); return; }
+      var vertical = w > h ? true : w < h ? false : rnd() < 0.5;
+      if (vertical && w > 1) {
+        var at = 1 + Math.floor(rnd() * (w - 1));
+        cut(x, y, at, h); cut(x + at, y, w - at, h);
+      } else if (h > 1) {
+        var at2 = 1 + Math.floor(rnd() * (h - 1));
+        cut(x, y, w, at2); cut(x, y + at2, w, h - at2);
+      } else {
+        var at3 = 1 + Math.floor(rnd() * (w - 1));
+        cut(x, y, at3, h); cut(x + at3, y, w - at3, h);
+      }
+    })(0, 0, nCols, nRows);
+
+    // colour each rectangle, never the same as a neighbour's
+    var owner = [], colour = [];
+    for (var y = 0; y < nRows; y++) owner.push([]);
+    pieces.forEach(function (p, i) {
+      for (var yy = p[1]; yy < p[1] + p[3]; yy++)
+        for (var xx = p[0]; xx < p[0] + p[2]; xx++) owner[yy][xx] = i;
+    });
+    pieces.forEach(function (p, i) {
+      var near = {};
+      for (var yy = p[1]; yy < p[1] + p[3]; yy++)
+        for (var xx = p[0]; xx < p[0] + p[2]; xx++)
+          [[xx - 1, yy], [xx + 1, yy], [xx, yy - 1], [xx, yy + 1]].forEach(function (q) {
+            var o = owner[q[1]] && owner[q[1]][q[0]];
+            if (o !== undefined && o !== i && colour[o]) near[colour[o]] = true;
+          });
+      // about half the groups light — off-white, greys, cream, pale tints of
+      // the trellis's own colours — the rest its colours, solid, so that the
+      // colour sings against the light as it does in the painting at home
+      var choice, tries = 0;
+      do {
+        choice = rnd() < 0.52
+          ? lights[Math.floor(rnd() * lights.length)]
+          : pal[Math.floor(rnd() * pal.length)];
+      } while (near[choice] && ++tries < 20);
+      colour[i] = choice;
+    });
+
+    var H = 2, T = 0.5;              // half a heavy line, half a fine one
+    var rows = table.querySelectorAll('tbody tr');
+    for (var r = 0; r < rows.length; r++) {
+      var tds = rows[r].querySelectorAll('td');
+      for (var c = 0; c < tds.length; c++) {
+        var me = owner[r][c];
+        // laid by hand: the rectangle's colour, never quite the same twice
+        kPaint(tds[c], kMix(kRgb(colour[me]), rnd() < 0.5 ? [255, 255, 255] : [0, 0, 0], rnd() * 0.07));
+        var edge = function (rr, cc) { return owner[rr] === undefined || owner[rr][cc] === undefined || owner[rr][cc] !== me ? H : T; };
+        var L = edge(r, c - 1), R = edge(r, c + 1), U = edge(r - 1, c), D = edge(r + 1, c);
+        tds[c].style.setProperty('--k-lines',
+          'inset ' + L + 'px 0 0 0 ' + LINE + ', inset -' + R + 'px 0 0 0 ' + LINE +
+          ', inset 0 ' + U + 'px 0 0 ' + LINE + ', inset 0 -' + D + 'px 0 0 ' + LINE);
+      }
+      var rh = rows[r].querySelector('th');
+      if (rh) kPaint(rh, kMix(kRgb(pal[(r * 3 + 1) % pal.length]), [0, 0, 0], 0.32));
     }
-    if (!document.querySelector('script[src="/js/trellis-flora.js"]')) {
-      var s = document.createElement('script');
-      s.src = '/js/trellis-flora.js';
-      s.defer = true;
-      head.appendChild(s);
+    var hs = table.querySelectorAll('thead th');
+    for (var h2 = 0; h2 < hs.length; h2++) {
+      if (h2 === 0) { kPaint(hs[h2], kRgb(LINE)); continue; }
+      kPaint(hs[h2], kMix(kRgb(pal[(h2 * 5 + 2) % pal.length]), [0, 0, 0], 0.32));
     }
-  }());
+
+    // a header under the pointer calls its whole row or column forward: the
+    // matrix recedes, and that line of the painting stays in full colour
+    var lit = function (cells, on) {
+      table.classList.toggle('k-focus', on);
+      for (var i = 0; i < cells.length; i++) cells[i].classList.toggle('k-lit', on);
+    };
+    rows.forEach(function (tr) {
+      var th = tr.querySelector('th');
+      if (!th) return;
+      var cells = tr.querySelectorAll('td');
+      th.addEventListener('mouseenter', function () { lit(cells, true); });
+      th.addEventListener('mouseleave', function () { lit(cells, false); });
+    });
+    for (var ci = 1; ci < hs.length; ci++) (function (col) {
+      var cells = table.querySelectorAll('tbody tr td:nth-child(' + (col + 1) + ')');
+      hs[col].addEventListener('mouseenter', function () { lit(cells, true); });
+      hs[col].addEventListener('mouseleave', function () { lit(cells, false); });
+    })(ci);
+  }
 
   // ── Lightweight-markup → HTML converter ────────────────────────────────
+
   function markupToHtml(text) {
     if (!text) return '';
     if (text.indexOf('<p>') !== -1) return text;
@@ -352,7 +488,7 @@
       var th = document.createElement('th');
       th.style.cursor = 'pointer';
       var inner = '<div class="th-inner">';
-      inner += '<span class="th-num">' + ci + '</span>';
+      inner += '<span class="th-num">' + bnNum(ci + 1) + '</span>';
       var hasDates   = colParts[1] && /\d/.test(colParts[1]);
       var hasCulture = hasDates && colParts[2] && !/\d/.test(colParts[2]);
       if (hasCulture) inner += '<span class="th-culture">' + colParts[2] + '</span>';
@@ -375,7 +511,7 @@
       rowTh.style.cursor = 'pointer';
       var rowParts = tsv[ri + 1][0].split('\n\n');
       rowTh.innerHTML =
-        '<span class="th-num">' + ri + '</span>' +
+        '<span class="th-num">' + bnNum(ri + 1) + '</span>' +
         '<span class="prop-name">' + (rowParts[0] || '') + '</span>' +
         (rowParts[1] ? '<span class="prop-desc">' + rowParts[1] + '</span>' : '');
       tr.appendChild(rowTh);
@@ -392,7 +528,7 @@
 
         var numSpan = document.createElement('span');
         numSpan.className = 'cell-num';
-        numSpan.textContent = ri + '' + ci2;
+        numSpan.textContent = bnNum(ri + 1) + bnNum(ci2 + 1);   // row, then column, from one
         btn.appendChild(numSpan);
 
         var cellParts = tsv[ri + 1][ci2 + 1].split('\n\n');
@@ -410,6 +546,9 @@
     table.appendChild(tbody);
     scroll.appendChild(table);
     container.appendChild(scroll);
+
+    // ── the matrix is a painting: a Klee magic square ──
+    paintKlee(container, table, nRows, nCols, opts.anchor || ids.container);
 
     // ── Build overlay + panel (inside container so fixed coords work in fullscreen) ──
     var overlay = document.createElement('div');
@@ -661,9 +800,12 @@
       var theadH   = table.querySelector('thead').offsetHeight || 82;
       var rowHeaderW = table.querySelector('.corner-th').offsetWidth || 174;
 
-      var colW = Math.max(100, Math.floor((scrollW - rowHeaderW) / nCols));
+      // the painted matrix has seams between its cells (border-spacing):
+      // nCols + 2 of them across, nRows + 2 down, counting both edges
+      var seam = parseFloat(getComputedStyle(table).borderSpacing) || 0;
+      var colW = Math.max(100, Math.floor((scrollW - rowHeaderW - seam * (nCols + 2)) / nCols));
       // one px of border per row, so the last row does not slip under the clip
-      var rowH = Math.max(52,  Math.floor((scrollH - theadH - nRows - 2) / nRows));
+      var rowH = Math.max(52,  Math.floor((scrollH - theadH - nRows - 2 - seam * (nRows + 2)) / nRows));
 
       container.style.setProperty('--fs-cell-w', colW + 'px');
       container.style.setProperty('--fs-cell-h', rowH + 'px');
@@ -799,7 +941,7 @@
           return '<a class="cell-ref" href="#mx-' + (m || 1) + '" data-ref="' + (m ? m + '-' : '') + r + c +
             '" data-mx="' + (m || 1) +
             '" data-r="' + r + '" data-c="' + c + '">' + t +
-            '<span class="cell-ref-num">' + r + c + '</span></a>';
+            '<span class="cell-ref-num">' + bnNum(+r + 1) + bnNum(+c + 1) + '</span></a>';
         })
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>');

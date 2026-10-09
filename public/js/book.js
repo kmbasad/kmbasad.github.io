@@ -20,7 +20,7 @@
  * Config (window.TRANS_CONFIG, shared with md-loader.js):
  *   dictLang: 'la' | 'it' | 'fa' | 'en'   — the source language of this page
  *   meters:   { matra: [8,16], feet: true }   — which toggles to offer
- *   toc, prev, next, tocLabel      — footer navigation
+ *   prev, next                     — ctrl+arrow keys (the footer is SiteFoot.astro)
  */
 (function () {
   'use strict';
@@ -188,7 +188,8 @@
   }
 
   /* ── Desktop panel geometry — foldable, and resizable by its seam ──────
-     Both remembered in localStorage (per browser). The width lives in
+     The panel always starts folded; only its width is remembered
+     in localStorage (per browser). The width lives in
      --book-dict-w on <html>; book.css lays the panel out from it. */
   var KEY_W = 'book-dict-w', KEY_FOLD = 'book-dict-folded';
   var DICT_MIN = 240, DICT_MAX_FRAC = 0.6, DICT_DEFAULT = 344;   // px
@@ -225,8 +226,9 @@
 
     var w = parseInt(recall(KEY_W), 10);
     if (w) setWidth(w, false);
-    if (recall(KEY_FOLD) === '1') setCollapsed(true);
-    else if (reopenBtn) reopenBtn.hidden = true;
+    // every visit starts with the panel folded (BookReader folds it before
+    // first paint); it unfolds on a lookup or from its tab, for this visit
+    setCollapsed(true);
 
     if (reopenBtn) reopenBtn.addEventListener('click', function () { setCollapsed(false); });
 
@@ -737,33 +739,6 @@
    * Footer nav (আগের / সূচিপত্র / পরের) + keyboard
    * ═════════════════════════════════════════════════════════════════════ */
 
-  function buildFooterNav() {
-    var body = document.querySelector('.book-text-body');
-    if (!body) return;
-    var toc = cfg.toc || null, prev = cfg.prev || null, next = cfg.next || null;
-    if (!toc && !prev && !next) return;
-
-    var nav = document.createElement('nav');
-    nav.className = 'book-nav';
-    nav.setAttribute('aria-label', 'অধ্যায়');
-
-    function makeBtn(href, cls, inner) {
-      var el = document.createElement(href ? 'a' : 'span');
-      if (href) el.href = href;
-      el.className = 'book-nav-btn ' + cls + (href ? '' : ' book-nav-disabled');
-      el.innerHTML = inner;
-      return el;
-    }
-
-    nav.appendChild(makeBtn(prev, 'book-nav-prev',
-      '<span class="book-nav-arrow" aria-hidden="true">←</span> আগের'));
-    if (toc) nav.appendChild(makeBtn(toc, 'book-nav-toc', cfg.tocLabel || 'সূচিপত্র'));
-    nav.appendChild(makeBtn(next, 'book-nav-next',
-      'পরের <span class="book-nav-arrow" aria-hidden="true">→</span>'));
-
-    body.appendChild(nav);
-  }
-
   function isTypingTarget(el) {
     if (!el || el === document.body) return false;
     var tag = (el.tagName || '').toLowerCase();
@@ -787,6 +762,5 @@
   setupDict();
   setupPanelGeometry();
   setupMeters();
-  buildFooterNav();
   setupKeyboard();
 }());

@@ -268,11 +268,22 @@
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  // Every number on the page is in Bangla digits, and every number stands in
+  // the same place: the margin column at a row's end — line numbers for the
+  // works counted by line, a poem's own number beside its first line for the
+  // works counted by poem (the ghazals, the sonnets).
+  function toBn(n) {
+    return String(n).replace(/[0-9]/g, function (d) { return String.fromCharCode(0x09E6 + +d); });
+  }
+  function poemNum(n) {
+    return '<span class="pnum">' + toBn(esc(n)) + '</span>';
+  }
+
   function row(cls, bn, src, lnum, langCls, attrs, lnExtra) {
     return '<tr' + (cls ? ' class="' + cls + '"' : '') + (attrs || '') + '>' +
       '<td class="bn"' + lineAttr(lnum) + '>' + bn + '</td>' +
       (noSource ? '' : '<td class="' + langCls + '"' + lineAttr(lnum) + '>' + src + '</td>') +
-      '<td class="ln-col"' + lineAttr(lnum) + '>' + (lnExtra || '') + (lnum || '') + '</td>' +
+      '<td class="ln-col"' + lineAttr(lnum) + '>' + (lnExtra || '') + (lnum ? toBn(lnum) : '') + '</td>' +
     '</tr>';
   }
 
@@ -346,9 +357,6 @@
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) return;
 
-    function toBn(n) {
-      return String(n).replace(/[0-9]/g, function (d) { return '০১২৩৪৫৬৭৮৯'[+d]; });
-    }
 
     // group into ghazals (split on blank lines)
     var ghazals = [], cur = null;
@@ -373,17 +381,13 @@
         var bn  = b ? esc(a.bn) + '<br>' + esc(b.bn)   : esc(a.bn);
         var src = b ? esc(a.src) + '<br>' + esc(b.src) : esc(a.src);
         var first = (ri === 0);
-        var cls = first ? 'ghazal-start' : '';
+        var cls = first ? 'ghazal-start poem-start' : '';
         var attrs = ' data-ghazal="' + esc(gnum) + '"' +
                     (first ? ' id="g' + esc(gnum) + '"' + tocAttr : '');
         var ml = (a.srcLine != null ? String(a.srcLine) : '') +
                  (b && b.srcLine != null ? ',' + b.srcLine : '');
         if (ml) attrs += ' data-mdline="' + ml + '"';
-        // Wrapped so mobile CSS can swap the Latin numeral for a
-        // centred ॥ বাংলা-digit ॥ manuscript mark (data-bn).
-        var lbl = first
-          ? '<span class="gnum" data-bn="' + toBn(esc(gnum)) + '">' + esc(gnum) + '</span>'
-          : '';
+        var lbl = first ? poemNum(gnum) : '';
         html += '<tr' + (cls ? ' class="' + cls + '"' : '') + attrs + '>' +
           '<td class="bn">' + bn + '</td>' +
           '<td class="' + langCls + '">' + src + '</td>' +
@@ -393,23 +397,16 @@
     tbody.innerHTML = html;
   }
 
-  /* ── SONNET: a number in the # column opens a sonnet; blank rows inside
-     it are the quatrain breaks. Each sonnet gets a head row (its number,
-     centred — the সূচি target), fourteen verse rows carrying the rhyme
-     letter of the Shakespearean scheme (abab cdcd efef gg) in the margin
-     column, a `quatrain-start` on lines 1/5/9/13 and `sonnet-couplet` on
-     13–14. An empty বাংলা cell is a line not yet translated: it is drawn
-     as a dotted leader (.bn-missing) and the sonnet head is marked. ──── */
+  /* SONNET: a number in the # column opens a sonnet; blank rows inside it
+     are the quatrain breaks. The sonnet's first line carries its number in
+     the margin column (as a ghazal's first couplet does), its anchor and its
+     সূচি entry; lines 1/5/9/13 are `quatrain-start`, 13-14 the stepped-in
+     `sonnet-couplet`. An empty Bangla cell is a line not yet translated,
+     drawn as a dotted leader (.bn-missing); the first line of a sonnet with
+     gaps is marked is-partial / is-missing. */
   function buildSonnet(records, langCls) {
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) return;
-
-    function toBn(n) {
-      return String(n).replace(/[0-9]/g, function (d) { return '০১২৩৪৫৬৭৮৯'[+d]; });
-    }
-    // rhyme letters by line count: the Shakespearean 14; 99 runs to 15
-    // (ababa cdcd efef gg); 126 is six couplets
-    var SCHEMES = { 14: 'ababcdcdefefgg', 15: 'ababacdcdefefgg', 12: 'aabbccddeeff' };
 
     // group: a numbered row starts a sonnet; a blank inside one marks a gap
     var sonnets = [], cur = null, gapNext = false;
@@ -433,27 +430,26 @@
       var missing = s.rows.filter(function (x) { return !x.bn; }).length;
       var state = missing === 0 ? '' : (missing === s.rows.length ? ' is-missing' : ' is-partial');
 
-      html += '<tr class="sonnet-head' + state + '" id="s' + esc(n) + '" data-toc="' + toBn(esc(n)) + '"' +
-        ' data-sonnet="' + esc(n) + '">' +
-        '<td class="bn" colspan="' + (noSource ? 2 : 3) + '">' +
-        '<span class="snum" data-bn="' + toBn(esc(n)) + '">' + esc(n) + '</span></td></tr>';
-
       for (var li = 0; li < s.rows.length; li++) {
         var v = s.rows[li];
         var cls = [];
+        if (li === 0) cls.push('poem-start', 'sonnet-start');
+        if (li === 0 && state) cls.push(state.trim());
         if (li === 0 || v.gapBefore) cls.push('quatrain-start');
         if (s.rows.length >= 14 && li >= s.rows.length - 2) cls.push('sonnet-couplet');
         if (!v.bn) cls.push('line-missing');
         // data-key = "sonnet.line" — the line-scoped word-alignment key
         var attrs = ' data-sonnet="' + esc(n) + '" data-key="' + esc(n) + '.' + (li + 1) + '"';
+        // the sonnet's first line carries its number, its anchor and its
+        // সূচি entry (there is no head row any more)
+        if (li === 0) attrs += ' id="s' + esc(n) + '" data-toc="' + toBn(esc(n)) + '"';
         if (v.srcLine != null) attrs += ' data-mdline="' + v.srcLine + '"';
         var bnHtml = v.bn ? esc(v.bn)
           : '<span class="bn-missing" role="img" aria-label="অনূদিত হয়নি"></span>';
-        var rhyme = (SCHEMES[s.rows.length] || '').charAt(li);
         html += '<tr class="' + cls.join(' ') + '"' + attrs + '>' +
           '<td class="bn">' + bnHtml + '</td>' +
           (noSource ? '' : '<td class="' + langCls + '">' + esc(v.src) + '</td>') +
-          '<td class="ln-col"><span class="rhyme">' + rhyme + '</span></td></tr>';
+          '<td class="ln-col">' + (li === 0 ? poemNum(n) : '') + '</td></tr>';
       }
     }
     tbody.innerHTML = html;

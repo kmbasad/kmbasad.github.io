@@ -31,6 +31,8 @@ const { work, part, prev, next } = Astro.props;
   styles={['/css/translation-table.css', '/css/book.css']}
   navTitle={part.title} navParentHref="/translations/sonnets/" navParentLabel={work.title}
   tocStyle="grid"
+  footPrev={prev ? `/translations/sonnets/${prev.slug}/` : null}
+  footNext={next ? `/translations/sonnets/${next.slug}/` : null}
 >
   <Fragment slot="head">
     <link
@@ -39,7 +41,7 @@ const { work, part, prev, next } = Astro.props;
     />
   </Fragment>
 
-  <BookReader
+  <BookReader title={part.title} work={work.title}
     config={{
       src: `${part.slug}.md`,
       dict: `${part.slug}-words.md`,
