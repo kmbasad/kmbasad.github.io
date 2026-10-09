@@ -1,37 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro';
+import TrellisPage from '../../components/TrellisPage.astro';
 ---
 
-<Base section="trellises" styles={['/css/trellis.css']}
-  navTitle="সত্যজিৎ রায়" navParentHref="/trellises/" navParentLabel="মাচা"
->
-  <Fragment slot="head">
-    <!-- Bangla essay block — runtime-injected by trellis.js, so the rules must be global -->
-    <style is:global>
-      .essay-bn .section-title { font-weight: 300; }
-      .essay-bn .essay-body p { font-weight: 400; line-height: 2.0; }
-      .essay-bn .essay-body > p:first-child::first-letter {
-        float: none; font-size: inherit; line-height: inherit;
-        font-weight: inherit; padding: 0; color: inherit;
-      }
-    </style>
-  </Fragment>
-
-  <!-- no page head: the trellis's name lives in the menubar breadcrumb, and
-       the সূচি key beside it holds the matrices and the essay -->
-  <!-- one wrapper so phones can seat the essay above the matrix -->
-  <div class="trellis-page">
-    <div class="page-section">
-      <div id="trellis-mount"></div>
-    </div>
-
-    <section class="trellis-essay essay-bn">
-      <div id="essay-mount"></div>
-    </section>
-  </div>
-
-  <script is:inline>
-    window.TRELLIS_CONFIG = { data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' };
-  </script>
-  <script is:inline src="/js/trellis.js"></script>
-</Base>
+<TrellisPage title="সত্যজিৎ রায়" />

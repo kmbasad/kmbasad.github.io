@@ -1,26 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro';
+import TrellisPage from '../../components/TrellisPage.astro';
 ---
 
-<Base section="trellises" styles={['/css/trellis.css']}
-  navTitle="আব্বাস কিয়ারোস্তামি" navParentHref="/trellises/" navParentLabel="মাচা"
->
-
-  <!-- no page head: the trellis's name lives in the menubar breadcrumb, and
-       the সূচি key beside it holds the matrices and the essay -->
-  <!-- one wrapper so phones can seat the essay above the matrix -->
-  <div class="trellis-page">
-    <div class="page-section">
-      <div id="trellis-mount"></div>
-    </div>
-
-    <section class="trellis-essay">
-      <div id="essay-mount"></div>
-    </section>
-  </div>
-
-  <script is:inline>
-    window.TRELLIS_CONFIG = { data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' };
-  </script>
-  <script is:inline src="/js/trellis.js"></script>
-</Base>
+<TrellisPage title="আব্বাস কিয়ারোস্তামি" />

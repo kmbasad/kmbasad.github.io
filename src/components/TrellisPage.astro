@@ -1,0 +1,31 @@
+---
+/* One shape for every trellis page. The matrix is the hero — full width, the
+   whole first screen under the bar (a file with several matrices becomes a
+   slider there) — and the essay waits below it, one scroll down. Phones keep
+   the reading-first order: essay above, matrix after (trellis.css).
+   No in-page title: the name lives in the breadcrumb, and the সূচি beside it
+   holds the matrices and the essay. */
+import Base from '../layouts/Base.astro';
+
+const { title } = Astro.props;
+---
+
+<Base section="trellises" styles={['/css/trellis.css']}
+  navTitle={title} navParentHref="/trellises/" navParentLabel="মাচা"
+>
+  <div class="trellis-page">
+    <section class="trellis-hero">
+      <div id="trellis-mount"></div>
+      <a class="trellis-cue" href="#essay">প্রবন্ধ <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="trellis-essay essay-bn">
+      <div id="essay-mount"></div>
+    </section>
+  </div>
+
+  <script is:inline>
+    window.TRELLIS_CONFIG = { data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' };
+  </script>
+  <script is:inline src="/js/trellis.js"></script>
+</Base>

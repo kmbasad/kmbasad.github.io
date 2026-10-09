@@ -10,7 +10,7 @@ Pages. **Wholly public.** Built with **Astro** (static output). Four sections:
 - **Panthea** — the published stories of the Panthea epic (written in Bengali).
 - **Pangea** — land of the archive: canonical Bengali texts (e.g. Alaol's *Sapta Paykar*, modernized with parallel English).
 - **Translations** — world literature rendered into Bangla (Hafez's *Divan*, Dante's *Inferno*, Ovid's *Metamorphoses*, Shakespeare's *Sonnets*).
-- **Trellises** — interactive matrix readings: philosophy/theology (Consciousness, God) and film (Ray, Kiarostami, Chan-wook), with essays.
+- **Trellises** — interactive matrix readings: philosophy/theology (চেতনা, খোদা) and film (Ray, Kiarostami, Chan-wook), each a **7×7**, all in Bangla, with an essay.
 
 > The **private workshop** for the Panthea project (drafts, world-bible, copyrighted source
 > texts, the former `knb/`) lives in a **separate** vault at `../Panthea`, not in this repo.
@@ -255,12 +255,17 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   Both the **Translations** and **Pangea** sections use this one loader and format.
 - **Trellis** — `window.TRELLIS_CONFIG = { data, essay, mountId }`, loaded by `trellis.js`.
   `data` (`trellis.md`) holds **one or more** matrices (each is a `# Title` + `axes:` block +
-  `## Columns`/`## Rows`/`## Cells`; god's file carries two — philosophers and prophets — and
-  the engine auto-splits them into the one `mountId`). **Uniform orientation: the header column
+  `## Columns`/`## Rows`/`## Cells`; খোদা's file (`god/`) carries two — দার্শনিক and নবি — and
+  the engine auto-splits them into the one `mountId`). **Every trellis is 7×7 and all Bangla**
+  (Dhaka register; God is খোদা). **The diagonal is meaningful**: row *i*'s defining concern is
+  column *i* (gold cells) — cut or add a row and its paired column together. **Uniform orientation: the header column
   (rows axis) is the subjects/persons/titles; the header row (cols axis) is the
   properties/events.** `essay` (`essay.md`) is rendered into `#essay-mount` if non-empty (its
   section auto-collapses when blank). Cells are keyed `### RC` where `R` = row index, `C` = col
-  index.
+  index. The essay is plain paragraphs (a `# Title`, one intro line, no subheadings) about what
+  the grid *reveals*, and cites cells inline as `[words](#RC)` — `[words](#2-RC)` for the second
+  matrix — which `renderEssay` turns into `a.cell-ref` links that open that cell's panel over
+  the essay.
 
 ## Page patterns
 
@@ -316,13 +321,17 @@ external `/css/*.css` link, or `<style is:global>` (scoped styles won't match in
   the same gilt key with a single ↓. Both arrow pairs are lapis, full-height and wide — they
   are the way through 2001 pages. A design panel with more than one view floats its view keys
   over its own foot (`.pn-views`, the home's মিনার/পাতাল) rather than taking a bar.
-- **Trellis** — `<div id="trellis-mount">` inside `.page-section`, then a
-  `<section class="trellis-essay"><div id="essay-mount"></div></section>`; set `TRELLIS_CONFIG`
-  (`{ data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' }`); load `trellis.js` (it
-  pulls in `trellis-flora.js`). All five trellis pages share this exact shape, and none has an
-  in-page title. Each matrix's `# Title` becomes its সূচি label and is **drawn** (as
-  `h2.matrix-title`) only when its file holds more than one matrix — গড, which has two; a lone
-  matrix already wears the page's name in the breadcrumb.
+- **Trellis** — the whole page is `<TrellisPage title="…" />` (`src/components/TrellisPage.astro`):
+  a `.trellis-hero` holding `#trellis-mount` and a প্রবন্ধ ↓ cue, then
+  `.trellis-essay > #essay-mount`, with `TRELLIS_CONFIG` set and `trellis.js` loaded (it pulls in
+  `trellis-flora.js`). No in-page title. **On desktop the matrix is the hero**: exactly one
+  screen under the bar at rest (`100svh - --nav-h`), full width, the grid's cells sized by JS
+  (`fit` → `--fs-cell-w/-h`, the same arithmetic as pseudo-fullscreen) so the 7×7 fills it; the
+  essay is one scroll below. **A file with several matrices becomes a slider** in the hero
+  (`.mx-slider`: tabs named by each `# Title`, ‹ › and ←/→, a scroll-snap track so swipes and
+  the সূচি's scrollIntoView work natively; phones turn it by the tabs only). Each matrix's
+  `# Title` is its সূচি label; `h2.matrix-title` is no longer drawn. Phones keep reading-first
+  (essay above, natural-size grid after).
 - **Section / work listing** — `.page-header > .breadcrumb` then `.listing-box > a.listing-item`.
   Listing and index pages are the ones that **keep** their `h1.work-title`.
 

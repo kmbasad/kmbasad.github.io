@@ -1,591 +1,529 @@
 # আব্বাস কিয়ারোস্তামি
 
 axes:
-  rows: Film
-  cols: Concept
+  rows: সিনেমা
+  cols: ধারণা
 
 ## Columns
 
-### Col 0 · Errand
+### Col 0 · পথ
 
-short: Errand — across ten films
+short: পথ — গাড়ির কাচ, ফ্রেমের ভেতরে আরেক ফ্রেম
 
-The errand is where Kiarostami always begins: a small task in an ordinary world, clearly defined, apparently completable. A notebook to return. A death to record. A book to sell. A son to drive to the pool. The errand is the film's engine — the reason the character is moving, the structure that organises the first act. And in every film, the errand begins to fail almost immediately: not through dramatic obstruction but through the slow revelation that the world the errand assumed is not the world that actually exists.
+কিয়ারোস্তামির ছবিতে পথ কোনো রূপক নয়; এ তাঁর সিনেমার আক্ষরিক অবস্থা, সেই জায়গা যেখানে প্রায় সবকিছু ঘটে। পাহাড়ের গা বেয়ে উঠছে একটা গাড়ি, সামনের কাচ যেন ফ্রেমের ভেতরে আরেক ফ্রেম, চালকের আসনে এমন কেউ যে কথা বলছে, চুপ করে আছে, কিংবা এমন কিছু খুঁজছে যা পথ তাকে দেবে না। পথ বাঁক নেয়, ঘুরে আসে, আবার বাঁক নেয় — আর যে কাজে মানুষটা বেরিয়েছিল, পথ সেই কাজকে লম্বা করে, শেষ করে না।
 
-What varies across the ten films is what the errand fails against. In The Report it fails against the rottenness of the domestic world. In Friend's House it fails against the indifference of adults. In Close-Up it fails against the gap between what cinema promises and what poverty allows. In And Life Goes On it fails against catastrophe. In Taste of Cherry it fails against the most extreme form of the errand's internal contradiction: the task is to arrange one's own disappearance. By Ten, the errand has become so thoroughly absorbed into the texture of urban life that it is indistinguishable from the driving itself.
+তবু ছবি থেকে ছবিতে পথের চেহারা বদলায়। কোকেরে তা এক শিশুর পায়ে চলা আঁকাবাঁকা পাহাড়ি পথ, যা তাকে বারবার আগের জায়গায় ফিরিয়ে আনে। ক্লোজ-আপে তা দ্বিতীয়বার চালানো পথ: যে রাস্তা ধরে একদিন পুলিশ গিয়েছিল, সেই রাস্তা ধরে এবার ক্যামেরা যায়। থ্রু দ্য অলিভ ট্রিজে তা দুই শটের মাঝখানের ঢাল, যেখানে আসল ছবিটা ঘটে। টেস্ট অব চেরিতে তা তেহরানের উপকণ্ঠে একটা বৃত্ত, যা কোথাও পৌঁছায় না, কারণ গন্তব্য আগেই খোঁড়া হয়ে আছে। সিয়াহ দারেতে তা কবরস্থানের টিলায় ওঠার রাস্তা, যেখানে কেবল মোবাইলের নেটওয়ার্ক মেলে। টেন-এ তা শহরের জট, থামা আর চলার অন্তহীন চক্কর। আর তাসকানিতে তা এমন এক সড়ক, যার এক মাথায় দুজন অচেনা মানুষ, অন্য মাথায় এক দম্পতি — কিংবা দম্পতির অভিনয়।
 
-The errand is Kiarostami's way of grounding his films in the utterly concrete before asking the most abstract questions. He never begins with a theme. He begins with a task. The theme arrives when the task fails, and the failure reveals what the world is actually made of.
+সবগুলো পাশাপাশি রাখলে পথের গভীরতম কাজটা চোখে পড়ে: মানুষকে সমাজ থেকে ঠিক ততটুকু সরিয়ে আনা, যতটুকু সরলে কথা বলা যায়। গাড়ি কিয়ারোস্তামির স্বীকারোক্তির ঘর। পাশাপাশি বসা দুজনকে একে অন্যের চোখে তাকাতে হয় না, সামনে ছাড়া তাকানোর জায়গা নেই, আর চলন্ত গাড়ি থেকে পাশের মানুষটা চাইলেও নেমে যেতে পারে না। যা আর কোথাও বলা যায় না, তা বলা হয় এখানে।
 
-### Col 1 · Road
+### Col 1 · ভাঙন
 
-short: Road — across ten films
+short: ভাঙন — গল্প শুরুর আগেই যা ভেঙে গেছে
 
-Kiarostami's road is one of the most consistent images in world cinema: the car moving through landscape, the windshield as frame within the frame, the driver speaking or silent or searching for something that the road will not deliver. The road is not metaphor — it is the literal condition of his cinema, the space where almost everything that matters happens.
+কিয়ারোস্তামির ছবিতে ভাঙন প্রায় কখনো নাটকীয় নয়। ভূমিকম্প আছে — কোকেরের ধসে পড়া গ্রাম, আক্ষরিক ধ্বংসস্তূপ — কিন্তু সেটাও ঘটনা হিসেবে আসে না, আসে অবস্থা হিসেবে: যা ছবি শুরুর আগেই ঘটে গেছে, আর যার ভেতর দিয়ে জীবন ততক্ষণে আবার চলতে শুরু করেছে। তাঁর বেশি চেনা ভাঙন আরও চুপচাপ — যে সংসার বহু আগেই শেষ, যে জীবন ইতিমধ্যে নেওয়া এক সিদ্ধান্তকে ঘিরে সাজানো, যে দুনিয়া একটা শিশুর কথা শোনার মতো করে গড়াই হয়নি।
 
-But the road changes character across the ten films. In Friend's House it is the village path that doubles back, extending the errand without advancing it. In And Life Goes On it is the blocked highway into the disaster zone — the road that the state has closed and that the film insists on reopening. In Taste of Cherry it is the circular route through the hills of Tehran, a road that goes nowhere because the destination is the hole the driver has already dug. In Ten it is the Tehran street grid — the most urban of all Kiarostami's roads, a system of circulation rather than a route toward a destination.
+এই ছবিগুলোর মিল এখানে যে ভাঙন গল্পের আগে আসে। আহমাদের বড়রা আগে থেকেই বধির। সাবজিয়ানের দারিদ্র্য আর আহানখাহদের বেকার ছেলেরা আগে থেকেই একই শহরের দুই পিঠ। তাহেরের বাবা-মা আগেই মাটির নিচে। বাদির গর্ত আগেই খোঁড়া। সিয়াহ দারের পুরোনো দুনিয়া আগে থেকেই মরছে, শুধু নিজের সময়ে। মানিয়ার বিয়ে আগেই ভেঙেছে। আর তাসকানির দম্পতির দাম্পত্য — যদি তা থেকে থাকে — প্রথম দৃশ্যের আগেই ফুরিয়েছে। কিয়ারোস্তামি জিনিস ভাঙতে দেখান না; দেখান ভাঙনের পরে বেঁচে থাকা মানুষ, যারা ধ্বংসস্তূপের ভেতরেই রোজকার কাজ সারে।
 
-The road's deepest function across the ten films is to separate the driver from the social world just enough to allow speech. The car is the film's confessional — the space where characters say things they cannot say anywhere else, because the road is moving and there is nowhere else to look except forward, and because the person beside you cannot easily leave.
+থ্রু দ্য অলিভ ট্রিজে কথাটা সবচেয়ে খোলাখুলি: ধসে পড়া গ্রামে বিয়ের প্রস্তাব যায়, ছবির শুটিং চলে। ভাঙন পুরোপুরি; জীবন তবু চলে। এটাই কিয়ারোস্তামির সবচেয়ে মৌলিক পর্যবেক্ষণ — ভাঙন জীবনের বিরতি নয়, তার স্থায়ী জমিন; প্রশ্ন সেটা এড়ানো যায় কি না তা নয়, তার ভেতর দিয়ে কীভাবে হাঁটতে থাকা যায়।
 
-### Col 2 · Ruin
+### Col 2 · অনুপস্থিতি
 
-short: Ruin — across ten films
+short: অনুপস্থিতি — যে কেন্দ্র কখনো পর্দায় আসে না
 
-Ruin in Kiarostami is almost never dramatic. There is the earthquake — literal ruin, the collapsed villages of Koker that organise three consecutive films — but even the earthquake is treated as a condition rather than an event, something that happened before the films begin and that life has already started moving through. The more characteristic Kiarostami ruin is quieter: a marriage that has been failing for years, a life organised around a decision already made, a family structure that was broken before the first frame.
+কিয়ারোস্তামির ছবিতে একজন অনুপস্থিত মানুষ প্রতিটি দৃশ্য সাজায়, কিন্তু কোনো দৃশ্যে আসে না। মোহাম্মদ রেজার বাড়ি। আসল মাখমালবাফ। তাহেরের সম্মতি। বাদির কারণ। সিয়াহ দারের বুড়ি, যাকে একবারও দেখা যায় না। মানিয়ার সাবেক স্বামী, যার ছায়া প্রতিটি ঝগড়ায় পড়ে। আর সার্টিফায়েড কপির সেই সত্য — এরা আসলেই স্বামী-স্ত্রী কি না। এসব ছবির ফাঁক নয়, ছবির মাঝখানের খুঁটি; বাকি সবকিছু এদের ঘিরে সাজানো।
 
-What the ten films share is the sense that ruin precedes the story. The Report's marriage is already over when the film begins; Taste of Cherry's death is already decided; Like Someone in Love's web of misrecognition is already in place at the first line of dialogue. Kiarostami does not show things breaking — he shows people living in the aftermath of breakage, conducting the ordinary business of life in a world that is already rubble.
+এই অনুপস্থিতি রহস্য নয়, লুকিয়ে রাখাও নয়। শেষে খুলে দেওয়ার মতো কোনো গোপন কথা এখানে নেই। এটা এক স্থায়ী অবস্থা — যা হাজির হতে পারে না, আর যার না-থাকাই ছবিটাকে আকার দেয়। তাহেরে উত্তর দেয় না, আর ছবি সেটাকে কৌশল হিসেবে চেপে রাখে না। বুড়ি সময়মতো মরে না, আর ছবি কোনো উন্মোচনের দিকে এগোয় না। অনুপস্থিতিগুলো প্রকৃতির মতোই স্থির হয়ে থাকে, আর চরিত্ররা তাদের পাশ কাটিয়ে চলে, যেভাবে পানি পাথরের পাশ কাটিয়ে যায়।
 
-The earthquake films make this formal argument most explicitly: And Life Goes On and Through the Olive Trees take place in destroyed villages where weddings are being planned and films are being made. The ruin is total. Life goes on anyway. This is Kiarostami's most fundamental observation: that ruin is not an interruption of life but its permanent ground condition, and that the question is not how to avoid it but how to continue moving through it.
+সবচেয়ে গভীর অনুপস্থিতি হলো কারণ — কেন জিনিসগুলো যেমন আছে তেমন। বাদি কেন মরতে চায়। মানিয়ার স্বামী কেমন মানুষ ছিল। তাসকানির বিকেলের দাম্পত্য আসল না নকল। কিয়ারোস্তামি ব্যাখ্যা দেন না, আর তা কৃপণতা নয়, এক রকম যুক্তি: কারণের না-থাকাটাই আসল বিষয়, কারণ হাজির করলে তা হতো মিথ্যা।
 
-### Col 3 · Pretence
+### Col 3 · জবানবন্দি
 
-short: Pretence — across ten films
+short: জবানবন্দি — নিজের জীবনের হিসাব দেওয়ার চেষ্টা
 
-Close-Up is the film that names the question most explicitly — what is the difference between being Makhmalbaf and pretending to be Makhmalbaf? — but every film in the ten is organised around a version of it. Firouzkoui pretends to competence. The film director pretends to non-fiction. Hossein proposes through scripted lines. Badii performs calm over a decision already made. The engineer performs professional purpose. Mania performs composure. James and Elle perform a marriage.
+কিয়ারোস্তামির মানুষেরা অনেকক্ষণ ধরে কথা বলে। আহমাদ একই কথা বারবার বলে — খাতাটা ফেরত দিতে হবে। সাবজিয়ান আদালতে দাঁড়িয়ে বলে, মাখমালবাফ হয়ে থাকার কদিন সে প্রথমবার নিজেকে সম্মানিত মনে করেছিল। হোসেইন জলপাই গাছের ফাঁক দিয়ে তাহেরের পেছনে হাঁটতে হাঁটতে বিয়ের প্রস্তাব দিয়ে যায়। বাঘেরি বলে তুঁতগাছের গল্প। বেহজাদ অন্ধকার গোয়ালে ফরুগের কবিতা পড়ে। মানিয়া বলে সংসার তার কাছ থেকে কী নিয়েছে। জেমস বক্তৃতা দেয়, নকলও আসলের মতোই খাঁটি। এগুলো ছবির সবচেয়ে ঘন মুহূর্ত — যেখানে একজন মানুষ কথা দিয়ে নিজের জীবনের হিসাব দিতে চায়।
 
-The pretences vary in their moral valence. Some are protective: Ahmad performs urgency because it is the only language available to a child navigating an adult world. Some are constitutive: Sabzian's performance of Makhmalbaf is not a lie over a truth but a sincere attempt to inhabit the self that cinema suggested he could be. Some are structural: the director in And Life Goes On and Through the Olive Trees is a fiction playing a non-fiction, and the film never resolves which register is the real one.
+প্রায় সব জবানবন্দির মিল এখানে যে যা চেয়েছিল তা পায় না। আহমাদের কথা কেউ শোনে না। সাবজিয়ানের কথা বিচারকের রায় তেমন বদলায় না। হোসেইনের প্রস্তাব এমন একজনের কাছে যায় যে উত্তর দেবে না। মানিয়ার কথা ছেলের রাগে ঠেকে ফিরে আসে। ব্যতিক্রম হয়তো একটাই — বাঘেরির গল্প — আর সেটাও কাজ করল কি না, ছবি বলে না।
 
-What connects all ten pretences is that none of them are fully chosen. Each character performs a version of themselves that the situation requires, and the performance becomes the person. Kiarostami's cinema refuses the distinction between authentic self and social performance — not because authenticity doesn't matter but because it is never available in the pure form we imagine it.
+জবানবন্দি কিয়ারোস্তামির কাছে মানুষের সেই প্রয়োজনের নাম, যা নিজেকে ব্যাখ্যা করতে চায়, নিজের গল্পটা আরেকজনের কাছে পাঠযোগ্য করে তুলতে চায়। প্রায় কখনো তা পারে না — এটা হতাশা নয়, নির্ভুল পর্যবেক্ষণ। বলার তাগিদ আর শোনার অক্ষমতার মাঝখানের ফাঁকটাই এমন এক দুনিয়ায় কথার স্বাভাবিক অবস্থা, যে দুনিয়া কথা গ্রহণ করার মতো করে সাজানো নয়।
 
-### Col 4 · Absence
+### Col 4 · অপেক্ষা
 
-short: Absence — across ten films
+short: অপেক্ষা — এমন কিছুর জন্য, যা না-ও আসতে পারে
 
-The absent figure in Kiarostami's cinema organises every scene without appearing in any of them. Mohammed's house in Friend's House. The real Makhmalbaf in Close-Up. The dead children who may or may not be dead in And Life Goes On. Tahereh's consent in Through the Olive Trees. The old woman who will not die on schedule in The Wind Will Carry Us. These absences are not gaps in the film — they are its structural centres, the holes around which everything else arranges itself.
+কিয়ারোস্তামির ছবিতে অপেক্ষা নিষ্ক্রিয় নয়। এ এক ধরনের মনোযোগ — নির্দিষ্ট, টানা, আর নৈতিকভাবে দামি। আহমাদ দরজায় দরজায় দাঁড়ায়। ক্যামেরা বিচারের পুরোটা সময় সাবজিয়ানের মুখে স্থির থাকে। হোসেইন টেকের পর টেক একটা উত্তরের আশায় থাকে। বাদি নিজের খোঁড়া গর্তে শুয়ে আকাশ দেখে। বেহজাদ প্রতিবার ফোন বাজলে টিলায় গাড়ি চালিয়ে ওঠে। মানিয়া জ্যামে আটকে থাকে, পাশের যাত্রী কখন নিজের সত্যে পৌঁছাবে তার অপেক্ষায়। তাসকানির নারীটি লিপস্টিক লাগিয়ে বসে থাকে, পুরুষটি কখন খেয়াল করবে।
 
-Absence in Kiarostami is different from mystery or withholding. It is not a secret to be revealed. It is a permanent condition — the thing that cannot be present and whose absence gives the film its shape. Tahereh's consent is never given; the film does not withhold it as a narrative device. The old woman's death does not arrive on schedule; the film is not building to a revelation. The absences are simply there, as permanently as the landscape, and the characters move around them the way water moves around stones.
+এই অপেক্ষা সবসময় এমন কিছুর জন্য, যা না-ও আসতে পারে। বাড়িটা হয়তো খুঁজে পাওয়া যাবে না। বুড়ি হয়তো সময়মতো মরবে না। তাহেরে হয়তো ফিরে তাকাবে না। আকাশ হয়তো কোনো কারণ দেবে না। অপেক্ষার দাম খাটুনি নয়, সময় — জীবনের এমন কিছুটা খরচ, যা আর ফেরে না, এমন এক প্রতীক্ষায় যা শেষে কিছুই না দিতে পারে।
 
-The deepest absence across the ten films is the reason — the explanation for why things are as they are. Badii's reason for wanting to die. Azam's reason for the overdose. The reason the marriage in Certified Copy is or is not real. Kiarostami refuses explanations not as withholding but as formal argument: the absence of the reason is the real subject, and its presence would be a lie.
+তবু কিয়ারোস্তামির মানুষেরা অভিযোগ ছাড়াই অপেক্ষা করে, পুরস্কারের আশা ছাড়াই। অপেক্ষা করে কারণ না করলে এমন কিছু থেকে মুখ ফিরিয়ে নিতে হয় যা গুরুত্বপূর্ণ। আর একটা জিনিস ছবিগুলো পাশাপাশি রাখলেই ধরা পড়ে: সবচেয়ে দীর্ঘ অপেক্ষাগুলো চরিত্রের নয়, ক্যামেরার — যে শট কাটে না, যে ফ্রেম ধরে রাখে, যতক্ষণ না দর্শকও অপেক্ষায় শরিক হয়।
 
-### Col 5 · Testimony
+### Col 5 · উন্মোচন
 
-short: Testimony — across ten films
+short: উন্মোচন — আবরণ সরে গেলে যা দেখা যায়
 
-Kiarostami's characters speak at length. The taxidermist's story about the mulberry tree and the cherry. Sabzian's courtroom speech about wanting to be someone for once. Firouzkoui's car monologue about honest men and their reward. Hossein's running proposal through the olive trees. The professor's stories about his late wife. These testimonies are the films' most concentrated moments — the places where a character attempts, through speech, to account for their own life.
+কিয়ারোস্তামির ছবিতে উন্মোচন অপমান নয়; ব্যাপারটা আরও সূক্ষ্ম। এ সেই মুহূর্ত, যখন যে ভান এতক্ষণ দৃশ্যটাকে ধরে রেখেছিল তা আর যথেষ্ট থাকে না, আর নিচে যা ছিল তা দেখা যায়। আহমাদ বোঝে বড়দের দুনিয়ায় তার আন্তরিকতার কোনো দাম নেই। সাবজিয়ান জেলগেটের বাইরে আসল মাখমালবাফের কাঁধে মাথা রেখে কাঁদে। তাহেরে চিত্রনাট্যের একটা শব্দ বলতে পারে না। বাদি জাদুঘরে ফিরে যায় একটা বাড়তি অনুরোধ নিয়ে। সিয়াহ দারের লোকেরা জানে প্রকৌশলী আসলে কীসের অপেক্ষায়। গাড়িতে এক তরুণী হিজাব খোলে। তাসকানির নারীটি বলে ফেলে, তুমি কখনো ছিলে না।
 
-What unites all ten testimonies is that they fail to produce the effect they seek. Sabzian's speech does not change his sentence significantly. Firouzkoui's monologue does not reach anyone who can hear it. Hossein's proposal is addressed to someone who will not reply. Badii's conversations with the soldier, the seminary student, and the taxidermist succeed only once — the taxidermist — and even then the success is ambiguous, because the film will not tell us whether the cherry was enough.
+এই উন্মোচনগুলো প্রায় সবসময় কোমল। অভিযোগ বা চমক হয়ে আসে না; আসে একটা আবরণ আস্তে সরে যাওয়ার মতো, আর দেখা যায় নিচে যা ছিল তা ঢাকনার চেয়ে খুব আলাদা কিছু নয়। বাদির শান্ত মুখোশের নিচে বাঁচার একটা ক্ষীণ ইচ্ছা। বেহজাদের পেশাদার ভানের নিচে এমন এক উদ্দেশ্য, যা গ্রাম আগেই টের পেয়েছিল। সাবজিয়ানের প্রতারণার নিচে সিনেমার প্রতি সত্যিকারের ভালোবাসা।
 
-The testimony is Kiarostami's figure for the human need to account for oneself — to explain, to justify, to make the story of one's life legible to another person. That the testimonies almost never achieve this is not pessimism but accuracy: the gap between the urgency of the telling and the inadequacy of the hearing is simply the condition of speech in a world that is not organised to receive it.
+উন্মোচন যা দেখায় তা লুকানো কোনো সত্য নয়, বরং অভিনয় আর তার নিচের মানুষের মাঝখানের ধারাবাহিকতা। যে মানুষটা খুলে যায় সে অভিনয়রত মানুষটার চেয়ে বেশি আসল নয় — সে একই মানুষ, এখন আবরণহীন, আরও অরক্ষিত, আর সেই কারণেই আরও কাছে আসার মতো।
 
-### Col 6 · Vigil
+### Col 6 · নীরবতা
 
-short: Vigil — across ten films
+short: নীরবতা — কথা যেখানে ফুরোয়, দুনিয়া যেখানে চলতে থাকে
 
-Waiting in Kiarostami is not passive. It is a form of attention — directed, sustained, morally costly. Ahmad stands at each threshold. The film crew waits for the old woman to die. Hossein follows Tahereh across the hillside. Badii lies in the hole watching the sky. The engineer drives up the hill every time his phone rings, waiting for the news that will end his vigil. Mania waits in traffic for each passenger to arrive at their truth.
+কিয়ারোস্তামির নীরবতা শব্দের অভাব নয়; এ সেই মুহূর্তে ভাষার ব্যর্থতা, যখন ভাষার দরকার সবচেয়ে বেশি। ক্লোজ-আপের শেষ দৃশ্যে শব্দ কেটে যায়। তাহেরে হোসেইনের প্রস্তাবের উত্তর দেয় না। টেন-এ ঝগড়ার মাঝখানে কথা থেমে যায় আর শহরের হর্ন সেই ফাঁক ভরে দেয়। তাসকানির শেষ দৃশ্যে জেমস আয়নার সামনে দাঁড়িয়ে থাকে, গির্জার ঘণ্টা বাজে, উত্তর আসে না। এই নীরবতাগুলো আরামের নয়, মীমাংসারও নয়। এখানে ছবি স্বীকার করে, কথা তার সীমায় পৌঁছে গেছে।
 
-The vigil is always kept for something that may not come. Mohammed's house may not be findable. The old woman may not die on schedule. Tahereh may not turn. The sky may not provide a reason. What the vigil costs is not effort but time — the irreversible expenditure of a life's duration on a waiting that may produce nothing. And yet Kiarostami's characters keep their vigils without resentment, without the expectation of reward. The vigil is kept because not keeping it would mean turning away from something that matters.
+কিন্তু এর পাশাপাশি আরেক রকম নীরবতা আছে — প্রকৃতির নীরবতা, যা মানুষের নাটক ফুরিয়ে যাওয়ার পরেও চলতে থাকে। জলপাই বন। ভোরের আলোয় তেহরানের পাহাড়। প্রকৌশলী চলে যাওয়ার পর গমের খেতে বাতাস। বুড়ো দরজা-মিস্ত্রির লণ্ঠনের আলোয় রাতের গলি। এগুলো ব্যর্থ কথা নয়; এ হলো দুনিয়ার নিজের ঘোষণা, মানুষের তাড়াহুড়ার প্রতি তার নির্বিকার থাকা।
 
-The longest vigil in the ten films is the one kept by the grandmother in Like Someone in Love — a woman who travels from the countryside to see her granddaughter and waits outside a metro station all night. She never appears on screen. Her vigil is held entirely in absence, reported only through voice messages. It is the most complete vigil in the ten films: kept with total fidelity, received with total indifference.
-
-### Col 7 · Exposure
-
-short: Exposure — across ten films
-
-The exposed figure in Kiarostami is not humiliated — exposure in these films is more precise than that. It is the moment when the pretence that has been sustaining a scene becomes insufficient, and what was underneath it becomes visible. Sabzian weeps at the door when the performance ends. The overdose strips the Firouzkoui marriage of its last cover. The taxidermist's story exposes Badii to the possibility that one morning might be different from every other. The last passenger's headscarf comes off: "let your head breathe."
-
-The exposures in Kiarostami are almost always gentle — they do not arrive as accusations or revelations but as the quiet removal of something that turned out to be covering nothing very different from what it concealed. The marriage in Certified Copy is exposed as — what? The same as any marriage. The engineer's professional pretence is exposed to the village — and the village already knew. The professor's apartment is exposed as the carefully tended arrangement of a man living around an absence.
-
-What exposure reveals in the ten films is not a hidden truth but the continuity between the performance and what lay beneath it. The self that is exposed is not more real than the self that was performing — it is the same self, now without its protective cover, more vulnerable and more available.
-
-### Col 8 · Silence
-
-short: Silence — across ten films
-
-The silence in Kiarostami is not the absence of sound — it is the failure of language at the moment when language is most needed. Azam does not speak after the overdose. Tahereh does not answer Hossein's proposal. The sound drops in the final scene of Close-Up. James produces a stutter when Elle says "stay." A rock comes through the window and then nothing. These silences are not comfortable or resolved. They are the places where the film acknowledges that speech has reached its limit.
-
-But alongside these human silences there is a different kind of silence in Kiarostami — the silence of the natural world that continues after the human drama has exhausted itself. The olive trees. The hills of Tehran at dawn. The wind moving through the wheat fields after the engineer has driven away. The road after the man with the wheelbarrow has crested the hill. These silences are not failed speech — they are the world asserting its indifference to the human urgency that has been playing out against it.
-
-The two silences — the human silence of failed language and the natural silence of a world that continues — come together in Taste of Cherry's epilogue: the crew on the hill in spring light, the soldiers resting, the musician playing, no dialogue. The film has stopped trying to answer the question it was asking. The world continues in the silence that follows.
-
-### Col 9 · Dissolution
-
-short: Dissolution — across ten films
-
-Every Kiarostami film ends with a dissolution — the self that set out on the errand is no longer locatable at the end of the road. But the mode of dissolution varies so completely across the ten films that the concept only becomes legible when all ten versions are held together. Ahmad dissolves into Mohammed — into the act of care itself, writing himself into his friend's place. Firouzkoui dissolves into the institution he served. Sabzian and Makhmalbaf dissolve into each other in Tehran traffic. The man with the wheelbarrow dissolves into the landscape that continues after him. Badii dissolves into the earth or above it — the film will not say which.
-
-The Kiarostami dissolution is not death and it is not transcendence. It is the becoming-invisible of a self that has been stripped of the pretences, certainties, and purposes that made it locatable. By the end of each film, the character's original identity — the man who had the errand, the woman managing the divorce, the professor spending an afternoon — has been worn away by the road, the ruin, the absent beloved, the failed testimony, the vigil that produced no answer. What remains is not nothing. It is the landscape, the road, the wind, the olive trees — the world that was there before the errand began and that will continue after the last frame.
-
-The deepest argument of Kiarostami's ten films, read as a sequence, is that the self is not a stable possession but a temporary arrangement that the journey gradually undoes. To follow the errand to its end is to discover that the self who set out is not the self who arrives — and that this is not tragedy but the condition of having been genuinely present to the journey.
+দুই নীরবতা — মানুষের ভাষা হেরে যাওয়ার নীরবতা আর দুনিয়ার চলতে থাকার নীরবতা — এক জায়গায় এসে মেলে টেস্ট অব চেরির শেষে: বসন্তের আলোয় টিলার ওপর শুটিং দল, ঘাসে জিরোচ্ছে সৈনিকেরা, কোনো সংলাপ নেই। যে প্রশ্ন ছবিটা করছিল, তার উত্তর দেওয়ার চেষ্টা ছবিটা ছেড়ে দিয়েছে। তারপরের নীরবতায় দুনিয়া চলতে থাকে।
 
 ## Rows
 
-### Row 0 · The Report
+### Row 0 · হোয়্যার ইজ দ্য ফ্রেন্ডস হাউস?
 
-desc: 1977
+desc: ১৯৮৭
 
-Firouzkoui is a tax investigator in Tehran whose wife Azam has been trying to reach him all day. When he finally returns home, the marriage that has been failing in plain sight — through arguments about evenings out, about money, about a landlady who wants them gone — reaches its crisis point. Azam takes pills. Firouzkoui brings her to the hospital and leaves before she regains consciousness. The film was made two years before the revolution and feels, in retrospect, like a document of a world about to end — though the world it documents is simply the world of an ordinary marriage, rotting in the ordinary way.
+কোকের গ্রামের ছোট্ট ছেলে আহমাদ স্কুল থেকে ভুল করে সহপাঠী মোহাম্মদ রেজা নেমাতজাদের হোমওয়ার্কের খাতা বাড়ি নিয়ে আসে। কড়া মাস্টার আগেই বলে রেখেছেন, আর একদিন খাতায় কাজ না আনলে মোহাম্মদ রেজাকে স্কুল থেকে বের করে দেবেন। আহমাদ খাতা ফেরত দিতে পাহাড় পেরিয়ে পাশের গ্রাম পোশতের দিকে রওনা দেয়। যে বড় মানুষকেই জিজ্ঞেস করে, সে তাকে অন্য কোথাও পাঠায়, বা নিজের কাজে লাগায়, বা শোনেই না। সন্ধ্যা নামে। বাড়িটা পাওয়া যায় না। রাতে আহমাদ নিজেই বন্ধুর খাতায় হোমওয়ার্ক করে দেয়, আর পরদিন সকালে ক্লাস শুরুর আগে তা পৌঁছে দেয়।
 
-The Report enacts its descent through the two parallel tracks of Firouzkoui's life: the tax bureau, where he performs principled rectitude and is bureaucratically destroyed for it, and the home, where the same performance of moral seriousness produces nothing but distance. The errand he cannot complete is the marriage itself. The road he travels — office corridor, apartment hallway, hospital passage — leads nowhere. The ruin is total and silent. His pretence of competence never wavers, which means it never helps. What he loses, step by step, is any claim to be present to his own life. By the time Azam takes the pills, he has already left. His dissolution into the institution he served is not an ending but a confirmation of where he was all along.
+এখানকার ছবিগুলোর মধ্যে এটি সবচেয়ে হালকা, আর একমাত্র ছবি যেখানে যে কাজে মানুষটা বেরিয়েছিল তা শেষ হয় — কিন্তু শেষ হয় অন্যের জায়গায় নিজেকে বসিয়ে। পথ বারবার ঘুরে আসে, বড়রা শোনে না, বন্ধু আর তার বাড়ি থেকে যায় নাগালের বাইরে, আহমাদের কথা বাতাসে মিলিয়ে যায়, দরজায় দরজায় অপেক্ষা ফুরোয় না। শিশুর নৈতিক তাগিদের জন্য এ দুনিয়ায় কোনো জায়গা রাখা হয়নি। তবু কাজটা হয়, কারণ আহমাদ ঠিক করে যে হবে, আর তার মধ্যে এমন একটা গুণ আছে যা বড়দের দুনিয়ায় নেই: পরিস্থিতি যা চায়, নিজের দাম দিয়ে হলেও তা হয়ে ওঠার ইচ্ছা। পরের সব ছবির মূল প্রশ্নগুলো এখানে প্রথম দেখা দেয়, কিন্তু এক শিশুর উচ্চতা থেকে — তাই সেগুলো এখানে প্রশ্ন নয়, শুধু কাজ।
 
-### Row 1 · Where Is the Friend's House?
+### Row 1 · ক্লোজ-আপ
 
-desc: 1987
+desc: ১৯৯০
 
-Ahmad, a young boy in the village of Koker, accidentally takes his classmate Mohammed's homework notebook home from school. If Mohammed does not have the notebook tomorrow, the strict teacher will expel him. Ahmad sets out across the terraced village landscape to find Mohammed's house and return it. Every adult he approaches sends him elsewhere. Evening falls. He cannot find the house. He does his homework in Mohammed's notebook himself, and returns it the next morning before class.
+হোসেইন সাবজিয়ান বেকার এক ছাপাখানা-শ্রমিক আর অনুরাগী সিনেমাপ্রেমী। বাসে এক মহিলার পাশে বসে সে মোহসেন মাখমালবাফের ছবির চিত্রনাট্য পড়ছিল; মহিলা জিজ্ঞেস করতেই সে নিজেকে মাখমালবাফ বলে পরিচয় দেয়। তারপর কয়েক সপ্তাহ সে তেহরানের সচ্ছল আহানখাহ পরিবারের বাড়িতে যাতায়াত করে, বলে তাদের বাড়িতে তাদের নিয়েই একটা ছবি বানাবে। শেষে প্রতারণার দায়ে গ্রেপ্তার হয়। পত্রিকায় খবরটা পড়ে কিয়ারোস্তামি বিচার চিত্রায়ণের অনুমতি নেন, তারপর আসল মানুষদের দিয়েই, যার যার নিজের ভূমিকায়, আগের ঘটনাগুলো আবার মঞ্চস্থ করেন। ছবি শেষ হয় সাবজিয়ানের মুক্তি আর আসল মাখমালবাফের সঙ্গে তার দেখা হওয়ায়।
 
-Friend's House is the lightest film in the ten and the only one in which the errand is completed — but the completion is a dissolution of a different kind. Ahmad writes himself into Mohammed's place, and the self that performed this act of love leaves no trace. The road that doubled back on itself, the adults who would not hear, the carpenter who worked in silence while the boy watched — all of this is the material of a world that does not accommodate childhood's moral urgency. And yet the errand succeeds, because Ahmad decides that it will, and because he has the one quality the adult world lacks: the willingness to be the thing the situation requires, even at the cost of himself.
+ক্লোজ-আপে সবকিছু দুবার ঘটে, কারণ এখানে দুটো উদ্দেশ্য, দুটো পথ, দুই রকম ভান। সাবজিয়ান চেয়েছিল ছবি বানাতে, অন্তত কিছুদিনের জন্য সেই মানুষ হতে যে মানুষ সিনেমা তাকে হতে বলেছিল। কিয়ারোস্তামি চেয়েছেন সেই চেষ্টাকারী মানুষটাকে ধরে রাখতে। দুটোই সিনেমার প্রতি ভালোবাসা; দুটোতেই অভিনয় আছে; দুটোই একই অনুপস্থিতির মুখোমুখি — শিল্প যা কথা দেয় আর জীবন যা দিতে পারে, তার মাঝখানের ফাঁক। ভাঙন এখানে দারিদ্র্য, জবানবন্দি এখানে আদালতের, অপেক্ষা এখানে ক্যামেরার নিজের, আর নীরবতা এখানে ইচ্ছাকৃত — শেষ দৃশ্যে মাইক্রোফোন বিগড়ে যাওয়ার ভান। আর শেষটা সবচেয়ে আশাবাদী: কয়েক সপ্তাহের জন্য যে দুজন একই মানুষ ছিল, তারা এক মোটরসাইকেলে চড়ে তেহরানের ভিড়ে মিশে যায়।
 
-### Row 2 · Close-Up
+### Row 2 · থ্রু দ্য অলিভ ট্রিজ
 
-desc: 1990
+desc: ১৯৯৪
 
-Hossein Sabzian, an unemployed printing worker and devoted cinephile, impersonates the director Mohsen Makhmalbaf to a middle-class Tehran family, telling them he wants to make a film in their house with them as actors. He is arrested for fraud. Kiarostami, who heard about the case from a journalist, obtains permission to film the trial — and then reconstructs the events leading up to it, using the actual participants playing themselves. The film ends with Sabzian's release and his meeting with the real Makhmalbaf.
+ভূমিকম্পে বিধ্বস্ত কোকের অঞ্চলে একটা শুটিং দল এসেছে ভূমিকম্প-পরবর্তী জীবন নিয়ে ছবি বানাতে। স্থানীয় এক তরুণ, হোসেইন, দলের ফাইফরমাশ খাটে; মূল অভিনেতা মেয়েদের সামনে তোতলায় বলে শেষ মুহূর্তে তাকেই নামিয়ে দেওয়া হয় নববিবাহিত স্বামীর ভূমিকায়। স্ত্রীর ভূমিকায় তাহেরে — যাকে হোসেইন সত্যিই বিয়ে করতে চায়। তাহেরের বাবা-মা ভূমিকম্পে মারা গেছে; তার দাদি প্রস্তাব ফিরিয়ে দিয়েছেন, কারণ হোসেইন লেখাপড়া জানে না, তার ঘরবাড়িও নেই। শুটিংয়ের পুরোটা সময় হোসেইন সংলাপের আড়ালে আর দুই টেকের ফাঁকে তাহেরেকে প্রস্তাব দিয়ে যায়। তাহেরে উত্তর দেয় না। ছবি শেষ হয় জলপাই বনের ওপারে সবুজ মাঠে দুটো ছোট্ট বিন্দুর এক দীর্ঘ, দূরের শটে।
 
-Close-Up doubles the descent sequence because it contains two errands, two roads, two sets of pretences. Sabzian's errand is to make a film and to be, even briefly, the person cinema told him he could be. Kiarostami's errand is to document the man who tried. Both errands are acts of love for cinema. Both involve performance. Both encounter the same central absence — the gap between what art promises and what a life allows. The film's dissolution is its most hopeful: Sabzian and Makhmalbaf ride together into Tehran traffic, two men who were the same man for forty days, dissolving into the city that produced them both.
+কিয়ারোস্তামির সবচেয়ে আত্মসচেতন ছবি: একটা ছবি বানানোর ছবি, যা নিজেও আগের ছবিগুলোর ছায়ায় দাঁড়িয়ে। ভান এখানে কাঠামোগত — প্রতিটি স্তর অন্য কিছুর অভিনয় করছে; পরিচালক একজন অভিনেতা, অভিনেতারা আসলে নিজেরাই, সংলাপ আসলে প্রস্তাব। কিন্তু এত স্তরের পরেও যা টিকে থাকে তা হোসেইনের ভালোবাসা — কোনো ফ্রেমিং যাকে নান্দনিক বানিয়ে ধরে রাখতে পারে না। ছবির কেন্দ্রে একটা অনুপস্থিতি — তাহেরের সম্মতি — আর চারপাশে হোসেইনের অবিরাম জবানবন্দি, শেষ না হওয়া অপেক্ষা, আর একটা নীরবতা যা শেষ পর্যন্ত ভাঙে না। ভূমিকম্পের ধ্বংসস্তূপের ওপর এক প্রেমের গল্প — আর গল্পটা শেষ হয় এমন দূরত্বে, যেখান থেকে উত্তরটা শোনা যায় না।
 
-### Row 3 · And Life Goes On
+### Row 3 · টেস্ট অব চেরি
 
-desc: 1992
+desc: ১৯৯৭
 
-In June 1990, an earthquake measuring 7.4 on the Richter scale struck the Gilan province of northern Iran, killing more than 40,000 people. The Koker villages where Kiarostami had filmed Friend's House were destroyed. A fictionalized version of Kiarostami drives with his son into the disaster zone to find out whether the children who acted in that film survived. The road is blocked, then negotiated, then blocked again. They find the villages in ruins and life continuing: a man preparing a bridal suite in rubble, a couple watching a World Cup match by generator light, a man pushing a wheelbarrow up a hill while his pregnant wife walks beside him, singing.
+জনাব বাদি তাঁর রেঞ্জ রোভার চালিয়ে ঘোরেন তেহরানের উপকণ্ঠের নির্মাণস্থল আর ধুলোমাখা পাহাড়ে, থেমে থেমে মজুর, সৈনিক, এক মাদ্রাসাছাত্রকে লিফট দেন। তাঁর একটা নির্দিষ্ট অনুরোধ আছে: কাল ভোরে একজনকে একটা নির্দিষ্ট জায়গায় এসে একটা গর্তের মুখে দাঁড়িয়ে তাঁর নাম ধরে ডাকতে হবে, আর সাড়া না পেলে তাঁর ওপর বিশ শাবল মাটি ফেলতে হবে। গর্ত তিনি আগেই খুঁড়ে রেখেছেন। কুর্দি এক তরুণ সৈনিক ভয়ে পালায়; আফগান মাদ্রাসাছাত্র ধর্মের যুক্তিতে না বলে। শেষে রাজি হন বাঘেরি, প্রাকৃতিক ইতিহাসের জাদুঘরে মরা পাখির দেহ সংরক্ষণের কাজ করেন — তাঁর নিজের অসুস্থ সন্তানের চিকিৎসার টাকা দরকার। কিন্তু রাজি হওয়ার আগে তিনি বলেন সেই ভোরের গল্প, যেদিন তিনি নিজেই ফাঁস নিতে তুঁতগাছে উঠেছিলেন।
 
-And Life Goes On is the pivot of Kiarostami's career — the film in which the descent sequence is mapped onto literal catastrophe and found to produce not tragedy but continuation. The errand fails in the way it was defined (the children are eventually found, casually, almost by accident) and succeeds in the way it wasn't (the film discovers that life has gone on, is going on, will go on). The dissolution that ends the film — the man with the wheelbarrow cresting the hill and disappearing into the landscape — is the most affirmative in the ten: not the end of a self but the continuation of a life, happening elsewhere, beyond the frame.
+টেস্ট অব চেরি কিয়ারোস্তামির ছককে তার শেষ সীমায় নিয়ে যায়: এখানে যে কাজে মানুষটা বেরিয়েছে, তা নিজের অদৃশ্য হয়ে যাওয়ার বন্দোবস্ত। পথ ঘোরে, পৌঁছায় না, কারণ গন্তব্যে আগেই পৌঁছানো হয়ে গেছে। ভাঙন আগে, কারণ অনুপস্থিত, শান্ত ভঙ্গিটা ভান। আর এই ছবিতেই জবানবন্দি এক মুহূর্তের জন্য হয়তো কাজ করে — বাঘেরির গল্প হয়তো বাঁচার ইচ্ছার শূন্যতায় একটা ফাঁক খুলে দেয়, যার ভেতর দিয়ে একটা স্বাদ ঢুকতে পারে। ছবি বলে না কাজ হলো কি না। রাতের গর্ত অন্ধকারে মিলিয়ে যায়, আর তার পরে আসে বসন্তের আলোয় ভিডিওতে তোলা এক উপসংহার, যেখানে প্রশ্নটা — একটা ছোট্ট ইন্দ্রিয়-অভিজ্ঞতা কি আগে নেওয়া সিদ্ধান্ত উল্টে দিতে পারে — চিরকালের জন্য খোলা থেকে যায়।
 
-### Row 4 · Through the Olive Trees
+### Row 4 · দ্য উইন্ড উইল ক্যারি আস
 
-desc: 1994
+desc: ১৯৯৯
 
-A film crew arrives in the earthquake-ruined villages of Koker to shoot a drama about the aftermath. One of the local men cast as an actor, Hossein, is in love with his co-star Tahereh, whose family died in the earthquake. He has proposed to her; she has not answered. Throughout the shoot, Hossein uses the film's dialogue as cover for his real proposal — speaking to Tahereh through scripted lines, continuing to address her in the gaps between takes. The film ends with a long shot of two figures in the olive grove, Hossein following Tahereh, before one of them stops.
+তেহরান থেকে বেহজাদ নামে এক লোক ছোট একটা দল নিয়ে আসে দূরের কুর্দি গ্রাম সিয়াহ দারেতে। গ্রামের লোকেরা তাকে ডাকে প্রকৌশলী। আসলে তারা অপেক্ষা করছে এক বুড়ির মৃত্যুর — মারা গেলে গ্রামের মেয়েরা যে প্রাচীন শোকানুষ্ঠান করে, তা তারা ক্যামেরায় ধরবে। বুড়ি মরে না। বেহজাদ অপেক্ষা করে; তেহরান থেকে ফোন এলেই গাড়ি চালিয়ে গ্রামের বাইরের কবরস্থানের টিলায় ওঠে নেটওয়ার্কের খোঁজে, নেমে এসে আবার খোঁজ নেয় বুড়ির অবস্থা। টিলায় এক লোক মাটির নিচে কেবলের জন্য গর্ত খোঁড়ে, যাকে কখনো দেখা যায় না; গ্রামের অন্ধকার এক গোয়ালে বেহজাদ এক মেয়েকে ফরুগ ফাররোখজাদের কবিতা শোনায়। শেষে বুড়ি মারা যায়, কিন্তু ততদিনে দল চলে গেছে। বেহজাদ শোকার্ত মেয়েদের কয়েকটা ছবি তোলে, তারপর চলে যায়।
 
-Through the Olive Trees is the most formally self-aware film in the ten — a film about the making of a film about the earthquake, which is itself a sequel to a film about looking for survivors of the earthquake. The pretence here is structural: every level of the film is performing something else. What survives all this layering is Hossein's love, which is the one thing no amount of framing can aestheticise or contain. His vigil through the olive grove — following a woman who will not turn — is the ten films' most sustained image of the condition the descent sequence describes: a self that has given everything to an errand and cannot stop, even when the errand has given nothing back.
+কিয়ারোস্তামির সবচেয়ে খোলামেলা, সবচেয়ে প্রশস্ত ছবি — এত বিস্তৃত আর স্থির প্রকৃতিতে তোলা যে মানুষের নাটক তার ভেতরে ছোট হয়ে আসে, আর সেটাই ছবির যুক্তির অংশ। বেহজাদের উদ্দেশ্য এখানে শিকারির: সে এসেছে একটা মৃত্যু থেকে পেশাগত ফায়দা তুলতে, আর প্রকৌশলীর পরিচয় সেটা ঢেকে রাখে। ভাঙন এখানে এক পুরোনো দুনিয়ার ধীর মৃত্যু, যা কারও সময়সূচি মানে না। অনুপস্থিতি এখানে অগুনতি — বুড়ি, গর্তের লোকটা, এমনকি বেহজাদের দলের লোকেরাও প্রায় কখনো পর্দায় আসে না। আর অপেক্ষা — টিলায় ওঠা, নামা, আবার ওঠা — এখানকার সবচেয়ে উদ্ভট অপেক্ষা: ফোনে বাঁধা এক আধুনিক মানুষ, যে দেখছে একটা প্রথাগত দুনিয়া শান্তিতে মরতে চাইছে, আর সে নিজে বসে আছে কখন তার শোক ক্যামেরায় তুলবে। শেষে সে যে পথে এসেছিল সেই পথে ফিরে যায়, আর গ্রামটা থেকে যায় তার বাতাসের কাছে।
 
-### Row 5 · Taste of Cherry
+### Row 5 · টেন
 
-desc: 1997
+desc: ২০০২
 
-Mr. Badii drives his Range Rover through the construction sites and hills on the outskirts of Tehran, stopping to offer rides to labourers, soldiers, and a seminary student. He has a specific request: he needs someone to come to a particular spot the next morning, call down into a hole, and — if there is no answer — cover him with twenty spadefuls of earth. He has already prepared the hole and taken the pills. The film follows his conversations with three men before he finds, in a taxidermist, someone who agrees to help — and who first tells him about a morning when he almost hanged himself and tasted a cherry instead.
+মানিয়া তেহরানের রাস্তায় গাড়ি চালায়, আর ছবিটা ভাগ করা উল্টো দিকে গোনা কয়েকটা খণ্ডে, প্রতিটিতে আলাদা যাত্রী: তার রাগী ছেলে আমিন, তার বোন, মাজারে যাওয়া এক বুড়ি, এক যৌনকর্মী, এক তরুণী যার বাগদত্তা তাকে ছেড়ে যাচ্ছে। ছবিটা তোলা হয়েছে ড্যাশবোর্ডে বসানো দুটো ছোট ডিজিটাল ক্যামেরায়; গাড়িতে কোনো পরিচালক নেই। মানিয়ার সম্প্রতি তালাক হয়েছে; আমিন সেজন্য তাকে দোষ দেয়; ছবিটা মা-ছেলের সেই দর-কষাকষি — কে কার কাছে কী পাওনা, আর যে সামাজিক কাঠামো একজন নারীর জীবন সাজিয়ে দিয়েছে, তার কাছে সেই নারীর দেনা কতটুকু।
 
-Taste of Cherry pushes the descent sequence to its logical extreme: the errand is the arrangement of one's own dissolution. The road circles without arriving because the destination is already reached. The testimony — the taxidermist's story about the mulberry tree — is the only one in the ten that may actually work, that may offer the gap in the absence of the will to live through which a cherry can enter. The film refuses to say whether it worked. The epilogue returns us to the hill in spring light, with no answer, leaving the question — whether a single sensory experience can reverse a decision already made — permanently open.
+এখানকার সবচেয়ে রাজনৈতিক ছবি — নারী, বিয়ে নামের প্রতিষ্ঠান, আর ইরানি সমাজজীবনের যে কাঠামো দুটোকেই বেঁধে রাখে, তা নিয়ে সবচেয়ে সরাসরি। কিন্তু তার রাজনীতি চলে বাকি ছবিগুলোর মতোই নির্ভুল ছকে। পথ হলো তেহরানের জট। ভাঙন হলো আগেই ভেঙে যাওয়া সংসার। অনুপস্থিতি হলো সেই বাবা, যাকে কখনো দেখা যায় না। জবানবন্দি মানিয়ার নিজের — বিয়ে তার কাছ থেকে কী নিয়েছে। অপেক্ষা হলো জ্যাম, যা কথাকে গভীরে যেতে বাধ্য করে। উন্মোচন আসে এক তরুণীর মাথা থেকে হিজাব সরে যাওয়ায়, আর নীরবতা আসে হর্নের শব্দে, যা প্রতিটি অসমাপ্ত ঝগড়াকে গিলে নেয়। শেষে ছেলে গাড়ি থেকে নামে, আর শহর দুজনকেই শুষে নেয় — প্রকৃতিতে নয়, এক নামহীন শহরের অবিরাম চলাচলে, যা কোনো গাড়ির ভেতরে কী মীমাংসা হলো বা হলো না, তার তোয়াক্কা করে না।
 
-### Row 6 · The Wind Will Carry Us
+### Row 6 · সার্টিফায়েড কপি
 
-desc: 1999
+desc: ২০১০
 
-Behzad, an engineer from Tehran, arrives with a small crew in the remote Kurdish village of Siah Darreh. They are waiting for an elderly woman to die so that they can film a traditional mourning ceremony. She does not die on schedule. Behzad waits, driving up the hill outside the village every time his phone rings to get signal, returning to ask again about the old woman's condition. He befriends the village doctor, encounters a young man digging a trench, and hears Forough Farrokhzad's poem recited in the dark. The old woman eventually dies; the ceremony cannot proceed as planned. Behzad leaves.
+ব্রিটিশ লেখক জেমস মিলার তাসকানির আরেৎসো শহরে এসেছেন তাঁর বই নিয়ে বক্তৃতা দিতে। বইয়ের বক্তব্য: শিল্পকর্মের প্রত্যয়িত নকলও আসলের মতোই মূল্যবান। এক ফরাসি প্রাচীন জিনিসপত্রের দোকানি — ছবিতে তার কোনো নাম নেই — বক্তৃতায় আসে, আর পরদিন তাঁকে নিয়ে গাড়িতে বেরিয়ে পড়ে পাহাড়ি শহর লুচিনিয়ানোর দিকে। এক ক্যাফের মালকিন তাদের স্বামী-স্ত্রী ভেবে নেয়, নারীটি ভুল ভাঙায় না, আর তারপর কোনো এক সময় — ছবি কখনো ঘোষণা করে না কখন — দুজনে দম্পতির মতো কথা বলতে শুরু করে: পনেরো বছরের দাম্পত্য, পুরোনো অভিমান, বিয়ের রাতের হোটেল। তাদের মধ্যে সত্যিই কোনো অতীত আছে, না তারা অভিনয় করছে — ছবি বলে না।
 
-The Wind Will Carry Us is the most spacious of the ten films — shot in a landscape so wide and still that human drama seems small inside it, which is part of the film's argument. Behzad's errand is predatory in a way none of the others quite are: he has come to profit professionally from a death, and his pretence of being an engineer conceals this from the village. His vigil — driving up the hill, waiting, driving back down — is the ten films' most absurd enactment of the condition the descent describes: a modern man, tethered to his phone, watching a traditional world try to die in peace while he waits for the moment he can document its grief. He dissolves back into the road he came from, leaving the village to its wind.
-
-### Row 7 · Ten
-
-desc: 2002
-
-Mania drives her car through the streets of Tehran in ten numbered segments, each a conversation with a different passenger: her angry son Amin, her religious friend, an old woman going to a shrine, a prostitute, a young woman whose boyfriend has left her. The film was shot on two small digital cameras mounted on the dashboard, with no director visible in the car. Mania has recently divorced; Amin resents her for it; the film is their negotiation of what they owe each other and what a woman owes the social structures that have organised her life.
-
-Ten is the most political film in the ten — the one most explicitly about women and the institution of marriage and the structures of Iranian social life that constrain both. But it enacts its politics through the ten steps of the descent as precisely as any of the others. The errand is daily life. The road is the Tehran grid. The ruin is the marriage already over. Mania's composure is the pretence she maintains through all ten conversations. The dissolution that ends the film — the son getting out of the car and the city absorbing them both — is the most urban: not into landscape or institution but into the anonymous circulation of a city that continues regardless of what has been resolved or left unresolved inside any particular car.
-
-### Row 8 · Certified Copy
-
-desc: 2010
-
-James Miller, a British writer, is in Tuscany to present his book, which argues that certified copies of artworks are as valid as their originals. A French antique dealer attends his lecture and invites him to spend an afternoon driving through the Tuscan countryside. They visit a hill town, drink coffee, walk through streets. At some point — it is never announced — she begins calling him by her husband's name and he responds as her husband. Whether they have a shared history or are performing one, whether the marriage they enact during the afternoon is real or invented, the film refuses to say.
-
-Certified Copy is the most philosophical film in the ten — the one that makes its formal argument most explicit, using the book's thesis about copies and originals as the instruction manual for how to watch the relationship that follows. The descent sequence operates here at the level of epistemology: what dissolves is not a self but a certainty — the viewer's certainty about what kind of film they are watching, what kind of relationship they are seeing, what is real and what is performed. By the end, the question the book asks — are copies as valid as originals? — has been answered in the only way Kiarostami can answer it: by making the question unanswerable, and leaving the couple in the hotel room where he is leaving and she is asking him to stay.
-
-### Row 9 · Like Someone in Love
-
-desc: 2012
-
-Akiko is a student who works as an escort in Tokyo. Her manager sends her to visit an elderly professor, Watanabe. Her boyfriend Noriaki is suspicious and controlling. Her grandmother has come from the countryside to see her and waits outside a metro station all night; Akiko drives past her three times in the taxi and does not stop. She spends the night at Watanabe's apartment, where he has prepared food and shows her photographs of his late wife. The next morning Noriaki arrives and mistakes Watanabe for Akiko's grandfather. The film ends with a rock thrown through the window.
-
-Like Someone in Love is the most fragile film in the ten — built entirely of misrecognitions, performed identities, and the grandmother waiting in the cold who never appears on screen. It is also the most abrupt ending in Kiarostami's work: the rock through the window, the voice outside, the cut. No held shot of landscape, no epilogue, no dissolve into anything. The dissolution is into the opening — the broken frame, the entry of the outside world into the protected interior space the film has been occupying. What enters is not shown. The film ends by dismantling the conditions of its own existence, which is the most honest thing it could do.
+এখানকার সবচেয়ে দার্শনিক ছবি — যেখানে কিয়ারোস্তামি তাঁর যুক্তিটা সবচেয়ে খোলাখুলি বলেন, বইয়ের তত্ত্বকে ব্যবহার করেন পরের সম্পর্কটা কীভাবে দেখতে হবে তার নির্দেশিকা হিসেবে। এখানে যা হারায় তা কোনো মানুষ নয়, একটা নিশ্চয়তা — দর্শক কী ধরনের ছবি দেখছে, কী ধরনের সম্পর্ক, কোনটা আসল আর কোনটা অভিনয়। পথ তাসকানির সড়ক, ভাঙন এক দাম্পত্য — আসল হোক বা নকল — অনুপস্থিতি খোদ সত্যটা। উন্মোচন আসে নারীটির অভিযোগে, আর শেষ পর্যন্ত বইয়ের প্রশ্ন — নকল কি আসলের সমান? — তার একমাত্র সম্ভব উত্তর পায়: প্রশ্নটাকেই উত্তরহীন করে দিয়ে। শেষ দৃশ্যে পুরুষটি হোটেলের বাথরুমের আয়নার সামনে দাঁড়িয়ে, বাইরে গির্জার ঘণ্টা, আর রাত নয়টার ট্রেন — সে থাকবে কি না, ছবি জানায় না।
 
 ## Cells
 
-### 00 · Settle a tax account; hold a marriage together
+### 00 · পাহাড় বেয়ে আঁকাবাঁকা পথ
 
-The Report opens in a tax bureau. A woman pleads at a window; a man moves through corridors; a form is missing. But the real errand is domestic: Firouzkoui must hold his marriage to Azam together while keeping his professional life from collapsing. Both errands are doomed from the first scene. The tax account will not settle — the system is designed to exhaust, not resolve. The marriage will not hold — it is already leaking in ways the film never explains and does not need to.
+আহমাদের পথ চোখের সামনে, আক্ষরিক: কোকের থেকে পোশতে যাওয়ার সেই আঁকাবাঁকা পায়ে-চলা রাস্তা, যা একটা ন্যাড়া টিলার গা বেয়ে জেড অক্ষরের মতো ভাঁজ খেয়ে উঠে গেছে, মাথায় একটামাত্র গাছ। কিয়ারোস্তামি এই পথ দেখান দূর থেকে, ওপর থেকে — আহমাদ সেখানে এক ছোট্ট বিন্দু, যে দৌড়াচ্ছে এমন এক প্রকৃতির ভেতর দিয়ে যা তার তাড়াহুড়ার কোনো খবর রাখে না।
 
-### 01 · The bureaucratic corridor with no exit
+পথ তাকে জোর করে আটকায় না; শুধু লম্বা হয়, বাঁক নেয়, প্রতিটি মোড়ে নতুন বাধা রাখে। পোশতের গলিতে সিঁড়ি, ভুল দরজা, একই পদবির আরেকজন লোক। আহমাদ পথটা দুবার পেরোয় — একবার যায়, একবার ফেরে, তারপর আবার যায় — আর প্রতিবার পথ তাকে প্রায় সেখানেই ফিরিয়ে দেয় যেখান থেকে সে শুরু করেছিল।
 
-The road in The Report is interior — the corridor of the tax bureau, the hallway of the apartment, the passage between office and hospital. Firouzkoui moves constantly through these spaces without arriving anywhere. He goes to the office and is blocked. He goes home and finds crisis. He goes to the hospital and leaves before entering. The corridor is the film's deepest image: a passage that leads to another passage, a bureaucracy that processes without resolving, a marriage that continues without connecting.
+এ পথের আসল কাজ এগিয়ে নেওয়া নয়, কাজটাকে টেনে লম্বা করা। যতক্ষণ আহমাদ হাঁটছে, ততক্ষণ খাতাটা ফেরত দেওয়া সম্ভব; পথটাই তার আশা। আর যখন সন্ধ্যা নামে, আলো নিভে আসে, পথটা আর দেখা যায় না, তখন সে বোঝে — বাড়িটা পথের শেষে নেই। কাজটা তাকে অন্যভাবে শেষ করতে হবে।
 
-### 02 · A marriage rotting without event
+### 01 · বড়দের বধির দুনিয়া
 
-The ruin in The Report is not catastrophic. There is no single blow, no decisive betrayal. The marriage between Firouzkoui and Azam simply rots — in missed visits, arguments about evenings out, accusations of dishonesty, a child used as shield and weapon. What makes the film quietly devastating is its insistence that this is the normal form of ruin: not earthquake or accident but the accumulation of small withdrawals, small failures to appear.
+এ ছবির ভাঙন সামাজিক, আর কোনো এক দিনে ঘটেনি: বড়দের দুনিয়া শিশুদের কথা শোনে না। মাস্টার একটা খাতার জন্য মোহাম্মদ রেজাকে স্কুল থেকে বের করে দেওয়ার হুমকি দেন, আর ছেলেটা কাঁদতে থাকে। মা আহমাদের কোনো কথা কানে তোলেন না — আগে হোমওয়ার্ক, তারপর রুটি আনতে যাও, তারপর ছোট ভাইকে দেখো।
 
-### 03 · Firouzkoui performs competence while failing at home
+সবচেয়ে স্পষ্ট দৃশ্যটা দাদার। তিনি আহমাদকে সিগারেট আনতে পাঠান, যদিও পকেটে সিগারেট আছে — কারণ, তিনি বন্ধুকে বুঝিয়ে বলেন, ছেলেকে বাধ্য হতে শেখাতে হয়; পান থেকে চুন না খসলেও মাঝে মাঝে মার দিতে হয়, যাতে শাসনটা মনে থাকে। কথাটা তিনি বলেন অবলীলায়, যেন আবহাওয়ার খবর।
 
-At the tax bureau, Firouzkoui is articulate and principled — he lectures colleagues about the 38th amendment, refuses corruption, insists on correct procedure. At home he cannot fix the faucet, cannot manage the landlady, cannot prevent his wife from taking pills. The competence he performs at work has no purchase in the domestic world, where what is needed is not correctness but presence. His pretence is not cynical; it is the pretence of a man who has genuinely confused professional rectitude with human adequacy.
+দুনিয়াটা নিষ্ঠুর নয়; শুধু বড়দের জন্য সাজানো, আর শিশুরা তার ভেতরে ছায়ার মতো চলাফেরা করে। এই নিরুত্তাপ উদাসীনতাই ছবির চুপচাপ বিপর্যয় — কোনো ভূমিকম্প নয়, কোনো মৃত্যু নয়, শুধু একটা শিশুর জরুরি কথা যা কারও কানে পৌঁছায় না, কারণ এ দুনিয়া কখনো শিশুর কথা শোনার জন্য বানানো হয়নি।
 
-### 04 · Azam present but already gone from the marriage
+### 02 · বন্ধু নেই, বাড়িও নেই
 
-Azam is in almost every scene of the first half. She cooks, argues, tends the child, raises grievances that go unanswered. She is emphatically present — and yet already absent from the marriage, withdrawn into a silence Firouzkoui cannot read and does not try to. The overdose is the logical conclusion of an absence building across the entire film. When Firouzkoui leaves before she regains consciousness, the absence becomes mutual and complete.
+মোহাম্মদ রেজা ছবির কাঠামোর ভেতরে এক অনুপস্থিতি। প্রথম দৃশ্যে সে আছে — মাস্টারের সামনে, চোখে পানি — তারপর গ্রাম আর সন্ধ্যার মধ্যে মিলিয়ে যায়। আহমাদ যা কিছু করে সব তার দিকে মুখ করা, কিন্তু সে নিজে আর কোথাও নেই।
 
-### 05 · The car monologue about honest men and their reward
+তার বাড়ি ছবির নাগালছাড়া কেন্দ্র। ঠিকানাটা কেউ ঠিকমতো জানে না; যারা জানে বলে মনে হয়, তারা ভুল দিকে পাঠায়। আহমাদ একবার একই পদবির এক লোকের পেছনে ছোটে, যে গাধার পিঠে চড়ে কোকেরের দিকে ফিরছে — ভাবে লোকটা বন্ধুর বাবা — আর পৌঁছে দেখে লোকটা অন্য কেউ।
 
-The film's most extended dialogue is Firouzkoui in a car delivering a long monologue about honesty and its costs. He tells of an accountant who invited him to overlook one cement truck a day. He refused. The accountant is now rich and famous. Firouzkoui has a three-room apartment and a clear conscience. Under the earth, we are all equally rich or poor, he says. The monologue is spoken because it must be spoken. It changes nothing.
+এই অনুপস্থিতি রহস্য নয়; ছবির শেষে কোনো চমকও নেই। বাড়িটা আছে, কোথাও না কোথাও, কিন্তু এই রাতে এই শিশুর জন্য নেই। আর এখানেই কিয়ারোস্তামির প্রথম আবিষ্কার: যে জিনিস পাওয়া যায় না, তা খোঁজাটা থেমে যায় না — খোঁজাটাই অন্য রূপ নেয়। বন্ধুকে না পেয়ে আহমাদ বন্ধুর জায়গাটা নিজেই পূরণ করে।
 
-### 06 · Sitting outside the hospital room without entering
+### 03 · একই কথা, সবার কাছে
 
-When Azam is brought to hospital after the overdose, Firouzkoui sits outside. The doctor tells him she will be fine. Firouzkoui accepts this and does not go in. He sits in the corridor in the same posture he has held throughout the film: present in body, absent in every other sense. The vigil is not kept out of love or fear; it is kept because there is nowhere else to be, and because entering would require something he does not have.
+আহমাদ অবিরাম জবানবন্দি দেয়। মাকে বলে, দাদাকে বলে, প্রতিবেশীকে বলে, পথের অচেনা লোককে বলে — যে-ই একটু থামে, তাকেই। কথা প্রতিবার একই: এটা মোহাম্মদ রেজার খাতা, কাল খাতা না থাকলে মাস্টার ওকে বের করে দেবে, আজ রাতেই ফেরত দিতে হবে।
 
-### 07 · The overdose strips the last pretence from the marriage
+প্রতিটি ব্যাখ্যা পরিষ্কার, জরুরি, নৈতিকভাবে গুরুতর। আর প্রতিটির উত্তর আসে অন্যমনস্ক এক মাথা নাড়ায়, যা কিছুই বদলায় না। মা শোনেন, কিন্তু শোনেন না; তাঁর কাছে এটা পড়ায় ফাঁকি দেওয়ার অজুহাত। দাদা শোনেন, কিন্তু তাঁর কাছে এটা শাসনের সুযোগ। পোশতের লোকেরা শোনে, কিন্তু তাদের হাতে অন্য কাজ।
 
-Azam's overdose is the film's one moment of unambiguous action — the only thing that cannot be ignored, deferred, or bureaucratically processed. It strips away the pretence that the marriage is simply strained, that things will improve. The doctor's words — that the pills never kill anyone, that she only got herself sick — are the film's most brutal line. The crisis is real; the system has a protocol; the protocol is administered; the crisis is over. The marriage, however, is not over. It simply continues, now without even the pretence of health.
+কিয়ারোস্তামির জবানবন্দির সবচেয়ে বিশুদ্ধ রূপ এটাই: পূর্ণ আন্তরিকতায় বলা কথা, এমন এক উদাসীনতার মধ্যে ছুড়ে দেওয়া যা এত সম্পূর্ণ যে প্রায় কাঠামোগত। আহমাদ রেগে যায় না, ভেঙেও পড়ে না; শুধু আবার বলে। পরের ছবিগুলোর বড় মানুষেরা আদালতে, গাড়িতে, জলপাই বনে যে কথা বলবে, তার প্রথম সংস্করণ এই শিশুর ছোট্ট, পুনরাবৃত্ত বাক্যটি।
 
-### 08 · Azam does not speak; the corridor is the answer
+### 04 · দরজায় দরজায় দাঁড়িয়ে থাকা
 
-After the overdose, Azam does not speak. The film does not give her a scene of reconciliation or breakdown. The corridor outside her hospital room, where Firouzkoui sits and then leaves, is the film's answer to every question about where the marriage is going. The corridor says: this is where you are. This is what you do with it. You sit outside. Then you leave.
+আহমাদের অপেক্ষা ছড়িয়ে আছে ছবির অসংখ্য চৌকাঠে — দরজা, সিঁড়ি, উঠানের মুখ — যেখানে সে দাঁড়িয়ে থাকে, কেউ সাড়া দেবে, সাহায্য করবে, অন্তত শোনার মতো সময় থামবে। প্রতিটি দরজার অপেক্ষা ছোট আর হতাশার: দরজা খোলে, আর খুলে দেখায় আরেকটা ভুল ঠিকানা।
 
-### 09 · He leaves before she wakes; dissolves into the institution he served
+সবচেয়ে লম্বা অপেক্ষাটা আসে সন্ধ্যার পর, এক বুড়ো দরজা-জানালার মিস্ত্রির সঙ্গে। তিনি বলেন মোহাম্মদ রেজার বাড়ি চেনেন, নিয়ে যাবেন — কিন্তু তাঁর হাঁটা অসম্ভব ধীর। পথে তিনি থামেন, নিজের বানানো কাঠের দরজা আর জানালা দেখান, আক্ষেপ করেন যে লোকে এখন সব লোহার দরজা লাগায়। আহমাদ তাঁর পেছনে পেছনে হাঁটে, তাড়া দিতে পারে না, ছেড়েও যেতে পারে না।
 
-The Report ends with Firouzkoui leaving the hospital before Azam regains consciousness. He dissolves not into landscape but into the institution that has defined him throughout: the tax bureau, the hierarchy, the procedure that must be followed. He is a man who has made himself into a function of a system, and when the private world demands something the system cannot provide, he returns to the system. His dissolution is the most ordinary in Kiarostami's ten films: into the bureaucratic apparatus that will outlast him without noticing his departure.
+এই অপেক্ষা নিষ্ক্রিয়তা নয়, নৈতিক জেদ। আহমাদ প্রতিটি চৌকাঠে নিজের জায়গা ধরে রাখে এমন এক ধৈর্যে, যা তার বয়সের চেয়ে বড়। আর বুড়োর লণ্ঠনের পেছনে সেই ধীর হাঁটা ছবির সবচেয়ে কোমল দৃশ্য হয়ে থাকে — দুই ভিন্ন সময়ের মানুষ, এক গলিতে, এক আলোয়।
 
-### 10 · Return a notebook before class tomorrow
+### 05 · এক শিশুর অসহায়তা
 
-Ahmad accidentally takes Mohammed's homework notebook home from school. If Mohammed does not have it tomorrow, he will be punished — possibly expelled. The errand is as small and as urgent as an errand can be: return the notebook before morning. The village is unfamiliar; the adults are unhelpful; evening is falling. Ahmad does not give up. This is the only film in the ten where the errand is completed — but what is returned is not quite what was taken.
+এ ছবিতে যা খুলে যায়, তা আহমাদের অসহায়তা — বড়দের উদাসীনতার পুরো ভারের সামনে একটা শিশু, যে আবিষ্কার করে যে আন্তরিকতা আর জরুরিতা দিয়ে সহযোগিতার দরজা খোলে না। সে অপমানিত হয় না; শুধু দেখা যায়, তার কোনো ক্ষমতা নেই।
 
-### 11 · The winding village path that doubles back on itself
+উন্মোচনের মুহূর্তটা চুপচাপ। রাতে আহমাদ ঘরে ফেরে, খাতাটা তখনও তার হাতে। মা খাবার দেন; সে খায় না। বাইরে ঝোড়ো বাতাসে উঠানের দরজা খুলে যায়, কাপড় উড়ে যায়, মা ছুটে যান সামলাতে। এই অস্থির রাতে আহমাদ কাউকে কিছু বলে না। যা বলার ছিল সবই সে বলেছে, আর কেউ শোনেনি।
 
-Ahmad's road is literal and visible: the terraced village lanes of Koker, the stone steps, the paths that lead to the wrong house. Kiarostami films the road with a camera that holds its distance — we see Ahmad from above, from behind, as a small figure moving through a landscape indifferent to his urgency. The road does not block him violently; it simply extends, curves, offers new obstacles at each turn. By the time he finds the right house, night has fallen.
+ছবি এটাকে ট্র্যাজেডি বানায় না। এ হলো এই দুনিয়ায় শৈশবের স্বাভাবিক অবস্থা: পরিষ্কার দেখা কী করতে হবে, আর দুনিয়াকে দিয়ে তা করানোর কোনো উপায় না থাকা। কিন্তু এই উন্মোচনের পরেই আহমাদ সিদ্ধান্ত নেয়। দুনিয়া যদি সাহায্য না করে, তবে কাজটা সে নিজেই করবে — বন্ধুর খাতা খোলে, আর বন্ধুর হোমওয়ার্ক লিখতে বসে।
 
-### 12 · The adult world's indifference as ambient ruin
+### 06 · লণ্ঠনের গলি, খাতার ভেতর ফুল
 
-The ruin in Friend's House is social: the adult world simply does not hear children. Ahmad's teacher threatens Mohammed with expulsion for a missing notebook. Ahmad's grandfather insists he sit and watch rather than run his errand. Every adult he approaches redirects him, dismisses him, or uses him for their own purpose. The world is not cruel — it is simply arranged for adults, and children move through it as shadows. This ambient indifference is the film's quiet catastrophe.
+ছবির নীরবতা দুই রকম। প্রথমটা রাতের পোশতে, বুড়ো মিস্ত্রির সঙ্গে হাঁটার সময়: অন্ধকার গলি, কাঠের জানালার ভেতর থেকে আসা লণ্ঠনের আলো দেয়ালে নকশা আঁকে, কুকুর ডাকে, বুড়ো কথা বলতে বলতে থেমে যান। আহমাদ চুপ। শেষে বাড়িটা না দেখিয়েই বুড়ো থেমে যান, আর আহমাদ কিছু না বলে দৌড়ে চলে যায়।
 
-### 13 · Ahmad performs urgency to adults who perform authority
+দ্বিতীয় নীরবতা পরদিন সকালের ক্লাসে। আহমাদ দেরিতে আসে, মোহাম্মদ রেজার পাশে বসে, ফিসফিস করে খাতাটা এগিয়ে দেয়। মাস্টার একে একে খাতা দেখেন। মোহাম্মদ রেজার খাতায় কাজ করা আছে — আহমাদের হাতে লেখা। মাস্টার সই করেন, ভালো বলেন। পাতার মাঝখানে রাখা একটা ছোট্ট শুকনো ফুল, বুড়ো মিস্ত্রি আগের রাতে যা দিয়েছিলেন।
 
-Ahmad repeats his errand to every adult he meets — explains that Mohammed will be punished, that the notebook must be returned tonight, that this matters. Each adult performs a version of authority: the grandfather performs wisdom, the carpenter performs industry, the neighbours perform busy-ness. None of them hear what Ahmad is saying. The performance on both sides — child performing urgency, adults performing authority — is the film's central social observation.
+কেউ কিছু বলে না। কেউ জানে না কী হয়েছে, আর কাউকে জানানোর দরকারও নেই। যে কাজ করেছে সে নিজের কোনো চিহ্ন রাখেনি, শুধু একটা ফুল। ভালোবাসা এখানে এত সম্পূর্ণ যে নিজেকে ঘোষণা করে না — আর এই না-বলাটাই ছবির শেষ কথা।
 
-### 14 · Mohammed absent; his house the unreachable centre
+### 10 · বারবার চালানো একই পথ
 
-Mohammed is the film's structuring absence. He is present in the first scene, then he disappears into the village and the evening. Everything Ahmad does is oriented toward Mohammed, but Mohammed himself is never there. His house is the film's unreachable centre: the destination that organises the entire journey but that, when finally approached, yields only further obstacles.
+ক্লোজ-আপের পথ দুবার চালানো পথ। সাংবাদিক ফারাজমান্দ দুই পুলিশের সঙ্গে ট্যাক্সিতে চড়ে সাবজিয়ানকে গ্রেপ্তার করতে আহানখাহদের বাড়ির দিকে যায়, পথে টেপরেকর্ডার ধার করার জন্য দোকানে দোকানে ঘোরে। কিন্তু সেই যাত্রাটা আমরা দেখি পুনর্নির্মাণে — ঘটনা ঘটে যাওয়ার পর, ক্যামেরার জন্য, আসল মানুষদের দিয়ে আবার চালানো।
 
-### 15 · Ahmad's repeated explanations to those who will not hear
+এই দ্বিগুণ হওয়াই ছবির আঙ্গিকের ঘোষণা: এখানে প্রতিটি পথ আবার চালানো, প্রতিটি ঘটনা আবার নেওয়া টেক। বাসে সাবজিয়ান আর মিসেস আহানখাহের প্রথম দেখা, আহানখাহদের বাড়ির পথ, জেলের পথ, আর শেষে মিলনের পথ — প্রতিটিই একইসঙ্গে ঘটনা আর ঘটনার অভিনয়।
 
-Ahmad testifies constantly. He explains to his mother, his grandfather, the neighbours, strangers on the path, anyone who will pause long enough to hear. Each explanation is clear, urgent, morally serious. Each is received with a distracted acknowledgment that changes nothing. His testimony is the purest form of the Kiarostami speech act: words delivered with complete sincerity into an indifference so total it is almost structural.
+তারপর ছোট্ট এক দৃশ্য, যা ছবির মধ্যে আর কোথাও খাপ খায় না: সাংবাদিক ভেতরে, আর বাইরে ট্যাক্সিচালক অপেক্ষা করতে করতে আবর্জনার স্তূপ থেকে কয়েকটা ফুল তুলে নেয়, একটা খালি স্প্রে-ক্যান লাথি মারে, আর ক্যানটা ঢাল বেয়ে গড়িয়ে যায় অনেকক্ষণ ধরে। ক্যামেরা ক্যানটার পেছনে থাকে। পথ এখানে গল্প থেকে সরে গিয়ে নিছক পথ হয়ে যায় — আর সেই মুহূর্তে কিয়ারোস্তামির সই চেনা যায়।
 
-### 16 · Standing at each threshold, waiting at each door
+### 11 · দারিদ্র্য, আর তার সামনে শিল্প
 
-Ahmad's vigil is distributed across the film's many thresholds — doorways, steps, courtyard entrances — where he waits for someone to answer, to help, to stop long enough to hear. The vigil at each door is brief and disappointed: the door opens and reveals another misdirection. But Ahmad does not stop watching and waiting. He holds his position at each threshold with a patience that is not passivity but moral persistence.
+সাবজিয়ানের ভাঙন দারিদ্র্য — সেই বিশেষ দারিদ্র্য, যা পরিচয়টাকেই খেয়ে ফেলে। তার তালাক হয়েছে, ছেলে থাকে মায়ের কাছে, চাকরি নেই। সে সিনেমা ভালোবাসে অথচ টিকিট কেনার পয়সা নেই; যে ছবির নায়কদের সঙ্গে সে নিজেকে মেলায়, তাদের মতো হওয়ার কোনো বস্তুগত ভিত্তি তার জীবনে নেই। মাখমালবাফের ছবি নিয়ে সে বলে, ওগুলো আমার কষ্টের কথা বলে।
 
-### 17 · A child who cannot move the adult world
+কিন্তু ভাঙন এক পক্ষের নয়। আহানখাহদের বড় ছেলে প্রকৌশল পাস করে বেকার বসে আছে, ছোটজনও তাই। যে পরিবারকে সাবজিয়ান ঠকিয়েছে, তারাও একই শহরের একই অচলাবস্থার ভেতরে। তারা তাকে বিশ্বাস করেছিল আংশিক এই কারণে যে তারাও কারও কাছ থেকে একটা সুযোগের আশায় ছিল।
 
-The exposure in Friend's House is Ahmad's — a child exposed to the full weight of adult indifference, to the discovery that urgency and sincerity do not unlock cooperation. Ahmad is not humiliated; he is simply revealed as powerless. The exposure is quiet and the film does not dwell on it as tragedy. It is simply the condition of childhood in this world: to see clearly what needs to be done and to be entirely unable to make the world cooperate.
+প্রতারণাটা লোভ নয়; এ হলো কিছুদিনের জন্য এমন একজন হয়ে বাঁচার চেষ্টা, যার জীবনের ওজন আর উদ্দেশ্য আছে — যা শিল্প তার চরিত্রদের দেয়। আর কিয়ারোস্তামির ভাঙন আরও সূক্ষ্ম: তিনি আবিষ্কার করেন যে প্রামাণ্যচিত্র যা দেখায় তা সারাতে পারে না। ক্যামেরা সাবজিয়ানের জীবন ধরে রাখতে পারে; বদলাতে পারে না।
 
-### 18 · The carpenter works in silence; Ahmad watches without asking
+### 12 · আসল মাখমালবাফ কোথাও নেই
 
-The film's most important silence is the scene with the old carpenter — the man who may know where Mohammed lives but who works slowly through his task while Ahmad watches. The carpenter does not ignore Ahmad; he simply proceeds at his own pace, in the silence that belongs to skilled work. Ahmad cannot interrupt, cannot demand, cannot do anything but watch and wait. The silence between them is not hostile; it is the silence of two people operating in completely different temporal registers.
+ক্লোজ-আপের বেশির ভাগ জুড়ে মাখমালবাফ ছবির কাঠামো-গড়া অনুপস্থিতি — এমন এক মানুষ, যার পরিচয় প্রতিটি দৃশ্য সাজায় অথচ যে কোনো দৃশ্যে নেই। আহানখাহরা ভেবেছিল তারা মাখমালবাফের সঙ্গে কাজ করছে। সাংবাদিক মাখমালবাফকে নিয়ে খবর লেখে। আদালত বিচার করে মাখমালবাফ সেজে থাকা এক লোকের। খোদ মাখমালবাফ শেষ কয়েক মিনিটের আগে আসেন না।
 
-### 19 · Ahmad writes himself into Mohammed's place; the self dissolves into the act of care
+যখন আসেন, সেটাই ছবির সবচেয়ে অস্বস্তিকর মুহূর্ত। আসল মানুষটা হাজির, আর যে প্রশ্ন এতক্ষণ সহজ মনে হচ্ছিল — তাঁর আর তাঁর অভিনয়কারীর মধ্যে তফাতটা কী — তা হঠাৎ সত্যিই উত্তরহীন হয়ে যায়। সাবজিয়ান যে মাখমালবাফকে বানিয়েছিল, সে ছিল দরদি, মনোযোগী, সাধারণ মানুষের বাড়িতে এসে তাদের নিয়ে ছবি বানাতে চাওয়া একজন। আসল মাখমালবাফও তা-ই — কিন্তু সেটা জানা গেল কেবল নকলটার কারণে।
 
-Unable to find Mohammed's house, Ahmad does the homework himself in Mohammed's notebook and returns it. The errand is completed — but through substitution. Ahmad's hand writes where Mohammed's was supposed to write. The self that set out to return something has become the thing it was carrying. This is dissolution into another person, into an act of love so complete that the self who performed it leaves no trace. Ahmad is last seen by lamplight, doing his own homework. The errand is over.
+অনুপস্থিতি এখানে উল্টো কাজ করে। আসলটা যতক্ষণ নেই, ততক্ষণ নকলটা পুরো জায়গা দখল করে থাকে। আর আসলটা এলে দেখা যায়, জায়গাটায় তাঁর জন্য আলাদা করে কিছু বাকি নেই।
 
-### 20 · Sabzian: make a film with a real family; Kiarostami: document the man who tried
+### 13 · আদালতে সাবজিয়ানের কথা
 
-There are two errands in Close-Up. Sabzian's errand is to make a film — to direct a real family in their real house, using his borrowed identity as Makhmalbaf to authorise what his poverty cannot. Kiarostami's errand is to document the fraud before it disappears into the legal system. Both errands are acts of love for cinema. Both involve impersonation. The film holds both simultaneously without resolving which one is the real film.
+সাবজিয়ানের আদালতের জবানবন্দি ছবির মধ্যমণি। সে অনেকক্ষণ কথা বলে, নির্ভুল আর মর্যাদার সঙ্গে: মাখমালবাফ বলে গণ্য হওয়ার সেই কদিন কেমন লেগেছিল — সম্মান, মনোযোগ, এই অনুভূতি যে সিনেমা নিয়ে তার ভাবনা শোনার মতো। সে বলে, জীবনে প্রথমবার সে নিজেকে একজন মানুষ মনে করেছিল, যার কথার দাম আছে।
 
-### 21 · The road to arrest, then trial, then reconstruction — each journey a retake
+এক মুহূর্তে কিয়ারোস্তামি নিজেই, ক্যামেরার পেছন থেকে, জিজ্ঞেস করেন: এখনো কি আপনি অভিনয় করছেন? সাবজিয়ান উত্তর দেয়, না, আমি আমার কষ্টের কথা বলছি। আর একটু পরে বলে, সে অভিনয় করতে চায় — নিজের কষ্টের ভূমিকায়। প্রশ্ন আর উত্তর মিলে দর্শকের পায়ের নিচ থেকে মাটি সরিয়ে দেয়: যে মানুষ নিজের কষ্টের অভিনয় করতে চায়, আর যে মানুষ নিজের কষ্টের কথা বলছে, তারা কি আলাদা?
 
-The road in Close-Up is the road to the courthouse, driven twice — once as the journalist accompanies the police to arrest Sabzian, and once as Kiarostami reconstructs the scene for the camera. The doubling is the film's formal declaration: every road in this film is being redriven, every event is being retaken. The road to the Ahankhahs' house, the road to the prison, the road to the final reunion — each is both an event and a re-enactment.
+কথাগুলো বলা হচ্ছে একজন বিচারককে, যিনি একটা অপরাধ নির্ধারণ করছেন। কিন্তু শুনছে কিয়ারোস্তামির ক্যামেরা, যা বুঝতে পারে — এ এমন এক মানুষের জবানবন্দি, শিল্পের সঙ্গে যার সম্পর্ক আইনের সঙ্গে তার সম্পর্কের চেয়ে অনেক বেশি গুরুতর।
 
-### 22 · A life ruined by poverty; an art that can only document, not repair
+### 14 · বিচারের সময় স্থির ক্যামেরা
 
-Sabzian's ruin is poverty — the specific, identity-destroying poverty of a man who loves cinema and cannot afford to see it, who identifies with the heroes of the films he watches and has no material basis for being anything like them. The fraud is not greed; it is the attempt to live, even briefly, as someone whose existence has the weight and purpose that art gives its subjects. Kiarostami's ruin is more subtle: the discovery that documentary cannot repair what it documents.
+বিচারের দৃশ্যগুলো কিয়ারোস্তামির কাজে টানা মনোযোগের সবচেয়ে দীর্ঘ উদাহরণগুলোর একটি। বিচারক যখন ভাবছেন, আহানখাহরা যখন অভিযোগ বলছে, রায় যখন এগিয়ে আসছে — ক্যামেরা সাবজিয়ানের মুখে স্থির। প্রতিক্রিয়ার শটে কেটে যায় না। শুধু দেখে, কীভাবে একজন মানুষ নিজের ভাগ্য নির্ধারিত হতে দেখে।
 
-### 23 · Sabzian is Makhmalbaf; Kiarostami's camera is neutral — both pretences hold
+দুটো ক্যামেরা ছিল, আর একটা রাখা ছিল কেবল সাবজিয়ানের জন্য, ক্লোজ-আপে। ছবির নামটা এখান থেকেই আসে, আর তার অর্থও। যে মানুষকে সমাজ এতদিন দেখেনি, তাকে এই প্রথম কেউ কাছ থেকে, ধৈর্য ধরে, পুরোটা সময় দেখছে। দারিদ্র্যের সবচেয়ে বড় অপমান যদি হয় অদৃশ্য থাকা, তবে এই অপেক্ষা তার উল্টো।
 
-Close-Up refuses to settle which pretence is the real one. Sabzian's claim to be Makhmalbaf is obviously false — and yet the Ahankhahs believed it, Sabzian lived it, and the film he described making sounds, as he describes it, like a film worth making. Kiarostami's camera is presented as neutral documentary — and yet it reconstructs events, directs its subjects, stages the final reunion. Both pretences hold simultaneously.
+এটাই ছবির অপেক্ষা: এমন এক ক্যামেরা, যা মুখ ফেরাতে অস্বীকার করে, সবচেয়ে কঠিন সময়টায় সঙ্গে থাকে, আর বোঝে যে শিল্প যখন হস্তক্ষেপ করতে পারে না, তখন সাক্ষী থাকাই তার একমাত্র দান। রায় কী হবে, তাতে ক্যামেরার কোনো হাত নেই। কিন্তু রায় শোনার মুহূর্তে সাবজিয়ান একা নয়।
 
-### 24 · The real Makhmalbaf absent from every scene he supposedly inhabits
+### 15 · জেলগেটে কান্না
 
-For most of Close-Up, Makhmalbaf is the film's organising absence — the man whose identity structures every scene without appearing in any of them. The Ahankhahs believed they were working with Makhmalbaf. The journalist covers a story about Makhmalbaf. The court prosecutes a man who impersonated Makhmalbaf. Makhmalbaf himself is absent until the final minutes. His arrival is the film's most unsettling moment: the real man appears, and the question of what the difference is between him and the man who played him becomes genuinely unanswerable.
+সাবজিয়ান যখন জেল থেকে বের হয়, বাইরে দাঁড়িয়ে আছেন আসল মোহসেন মাখমালবাফ। দেখামাত্র সাবজিয়ান ভেঙে পড়ে, তাঁর কাঁধে মাথা রেখে কাঁদে। অভিনয় — যদি কখনো তা অভিনয় হয়ে থাকে — শেষ। সে এখন শুধু হোসেইন সাবজিয়ান, যে সিনেমা ভালোবেসেছিল আর সেই ভালোবাসার ভেতরে বাঁচার জন্য একটা পরিচয় ধার করেছিল।
 
-### 25 · "I wanted to be someone for once" — spoken to a judge, heard by a camera
+যার পরিচয় ধার করেছিল, তার সামনে দাঁড়ানো — এর চেয়ে নগ্ন হওয়ার কোনো অবস্থা কল্পনা করা কঠিন। অথচ মাখমালবাফ তাকে অভিযুক্ত করেন না; জড়িয়ে ধরেন, মোটরসাইকেলে তুলে নেন। উন্মোচনটা অপমান হয়ে আসে না, আসে এক রকম স্বীকৃতি হয়ে।
 
-Sabzian's courtroom testimony is the film's centrepiece. He speaks at length, with precision and dignity, about what it felt like to be taken for Makhmalbaf — the respect, the attention, the sense that his ideas about cinema were worth hearing. The line is spoken to a judge trying to determine a crime; it is heard by Kiarostami's camera, which understands it as the testimony of a man whose relationship to art is more serious than his relationship to the law.
+কান্না দেখায়, প্রতারণার নিচে কী ছিল: প্রয়োজনটা সত্যি ছিল, সিনেমার প্রতি ভালোবাসাটা সত্যি ছিল। প্রতারণা শেষ হয়েছে; যে প্রয়োজন তাকে চালিয়েছিল, তা শেষ হয়নি। আবরণ সরে যাওয়ায় সাবজিয়ান ছোট হয় না — বরং দেখা যায় এমন এক মানুষ, যার ভেতরটা তার পরিস্থিতির চেয়ে অনেক বেশি গভীর।
 
-### 26 · Kiarostami holds on Sabzian's face through the verdict; the film waits with him
+### 16 · মোটরসাইকেলে, শব্দ নেই
 
-The trial scenes are among the most sustained acts of cinematic attention in Kiarostami's work. He holds on Sabzian's face as the judge deliberates, as the Ahankhahs speak, as the verdict approaches. The camera does not cut away to reaction shots. It simply watches Sabzian watch his fate being decided. This is the film's vigil: a camera that refuses to look away, that waits with its subject through the worst of it, that understands that to witness is the only thing art can offer when it cannot intervene.
+শেষ দৃশ্য: সাবজিয়ান আর মাখমালবাফ এক মোটরসাইকেলে চড়ে আহানখাহদের বাড়ির দিকে যাচ্ছেন, পথে থেমে এক টব ফুল কেনেন। কিয়ারোস্তামি এটা তোলেন দূর থেকে, লম্বা লেন্সে, আর শব্দ বারবার কেটে যায়। আমরা দুজনকে কথা বলতে দেখি, কিন্তু শুনতে পাই না। পরিচালকের কণ্ঠে শোনা যায়, মাইক্রোফোনের তার ঢিলা হয়ে গেছে।
 
-### 27 · Sabzian weeps at the door; the fraud ends; the need that drove it does not
+ব্যাখ্যাটা প্রায় নিশ্চিতভাবেই একটা ভান। নীরবতাটা বানানো, আর সেটাই এর মূল্য। কিছু কথা ক্যামেরা কাছ থেকে দেখতে পারে কিন্তু ধরতে পারে না — প্রামাণ্যচিত্র আর বাস্তবের মাঝখানের সেই ফাঁকে যে কথোপকথন ঘটে, কোনো মাইক্রোফোন তা পর্যন্ত পৌঁছায় না, পৌঁছানো উচিতও নয়।
 
-In the final scene, Sabzian weeps when he encounters the Ahankhah family to ask forgiveness. The performance — if it was ever a performance — is over. He is simply Hossein Sabzian, a man who loved cinema and borrowed an identity to live inside that love. But the weeping also reveals what the fraud concealed: that the need was real, that the love of cinema was real. The exposure does not diminish him. It reveals a man whose interiority is more serious than his circumstances allow.
+শেষে দরজায় দাঁড়িয়ে মাখমালবাফ ঘণ্টা বাজান; ভেতর থেকে কে, জানতে চাইলে সাবজিয়ান নিজের নাম বলে। ফুল হাতে সে ঢোকে। যে পরিবারের কাছে সে একদিন অন্য নামে গিয়েছিল, তাদের কাছে এবার সে নিজের নামে যায়। এরপর কী কথা হয়, আমরা শুনি না। ছবি সেই কথাটুকু তাদের জন্য রেখে দেয়।
 
-### 28 · Sound drops in the final reunion; the camera watches what it cannot transmit
+### 20 · দুই টেকের মাঝের পাহাড়ি পথ
 
-The final sequence — Sabzian and Makhmalbaf riding a motorcycle to the Ahankhah house — is filmed with a long lens and bad audio. The sound cuts in and out; we see the two men talking but cannot hear what they say. Kiarostami leaves the silence as the film's last formal statement: there are things the camera can approach but cannot capture, conversations that happen in the space between documentary and reality that no microphone can reach.
+থ্রু দ্য অলিভ ট্রিজের পথ শুটিংয়ের এক জায়গা থেকে আরেক জায়গার পথ — কোকেরের ঢাল আর ধাপ-খেত, জলপাই বন, ভাঙা বাড়ির পাশ দিয়ে যাওয়া কাঁচা রাস্তা, আর দূরে সেই আঁকাবাঁকা টিলার পথ, যা আগের ছবির দর্শক চেনে। পরিচালকের দলের গাড়ি অভিনেতাদের তুলে নেয়, নামিয়ে দেয়; ছবির বড় অংশ এই আসা-যাওয়ায় কাটে।
 
-### 29 · Sabzian and Makhmalbaf ride into Tehran together; the two dissolve into one
+দুই টেকের মাঝখানে হোসেইন এই পথগুলোয় তাহেরের পেছনে পেছনে হাঁটে, যেখানে যতটুকু সুযোগ পায় প্রস্তাবটা চালিয়ে যায়। তাহেরে বই হাতে আগে আগে চলে, পেছন ফেরে না। শুটিং দলের গাড়িতেও সে চুপচাপ বসে থাকে, জানালার বাইরে চোখ।
 
-The final image of Close-Up is Sabzian and Makhmalbaf on a motorcycle, moving through Tehran traffic together. The man who impersonated the director and the director himself dissolve into the same frame, the same vehicle, the same city. The question the film has been asking — what is the difference between being Makhmalbaf and pretending to be Makhmalbaf — is not answered but dissolved. In Tehran traffic, the two men are indistinguishable.
+দুই টেকের মাঝের পথেই আসল ছবিটা ঘটে — যে দৃশ্য তোলা হচ্ছে তা নয়, বরং এক তরুণের মহড়াহীন জেদ, যে ঠিক করেছে ভালোবাসা শেষ করার মতো একটা কাজ। আর পথের শেষ রূপটা আসে ছবির শেষে: জলপাই বন পেরিয়ে সবুজ ঢাল বেয়ে উঠে যাওয়া এক সরু পায়ে-চলা রাস্তা, যার ওপর দুজন মানুষ ছোট হতে হতে বিন্দু হয়ে যায়।
 
-### 30 · Find the child actors after the earthquake
+### 21 · ধ্বংসস্তূপে বিয়ের প্রস্তাব
 
-In 1990, an earthquake destroyed the villages of Koker where Kiarostami had filmed Friend's House. The film begins with a director and his son driving toward the disaster zone — the errand is to find out whether the children who acted in that film survived. The errand is real and impossible: the roads are blocked, information is contradictory, the villages are in ruins. But the director does not turn back. Not looking is worse than the uncertainty of looking.
+থ্রু দ্য অলিভ ট্রিজ ঘটে ১৯৯০-এর ভূমিকম্পের ধ্বংসস্তূপে, কিন্তু ভূমিকম্প এখানে বিষয় নয়, পটভূমি — শুটিং দল এমন এক গ্রামে ছবি বানাচ্ছে যা নিজেকে নতুন করে গড়ছে। তাঁবু, অর্ধেক তোলা দেয়াল, বাড়ির বদলে বাড়ির ভিত।
 
-### 31 · The blocked highway into the disaster zone
+তাহেরের বাবা-মা ভূমিকম্পে মারা গেছে। হোসেইনের প্রতি তার নীরবতা প্রত্যাখ্যান যতটা, শোকও হয়তো ততটা। আর তার দাদির আপত্তি পরিষ্কার: যে ছেলের ঘর নেই, লেখাপড়া নেই, তার হাতে নাতনিকে তুলে দেওয়া যায় না। হোসেইনের যুক্তিটা মোটামুটি এ রকম: ভূমিকম্পের পর কারও ঘর নেই; এখন সবাই সমান। ভাঙন তার কাছে একটা সুযোগ — পুরোনো হিসাবগুলো মুছে দিয়েছে।
 
-The road in And Life Goes On is explicitly blocked. The film opens with a car trying to enter a disaster zone that rescue services have closed to civilians. The director negotiates roadblocks, takes detours, is turned back and tries again. The road is not merely difficult — it is officially forbidden, and the film's first act is the repeated act of insisting on the right to travel toward catastrophe. Every detour is a refusal to accept that the errand cannot be reached.
+ছবির রোমান্টিক কৌতুকের নিচে ভাঙনটা সবসময় থাকে — নতুন করে তোলা দেয়ালে, অনুপস্থিত আত্মীয়দের মধ্যে, এমনকি যে দৃশ্য তোলা হচ্ছে তার মধ্যেও: ভূমিকম্পের পরদিন বিয়ে করা এক দম্পতির গল্প। মানুষ মারা গেছে, ঘর পড়ে গেছে, আর ঠিক সেই ভিতের ওপর কেউ একজন বিয়ের প্রস্তাব দিচ্ছে। কিয়ারোস্তামির কাছে এটা বৈপরীত্য নয়; এটাই জীবন যেভাবে চলে।
 
-### 32 · The earthquake that precedes and organises everything
+### 22 · তাহেরের সম্মতি, যা আসে না
 
-The earthquake in And Life Goes On happened before the film begins. It is the ruin that precedes and organises every scene — not a dramatic event the film witnesses but a condition the film enters. The villages are rubble. People are building on the rubble. A wedding is planned in the rubble. The film's most radical formal decision is to treat the earthquake not as catastrophe but as context: the thing that happened, after which life goes on.
+ক্যামেরার সামনে ছাড়া তাহেরে হোসেইনের সঙ্গে কথা বলে না। সংলাপ এলে বলে, ঠিক সময়ে — তারপর চুপ। হোসেইনের প্রস্তাবে তার সম্মতিই ছবির কেন্দ্রের অনুপস্থিতি, যাকে ঘিরে বাকি সব সাজানো। পরিচালক চান একটা ব্যবহারযোগ্য টেক; হোসেইন চায় একটা উত্তর; দর্শক জানতে চায় তাহেরে সাড়া দেবে কি না। কেউ পায় না।
 
-### 33 · The director performs the search; the film performs non-fiction
+এই অনুপস্থিতি কোনো কৌশল নয়। ছবি তাহেরের উত্তর কোথাও লুকিয়ে রাখেনি যে শেষে বের করে দেবে। তাহেরের মনের ভেতরটা ছবির কাছেও বন্ধ, আর ছবি সেই বন্ধ দরজাকে সম্মান করে। তার মুখ আমরা অনেক দেখি — নিচু চোখ, বইয়ের পাতা, সাদা ওড়নার কিনার — কিন্তু সেখান থেকে কিছু পড়া যায় না।
 
-The director in And Life Goes On is a character played by an actor — a fictional version of Kiarostami performing the role of a director looking for his child actors. The film presents this with no irony and no announcement: it proceeds as if it were documentary. Life goes on in the earthquake zone, and Kiarostami's film goes on performing the documentary investigation of that going-on, and neither pretence disrupts the other.
+তাহেরের নীরবতা সম্পূর্ণ, টানা, আর শেষ পর্যন্ত ছবির সবচেয়ে শক্তিশালী উপস্থিতি। একজন মানুষ, যার কাছে সবাই কিছু চায়, আর যে কাউকে কিছু দেয় না — অভিনয়ের লাইন ছাড়া। কিয়ারোস্তামির কাছে অনুপস্থিতি মানে প্রায়ই একজন মানুষ যে পর্দায় নেই; এখানে মানুষটা পুরো সময় পর্দায়, শুধু তার উত্তরটা নেই।
 
-### 34 · The children may be dead; their absence drives the road
+### 23 · হোসেইনের অবিরাম প্রস্তাব
 
-The child actors from Friend's House may or may not have survived the earthquake. The film never definitively answers this question. The director asks about them at each stop; receives partial, ambiguous information; continues driving. The children's possible death is the film's organising absence: the destination that motivates the road without ever being reached. When the film finally encounters one of the boys near the end, the encounter is so casual — the boy is fine, he is watching football — that the entire journey is retroactively revealed as the film's subject rather than its obstacle.
+দুই টেকের ফাঁকে হোসেইন তাহেরের সঙ্গে অবিরাম কথা বলে — নিজের অবস্থা, নিজের ভালোবাসা, নিজের ভবিষ্যৎ, নিজের সততা। তার একটা তত্ত্বও আছে: যার লেখাপড়া আছে সে বিয়ে করুক যার নেই তাকে, যার ঘর আছে সে বিয়ে করুক যার ঘর নেই তাকে, তাহলে সবাই সবাইকে সাহায্য করতে পারবে। সে কথা দেয়, তাহেরেকে কখনো ঘরের কাজ করতে দেবে না, তাদের সন্তানেরা লেখাপড়া শিখবে।
 
-### 35 · The old man with the bridal suite testifies to joy without explanation
+তাহেরে উত্তর দেয় না। হোসেইন বলে চলে। জলপাই গাছের ফাঁকে ফাঁকে বলা এই কথাগুলো এক বিশেষ ধরনের জবানবন্দি: এমন একজনকে বলা যে শুনছে কি না বোঝা যায় না, সাড়ার আশা না রেখে বলা, আর বলে যাওয়া কারণ থামলে মেনে নিতে হয় যে কোনো লাভ নেই।
 
-On the road, the director encounters an old man who has prepared a bridal suite in the ruins of his house — his son is getting married, and the wedding will proceed on schedule despite the earthquake. The old man's testimony is the film's most concentrated moment: he describes the preparations, the plans, the fact that life will continue. He does not explain why this is the right response to catastrophe. He simply states it, with a matter-of-factness that is more powerful than any argument.
+হোসেইন তার ভালোবাসার সাক্ষ্য দেয় যেভাবে মানুষ একটা নীতির সাক্ষ্য দেয় — কিছু বদলাবে বলে নয়, বরং না বললে তা বিশ্বাসঘাতকতা হবে বলে। তার কথা হাস্যকর, ভালোমানুষি, একগুঁয়ে, আর গভীরভাবে আন্তরিক। কিয়ারোস্তামি তাকে কখনো উপহাস করেন না।
 
-### 36 · Waiting at each village for news of the boys
+### 24 · টেকের পর টেক, উত্তরের অপেক্ষা
 
-The director's vigil is distributed across the film's many stops — villages where he asks about the children, waits for information, receives partial answers, and drives on. At each stop he is briefly stationary, watching the village go about its reconstruction, waiting for someone to tell him what he needs to know. The vigil is never comfortable and never long. Life in the earthquake zone is too busy for extended waiting. The director waits at the margin of all this activity, watching life go on.
+শুটিং মানেই অপেক্ষা — আলোর জন্য, অভিনেতার জন্য, ঠিক টেকটার জন্য। হোসেইনের কাছে প্রতিটি অপেক্ষা দ্বিগুণ: যে দৃশ্য তোলা হচ্ছে তার শেষ হওয়ার অপেক্ষা, আর তার ফাঁকে একটা উত্তরের অপেক্ষা। সিঁড়ির ধাপে দাঁড়িয়ে সে একই লাইন বারবার বলে, আর প্রতিটি কাট তাকে আবার সেখানে ফিরিয়ে আনে।
 
-### 37 · The man with the wheelbarrow: joy persisting without justification
+ছবির সবচেয়ে লম্বা অপেক্ষাটা শেষে। তাহেরে শুটিং শেষে হেঁটে বাড়ি ফিরছে, হোসেইন পেছনে। ক্যামেরা দূরে, টিলার ওপর, আর শটটা চলতেই থাকে: দুটো ছোট্ট মানুষ জলপাই বন পেরিয়ে সবুজ মাঠের ওপর দিয়ে দূরে সরে যায়। তারা এত ছোট যে প্রায় দেখা যায় না, আর শটটা কাটে না।
 
-The film's most celebrated image is a man pushing a wheelbarrow up a steep hill while his heavily pregnant wife walks beside him. The man is singing. The effort is immense. There is no explanation offered for the singing — no context that makes it reasonable, no relief that makes it earned. It is simply joy persisting in conditions that have removed every conventional reason for joy. This is the film's central exposure: that life stripped of its usual justifications continues to generate the will to continue.
+এ অপেক্ষা হোসেইনের, কিন্তু দর্শকেরও। কিয়ারোস্তামি আমাদের সেই জায়গায় দাঁড় করান যেখানে হোসেইন গোটা ছবিটা দাঁড়িয়ে ছিল: একটা উত্তরের অপেক্ষায়, যা আমরা হয়তো কখনো জানব না। প্রেমিক আর দর্শক এক মুহূর্তের জন্য এক অবস্থায় — দুজনেই দূর থেকে চেয়ে আছে, আর দূরত্ব কমছে না।
 
-### 38 · The road holds after he disappears over the hill
+### 25 · যে 'আগা' সে বলবে না
 
-The man with the wheelbarrow crests the hill and disappears. The camera holds on the empty hill — the road, the slope, the sky, the absence of the man who was just there. This is the film's characteristic silence: not the silence of nothing happening, but the silence after something has happened and the world continues in its wake. The road that the man travelled is still there. The hill is still there. Life goes on.
+ছবির ভেতরের ছবিতে একটা ছোট্ট লাইন আছে: স্ত্রী স্বামীকে ডাকবে আদবের সঙ্গে — আগা হোসেইন। তাহেরে লাইনটা বলে, কিন্তু 'আগা' বাদ দিয়ে। পরিচালক কাট বলেন, বুঝিয়ে দেন, আবার টেক নেন। তাহেরে আবার শুধু 'হোসেইন' বলে। আবার কাট।
 
-### 39 · He crests the hill and is gone; the landscape absorbs him
+এক অক্ষরের এই জেদে ছবির পুরো ভান খুলে যায়। কল্পকাহিনির ভেতরে এক স্ত্রী স্বামীকে সম্মান দেখাচ্ছে; কিন্তু তাহেরের কাছে এটা কল্পকাহিনি নয়, কারণ যে লোকটা স্বামীর ভূমিকায় দাঁড়িয়ে আছে, সে সত্যিই তাকে স্ত্রী বানাতে চায়। 'আগা' বলা মানে ক্যামেরার সামনে এমন এক সম্পর্ক মেনে নেওয়া, যা ক্যামেরার পেছনে সে মেনে নেয়নি।
 
-The man with the wheelbarrow disappears over the crest of the hill and does not return. He dissolves into the landscape, into the continuing world, into the life that goes on after the earthquake and will go on after the film. His dissolution is the most affirmative in the ten films: not an ending but a continuation happening elsewhere, beyond the frame, in the part of life that cinema cannot follow.
+উন্মোচনটা তাই তাহেরের, কিন্তু উল্টো দিক থেকে। তার নীরবতা যতক্ষণ ছিল ততক্ষণ সে নিরাপদ ছিল; এখন একটা শব্দ না বলায় দেখা গেল, সে সবকিছু বোঝে, আর কতটুকু দেবে না তা সে নিজেই ঠিক করছে। যে মেয়েটিকে সবাই নিষ্ক্রিয় ভাবছিল, সে আসলে ছবির সবচেয়ে সচেতন অভিনেত্রী — নিজের জীবনের মধ্যে কল্পকাহিনির সীমারেখা সে-ই টানে।
 
-### 40 · Cast locals; shoot the scene correctly
+### 26 · দূরের সবুজে দুটি বিন্দু
 
-The errand in Through the Olive Trees is the film unit's errand: find the right actress, shoot the scene correctly, get a usable take. The film requires a young woman to say lines to a young man — Hossein — who in real life wants to marry her. The professional errand and the personal errand become impossible to separate: every take of the scene is also a take of the proposal, and neither the director nor Hossein can control which one is actually happening.
+থ্রু দ্য অলিভ ট্রিজ শেষ হয় তাহেরের উত্তর জানার আগেই। শেষ শটে দুটো বিন্দু সবুজ ঢালের একেবারে মাথায় পৌঁছায়, এক মুহূর্তের জন্য পাশাপাশি থামে — তারপর একটা বিন্দু ঘুরে দৌড়ে নামতে থাকে আমাদের দিকে, মাঠ পেরিয়ে, দ্রুত। হোসেইন। কী কথা হলো, শোনা যায় না; এত দূর থেকে কোনো শব্দ আসে না। শুধু পেছনে বেজে ওঠে চিমারোসার ওবো কনচের্তো।
 
-### 41 · The hillside path between takes
+ফেরার ভঙ্গিতে আনন্দ পড়া যায়, পড়তে চাইলে। কিন্তু ছবি পড়ে দেয় না। নীরবতাটা কোনো ছলনা নয়, কোনো ঝুলিয়ে রাখা নয়; এ হলো তাহেরে গোটা ছবি জুড়ে যা ধরে রেখেছিল, তার সৎ আঙ্গিক-রূপ — যে উত্তর ঘরানা চায়, পুরুষটি চায়, দর্শক চায়, তা দিতে অস্বীকার।
 
-The road in Through the Olive Trees is the path between filming locations — the hillsides and terraces of Koker, the olive groves, the rebuilt schoolhouse. Between takes, Hossein follows Tahereh through these paths, continuing his proposal wherever the film set allows. The path between takes is where the real film happens: not the scripted scenes being shot but the unrehearsed persistence of a man who has decided that love is an errand worth completing.
+আর মানুষ দুটো যখন বিন্দু হয়ে যায়, ফ্রেমে থেকে যায় জলপাই গাছ — শিকড় গাঁথা, স্থির, তাদের মাঝখানে ঘটে যাওয়া মানুষের নাটকে নির্বিকার। নীরবতা এখানে দুই স্তরে: এক মেয়ের অকথিত উত্তর, আর এক বনের চিরকালের চুপ থাকা, যা এমন বহু প্রস্তাব দেখেছে।
 
-### 42 · The earthquake already happened; the film shoots in its rubble
+### 30 · তেহরানের পাহাড়ে ঘুরপাক
 
-Like And Life Goes On, Through the Olive Trees takes place in the ruins of the 1990 earthquake. But where the earlier film treats the earthquake as its subject, here the ruin is simply the context — the film unit makes a movie in a village that is rebuilding itself. Tahereh's family died in the earthquake; her silence toward Hossein may be grief as much as refusal. The ruin that underlies the film's romantic comedy is always there, in the rebuilt walls, in the missing relatives.
+বাদির গাড়ি তেহরানের উপকণ্ঠের পাহাড়ে ঘুরপাক খায় — ধুলোমাখা কাঁচা রাস্তা, নির্মাণস্থল, পাথর ভাঙার কারখানা, ঢালের গায়ে একটা দুটো গাছ। সে মজুরদের লিফট দেয়, সৈনিককে, মাদ্রাসাছাত্রকে, পাখির দেহ সংরক্ষণকারীকে। পথ কোথাও যায় না; ঘোরে। একই টিলা প্রতিবার একটু ভিন্ন কোণ থেকে, একটু ভিন্ন আলোয়।
 
-### 43 · The actor performs the director; Hossein proposes through scripted lines
+কিয়ারোস্তামি এই চালানোকে নাটকীয় করতে অস্বীকার করেন। শট অনেকটাই গাড়ির ভেতর থেকে — একজনের মুখ, তারপর অন্যজনের, কাচের ওপারে বাদামি পাহাড় পেছনে সরে যাচ্ছে। বাদি সামনে তাকিয়ে কথা বলে, যাত্রী জানালার দিকে। কেউ কাউকে সরাসরি দেখে না, আর সেজন্যই এমন একটা অনুরোধ মুখে আনা যায় যা মুখোমুখি বসে বলা যেত না।
 
-The film's central pretence is structural: an actor plays the director; the director is a fictional version of Kiarostami; Hossein, a real local non-actor, plays himself proposing to Tahereh using the film's scripted dialogue as cover. Every line Hossein speaks to Tahereh in front of the camera is both the film's dialogue and his real proposal. The pretence creates a space in which the real and the performed become genuinely indistinguishable.
+এই পথ সুন্দর আর নির্বিকার; বাদি তার ভেতর দিয়ে চালায় এমন কাউকে খুঁজতে, যে তাকে এখান থেকে চলে যেতে সাহায্য করবে। পথের বৃত্তটা আসলে একটা গর্তের চারপাশে ঘোরা। প্রতিটি পাক শেষে গাড়ি ফেরে সেই একই ঢালে, একই গাছের নিচে, যেখানে মাটি খোঁড়া হয়ে আছে।
 
-### 44 · Tahereh's consent permanently withheld; her silence the film's subject
+### 31 · গর্ত আগেই খোঁড়া
 
-Tahereh never speaks to Hossein in the film except in performance — she delivers her lines, on cue, and then falls silent. Her consent to his proposal is the absence that organises the entire film. The director wants a usable take; Hossein wants an answer; the audience wants to know if Tahereh will reply. None of them get what they want. Tahereh's silence is total, sustained, and finally the film's most powerful presence.
+টেস্ট অব চেরির ভাঙন ঘটনা নয়, অবস্থা: বাদি মরার সিদ্ধান্ত নিয়ে ফেলেছে। গর্ত খোঁড়া হয়ে গেছে। কী তাকে এখানে এনেছে, আমরা জানি না — ছবি ইচ্ছা করেই কোনো ব্যাখ্যা দেয় না। এই না-দেওয়াটা তথ্য গোপন করা নয়, একটা যুক্তি: কারণ এখানে জরুরি নয়। জরুরি হলো গর্তটা, আর গাড়ির ভেতর অচেনা লোকদের কাছে মাটি চাপা দেওয়ার অনুরোধ করা মানুষটা।
 
-### 45 · Hossein's running proposal across the olive trees, addressed to no one
+চারপাশের প্রকৃতিও যেন সেই ভাঙনের অংশ। পাহাড় কেটে রাস্তা হচ্ছে, বুলডোজার মাটি সরাচ্ছে, পাথর ভাঙার যন্ত্র থেকে ধুলো ঝরছে। এক দৃশ্যে বাদি একটা ঢালের নিচে বসে থাকে, আর ওপর থেকে নুড়ি আর ধুলো এসে পড়ে তার ছায়ার ওপর — যেন মাটি তাকে আগেই চাপা দিতে শুরু করেছে।
 
-In the space between takes, Hossein speaks to Tahereh constantly — explaining his situation, his love, his prospects, his sincerity. She does not reply. He continues. The speeches delivered through the olive trees are testimony of a particular kind: addressed to someone who will not hear them, delivered without expectation of response, continued because stopping would mean accepting that there is no point. Hossein testifies to his love the way one testifies to a principle — not because it will change anything but because not testifying would be a form of betrayal.
+কিন্তু এই উপকণ্ঠের ভাঙন একইসঙ্গে নির্মাণ। যে মাটি কাটা হচ্ছে তার ওপর বাড়ি উঠবে; যে ধুলো উড়ছে তা কাজের ধুলো। বাদি এক ধ্বংসের ভেতর দিয়ে চালায় যা আসলে আরেকজনের শুরু — আর সেটা সে দেখে না, দেখতে পায় না।
 
-### 46 · The final long shot: Hossein walking after Tahereh who will not turn
+### 32 · কারণটা কখনো বলা হয় না
 
-The film's last sequence is one long shot from a great distance: two small figures moving through the olive grove, Hossein following Tahereh, Tahereh not turning. The shot continues for an extraordinary duration. Hossein speaks — we cannot hear what he says. Then, at the very end of the shot, one of the figures stops. The other continues. We do not know which is which, cannot tell from this distance whether Tahereh has stopped or Hossein has given up.
+সৈনিক জিজ্ঞেস করে কেন। মাদ্রাসাছাত্র জিজ্ঞেস করে কেন। বাঘেরি জিজ্ঞেস করেন না, কিন্তু তাঁর গল্পটাও আসলে একটা উত্তর খোঁজা। বাদি কখনো বলে না। সে শুধু বলে, আমি অসুখী, আর অন্যের অসুখ অন্যে বোঝে না। ছবির কেন্দ্রে একটা শূন্যস্থান, যেখানে সাধারণত একটা গল্প থাকে — দেনা, শোক, অসুখ, প্রেম।
 
-### 47 · Tahereh exposed to love without the protection of speech
+এই অনুপস্থিতির ভেতরে আরেকটা অনুপস্থিতি: বাঁচার ইচ্ছা। বাদির মধ্যে সেটা নেই, আর এটাই ছবির অবস্থা। কোনো যুক্তি তাকে ফেরাতে পারবে না, কারণ সে যুক্তি দিয়ে আসেনি। মাদ্রাসাছাত্রের ধর্মীয় তর্ক তার গায়ে লাগে না; সৈনিকের ভয় তাকে স্পর্শ করে না।
 
-Tahereh's silence is her protection — as long as she does not speak, she cannot be held to an answer. Her silence is the only defence available to her in a social situation where a man's persistence is presented as romantic virtue. The film's exposure comes at the end of the final shot, when one of the figures stops: Tahereh's silence is finally revealed as insufficient protection. Something has changed. The exposure is hers — not to humiliation but to the fact that silence is not the same as absence.
+বাঘেরি যা দেন তা যুক্তি নয়, একটা ফাঁক — শূন্যতার গায়ে এমন এক ছিদ্র, যার ভেতর দিয়ে একটা স্বাদ ঢুকতে পারে। বাঁচার ইচ্ছা ফেরানো যায় না তর্ক করে; কেবল অনুপস্থিতির পাশে আরেকটা উপস্থিতি রেখে দেওয়া যায় — একটা তুঁত, একটা সূর্যোদয় — আর আশা করা যায় যে সেটা জায়গা পাবে।
 
-### 48 · The film ends before she answers; her silence is the last word
+### 33 · বাঘেরির তুঁতগাছের গল্প
 
-Through the Olive Trees ends before we know Tahereh's answer. The final shot shows one figure stopping while the other continues — but the distance is too great to tell which is which, and the film cuts before we can know. The silence is not a tease or a withholding; it is the honest formal equivalent of what Tahereh has maintained throughout: a refusal to give the answer that the genre, the man, and the audience want.
+বাঘেরির জবানবন্দি ছবির বড় সাক্ষ্য — লম্বা, নির্দিষ্ট, ধীরেসুস্থে বলা, এমন এক মানুষের মুখে যে সত্যিই বাদির জায়গায় দাঁড়িয়েছিল আর দৈবাৎ ফিরে এসেছিল। বিয়ের পরপর, সংসারের ঝামেলায় হাঁপিয়ে, এক ভোরে সে দড়ি নিয়ে বেরিয়েছিল। একটা তুঁতগাছে উঠল দড়ি বাঁধতে। হাতে লাগল একটা পাকা তুঁত। মুখে দিল। মিষ্টি। আরেকটা। তারপর আরেকটা।
 
-### 49 · Two figures shrink to nothing in the olive grove; the trees remain
+তখন সূর্য উঠছিল পাহাড়ের পেছন থেকে। স্কুলে যাওয়ার পথে বাচ্চারা এসে গাছের নিচে দাঁড়াল, বলল গাছটা ঝাঁকাতে। সে ঝাঁকাল, তারা কুড়িয়ে খেল। সে কিছু তুঁত নিয়ে বাড়ি ফিরল — স্ত্রী তখনও ঘুমাচ্ছে — আর স্ত্রীও খেল। দড়িটা নিয়ে সে আর কিছু করেনি।
 
-The final image is two tiny figures at the far end of an olive grove, barely visible. The trees — present, rooted, indifferent to the human drama unfolding between them — are the film's last subject. The human figures shrink to nothing as the shot continues; the grove remains. This is dissolution into landscape: not tragic, not peaceful, simply the scale at which the olive trees have always seen the events occurring among them.
+বাঘেরি তর্ক করেন না যে জীবন বাঁচার মতো। তিনি একটা নির্দিষ্ট গাছের, একটা নির্দিষ্ট ভোরের, একটা নির্দিষ্ট ফলের গল্প বলেন, আর তারপর জিজ্ঞেস করেন: আপনি চেরির স্বাদ ছেড়ে দিতে চান? গল্পটা কাজ করে — যদি করে — বোঝানোর জোরে নয়, সত্যের জোরে। খুঁটিনাটির নির্ভুলতাই তার ওজন। আর মনে রাখার মতো, যে মানুষটা বলছে সে টাকাটা নেবে, কারণ তার নিজের সন্তান অসুস্থ — জীবনের পক্ষে সাক্ষ্য আসছে এমন একজনের কাছ থেকে, যে জীবনের দায়ে নিজেই বাঁধা।
 
-### 50 · Find someone willing to bury him
+### 34 · রাতের গর্তে শুয়ে আকাশ দেখা
 
-Mr. Badii drives through the hills outside Tehran looking for a man willing to perform a specific task: come to a particular spot the next morning, call down into a hole, and — if there is no answer — cover him with twenty spadefuls of earth. He has already prepared the hole and taken the pills. The errand is unlike any other in Kiarostami's work: not to return something or find someone but to locate a person willing to be the instrument of one's own disappearance.
+রাতে বাদি নিজের ফ্ল্যাটে, জানালার পাশে, আলো নেভানো। তারপর ট্যাক্সি নিয়ে পাহাড়ে যায়। গাছের নিচে নিজের খোঁড়া গর্তে নেমে চিত হয়ে শোয়। ক্যামেরা ওপর থেকে তার মুখে: চোখ খোলা, আকাশের দিকে। মেঘ সরে যায় চাঁদের ওপর থেকে, আবার ঢেকে দেয়। বজ্রের শব্দ, বিদ্যুতের ঝলকে তার মুখ এক মুহূর্তের জন্য সাদা। বৃষ্টি শুরু হয়।
 
-### 51 · The hills of Tehran circled without arrival
+সে কাতর নয়, শান্তও নয়। সে দেখছে — যেন আকাশ দিতে পারে যা সারাদিনের কথাবার্তা দিতে পারেনি: গর্ত থেকে উঠে আসার একটা কারণ। শটটা অস্বাভাবিক লম্বা। তারপর পর্দা পুরো অন্ধকার হয়ে যায়, আর অনেকক্ষণ অন্ধকারই থাকে, শুধু বৃষ্টি আর বাতাসের শব্দ।
 
-Badii's car moves through the hills of Tehran in loops — he offers rides to labourers, soldiers, a seminary student, a taxidermist. The road does not go anywhere; it circles. The hills are the same hills each time, seen from slightly different angles, in slightly different light. Kiarostami shoots the driving with a patience that refuses to dramatise the circling — it is simply what Badii does, driving through a landscape that is beautiful and indifferent, looking for someone willing to help him leave it.
+এই অপেক্ষা সম্ভবের শেষ সীমায় — গর্তের ভেতরেই। কাল ভোরে বাঘেরি আসবেন, ডাকবেন, আর সাড়া পাবেন কি না তা নির্ভর করছে এই রাতের ওপর। বাদি অপেক্ষা করছে মৃত্যুর, নাকি সকালের? ছবি বলে না, আর সম্ভবত বাদি নিজেও জানে না। অন্ধকার পর্দা শুধু এটুকু নিশ্চিত করে যে এ অপেক্ষার ভেতরে আমাদের ঢোকার অনুমতি নেই।
 
-### 52 · A life already decided against; the hole already dug
+### 35 · জাদুঘরে ফিরে যাওয়া
 
-The ruin in Taste of Cherry is not an event but a state: Badii has already decided to die. The hole is already dug. We do not know what brought him here — the film deliberately withholds any explanation. This withholding is not a withholding of information but a formal argument: the reasons do not matter. What matters is the hole, the pills, the man in the car asking strangers to cover him.
+বাঘেরিকে নামিয়ে দেওয়ার পর বাদি প্রায় চলেই যাচ্ছিল। তারপর হঠাৎ গাড়ি ঘুরিয়ে জাদুঘরে ফিরে আসে, বাঘেরিকে ডেকে আনায়, আর একটা বাড়তি অনুরোধ করে: কাল ভোরে এসে দুটো ঢিল ছুড়বেন, আমাকে একটু ঝাঁকিয়ে দেখবেন — হয়তো আমি শুধু ঘুমিয়ে আছি, বেঁচে আছি।
 
-### 53 · Badii performs calm while carrying a decision already made
+সারাদিনের শান্ত ভঙ্গিতে এই প্রথম ফাটল। যে লোক অচেনা মানুষদের সঙ্গে নিজের কবরের বন্দোবস্ত করছিল এক ব্যবসায়ীর মতো ঠান্ডা মাথায়, সে এখন চায় কেউ তাকে জাগিয়ে দেখুক। বাঘেরি রাজি হন, যেমন রাজি হয় কেউ এমন অনুরোধে যার মানে সে বোঝে।
 
-Badii's pretence is the most sustained in the ten films: he presents himself to each potential accomplice as reasonable, calm, in control — a man making a practical arrangement. He explains his request without drama, responds to objections without agitation, accepts refusals without visible distress. The performance of calm over the decision to die is not dishonesty — it is the only way to conduct the negotiation the errand requires.
+উন্মোচনটা ছোট আর কোমল, আর সেজন্যই সর্বনাশা: শান্ত মুখোশের নিচে বাঁচার একটা ক্ষীণ ইচ্ছা, যা বাদি নিজের কাছেও স্বীকার করেনি। তুঁতের গল্প কিছু একটা নাড়িয়ে দিয়েছে। কতটুকু, ছবি মাপে না। কিন্তু এই দৃশ্যের পর বাদিকে আর আগের মতো দেখা যায় না — সে এখন এমন একজন, যে মরতে চায় আর একইসঙ্গে চায় কেউ তাকে মরা অবস্থায় না পাক।
 
-### 54 · The will to live absent; a stranger's cherry fills the hole
+### 36 · ভিডিওর বসন্ত, কোনো জবাব নেই
 
-The taxidermist tells Badii about a morning when he went to hang himself from a mulberry tree and tasted a cherry instead and came back down. The story offers Badii not an argument against dying but an image: the cherry, the taste, the morning, the tree, the decision reversed by a sensory experience so small it should not have been enough. The will to live is absent in Badii — the absence is the film's condition. What the taxidermist offers is a gap in the absence through which a taste might enter.
+অন্ধকারের পর ছবি ফেরে অন্য রকম ছবিতে — দানাদার ভিডিও, উজ্জ্বল সবুজ। একই পাহাড়, কিন্তু বসন্ত। কিয়ারোস্তামির শুটিং দল ঢালের ওপর, ক্যামেরা, ওয়াকিটকি; সৈনিকেরা মার্চ করে, তারপর ঘাসে বসে জিরোয়, ফুল তোলে। বাদির অভিনেতা হুমায়ুন এরশাদি সিগারেট এগিয়ে দেন পরিচালককে। পেছনে ট্রাম্পেট বাজে — লুই আর্মস্ট্রং।
 
-### 55 · The taxidermist's testimony about the mulberry tree and the taste of cherries
+কোনো সংলাপ নেই, অন্তত এমন কোনো সংলাপ যা গল্পের সঙ্গে যুক্ত। বাদির কী হলো, এই উপসংহার তার উত্তর দিতে অস্বীকার করে। যে মানুষ মরতে গিয়েছিল তার অভিনেতা এখানে দিব্যি বেঁচে আছেন, কিন্তু সেটা উত্তর নয় — সেটা প্রশ্নের অন্য দিকে এক পা সরে যাওয়া।
 
-The taxidermist's speech is the film's great testimony — long, precise, unhurried, delivered by a man who has genuinely been where Badii is and who returned by accident. He does not argue that life is worth living. He tells a story about a specific tree, a specific morning, a specific fruit, a specific taste. The testimony works — if it works — not because it persuades but because it is true. The specificity of the report is what gives it weight.
+এই নীরবতা ছবির শেষ যুক্তি: জীবন বাঁচার মতো কি না, এ প্রশ্নের জবাব ছবি দিতে পারে না, শুধু দর্শকের কাছে ফিরিয়ে দিতে পারে — এক সাধারণ বসন্ত সকালের আলোয়, যেখানে ঘাস সবুজ, লোকেরা কাজ করছে, কেউ একজন গান বাজাচ্ছে। মানুষের প্রশ্ন ফুরিয়েছে; দুনিয়া চলছে।
 
-### 56 · Badii in the hole at dusk, watching the sky for a reason
+### 40 · সোনালি পাহাড়ে এক নিঃসঙ্গ গাছ
 
-The film's most extraordinary scene is Badii lying in the hole he has prepared, looking up at the sky. The shot holds for an unusual duration — Badii on his back, the rectangle of sky above him, the sound of rain beginning. He is not in distress. He is not peaceful. He is watching, as if the sky might provide what the five conversations of the film did not: a reason to climb back out. The vigil is kept at the limit of the possible — in the hole itself.
+সিয়াহ দারের পথ এখানকার সবচেয়ে দূরের পথ — সোনালি গমখেত আর ন্যাড়া পাহাড়ের গা বেয়ে পেঁচিয়ে ওঠা কাঁচা রাস্তা, এমন এক গ্রামের দিকে যা মানচিত্রে প্রায় নেই। ছবি শুরু হয় দল ততক্ষণে পথ হারিয়েছে, এমন অবস্থায়। গাড়ির ভেতর থেকে কণ্ঠ শোনা যায়, ঠিকানা নিয়ে তর্ক — একটা বড় নিঃসঙ্গ গাছের কথা বলা হয়েছিল, কোথায় সেটা? — আর ক্যামেরা দূর থেকে দেখে, গাড়িটা পাহাড়ের ভাঁজে হারায়, আবার বেরোয়।
 
-### 57 · The sky is still there; he is still there; nothing has resolved
+গ্রামে পৌঁছানোর পর পথ ছোট হয়ে আসে, কিন্তু থামে না। ফোন বাজলেই বেহজাদ গাড়ি নিয়ে ছোটে গ্রামের বাইরের কবরস্থানের টিলায়, যেখানে কেবল নেটওয়ার্ক মেলে। একই ঢাল, একই বাঁক, দিনের পর দিন। গ্রামের ভেতরে পথ মানে সরু গলি আর ছাদের ওপর দিয়ে হাঁটা — সিয়াহ দারের বাড়িগুলো পাহাড়ের গায়ে এমনভাবে বসানো যে একের ছাদ আরেকের উঠান।
 
-When Badii lies in the hole looking at the sky, nothing is resolved. The pills may or may not have been taken. The decision may or may not be final. The sky is simply the sky — rain beginning, clouds moving, indifferent to the man below it. This is the film's central exposure: that the universe does not respond to the human crisis occurring inside it, that the beauty of the natural world is not a consolation and not a reproach. It is simply there.
+পথ এখানে প্রথম ফ্রেম থেকেই আক্ষরিক আর প্রতীকী একসঙ্গে: তেহরান থেকে এত দূরের এক জায়গায় যাওয়া, যেখানে আধুনিক দুনিয়া প্রায় পৌঁছায় না — আর পৌঁছালেও কেবল একটা টিলার মাথায়, একটা ফোনের দুর্বল সংকেত হয়ে। যে পথ ধরে বেহজাদ এসেছে, ছবির শেষে সেই পথেই সে ফিরে যায়, আর পথ তখনও আগের মতোই পেঁচানো।
 
-### 58 · The epilogue: no dialogue; the crew on the hill in returning light
+### 41 · যে বুড়ি সময়মতো মরে না
 
-Taste of Cherry ends with a video sequence — grainy, digitally different — showing Kiarostami's film crew on the same hills, with soldiers resting among the trees, a musician playing. There is no dialogue. The sequence refuses to answer what happened to Badii. The silence of the epilogue is the film's final formal argument: the question of whether life is worth living cannot be answered by the film, only returned to the viewer, in the light of an ordinary spring morning.
+এ ছবির ভাঙন একটা দুনিয়ার মরে যাওয়া — যে প্রথাগত গ্রামজীবন বুড়ি মালেকের শরীরে বেঁচে আছে, আর যার প্রতীক হয়ে উঠবে তার মৃত্যু। শোকের যে প্রাচীন আচার বেহজাদ ধরতে এসেছে — মেয়েরা মুখে আঁচড় কাটে, আর্তনাদ করে — সেটাও সেই মরতে বসা দুনিয়ার অংশ।
 
-### 59 · The camera holds on the empty hill at dawn; Badii dissolves into the earth or above it
+কিন্তু ভাঙন সময়সূচি মানে না। বুড়ি মরে না। দিন যায়, সপ্তাহ যায়; সে একটু খারাপ হয়, একটু ভালো হয়, আবার খারাপ হয়। তেহরান থেকে ফোন আসে — কাজ কত দূর? — আর বেহজাদের কাছে কোনো উত্তর নেই। দলের লোকেরা বিরক্ত হয়, তারপর একদিন চলে যায়।
 
-The last image before the video epilogue is the hill where Badii's hole was dug, in dawn light. The hill is empty — or full, depending on what happened in the night. Badii has dissolved into the earth or above it; the film refuses to say which. This is the most radical dissolution in the ten films: into the undecidable — into a question the film will not answer, because answering it would imply that the question of whether to live has a correct answer that cinema can provide.
+ভাঙন সত্যি — গ্রাম খালি হচ্ছে, তরুণেরা শহরে চলে যাচ্ছে, পুরোনো আচার একদিন ফুরাবে — কিন্তু তা চলে নিজের সময়ে, যারা তা ধরে রাখতে এসেছে তাদের প্রামাণ্যচিত্রের তাড়ার প্রতি নির্বিকার। কিয়ারোস্তামির কাছে এর মধ্যে একটা নীরব রসিকতা আছে: মৃত্যুর অপেক্ষায় থাকা শহুরে মানুষের চেয়ে মৃত্যুপথযাত্রী বুড়ি অনেক বেশি ধৈর্যশীল। আর শেষ পর্যন্ত মৃত্যু যখন আসে, আসে ঠিক তখন, যখন তাকে ধরার কেউ আর নেই।
 
-### 60 · Record an old woman's death; capture a disappearing world
+### 42 · যাদের কখনো দেখা যায় না
 
-Behzad and his crew arrive in a remote Kurdish village with a professional errand: to film a traditional mourning ceremony when the village's elderly matriarch dies. The old woman is expected to die soon. They wait. The errand is quietly predatory — they need a death to happen on schedule so they can document it. But it is also, in another register, an act of cultural preservation: the ceremonies of this village are vanishing, and the film crew has come to hold what cannot be held.
+মৃত্যুপথযাত্রী বুড়িকে একবারও দেখা যায় না। সে ছবির কাঠামোর অনুপস্থিতি — প্রতিটি কথোপকথনে আছে, প্রতিটি সিদ্ধান্তের কারণ, প্রতিটি অপেক্ষার লক্ষ্য, অথচ চিরকাল পর্দার বাইরে। সবাই তার কথা বলে: আজ খারাপ, আজ একই রকম, আজ হয়তো একটু ভালো। ছবি তাকে কখনো মুখ দেয় না।
 
-### 61 · The mountain road to a village at the end of the world
+আর সে একা নয়। টিলার ওপর যে লোকটা গর্ত খুঁড়ছে, যার সঙ্গে বেহজাদ ফোনে কথা বলার ফাঁকে গল্প করে, তাকেও দেখা যায় না — শুধু গর্ত থেকে উঠে আসা কণ্ঠ আর ছুড়ে দেওয়া মাটি। বেহজাদের দলের লোকেরা, যাদের সঙ্গে সে এসেছে, তারাও প্রায় পুরো ছবিতে অদৃশ্য — ঘরের ভেতর থেকে আসা কণ্ঠ, ঘুমন্ত শরীর। গোয়ালের মেয়েটির মুখ অন্ধকারে ঢাকা।
 
-The road to Siah Darreh is the most extreme in the ten films — a winding mountain track to a village so remote it barely appears on the map. The film begins with the crew already lost, reading directions that include a line of poetry: "Near the tree is a wooded lane, greener than the dreams of God." The road is both literal and symbolic from the first frame: a passage to a place so far from Tehran that the modern world barely reaches it.
+এত অনুপস্থিতি কোনো ঘাটতি নয়, ছবির সবচেয়ে সচেতন সিদ্ধান্ত। গোটা গল্পের কেন্দ্রীয় চরিত্র উপস্থিত কেবল একটা নাম আর একটা অবস্থা হিসেবে। আমরা যা দেখি না, তা আমাদের দেখার ধরনটাকে বদলে দেয়: বেহজাদের ক্যামেরা যা ধরতে চায় তা আমাদের দেখানো হয় না, আর সেই না-দেখানোটাই একটা নৈতিক অবস্থান। এই গ্রামের মানুষ কারও ছবির বিষয় হওয়ার জন্য অপেক্ষা করছে না।
 
-### 62 · The old woman will not die on schedule; the ruin has no timetable
+### 43 · অন্ধকার গোয়ালে ফরুগের কবিতা
 
-The ruin in The Wind Will Carry Us is the dying of a world — the traditional village culture that the old woman embodies and that her death will symbolise. But the ruin will not cooperate with the schedule. The old woman refuses to die when expected. She lingers, days becoming weeks. The ruin is real — the village is emptying, the young people are leaving — but it proceeds on its own time, indifferent to the documentary urgency of those who have come to record it.
+দুধ আনতে বেহজাদ নামে এক অন্ধকার মাটির নিচের গোয়ালে। লণ্ঠনের আলোয় এক তরুণী গাভি দোয়াচ্ছে; তার মুখ প্রায় দেখা যায় না। বেহজাদ তার নাম জিজ্ঞেস করে, পড়াশোনার কথা জিজ্ঞেস করে, তারপর আস্তে আস্তে আবৃত্তি করে ফরুগ ফাররোখজাদের কবিতা — যে কবিতা থেকে ছবির নাম: আমার ছোট্ট রাতে, হায়, বাতাসের দেখা হবে গাছের পাতার সঙ্গে... বাতাস আমাদের উড়িয়ে নিয়ে যাবে।
 
-### 63 · The engineer performs professional purpose to conceal his vigil
+জবানবন্দিটা দেওয়া হচ্ছে অন্ধকারে, এমন একজনকে যাকে প্রায় দেখা যায় না, ক্ষণস্থায়িত্ব আর এই মুহূর্তের মূল্য নিয়ে — আর বলছে এমন একজন, যে এই গ্রামে এসেছে কেবল ভবিষ্যতের একটা ঘটনার অপেক্ষায়। এই বৈপরীত্যই ছবির সবচেয়ে ঘন নৈতিক বক্তব্য।
 
-Behzad presents himself to the village as an engineer — a professional pretence that allows him to be present without explaining his real errand. The pretence is also a way of managing his own discomfort: by performing purposefulness, he can avoid acknowledging that his actual activity is waiting for an old woman to die. The pretence is the film's central ethical problem: a man has come to profit professionally from grief, and he conceals this from the grieving community by performing a different identity.
+মেয়েটি সাড়া দেয় না; দুধ দোয়ানো শেষ করে, পাত্রটা এগিয়ে দেয়। কবিতাটা তার কাছে পৌঁছাল কি না, বোঝা যায় না। হয়তো পৌঁছানোর দরকারও ছিল না — বেহজাদ কবিতাটা আসলে নিজেকেই শোনাচ্ছিল, এক মুহূর্তের জন্য সেই মানুষ হয়ে, যে সে হতে পারত যদি সে অপেক্ষার বদলে উপস্থিত থাকত। আর ফরুগের কণ্ঠ — এক নারীর কণ্ঠ, এক ইরানি নারীর — অন্ধকার গোয়ালে আরেক নারীর সামনে এক পুরুষের মুখে উচ্চারিত হয়।
 
-### 64 · The old woman never appears; her absence structures every scene
+### 44 · ফোন বাজলেই টিলায় ওঠা
 
-The dying old woman is never seen. She is the film's organising absence — present in every conversation, the reason for every decision, the goal of every wait, and permanently off-screen. Characters refer to her constantly: she is worse, she is the same, she is perhaps improving. The film never gives her a face. Her invisibility is the film's most deliberate formal choice: the central figure of the entire narrative is present only as a name and a condition.
+বেহজাদের অপেক্ষা গাড়িতে চড়া। তেহরান থেকে ফোন এলেই সে লাফিয়ে গাড়িতে ওঠে, কবরস্থানের টিলায় চালিয়ে যায় নেটওয়ার্কের জন্য, চিৎকার করে কথা বলে, নেমে আসে, আবার ফোন আসে, আবার ওঠে। পুনরাবৃত্তিটা প্রায় কৌতুক — কিয়ারোস্তামি এটাকে ঠিক সেভাবেই তোলেন, একই শট, একই বাঁক, একই ধুলোর মেঘ।
 
-### 65 · The young man reciting Forough's poem into the dark trench
+এ অপেক্ষা উদ্ভট, আর একইসঙ্গে মরতে বসা এক দুনিয়ার সংস্পর্শে আধুনিক জীবনের সবচেয়ে নির্ভুল ছবি। যে মানুষ উপস্থিত থাকতে পারে না কারণ তার ফোন তাকে অন্য কোথাও থাকতে বলে; যে অসম্ভব সুন্দর এক প্রকৃতির ভেতর দিয়ে গাড়ি চালায় এক পেশাগত দায়ে, যে দায় তাকে বলে কারও মৃত্যুর অপেক্ষা করতে।
 
-Behzad's phone only works at the top of a hill. While waiting for signal, he encounters a young man digging a trench — barely visible in the dark. Behzad recites Forough Farrokhzad's poem to him: "Prefer the present to these fine promises." The testimony is given in darkness, to a man who can barely be seen, about the value of the present moment — recited by a man who has come to this village specifically to wait for a future event. The irony is the film's most concentrated moral statement.
+অপেক্ষার মাঝে টিলায় সে কথা বলে গর্তের লোকটার সঙ্গে, দেখে একটা কাছিম ধীরে হেঁটে যাচ্ছে, একটা গুবরে পোকা গোবরের গোলা ঠেলছে। প্রকৃতি এখানে নিজের সময়ে চলে, আর বেহজাদের সময় চলে ফোনে। অপেক্ষা তাকে বদলায়, ধীরে: যে লোক এসেছিল একটা মৃত্যু ক্যামেরায় তুলতে, সে দিনের পর দিন একটা জীবনের পাশে বসে থাকে — এবং অজান্তে সেই জীবনের ছন্দে ঢুকে পড়ে।
 
-### 66 · Driving up the hill every time the phone rings, waiting for a death
+### 45 · মৃত্যুর অপেক্ষা ছেড়ে ডাক্তারের খোঁজে
 
-Behzad's vigil is motorised: every phone call sends him up the hill to get signal, back down to the village, up again when another call comes. The vigil is absurd and it is also the film's most precise image of modern life in contact with a dying world — the man who cannot be present because his phone requires him to be elsewhere, who drives through a landscape of great beauty in service of a professional obligation that requires him to wait for someone to die.
+বেহজাদের ভান প্রকৌশলীর — এমন এক পেশাগত পরিচয়, যা তাকে আসল উদ্দেশ্য না বলেই গ্রামে থাকতে দেয়। কিন্তু অপেক্ষা যত লম্বা হয়, ভান তত পাতলা হয়। সে ফোনে চেঁচায়, বাচ্চা গাইড ফারজাদের ওপর রেগে যায়, আর ফারজাদ এরপর থেকে তাকে এড়িয়ে চলে। টিলায় দাঁড়িয়ে পা দিয়ে একটা কাছিমকে উল্টে দেয় — কাছিমটা নিজে নিজে আবার সোজা হয়ে হেঁটে চলে যায়।
 
-### 67 · His calls overheard in the village; his purpose stripped bare
+তারপর আসে আসল উন্মোচন। টিলার গর্তে মাটি ধসে পড়ে, খোঁড়া লোকটা চাপা পড়ে। গ্রামের লোকেরা ছুটে আসে, আর বেহজাদ — যে এতদিন একটা মৃত্যুর অপেক্ষায় ছিল — গাড়ি নিয়ে ছোটে পাশের গ্রামে ডাক্তার আনতে। লোকটাকে জীবিত বের করা হয়।
 
-The village knows more about Behzad's true purpose than he thinks. The conversations he has at the top of the hill are overheard, inferred, understood. By the time the old woman finally dies and the ceremony cannot proceed as planned, it is clear that the village has been watching Behzad watch them — that the observer has been observed. His exposure is not through confrontation but through the simple fact that people who live in a place know when they are being watched.
+এই মুহূর্তে ভানের নিচের মানুষটা দেখা যায়, আর দেখা যায় সে খুব আলাদা কেউ নয়: স্বার্থপর, অধৈর্য, কিন্তু সামনে একজন মরতে বসলে সে বাঁচাতেই ছোটে। পরে ডাক্তারের মোটরসাইকেলের পেছনে বসে গমখেতের ভেতর দিয়ে যেতে যেতে সে শোনে, ডাক্তার বলেন, লোকে বলে ওপারের দুনিয়া সুন্দর, কিন্তু আমার কাছে এই দুনিয়াই বেশি সুন্দর। বেহজাদের মুখে সেই প্রথম কোনো ভান নেই।
 
-### 68 · Poetry spoken into a trench to a woman who cannot be seen
+### 46 · গমখেতে বাতাস, স্রোতে একটা হাড়
 
-The film's most sustained silence is the scene in the trench: Behzad above, the young man below, and somewhere in the darkness a woman who brings food. The woman is never fully seen; the young man is barely visible; Forough's poem floats between them in the dark. This is the film's deepest register: the silence of a world that has its own communications, its own poetry, its own intimate exchanges, all proceeding in the dark beyond the reach of the documentary camera.
+ছবির শেষ নীরবতা প্রকৃতির। ভোরে বুড়ি মারা যায়। শোকার্ত মেয়েরা কালো পোশাকে বাড়ির দিকে যায়; বেহজাদ দূর থেকে তাদের কয়েকটা ছবি তোলে — যে আচার তোলার জন্য এসেছিল, তার একটা ছায়া মাত্র। তারপর গাড়িতে ওঠে।
 
-### 69 · He drives away; the village remains; the wind moves through what was there
+গর্ত-খোঁড়া লোকটা তাকে আগে একটা মানুষের ঊরুর হাড় দিয়েছিল, মাটি খুঁড়তে গিয়ে পাওয়া। বেহজাদ পথের পাশের ছোট্ট স্রোতে হাড়টা ছুড়ে দেয়। হাড়টা পানিতে ভেসে যায়, ধীরে, পাথরের পাশ কাটিয়ে, আর ক্যামেরা তার পেছনে থাকে অনেকক্ষণ, বেহজাদ চলে যাওয়ার পরেও।
 
-The Wind Will Carry Us ends with Behzad driving away — his errand uncompleted in the way he planned it, the ceremony never filmed. He throws a bone fragment into the stream and drives down the mountain road. The village remains above him, continuing on its own terms. The wind moves through the olive trees, the wheat fields, the landscape that has seen generations of arrivals and departures. Behzad dissolves into the road he came from; the village absorbs his absence without remainder.
+কেউ কিছু বলে না। গ্রামটা থাকে পাহাড়ের গায়ে, নিজের নিয়মে। বাতাস বয়ে যায় গমখেতের ওপর দিয়ে, যেমন বয়েছে বহু আসা-যাওয়ার সাক্ষী হয়ে। এ নীরবতা ব্যর্থ ভাষার নয় — এ হলো একটা দুনিয়ার নিজের কথা, যার নিজের যোগাযোগ, নিজের কবিতা, নিজের শোক আছে, আর যা চলে প্রামাণ্যচিত্রের ক্যামেরার নাগালের বাইরে। ফরুগ যেমন বলেছিলেন: বাতাস আমাদের উড়িয়ে নিয়ে যাবে।
 
-### 70 · Drive the son to the pool; manage a divorce
+### 50 · তেহরানের রাস্তায় চক্কর
 
-The surface errand in Ten is logistical: Mania drives her son Amin to his swimming lesson, picks up passengers, navigates Tehran traffic. But the real errand is the management of a divorce — the ongoing negotiation of custody, resentment, self-definition, and the question of what a woman owes the people who depend on her. The car is the space in which the errand is conducted: ten conversations that are also ten attempts to understand what has happened to Mania's life and what she wants from what remains of it.
+টেন-এর পথ তেহরানের রাস্তা — জ্যাম, মোড়, একই মহল্লা দিনের ভিন্ন ভিন্ন সময়ে ফিরে আসা। গাড়ি মনে রাখার মতো কোথাও যায় না; শুধু ঘোরে। ক্যামেরা ড্যাশবোর্ডে বসানো, একটা চালকের দিকে, একটা পাশের আসনের দিকে। রাস্তা দেখা যায় শুধু জানালার পাশ দিয়ে, ঝাপসা, পেছনে সরে যাওয়া।
 
-### 71 · The Tehran streets as ten confessional loops
+কিন্তু প্রতিটি চক্করে ভিন্ন যাত্রী, ভিন্ন কথা, আর চক্করগুলো জমতে জমতে মানিয়ার ভেতরের জীবনের একটা মানচিত্র হয়ে ওঠে: ছেলের রাগ, বোনের বাস্তববুদ্ধি, এক বুড়ির ভক্তি, এক যৌনকর্মীর নির্মোহ হিসাব, এক তরুণীর ভাঙা প্রেম। শহরটা একই, কিন্তু প্রতিটি যাত্রী তাকে আলাদা শহর বানিয়ে দেয়।
 
-The road in Ten is the Tehran street system — traffic, junctions, the same districts reappearing at different times of day. The car does not go anywhere memorable; it circulates. But each loop contains a different passenger and a different conversation, and the accumulation of loops becomes a map of Mania's inner life: her son's resentment, her sister's pragmatism, an old woman's piety, a prostitute's practicality. The road in Ten is the most urban in the ten films — not a highway into landscape but a grid through a city.
+এ ছবিতে পথের স্বীকারোক্তির কাজটা সবচেয়ে খোলাখুলি। গাড়ি এখানে একমাত্র জায়গা, যেখানে একজন ইরানি নারী নিজের জায়গায়, নিজের নিয়মে, যে কারও সঙ্গে খোলাখুলি কথা বলতে পারে — চালকের আসনে বসে, স্টিয়ারিং হাতে। রাস্তাটা কোথাও নিয়ে যায় না; কিন্তু গাড়ির ভেতরের ছোট্ট ঘরটা শহরের কোনো ঘর যা দেয়নি তা দেয়।
 
-### 72 · A family broken before the first frame; wreckage in motion
+### 51 · সংসার ভেঙেছে আগেই
 
-The ruin in Ten is the divorce that has already happened. Mania's marriage is over; Amin's relationship with his father is strained; the household that once organised Mania's life has dissolved. The film begins in the wreckage and stays there — there is no event that breaks things, because things are already broken. What the film documents is not ruin but the living that occurs in ruin's aftermath: the arguments, the adjustments, the small negotiations by which a broken family continues to function.
+টেন-এর ভাঙন তালাক, যা ঘটে গেছে। মানিয়ার বিয়ে শেষ; আমিনের সঙ্গে তার সম্পর্ক টানাপোড়েনের; যে সংসার একসময় মানিয়ার জীবন সাজিয়ে দিত, তা ভেঙে গেছে। মানিয়া আবার বিয়ে করেছে; আমিন থাকতে চায় বাবার কাছে।
 
-### 73 · Mania performs composure; every passenger performs candour
+ছবি শুরু হয় ধ্বংসস্তূপের ভেতরে, আর সেখানেই থাকে। কোনো ঘটনা জিনিস ভাঙে না, কারণ জিনিস ইতিমধ্যে ভাঙা। প্রথম খণ্ডেই আমিন মায়ের সঙ্গে চিৎকার করে ঝগড়া করে — দীর্ঘ, একটানা, ক্যামেরা পুরোটা সময় শুধু ছেলের মুখে — আর আমরা বুঝি এ ঝগড়া নতুন নয়, এর আগে বহুবার হয়েছে, পরেও হবে।
 
-Mania's performance throughout Ten is of a woman who has things under control — who has made her choices and does not regret them. Every passenger who enters the car challenges this performance: Amin with his resentment, the religious woman with her incomprehension, the prostitute with her clarity, the friend with her grief. Each passenger performs a different kind of candour — a different claim to know what life requires. The car is a space where performances collide, and where Mania's composure is tested against each alternative claim.
+ছবি যা দেখায় তা ভাঙন নয়, ভাঙনের পরে বেঁচে থাকা: তর্ক, মানিয়ে নেওয়া, ছোট ছোট দর-কষাকষি, যেভাবে একটা ভাঙা পরিবার চলতে থাকে। আর গাড়ির বাইরের যাত্রীরাও যার যার ভাঙন নিয়ে আসে — বাগদত্তার চলে যাওয়া, পুরোনো সংসারের ক্লান্তি, রাস্তার জীবন। শহরটা ভাঙা মানুষে ভরা, আর তারা সবাই কোথাও না কোথাও যাচ্ছে।
 
-### 74 · The son's love withheld; the ex-husband a structuring ghost
+### 52 · যে বাবা কখনো ফ্রেমে আসেন না
 
-Amin's love for his mother is present throughout Ten — present precisely as withheld. He is angry, articulate, accusatory, and the anger is the form his love takes when it cannot find a more direct expression. The ex-husband is never seen — he is the film's structuring ghost, the absent authority whose preferences Amin represents and whose shadow falls across every conversation. The absence of both the love and the father is what the road and the ten conversations are trying, without fully succeeding, to navigate.
+আমিনের বাবা ছবিতে একবারও আসেন না। তিনি ছবির ছায়ামূর্তি — অনুপস্থিত এক কর্তৃত্ব, যার পছন্দ-অপছন্দ আমিন বয়ে বেড়ায়, আর যার ছায়া পড়ে প্রতিটি কথোপকথনে। আমিন বাবার বাড়ির নিয়মকানুনের কথা বলে, বাবার মতামত পুনরাবৃত্তি করে; তার মুখে একজন অদেখা পুরুষ কথা বলে।
 
-### 75 · Mania's testimony about what the marriage cost her
+মায়ের প্রতি আমিনের ভালোবাসাও আছে — আছে ঠিক না-দেওয়া অবস্থায়। সে রাগী, স্পষ্টভাষী, অভিযোগে ভরা, আর এই রাগই তার ভালোবাসার রূপ, যখন তা সরাসরি প্রকাশের পথ পায় না। মা থামলে সে-ই আবার কথা শুরু করে।
 
-In her conversations with Amin, her sister, and eventually with the prostitute, Mania testifies to what the marriage cost: her autonomy, her sense of self, years of her life organised around someone else's requirements. The testimony is not self-pitying; it is specific and political — about what Iranian marriage asks of women, about what she refused to keep giving, about what it cost her to refuse. The most important testimony comes in the conversation with the prostitute, where two women who have made entirely different choices speak to each other with unexpected mutual recognition.
+আর আরেক রকম অনুপস্থিতি আছে ক্যামেরার নিজের সিদ্ধান্তে: যৌনকর্মীর খণ্ডে ক্যামেরা পুরোটা সময় মানিয়ার দিকে; যাত্রীর মুখ আমরা দেখি না, শুধু হাসি আর কণ্ঠ শুনি, আর খণ্ডের শেষে সে নেমে গেলে এক পলক তার পিঠ। যে নারীকে সমাজ দেখতে চায় না, ছবি তাকে দেখায় না — কিন্তু তার কথা পুরোটা শোনায়।
 
-### 76 · Waiting in traffic for each passenger to arrive at their truth
+### 53 · সংসার কী নিল, মানিয়ার হিসাব
 
-The vigil in Ten is the traffic jam — the recurrent condition of Tehran driving in which forward motion is impossible and the only option is to wait. Mania waits in traffic with each passenger, and the waiting is the space in which the conversations reach their depth. There is nowhere to go; the city holds the car in place; the conversation has to continue. The vigil is not chosen — it is imposed by the city — but it creates the condition for a kind of honesty that forward motion might have prevented.
+আমিন, বোন আর শেষে যৌনকর্মীর সঙ্গে কথায় মানিয়া সাক্ষ্য দেয় সংসার তার কাছ থেকে কী নিয়েছে: স্বাধীনতা, নিজের বোধ, জীবনের বছরগুলো, যা সাজানো ছিল অন্যের প্রয়োজন ঘিরে। আমিনের অভিযোগ, তালাক পেতে মা আদালতে বাবাকে মাদকাসক্ত বলেছিল; মানিয়ার উত্তর — যে আইনে একজন নারী শুধু ইচ্ছা করে তালাক চাইতে পারে না, সেই আইন তাকে মিথ্যা বলতে বাধ্য করেছে।
 
-### 77 · The last passenger removes her headscarf: "let your head breathe"
+জবানবন্দিটা আত্মকরুণা নয়; নির্দিষ্ট আর রাজনৈতিক — ইরানের বিয়ে নারীর কাছে কী চায়, মানিয়া কী দিতে আর রাজি হয়নি, আর রাজি না হওয়ার দাম কত। আমিনের কাছে এ কথা পৌঁছায় না; সে শিশু, আর সে বাবার পক্ষে। মায়ের সবচেয়ে গুরুত্বপূর্ণ কথাগুলো তার কাছে শুধু চিৎকার।
 
-In the film's most celebrated scene, a young woman gets into the car with her head already shaved — she has cut her hair as an act of grief and defiance. She removes her headscarf; Mania says, "Let your head breathe." The exposure is the young woman's — her grief, her body, her shaved head — but it is also Mania's: the moment when the composure she has maintained throughout gives way to simple human solidarity. The headscarf removed is the film's most concentrated image of what the car allows that the world outside does not.
+সবচেয়ে গুরুত্বপূর্ণ সাক্ষ্য আসে যৌনকর্মীর সঙ্গে আলাপে। দুই নারী, যারা সম্পূর্ণ ভিন্ন জীবন বেছে নিয়েছে, অপ্রত্যাশিত এক পারস্পরিক স্বীকৃতিতে কথা বলে। যৌনকর্মী হাসে — সংসারী নারীরাও তো এক রকম বিক্রি হয়, শুধু দামটা একবারে নেয়। মানিয়া আপত্তি করে, কিন্তু কথাটা গাড়ির ভেতরে থেকে যায়।
 
-### 78 · "When shall I bring him back?" dissolves unanswered into traffic
+### 54 · জ্যামে আটকে কথার অপেক্ষা
 
-The film's last voiced exchange is logistical: Amin's father calls to arrange the custody handover. "When shall I bring him back?" The question dissolves into traffic — into the noise of the city, the movement of other cars, the ordinary urban sound that surrounds and absorbs the private negotiation. The silence that follows is not the silence of resolution but of continuation: the conversation about custody will happen again tomorrow, in another traffic jam, in the same city.
+টেন-এর অপেক্ষা জ্যাম — তেহরানে গাড়ি চালানোর সেই চিরচেনা অবস্থা, যখন সামনে এগোনো অসম্ভব আর অপেক্ষা ছাড়া উপায় নেই। মানিয়া প্রতিটি যাত্রীর সঙ্গে জ্যামে আটকে থাকে, আর সেই আটকে থাকার ভেতরেই কথাগুলো গভীরে নামে। যাওয়ার জায়গা নেই; শহর গাড়িটাকে এক জায়গায় ধরে রেখেছে; কথা চালিয়ে যেতেই হবে।
 
-### 79 · The car stops; the son gets out; the city absorbs them both without remainder
+এ অপেক্ষা বেছে নেওয়া নয় — শহর চাপিয়ে দিয়েছে — কিন্তু এটা এমন এক সততার শর্ত তৈরি করে, যা সামনে এগোতে থাকলে হয়তো তৈরি হতো না। মাজারে যাওয়া বুড়ি কথা বলতে বলতে নিজের জীবনের কথায় চলে যায়; ভাঙা প্রেমের তরুণী প্রথমবার মুখ খোলে। থেমে থাকা গাড়িতে মানুষ থামতে পারে না।
 
-The final shot of Ten is the car stopped, Amin getting out, the city continuing around the moment of his departure. There is no farewell scene, no reconciliation, no clear emotional conclusion. The son gets out and the city absorbs him — as it absorbs Mania, as it absorbs everyone in the film. The dissolution in Ten is the most urban: not into landscape or institution but into the city itself, the anonymous movement of Tehran, which continues regardless of what has been said in any particular car on any particular day.
+মানিয়ারও এক রকম অপেক্ষা আছে, বড় অপেক্ষা: ছেলে কবে তাকে বুঝবে। প্রতিটি খণ্ডে আমিন ফিরে আসে, আর প্রতিবার মানিয়া আবার চেষ্টা করে। সে জানে উত্তর আজ আসবে না, কাল আসবে না। তবু সে গাড়ি থামায়, দরজা খোলে, ছেলেকে তুলে নেয়।
 
-### 80 · Attend a lecture; sell a book; spend an afternoon in Tuscany
+### 55 · হিজাব সরে যায়, কামানো মাথা
 
-James Miller is in Tuscany to present his book, Certified Copy, which argues that copies are as valid as originals. A French antique dealer invites him to spend an afternoon driving through the Tuscan countryside. The errand is casual and social. By the end of the first hour, it has become something else: the woman calls James by the name of her husband, and he responds, and the film's errand shifts from cultural tourism to the investigation of what a marriage might be — real or performed, original or copy.
+ভাঙা প্রেমের তরুণী দ্বিতীয়বার মানিয়ার গাড়িতে ওঠে। এবার তার ভঙ্গি অন্য রকম। কথায় কথায় মানিয়া তাকে হিজাবটা খুলতে বলে, আর সে খোলে: মাথা পুরো কামানো। প্রেমিক চলে যাওয়ার পর শোকে, রাগে, জেদে সে চুল ফেলে দিয়েছে। মানিয়া তাকে বলে, এতে তাকে সুন্দর লাগছে। তরুণীর চোখে পানি, ঠোঁটে হাসি।
 
-### 81 · The Tuscan road between towns and between versions of a self
+এই দৃশ্য ছবির সবচেয়ে ঘন মুহূর্ত, আর উন্মোচন এখানে দুজনেরই। তরুণীর — তার শোক, তার শরীর, তার কামানো মাথা, যা কোনো রাস্তায়, কোনো ঘরে দেখানোর উপায় নেই। আর মানিয়ার — যে শান্ত, নিয়ন্ত্রিত ভঙ্গি সে গোটা ছবি জুড়ে ধরে রেখেছিল, তা এক মুহূর্তের জন্য গলে যায় সরল মানবিক সহমর্মিতায়।
 
-The road in Certified Copy is the Tuscan highway between Arezzo and the hill town of Lucignano — a beautiful road through a beautiful landscape, travelled in a car in which two people are becoming, or remembering being, or performing being, a married couple. The road is the space of transformation: they enter it as strangers and arrive at the other end as something else — not resolved, not named, but changed. The Tuscan landscape is the film's indifferent witness: beautiful, ancient, entirely unconcerned with the ontological status of the relationship occurring within it.
+খুলে ফেলা হিজাব ছবির সবচেয়ে স্পষ্ট ছবি — গাড়ি যা দেয়, বাইরের দুনিয়া যা দেয় না। কাচের ওপারে তেহরান চলছে; কাচের এপারে একজন নারী মাথা খোলা রেখে কাঁদছে আর হাসছে। এটা বিদ্রোহের ঘোষণা নয়, এর চেয়ে নরম আর এর চেয়ে গভীর: আবরণ সরে গেলে দেখা যায়, নিচে একজন মানুষ, যাকে দেখার দরকার ছিল।
 
-### 82 · Fifteen years of marriage — or one afternoon — reduced to the same performance
+### 56 · কথার ফাঁকে হর্নের শহর
 
-The ruin in Certified Copy is the marriage — whether a real fifteen-year marriage that has calcified into performance, or a fictional marriage performed in the space of one afternoon that reveals how marriages feel from the inside. Either way, the ruin is the same: two people who have found each other's presence both necessary and impossible. The film refuses to tell us whether the ruin is real or simulated — and the refusal is its argument: there is no difference that matters between a real failed marriage and a perfect simulation of one.
+টেন প্রায় পুরোটাই কথা, আর তাই এর নীরবতা আসে কথার ফাঁকে। ঝগড়ার মাঝখানে আমিন হঠাৎ চুপ করে যায়, জানালার দিকে মুখ ফেরায়; মানিয়া কিছু বলতে গিয়ে থেমে যায়। সেই ফাঁক সঙ্গে সঙ্গে ভরে দেয় শহর — হর্ন, ইঞ্জিন, ট্রাফিক পুলিশের বাঁশি, পাশের গাড়ির রেডিও।
 
-### 83 · James and Elle perform strangers, then spouses, then strangers again
+এ নীরবতা মীমাংসার নয়, চলতে থাকার। কোনো ঝগড়া শেষ হয় না; শুধু থামে, কারণ গন্তব্য এসে গেছে, বা যাত্রী নেমে যাচ্ছে, বা কথা আর এগোতে পারছে না। যা অসমাপ্ত থাকে, তা কাল আবার শুরু হবে, অন্য কোনো জ্যামে, একই শহরে।
 
-The film's central pretence is its central mystery: at some point, the woman begins calling James by her husband's name and he responds as her husband. Whether this is a game they have played before, a spontaneous performance, or the resumption of an interrupted relationship is never clarified. The pretence — if it is a pretence — is mutual, undeclared, and possibly involuntary. By the end, the question of which version of their relationship is the original and which is the copy has become genuinely undecidable.
+শেষ খণ্ডে আমিন আবার গাড়িতে ওঠে, আবার নামে — কোনো বিদায় নেই, কোনো মিলন নেই, কোনো স্পষ্ট আবেগের উপসংহার নেই। ছেলে নেমে যায়, আর শহর তাকে শুষে নেয় — যেমন শুষে নেয় মানিয়াকে, যেমন সবাইকে। কিয়ারোস্তামির অন্য ছবিতে প্রকৃতি যা করে, এখানে তা করে শহর: মানুষের নাটক ফুরানোর পরেও যা চলতে থাকে, তার নীরবতা এখানে কোলাহলের।
 
-### 84 · The real relationship absent from the first frame; its nature undecidable
+### 60 · তাসকানির পথে অচেনা থেকে দম্পতি
 
-What is absent in Certified Copy is the ground truth of the relationship — the fact of the matter about whether these two people have a history or are inventing one. The film withholds this information not as a puzzle to be solved but as a formal argument: the experience of the relationship is the same whether it is real or performed. The relationship's real nature is the film's structuring absence — the thing that would resolve every scene and that is deliberately, permanently withheld.
+সার্টিফায়েড কপির পথ আরেৎসো থেকে পাহাড়ি শহর লুচিনিয়ানোর সড়ক — সুন্দর প্রকৃতির ভেতর দিয়ে সুন্দর রাস্তা, আর গাড়িতে দুজন মানুষ, যারা এক দম্পতি হয়ে উঠছে, বা দম্পতি থাকার কথা মনে করছে, বা দম্পতির অভিনয় করছে। নারীটি চালায়; জেমস পাশে, ফোনে কথা বলে, বইয়ের কথা বলে, জানালা দিয়ে বাইরে তাকায়।
 
-### 85 · James's lecture: the copy is as valid as the original
+গাড়ির ভেতরের দৃশ্যগুলো কিয়ারোস্তামির চেনা আঙ্গিকে তোলা — সামনের কাচ দিয়ে দুজনের মুখ, আর কাচের ওপর পিছলে যাওয়া গাছ, আকাশ, তাসকানির পাহাড়ের প্রতিফলন। মুখ আর প্রকৃতি একই কাচে মিশে যায়; কোনটা ভেতরে, কোনটা বাইরে, আলাদা করা কঠিন। ছবির পুরো প্রশ্নটা এই একটা শটে ধরা।
 
-The film's intellectual frame is James's thesis: that certified copies of artworks are as valid as the originals, that what matters is not provenance but experience. The lecture is testimony in the philosophical sense — an argument delivered to a public about the nature of value and authenticity. But it is also the film's instruction manual: it tells the audience how to watch what follows, warns them not to look for the original beneath the copy, and proposes that the afternoon they are about to watch may be as real as any afternoon has ever been.
+পথ এখানে রূপান্তরের জায়গা: তারা এক মাথায় ঢোকে অচেনা হয়ে, অন্য মাথায় পৌঁছায় অন্য কিছু হয়ে — মীমাংসিত নয়, নাম দেওয়া নয়, কিন্তু বদলে যাওয়া। আর তাসকানির প্রকৃতি ছবির নির্বিকার সাক্ষী: সুন্দর, প্রাচীন, এর ভেতরে যে সম্পর্ক চলছে তা আসল না নকল, সে বিষয়ে তার কোনো মাথাব্যথা নেই।
 
-### 86 · James watching Elle sleep from the doorway of the hotel room
+### 61 · পনেরো বছরের দাম্পত্য, না এক বিকেল
 
-The film's most tender and most devastating scene is James standing in the doorway watching Elle sleep — or watching someone who might be his wife sleep, in a hotel room that may or may not be where they have slept before. The vigil is brief and it is everything: a man pausing at a threshold, watching a woman's sleep, in a moment that is either the ordinary intimacy of a long marriage or the extraordinary intimacy of two people who have performed a marriage into temporary existence.
+সার্টিফায়েড কপির ভাঙন একটা দাম্পত্য — হয় সত্যিকারের পনেরো বছরের বিয়ে, যা অভ্যাসে শক্ত হয়ে অভিনয়ে পরিণত হয়েছে; নয়তো এক বিকেলে অভিনীত এক কাল্পনিক বিয়ে, যা দেখিয়ে দেয় ভেতর থেকে বিয়ে কেমন লাগে। দুই ক্ষেত্রেই ভাঙন একই: দুজন মানুষ, যারা একে অন্যের উপস্থিতিকে একইসঙ্গে জরুরি আর অসহ্য মনে করে।
 
-### 87 · Elle names the abandonment: "you left and you didn't come back"
+চারপাশে বিয়ের ছবি ছড়ানো। লুচিনিয়ানোতে নবদম্পতিরা ছবি তুলতে আসে, কারণ শহরের জাদুঘরে একটা বিয়ের গাছ আছে, সৌভাগ্যের জন্য। এক নবদম্পতি জেমসকে তাদের সঙ্গে ছবি তুলতে ডাকে। নতুন বিয়ে আর পুরোনো বিয়ে একই চত্বরে — একটা শুরু, একটা ক্লান্তি।
 
-The film's emotional exposure comes when Elle names, directly, what the marriage has cost her: he left, and he did not come back. Whatever the ontological status of their relationship, this is the sentence that carries the film's emotional truth — the experience of abandonment, the specific wound of someone who left and did not return. Whether James actually left fifteen years ago or whether this is a performed grievance, the sentence is real.
+ছবি বলে না ভাঙনটা আসল না অনুকরণ — আর এই না-বলাটাই যুক্তি: একটা সত্যিকারের ব্যর্থ বিয়ে আর তার নিখুঁত নকলের মধ্যে কোনো অর্থবহ তফাত নেই। রেস্তোরাঁয় নষ্ট মদ নিয়ে জেমসের রাগ, নারীটির ক্লান্ত চোখ, পুরোনো অভিযোগের ধার — এসব যদি অভিনয় হয়, তবে অভিনয়টা বাস্তবের মতোই ব্যথা দেয়।
 
-### 88 · James says nothing to "stay"; a stutter is the last audible sound
+### 62 · সত্যটাই অনুপস্থিত
 
-The film's last spoken exchange ends with Elle saying "stay" and James saying nothing audible. What emerges instead of a response is a stutter — a breakdown of speech at the moment speech is most required. The stutter is the film's most honest sound: the moment when the performance of composure, of the philosophical argument, of the tourist in Tuscany, cannot maintain itself against the reality of what is being asked.
+সার্টিফায়েড কপিতে যা অনুপস্থিত তা সম্পর্কটার মূল সত্য — এই দুজনের মধ্যে কোনো অতীত আছে, না তারা তা বানাচ্ছে। প্রথম অর্ধেকে তারা স্পষ্টতই অচেনা; জেমস তার সম্পর্কে প্রায় কিছুই জানে না। দ্বিতীয় অর্ধেকে তারা স্পষ্টতই স্বামী-স্ত্রী; পুরোনো ঝগড়ার খুঁটিনাটি জানে, বিয়ের রাতের হোটেল চেনে। কখন বদল ঘটল, কোথায় সীমারেখা — ছবি দেখায় না।
 
-### 89 · He walks to the station; the room holds his absence in its walls
+এ তথ্য গোপন রাখা হয়নি সমাধানের ধাঁধা হিসেবে, বরং যুক্তি হিসেবে: সম্পর্কের অভিজ্ঞতা একই থাকে, আসল হোক বা অভিনীত। যা প্রতিটি দৃশ্যের মীমাংসা করে দিতে পারত, তা ইচ্ছা করে, চিরকালের জন্য সরিয়ে রাখা।
 
-James leaves to catch the nine o'clock train. The film ends with him gone and Elle left in the hotel room. The room holds his absence the way rooms hold the absences of everyone who has ever occupied them: temporarily, silently, until the next guest arrives. His dissolution is into transit — into the train, the schedule, the professional life that was always elsewhere — and what he leaves behind is not a trace but the shape of a departure, the precise outline of someone who was asked to stay and left anyway.
+কিয়ারোস্তামির অন্য ছবিতে অনুপস্থিতি মানে পর্দার বাইরে কোনো মানুষ — বুড়ি, বন্ধু, বাবা। এখানে দুজন মানুষই পুরো সময় পর্দায়; অনুপস্থিত শুধু তাদের সম্পর্কের নাম। আর দর্শক টের পায়, নামটা না থাকায় সম্পর্কটা কমে না, বরং আরও স্পষ্ট হয় — কারণ নাম ছাড়া যা থাকে, তা কেবল দুজন মানুষের মধ্যে যা ঘটছে।
 
-### 90 · Satisfy a client; visit a grandmother who waits outside all night
+### 63 · নকলও আসলের মতো খাঁটি
 
-Akiko is a student who works as an escort. Her errand on the night the film begins is to visit an elderly professor — a client arranged by her agency. But there is another errand underneath it: her grandmother has come from the countryside to see her, is waiting at a metro station, and Akiko does not go to her. The film holds both errands in tension throughout: the professional errand that Akiko performs, and the personal errand she refuses, and the grandmother who waits outside in the dark while her granddaughter sees a client.
+ছবির বুদ্ধিবৃত্তিক কাঠামো জেমসের তত্ত্ব: শিল্পকর্মের প্রত্যয়িত নকল আসলের মতোই মূল্যবান, কারণ মূল্য উৎসে নয়, অভিজ্ঞতায়। বক্তৃতাটা দার্শনিক অর্থে জবানবন্দি — মূল্য আর খাঁটিত্ব নিয়ে জনসমক্ষে দেওয়া একটা যুক্তি। নারীটির কিশোর ছেলে মায়ের সঙ্গে বসে থাকে, বিরক্ত, আর পরে মায়ের মুগ্ধতা নিয়ে ঠাট্টা করে।
 
-### 91 · The Tokyo streets as a series of wrong arrivals
+লুচিনিয়ানোর জাদুঘরে নারীটি জেমসকে দেখায় একটা বিখ্যাত ছবি, যা শতাব্দীর পর শতাব্দী আসল বলে পূজিত হয়েছে, অথচ আসলে নকল। জেমসের যুক্তির জীবন্ত প্রমাণ — কিন্তু জেমস তাতে আগ্রহী নয়। আর গাড়িতে নারীটি বলে তার বোনের গল্প: বোনের স্বামী সাদাসিধা মানুষ, বোনের নাম বলতে গিয়ে তোতলায় — আর বোন তাকে ঠিক সেজন্যই ভালোবাসে।
 
-The road in Like Someone in Love is Tokyo at night — neon, traffic, the taxi that takes Akiko past her grandmother's waiting place three times while the grandmother's voice messages play on her phone. The road is a series of wrong arrivals: Akiko arrives at the professor's apartment rather than her grandmother's side, the fiancé Noriaki arrives looking for Akiko, misunderstandings arrive in place of recognitions. The Tokyo road is the most labyrinthine in the ten films — a city in which everyone is moving toward the wrong destination.
+এই সব সাক্ষ্য মিলে ছবির নির্দেশিকা: দর্শককে বলে দেয় পরের অংশ কীভাবে দেখতে হবে — নকলের নিচে আসল খুঁজতে যেয়ো না; যে বিকেল দেখতে যাচ্ছ তা যেকোনো বিকেলের মতোই সত্যি হতে পারে। তত্ত্ব দেয় জেমস, কিন্তু তত্ত্বটা বাঁচে নারীটি।
 
-### 92 · A relationship built on mistaken identity from the opening lie
+### 64 · রেস্তোরাঁর আয়নায় লিপস্টিক
 
-The film begins with a lie — Akiko telling her boyfriend Noriaki that she is with a girlfriend when she is with a client. Every relationship in the film is built on this foundation of mistaken identity: Noriaki mistakes the professor for Akiko's grandfather, the professor allows himself to be mistaken for a grandfather, Akiko performs the role of a student rather than an escort. The ruin is not an event but a structure: the entire world of the film is organised around misrecognitions so deep that the film ends before any of them can be corrected.
+রেস্তোরাঁয় বসার আগে নারীটি বাথরুমে যায়। আয়নার সামনে দাঁড়িয়ে লিপস্টিক লাগায়, কানে দুল পরে, চুল ঠিক করে — ধীরে, যত্নে, ক্যামেরা আয়নার ভেতর থেকে তার মুখের দিকে তাকিয়ে, যেন আমরাই আয়না। তারপর টেবিলে ফিরে আসে, আর অপেক্ষা করে।
 
-### 93 · Akiko performs availability; the professor performs grandfatherly detachment
+জেমস খেয়াল করে না। সে মদ নিয়ে ব্যস্ত, ওয়েটারের সঙ্গে তর্কে, নিজের বিরক্তিতে। নারীটি অপেক্ষা করে, চোখে, কাঁধের ভঙ্গিতে, এক বাক্যের ইঙ্গিতে। যার জন্য সে সেজেছে, সে তাকায় না।
 
-Akiko performs professional availability — the person the agency has arranged her to be — while the professor performs a different pretence: he is simply an old man sharing dinner with a young person, not a client. He shows her photographs of his late wife. He has prepared elaborate food. He performs grandfatherly care so convincingly that Noriaki, arriving the next morning, accepts him immediately as Akiko's grandfather. Both performances are sincere in their way: both people are trying to be something better than the transaction the evening began as.
+এ অপেক্ষা ছোট, আর এতে সবকিছু: একজন নারী, যে দেখা পেতে চায়, এমন একজনের কাছে যে দেখে না। পনেরো বছরের দাম্পত্যের সাধারণ অভিমান হোক, বা এক বিকেলে গড়ে তোলা অভিনয়ের, অপেক্ষাটা নকল নয়। কিয়ারোস্তামির অন্য চরিত্ররা অপেক্ষা করে মৃত্যুর, উত্তরের, ঠিকানার জন্য; এই নারী অপেক্ষা করে একটা চাহনির জন্য — আর সেটাই সবচেয়ে কাছের, সবচেয়ে কঠিন।
 
-### 94 · The grandmother waits outside all night; Akiko never goes to her
+### 65 · তুমি কখনো ছিলে না
 
-The film's most painful absence is the grandmother — present in voice messages, present outside the metro station where she waits through the night, present in Akiko's guilt and evasion, but never seen by Akiko, never reached. She is the person whose presence Akiko most needs and most refuses. Her waiting is the film's moral centre: an old woman who has come a long way to see her granddaughter, who waits in the cold all night, who is never acknowledged.
+ছবির আবেগের উন্মোচন আসে যখন নারীটি সরাসরি বলে দেয় দাম্পত্য তার কাছ থেকে কী নিয়েছে। তার অভিযোগের সারকথা একটাই: তুমি কখনো ছিলে না। সবসময় অন্য কোথাও — কাজে, বইয়ে, ভ্রমণে, ঘুমে; ছেলে বড় হয়েছে প্রায় বাবা ছাড়া; যখন দরকার ছিল, তখন তুমি অন্য দিকে তাকিয়ে।
 
-### 95 · The professor's stories about his late wife, told to someone who is not her
+সম্পর্কের আসল চরিত্র যা-ই হোক, এই কথাগুলোই ছবির আবেগের সত্য বহন করে — পরিত্যক্ত হওয়ার অভিজ্ঞতা, এমন একজনের নির্দিষ্ট ক্ষত যার পাশে মানুষটা ছিল অথচ ছিল না। জেমস সত্যিই পনেরো বছর ধরে অনুপস্থিত ছিল, না এটা একটা অভিনীত অভিযোগ — কথাগুলো সত্য।
 
-The professor tells Akiko stories about his late wife — her preferences, her habits, the way she used to be. He projects his wife's qualities onto Akiko, addresses Akiko as if she were the recipient his wife's memory has been waiting for. The testimony is displaced: addressed to the wrong person, in the wrong context, by a man who may know this and be doing it anyway. The professor testifies to a love that is no longer present, using the only audience available.
+আর এখানেই ছবির তত্ত্ব তার প্রমাণ পায়। নকল অভিযোগ যদি আসলের মতো ব্যথা দেয়, তবে তফাতটা কোথায়? জেমসের বইয়ের যুক্তি তার নিজের দিকে ফিরে আসে: যে অভিজ্ঞতা সত্যি, তার উৎস নিয়ে প্রশ্ন তোলা অর্থহীন। ভান সরে যায়, আর নিচে দেখা যায় একজন মানুষের ব্যথা — যে ব্যথা, অন্তত এই বিকেলে, পুরোপুরি আসল।
 
-### 96 · Sitting with a girl who is not his granddaughter, watching her become herself
+### 66 · আয়না, ঘণ্টা, উত্তর নেই
 
-The professor's vigil is the long evening with Akiko — watching her sleep, watching her eat, watching her move through his apartment. He holds the space of his apartment around her with an attention that is paternal, or grandfatherly, or something older and more fragile than either. He watches her become herself in his presence — briefly, temporarily, in the gap between the person she performs for the agency and the person she might have been if her grandmother had not waited all night at a metro station alone.
+শেষ দৃশ্য হোটেলের সেই ঘরে, যেখানে — নারীটির কথায় — পনেরো বছর আগে তারা বিয়ের রাত কাটিয়েছিল। সে বিছানায় শোয়, পুরোনো দিনের কথা বলে, তাকে থেকে যেতে বলে। জেমস জবাব দেয় না। সে বাথরুমে যায়, আয়নার সামনে দাঁড়ায়। তার মুখ আমাদের দিকে — আয়নাটা আমরা।
 
-### 97 · The professor's apartment exposed: an old man alone, tending an absence
+বাইরে গির্জার ঘণ্টা বাজতে থাকে। জেমস বলেছিল, রাত নয়টায় তার ট্রেন। সে থাকবে কি না, যাবে কি না, বলে না। আয়নায় নিজের দিকে তাকিয়ে থাকে, আর ঘণ্টার শব্দ ঘর ভরে দেয়। তারপর ছবি শেষ।
 
-The apartment is the film's most sustained space — old, carefully tended, full of books and photographs and objects that belonged to someone who is no longer there. When Noriaki arrives in the morning, the apartment is exposed: an old man living in the arrangement left by a dead woman, tending her absence, allowing a young woman he has just met to sleep in its centre. The professor is revealed as someone who has organised his life around an absence so precisely that he can mistake a stranger for its occupant.
-
-### 98 · A rock through the window; a voice outside shouting; then nothing
-
-The film ends with a rock thrown through the professor's window by Noriaki, who has finally understood — or misunderstood — what Akiko and the professor are to each other. The rock, the shattering glass, the voice outside shouting — these are the film's last sounds. Then nothing. The film cuts. There is no resolution, no aftermath, no clarification of what Noriaki has understood or what will happen next. The silence after the rock is the most abrupt in the ten films.
-
-### 99 · The film cuts on an open door; what enters dissolves the frame itself
-
-The last image before the cut is the open window — the glass broken, the outside now inside, the boundary between the professor's careful interior world and Tokyo's night dissolved. What enters through the broken window is not shown: it might be Noriaki, it might be violence, it might be the truth about Akiko that everyone in the film has been too polite to name. The film dissolves not into landscape or institution or another person but into an opening — a frame broken from outside, a film that ends by dismantling the protected space in which it has been occurring.
+এই নীরবতা ছবির সবচেয়ে সৎ শব্দ: সেই মুহূর্ত, যখন সংযমের অভিনয়, দার্শনিক যুক্তি, তাসকানির পর্যটকের ভঙ্গি — কিছুই আর যা চাওয়া হচ্ছে তার বিরুদ্ধে টিকতে পারে না, আর মানুষটার কাছে কোনো বাক্য থাকে না। বইয়ের প্রশ্ন — নকল কি আসলের সমান? — তার উত্তর পায় এই নীরবতায়। উত্তরটা এই যে প্রশ্নটার উত্তর দেওয়া যায় না; শুধু থেকে যাওয়া যায়, অথবা চলে যাওয়া।

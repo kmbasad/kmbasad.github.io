@@ -229,11 +229,8 @@ thead th:not(:first-child):not(:last-child) {
   right: 0;
   bottom: 5px;
   text-align: center;
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-family: var(--bn-display);
+  font-size: 13px;
   color: var(--accent);
   white-space: nowrap;
   padding: 0 6px;
@@ -247,11 +244,8 @@ thead th:not(:first-child):not(:last-child) {
   right: 6px;
   display: flex;
   align-items: center;
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-family: var(--bn-display);
+  font-size: 13px;
   color: var(--accent);
   white-space: nowrap;
 }
@@ -817,6 +811,17 @@ thead th:not(:first-child):hover .th-name {
     padding: 40px var(--m-read-pad) 52px;
   }
 
+  .trellis-hero {
+    padding: 28px 14px 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .trellis-cue { display: none; }
+
+  /* the grid already scrolls sideways inside each slide — a swipe must not
+     also turn the slide, so on phones only the tabs do */
+  .mx-track { overflow-x: hidden; }
+
   .article-legend {
     font-size: 13px;
     padding: 10px 4px 24px;
@@ -865,8 +870,7 @@ thead th:not(:first-child):hover .th-name {
 
   .corner-row-label,
   .corner-col-label {
-    font-size: 9.5px;
-    letter-spacing: 0.08em;
+    font-size: 12px;
   }
 
   .cell-btn {
@@ -882,4 +886,185 @@ thead th:not(:first-child):hover .th-name {
     width: 34px;
     height: 34px;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE HERO — the matrix takes the first screen, the essay waits below
+   ═══════════════════════════════════════════════════════════════════════════
+   Desktop: the hero is exactly one screen under the bar at rest. CSS lays
+   out the box (tabs, grid, cue); trellis.js only divides the grid's box into
+   seven-by-seven (--fs-cell-w / --fs-cell-h), the same arithmetic as the
+   pseudo-fullscreen. Phones keep the natural grid, below the essay.        */
+
+.trellis-hero { position: relative; }
+
+/* the cue — a quiet way down to the essay; gone when there is none */
+.trellis-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  flex-shrink: 0;
+  font-family: var(--bn-display);
+  font-size: 15px;
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.trellis-cue span { color: var(--accent-2); transition: transform .2s ease; }
+.trellis-cue:hover { color: var(--accent); }
+.trellis-cue:hover span { transform: translateY(3px); }
+.trellis-page:has(#essay-mount:empty) .trellis-cue { display: none; }
+
+@media (min-width: 768px) {
+  .trellis-hero {
+    height: calc(100svh - var(--nav-h));
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 24px 0;
+  }
+  .trellis-page:has(#essay-mount:empty) .trellis-hero { padding-bottom: 24px; }
+
+  .trellis-hero #trellis-mount,
+  .trellis-hero .mx-slider,
+  .trellis-hero .mx-track,
+  .trellis-hero .matrix-container {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trellis-hero .table-scroll {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;   /* sized to fit — never scrolls */
+  }
+
+  .trellis-hero .mx-track { flex-direction: row; }
+  .trellis-hero .mx-slide { display: flex; flex-direction: column; }
+
+  .trellis-hero table { table-layout: fixed; width: 100%; }
+
+  .trellis-hero td,
+  .trellis-hero thead th:not(:first-child) {
+    width: var(--fs-cell-w, 148px);
+    min-width: unset;
+  }
+
+  .trellis-hero thead th:first-child,
+  .trellis-hero .corner-th,
+  .trellis-hero tbody th {
+    width: 196px;
+    min-width: 196px;
+  }
+
+  .trellis-hero .cell-btn {
+    height: var(--fs-cell-h, 72px);
+    min-height: var(--fs-cell-h, 72px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px 14px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .trellis-hero .th-name,
+  .trellis-hero .prop-name {
+    font-family: var(--bn-display);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .trellis-hero .prop-desc { font-size: 12.5px; font-style: normal; }
+  .trellis-hero tbody th { vertical-align: middle; padding: 10px 16px; }
+}
+
+/* ── The slider (a file with several matrices — খোদা) ──────────────────── */
+.mx-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+
+.mx-tab,
+.mx-step {
+  font-family: var(--bn-display);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-3);
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.mx-tab {
+  font-size: 17px;
+  padding: 4px 16px 6px;
+  border-bottom: 2px solid transparent;
+}
+.mx-tab:hover { color: var(--accent); }
+.mx-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.mx-step {
+  font-size: 24px;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  color: var(--accent);
+}
+.mx-step:hover { background: var(--accent-light); }
+.mx-step:disabled { opacity: .25; cursor: default; background: none; }
+
+.mx-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.mx-track::-webkit-scrollbar { display: none; }
+
+.mx-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* ── The essay ─────────────────────────────────────────────────────────── */
+.trellis-essay .essay-body p { font-weight: 400; line-height: 2.0; }
+.trellis-essay .essay-body > p:first-child::first-letter {
+  float: none; font-size: inherit; line-height: inherit;
+  font-weight: inherit; padding: 0; color: inherit;
+}
+.trellis-essay .section-title { font-weight: 300; }
+
+/* a cell cited in the essay — opens that cell over the page */
+a.cell-ref {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-mid);
+  transition: border-color .15s ease, background .15s ease;
+}
+a.cell-ref:hover {
+  border-bottom-style: solid;
+  border-bottom-color: var(--accent);
+  background: var(--accent-light);
+}
+.cell-ref-num {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: .6em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 2px;
+  color: var(--accent-2);
+  font-variant-numeric: tabular-nums;
 }

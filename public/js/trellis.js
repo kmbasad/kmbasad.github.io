@@ -246,8 +246,7 @@
   // holding several matrices — where the two tables would otherwise butt up
   // against each other unlabelled. A page with one matrix already wears its
   // name in the breadcrumb and must not repeat it.
-  function buildMatrix(mountId, tsv, opts) {
-    var mount = document.getElementById(mountId);
+  function buildMatrix(mount, tsv, opts) {
     if (!mount) return;
     if (!tsv || !tsv.length) return;
     opts = opts || {};
@@ -302,7 +301,7 @@
     container.id = opts.anchor || ids.container;
     if (opts.title) container.setAttribute('data-toc', opts.title);
 
-    if (opts.title && opts.showTitle) {
+    if (opts.title && opts.showTitle) {   /* off in a slider — its tabs name the matrices */
       var mxTitle = document.createElement('h2');
       mxTitle.className = 'matrix-title';
       mxTitle.textContent = opts.title;
@@ -422,7 +421,7 @@
     panel.id = ids.panel;
     panel.innerHTML =
       '<div class="panel-bar"></div>' +
-      '<button class="panel-close-btn" id="' + ids.close + '" title="Close">&#x2715;</button>' +
+      '<button class="panel-close-btn" id="' + ids.close + '" title="বন্ধ (Esc)">&#x2715;</button>' +
       '<div class="panel-head" id="' + ids.pHead + '">' +
         '<div class="panel-label" id="' + ids.pLabel + '"></div>' +
         '<div class="panel-prop" id="' + ids.pProp + '"></div>' +
@@ -434,8 +433,8 @@
         '<div class="panel-long" id="' + ids.pLong + '"></div>' +
       '</div>' +
       '<div class="panel-nav">' +
-        '<button id="' + ids.prev + '">&#8592; Prev</button>' +
-        '<button id="' + ids.next + '">Next &#8594;</button>' +
+        '<button id="' + ids.prev + '">&#8592; আগের</button>' +
+        '<button id="' + ids.next + '">পরের &#8594;</button>' +
       '</div>';
 
     container.appendChild(overlay);
@@ -481,7 +480,7 @@
         var rowHasShort = rP[2] && rP[2].length < 80;
         return {
           prop: rP[0] || '',
-          name: 'Synthesis across all',
+          name: 'সবগুলো জুড়ে',
           meta: rP[1] || '',
           short: rowHasShort ? rP[2] : '',
           long: markupToHtml(rP.slice(rowHasShort ? 3 : 2).join('\n\n'))
@@ -640,18 +639,31 @@
       if (e.key === 'ArrowDown'  && ap < nRows - 1)   { e.preventDefault(); openCell(ap + 1, ah); }
     });
 
-    // ── Pseudo-fullscreen (position:fixed, no native API) ─────────────────
+    // ── Fit the grid to its box ───────────────────────────────────────────
+    // In pseudo-fullscreen, and in the page's hero (desktop), the cells are
+    // sized to fill the scroll box exactly: the box is laid out by CSS, this
+    // only divides it. Below 768px the grid keeps its natural size and
+    // scrolls sideways.
+    function isFitted() {
+      return container.classList.contains('is-fullscreen') ||
+             !!container.closest('.trellis-hero');
+    }
     function resizeForFullscreen() {
-      if (window.innerWidth < 768) return;
+      if (window.innerWidth < 768 || !isFitted()) {
+        container.style.removeProperty('--fs-cell-w');
+        container.style.removeProperty('--fs-cell-h');
+        return;
+      }
       // Read the scroll container's actual rendered dimensions — this is the
       // ground truth after CSS has laid out the flex column.
       var scrollW  = scroll.clientWidth;
       var scrollH  = scroll.clientHeight;
       var theadH   = table.querySelector('thead').offsetHeight || 82;
-      var rowHeaderW = 174;
+      var rowHeaderW = table.querySelector('.corner-th').offsetWidth || 174;
 
       var colW = Math.max(100, Math.floor((scrollW - rowHeaderW) / nCols));
-      var rowH = Math.max(52,  Math.floor((scrollH - theadH)     / nRows));
+      // one px of border per row, so the last row does not slip under the clip
+      var rowH = Math.max(52,  Math.floor((scrollH - theadH - nRows - 2) / nRows));
 
       container.style.setProperty('--fs-cell-w', colW + 'px');
       container.style.setProperty('--fs-cell-h', rowH + 'px');
@@ -671,10 +683,9 @@
 
     function exitPseudoFS() {
       container.classList.remove('is-fullscreen');
-      container.style.removeProperty('--fs-cell-w');
-      container.style.removeProperty('--fs-cell-h');
       document.body.style.overflow = '';
       updateFsBtn(false);
+      requestAnimationFrame(resizeForFullscreen);   // back to the hero's box
     }
 
     function updateFsBtn(active) {
@@ -738,10 +749,18 @@
     document.addEventListener('webkitfullscreenchange', onFsChange);
 
     window.addEventListener('resize', function () {
-      if (container.classList.contains('is-fullscreen')) {
-        requestAnimationFrame(resizeForFullscreen);
-      }
+      requestAnimationFrame(resizeForFullscreen);
     });
+    requestAnimationFrame(resizeForFullscreen);
+
+    return {
+      container: container,
+      openCell: function (ri, ci) {
+        if (ri >= 0 && ri < nRows && ci >= 0 && ci < nCols) openCell(ri, ci);
+      },
+      isOpen: function () { return panel.classList.contains('open'); },
+      fit: resizeForFullscreen
+    };
   }
 
   // ── Markdown essay renderer ────────────────────────────────────────────
@@ -770,8 +789,17 @@
       i++;
     }
 
+    /* `[words](#RC)` — or `[words](#2-RC)` on a page of several matrices —
+       is a reference to one cell: it renders as a link that opens that
+       cell's panel over the essay, so the argument can be checked against
+       the grid without losing one's place. */
     function inlineMarkup(s) {
       return s
+        .replace(/\[([^\]]+)\]\(#(?:(\d+)-)?(\d)(\d)\)/g, function (_, t, m, r, c) {
+          return '<a class="cell-ref" href="#mx-' + (m || 1) + '" data-mx="' + (m || 1) +
+            '" data-r="' + r + '" data-c="' + c + '">' + t +
+            '<span class="cell-ref-num">' + r + c + '</span></a>';
+        })
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>');
     }
@@ -835,21 +863,132 @@
     return m ? m[1].trim() : '';
   }
 
+  // Every built matrix, in file order — the essay's cell links address them
+  // as #1-RC, #2-RC …
+  var matrices = [];
+  var slider = null;
+
   function loadAndBuild(src, mountId) {
+    var mount = document.getElementById(mountId);
+    if (!mount) return;
     fetch(src)
       .then(function (res) { return res.text(); })
       .then(function (text) {
         var chunks = splitMatrices(text);
+        var titles = chunks.map(matrixTitle);
+        var slots = chunks.length > 1 ? buildSlider(mount, titles) : [mount];
         chunks.forEach(function (chunk, i) {
-          buildMatrix(mountId, parseSource(src, chunk), {
-            title:     matrixTitle(chunk),
+          matrices.push(buildMatrix(slots[i], parseSource(src, chunk), {
+            title:     titles[i],
             anchor:    'mx-' + (i + 1),
-            showTitle: chunks.length > 1,
-          });
+            showTitle: false,
+          }));
         });
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () {
+            matrices.forEach(function (m) { if (m) m.fit(); });
+          });
+        }
         announce();
       });
   }
+
+  // ── Slider: several matrices share the hero, one at a time ─────────────
+  // A horizontal scroll-snap track, so a swipe or a trackpad moves it
+  // natively and the সূচি's scrollIntoView lands on the right slide with no
+  // help. The tabs name the matrices; the arrows and ←/→ step between them.
+  function buildSlider(mount, titles) {
+    var wrap = document.createElement('div');
+    wrap.className = 'mx-slider';
+
+    var bar = document.createElement('div');
+    bar.className = 'mx-tabs';
+    var prev = document.createElement('button');
+    prev.className = 'mx-step';
+    prev.setAttribute('aria-label', 'আগের ছক');
+    prev.innerHTML = '&#8249;';
+    var next = document.createElement('button');
+    next.className = 'mx-step';
+    next.setAttribute('aria-label', 'পরের ছক');
+    next.innerHTML = '&#8250;';
+
+    var track = document.createElement('div');
+    track.className = 'mx-track';
+
+    var tabs = [], slots = [];
+    bar.appendChild(prev);
+    titles.forEach(function (t, i) {
+      var tab = document.createElement('button');
+      tab.className = 'mx-tab';
+      tab.textContent = t || ('' + (i + 1));
+      tab.addEventListener('click', function () { go(i); });
+      bar.appendChild(tab);
+      tabs.push(tab);
+
+      var slide = document.createElement('div');
+      slide.className = 'mx-slide';
+      track.appendChild(slide);
+      slots.push(slide);
+    });
+    bar.appendChild(next);
+
+    wrap.appendChild(bar);
+    wrap.appendChild(track);
+    mount.appendChild(wrap);
+
+    var cur = 0;
+    function mark(i) {
+      cur = i;
+      tabs.forEach(function (t, k) { t.classList.toggle('active', k === i); });
+      prev.disabled = i <= 0;
+      next.disabled = i >= tabs.length - 1;
+    }
+    function go(i, instant) {
+      i = Math.max(0, Math.min(tabs.length - 1, i));
+      track.scrollTo({ left: i * track.clientWidth, behavior: instant ? 'auto' : 'smooth' });
+      mark(i);
+    }
+    // a swipe moves the tabs once the track settles — mid-glide positions
+    // would drag the mark back during a tab's own smooth scroll
+    var settle = 0;
+    track.addEventListener('scroll', function () {
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        var i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        if (i !== cur) mark(i);
+      }, 90);
+    }, { passive: true });
+    prev.addEventListener('click', function () { go(cur - 1); });
+    next.addEventListener('click', function () { go(cur + 1); });
+
+    // ←/→ turn the slide while the hero is on screen and no panel is open
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      if (document.querySelector('.table-panel.open, .is-fullscreen')) return;
+      var r = wrap.getBoundingClientRect();
+      if (r.bottom < window.innerHeight * 0.4 || r.top > window.innerHeight * 0.6) return;
+      e.preventDefault();
+      go(cur + (e.key === 'ArrowRight' ? 1 : -1));
+    });
+    window.addEventListener('resize', function () { go(cur, true); });
+
+    mark(0);
+    slider = { go: go };
+    return slots;
+  }
+
+  // An essay's cell link opens that cell's panel over the essay, and turns
+  // the slider to its matrix underneath so the grid agrees on the way back.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a.cell-ref');
+    if (!a) return;
+    var m = matrices[(+a.dataset.mx || 1) - 1];
+    if (!m) return;
+    e.preventDefault();
+    if (slider) slider.go((+a.dataset.mx || 1) - 1, true);
+    m.openCell(+a.dataset.r, +a.dataset.c);
+  });
 
   // Unified config — every trellis page uses the same shape:
   //   window.TRELLIS_CONFIG = { data: 'trellis.md', essay: 'essay.md', mountId: 'trellis-mount' }

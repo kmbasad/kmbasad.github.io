@@ -1,1103 +1,850 @@
 # দার্শনিক
 
 axes:
-  rows: Philosopher
-  cols: Property
+  rows: দার্শনিক
+  cols: খোদার স্বরূপ
 
 ## Columns
 
-### Col 0 · Existence
+### Col 0 · অস্তিত্ব
 
-short: What kind of thing is God?
+short: খোদা কোন ধরনের ‘জিনিস’?
 
-Context of all Contexts — God as the ground of being itself
+এই ছকের প্রায় প্রত্যেকে একই উত্তর দেন: খোদা কোনো জিনিসই নন। তাও, পরম এক, ব্রহ্ম, আল-উজুদ আল-মুতলাক, স্পিনোজার খোদা-অর্থাৎ-প্রকৃতি — নাম আলাদা, কিন্তু সবগুলোই সেই অদ্বৈত ভিত্তির দিকে আঙুল তোলে, যার ভেতরে কোনো কিছুর থাকা সম্ভব হয়। খোদা মহাবিশ্বের সবচেয়ে বড় বস্তু নন; ‘মহাবিশ্ব’ বলে কিছু থাকতে পারার শর্তই খোদা।
 
-Across ten traditions, the dominant answer to "what kind of thing is God?" is: God is not a thing. The Tao, the One, Brahman, *al-Wujūd al-Muṭlaq*, *Deus sive Natura* — all converge on the idea that God is the non-dual substrate in which anything can exist at all. God is not the largest object in the universe; God is the condition that makes "universe" possible.Plato and Whitehead are partial exceptions: both introduce a more particularized divine actor who works within existence. Nagarjuna dissolves the question entirely. Kant relocates God from metaphysics to ethics. Yet even these outliers point toward the same horizon: God is not a being among beings but the field in which being becomes possible — the Context of all Contexts, prior to and inexhaustible by every particular thing that arises within it.
+দুজন এই সুর থেকে সরে দাঁড়ান। হোয়াইটহেডের খোদা অস্তিত্বের ভিত্তি নন, অস্তিত্বের ভেতরেই এক অনন্য অংশগ্রহণকারী — বাকি সব কিছুর মতো তিনিও এক প্রকৃত সত্তা। নাগার্জুন প্রশ্নটাকেই ভেঙে দেন: নিজের জোরে টিকে থাকা কোনো ভিত্তি কোথাও নেই। তবু এই দুই ব্যতিক্রমও একই দিগন্ত দেখায় — খোদা, বা খোদার জায়গায় যা-ই বসানো হোক, অন্য সব জিনিসের পাশে আরেকটা জিনিস নন। তিনি সেই ক্ষেত্র, যেখানে থাকা ব্যাপারটা ঘটে; প্রতিটি আলাদা জিনিসের আগে, আর কোনো জিনিস দিয়েই তাঁকে ফুরিয়ে ফেলা যায় না।
 
-### Col 1 · Consciousness
+### Col 1 · একত্ব
 
-short: Does God have consciousness and intention?
+short: খোদা কি নিরঙ্কুশ এক, অংশহীন?
 
-Indifferent Spontaneity — the Absolute acts from necessity, not choice
+আর কোনো প্রশ্নে এত জোরালো ঐকমত্য নেই: খোদা পুরোপুরি এক, তাঁর ভেতরে কোনো ভাগ বা জটিলতা নেই। প্লোটিনাস দেখান, পরম এক চিন্তা করলেও দুই হয়ে যেত — চিন্তক আর চিন্তা; শংকর বলেন, ‘অ-দ্বৈত’ ছাড়া আর কোনো বর্ণনাই খাটে না; স্পিনোজার গোটা বিশ্বে দ্রব্য একটাই; ইবনে আরাবির কাছে খোদার যাত-এ কোনো বহুত্ব ঢোকে না। যুক্তিটা সবখানে এক: ভেতরে অংশ থাকা মানে অংশের ওপর নির্ভরতা; নির্ভরতা মানে খোদার চেয়েও মৌলিক কিছু থাকা; অথচ সবকিছু খোদার ওপরই নির্ভর করে। তাই খোদার অংশ নেই। লাওৎসের তাও আরও আগের জায়গা থেকে এক — ‘এক’ আর ‘বহু’র ভাগাভাগি শুরু হওয়ার আগে।
 
-The most striking convergence: the near-universal rejection of a God who deliberates. Laozi, Nagarjuna, Plotinus, Shankara, Spinoza, and Ibn Arabi all arrive — from entirely different directions — at the conclusion that personality, will, and intention are human projections that cannot be applied to the Absolute without diminishing it. A God who chooses would be a God with unfulfilled desires; a God with emotions would be subject to change.Maimonides and Kant retain personal language but hollow it out — analogical at best, a moral postulate at most. Only in Whitehead does genuine responsiveness survive, and even he insists God does not coerce. The dominant idea: the Absolute acts by the sheer necessity of what it is, the way the sun radiates not by deciding to but by being a sun.
+ভিন্নমত দুটো, আর দুটোই সজ্ঞান। নাগার্জুন বলেন, ‘এক’ ধারণাটাও শূন্য — নিজস্ব স্বভাবওয়ালা একত্ব কোথাও পাওয়া যায় না। হোয়াইটহেড জেনেশুনে জটিলতা মেনে নেন: তাঁর দ্বিমেরু খোদা জগতের সঙ্গে সত্যিকারের সম্পর্কের দাম দিতে গিয়ে সরলতা ছেড়ে দেন। তবু কেন্দ্রের ভাবনাটা টিকে থাকে — খোদার যেসব গুণের কথা আমরা বলি, সেগুলো আলাদা আলাদা জিনিস নয়; একটাই সত্তা, নানা দিক থেকে দেখা।
 
-### Col 2 · Singularity
+### Col 2 · জগৎ
 
-short: Is God absolutely one and without complexity?
+short: খোদা কি স্রষ্টা, উৎস, ধারক — নাকি জগৎ নিজেই?
 
-Singularity of Essence — complexity would make God dependent on its parts
+এই ছকের ভারকেন্দ্র — প্লোটিনাস, শংকর, ইবনে আরাবি, স্পিনোজা — জগৎকে খোদার বানানো জিনিস বলে দেখে না। জগৎ হয় খোদা নিজেই, নয়তো খোদার অসীম স্বভাব প্রকাশ পেলে যা না হয়ে পারে না। প্লোটিনাস এর নাম দেন উৎসারণ, শংকর বিবর্ত, ইবনে আরাবি তাজাল্লি বা আত্মপ্রকাশ, স্পিনোজা প্রকারের সমগ্রতা। যা তাঁদের এক করে, তা হলো খোদা আর জগতের মাঝে কোনো ফাঁক মানতে অস্বীকার।
 
-On no property is the consensus more overwhelming: God is absolutely one and without internal complexity. From Plotinus's proof that the One cannot think without splitting into thinker and thought, to Maimonides's argument that multiple attributes would make God composite, to Shankara's insistence that Advaita is the only adequate description — the logic is the same everywhere. Internal complexity implies dependence; dependence implies something more fundamental than God; but God is what everything depends on. Therefore God has no parts.Whitehead alone dissents, consciously: his dipolar God accepts complexity as the price of genuine relation. But the dominant idea remains the Singularity of Essence — what we call God's attributes are not three things but one reality approached from three angles.
+লাওৎসে আরও নরম সুরে একই কথা বলেন: তাও ‘মা’, কারিগর নয়; জগৎ তার আপনা-আপনি উপচে পড়া। নাগার্জুন কোনো ভিত্তিই মানেন না — জগৎ শুধু শর্তনির্ভর উদ্ভব। হোয়াইটহেড একমাত্র, যিনি খোদা আর জগৎকে সত্যিই দুই রাখেন, আর দুজনকেই দুজনের স্রষ্টা বলেন। কিন্তু মোটের ওপর ছবিটা এই: জগৎ খোদার বাইরের দিকে নিজেকে মেলে ধরা — সূর্যের আলোর মতো অনিবার্য, আর যে ফুল সুগন্ধ ছড়াতে চায়নি তার সুবাসের মতো স্বাভাবিক।
 
-### Col 3 · Relation
+### Col 3 · দূর ও নিকট
 
-short: Creator, emanator, sustainer, or identical with cosmos?
+short: খোদা কি জগতের ঊর্ধ্বে, জগতের ভেতরে, নাকি দুটোই?
 
-Mirror of the Absolute — the world is God turned outward
+সবচেয়ে গভীর উত্তরটা বাছাই করতে রাজি হয় না। ইবনে আরাবি তানযিহ আর তাশবিহ — তুলনাহীনতা আর সাদৃশ্য — একসঙ্গে ধরে রাখেন; শংকর বলেন, ব্রহ্ম জগতের ঊর্ধ্বে ঠিক এই কারণেই যে ব্রহ্মই জগৎ; প্লোটিনাসের পরম এক কল্পনাযোগ্য সবচেয়ে দূরের জিনিস, আবার প্রতিটি অস্তিত্বের সবচেয়ে অন্তরঙ্গ ভিত্তি। এগুলো স্ববিরোধ নয়; একই নির্ভরতার সম্পর্ককে দুই দিক থেকে বলা। হোয়াইটহেড একই সমস্যা মেটান খোদাকে দুই স্বভাবে ভাগ করে; লাওৎসের তাও দাঁড়িয়ে থাকে ভাগাভাগির রেখাটা টানারও আগে।
 
-The dominant set — Plotinus, Shankara, Ibn Arabi, Spinoza — does not describe the world as something God made. The world is something God is, or something God necessarily becomes when its infinite nature finds expression. Plotinus calls this emanation; Shankara apparent transformation; Ibn Arabi self-disclosure; Spinoza the totality of modes. What unites them is the rejection of a gap between God and world.Plato and Maimonides hold onto intentional creation; Whitehead insists on mutual creativity. But the center of gravity is: the world is God expressing itself outward — as inevitable as the light from the sun, as natural as the fragrance of a flower that intends nothing.
+দুই প্রান্তে দুজন। স্পিনোজা দূরত্ব পুরোপুরি মুছে দেন — খোদা জগতের সমগ্রতা, এর বাইরে কিছু নেই। নাগার্জুন দুটো ধারণাকেই বাতিল করেন, কারণ শূন্যতা কোনো সত্তা নয় যে দূরে বা ভেতরে কোথাও থাকবে। তবু ভারকেন্দ্র এক বিস্ময়কর সহাবস্থান: খোদা জগতের বাইরে দাঁড়িয়ে ভেতরে উঁকি দিচ্ছেন না, আবার জগতে গলে নিঃশেষও হননি — তিনি জগতের গভীরতা; প্রতিটি জিনিস নিজের যতটা কাছে, তিনি তার চেয়েও কাছে।
 
-### Col 4 · Transcendence
+### Col 4 · সময়
 
-short: Beyond the world, within it, or both?
+short: সময়ের সঙ্গে খোদার সম্পর্ক কী?
 
-Non-dual Presence — God is the depth of the world, not its neighbor
+প্রায় সবাই একমত: খোদা সময়ের ভেতরে নেই। তিনি চিরকাল ধরে টিকে থাকা কিছু নন, তিনি সময়ের বাইরের চিরন্তন। শংকরের কাছে সময় মায়ায় মিলিয়ে যায়; স্পিনোজার কাছে চিরন্তনতা খোদার থাকার ধরন, আর স্থিতিকাল সসীম জিনিসের; প্লোটিনাসের কাছে সময় জন্মায় বিশ্বাত্মার অস্থিরতা থেকে, বুদ্ধির কালহীন স্থিরতা থেকে সরে আসায়; লাওৎসের তাও সেই স্থির অক্ষ, যাকে ঘিরে সব বদল ঘোরে। ইবনে আরাবি দেখান, প্রতিটি জিনিস সময়ে প্রকাশের আগে খোদার জ্ঞানে চিরকাল ছিল। এর মানে: খোদার কাছে অতীত চলে যায়নি, ভবিষ্যৎ এখনো আসেনি বলে কিছু নেই — গোটা সময় এক যুগপৎ উপস্থিতি।
 
-The most sophisticated answer refuses to choose. Ibn Arabi holds tanzīh and tashbīh simultaneously; Shankara says Brahman transcends the world precisely because it is the world; Plotinus says the One is the most transcendent thing imaginable and the most intimate ground of every existing thing — these are not contradictions but descriptions of the same dependency relation from two directions.Spinoza collapses transcendence; Kant collapses immanence. But the center of gravity is paradoxical co-presence: God is not located outside the world looking in, nor dissolved into the world without remainder, but is the very depth of the world — more intimate to each thing than that thing is to itself.
+হোয়াইটহেড একাই খোদাকে সত্যিকারের এক কালিক দিক দেন; তাঁর যুক্তি, যে খোদা কেবলই চিরন্তন, তিনি কারও সত্যিকারের সঙ্গী হতে পারেন না। নাগার্জুন আসেন উল্টো দিক থেকে: সময় যেমন শূন্য, সময়ের বাইরের কোনো চিরন্তন দাঁড়ানোর জায়গাও তেমনি শূন্য। তবু কেন্দ্রের ছবিটা স্থির বিন্দুর — খোদা সেই অবিচল ভিত্তি, যার ভেতরে বদলে-চলা জগৎ নড়ে; মুহূর্তের চলে যাওয়া তাঁকে ছোঁয় না, অথচ প্রতিটি মুহূর্তে তিনি হাজির।
 
-### Col 5 · Causality
+### Col 5 · জানা
 
-short: How and why does God cause things to exist?
+short: খোদাকে কি জানা যায়? নাম দেওয়া যায়?
 
-Uncaused Cause of Causality — God radiates rather than constructs
+প্রায় সব ধারায় একই সিদ্ধান্ত: সাধারণ ভাষা আর সাধারণ চিন্তা খোদা পর্যন্ত পৌঁছায় না। লাওৎসে: যে তাওয়ের নাম দেওয়া যায়, সে চিরন্তন তাও নয়। নাগার্জুন: শূন্যতাও শূন্য। শংকর: নেতি নেতি — এ নয়, এ নয়। প্লোটিনাস: বুদ্ধি নিজেকে ছেড়ে না দিলে পরম একের নাগাল মেলে না। কারণগুলো আলাদা — কেউ বলেন খোদা সব ভেদের আগে, কেউ বলেন সব ধারণার পারে — কিন্তু সিদ্ধান্ত এক: কথার চেয়ে নীরবতা, হ্যাঁ-র চেয়ে না বেশি সত্য। খোদাকে পাওয়া যায় বর্ণনা জমিয়ে নয়, বর্ণনা খসিয়ে; শেষে মন পৌঁছায় এমন এক জানায়, যা জানাকেও ছাড়িয়ে যায়।
 
-The dominant set replaces the image of God as craftsman with God as sun. Laozi's ziran, Plotinus's emanation, Spinoza's logical necessity, Shankara's dream-causation all share the same structure: the world follows from God not because God decided to act but because what God is necessarily and effortlessly expresses itself. The world does not follow from God's choice; it follows from God's nature, the way a mathematical truth does not choose to be true.Plato and Whitehead retain intentional causation; Maimonides argues for God as the cause of being itself. But the center of gravity is effortless radiation — God as the uncaused source from which causality derives, acting not by effort but by the sheer superabundance of what it is.
+এই নীরবতার বিপক্ষে দুটো জোরালো স্বর। স্পিনোজা বলেন, খোদাকে কেবল যুক্তি দিয়েই পুরোপুরি জানা যায় — জ্যামিতির উপপাদ্যের মতো। হোয়াইটহেড বলেন, খোদার ইতিবাচক বর্ণনা না দিলে বাস্তবতার হিসাব অসৎ থেকে যায়, আর সৌন্দর্যের অভিজ্ঞতা খোদার সঙ্গে এক সরাসরি সাক্ষাৎ। মাঝখানে ইবনে আরাবি: অন্তর হ্যাঁ আর না দুটোকেই একসঙ্গে ধরে, আর খোদা দুটোকেই ছাড়িয়ে যান।
 
-### Col 6 · Eternity
+### Col 6 · মানুষ
 
-short: How does God relate to time?
+short: মানুষের আত্মা আর খোদার সম্পর্ক কী?
 
-The Still Point — God is the timeless frame in which time plays
+এই ছকের সবচেয়ে চমকপ্রদ মিল এখানে। চীন, ভারত, আন্দালুস, রোম, সতেরো শতকের হল্যান্ড — আত্মা আর খোদার সম্পর্কের প্রশ্নে প্রধান উত্তর হয় অভিন্নতা, নয় ফিরে যাওয়া। শংকরের আত্মা সংখ্যার হিসাবেও ব্রহ্ম থেকে আলাদা নয়। প্লোটিনাসের আত্মা কখনো পরম এক থেকে পুরোপুরি বেরিয়েই আসেনি। ইবনে আরাবির ইনসানে কামিল খোদার সব নামের পূর্ণতম আয়না। স্পিনোজার মন খোদার অসীম বুদ্ধিরই এক সসীম প্রকার। লাওৎসের সাধক মিশে যেতে চান না, মিলে চলেন — স্রোতের সঙ্গে।
 
-The overwhelming consensus: God does not exist in time — God is not everlasting but eternal. Maimonides: no temporal succession in God. Shankara: time dissolves into māyā. Spinoza: eternity is God's mode, duration the mode of finite things. Plotinus: time is the World Soul's movement away from the timeless Intellect.The implication: God does not experience the past as gone or the future as not yet. All of time is a single simultaneous presence. Whitehead alone allows God a genuinely temporal dimension, arguing that a purely eternal God cannot be a genuine companion. But the dominant image remains the Still Point — God as the unchanging ground in which the changing world moves, untouched by the passing of moments yet present to every one.
-
-### Col 7 · Knowability
-
-short: Can God be known? Can God be named?
-
-Sovereignty of Silence — God is known when the intellect stops
-
-Across nearly every tradition: ordinary language and ordinary thought cannot reach God. Laozi: the Tao that can be named is not the eternal Tao. Maimonides: every positive predicate is a category error. Nagarjuna: even emptiness is empty. Kant: the theoretical intellect cannot establish anything about God at all. The reasons differ — prior to distinction, beyond simplicity, structurally beyond experience — but the conclusion is shared.What all share is the recognition that silence — or negation — is more accurate than speech. The Absolute is not merely difficult to describe; it is structurally beyond the reach of any predicate. God is approached not by piling up descriptions but by stripping them away, until the mind arrives at a knowing that transcends knowing.
-
-### Col 8 · Morality
-
-short: Is God the ground of goodness and value?
-
-Cosmic Integrity — God is the ground of harmony, not a moral judge
-
-The dominant set moves the ground of ethics from commandment to ontology. Spinoza's God is beyond moral categories but grounds the intellectual love from which the highest joy arises. Plotinus's One is the Good but in a cosmic sense — evil is not violation but privation. Laozi's Tao is the source of natural harmony. Whitehead's God is the ground of beauty and value, where the good life is the richly experienced life.Kant stands as the great exception: for him, God is precisely and primarily the guarantor of the moral order. But even Kant insists goodness is prior to God — the moral law is not derived from divine commands. The dominant idea: God is not a judge who issues verdicts but the very order, harmony, and beauty that makes a well-lived life possible.
-
-### Col 9 · Humanity
-
-short: What is the human soul's relationship to God?
-
-End of Separation — the soul's deepest nature was never apart
-
-The most remarkable convergence in the table: from China, India, the Islamic world, and ancient Greece, the dominant answer to the soul's relation to God is some form of identity or return. Shankara's Ātman is numerically identical to Brahman. Plotinus's soul has never fully left the One. Ibn Arabi's Perfect Human is the fullest mirror of all divine Names. Even where identity is denied — Maimonides's intellectual proximity, Kant's moral destination — the direction of travel is the same: the soul's highest achievement is its greatest approximation to the divine.Whitehead offers the most reciprocal account: the soul gives to God as much as it receives. Nothing genuinely lived is lost. The dominant idea: what the soul seeks has always been what the soul is. The distance was never real; only the forgetting was.
+দুটো কণ্ঠ এই সুর উল্টে দেয়। নাগার্জুন বলেন, খোদার সঙ্গে সম্পর্কে দাঁড়ানোর মতো স্থায়ী কোনো আত্মাই নেই; মুক্তি মানে খোঁজকারীরই মিলিয়ে যাওয়া। হোয়াইটহেড দেন সবচেয়ে পারস্পরিক ছবি: আত্মা খোদার কাছ থেকে যতটা পায়, খোদাকেও ততটা দেয়, আর সত্যিকার অর্থে যা বাঁচা হয়েছে, তার কিছুই হারায় না। তবু মূল ভাবনাটা এই — আত্মা যা খুঁজছে, তা সবসময় সে নিজেই ছিল। দূরত্বটা কখনো সত্যি ছিল না; সত্যি ছিল শুধু ভুলে যাওয়া।
 
 ## Rows
 
-### Row 0 · Laozi
-desc: ~6th c. BCE · Chinese / Taoist
-short: The Tao: an impersonal, wordless ground asking only for alignment
+### Row 0 · লাওৎসে
 
-<strong>What God is:</strong> The Tao is not a being, not a creator, not a person — it is the formless, inexhaustible ground from which all things arise spontaneously and to which all things return.<strong>World and causality:</strong> The world arises from the Tao not by creation but by natural overflow — *ziran*, spontaneous self-arising. No act of creation, no divine decision. The Tao is simultaneously prior to everything and present in everything.<strong>Time and knowledge:</strong> The Tao is prior to time, the still axis around which all change revolves. It cannot be reached by analysis — only by emptying, yielding, and ceasing to strive.<strong>Value and the soul:</strong> The Tao is the ground of natural harmony, not of moral commands. The sage's relationship to it is alignment — moving with the current rather than against it, the art of ceasing to oppose what was always carrying you.<strong>The single idea:</strong> The Tao is the Way — the wordless, effortless, all-pervading ground of existence that asks only to be followed, and which has been following you all along.
+desc: আনুমানিক খ্রিস্টপূর্ব ষষ্ঠ শতক · চীনা, তাও-পন্থা
 
-### Row 1 · Plato
-desc: 428–348 BCE · Greek
-short: The Form of the Good: the silent summit from which all truth flows
+তাও কোনো সত্তা নয়, স্রষ্টা নয়, ব্যক্তি নয় — তা সেই আকারহীন, অফুরান ভিত্তি, যেখান থেকে সবকিছু আপনা-আপনি জাগে আর যেখানে সবকিছু ফিরে যায়। তার একত্ব গোনা যায় এমন একের একত্ব নয়; ‘এক’ আর ‘বহু’র ভেদ জন্মানোর আগের অবিভক্ততা। জগৎ তাও থেকে আসে বানানোর ভেতর দিয়ে নয়, স্বাভাবিক উপচে পড়ায় — চীনারা যাকে বলে জিরান, আপনা-আপনি হয়ে ওঠা। তাও সবকিছুর আগে, আবার সবকিছুর ভেতরে; তাই দূর আর নিকটের প্রশ্ন তার কাছে ওঠেই না।
 
-<strong>What God is:</strong> Two divine structures: the Demiurge, a rational craftsman who orders pre-existing matter by looking to eternal Forms, and the Form of the Good — the impersonal summit of all reality that "surpasses being in dignity and power."<strong>World and causality:</strong> The Demiurge crafts the best possible world given the resistance of matter — not creation from nothing but rational shaping of chaos. Time itself is his creation: "the moving image of eternity."<strong>Knowledge and value:</strong> The Good can be known through decades of philosophical discipline — the long ascent from the cave's shadows to the blinding vision of the Good itself. It is the ultimate source of all truth, beauty, and goodness.<strong>The soul:</strong> Immortal and naturally akin to the Forms; philosophical life is its gradual return home to the realm of the eternal.<strong>The single idea:</strong> God is the rational ground of all order — both the craftsman who shapes the world and the Form toward which all good things aspire.
+সময়ের দিক থেকে তাও সেই স্থির অক্ষ, যাকে ঘিরে সব বদল ঘোরে। বিশ্লেষণ দিয়ে তাকে ধরা যায় না — ধরা যায় নিজেকে খালি করে, নুয়ে, চেষ্টা থামিয়ে। সাধকের সঙ্গে তাওয়ের সম্পর্ক মিলন নয়, অভিন্নতাও নয়; তাল মেলানো — স্রোতের বিরুদ্ধে না গিয়ে স্রোতের সঙ্গে চলা।
 
-### Row 2 · Nagarjuna
-desc: ~150–250 CE · Indian / Buddhist
-short: Emptiness: the dissolution of every God-concept, including this one
+এক কথায়: তাও হলো পথ — নামহীন, অনায়াস, সর্বব্যাপী সেই ভিত্তি, যা কেবল অনুসরণ চায়; আর যে পথ আসলে এতদিন নিজেই আমাদের বয়ে নিয়ে চলছিল।
 
-<strong>What God is:</strong> There is no God. The ultimate reality is Śūnyatā — Emptiness — which means all phenomena, without exception, lack inherent existence. This includes every candidate for ultimate ground.<strong>World and causality:</strong> The world arises through dependent origination: everything arises in dependence on conditions, nothing arises from a self-sufficient first cause. Both creation and emanation are incoherent.<strong>Knowledge:</strong> All language fails at the ultimate level, including the word "emptiness" itself. Only prajñā — non-conceptual wisdom that dissolves the subject-object distinction — reaches what is most real.<strong>Value and soul:</strong> Ethics arises from compassion grounded in interdependence. There is no permanent soul; liberation is the recognition that the seeker was always already empty of the inherent existence it took itself to have.<strong>The single idea:</strong> Nagarjuna does not offer a reconceived God — he dissolves the question by dissolving the questioner.
+### Row 1 · নাগার্জুন
 
-### Row 3 · Plotinus
-desc: 204–270 CE · Greco-Roman / Egyptian
-short: The One: everything overflows from the absolute beyond being
+desc: আনুমানিক ১৫০–২৫০ খ্রিস্টাব্দ · ভারতীয়, বৌদ্ধ মধ্যমক
 
-<strong>What God is:</strong> The One is not a being — it is beyond being, prior to being, the source from which being flows. It is also beyond thought. Absolutely simple, absolutely one, the source of all unity.<strong>World and causality:</strong> The world arises by necessary emanation — the One overflows into the Intellect, which emanates the World Soul, which generates the cosmos. Each level is less real than the one above. Continuous, sustaining, timeless.<strong>Knowledge:</strong> The One cannot be known by the intellect. Only henosis — mystical union — reaches it: the soul's total self-abandonment into identity with the source. All language is scaffolding to be abandoned at the summit.<strong>Value and soul:</strong> The One is identified with the Good. The soul has never fully left the One; the spiritual life is the return inward and upward until all distinction between soul and source disappears.<strong>The single idea:</strong> Everything that exists flows necessarily from a single, nameless, absolute source — and the soul's deepest longing is the recognition that it has always been at home there.
+নাগার্জুন খোদার কোনো নতুন সংজ্ঞা দেন না; তিনি প্রশ্নটাকেই খুলে ফেলেন। চূড়ান্ত বাস্তবতা শূন্যতা — কোনো কিছুরই, ব্যতিক্রমহীনভাবে, নিজস্ব স্বাধীন অস্তিত্ব নেই। তাও, ব্রহ্ম, পরম এক, স্পিনোজার দ্রব্য — চূড়ান্ত ভিত্তির প্রত্যেক দাবিদার এই বিশ্লেষণে ভেঙে পড়ে। একত্বও শূন্য; ‘খোদা এক’ বলাতেই ভুল, কারণ নিজস্ব একত্ব বলে কিছু নেই।
 
-### Row 4 · Shankara
-desc: 788–820 CE · Indian / Advaita Vedanta
-short: Brahman: the only reality, of which the world and soul are appearances
+জগৎ জাগে প্রতীত্যসমুৎপাদে — শর্তের ওপর শর্ত, কোনো আদিকারণ ছাড়া। সৃষ্টি বা উৎসারণ, এই চোখে দুটোই অসংগত। দূর আর নিকটের ভাগও ভেঙে যায়, কারণ শূন্যতা কোনো সত্তা নয় যে কোথাও থাকবে। সময়ও শূন্য, তাই সময়ের বাইরে চিরন্তন কোনো দর্শকের দাঁড়ানোর জায়গাও নেই। চূড়ান্ত স্তরে ভাষা অচল — ‘শূন্যতা’ শব্দটাও; পৌঁছায় কেবল প্রজ্ঞা, যা জ্ঞাতা আর জ্ঞেয়ের ভেদ মুছে দেয়। স্থায়ী আত্মা নেই; মুক্তি মানে বুঝতে পারা যে খোঁজকারী বরাবরই শূন্য ছিল।
 
-<strong>What God is:</strong> Brahman — pure Being, pure Consciousness, pure Bliss — is the only reality. The world is māyā: not non-existent but not ultimately real, a superimposition like a snake imagined in a rope at twilight.<strong>World and causality:</strong> The world is not truly created — it appears within Brahman through cosmic ignorance. Remove the ignorance and only Brahman remains, unchanged. The personal God (Īśvara) is Brahman seen through the lens of māyā.<strong>Knowledge:</strong> Through neti neti — not this, not this — systematically negating every attribute until the mind falls silent. Then the direct recognition: Aham Brahmāsmi, I am Brahman.<strong>Value and soul:</strong> Moral distinctions belong to māyā. The soul (Ātman) is numerically identical to Brahman — Tat tvam asi, That thou art. Liberation is not achievement but recognition of what was always already the case.<strong>The single idea:</strong> There is only one reality. What you call the world is Brahman misread; what you call yourself is Brahman forgotten.
+এক কথায়: নাগার্জুন নতুন খোদা হাজির করেন না — প্রশ্নকারীকে খুলে দিয়ে প্রশ্নটাই মিলিয়ে দেন।
 
-### Row 5 · Maimonides
-desc: 1138–1204 CE · Jewish / Andalusian
-short: Necessary Being: radically transcendent, known only through negation
+### Row 2 · প্লোটিনাস
 
-<strong>What God is:</strong> God is the necessary existent — the being whose non-existence is impossible. Absolutely simple: no parts, no multiple attributes, no complexity of any kind. Existence and essence are identical in God alone.<strong>World and causality:</strong> God creates ex nihilo by free will. God is the cause of esse — being itself — continuously sustaining every existent at every moment. Remove God and everything instantly ceases to be.<strong>Knowledge:</strong> Only through negation. Every positive predicate violates divine simplicity. The accumulated negations purify the mind until it approaches, in silence, what cannot be said.<strong>Value and soul:</strong> God is the source of all goodness, but divine goodness exceeds every moral category. The soul's highest achievement is intellectual perfection — the quiet, earned proximity of a mind that has made itself more like the infinite mind it can never fully reach.<strong>The single idea:</strong> God is the one being who simply is — necessarily, simply, eternally — and who cannot be captured by any positive human language, only approached by the patient removal of every false description.
+desc: ২০৪–২৭০ খ্রিস্টাব্দ · গ্রিক-রোমান, মিসরে জন্ম
 
-### Row 6 · Ibn Arabi
-desc: 1165–1240 CE · Islamic Sufi / Andalusian
-short: Waḥdat al-Wujūd: there is only one Being, and everything is its love
+পরম এক কোনো সত্তা নয় — সত্তার ওপারে, সত্তার আগে, সেই উৎস যেখান থেকে সত্তা বয়ে আসে। চিন্তারও ওপারে, কারণ চিন্তা করলেই এক দুই হয়ে যেত। নিরঙ্কুশ সরল, নিরঙ্কুশ এক — সব একত্বের উৎস, নিজে কোনো একক না হয়েই।
 
-<strong>What God is:</strong> God is Absolute Being. There is strictly only one existence: God's. Everything else is a tajallī — a self-disclosure of the one Being in the mirror of the possible.<strong>World and causality:</strong> The world is God's necessary self-disclosure — the Hidden Treasure that loved to be known. Every creature is a divine Name made manifest. Causality is the overflow of infinite love.<strong>Knowledge:</strong> Through the heart, polished by spiritual practice until it becomes a pure mirror. Hold tanzīh and tashbīh — transcendence and immanence — simultaneously, never collapsing either.<strong>Value and soul:</strong> Ethics flows from recognizing God in all things. The soul's journey is the unveiling of its own divine face — the recognition that it was always already a self-disclosure of the Absolute. The Perfect Human is the fullest mirror of all divine Names.<strong>The single idea:</strong> There is only one Being. The universe is God's love made visible. The soul's deepest identity is already divine.
+জগৎ আসে অনিবার্য উৎসারণে: পরম এক উপচে পড়ে বুদ্ধিতে, বুদ্ধি থেকে বিশ্বাত্মা, বিশ্বাত্মা থেকে সময় আর বস্তুজগৎ; প্রতিটি স্তর ওপরেরটার চেয়ে কম বাস্তব। পরম এক সবচেয়ে দূরে, আবার সবচেয়ে কাছে — বৃত্তের কেন্দ্রবিন্দুর মতো। সে পুরোপুরি সময়ের বাইরে; সময় জন্মায় নিচে, বিশ্বাত্মার অস্থিরতায়। বুদ্ধি দিয়ে তাকে জানা যায় না, জানা যায় কেবল হেনোসিসে — মিলনে, আত্মার পুরো আত্মসমর্পণে। সব দার্শনিক ভাষা ভারার মতো: ওঠার জন্য দরকার, চূড়ায় খুলে ফেলতে হয়।
 
-### Row 7 · Spinoza
-desc: 1632–1677 CE · Jewish-Dutch
-short: Deus sive Natura: God and Nature are identical, necessary, and impersonal
+আত্মা কখনো পরম এক থেকে পুরোপুরি বিচ্ছিন্ন হয়নি; আধ্যাত্মিক জীবন মানে ভেতরের দিকে, ওপরের দিকে ফেরা — যতক্ষণ না আত্মা আর উৎসের ভেদ মুছে যায়। এক কথায়: যা কিছু আছে, সব এক নামহীন উৎস থেকে অনিবার্যভাবে বয়ে আসে, আর আত্মার গভীরতম আকুতি হলো চিনতে পারা যে সে বরাবর সেখানেই ছিল, নিজের ঘরে।
 
-<strong>What God is:</strong> God and Nature are identical — one infinite, eternal, self-causing substance of which everything else is a finite mode. God has no mind, no will, no emotions. Personality is projection.<strong>World and causality:</strong> God is the immanent cause of all things — producing within itself, not outside. Everything follows from God's nature with the necessity of a mathematical theorem. No contingency anywhere.<strong>Knowledge:</strong> God is fully knowable through reason alone. The Ethics is literally the attempt to demonstrate God geometrically. No revelation required — only rigorous thinking.<strong>Value and soul:</strong> Good and evil are human constructions. The highest good is amor intellectualis Dei — the eternal joy of recognizing one's own nature as a mode of God's infinite intellect. No journey, no union — only recognition.<strong>The single idea:</strong> God is the whole. To understand anything adequately is to understand it as it eternally is in God.
+### Row 3 · শংকর
 
-### Row 8 · Kant
-desc: 1724–1804 CE · German / Prussian
-short: The moral postulate: God cannot be known — but morality cannot do without Him
+desc: ৭৮৮–৮২০ খ্রিস্টাব্দ · ভারতীয়, অদ্বৈত বেদান্ত
 
-<strong>What God is:</strong> Not a theoretical object — God cannot be known. God is a postulate of pure practical reason: a concept that must be presupposed if the moral life is to be coherent.<strong>World and causality:</strong> God as creator is a regulative idea — we must think of nature as if designed, but cannot prove it was. Causality cannot be extended beyond possible experience to reach a first cause.<strong>Knowledge:</strong> God cannot be known theoretically. "I have found it necessary to deny knowledge, in order to make room for faith." The intellect reaches a principled boundary, not a mystical horizon.<strong>Value and soul:</strong> God is the guarantor of the moral order — ensuring virtue is ultimately proportionate to happiness. But goodness is prior to God: the moral law is not derived from divine commands. Soul immortality is a moral postulate — we need infinite time to approach perfect virtue.<strong>The single idea:</strong> God is the great limit — the concept at the edge of human reason where theoretical knowledge ends and moral faith begins.
+ব্রহ্ম — শুদ্ধ সৎ, শুদ্ধ চিৎ, শুদ্ধ আনন্দ — একমাত্র বাস্তবতা। ব্রহ্ম অ-দ্বৈত: সব বহুত্ব তার ওপর ভাসে, কোনো চূড়ান্ত বাস্তবতা ছাড়াই। জগৎ মায়া — অস্তিত্বহীন নয়, আবার চূড়ান্ত অর্থে সত্যও নয়; গোধূলিতে দড়িকে সাপ ভাবার মতো এক আরোপ। জগৎ সত্যিকার অর্থে সৃষ্টি হয় না, অবিদ্যার ভেতর দিয়ে ব্রহ্মের ওপর ফুটে ওঠে মাত্র; অদ্বৈতের নিজের পরিভাষায় যাকে ঈশ্বর বলা হয় — স্রষ্টা-রূপী ব্রহ্ম — তিনিও মায়ার কাচের ভেতর দিয়ে দেখা ব্রহ্মই।
 
-### Row 9 · Whitehead
-desc: 1861–1947 CE · British / Process Philosophy
-short: The dipolar God: fellow-sufferer, lurer toward beauty, keeper of all that is
+ব্রহ্ম জগতের ঊর্ধ্বে, আবার জগৎই — কারণ ব্রহ্ম ছাড়া আর কিছু নেই। ব্রহ্ম কালহীন; সময়ও মায়ার ভেতরের জিনিস। জানার পথ নেতি নেতি — এ নয়, এ নয় — প্রতিটি গুণ সরাতে সরাতে মন নীরব হয়, তারপর আসে সরাসরি চেনা: অহং ব্রহ্মাস্মি, আমিই ব্রহ্ম। আত্মা ব্রহ্মের সঙ্গে সংখ্যার হিসাবেও এক — তত্ত্বমসি, তুমিই সেই। মুক্তি কোনো অর্জন নয়; যা বরাবরই সত্য ছিল, তাকে চেনা।
 
-<strong>What God is:</strong> A unique dipolar actual entity: primordial nature (eternal vision of all possibilities) plus consequent nature (ongoing temporal reception of all the world's experiences). Neither supreme being above all nor Being itself — a genuine participant in the universe's becoming.<strong>World and causality:</strong> God and world are mutually creative — it is as true that the world creates God as that God creates the world. God lures through final causation, never coerces. God has no coercive power: this is Whitehead's theodicy.<strong>Knowledge:</strong> Known through reason and aesthetic experience — beauty is a direct encounter with what God is luring the world toward. Positive description is essential; all traditional attributes must be reconceived.<strong>Value and soul:</strong> God is the ground of beauty and value. The soul gives to God as well as receives: every genuine experience is permanently preserved in God's consequent nature. Nothing genuinely lived is ever lost.<strong>The single idea:</strong> God is the great companion — the being who offers each creature its best possible self, receives everything back, and grows richer as the world grows richer.
+এক কথায়: বাস্তবতা একটাই। যাকে আমরা জগৎ বলি, তা ব্রহ্মকে ভুল পড়া; যাকে ‘আমি’ বলি, তা ব্রহ্মকে ভুলে যাওয়া।
+
+### Row 4 · ইবনে আরাবি
+
+desc: ১১৬৫–১২৪০ খ্রিস্টাব্দ · আন্দালুসীয়, সুফি
+
+খোদা নিরঙ্কুশ অস্তিত্ব — আল-উজুদ আল-মুতলাক। কঠোর অর্থে অস্তিত্ব একটাই: খোদার। বাকি সব তাজাল্লি — সম্ভাব্যতার আয়নায় সেই এক অস্তিত্বের আত্মপ্রকাশ। এ-ই ওয়াহদাতুল উজুদ, অস্তিত্বের একত্ব। খোদার যাত, তাঁর মূল সত্তা, সব নাম আর সব ভেদের ওপারে থাকে; প্রকাশ পায় কেবল নামগুলো।
+
+জগৎ খোদার প্রেমের উপচে পড়া — ‘আমি ছিলাম গুপ্ত ধনভান্ডার, পরিচিত হতে ভালোবাসলাম।’ সময়ের প্রশ্নে তাঁর উত্তরটাই এই ছকে তাঁর নিজস্ব: প্রতিটি জিনিস সময়ে প্রকাশের আগে খোদার জ্ঞানে চিরকাল ছিল — আয়ান সাবিতা, স্থির সারসত্তা হয়ে — আর সময় সেই পূর্ণতার ধীরে খুলে যাওয়া। তানযিহ আর তাশবিহ, দূর আর নিকট, একসঙ্গে ধরতে হয়, একটাকে ছেড়ে অন্যটা নয়। খোদাকে জানার অঙ্গ কলব — সাধনায় মেজে আয়না করে তোলা অন্তর।
+
+আত্মার যাত্রা মানে নিজের ঐশী মুখের ওপর থেকে পর্দা সরানো; ইনসানে কামিল খোদার সব নামের পূর্ণতম আয়না। এক কথায়: অস্তিত্ব একটাই; মহাবিশ্ব খোদার প্রেমের দৃশ্যমান রূপ; আত্মার গভীরতম পরিচয় আগে থেকেই ঐশী।
+
+### Row 5 · স্পিনোজা
+
+desc: ১৬৩২–১৬৭৭ খ্রিস্টাব্দ · ওলন্দাজ ইহুদি
+
+খোদা আর প্রকৃতি অভিন্ন — *দেউস সিভে নাতুরা*, খোদা অর্থাৎ প্রকৃতি। দ্রব্য একটাই: অসীম, চিরন্তন, নিজেই নিজের কারণ; বাকি সব তার সসীম প্রকার, সাগরের ঢেউয়ের মতো। খোদার মন নেই, ইচ্ছা নেই, আবেগ নেই — ব্যক্তিত্ব মানুষের আরোপ।
+
+খোদা সব কিছুর অন্তর্লীন কারণ — বাইরে থেকে নয়, নিজের ভেতরেই উৎপন্ন করেন; সবকিছু তাঁর স্বভাব থেকে বেরিয়ে আসে উপপাদ্যের অনিবার্যতায়। ঊর্ধ্বতা বলে কিছু নেই — খোদা মানে জগতের অসীম সমগ্রতা। খোদা চিরন্তন, সময়ের বাইরে; সর্বোচ্চ জ্ঞান সব কিছু দেখে চিরন্তনের দৃষ্টিতে। আর এই ছকে স্পিনোজার নিজস্ব দাবি: খোদাকে পুরোপুরি জানা যায়, শুধু যুক্তি দিয়েই। *এথিকা* আক্ষরিক অর্থেই জ্যামিতির পদ্ধতিতে খোদাকে প্রমাণ করার চেষ্টা — কোনো প্রত্যাদেশ, কোনো দিব্যদর্শন লাগে না।
+
+মানুষের মন খোদার অসীম বুদ্ধির এক সসীম প্রকার; সর্বোচ্চ কল্যাণ খোদার প্রতি বৌদ্ধিক প্রেম — নিজেকে খোদার এক প্রকার বলে চেনার চিরন্তন আনন্দ। যাত্রা নেই, মিলন নেই, শুধু চেনা। এক কথায়: খোদাই সমগ্র; কোনো কিছুকে ঠিকঠাক বোঝা মানে খোদার ভেতরে সে চিরকাল যেমন, তেমন করে বোঝা।
+
+### Row 6 · হোয়াইটহেড
+
+desc: ১৮৬১–১৯৪৭ খ্রিস্টাব্দ · ব্রিটিশ, প্রক্রিয়া-দর্শন
+
+খোদা এক অনন্য দ্বিমেরু প্রকৃত সত্তা। আদি স্বভাবে তিনি সব সম্ভাবনার চিরন্তন দৃষ্টি; অনুগামী স্বভাবে জগতের প্রতিটি অভিজ্ঞতার চলমান গ্রহীতা। তিনি সবকিছুর ঊর্ধ্বে কোনো পরম সত্তা নন, আবার নিরাকার পরম অস্তিত্বও নন — মহাবিশ্বের হয়ে ওঠায় এক সত্যিকারের অংশগ্রহণকারী। সত্যিকার সম্পর্কের দাম দিতে গিয়ে তিনি সরলতা ছেড়ে জটিলতা নেন।
+
+খোদা আর জগৎ পরস্পরের স্রষ্টা। খোদা টানেন, কখনো জোর খাটান না — জোর খাটানোর ক্ষমতাই তাঁর নেই। আদি স্বভাবে তিনি জগতের ঊর্ধ্বে, অনুগামী স্বভাবে প্রতিটি মুহূর্তের ভেতরে; আদি স্বভাবে চিরন্তন, অনুগামী স্বভাবে সত্যিকার অর্থে সময়ের ভেতর বেড়ে ওঠেন। তাঁকে জানা যায় যুক্তি আর সৌন্দর্য দিয়ে; ইতিবাচক বর্ণনা জরুরি, তবে পুরোনো সব গুণ নতুন করে ভাবতে হয়।
+
+এই ছকে হোয়াইটহেডের নিজস্ব কথা মানুষকে নিয়ে: আত্মা খোদার কাছ থেকে শুধু পায় না, খোদাকে দেয়ও। প্রতিটি সত্যিকার অভিজ্ঞতা খোদার অনুগামী স্বভাবে চিরকালের জন্য রক্ষিত থাকে; যা সত্যিই বাঁচা হয়েছে, তার কিছুই হারায় না। এক কথায়: খোদা মহান সঙ্গী — প্রতিটি সৃষ্টিকে তার সম্ভাব্য সেরা রূপের দিকে ডাকেন, সব ফিরিয়ে নেন, আর জগৎ যত সমৃদ্ধ হয়, তিনিও তত সমৃদ্ধ হন।
 
 ## Cells
 
-### 00 · The Way — unnamed, before all things
+### 00 · নামহীন পথ, সবকিছুর আগে
 
-The Tao is not a being. It is not even Being. It is the unnameable ground that makes both being and non-being possible. The *Tao Te Ching* performs its own impossibility by opening with the declaration that it cannot be opened: *"The Tao that can be named is not the eternal Tao."* This is not poetic humility — it is a precise philosophical claim. Every name carves a thing out of the undifferentiated whole; the Tao *is* the undifferentiated whole. It precedes heaven and earth. It precedes the capacity to ask questions about it. To call it God already distorts it; to call it Nature already limits it. The Tao is what is left when every category has been removed.
+তাও কোনো সত্তা নয়; ‘অস্তিত্ব’ বলতে আমরা যা বুঝি, তাও নয়। এ সেই নামহীন ভিত্তি, যার জন্য থাকা আর না-থাকা দুটোই সম্ভব হয়। *তাও তে চিং* শুরুই হয় নিজের অসম্ভবতা ঘোষণা করে: ‘যে তাওয়ের কথা বলা যায়, সে চিরন্তন তাও নয়; যে নাম দেওয়া যায়, সে চিরন্তন নাম নয়।’ এটা কবির বিনয় নয়, একটা সূক্ষ্ম দার্শনিক দাবি। প্রতিটি নাম অবিভক্ত সমগ্র থেকে একটা টুকরো কেটে আনে; আর তাও হলো সেই অবিভক্ত সমগ্রটাই।
 
-### 10 · Demiurge and the Form of the Good
+তাও আকাশ আর পৃথিবীর আগে। তাকে নিয়ে প্রশ্ন করার সামর্থ্যেরও আগে। তাকে খোদা বললে বিকৃত হয়, প্রকৃতি বললে সীমায় বাঁধা পড়ে। সব শ্রেণি, সব নাম সরিয়ে নিলে যা পড়ে থাকে — তাও তা-ই। অস্তিত্বের প্রশ্নে এই ছকের সবচেয়ে প্রাচীন উত্তর এটা, আর সম্ভবত সবচেয়ে কম কথার।
 
-Plato gives us two divine structures that have never quite been reconciled. The *Demiurge* of the *Timaeus* is a rational craftsman-god who gazes at eternal Forms as models and imposes rational order on pre-existing chaotic matter — not a creator ex nihilo, but an architect of the best possible world. Above the Demiurge stands the *Form of the Good* from the *Republic*, which *"surpasses being in dignity and power."* The Good is not a person or an agent; it is the highest Form, the source from which all truth, being, and intelligibility flow — the sun of the intelligible world. Whether these two are the same entity at different levels, or genuinely distinct, is a question that animated Neoplatonism for centuries and which Plotinus answered by collapsing the Demiurge into an expression of the One.
+### 01 · ‘এক’-এর আগে অবিভক্ত
 
-### 20 · No God — emptiness is the only ultimate
+তাও এক, কিন্তু গোনা জিনিস যেভাবে এক, সেভাবে নয়। নীরবতা যেমন অবিভক্ত, তাও তেমন — এককের ভিড়ে আরেকটা একক নয়, বরং সেই খোলা জায়গা যেখানে এককগুলো দেখা দেয়। *তাও তে চিং* বলে: ‘তাও জন্ম দেয় একের, এক দুইয়ের, দুই তিনের, তিন জগতের সব কিছুর।’ লক্ষ করার মতো ব্যাপার — এখানে ‘এক’ও আসে তাওয়ের পরে। সব বহুত্ব তাওয়ের ভাটিতে, তার ভেতরে নয়।
 
-Nagarjuna does not offer a reconceived God. He dissolves every God-concept by showing that any inherently existing ground, however refined, cannot survive rigorous analysis. His Madhyamaka philosophy centers on *Śūnyatā* — Emptiness — which means that all phenomena, without exception, lack inherent, independent, self-sufficient existence. This includes the Tao, Brahman, the One, and every other candidate for ultimate ground that this table contains. Emptiness is not a void or a nihilistic nothing; it is the precise absence of the fixed essences we project onto things. It is the most corrosive philosophical acid ever applied to the concept of God — and it does not leave even itself untouched.
+তাই তাওয়ের একত্ব অংশ ছেঁটে পাওয়া সরলতা নয়; তা এমন কিছুর একত্ব, যার কোনোদিন অংশই ছিল না। এটাই সবচেয়ে গভীর ধরনের একত্ব: অনেকের মধ্যে একটা নয়, বরং সেই এক, যা ‘এক’ আর ‘অনেক’-এর ভাগাভাগিরই আগে। প্লোটিনাস আর শংকর যুক্তির দীর্ঘ পথ পেরিয়ে যে জায়গায় পৌঁছান, লাওৎসে সেখানে দাঁড়িয়ে থাকেন একটা ছবি নিয়ে — খালি পাত্র, যার খালিপনাই তার কাজ।
 
-### 30 · The One — beyond being, beyond thought
+### 02 · সবকিছুর মা — সৃষ্টি নেই
 
-Plotinus's One is the most radical transcendence in Western philosophy. It is not a being — it is beyond being, prior to being, the source from which being flows as from an inexhaustible spring. It is also beyond intellect and thought, because thought requires a duality between thinker and thought, and the One admits no internal distinctions whatsoever. Even the statement *"The One is"* is already too much, already an imposition of the predicate "is" on something that precedes the act of predication. Plotinus must resort to negative formulations and paradoxes. The One simply overflows — absolutely, without qualification — and everything else flows from it by necessity, like light from the sun, without diminishing it by so much as a shadow.
+জগৎ তাও থেকে আসে সৃষ্টির ভেতর দিয়ে নয়, স্বাভাবিক উপচে পড়ায় — আগুন থেকে যেভাবে উষ্ণতা আসে, উষ্ণ করার কোনো সিদ্ধান্ত না নিয়েই। তাওকে বলা হয় ‘মা’: সন্তান গড়েছে বলে নয়, বরং সব কিছু তার ভেতরে বাঁচে, তার থেকে টেনে নেয়, আর তাতে সে একটুও কমে না।
 
-### 40 · Brahman — pure Being-Consciousness-Bliss alone
+এখানে সৃষ্টির কোনো মুহূর্ত নেই, এমন কোনো ঐশী ভাবনাচিন্তা নেই যার আগে কিছুই ছিল না। জগৎ তাওয়ের স্বাভাবিক প্রকাশ, ফুলের সুবাসের মতো অনিবার্য — যে ফুল সুগন্ধি হওয়ার কোনো ইচ্ছাই রাখেনি। এই জায়গায় লাওৎসে ইব্রাহিমি ধর্মগুলো থেকে তো বটেই, প্লোটিনাস থেকেও আলাদা: প্লোটিনাসের উৎসারণে অন্তত এমন এক পূর্ণতা কল্পনা করা যায়, যা চাইলে নিজের ভেতরেই থেকে যেতে পারত। তাওয়ের বেলায় ‘ভেতরে থেকে যাওয়া’ আর ‘বাইরে আসা’র মধ্যে কোনো ফারাকই নেই।
 
-For Shankara, the ultimate reality is *Brahman* — described in the Upanishads as *Sat-Chit-Ānanda*: pure Being, pure Consciousness, pure Bliss. These are not three attributes that Brahman has but three angles from which a finite mind approaches what is in fact one, undivided, self-luminous reality. Brahman is not the greatest being among beings; it is the only being. What we take to be a world of distinct objects, separate selves, and causal sequences is *māyā* — a superimposition on Brahman as vivid and as mistaken as the snake imagined in a coil of rope at twilight. Remove the misperception and there is only Brahman: infinite, undivided, self-luminous. This is not merely the most extreme claim in this table — it is arguably the most extreme claim in the history of human thought about the nature of reality.
+### 03 · সবখানে বয়ে চলে
 
-### 50 · Necessary Being — existence and essence are one
+‘মহান তাও সবখানে বয়ে চলে — বাঁয়ে, ডানে।’ উঁচু পাহাড়ে, নিচু উপত্যকায়, চাকার নাভির সেই ফাঁকা জায়গায়, যা খালি বলেই চাকাটা ঘোরে — সবখানেই তাও। তাওকে ঊর্ধ্বের বললে বোঝায়, সে সব কিছুর শর্ত; ভেতরের বললে বোঝায়, তার বাইরে কিছুই নেই। এ দুটো আলাদা সত্য নয়, একই সত্য।
 
-For Maimonides, God is the necessary existent — the being whose non-existence is logically impossible. Everything else is contingent: it exists but could have not existed; its existence is added to its essence from outside. In God alone are existence and essence perfectly identical: there is no gap between what God is and that God is. This Aristotelian argument is pressed into the service of radical divine simplicity: if God's existence were distinct from God's essence, God would be composite, and something more basic than God would exist — which contradicts necessary existence. God is not the greatest being; God is the being for whom the very framework of contingency does not apply. The logical architecture here is cleaner than anything in Plato and more rigorous than Plotinus, though it reaches strikingly similar conclusions.
+স্পিনোজা দূরত্ব পুরো মুছে দিয়ে খোদাকে জগতে মেলান; প্লোটিনাস দূরত্ব আর নৈকট্য দুটোই রাখেন, কিন্তু তাদের টান সামলাতে তাঁর একটা গোটা স্তরবিন্যাস লাগে। তাও কোনো টানাপোড়েন ছাড়াই দুটোকে ধরে, কারণ যে অক্ষের ওপর ‘দূর’ আর ‘নিকট’-এর ভাগ টানা হয়, তাও সেই অক্ষেরও আগে। পানির মতো: সে সবচেয়ে নিচু জায়গায় নামে, আর তাই সব কিছুর ভেতর দিয়ে বয়ে যায়।
 
-### 60 · Absolute Being — the only existence, disclosing itself
+### 04 · স্থির অক্ষ, সময়ের আগে
 
-For Ibn Arabi, God is *al-Wujūd al-Muṭlaq* — Absolute Being. There is, in the deepest sense, only one existence: God's existence. Everything that appears to exist separately — trees, people, stars, thoughts — is a *tajallī* of God, a momentary self-showing of the one Being in the mirror of the possible. This is not pantheism in the vulgar sense (the world is not God) nor panentheism in the usual sense (God contains the world) — it is *waḥdat al-wujūd*, the unity of being: there is one Being, and its self-disclosures constitute the world. The divine Essence (*Dhāt*) remains utterly beyond all names and distinctions; what manifests is always the Names, never the Essence itself.
+সময় জগতের অগণন জিনিসের — বদলের, প্রবাহের, জন্ম আর ক্ষয়ের। তাও সেই স্থির কাঠামো, যাকে ঘিরে এই প্রবাহ ঘোরে: ‘অবিভক্ত অথচ পূর্ণ কিছু একটা ছিল, আকাশ আর পৃথিবীরও আগে।’ তাও সময়ের ভেতর দিয়ে টিকে থাকে না; সময়কে নিচ থেকে ধরে রাখে।
 
-### 70 · Deus sive Natura — God IS the whole of what is
+এটা স্পিনোজার চিরন্তনতা থেকে সূক্ষ্মভাবে আলাদা — সেই চিরন্তনতা আসে খোদার স্বভাবের যৌক্তিক অনিবার্যতা থেকে। শংকরের কালহীন ব্রহ্ম থেকেও আলাদা, কারণ ব্রহ্মকে ইতিবাচকভাবে শুদ্ধ চৈতন্য বলা হয়। তাও এমন কোনো দাবি করে না। সময়ের সঙ্গে তার সম্পর্ক তার স্বভাবসুলভ নীরবতা: আগে আর পরের মাত্রায় সে অংশই নেয় না। ঋতু বদলায়, নদী বয়ে যায়, সাধক বুড়ো হন — আর তাও থাকে কেন্দ্রের সেই ফাঁকা বিন্দুতে, যেখানে কিছুই ঘোরে না, অথচ সব ঘোরে তাকে ঘিরে।
 
-Spinoza's God is the most radical identification in Western philosophy: God and Nature are identical. There is one and only one substance — infinite, eternal, self-causing — which Spinoza calls both God and Nature, *Deus sive Natura*. Everything else — every mind, every body, every thought, every stone — is a *mode* of this one substance: a temporary, finite expression of its infinite nature, like a wave in the ocean. God is not the creator of the world; God *is* the world, seen under infinite aspects. This is not the immanence of a God who is also transcendent (Ibn Arabi) — transcendence is categorically denied. There is no beyond. God is the all, and the all is God, and the difference between these two sentences is merely grammatical.
+### 05 · জ্ঞাতা খালি হলে জানা
 
-### 80 · A postulate of practical reason — not a theoretical object
+বিশ্লেষণ বা যুক্তি দিয়ে তাওয়ের নাগাল পাওয়া যায় না। আঁকড়ে ধরতে যাওয়াটাই দূরত্ব তৈরি করে। *তাও তে চিং*-এর শিক্ষাপদ্ধতি তাই খালি হওয়ার: নিজেকে শূন্য করো, পানির মতো নরম আর নমনীয় হও, জানার চেষ্টা থামাও। তাও লুকিয়ে থাকে না — চেষ্টা যেখানে থামে, সেখানেই সে ঢুকে পড়ে।
 
-Kant's God is one of the most consequential reconceptions in modern philosophy. After demolishing all three traditional proofs for God's existence — the ontological, the cosmological, and the teleological — in the *Critique of Pure Reason*, Kant does not simply discard God. God survives, but in a completely different register: not as a theoretically knowable object but as a *postulate of pure practical reason* — a concept that must be presupposed if the moral life is to be coherent. God is not inferred from the world; God is required by morality. This move permanently changed the landscape of philosophy of religion. Virtually every subsequent thinker in this table — whether they know it or not — is responding to the question Kant forced: if God cannot be theoretically demonstrated, on what basis do we speak of God at all?
+যেকোনো ইতিবাচক বর্ণনা তাকে মিথ্যা করে: ‘মহান’ বললে সে সংকীর্ণ হয়, ‘এক’ বললে সে বহুর বিপরীতে দাঁড়ায়। তাই পথটা গুণ জমানো নয় — স্পিনোজার মতো সংজ্ঞা আর উপপাদ্য সাজানো নয়; আবার গুণ একটা একটা করে বাদ দেওয়াও নয় — শংকরের নেতি নেতির মতো। পথটা হলো গুণ বানানোর তাগিদটাই ছেড়ে দেওয়া। এখানে নীরবতা হার নয়, পৌঁছানো।
 
-### 90 · Dipolar actual entity — neither supreme being nor Being itself
+### 06 · তাল মেলানো, ফিরে যাওয়া
 
-Whitehead's God is a unique *actual entity* — the same fundamental unit of reality that constitutes electrons, moments of experience, and every event in the universe. But God is the primordial actual entity: unlike all others, God has no temporal beginning or end. And God's nature is irreducibly *dipolar*. The *primordial nature* is God's eternal, abstract vision of all pure possibilities — the entire space of what could be, held in a single atemporal act of conceptual experience. The *consequent nature* is God's ongoing, living reception of every actual experience in the universe as the world unfolds. God is neither a supreme being above all beings (the God of classical theism) nor the formless Absolute (Shankara's Brahman or Plotinus's One) — but a unique and irreplaceable participant in the ongoing creative process of the universe.
+সাধক তাওয়ের সঙ্গে মিশে যেতে চান না, তার সঙ্গে নিজেকে অভিন্নও ভাবতে চান না — দুটোই তো চেষ্টা, আর তাওয়ের চলন ঠিক চেষ্টাকেই গলিয়ে দেয়। সম্পর্কটা তাল মেলানোর: তাওয়ের সঙ্গে এত স্বাভাবিকভাবে চলা যে বাধা আর থাকে না — যে নৌকা স্রোতের সঙ্গে লড়াই থামিয়েছে, সে যেমন স্রোতে মিলিয়ে যায়। সাধক পানির মতো: প্রতিটি বাধার কাছে নুয়ে পড়ে, আর শেষে পাথরও ক্ষইয়ে দেয়।
 
-### 01 · Wu wei — acts without deciding to act
+এখানেই তাওয়ের পথ আলাদা প্লোটিনাসের হেনোসিস থেকে, যা মিলনের এক নাটকীয় ঘটনা; শংকরের চেনা থেকে, যা এক জ্ঞানগত আবিষ্কার; ইবনে আরাবির আয়না থেকে, যা আত্মপ্রকাশের এক অধিবিদ্যা। তাল মেলানোর কোনো চূড়া নেই, পৌঁছানোর কোনো ক্ষণ নেই। ফেরাটা কখনো অন্য কোথাও ছিল না।
 
-The Tao has no will, no emotions, no preferences. It does not love the world into existence or plan its unfolding. It acts through *wu wei* — effortless non-action — which is not inertia but the total coincidence of action with nature. A river does not decide to carve a valley; carving the valley *is* what flowing water is. The Tao is like that: its action and its being are the same event, with no deliberating subject behind either. This makes the Tao unique in the table: every other tradition grants God some mode of will or responsiveness; the Tao dissolves the very question.
+### 10 · খোদা নেই, আছে শূন্যতা
 
-### 11 · Demiurge wills; the Good simply radiates
+নাগার্জুন খোদার কোনো নতুন ধারণা হাজির করেন না। তিনি দেখান, চূড়ান্ত ভিত্তি হিসেবে যা-ই দাঁড় করানো হোক, যত সূক্ষ্মই হোক, কঠোর বিশ্লেষণে তা টেকে না। তাঁর মধ্যমক দর্শনের কেন্দ্রে শূন্যতা: কোনো কিছুরই — ব্যতিক্রমহীনভাবে — নিজস্ব, স্বাধীন, স্বয়ংসম্পূর্ণ অস্তিত্ব নেই। তাও, ব্রহ্ম, পরম এক, স্পিনোজার দ্রব্য — এই ছকের প্রতিটি চূড়ান্ত ভিত্তির দাবিদার এর আওতায় পড়ে।
 
-The Demiurge is explicitly personal: he looks at the Forms, calculates, and desires the world to be as good as possible. *"He was good, and in one who is good no envy of anything else ever arises"* — his goodness is his motivation. The Form of the Good, by contrast, is entirely impersonal; it does not act or will but simply is, and everything derives from it as a consequence of its being what it is. This unresolved tension between a personal craftsman and an impersonal summit is Plato's great legacy to later theology: Christianity inherits the Demiurge's personality; Neoplatonism inherits the Good's impersonality; and virtually every major tradition in this table negotiates some version of this same tension between a God who responds and a God who simply overflows.
+শূন্যতা কোনো ফাঁকা গহ্বর নয়, শূন্যবাদীর ‘কিছু-না’ও নয়। এ হলো আমরা জিনিসের ওপর যে স্থির সারসত্তা আরোপ করি, ঠিক তারই অনুপস্থিতি। খোদার ধারণার ওপর এর চেয়ে ক্ষয়কারী দার্শনিক এসিড আর কখনো ঢালা হয়নি — আর এ এসিড নিজেকেও রেহাই দেয় না। তাই এই সারিতে অস্তিত্বের ঘরে কোনো খোদা নেই; আছে একটা শূন্য ঘর, যাকে খুব যত্ন করে খালি রাখা হয়েছে।
 
-### 21 · No will, no person — the question itself is the error
+### 11 · একত্বও শূন্য
 
-To ask whether God is personal or impersonal already presupposes a God-shaped entity about which the question can be asked. For Nagarjuna, this presupposition is the error. Any entity — including a putative God — is empty of inherent existence and therefore cannot serve as the ultimate ground of reality. The great traditions in this table that strip away God's personality to reach a purer impersonal ground (Plotinus, Shankara, Spinoza) are, for Nagarjuna, still operating within the same illusion — they have removed a feature from the concept without questioning the concept's right to exist. Nagarjuna's silence about God is not mystical silence but the silence of a question that has been shown to be incoherent.
+নাগার্জুনের *মূলমধ্যমককারিকা* একে একে প্রতিটি মৌলিক শ্রেণি খুলে ফেলে: কার্যকারণ, গতি, সময়, অভিন্নতা, আত্মা, সত্তা, অসত্তা। পরীক্ষার মুখে প্রতিটিই অন্য ধারণার ওপর শূন্য নির্ভরতায় গলে যায়, যার কোনোটারই নিজের পায়ে দাঁড়ানোর জায়গা নেই। ‘এক’ও এর বাইরে নয়। এক বলতে আমরা বুঝি যা বহু নয় — অর্থাৎ ‘এক’ নিজের অর্থ ধার করে ‘বহু’ থেকে, আর ‘বহু’ ধার করে ‘এক’ থেকে।
 
-### 31 · Impersonal — thinking would split the One in two
+দুই সত্যের তত্ত্ব — সংবৃতি সত্য আর পরমার্থ সত্য — দৈনন্দিন ভাষাকে কাজের জন্য রেখে দেয়, কিন্তু জোর দিয়ে বলে, পরমার্থে কোনো কিছুরই, একত্বেরও, সেই স্বভাব নেই যা আমরা আরোপ করি। ‘খোদা এক’ — এ কথা বলাতেই ব্যর্থতা; খোদা বহু বলে নয়, বরং নিজস্ব একত্বের ধারণার কোনো চূড়ান্ত লক্ষ্যবস্তুই নেই বলে। এই ছকের বেশির ভাগ দার্শনিক একত্বকে খোদার সবচেয়ে নিশ্চিত গুণ বানান; নাগার্জুন ঠিক সেই জায়গাতেই সবচেয়ে গভীরে কোপ দেন।
 
-The One does not think, will, plan, or love. Thinking requires a subject thinking about an object — a duality the One cannot sustain without ceasing to be one. Even self-knowledge is impossible: for the One to know itself, there would need to be a knower and a known, which would be two things, not one. Personality, intentionality, and love all require this same internal doubling. What looks like a deficiency is, for Plotinus, a super-abundance: the One is not impersonal because it lacks what persons have but because it surpasses the very framework in which personality makes sense. The Divine Intellect (*Nous*) — the second hypostasis, one level below — is where thought, the Platonic Forms, and something like cosmic intelligence reside.
+### 12 · প্রতীত্যসমুৎপাদ — ভিত্তি নেই
 
-### 41 · Impersonal at the summit — personal God is provisional
+জগৎ জাগে প্রতীত্যসমুৎপাদে — শর্তনির্ভর উদ্ভবে। প্রতিটি জিনিস ওঠে অন্য শর্তের ওপর ভর করে; কিছুই কোনো স্বয়ংসম্পূর্ণ আদিকারণ থেকে আসে না। শূন্য থেকে সৃষ্টি করেন এমন খোদাকে হতে হতো ঠিক সেই স্বয়ংসম্পূর্ণ, কারণহীন কারণ, যার অস্তিত্ব নাগার্জুন অসংগত বলে দেখান। স্পিনোজার ‘নিজেই নিজের কারণ’ দ্রব্যও এই পরীক্ষায় টেকে না; প্লোটিনাসের উপচে পড়া পরম একও না।
 
-Shankara distinguishes *nirguṇa Brahman* (Brahman without qualities, the ultimate truth) from *saguṇa Brahman* — Brahman with qualities, the personal God *Īśvara*, who creates, sustains, and dissolves the world. *Īśvara* is real; worship of the personal God is effective and good. But it belongs to the relative level of truth. The personal God is Brahman seen through the lens of *māyā* — a face turned toward the world, not the groundless ground beneath. At the summit — the absolute standpoint of *nirguṇa Brahman* — even the concept of a God who wills, loves, or creates dissolves, because these imply limitation and Brahman is infinite. This two-tier structure is Shankara's great synthesis: it honors devotion without making devotion the final word.
+জগৎ যেমন ওঠে, তেমনই ওঠে — পরস্পরনির্ভর, ভিত্তিহীন। এটা আশাবাদী নয় (খোদা বানিয়েছেন বলে জগৎ ভালো), হতাশাবাদীও নয় (জগৎ পতিত)। এটা শুধু শর্তাধীন উদ্ভবের নগ্ন সত্য — সব অধিবিদ্যাগত সান্ত্বনা খুলে নেওয়ার পর যা থাকে। প্রশ্নটা ‘কে বানাল’ থেকে সরে যায় ‘কীসের ওপর ভর করে উঠল’-তে, আর সে প্রশ্নের উত্তর কখনো একটা চূড়ান্ত নামে গিয়ে থামে না।
 
-### 51 · No personality without error — anthropomorphism is theology's original sin
+### 13 · দূরও না, নিকটও না
 
-The first third of the *Guide for the Perplexed* is a systematic demolition of anthropomorphism. Every Biblical passage that attributes hands, eyes, anger, joy, movement, or speech to God is shown to be a metaphor or accommodation to human weakness. To attribute literal personality to God is not piety — it is philosophical error that produces an idol in the mind worse than any idol of stone. God does not love or grieve or rejoice as a person does. Divine will, if it can be spoken of at all, is entirely unlike human will: it is not a desire for something not yet had, not a preference among alternatives, not a change from one state to another. The personal language of Scripture is a ladder for the multitude; the philosopher must learn to climb and then kick it away.
+ঊর্ধ্বতা আর অন্তর্লীনতা — দুটোই এমন এক খোদার ধারণা ধরে নেয়, যিনি জগৎ থেকে যথেষ্ট আলাদা, যাতে হয় তার ওপারে থাকতে পারেন, নয় ভেতরে। শূন্যতার এ দুটোর কোনোটার সঙ্গেই সম্পর্ক নেই, কারণ শূন্যতা কোনো সত্তাই নয়। সে অন্য কোথাও নেই, তাই দূরের হতে পারে না; জিনিসের ভেতরে লুকিয়েও নেই, তাই চলতি অর্থে ভেতরেরও নয় — সে সব কিছুর স্বভাব।
 
-### 61 · Personal through Names — impersonal in Essence
+একটা ফুল নিজস্ব অস্তিত্বে শূন্য; সেই শূন্যতা ফুলের পেছনে বা ওপরে কোথাও নেই — খুঁটিয়ে দেখলে ফুলটা যা, শূন্যতা ঠিক তা-ই। দূর আর নিকটের অক্ষটা এই ছকে এর চেয়ে সম্পূর্ণভাবে আর কোথাও ভাঙেনি। স্পিনোজার নিখাদ অন্তর্লীনতাও এর চেয়ে কম মৌলিক, কারণ সেখানে অন্তত একটা দ্রব্য আছে, যার ভেতরে সব কিছু থাকে। নাগার্জুনের কাছে ‘ভেতরে’ থাকার মতো কোনো পাত্রই নেই।
 
-Ibn Arabi preserves both the personal and the impersonal with extraordinary precision. Through the divine Names (*al-Asmā' al-Ḥusnā*), God is deeply personal: responsive, compassionate, majestic, intimate. Each creature is addressed by a particular Name; each encounter with God is a specific disclosure. But the divine Essence (*Dhāt*) beneath the Names is entirely beyond personality — a pure abyss of being with no face, no attribute, no relation. God is simultaneously the most personal being imaginable (your encounter with beauty is God's Name *al-Jamīl* addressing you directly) and the most impersonal depth conceivable (the Essence has no address, no relation, no name that reaches it). The mystic who understands this holds both simultaneously, without collapsing either.
+### 14 · সময় প্রথাগত, চিরন্তন ঠাঁই নেই
 
-### 71 · No mind, no will — personality is projection
+সময়ও, কার্যকারণের মতোই, নিজস্ব অস্তিত্বে শূন্য। নাগার্জুন দেখান, অতীত, বর্তমান আর ভবিষ্যৎকে পরস্পর থেকে আলাদা করে, কিংবা তাদের ভেতরের ঘটনা থেকে আলাদা করে সংজ্ঞায়িত করা যায় না — প্রতিটি ধারণা অর্থ ধার করে অন্যগুলো থেকে, এমন এক বৃত্তে যার কোনো স্বাধীন ভিত্তি নেই।
 
-God has no consciousness, no will, no emotions. Spinoza devotes the *Appendix* to Part I of the *Ethics* to a systematic demolition of what he calls "the refuge of ignorance": the habit of attributing purpose and will to God when we don't understand the real causes of things. A human being prays because they imagine a God who listens; they are simply anthropomorphizing the infinite necessity of nature. God does not love us, does not answer prayers, does not reward virtue with happiness. The universe is not made for us. God is as indifferent to human concerns as a mathematical theorem — not hostile, not cruel, but structurally incapable of caring, the way two plus two is incapable of having a preference about the answer. This is the most unsentimental position in the table.
+সংবৃতি স্তরে সময় বাস্তব — জিনিস জাগে, চলে যায়। কিন্তু পরমার্থে কালের প্রবাহও অন্য সব কিছুর মতোই শূন্য। ফলে সময়ের বাইরে দাঁড়ানো কোনো চিরন্তন খোদাও নেই, কারণ নিরঙ্কুশ ‘বাইরে’ বলে কিছু নেই, আর সেখানে দাঁড়ানোর মতো কোনো স্বয়ংসম্পূর্ণ সময়রক্ষকও নেই। স্পিনোজার ‘চিরন্তনের দৃষ্টি’ বা শংকরের কালহীন ব্রহ্ম — নাগার্জুনের চোখে দুটোই এমন এক জগতের ওপর ভাসমান ধারণা, যেখানে নোঙর ফেলার কোনো জায়গা নেই।
 
-### 81 · Personal in the moral sense — unknowable in every other
+### 15 · প্রজ্ঞা — ধারণার ওপারে
 
-Kant's moral God must be personal: omniscient (to know what we deserve), omnipotent (to distribute it), and morally perfect (to want the right thing). But this personality is a moral postulate, not a metaphysical description. Theoretically — from the standpoint of speculative reason — God cannot be shown to have any attributes whatsoever, including personality. The gap between what morality requires us to postulate and what reason permits us to know is deliberately and permanently maintained. This is structurally the inverse of Maimonides: Maimonides strips God of attributes to protect transcendence; Kant assigns attributes to God to protect morality, but suspends them theoretically to protect intellectual honesty. Both arrive at a God who cannot be described — by different routes.
+সর্বোচ্চ জানা হলো প্রজ্ঞা — ধারণাহীন সেই জ্ঞান, যা শূন্যতাকে কোনো বস্তু হিসেবে আঁকড়ে ধরে না, সরাসরি উপলব্ধি করে; জানার মুহূর্তেই জ্ঞাতা আর জ্ঞেয়ের ভেদ মুছে যায়। চূড়ান্ত স্তরে সব ভাষা ব্যর্থ — ‘শূন্যতা’ শব্দটাও। নাগার্জুন জানিয়ে দেন: শূন্যতাও শূন্য। শূন্যতাকেই যে আরেকটা মত বানিয়ে ফেলে, তাকে তিনি বলেন নিরাময়ের অযোগ্য।
 
-### 91 · The fellow-sufferer — personal but not omnipotent
+দুই সত্যের তত্ত্ব কাজের জন্য ভাষা রেখে দেয় — কর্ম, মুক্তি, বুদ্ধ নিয়ে কথা বলা চলে — কিন্তু কোনো ধারণাই শেষ পর্যন্ত সবচেয়ে বাস্তবের উপযুক্ত নয়। এই ছকে এটাই সবচেয়ে পূর্ণাঙ্গ নেতিবাচক জ্ঞানতত্ত্ব। এ এমনকি নেতির ওপরও ভরসা করে না; শংকরের নেতি নেতিও শেষ পর্যন্ত ধারণা, আর ধারণা মাত্রই শূন্য।
 
-Whitehead describes God as *"the great companion — the fellow-sufferer who understands."* God is personal in a genuinely new sense: not the omnipotent sovereign of classical theism who issues decrees and cannot be affected by what happens, but a being who genuinely receives the world's experiences, is genuinely affected by them, and genuinely responds to them. God has something like love — a persuasive lure toward greater richness and beauty — and something like grief — a real reception of the world's suffering into God's consequent nature. God does not coerce; God invites. God is more like an artist creating the conditions for beauty than a king issuing commands. This is the most intimate personal God in the table, and simultaneously the most limited in power.
+### 16 · আত্মা নেই, খোঁজকারী মিলিয়ে যায়
 
-### 02 · Undivided before the concept of one
+অনাত্ম — আত্মা নেই — মানে খোদার সঙ্গে কোনো সম্পর্কে দাঁড়ানোর মতো স্থায়ী, নিজস্ব কোনো ‘আমি’ নেই। ‘আত্মা’ শর্তনির্ভর ঘটনার এক প্রবাহের প্রথাগত নাম; নদী যেমন তার ভেতর দিয়ে বয়ে যাওয়া পানি থেকে আলাদা কিছু নয়, আত্মাও তেমন।
 
-The Tao is one, but not as a counted object is one. It is undivided the way silence is undivided — not a unit among units but the spaciousness in which units appear. *"Tao gives birth to One, One to Two, Two to Three, Three to ten thousand things"* — all multiplicity is downstream of the Tao, not inside it. Its unity is not the unity of simplicity achieved by stripping parts away; it is the unity of that which never had parts to begin with. This is the deepest kind of oneness: not one among many, but the one that precedes the very distinction between one and many.
+মুক্তি তাই প্লোটিনাসের মতো পরম একের সঙ্গে মিলন নয়, শংকরের মতো ব্রহ্মের সঙ্গে অভিন্নতা নয়, স্পিনোজার মতো খোদার প্রতি বৌদ্ধিক প্রেমও নয়। মুক্তি হলো সরাসরি চেনা যে, যে ‘আমি’ মুক্তি খুঁজছিল, সে বরাবরই সেই নিজস্ব অস্তিত্বে শূন্য ছিল, যা সে নিজের বলে ধরে নিয়েছিল। কিছু পাওয়া যায় না; কিছু অর্জিত হয় না। গন্তব্যে পৌঁছে পথ মিলিয়ে যায় — আর গন্তব্যও।
 
-### 12 · Absolute simplicity at the summit; plurality below
+### 20 · পরম এক — সত্তা ও চিন্তার ওপারে
 
-The Form of the Good is absolutely one and simple — it has no parts, no internal divisions, no complexity. It is the source of all unity in other things; every object's ability to be one traces back to the Good. The Demiurge, however, introduces irreducible plurality: he is a distinct agent, separate from the Good and from the world he orders. This means Plato's divinity is structurally double — a simple summit and a complex operator. Plotinus would later argue that even the distinction between the craftsman and the Forms he consults is a weakness, and collapse the whole structure into the single, indivisible One. Maimonides inherits Plato's insistence on divine simplicity but strips away the Demiurge's irreducible secondness entirely.
+প্লোটিনাসের পরম এক পশ্চিমা দর্শনের সবচেয়ে মৌলিক ঊর্ধ্বতা। সে কোনো সত্তা নয় — সত্তার ওপারে, সত্তার আগে, সেই উৎস যেখান থেকে অফুরান ঝরনার মতো সত্তা বয়ে আসে। সে বুদ্ধি আর চিন্তারও ওপারে, কারণ চিন্তার জন্য চিন্তক আর চিন্তিতের দ্বৈত লাগে, আর পরম এক নিজের ভেতরে কোনো ভেদই মানে না।
 
-### 22 · Unity itself is empty — no fixed essence anywhere
+‘পরম এক আছে’ — এটুকু বলাও বেশি বলা, কারণ তাতে ‘আছে’ বিধেয়টা চাপানো হয় এমন কিছুর ওপর, যা বিধেয় চাপানোর কাজটারই আগে। তাই প্লোটিনাসকে আশ্রয় নিতে হয় নেতিবাচক বাক্যে আর আপাতবিরোধে। পরম এক শুধু উপচে পড়ে — নিঃশর্তে, নিরঙ্কুশভাবে — আর বাকি সব তার থেকে বয়ে আসে অনিবার্যভাবে, সূর্য থেকে আলোর মতো; তাতে সে বিন্দুমাত্র কমে না।
 
-Nagarjuna's *Mūlamadhyamakakārikā* systematically deconstructs every fundamental category: causation, motion, time, identity, the self, being, non-being. Each dissolves under examination into empty dependence on other concepts, none of which has an independent foothold. The doctrine of *two truths* — conventional and ultimate — preserves ordinary language and thought for practical purposes while insisting that at the ultimate level, nothing, including unity itself, has the inherent nature we project onto it. To say God is one is already to fail, not because God is many, but because the concept of inherent oneness has no ultimate referent.
+### 21 · সব একত্বের উৎস
 
-### 32 · Absolute unity — the source from which all unity derives
+পরম এক একত্বের মূলরূপ। কোনো জিনিসকে যে ‘একটা’ বলে গোনা যায়, সেই সামর্থ্যের শেকড় পরম একে — সে সব একত্বের উৎস, নিজে কোনো একক না হয়েই। তার গুণ নেই, অংশ নেই, ভেতরের কোনো সম্পর্ক নেই। তেমন কোনো কাঠামো থাকলে বহুত্ব ঢুকত, পরম এক তার উপাদানের ওপর নির্ভর করত — অথচ বাকি সব কিছু তারই ওপর নির্ভর করে, আর কিছুর ওপর নির্ভর না করাটাই তাকে প্রথম নীতি বানায়।
 
-The One is the archetype of unity itself. Every object's capacity to be counted as one traces back to the One — it is the source of all unity without itself being a unit. The One has no attributes, no parts, no internal relations. Any such structure would introduce plurality and make the One depend on its components — but the One is what everything else depends on, and its dependence on nothing is precisely what makes it the first principle. This is the most thoroughgoing account of divine simplicity in the ancient world, and it flows directly into the medieval traditions: Maimonides inherits its logic almost entirely; the scholastics argue over exactly how much of it Christian theology can absorb.
+প্রাচীন পৃথিবীতে ঐশী সরলতার এটাই সবচেয়ে পূর্ণাঙ্গ বিবরণ, আর এ ধারা সরাসরি বয়ে যায় মধ্যযুগে: ইসলামি, ইহুদি আর খ্রিস্টান ধর্মতত্ত্ব — তিনটিই এর যুক্তি প্রায় পুরোটা উত্তরাধিকার হিসেবে পায়, তর্ক চলে কেবল কতটা নেওয়া যায় তা নিয়ে। ইবনে আরাবির যাত-এর নিরঙ্কুশ একত্বেও এর প্রতিধ্বনি শোনা যায়।
 
-### 42 · Advaita — not-two, the ground of all apparent multiplicity
+### 22 · উৎসারণ — জগৎ উপচে পড়ে
 
-The name of Shankara's philosophy is *Advaita* — not-two, non-dualism. Brahman is absolutely one: not one in relation to something else, not one among many, but the non-dual ground in which apparent multiplicity floats without any ultimate reality. The many things we see are like waves on an ocean — conventionally real and distinct, but constituted entirely of water, without any boundary between them that survives close examination. All multiplicity is appearance (*vivartavāda*), not transformation: Brahman does not actually change or divide; it appears to, under the influence of cosmic ignorance. Even the distinction between God and world, God and soul, is ultimately a distinction within ignorance. Compare Spinoza's monism: both insist there is numerically one reality, but Spinoza's substance is impersonal and has infinite attributes, while Shankara's Brahman is pure consciousness, and all apparent attributes belong to *māyā*.
+জগৎ জাগে না পরম একের কোনো সৃষ্টির সিদ্ধান্তে। উৎসারণ কোনো সিদ্ধান্ত নয় — অসীম পূর্ণতার অনিবার্য উপচে পড়া। মোমবাতি আলো ছড়ানোর সিদ্ধান্ত নেয় না; মোমবাতি বলেই ছড়ায়। তেমনি পরম এক অসীমভাবে যা, তা হওয়ার কারণেই অনিবার্যভাবে ছড়িয়ে দেয় ঐশী বুদ্ধি — নুস — যার ভেতরে ধরা থাকে সব চিরন্তন রূপ। নুস থেকে বয়ে আসে বিশ্বাত্মা, আর বিশ্বাত্মা জন্ম দেয় সময় আর বস্তুজগৎ।
 
-### 52 · Absolute simplicity — even attributes are a category error
+উৎসারণের প্রতিটি স্তর ওপরের স্তরের চেয়ে কম একীভূত, কম বাস্তব, কম পূর্ণ — অস্তিত্বের তীব্রতা ক্রমশ কমে আসা এক মহাশৃঙ্খল, পরম একের চোখধাঁধানো সরলতা থেকে বস্তুর প্রায়-অন্ধকার পর্যন্ত। জগৎ বাস্তব, তবে পাতলাভাবে বাস্তব। শংকরের মায়ার সঙ্গে তুলনা চলে: দুজনেই জগৎকে ঐশী থেকে উদ্ভূত আর নিচু স্তরের বলে দেখেন, কিন্তু প্লোটিনাস বলেন বাস্তবতার মাত্রাভেদের কথা, বিভ্রমের নয়। এই সারির মূল সুর এখানেই: সবকিছু বয়ে আসে, কিছুই বানানো হয় না।
 
-Maimonides pushes divine simplicity further than anyone else in this table. If God had multiple attributes — wisdom and power and goodness — then God would be composed of these properties, and something prior to God (the principle of their combination) would exist. Therefore, what we call God's wisdom, power, and goodness are not three things but one reality seen from three directions by a finite mind that cannot see the whole at once. The attributes are not real features of God but features of our discourse about God. Even the attributes of action — "Creator," "Sustainer" — describe what God does in the world, not what God is in essence. God's essence is absolutely one, absolutely simple, and absolutely beyond any predicate language can provide.
+### 23 · দূরতম, আবার অন্তরতম
 
-### 62 · Waḥdat al-Wujūd — one Being, infinite self-differentiations
+পরম এক আমূল ঊর্ধ্বে — আক্ষরিক অর্থেই অকথ্য, অচিন্তনীয় — অথচ সব কিছুর ভেতরে সবচেয়ে অন্তরঙ্গ উপস্থিতি, কারণ যতটুকু অস্তিত্ব আর একত্ব প্রতিটি জিনিসের আছে, তার জন্য সে প্রতি মুহূর্তে পরম একের ওপর নির্ভর করে। প্লোটিনাস ছবি দেন বৃত্তের কেন্দ্রবিন্দুর: সব ব্যাসার্ধ সেখানে ফেরে, পরিধির প্রতিটি বিন্দুর সঙ্গে তার যোগ, অথচ সে নিজে বৃত্ত নয়।
 
-The world is not a second being alongside God; it is the unfolding of God's self-knowledge into existence. The divine Names and their archetypes (*al-a'yān al-thābita* — fixed essences in God's self-knowledge) have always existed within the divine knowing; their disclosure in external existence is what we call the world. Unity and multiplicity are both real, but at different levels: absolute unity belongs to the Essence; the structured multiplicity of Names and their manifestations belongs to the level of disclosure. Compare Spinoza's modes: both are finite expressions of one infinite substance, but Spinoza's modes are impersonal and necessary, while Ibn Arabi's disclosures are personally addressed and arise from divine love.
+ঊর্ধ্বতা আর অন্তর্লীনতা এখানে একই নিরঙ্কুশ নির্ভরতার দুই বিবরণ — পরম এক ‘অন্য কোথাও’, কারণ সে সবকিছুর ঊর্ধ্বে; আবার একই সঙ্গে ‘এখানে’, কারণ সে না থাকলে এখানে কিছুই থাকত না। ইবনে আরাবি পরে প্রায় এই একই কাঠামো গড়বেন, তবে ঐশী নামের সেই ব্যক্তিগত সম্বোধন নিয়ে, যা প্লোটিনাসের পরম একের একেবারেই নেই।
 
-### 72 · One substance, infinite attributes — the abyss of oneness
+### 24 · পুরোপুরি সময়ের বাইরে
 
-There is numerically one thing in the universe: God-or-Nature. Every apparent multiplicity — the difference between my mind and yours, between a stone and a thought — is a difference among modes of the same infinite substance, not a difference in ultimate nature. The infinite attributes of God (of which we know only two: Thought and Extension) are not distinct substances but different aspects of the one, the way the same surface can be described geometrically or physically without becoming two surfaces. Spinoza's monism is more complete than Shankara's (which posits māyā as the mechanism of apparent multiplicity) because it posits no mechanism at all — the multiplicity simply is the one substance seen finitely.
+পরম এক পুরোপুরি সময়ের বাইরে। সময় জন্মায় বিশ্বাত্মার স্তরে; বিশ্বাত্মা আগে-পরের ক্রমের নীতি — বুদ্ধির চিরন্তন স্থিরতা থেকে তার অস্থির সরে আসাই আগে আর পরের প্রবাহ তৈরি করে। পরম এক আর ঐশী বুদ্ধি থাকে চিরন্তনে — অসীম স্থিতিকালের চিরন্তনে নয়, কালহীন বর্তমানের চিরন্তনে, যেখানে সত্তার গোটা জীবন একটা অপরিবর্তনীয় ‘এখন’-এ জড়ো।
 
-### 82 · Unity accepted as postulate — inner nature unknowable
+প্লোটিনাস এমন এক ভেদ টানেন, যা পরের সব ধর্মতত্ত্বের কেন্দ্রে বসবে: আইওন — চিরন্তনতা, ঐশীর থাকার ধরন — আর ক্রোনোস — সময়, চিরন্তনতার চলমান প্রতিচ্ছবি, জগতের থাকার ধরন। এই প্রশ্নে তাঁর সবচেয়ে স্পষ্ট আধুনিক প্রতিপক্ষ হোয়াইটহেড, যিনি জোর দিয়ে বলেন খোদার অনুগামী স্বভাব সত্যিই সময়ের ভেতরে বাড়ে।
 
-Kant accepts the traditional divine attributes — unity, omniscience, omnipotence, moral perfection — as appropriate for the God that morality requires us to postulate. But these attributes are not descriptions of God's inner nature (which is permanently inaccessible) — they are descriptions of what God must be like if the moral universe is to make sense. Whether God is truly simple in the metaphysical sense that Maimonides or Plotinus require, whether divine unity means what the Neoplatonists mean by it — these are questions that critical philosophy closes off. The intellect reaches its limit not at the edge of a vast darkness, as in mystical theology, but at the edge of a principled boundary: categories of the understanding cannot be applied beyond possible experience.
+### 25 · কেবল মিলনে জানা
 
-### 92 · Irreducibly complex — dipolarity is the price of genuine relation
+বুদ্ধি দিয়ে পরম একে জানা যায় না, কারণ বুদ্ধি সবসময় জ্ঞাতা আর জ্ঞেয়তে ভাগ হয় — যে ভাগ পরম এক সইতে পারে না। পরম একে জানার একমাত্র খাঁটি পথ হেনোসিস: মিলন, আত্মার নিজেকে পুরোপুরি ছেড়ে দিয়ে উৎসের সঙ্গে অভিন্ন হওয়া। প্লোটিনাস এ কথা বলেন নিজের অভিজ্ঞতা থেকে — বিরল, আকস্মিক, অনায়াস কিছু মুহূর্ত, যখন আত্মা আর ‘অন্য কিছু’ থাকে না, শুধু থাকে।
 
-Whitehead explicitly and deliberately rejects divine simplicity. His argument: a God who is purely simple and purely eternal cannot genuinely receive the world's experiences — a changeless being cannot be genuinely affected. A God who is purely temporal would have no stable identity across time. The dipolar structure — eternal primordial vision plus temporal consequent reception — is the necessary form of a God who is both the ground of all possibility and the genuine companion of every actual event. Whitehead accepts the cost: his God is complex, temporal in one aspect, genuinely finite in power. He argues that the tradition's insistence on simplicity was purchased at the price of genuine relation — a God so simple and eternal cannot suffer with the world, cannot be moved by beauty, cannot participate in the adventure of existence.
+পরম এক নিয়ে সব দার্শনিক ভাষা ভারার মতো: ওঠার জন্য দরকার, চূড়ায় খুলে ফেলতে হয়। যেকোনো ইতিবাচক বিধেয় মিথ্যা করে, কারণ তা পরম এক আর সেই বিধেয়ের মধ্যে একটা ভেদ ঢোকায়। শংকরের নেতি নেতির সঙ্গে মিল আছে, তবে পথের শেষটা আলাদা: শংকরের পথ শেষ হয় চেনায়, যা একবার হলে আর ফেরে না; প্লোটিনাসের পথ শেষ হয় এক ঘটনায় — যা আসে, আবার চলেও যায়।
 
-### 03 · Mother of all things — no act of creation
+### 26 · আত্মার নামা আর ফেরা
 
-The world arises from the Tao not by creation but by natural overflow — the way warmth arises from fire without fire deciding to warm. The Tao is called the mother: not because it fashioned children, but because all things live within it and draw from it without diminishing it. There is no moment of creation, no divine deliberation before which there was nothing. The world is simply the Tao's natural expression, as inevitable as the fragrance of a flower that has no intention of smelling sweet. This distinguishes Laozi sharply from the Abrahamic traditions — and even from Plotinus, whose emanation still implies an overflow from a fullness that could be imagined to have contained itself.
+মানুষের আত্মা বিশ্বাত্মার উৎসারণ; বিশ্বাত্মা বুদ্ধি থেকে, বুদ্ধি পরম এক থেকে। বস্তুর ভেতরে আত্মার নেমে আসা উৎস থেকে সরে পড়া; আধ্যাত্মিক জীবন হলো ফেরা — নিজেকে ভেতরে গুটিয়ে আনা, বস্তুর টান খসিয়ে ফেলা, বুদ্ধির ভেতর দিয়ে উঠে আবার পরম একের দিকে।
 
-### 13 · Craftsman of chaos — the best possible world
+আত্মার সর্বোচ্চ অংশ কখনো পুরোপুরি পরম এক ছেড়ে আসেনি — সে সবসময়ই ঐশী ভিত্তির ছোঁয়ায় আছে। তার মানে, হেনোসিস নতুন কিছু পাওয়া নয়, যা বরাবরই ছিল তা ফিরে পাওয়া। শংকর ভিন্ন ভাষায় প্রায় হুবহু একই কথা বলবেন: মুক্তি অর্জন নয়, চেনা — এমন এক আরোপ সরিয়ে ফেলা, যা কখনো সত্যি ছিল না। এই ছকের গভীরতম মিলটা এখানেই: রোম আর কাশী, পাঁচশো বছরের ব্যবধানে।
 
-The Demiurge does not create from nothing. He finds pre-existing, disorderly matter and imposes rational structure on it by looking to the eternal Forms as models. The world is therefore not perfect — it is the best possible given the resistance of matter. This has profound implications: evil and imperfection are not God's failure but matter's intractability. The world is neither identical with God (Spinoza) nor a pure overflow of God (Plotinus) nor a superimposition on God (Shankara) — it is a crafted approximation, the handiwork of a good but constrained architect. Whitehead's God, who offers each occasion an aim toward the best possible realization but cannot coerce matter, is Plato's most direct modern descendant.
+### 30 · ব্রহ্ম — সচ্চিদানন্দ, একা
 
-### 23 · Dependent origination — no ground, no first cause
+শংকরের কাছে চূড়ান্ত বাস্তবতা ব্রহ্ম — উপনিষদের ভাষায় সচ্চিদানন্দ: শুদ্ধ সৎ, শুদ্ধ চিৎ, শুদ্ধ আনন্দ। এ তিনটি ব্রহ্মের তিনটি গুণ নয়; একটাই অবিভক্ত, স্বপ্রকাশ বাস্তবতার দিকে সসীম মনের এগোনোর তিনটি কোণ। ব্রহ্ম সত্তাদের মধ্যে সবচেয়ে বড় সত্তা নয়; ব্রহ্মই একমাত্র সত্তা।
 
-The world arises through *pratītyasamutpāda* — dependent origination. Everything arises in dependence on conditions; nothing arises from a self-sufficient first cause. A God who creates ex nihilo would need to be precisely the kind of self-sufficient, uncaused cause that Nagarjuna shows cannot coherently exist. Even Maimonides's "necessary being" — whose non-existence is impossible — would fail this test: necessary existence is itself a concept empty of inherent content. The world simply arises as it does, dependently and without ground. This is neither optimistic (the world is good because God made it) nor pessimistic (the world is fallen) — it is simply the naked fact of conditioned arising, stripped of all metaphysical comfort.
+আলাদা আলাদা বস্তু, পৃথক পৃথক ‘আমি’, কার্যকারণের ধারা — যাকে আমরা জগৎ বলে ধরি, তা মায়া: ব্রহ্মের ওপর এক আরোপ, গোধূলিতে দড়ির কুণ্ডলীতে কল্পিত সাপের মতোই স্পষ্ট, আর ততটাই ভুল। ভুল দেখাটা সরিয়ে নিলে থাকে শুধু ব্রহ্ম: অসীম, অবিভক্ত, স্বপ্রকাশ। এটা কেবল এই ছকের সবচেয়ে চরম দাবি নয়; বাস্তবতার স্বভাব নিয়ে মানুষের চিন্তার ইতিহাসেই সম্ভবত সবচেয়ে চরম দাবি।
 
-### 33 · Emanation — the world overflows from the One
+### 31 · অদ্বৈত — দুই নয়
 
-The world does not arise because the One chooses to create. Emanation is not a decision — it is the necessary overflow of infinite perfection. A candle does not choose to cast light; it simply does so by being a candle. So the One, by being infinitely what it is, necessarily radiates the Divine Intellect (*Nous*), which contains the Platonic Forms. From Nous emanates the World Soul, which generates time and the material cosmos. Each level of emanation is less unified, less real, less perfect than the level above — a great chain of decreasing intensity of being, stretching from the blinding simplicity of the One down to the near-darkness of matter. The world is real, but thinly real. Compare Shankara's maya: both describe the world as derivative and inferior to the divine, but Plotinus insists on degrees of reality rather than illusion.
+শংকরের দর্শনের নামই অদ্বৈত — দুই নয়। ব্রহ্ম নিরঙ্কুশভাবে এক: অন্য কিছুর তুলনায় এক নয়, অনেকের মধ্যে একটাও নয়, বরং সেই অদ্বৈত ভিত্তি, যার ওপর আপাত বহুত্ব ভাসে কোনো চূড়ান্ত বাস্তবতা ছাড়াই। আমরা যে নানা জিনিস দেখি, তারা সাগরের ঢেউয়ের মতো — প্রথাগত অর্থে বাস্তব, আলাদা, কিন্তু পুরোটাই পানি দিয়ে গড়া; খুঁটিয়ে দেখলে তাদের মাঝের কোনো সীমারেখা টেকে না।
 
-### 43 · World as superimposition — māyā, not creation
+সব বহুত্ব বিবর্ত — আপাত রূপান্তর, প্রকৃত রূপান্তর নয়: ব্রহ্ম সত্যিই বদলায় না, ভাগও হয় না; মহাজাগতিক অবিদ্যার প্রভাবে বদলাচ্ছে বলে মনে হয় মাত্র। খোদা আর জগৎ, খোদা আর আত্মার ভেদও শেষ পর্যন্ত অবিদ্যার ভেতরের ভেদ। স্পিনোজার একত্ববাদের সঙ্গে তুলনা চলে: দুজনেই বলেন বাস্তবতা সংখ্যায় একটাই; কিন্তু স্পিনোজার দ্রব্য নৈর্ব্যক্তিক, অসীম গুণে ভরা, আর শংকরের ব্রহ্ম শুদ্ধ চৈতন্য — সব আপাত গুণ সেখানে মায়ার।
 
-The world is not truly created by Brahman and does not truly exist apart from it. The relationship is *vivartavāda* — apparent transformation: Brahman appears as the world under the influence of *māyā*, as a dreamer appears to inhabit a dream-world. The dreamer does not truly act; nothing truly arises; the dream is neither real nor unreal but something in between — it is not nothing (it functions, it is experienced) but it is not ultimately real (it dissolves when you wake). *Īśvara* (the personal God) is Brahman seen from within the dream, as creator, sustainer, and destroyer. Remove the dream and only Brahman remains, unchanged. This is the sharpest possible contrast with Whitehead, for whom God and the world are genuinely co-creative, genuinely distinct, and neither is reducible to the other.
+### 32 · জগৎ আরোপ, সৃষ্টি নয়
 
-### 53 · Creator ex nihilo — but the how exceeds understanding
+ব্রহ্ম জগৎ সত্যিই সৃষ্টি করে না, আর ব্রহ্ম ছাড়া জগতের আলাদা কোনো অস্তিত্বও নেই। সম্পর্কটা বিবর্ত: মায়ার প্রভাবে ব্রহ্মকে জগৎ বলে মনে হয় — যেমন স্বপ্ন দেখা মানুষকে মনে হয় স্বপ্নের জগতে বাস করছে। সে আসলে কিছু করে না; কিছুই আসলে জাগে না। স্বপ্ন সত্যও নয়, মিথ্যাও নয়, মাঝামাঝি কিছু — সে কিছু-না নয় (কাজ করে, অনুভব করা যায়), কিন্তু চূড়ান্ত অর্থে বাস্তবও নয় (ঘুম ভাঙলে মিলিয়ে যায়)।
 
-Maimonides defends creation ex nihilo — the world was created from nothing by God's free will — but with characteristic intellectual honesty: the precise nature of this act exceeds human understanding entirely. He attacks the philosophical assumption of the eternity of the world not because it is obviously wrong but because it is not as well-established as its defenders believe — and given the profound difference between a created world and an eternal one for religious life, the benefit of the doubt must go to creation. The Demiurge of Plato (who orders pre-existing matter) and the emanating One of Plotinus (which produces by necessity) are both rejected: creation is free, absolute, and temporally originating.
+অদ্বৈতের নিজের পরিভাষায় যিনি ঈশ্বর — স্রষ্টা, পালনকর্তা, সংহারকর্তা — তিনি স্বপ্নের ভেতর থেকে দেখা ব্রহ্মই। স্বপ্ন সরিয়ে নিলে থাকে শুধু ব্রহ্ম, অপরিবর্তিত। হোয়াইটহেডের সঙ্গে এর চেয়ে তীক্ষ্ণ বৈপরীত্য আর হয় না: তাঁর কাছে খোদা আর জগৎ সত্যিই পরস্পরের সহস্রষ্টা, সত্যিই আলাদা, কেউ কারও মধ্যে বিলীন নয়।
 
-### 63 · The Hidden Treasure — love as the cause of creation
+### 33 · সব হয়ে সবার ঊর্ধ্বে
 
-The most beautiful sentence in Ibn Arabi's cosmology comes from a sacred tradition (*ḥadīth qudsī*) he builds everything around: *"I was a Hidden Treasure and I loved to be known; so I created the world."* Creation here is not a free act in the usual sense (a decision among alternatives) nor a mechanical necessity (like Plotinus's emanation) — it is the overflow of love. God creates the world as the mirror in which to behold the infinite faces of His own beauty. Every creature is a mirror showing a particular divine Name; the whole world is God's self-portrait. This makes Ibn Arabi the most lyrical and perhaps the most daring cosmologist in the table: the universe exists because the infinite loved itself too much to remain hidden.
+ব্রহ্ম একই সঙ্গে ঊর্ধ্বে আর অন্তরে — আর কেন, তা দেখলেই আপাতবিরোধ মিটে যায়। ব্রহ্ম জগতের ঊর্ধ্বে, কারণ ব্রহ্ম অপরিবর্তনীয়, নিরাকার; বহুত্বের আভাস তাকে ছোঁয় না। ব্রহ্ম জগতের ভেতরে, কারণ আক্ষরিক অর্থেই আর কিছু নেই — জগৎই ব্রহ্ম, কিছু বাকি না রেখে।
 
-### 73 · Immanent cause — God produces within itself
+এ দুটো টানাপোড়েনে বাঁধা দুই সত্য নয় — যেমনটা ইবনে আরাবির কাছে, যিনি দুই মেরু একসঙ্গে ধরে রাখতে জোর দেন, যদিও তারা স্বভাবতই একটা আরেকটায় ধসে পড়তে চায়। শংকরের কাছে এ একই সত্য, দুই কোণ থেকে দেখা। উপনিষদের বাক্য *সর্বং খল্বিদং ব্রহ্ম* — ‘এই সবই ব্রহ্ম’ — শংকরের কাছে দর্শনের সবচেয়ে গুরুত্বপূর্ণ বাক্য। দূর আর নিকটের প্রশ্নে এই সারির উত্তর তাই তাঁর গোটা দর্শনের সারকথা: ব্রহ্ম সব হয়ে সবার ঊর্ধ্বে।
 
-Spinoza distinguishes *Natura naturans* (God as the active, productive ground — Nature naturing) from *Natura naturata* (the world as the produced — Nature natured). God is the immanent cause of all things: not a cause that stands outside its effects, as a craftsman stands outside a chair, but a cause that produces within itself. God does not create the world and leave; the world is constantly being produced by God's infinite nature, within God, as God. This is formally similar to Plotinus's emanation (continuous, sustaining, totalizing) but crucially different: Plotinus's One is above and before the world; Spinoza's substance is the world.
+### 34 · ব্রহ্ম কালহীন, সময় মায়া
 
-### 83 · Creator in a regulative sense — nature points but cannot prove
+ব্রহ্ম নিরঙ্কুশভাবে কালহীন — চিরকাল টিকে থাকা নয়, সত্যিকার অর্থে সময়ের বাইরে, আগে-পরের মাত্রার একেবারে বাইরে। সময় জাগে মায়ার ভেতরে, বদলাতে দেখা আর সব কিছুর মতোই।
 
-In the *Critique of Judgment*, Kant shows that we are compelled by the structure of our minds to view nature *as if* it were designed by an intelligent creator — not because we can prove this, but because we cannot make sense of organic life and natural purposiveness without the idea of design. God as creator is here a *regulative idea*: a concept we must use to orient our inquiry into nature, even though we cannot constitutively establish that there is actually a creator. This is the most carefully hedged form of the design argument in the philosophical tradition — it neither asserts nor denies a real creator; it asserts only that the idea of a creator is necessary for human understanding of certain aspects of nature.
+মুক্তি তাই সময়ের ভেতরে ঘটে না — মুক্তি হলো চেনা যে, আমি বরাবরই কালহীনভাবে ব্রহ্ম ছিলাম। ‘কবে মুক্তি হলো’ — প্রশ্নটাই ভেঙে পড়ে: গত মঙ্গলবার তা ঘটেনি; এ এক চিরন্তন সত্য, যা এখন কালের কল্পনায় ঢাকা। স্পিনোজার চিরন্তনতার সঙ্গে তুলনা চলে, সেটাও সময়ের বাইরে — কিন্তু স্পিনোজার কাছে এ এক অসীম দ্রব্যের যৌক্তিক বৈশিষ্ট্য, আর শংকরের কাছে মুক্ত চেতনার অভিজ্ঞতার সারবস্তু: *আমিই এই। আমি সবসময়ই ছিলাম।*
 
-### 93 · Co-creative with the world — God and world need each other
+### 35 · নেতি নেতি, তারপর নীরবতা
 
-*"It is as true to say that God creates the World, as that the World creates God."* This is Whitehead's most radical departure from all prior theism. God and the world are genuinely, mutually creative. God provides each moment of the universe with an initial aim — a lure toward the best possible realization — and the universe freely responds, and those free responses flow back into God's consequent nature, enriching God's experience with new actual content. This two-way creativity means God needs the world as much as the world needs God: without the world's actual occasions, God's consequent nature would have no content; without God's primordial vision, the world's occasions would have no initial aim, no direction, no possibility of novelty. The Platonic Demiurge looks at Forms and orders matter; Whitehead's God is genuinely altered by what the matter does.
+নির্গুণ ব্রহ্মের ইতিবাচক বর্ণনা দেওয়া যায় না। ‘ব্রহ্ম অমুক’ — এমন প্রতিটি বাক্য ব্রহ্মকে অমুকে সীমাবদ্ধ করে, অমুক-নয়কে বাদ দেয়, যা অসীম সত্তার বিরোধী। উপনিষদের পদ্ধতি নেতি নেতি: এ নয়, এ নয় — একটা একটা করে প্রতিটি গুণ সরিয়ে নেওয়া, যতক্ষণ না মন ভর দেওয়ার মতো কিছু না পেয়ে নীরব হয়ে যায়।
 
-### 04 · Flows everywhere — transcendence and immanence collapse
+সচ্চিদানন্দের মতো ইতিবাচক বর্ণনাগুলোও চলতি অর্থে গুণ নয়; বরং ব্রহ্ম যা নয়, তা ধাপে ধাপে সরিয়ে নেওয়া — ব্রহ্ম অসৎ নয়, অচেতন নয়, দুঃখী নয়। জ্ঞানমার্গ হলো অভিন্নতার সরাসরি, অদ্বৈত উপলব্ধি: *অহং ব্রহ্মাস্মি* — আমিই ব্রহ্ম। কোনো আচার, ভক্তি বা নৈতিক সাধনা এই চেনার বিকল্প হতে পারে না, যদিও সেগুলো মনকে তা গ্রহণের জন্য শুদ্ধ করতে পারে।
 
-*"The great Tao flows everywhere — to the left and to the right."* It is present in the highest mountain and the lowest valley, in the space at the hub of a wheel that is empty and yet makes the wheel function. To call the Tao transcendent is to say it conditions everything; to call it immanent is to say nothing escapes it. These are not two facts but one. Unlike the God of Maimonides (who is transcendent and expresses immanence only through actions) or Spinoza (who is so immanent that transcendence is canceled), the Tao holds both without tension because it precedes the very axis on which the distinction is drawn.
+### 36 · আত্মাই ব্রহ্ম
 
-### 14 · Radically transcendent — the Good barely touches the world
+*তত্ত্বমসি* — তুমিই সেই। জীবাত্মা ব্রহ্মের মতো নয়, ব্রহ্মের সৃষ্টি নয়, ব্রহ্মের দিকে এগোচ্ছেও না — সংখ্যার হিসাবেই ব্রহ্মের সঙ্গে অভিন্ন। আপাত পার্থক্যটা পুরোপুরি মায়া আর অবিদ্যার কারণে। মোক্ষ তাই ব্রহ্মের দিকে কোনো যাত্রা নয়; এমন এক অভিন্নতা চেনা, যা বরাবরই সত্য ছিল। ঢেউ আবিষ্কার করে, সে সাগর — সাগরে মিশেছে বলে নয়, সাগরের মতো বলেও নয়; সে সাগরই, সবসময় ছিল।
 
-For Plato, the highest realities — the Forms, and above all the Good — are eternal, unchanging, and accessible only to the intellect, not the senses. The material world is a shadow of them. The Good is so transcendent it barely touches the world at all; it is the condition for the world's intelligibility, not an active presence within it. The Demiurge is the active, engaged presence; the Good is the distant, silent summit from which everything depends without knowing it. This is the polar opposite of Spinoza, for whom transcendence is categorically denied. It is also distinct from Ibn Arabi, who insists that transcendence and immanence must be held simultaneously — Plato's Good is overwhelmingly on the side of the beyond.
+সসীম আর অসীমের সম্পর্ক নিয়ে এই ছকে এটাই সম্ভবত সবচেয়ে সাহসী দাবি — প্লোটিনাসের মিলনের চেয়েও সাহসী, যার জন্য এক রহস্যময় ঘটনা লাগে আর যা ক্ষণস্থায়ী; ইবনে আরাবির আয়নার চেয়েও, যা পার্থক্য বজায় রাখে; স্পিনোজার দ্রব্য-আর-প্রকারের চেয়েও, যাতে চেনার উষ্ণতা নেই।
 
-### 24 · Neither transcendent nor immanent — both categories dissolve
+### 40 · নিরঙ্কুশ অস্তিত্বের আত্মপ্রকাশ
 
-Transcendence and immanence are both theistic categories that presuppose a God sufficiently distinct from the world to be either beyond it or within it. Emptiness has neither of these relations because it is not an entity at all. Emptiness is not somewhere else (it cannot be transcendent) nor hidden inside things (it cannot be immanent in the usual sense) — it is the very nature of all phenomena. A flower is empty of inherent existence; that emptiness is not behind the flower or above the flower but is what the flower is when examined carefully. This is the most complete dissolution of the transcendence/immanence axis in the entire table, more radical even than Spinoza's pure immanence, which at least posits a substance.
+ইবনে আরাবির কাছে খোদা আল-উজুদ আল-মুতলাক — নিরঙ্কুশ অস্তিত্ব। গভীরতম অর্থে অস্তিত্ব একটাই: খোদার অস্তিত্ব। আলাদা হয়ে আছে বলে যা কিছু মনে হয় — গাছ, মানুষ, তারা, ভাবনা — সবই তাজাল্লি: সম্ভাব্যতার আয়নায় সেই এক অস্তিত্বের ক্ষণিক আত্মপ্রকাশ।
 
-### 34 · Both — the most intimate ground of all things
+এটা ‘জগৎই খোদা’ গোছের স্থূল মত নয়, আবার ‘খোদা জগৎকে ধারণ করেন’ গোছের চেনা মতও নয়। এ হলো ওয়াহদাতুল উজুদ — অস্তিত্বের একত্ব: অস্তিত্ব একটাই, আর তার আত্মপ্রকাশগুলোই জগৎ। খোদার যাত — মূল সত্তা — সব নাম আর সব ভেদের সম্পূর্ণ ওপারে থাকে; প্রকাশ পায় সবসময় নামগুলো, যাত কখনো নয়।
 
-The One is radically transcendent — literally unspeakable and unthinkable — yet it is the most intimate presence in all things, because all things depend on it at every moment for whatever being and unity they possess. Plotinus uses the image of a point at the center of a circle: all radii lead back to it, it is in contact with every point on the circumference, yet it is not itself the circle. Transcendence and immanence are two descriptions of the same absolute dependency relation — the One is "elsewhere" because it transcends everything, and simultaneously "here" because nothing could be here without it. Ibn Arabi will later develop a strikingly similar structure, though with the Islamic commitment to a personal divine name that Plotinus's One lacks entirely.
+### 41 · এক অস্তিত্ব, অগণন প্রকাশ
 
-### 44 · Both and neither — Brahman transcends by being all
+জগৎ খোদার পাশে দ্বিতীয় কোনো অস্তিত্ব নয়; খোদার আত্মজ্ঞান অস্তিত্বে খুলে যাওয়া। ঐশী নামগুলো আর তাদের আয়ান সাবিতা — খোদার আত্মজ্ঞানে স্থির সারসত্তা — চিরকাল ঐশী জ্ঞানের ভেতরে ছিল; বাইরের অস্তিত্বে তাদের প্রকাশকেই আমরা জগৎ বলি।
 
-Brahman is simultaneously transcendent and immanent — and the paradox dissolves once you see why. Brahman transcends the world because it is unchanging, formless, untouched by the appearance of multiplicity. Brahman is immanent because there is literally nothing else — the world *is* Brahman, with nothing left over. These are not two facts held in tension (as they are for Ibn Arabi, who insists on holding both poles simultaneously against their natural tendency to collapse) — they are the same fact seen from two angles. *Sarvam khalv idam Brahma* — "all this is indeed Brahman" — is the Upanishadic formula that Shankara treats as the single most important sentence in philosophy.
+একত্ব আর বহুত্ব দুটোই বাস্তব, তবে ভিন্ন স্তরে: নিরঙ্কুশ একত্ব যাত-এর; নাম আর তাদের প্রকাশের সুবিন্যস্ত বহুত্ব প্রকাশের স্তরের। স্পিনোজার প্রকারের সঙ্গে তুলনা চলে: দুটোই এক অসীম অস্তিত্বের সসীম প্রকাশ; কিন্তু স্পিনোজার প্রকার নৈর্ব্যক্তিক আর অনিবার্য, আর ইবনে আরাবির প্রকাশগুলো জন্মায় ঐশী প্রেম থেকে, প্রতিটি কাউকে উদ্দেশ করে বলা।
 
-### 54 · Purely transcendent — known only through effects, never directly
+### 42 · গুপ্ত ধনভান্ডার — প্রেমে সৃষ্টি
 
-God is absolutely transcendent — unlike anything in creation, not located in space or time, not in any genus that includes creatures. Any analogy between God and creation, for Maimonides, is equivocation in the logician's strict sense: the word "existence" applied to God and to a stone does not mean the same thing even partially. God's immanence, if it can be spoken of, is expressed only through His actions in the world — the regularities of nature, the orderly governance of the cosmos — never through direct ontological presence. This makes Maimonides the most radically transcendent theist in the table. Compare Ibn Arabi, who insists that limiting God to transcendence alone (*tanzīh* without *tashbīh*) is itself a theological error. Maimonides would say that Ibn Arabi's equation of immanence with divine presence dangerously anthropomorphizes the divine.
+ইবনে আরাবির বিশ্বতত্ত্বের সবচেয়ে সুন্দর বাক্যটা এক হাদিসে কুদসি থেকে — হাদিসবিশারদেরা যার সনদ নিয়ে প্রশ্ন তোলেন, কিন্তু সুফিদের কাছে যা কেন্দ্রীয় — আর তাকে ঘিরেই তিনি সব কিছু গড়েছেন: ‘আমি ছিলাম গুপ্ত ধনভান্ডার; আমি পরিচিত হতে ভালোবাসলাম; তাই সৃষ্টি করলাম।’ এখানে সৃষ্টি চলতি অর্থে স্বাধীন কাজ নয় — নানা বিকল্পের মধ্যে বাছাই নয় — আবার প্লোটিনাসের উৎসারণের মতো যান্ত্রিক অনিবার্যতাও নয়। এ প্রেমের উপচে পড়া।
 
-### 64 · Tanzīh and tashbīh — both must be held, neither alone
+খোদা জগৎ সৃষ্টি করেন আয়না হিসেবে, যাতে নিজের সৌন্দর্যের অসীম মুখ দেখতে পান। প্রতিটি সৃষ্টি একটি বিশেষ ঐশী নাম দেখানো আয়না; গোটা জগৎ খোদার আত্মপ্রতিকৃতি। এতে ইবনে আরাবি এই ছকের সবচেয়ে গীতিময়, হয়তো সবচেয়ে দুঃসাহসী বিশ্বতাত্ত্বিক: মহাবিশ্ব আছে, কারণ অসীম নিজেকে এত ভালোবেসেছিলেন যে লুকিয়ে থাকতে পারেননি।
 
-Ibn Arabi holds two apparently contradictory truths in permanent, productive tension: *tanzīh* (divine incomparability — God is utterly unlike all creation) and *tashbīh* (divine likeness — God is present in and as all things). To affirm only transcendence is to imprison God in an abstract beyond and cut the rope between creator and creature. To affirm only immanence is to dissolve God into the world and lose the source that sustains it. The perfectly realized human (*al-Insān al-Kāmil*) holds both simultaneously — perceiving in every object the absolute otherness of the divine and its intimate presence, without allowing either perception to cancel the other. This is more dialectically sophisticated than any other position in the table: Maimonides has only tanzīh; Spinoza has only tashbīh; Ibn Arabi insists the real holds both.
+### 43 · তানযিহ আর তাশবিহ একসঙ্গে
 
-### 74 · No transcendence — God is the total immanence of all
+ইবনে আরাবি দুটি আপাতবিরোধী সত্যকে স্থায়ী, ফলপ্রসূ টানাপোড়েনে ধরে রাখেন: তানযিহ — খোদার তুলনাহীনতা, তিনি কোনো সৃষ্টির মতো নন — আর তাশবিহ — খোদার সাদৃশ্য, তিনি সব কিছুর ভেতরে, সব কিছু হয়ে উপস্থিত। শুধু তানযিহ মানলে খোদা বন্দি হন এক বিমূর্ত ‘ওপারে’, স্রষ্টা আর সৃষ্টির মাঝের রশি কেটে যায়। শুধু তাশবিহ মানলে খোদা জগতে গলে যান, আর যে উৎস জগৎকে টিকিয়ে রাখে, সেটাই হারিয়ে যায়।
 
-God is not transcendent in any sense. There is no beyond, no viewpoint from outside creation, no divine withdrawal from the cosmos. Spinoza is the maximal immanence position in this table: transcendence is not merely downplayed but categorically eliminated. "God" names not something above the world but the infinite totality of what the world is. This places Spinoza in direct opposition to Maimonides (for whom God is so transcendent that immanence can only be expressed through actions, never presence) and to Kant (for whom God is permanently beyond all possible experience). Compare the Tao: also without transcendence in the usual sense, but the Tao is characterized by emptiness and spontaneity, while Spinoza's God is characterized by necessity and fullness.
+ইনসানে কামিল দুটো একসঙ্গে ধরেন — প্রতিটি জিনিসে দেখেন ঐশীর নিরঙ্কুশ ভিন্নতা আর তার অন্তরঙ্গ উপস্থিতি, কোনো দেখাকে অন্যটা বাতিল করতে না দিয়ে। এই ছকে আর কোনো অবস্থান এতটা দ্বান্দ্বিকভাবে সূক্ষ্ম নয়: স্পিনোজার আছে শুধু তাশবিহ; প্লোটিনাস দুটো রাখেন, কিন্তু তাঁর পরম একের দিকে তুলনাহীনতার পাল্লা ভারী; ইবনে আরাবি জোর দেন — বাস্তব দুটোকেই ধরে।
 
-### 84 · Radically transcendent — beyond every cognitive category
+### 44 · চিরন্তন আয়ান — খোদার জ্ঞানে আগে
 
-Kant's God is the most thoroughly transcendent in this table — not because God is mystically ineffable (as in Plotinus or Laozi) but because human theoretical reason is structurally incapable of reaching God. The categories of the understanding (cause, substance, existence, unity) apply only within possible experience. Since God is not within possible experience, these categories cannot be legitimately applied to God at all. God transcends not just our language but the very cognitive machinery we use to know anything. This is critical transcendence — established not by mystical experience but by a precise analysis of how human knowledge works and where it ends. It is more permanent and more principled than the mystical silence of the apophatic traditions, because it does not point beyond itself toward a possible union.
+সব কিছু চিরকাল আছে আয়ান সাবিতা হয়ে — খোদার আত্মজ্ঞানের ভেতরে স্থির সারসত্তা হয়ে — বাইরের অস্তিত্বে প্রকাশের আগেই। প্রতিটি জিনিসের সময়ের ভেতরের অস্তিত্ব তার চিরন্তন মূলরূপের প্রকাশ; সময় হলো খোদার জ্ঞানে যা বরাবরই পূর্ণ ছিল, তার ধীরে খুলে যাওয়া।
 
-### 94 · Both — primordial transcends, consequent participates in all
+এতে সৃষ্টির প্রশ্নে ইবনে আরাবির হাতে আসে এক অসাধারণ উত্তর: জিনিস কিছু-না থেকে অস্তিত্বে আসে না — খোদার জ্ঞানে চিরন্তন থাকা থেকে বাইরের থাকায় আসে। জগৎ কোনো আকস্মিক ঘটনা নয়; প্রতিটি সৃষ্টি বরাবরই ঐশী জ্ঞানে ধরা এক সম্ভাবনা ছিল, অপেক্ষা করছিল ‘কুন’ — ‘হও!’ — শব্দের নিঃশ্বাসের জন্য। এই সারির কেন্দ্রও এখানে: আয়না, নাম, প্রেম — সবই শেষ পর্যন্ত চিরন্তন জ্ঞানের সময়ে খুলে যাওয়া।
 
-Whitehead distributes transcendence and immanence across God's two natures. The primordial nature is transcendent: God's eternal vision of all possibilities exists independently of what the world actually does, grounding all novelty and value from beyond the world's current state. The consequent nature is radically immanent: God is present in every actual occasion of experience in the universe, offering it an initial aim and receiving its completed experience in return. This is a more architecturally precise solution to the transcendence/immanence problem than any other in the table. Ibn Arabi holds both poles together in a kind of mystical tension; Whitehead distributes them cleanly across God's two natures so that neither cancels the other.
+### 45 · অন্তর দিয়ে জানা
 
-### 05 · Ziran — the world self-arises, uncaused
+ঐশী জ্ঞানের অঙ্গ যুক্তি নয়, কলব — অন্তর; আবেগ অর্থে নয়, সেই আধ্যাত্মিক সামর্থ্য অর্থে, যা খোদার আত্মপ্রকাশ গ্রহণ করতে পারে। সাধনায় মেজে মেজে অন্তরকে করে তুলতে হয় এক নির্মল আয়না।
 
-The concept of *ziran* — self-so, naturalness, spontaneous self-arising — replaces the entire question of divine causation. The Tao does not push the world into existence; the world arises the way a seed sprouts: not because something external acts upon it, but because sprouting is what a seed under the right conditions simply does. The Tao is the ground of this self-arising, not its agent. This makes the Tao unique among all sources in this table — it is the only "first principle" that is explicitly not a cause in any transitive sense. Compare Kant, where God is postulated precisely as the active guarantor of moral order: the Tao is the precise inversion — nothing causes anything; all things arise of themselves.
+জ্ঞানতত্ত্বে চূড়ান্ত পদক্ষেপটা এই: শুধু নেতিবাচক ধর্মতত্ত্ব — কেবল তানযিহ — যথেষ্ট নয়, শুধু ইতিবাচক ধর্মতত্ত্বও যথেষ্ট নয়। শ্রেষ্ঠ সাধকেরা প্রতিটি ঐশী গুণ একসঙ্গে স্বীকার আর অস্বীকার করেন — যৌক্তিক স্ববিরোধ হিসেবে নয়, এই উপলব্ধি থেকে যে খোদা স্বীকৃতি আর তার নেতি দুটোকেই ছাড়িয়ে যান। শংকরের নেতি নেতি বা নাগার্জুনের প্রজ্ঞা থেকে এটা আলাদা — এখানে ‘হ্যাঁ’ ছেঁটে ফেলা হয় না, ‘না’-র পাশে রেখে দেওয়া হয়। এ এমন এক উঁচু স্তরের জানা, যা কেবল হ্যাঁ বা কেবল না দিয়ে মেলে না।
 
-### 15 · Demiurge: efficient cause; the Good: final cause of all
+### 46 · ইনসানে কামিল — সব নামের আয়না
 
-The Demiurge is the efficient cause of the cosmos — the active agent whose rational activity brings the ordered world into being. The Form of the Good is the final cause — the ultimate purpose toward which everything strives, the standard against which everything is measured. These are two entirely different logical structures of causation, and Plato requires both: the craftsman to explain why there is a world at all; the Good to explain why the world tends toward order and beauty rather than randomness. Maimonides later tries to unify these by making his Necessary Being both the foundation of existence and its ultimate end.
+মানুষ সৃষ্টিজগতে খোদার সবচেয়ে পূর্ণ আয়না — একমাত্র সত্তা, যার ভেতরে সব ঐশী নাম একসঙ্গে উপস্থিত। ইনসানে কামিল — পূর্ণ মানুষ, যাঁর আদর্শ নবি মুহাম্মদ — এই পূর্ণতার পুরো বাস্তবায়ন: প্রতিটি ঐশী গুণ হাজির, নিখুঁত ভারসাম্যে, সুষম প্রকাশে। আত্মার যাত্রা এই সমগ্রতার ধাপে ধাপে উপলব্ধি — বিশেষ, সীমিত পরিচয়ের পর্দার নিচে বরাবরই থাকা ঐশী মুখের ওপর থেকে পর্দা সরানো।
 
-### 25 · Causation itself is empty — the concept hollows out
+প্লোটিনাস সর্বজনীনকে পেতে বিশেষকে খসিয়ে ফেলেন; শংকর ভেদের নিচে অভিন্নতা চেনেন। ইবনে আরাবি বলেন, বিশেষই সর্বজনীন — প্রতিটি মুখ এক ঐশী নাম, আর আত্মার পূর্ণতা তার মুখ হারানো নয়, মুখটার পুরো উন্মোচন।
 
-The most devastating move in Nagarjuna's arsenal: a cause cannot produce an effect identical to itself (then no production has occurred) nor can it produce an effect entirely different from itself (then there is no connection between them). Causation, examined closely, reveals itself as a conventional description we use to navigate the world — a useful fiction, not a metaphysical bedrock. There is therefore no room for a first cause, an unmoved mover, or a creator — these all require causation to have precisely the inherent nature that analysis dissolves. Compare Maimonides's active causation: for Maimonides, God causes being itself; for Nagarjuna, even God cannot truly cause, because causation has no ultimate reality.
+### 50 · খোদা অর্থাৎ প্রকৃতি
 
-### 35 · Superabundant overflow — necessity, not decision
+পশ্চিমা দর্শনে খোদা আর জগতের সবচেয়ে মৌলিক অভিন্নতা স্পিনোজার: খোদা আর প্রকৃতি এক। দ্রব্য একটাই, আর কেবল একটাই — অসীম, চিরন্তন, নিজেই নিজের কারণ — যাকে স্পিনোজা খোদাও বলেন, প্রকৃতিও বলেন: *দেউস সিভে নাতুরা*, খোদা অর্থাৎ প্রকৃতি। বাকি সব — প্রতিটি মন, প্রতিটি দেহ, প্রতিটি চিন্তা, প্রতিটি পাথর — এই এক দ্রব্যের প্রকার: তার অসীম স্বভাবের সাময়িক, সসীম প্রকাশ, সাগরে ঢেউয়ের মতো।
 
-The One causes not by deliberate act but by being, as fire causes warmth by being fire. This is emanation as inner necessity — not the mechanical necessity of one billiard ball striking another, but the inner necessity of perfect being to express itself. There is no moment of decision, no alternative the One could have chosen. Everything in the cosmos is both caused by and continually sustained by the level above it in a timeless, necessary cascade — remove the One for an instant and everything collapses into nothing, for the same reason that removing the light source instantly extinguishes the light. This contrasts with Maimonides and Kant, both of whom insist that divine causation must involve free will or a moral postulate rather than necessity.
+খোদা জগতের স্রষ্টা নন; অসীম দিক থেকে দেখা জগৎই খোদা। এটা এমন খোদার অন্তর্লীনতা নয়, যিনি একই সঙ্গে ঊর্ধ্বেও — যেমন ইবনে আরাবির খোদা; ঊর্ধ্বতা এখানে সরাসরি অস্বীকৃত। ‘ওপারে’ বলে কিছু নেই। খোদাই সব, আর সবই খোদা — আর এই দুই বাক্যের ফারাক নিছক ব্যাকরণের।
 
-### 45 · Causation is māyā — Brahman cannot truly cause anything
+### 51 · এক দ্রব্য, অসীম গুণ
 
-Within the conventional framework, Brahman as *Īśvara* is both the material and efficient cause of the world — the spider who both produces the web and is the web's substance. But this causation is itself part of *māyā*. When Brahman is seen as it truly is, the categories of cause and effect dissolve along with the appearance of the world. Nothing truly arises; Brahman does not truly act. The world's arising from Brahman is not an event but an appearance, like the arising of a dream from a dreamer who has not moved. This is the most radical treatment of causation in the table, more complete even than Nagarjuna's (which shows causation to be empty but at least lets the conventional level stand). For Shankara, even the conventional level of causation belongs to a provisional truth that liberation supersedes.
+মহাবিশ্বে সংখ্যায় জিনিস একটাই: খোদা-অর্থাৎ-প্রকৃতি। প্রতিটি আপাত বহুত্ব — আমার মন আর আপনার মনের ফারাক, একটা পাথর আর একটা ভাবনার ফারাক — একই অসীম দ্রব্যের নানা প্রকারের মধ্যকার ফারাক, চূড়ান্ত স্বভাবের ফারাক নয়। খোদার অসীম গুণ — যার মধ্যে আমরা জানি কেবল দুটো, চিন্তা আর বিস্তার — আলাদা আলাদা দ্রব্য নয়, একেরই নানা দিক; যেমন একই তলকে জ্যামিতি দিয়েও বর্ণনা করা যায়, পদার্থবিদ্যা দিয়েও, তাতে তল দুটো হয়ে যায় না।
 
-### 55 · Cause of being itself, not just of motion
+স্পিনোজার একত্ববাদ শংকরের চেয়েও পূর্ণ, কারণ শংকরকে আপাত বহুত্ব ব্যাখ্যা করতে মায়া নামে এক কলকবজা লাগে; স্পিনোজার কোনো কলকবজাই লাগে না — বহুত্ব হলো সেই এক দ্রব্যকেই সসীমভাবে দেখা। কিছু ভুল দেখা হচ্ছে না; শুধু আংশিক দেখা হচ্ছে।
 
-Maimonides builds on philosophical proofs from motion but pushes past them to something more profound: God is not merely the first cause of motion but the cause of *esse*, being itself. Everything that exists depends on God's continuous sustaining activity for its very existence, not merely its movement. Remove God and everything instantly ceases to be — not merely stops moving. This is the medieval doctrine of *creatio continua*: God's creative act is not a past event but the ever-present ground of every moment of existence. The logic is close to Plotinus's emanation (which is also continuous and sustaining) but here it is the result of free will, not necessity.
+### 52 · অন্তর্লীন কারণ
 
-### 65 · Self-love of Being — causality is God beholding itself
+স্পিনোজা দুটো কথা আলাদা করেন: *নাতুরা নাতুরান্স* — সক্রিয়, সৃজনশীল ভিত্তি হিসেবে খোদা, ‘প্রকৃতি, যে গড়ে’ — আর *নাতুরা নাতুরাতা* — উৎপন্ন জগৎ, ‘প্রকৃতি, যা গড়া হয়েছে’। খোদা সব কিছুর অন্তর্লীন কারণ: এমন কারণ নয়, যা নিজের ফলের বাইরে দাঁড়িয়ে থাকে, যেভাবে কাঠমিস্ত্রি দাঁড়িয়ে থাকে চেয়ারের বাইরে; বরং এমন কারণ, যা নিজের ভেতরেই উৎপন্ন করে।
 
-Causality in Ibn Arabi is the love of the Hidden Treasure to be known. Each creature arises because a particular divine Name "demands" its corresponding mirror in the world — the Name of Beauty requires beautiful things to exist, the Name of the Knowing requires knowers. This is neither efficient causation (one thing pushing another) nor final causation (things moving toward a goal) but something more intimate: the necessity of self-knowledge. The entire universe is one vast act of divine self-beholding, carried out through an infinite variety of mirrors. Compare Plotinus: both have necessary cosmic expression; but Plotinus's One is beyond all knowing and all love, while Ibn Arabi's Absolute is saturated with both.
+খোদা জগৎ বানিয়ে চলে যান না; খোদার অসীম স্বভাব জগৎকে অবিরাম উৎপন্ন করে চলে — খোদার ভেতরে, খোদা হিসেবেই। সবকিছু তাঁর স্বভাব থেকে বেরিয়ে আসে জ্যামিতির উপপাদ্যের মতো অনিবার্যতায়; কোথাও কোনো আকস্মিকতা নেই। গড়নে এটা প্লোটিনাসের উৎসারণের কাছাকাছি — অবিরাম, ধারণকারী, সর্বব্যাপী — কিন্তু মূলে আলাদা: প্লোটিনাসের পরম এক জগতের ওপরে আর আগে; স্পিনোজার দ্রব্য জগৎই।
 
-### 75 · Logical necessity — the universe follows like a theorem
+### 53 · ঊর্ধ্বতা নেই, শুধু সমগ্র
 
-Everything that exists and every event that occurs follows with strict logical necessity from God's infinite nature — as necessarily as the internal angles of a triangle sum to 180 degrees. There is no contingency, no alternative possible universe, no could-have-been-otherwise. God does not choose to produce the world; God's nature necessarily expresses itself through infinite modes. Human choices are also fully determined — we feel free only because we are ignorant of our causes. This is the most deterministic position in the table, more extreme even than Plotinus's necessary emanation (which at least involves levels and degrees) — Spinoza's necessity is as flat and total as geometry.
+খোদা কোনো অর্থেই ঊর্ধ্বে নন। কোনো ‘ওপার’ নেই, সৃষ্টির বাইরে থেকে দেখার কোনো জায়গা নেই, মহাবিশ্ব থেকে খোদার কোনো সরে থাকা নেই। এই ছকে স্পিনোজাই সর্বোচ্চ অন্তর্লীনতার অবস্থান: ঊর্ধ্বতাকে শুধু হালকা করা হয়নি, গোড়া থেকে বাতিল করা হয়েছে। ‘খোদা’ শব্দটা জগতের ওপরের কিছুকে বোঝায় না, বোঝায় জগৎ যা, তার অসীম সমগ্রতা।
 
-### 85 · Causality cannot reach God — the category has no outside
+এতে তিনি সরাসরি দাঁড়ান প্লোটিনাসের বিপরীতে — যাঁর পরম এক এতটাই দূরে যে তাকে বলা যায় না, ভাবা যায় না — আর ইবনে আরাবির বিপরীতে, যাঁর তানযিহ খোদার তুলনাহীনতাকে কখনো ছাড়ে না। তাওয়ের সঙ্গে তুলনা চলে: তাওয়েরও চলতি অর্থে কোনো ঊর্ধ্বতা নেই; কিন্তু তাওয়ের চরিত্র খালিপনা আর স্বতঃস্ফূর্ততা, স্পিনোজার খোদার চরিত্র অনিবার্যতা আর পূর্ণতা।
 
-The category of causality applies only within the world of experience — it is the form our minds impose on the data of the senses. To apply it to the world as a whole, or to posit a cause outside the world, is to misuse the category by extending it beyond its legitimate domain. This is Kant's demolition of the cosmological argument: the argument from the world's existence to a first cause is not a proof but a category error. God cannot be established as the cause of the world by theoretical reason. The contrast with Maimonides is sharp: for Maimonides, God as cause of being itself is a rational demonstration; for Kant, the very concept of a cause of being itself is incoherent when applied beyond experience. Spinoza's immanent causation, tracing everything logically to God, would be equally inaccessible to Kantian theoretical reason.
+### 54 · চিরন্তনের দৃষ্টিতে সবকিছু
 
-### 95 · Final causation — God lures, never compels
+খোদা কঠোর দার্শনিক অর্থে চিরন্তন: চিরকাল টিকে থাকা নয়, সময়ের মাত্রার সত্যিকার বাইরে। স্পিনোজা আলাদা করেন চিরন্তনতা — খোদার থাকার ধরন, যা আসে কেবল খোদার সংজ্ঞা থেকে — আর স্থিতিকাল — সসীম জিনিসের থাকার ধরন, যারা সময়ের ভেতরে একের পর এক থাকে।
 
-God's causal role is entirely through final causation — the attraction of an ideal — never through efficient causation — the push of a force. Each actual occasion receives from God an "initial aim": a vision of the best possible way that particular moment could realize itself, given its specific situation. The occasion then freely responds to or diverges from this lure. God has no coercive power whatsoever. This is Whitehead's theodicy: God was present in the worst moments of history not as the one who permitted or caused them but as the lure toward what was best in them — a lure that was freely refused or simply overwhelmed. The contrast with Maimonides's active causation is total: Maimonides's God is the absolute creator from nothing; Whitehead's God is a cause of a unique and non-coercive kind, making suggestions the universe is free to ignore.
+সর্বোচ্চ জ্ঞান — তৃতীয় প্রকারের জ্ঞান, স্বজ্ঞা — সব কিছুকে দেখে চিরন্তনের দৃষ্টিতে: খোদার ভেতরে তারা যেমন, সব কালক্রমের বাইরে। ঐশী দৃষ্টিভঙ্গির সবচেয়ে কাছে দার্শনিকের পৌঁছানো এটাই: প্রতিটি জিনিসকে একটা ধারার একটা মুহূর্ত হিসেবে নয়, খোদার স্বভাবের চিরন্তন প্রকাশ হিসেবে দেখা। এ যেন সাধকের দিব্যদর্শনেরই এক ইহজাগতিক রূপ।
 
-### 06 · The still axis — prior to time, unchanging
+### 55 · শুধু যুক্তিতেই পুরো জানা
 
-Time belongs to the ten thousand things, to the flux and change of the phenomenal world. The Tao is the still frame around which that flux revolves — *"There was something undifferentiated and yet complete, which existed before heaven and earth."* It does not endure through time; it subtends time. This is subtly different from Spinoza's eternity (which follows from the logical necessity of God's nature) and from Shankara's timeless Brahman (which is positively characterized as pure consciousness). The Tao's relation to time is its characteristic silence: it simply does not participate in the dimension of before and after.
+লাওৎসের নীরবতা, প্লোটিনাসের মিলন, শংকরের নেতি নেতি — এসবের বিপরীতে স্পিনোজা বিশ্বাস করেন, দার্শনিক যুক্তি দিয়েই খোদার ইতিবাচক আর যথাযথ বর্ণনা দেওয়া যায়। *এথিকা* আক্ষরিক অর্থেই জ্যামিতির পদ্ধতিতে খোদার স্বভাব প্রমাণের চেষ্টা — সংজ্ঞা, স্বতঃসিদ্ধ, প্রতিজ্ঞা, প্রমাণ। খোদা যুক্তির ওপারে নন; সব যৌক্তিক অনিবার্যতার ভিত্তিই খোদা। কোনো প্রত্যাদেশ, কোনো দিব্যদর্শন, কোনো আত্মসমর্পণ লাগে না — লাগে কেবল কঠোর চিন্তা।
 
-### 16 · Time: the moving image of eternity
+এই ছকে এটাই সবচেয়ে আত্মবিশ্বাসী বুদ্ধিবৃত্তিক অবস্থান, আর সে কারণেই সবচেয়ে অরক্ষিত। নাগার্জুন এখানে সবচেয়ে কঠিন প্রশ্নটা তুলতেন: যে সংজ্ঞা দিয়ে প্রমাণ শুরু, তার ‘নিজস্ব স্বভাব’ আসে কোথা থেকে? তবু স্পিনোজার সাহস অনন্য — বাকিরা যেখানে বলেন ‘থামো’, তিনি বলেন ‘ভাবো, আরও স্পষ্ট করে ভাবো’।
 
-The Demiurge creates time as *"a moving image of eternity"* — time is the closest the material world can come to the changeless being of the eternal Forms. Before the Demiurge's act, there was no time; only the unchanging eternal. This makes Plato one of the first thinkers to rigorously distinguish time (the domain of change and becoming) from eternity (the domain of unchanging being) — a distinction Plotinus develops into the classical doctrine of divine timelessness. Whitehead, by contrast, would later argue that God himself grows in time through his consequent nature — a direct repudiation of Plato's identification of the divine with the eternal.
+### 56 · মন খোদার বুদ্ধির প্রকার
 
-### 26 · Time is conventional — no eternal standpoint exists
+মানুষের মন খোদার চিন্তা-গুণের এক সসীম প্রকার — সসীমভাবে প্রকাশিত খোদার বুদ্ধি, যেভাবে ঢেউ সসীমভাবে প্রকাশিত সাগর। নিজেকে যথাযথভাবে জানা মানে খোদাকে জানা, কারণ যে অসীম অনিবার্যতা খোদার স্বভাব গড়ে, সেটাই মানুষের মনকে তার এক বিশেষ প্রকাশ হিসেবে গড়ে।
 
-Time, like causation, is empty of inherent existence. Nagarjuna shows that past, present, and future cannot be defined independently of each other or of the events within them — each concept borrows its meaning from the others in a circle that has no independent ground. Time is real at the conventional level — things arise and pass — but ultimately, temporal becoming is as empty as any other phenomenon. There is therefore no eternal God standing outside time, because there is no absolute "outside" and no self-sufficient timekeeper to stand there. Compare Spinoza's eternity (*sub specie aeternitatis*) — that too would be an empty concept, hovering above a world that has nowhere to anchor it.
+আত্মা আর খোদার সম্পর্ক তাই কোনো যাত্রা নয় (যাওয়ার জায়গাই নেই), মিলনও নয় (বিচ্ছেদই ছিল না) — শুধু চেনা: প্রকার চিনে নেয়, সে বরাবর যে দ্রব্য ছিল, তারই প্রকার। এর ফল খোদার প্রতি বৌদ্ধিক প্রেম — নিজেকে এভাবে চেনার চিরন্তন আনন্দ। শংকরের ‘আত্মাই ব্রহ্ম’-র সঙ্গে তুলনা চলে: দুজনেই মিলনের বদলে অভিন্নতায় জোর দেন, সসীম আর অসীমের দূরত্ব মুছে দেন — কিন্তু শংকরের অভিন্নতা চৈতন্যের সঙ্গে চৈতন্যের, উষ্ণ আর আলোকময়; স্পিনোজার অভিন্নতা যৌক্তিক কাঠামোর সঙ্গে যৌক্তিক কাঠামোর, শীতল আর নির্ভুল — আর নিজের ধরনে ঠিক ততটাই মুক্তিদায়ী।
 
-### 36 · Absolutely outside time — eternity precedes and sustains it
+### 60 · দ্বিমেরু প্রকৃত সত্তা
 
-The One is entirely outside time. Time arises at the level of the World Soul, which is the principle of temporal succession — it is the Soul's restless movement away from the eternal stillness of the Intellect that generates the flow of before and after. The One and the Divine Intellect exist in eternity — not the eternity of infinite duration but the eternity of the timeless present, the entire life of being gathered into a single unchanging now. Plotinus makes a distinction that would become central to all later theology: *aiōn* (eternity, the mode of the divine) versus *chronos* (time, the moving image of eternity, the mode of the world). Whitehead is his most explicit modern opponent on this point, insisting that God's consequent nature genuinely grows in time.
+হোয়াইটহেডের খোদা এক অনন্য প্রকৃত সত্তা — বাস্তবতার সেই মৌলিক একক, যা দিয়ে ইলেকট্রন, অভিজ্ঞতার মুহূর্ত, মহাবিশ্বের প্রতিটি ঘটনা গড়া। তবে খোদা আদি প্রকৃত সত্তা: অন্য সব সত্তার যেমন শুরু আর শেষ আছে, তাঁর তেমন নেই। আর তাঁর স্বভাব অপরিহার্যভাবে দ্বিমেরু।
 
-### 46 · Brahman is timeless — time itself is māyā
+আদি স্বভাব হলো সব বিশুদ্ধ সম্ভাবনার চিরন্তন, বিমূর্ত দৃষ্টি — যা কিছু হতে পারত, তার গোটা পরিসর, একটা কালহীন ধারণাগত অভিজ্ঞতায় ধরা। অনুগামী স্বভাব হলো জগৎ যত খোলে, মহাবিশ্বের প্রতিটি প্রকৃত অভিজ্ঞতার খোদার চলমান, জীবন্ত গ্রহণ। খোদা সব সত্তার ওপরে কোনো পরম সত্তা নন — প্রথাগত আস্তিক্যবাদের খোদা যেমন — আবার নিরাকার পরমও নন, যেমন শংকরের ব্রহ্ম বা প্লোটিনাসের পরম এক; তিনি মহাবিশ্বের চলমান সৃজনপ্রক্রিয়ায় এক অনন্য, অপরিহার্য অংশগ্রহণকারী।
 
-Brahman is absolutely timeless — not everlasting (enduring through all time) but genuinely atemporal (outside the dimension of before and after entirely). Time arises within *māyā*, like everything else that appears to change. Liberation does not happen in time — it is the recognition that one was always already timelessly Brahman. This collapses the question of when liberation occurs: it did not occur last Tuesday; it is the eternal fact now obscured by temporal imagination. Compare Spinoza's eternity, which also lies outside time — but for Spinoza this is a logical feature of an infinite substance, whereas for Shankara it is the experiential content of the liberated recognition: *I am this. I always was.*
+### 61 · জটিলতা — সম্পর্কের দাম
 
-### 56 · Absolutely eternal — before and after don't apply to God
+হোয়াইটহেড স্পষ্টভাবে, জেনেশুনে ঐশী সরলতা প্রত্যাখ্যান করেন। তাঁর যুক্তি: যে খোদা নিখাদ সরল আর নিখাদ চিরন্তন, তিনি জগতের অভিজ্ঞতা সত্যিকার অর্থে গ্রহণ করতে পারেন না — যে বদলায় না, তাকে কিছু ছোঁয় না। আবার যে খোদা নিখাদ সময়ের ভেতরে, কালের এপার-ওপার জুড়ে তাঁর কোনো স্থির পরিচয় থাকে না। দ্বিমেরু কাঠামো — চিরন্তন আদি দৃষ্টি আর কালিক অনুগামী গ্রহণ — এমন খোদার অনিবার্য রূপ, যিনি একই সঙ্গে সব সম্ভাবনার ভিত্তি আর প্রতিটি প্রকৃত ঘটনার সত্যিকার সঙ্গী।
 
-God's eternity is certain and absolute: God has no temporal succession, no before and after, no duration in which events can occur. The question of whether the world is eternal or temporally created is, for Maimonides, one of the great unresolved uncertainties — he believes in temporal creation on scriptural and philosophical grounds but acknowledges that counterarguments cannot be definitively refuted by reason alone. This intellectual honesty is characteristic: he will not claim more certainty than the arguments warrant. The world's temporal beginning is held as probable and scripturally required, not demonstrated. God's atemporality, by contrast, follows necessarily from necessary existence and absolute simplicity.
+হোয়াইটহেড দাম মেনে নেন: তাঁর খোদা জটিল, এক দিকে সময়ের ভেতরে, ক্ষমতায় সত্যিই সীমিত। তাঁর মতে, ঐতিহ্য সরলতার ওপর যে জোর দিয়েছে, তার দাম দিতে হয়েছে সত্যিকার সম্পর্ক হারিয়ে — এত সরল, এত চিরন্তন খোদা জগতের সঙ্গে কষ্ট পেতে পারেন না, সৌন্দর্যে আলোড়িত হতে পারেন না, অস্তিত্বের অভিযানে অংশ নিতে পারেন না।
 
-### 66 · Eternal archetypes — all things exist first in God's knowing
+### 62 · জগতের সঙ্গে সহস্রষ্টা
 
-All things exist eternally as *al-a'yān al-thābita* — fixed essences within God's self-knowledge — before they are disclosed in external existence. Each thing's temporal existence is the manifestation of its eternal archetype; time is the unfolding of what was always already complete in God's knowing. This gives Ibn Arabi a remarkable answer to the question of creation: things do not come into being from nothing — they come into external being from eternal being-in-God's-knowledge. The world is not a surprise; every creature was always already a possibility held within the divine knowing, waiting for the breath of *"Be!"* (*kun*).
+‘খোদা জগৎ সৃষ্টি করেন — এ কথা যতটা সত্য, জগৎ খোদাকে সৃষ্টি করে — এ কথাও ততটাই সত্য।’ আগের সব আস্তিক্যবাদ থেকে এটাই হোয়াইটহেডের সবচেয়ে মৌলিক বিচ্যুতি। খোদা আর জগৎ সত্যিই পরস্পরের সৃজনকারী। খোদা মহাবিশ্বের প্রতিটি মুহূর্তকে দেন এক প্রাথমিক লক্ষ্য — সম্ভাব্য সেরা রূপের দিকে এক টান — আর মহাবিশ্ব স্বাধীনভাবে সাড়া দেয়; সেই স্বাধীন সাড়া ফিরে যায় খোদার অনুগামী স্বভাবে, খোদার অভিজ্ঞতাকে নতুন প্রকৃত বিষয়বস্তুতে সমৃদ্ধ করে।
 
-### 76 · Eternal outside time — all things seen from eternity
+এই দুমুখী সৃজনের মানে, জগতের যেমন খোদাকে দরকার, খোদারও তেমনি জগৎকে দরকার: জগতের প্রকৃত ঘটনা না থাকলে খোদার অনুগামী স্বভাবে কিছুই থাকত না; খোদার আদি দৃষ্টি না থাকলে জগতের ঘটনাগুলোর কোনো প্রাথমিক লক্ষ্য, কোনো দিক, নতুনের কোনো সম্ভাবনা থাকত না। স্পিনোজার খোদা জগৎ উৎপন্ন করেন, কিন্তু জগৎ যা করে তাতে তাঁর কিছুই বদলায় না; হোয়াইটহেডের খোদা জগতের কাজে সত্যিই বদলে যান।
 
-God is eternal in the strict philosophical sense: not everlasting (enduring through all time) but genuinely outside the temporal dimension. Spinoza distinguishes *eternity* (the mode of God's existence, following from God's definition alone) from *duration* (the mode of finite things, which exist successively in time). The highest form of knowledge — *scientia intuitiva*, the third kind — perceives things *sub specie aeternitatis*: under the aspect of eternity, as they exist in God outside all temporal succession. This is the philosopher's closest approach to the divine standpoint: seeing each thing not as a moment in a sequence but as an eternal expression of God's nature. It is the secular version of mystical vision.
+### 63 · আদিতে ঊর্ধ্বে, অনুগামীতে ভেতরে
 
-### 86 · Time is our form of intuition — God's relation to it: unknown
+হোয়াইটহেড ঊর্ধ্বতা আর অন্তর্লীনতা ভাগ করে দেন খোদার দুই স্বভাবে। আদি স্বভাব ঊর্ধ্বে: সব সম্ভাবনা নিয়ে খোদার চিরন্তন দৃষ্টি জগৎ আসলে কী করছে তা থেকে স্বাধীন; জগতের বর্তমান অবস্থার বাইরে থেকে সে সব নতুনত্ব আর মূল্যের ভিত্তি জোগায়। অনুগামী স্বভাব আমূল অন্তর্লীন: মহাবিশ্বের প্রতিটি অভিজ্ঞতার মুহূর্তে খোদা হাজির, তাকে প্রাথমিক লক্ষ্য দেন, আর বিনিময়ে তার সম্পূর্ণ অভিজ্ঞতা গ্রহণ করেন।
 
-In Kant's critical philosophy, time is not a feature of reality in itself but a form of human inner sensible intuition — the way the mind structures its experience of succession and duration. Since God is not within possible experience, God is not in time. But this is not the traditional positive claim that God is eternal (a claim about God's inner nature) — it is the negative claim that time simply does not apply to things outside experience, of which God is one. Whether God is eternal, timeless, or related to time in some inconceivable way — this is permanently inaccessible to us. Whitehead, who insists God's consequent nature genuinely grows in time, would be asserting something that Kant places beyond the reach of any possible justification.
+দূর আর নিকটের সমস্যার এটা এই ছকের সবচেয়ে নিখুঁত নকশার সমাধান। ইবনে আরাবি দুই মেরু ধরে রাখেন এক রহস্যময় টানাপোড়েনে; শংকর দুটোকে এক সত্যের দুই কোণ বানান; হোয়াইটহেড দুটোকে খোদার দুই স্বভাবে পরিষ্কারভাবে ভাগ করে দেন, যাতে কোনোটা অন্যটাকে বাতিল না করে।
 
-### 96 · Primordial: eternal; consequent: genuinely temporal
+### 64 · আদিতে চিরন্তন, অনুগামীতে কালিক
 
-God's relationship to time is unprecedented in this table. The primordial nature is strictly eternal — it contains all pure possibilities in a single, atemporal act of conceptual valuation, complete from the beginning. The consequent nature is genuinely temporal — it grows, changes, and is enriched as the world unfolds. When a child is born, when a war ends, when a galaxy forms — these events literally enter God's experience and change it. God is the ultimate memory: the past that the world constantly forgets, God permanently holds. *"What is done in the world is transformed into a reality in heaven."* Nothing genuinely experienced is ever lost — every joy, every suffering, every creative act is received and preserved in God's consequent nature. This is the most consoling implication of Whitehead's God, and the one most opposed to the classical doctrine of divine immutability.
+সময়ের সঙ্গে খোদার এমন সম্পর্ক এই ছকে আর কারও নেই। আদি স্বভাব কঠোরভাবে চিরন্তন — সব বিশুদ্ধ সম্ভাবনা ধরা আছে এক কালহীন ধারণাগত মূল্যায়নে, শুরু থেকেই সম্পূর্ণ। অনুগামী স্বভাব সত্যিকার অর্থে কালিক — জগৎ যত খোলে, তা বাড়ে, বদলায়, সমৃদ্ধ হয়। একটা শিশু জন্মালে, একটা যুদ্ধ থামলে, একটা ছায়াপথ গড়ে উঠলে — এসব ঘটনা আক্ষরিক অর্থে খোদার অভিজ্ঞতায় ঢোকে আর তাকে বদলায়।
 
-### 07 · Known only when the knower empties
+খোদা চূড়ান্ত স্মৃতি: জগৎ অবিরাম যে অতীত ভুলে যায়, খোদা তা চিরকাল ধরে রাখেন। ‘জগতে যা করা হয়, তা স্বর্গে এক বাস্তবতায় রূপ নেয়।’ সত্যিকার অভিজ্ঞতার কিছুই হারায় না — প্রতিটি আনন্দ, প্রতিটি কষ্ট, প্রতিটি সৃজন খোদার অনুগামী স্বভাবে গৃহীত আর রক্ষিত হয়। হোয়াইটহেডের খোদার সবচেয়ে সান্ত্বনাদায়ী তাৎপর্য এটাই, আর ঐশী অপরিবর্তনীয়তার পুরোনো মতবাদের সবচেয়ে বিপরীতও এটাই। প্লোটিনাসের আইওন আর শংকরের কালহীন ব্রহ্মের পাশে এ যেন এমন এক খোদা, যাঁর একটা ইতিহাস আছে।
 
-The Tao cannot be reached by analysis or argument. The very act of grasping creates the distance. The *Tao Te Ching*'s pedagogy is dissolution: empty yourself, become yielding and soft like water, stop striving to know. The Tao does not hide — it floods in wherever effort stops. Any positive description falsifies: to call it great narrows it; to call it one sets it against multiplicity. The method is therefore not accumulation of predicates (as in Plato's dialectic) nor even the systematic negation of predicates (as in Maimonides) — it is the abandonment of the predicate-making impulse altogether. Silence here is not defeat but arrival.
+### 65 · যুক্তি আর সৌন্দর্যে জানা
 
-### 17 · Known through dialectic — the long ascent to the Good
+এই ছকের নীরবতার ধারা — লাওৎসের নামহীনতা, নাগার্জুনের শূন্যতা, প্লোটিনাসের অকথ্যতা, শংকরের নেতি নেতি — থেকে হোয়াইটহেড সজ্ঞানে সরে দাঁড়ান। তাঁর মতে, বাস্তবতার একটা সৎ হিসাব দিতে হলে খোদার ইতিবাচক বর্ণনা দিতেই হবে, দার্শনিক নিখুঁততায়। সৌন্দর্যের অভিজ্ঞতা — সুষমা, সংগতি, তীব্রতার উপলব্ধি — খোদা জগৎকে যেদিকে টানছেন, তার সঙ্গে এক সরাসরি সাক্ষাৎ। ধর্মীয় অভিজ্ঞতাকে প্রমাণ হিসেবে গুরুত্ব দেওয়া হয়, নিছক আবেগ বলে উড়িয়ে দেওয়া হয় না।
 
-The Form of the Good can be known, but only through the most rigorous and sustained intellectual discipline — the long ascent described in the allegory of the cave, moving from shadows to images to actual objects to the sun itself. Plato says the Good *"surpasses being in dignity and power"* — ordinary predicates don't fully apply. Yet he does not conclude, as Maimonides does, that we can only say what God is *not*. Philosophical language can point at the Good with increasing precision even if it cannot capture it perfectly. The myths Plato deploys throughout his dialogues acknowledge that the highest truths resist pure propositional form — they require images, analogies, and dramatic enactment as well as argument.
+তবে খোদার সব চিরাচরিত গুণ নতুন করে ভাবতে হবে: সর্বশক্তিমত্তা হয় অসীম প্ররোচনার শক্তি; সর্বজ্ঞতা হয় সব প্রকৃত ঘটনার নিখুঁত, চলমান গ্রহণ; চিরন্তনতা হয় সেই আদি দৃষ্টি, যা নতুনত্বের ভিত্তি। এই নতুন ভাবনা খোদাকে দুর্বল করা নয়, গভীর করা — যে খোদা জগতের আনন্দ আর কষ্টে সত্যিই অংশ নেন, তিনিই অপরিবর্তনীয় পূর্ণতায় সিলমোহর-আঁটা খোদার চেয়ে খোদা নামের বেশি উপযুক্ত।
 
-### 27 · Prajñā alone — wisdom beyond concepts, including this one
+### 66 · আত্মাও খোদাকে দেয়
 
-The highest form of knowing is *prajñā* — non-conceptual wisdom that does not grasp emptiness as an object but realizes it directly, dissolving the subject-object distinction in the act of knowing itself. All language ultimately fails at the ultimate level, including the word "emptiness" — Nagarjuna ends his greatest work by declaring that even emptiness is empty. The two-truths doctrine preserves language for practical purposes (language about karma, liberation, the Buddha) while insisting that no concept is finally adequate to what is most real. This is the most thoroughgoing apophaticism in the table — it does not even trust the negations of negative theology, because negations too are concepts, and concepts are all empty.
+প্রতিটি প্রকৃত ঘটনার প্রতিটি অভিজ্ঞতা — প্রতিটি মানুষের অভিজ্ঞতাও — বয়ে যায় খোদার অনুগামী স্বভাবে; সেখানে গৃহীত হয়, রক্ষিত হয়, সুরে মেলানো হয়। আত্মা আর খোদার সম্পর্ক এই ছকে এর চেয়ে পারস্পরিক আর কোথাও নয়। প্লোটিনাসের আত্মা পরম একে ফেরে, কিন্তু তাকে কিছু দেয় না — পরম এক তো আগে থেকেই পূর্ণ। শংকরের আত্মা ব্রহ্মের সঙ্গে অভিন্নতা চেনে, কিন্তু অপরিবর্তনীয় ব্রহ্মে কিছু যোগ করে না। ইবনে আরাবির আত্মা ঐশী নাম উন্মোচন করে, কিন্তু যাত অস্পৃষ্ট থাকে। স্পিনোজার মন নিজেকে প্রকার বলে চেনে, কিন্তু দ্রব্যকে সমৃদ্ধ করে না।
 
-### 37 · Known only through henosis — intellect must abandon itself
+কেবল হোয়াইটহেডের খোদা আত্মা যা অনুভব করে আর অর্জন করে, তাতে সত্যিই সমৃদ্ধ হন। সত্যিকার অর্থে যা বাঁচা হয়েছে, তার কিছুই হারায় না: আত্মার আনন্দ, সৃজন, কষ্ট — সব চিরকালের জন্য রক্ষিত থাকে ঐশী স্মৃতিতে। হোয়াইটহেড যখন খোদাকে বলেন ‘মহান সঙ্গী — সেই সহমর্মী, যিনি বোঝেন’, তখন তিনি ঠিক এটাই বোঝান।
 
-The One cannot be known by the intellect, which always splits into knower and known — a split the One cannot tolerate. The only authentic knowing of the One is through *henosis*: mystical union, the soul's total self-abandonment into identity with the One. Plotinus speaks of this from direct experience — rare, sudden, effortless moments when the soul ceases to be "other than" and simply *is*. All philosophical language about the One is scaffolding: necessary for the ascent, to be abandoned at the summit. Any positive predicate falsifies by introducing a distinction between the One and that predicate. Compare Maimonides's negative theology, which also refuses positive predicates — but Maimonides stops at the silence of negation; Plotinus pushes through negation into union.
-
-### 47 · Neti neti — not this, not this — then silence
-
-*Nirguṇa Brahman* cannot be positively described. Every positive statement — "Brahman is X" — limits Brahman to X and excludes non-X, which contradicts infinite being. The Upanishadic method is *neti neti*: not this, not this — systematically removing every attribute until the mind, finding nothing to rest on, falls silent. The positive descriptions (*Sat-Chit-Ānanda*) are not attributes in the usual sense; they are more like progressive removals of what Brahman is not — Brahman is not non-existent, not unconscious, not suffering. The path of knowledge (*jñāna*) is the direct non-dual recognition of identity: *Aham Brahmāsmi*, "I am Brahman." No amount of ritual, devotion, or ethical practice can substitute for this recognition, though they can purify the mind to receive it.
-
-### 57 · Known only through negation — silence is the most accurate speech
-
-Maimonides's negative theology is the most systematic and rigorous in Western philosophy. Any positive predicate applied to God — wise, good, powerful — introduces a distinction between God and that attribute, violating divine simplicity. The only accurate theological speech is the accumulation of negations: God is *not* ignorant, not weak, not evil, not composite, not spatial, not temporal. Each negation removes a false expectation from the mind. The accumulated negations do not tell us what God is — they gradually purify the mind of what God is not, until the mind arrives at a silence that is more accurate than any positive description could be. Even "existent" applies to God only equivocally. Compare the Tao's radical unnamability: Laozi reaches the same conclusion through paradox; Maimonides through systematic logical argument.
-
-### 67 · Known through the heart — holding affirmation and negation
-
-The organ of divine knowledge is not reason but the *qalb* — the heart — understood not as emotion but as the spiritual faculty capable of receiving God's self-disclosures. The heart must be polished through spiritual practice until it becomes a pure mirror. The decisive epistemological move: neither pure apophatic theology (*tanzīh* alone, which is Maimonides's method) nor pure affirmative theology gives an adequate account. The greatest mystics affirm and deny every divine attribute simultaneously — not as a logical contradiction but as a recognition that God exceeds both the affirmation and its negation. This is a higher-order knowing than either positive or negative theology alone can provide.
-
-### 77 · Fully knowable through reason — no mysticism required
-
-Against paradoxical silence (Laozi) and negative theology (Maimonides) and mystical union (Plotinus), Spinoza believes God can be described positively and adequately through philosophical reason. The *Ethics* is literally the attempt to demonstrate God's nature using the geometric method — definitions, axioms, propositions, proofs. God is not beyond reason but is the ground of all rational necessity. No revelation, no vision, no surrender is required — only rigorous thinking. This is the most intellectually confident position in the table and the one most vulnerable to Kant's critique: if God is fully rational and knowable, why did Kant's critical philosophy show that every theoretical proof of God fails?
-
-### 87 · Unknowable theoretically — knowledge denied, faith enabled
-
-The most famous sentence in Kant's religious philosophy: *"I have found it necessary to deny knowledge, in order to make room for faith."* This is not a retreat but a strategic move. The theoretical proofs for God's existence have always been answered by theoretical refutations; the result has been centuries of inconclusive argument that undermine both faith and knowledge. Kant's solution: remove God from the domain of theoretical knowledge entirely. God cannot be known; God can be rationally believed. Faith is not a cognitive failure or a substitute for knowledge; it is the appropriate response to a postulate of practical reason. No tradition in this table makes a sharper distinction between knowing and believing — and no tradition accepts more gracefully the permanent unintelligibility of the ultimate.
-
-### 97 · Known through reason and beauty — positive description essential
-
-Unlike Maimonides (who insists God can only be described negatively) or Kant (who insists God cannot be known theoretically at all), Whitehead believes God must be described positively and with philosophical precision if we are to have an honest account of reality. Aesthetic experience — the appreciation of beauty, harmony, and intensity — is a direct encounter with what God is luring the world toward. Religious experience is taken seriously as evidence, not dismissed as sentiment. All traditional divine attributes must be reconceived: omnipotence becomes infinite persuasive power; omniscience becomes perfect ongoing reception of all actuality; eternity becomes the primordial vision that grounds novelty. The reconception is not a weakening but a deepening — a God who genuinely participates in the world's joy and suffering is more adequately divine than a God sealed off from it in changeless perfection.
-
-### 08 · Before virtue — harmony needs no law
-
-The Tao does not legislate. When the great Tao is present, wrote Laozi, there is no need for benevolence and righteousness; their appearance is the sign that the Tao has already receded. Natural harmony — not commanded goodness — is the Tao's gift. The sage who has returned to the Tao does not practice virtue; goodness arises the way water rises — effortlessly, finding its level. This is a far more radical position than Spinoza's (who replaces moral God with intellectual love) or Whitehead's (who grounds value in God's persuasive lure). The Tao dissolves the very need for a moral framework, because it dissolves the separation between the one who acts and the right way to act.
-
-### 18 · The Good: source of all truth, beauty, and being
-
-The Form of the Good is the ultimate source of all truth, beauty, and value in the universe. All other Forms — Justice, Equality, Beauty — derive their power and intelligibility from it. To know what is truly good is to know the Form of the Good, and this knowledge transforms the knower. The Demiurge acts from goodness — he desires the world to resemble its perfect model as closely as possible. Ethics flows from metaphysics in a way unique to Plato: goodness is not a commandment (as in Kant) or a cosmic harmony to align with (as in Laozi) — it is a Form, eternally existing, available to the disciplined intellect, and structurally prior to everything else.
-
-### 28 · Compassion without a God — ethics from interdependence
-
-Without a divine lawgiver or a cosmic good, how does ethics arise? For Nagarjuna it flows from *karuṇā* — compassion — which arises naturally when one clearly sees that the suffering of another is not categorically different from one's own. All beings are equally empty, equally dependently arisen, equally without inherent boundary between self and other. Morality without a moral God: this is Nagarjuna's most provocative legacy. Compare Laozi, whose ethics also requires no divine legislator — but where the Tao provides a natural harmony to align with, Nagarjuna offers nothing but the clear seeing of interdependence, which turns out to be enough.
-
-### 38 · Beyond good and evil — the source of goodness itself
-
-The One is identified with the Good, following Plato's intuition that the Form of the Good surpasses being. But the One's "goodness" is not a moral quality it possesses — it is the Good in the sense of the inexhaustible source from which all goodness, beauty, and value radiate. Evil, for Plotinus, is privation: not a positive force but the fading of the Good as one descends from the One toward matter, the way light fades into shadow. The One itself is beyond moral categories altogether — it is their source, not their member. This has the same structure as Laozi's Tao (which also precedes moral distinctions) but with the crucial difference that Plotinus's One is the positive plenitude from which goodness overflows, while the Tao is pure emptiness from which harmony arises.
-
-### 48 · Beyond good and evil — ethics is conventional truth
-
-*Nirguṇa Brahman* is beyond all moral categories. It is not good in the sense of having a moral quality, because to have any quality is to be finite. Moral distinctions belong to *māyā*: they arise within the dream and are real within it — Shankara does not dismiss the ethical life — but liberation is the transcendence of the perspective from which moral distinctions are drawn. The liberated sage acts from the fullness of Brahman, not from moral calculation. Virtue arises spontaneously, the way warmth arises from fire, without the fire deciding to be warm. This mirrors Laozi's vision of the sage who, having returned to the Tao, acts with natural goodness requiring no effort — though for Laozi the return is alignment, while for Shankara it is recognition of an identity that was never actually lost.
-
-### 58 · Source of goodness — but divine goodness exceeds all categories
-
-God is the source of all goodness in the universe, but "goodness" said of God means something entirely different from goodness said of a virtuous human — not less, but incomparably more, in a way that no analogy can reach. To say God is good in the same sense a person is good would mean they share a property, violating absolute transcendence. God's actions in the world display what we recognize as wisdom and goodness, and the ethical life is modeled on imitating these actions — not on sharing God's inner properties, which remain inaccessible. This "ethics of imitation" is Maimonides's practical conclusion: we become more like God not by mystical ascent but by studying what God does in the world and acting accordingly.
-
-### 68 · Every face of the world is a face of God
-
-For Ibn Arabi, the recognition that all beings are divine self-disclosures transforms ethics entirely. To harm another being is to harm a face of God; to love the other in all their particularity is to love a specific manifestation of divine beauty. Ethics is not obedience to a moral law but the natural expression of a heart that sees God in all things. The highest virtue is the capacity to recognize God's self-disclosure in every form, even the most humble or broken — because God shows Himself through every Name, including the Names of obscurity and suffering. Compare Laozi's natural harmony and Whitehead's ground of beauty: all three dissolve the distance between cosmology and ethics.
-
-### 78 · No moral God — amor intellectualis Dei is the highest good
-
-God is not good in the personal-moral sense. Good and evil are human constructions — they describe things relative to human needs and desires, not features of infinite nature. God does not prefer some outcomes over others, does not will human flourishing. Yet Spinoza's ethics is not nihilistic. The highest human good is *amor intellectualis Dei* — the intellectual love of God: the joy that arises when the intellect, through the third kind of knowledge, recognizes its own nature as a mode of God's infinite intellect and loves the necessary structure of all existence with an eternal, affectless, perfect love. This love is identical with God's love of Himself expressed through the human mind. It is the most serene ethical conclusion in the table — and the most demanding.
-
-### 88 · Guarantor of moral order — goodness is prior to God
-
-Kant's God is the guarantor of the *summum bonum*: the highest good in which virtue is proportionate to happiness. We cannot produce this by our own efforts; only an omnipotent and morally perfect being could ensure it. Therefore morality requires us to postulate God's existence. But — and this is Kant's most provocative contribution to ethics — goodness is prior to God. The moral law is not derived from God's commands; it is binding on God and humans alike, discovered by reason independently of any divine authority. Kant explicitly rejects divine command theory: it would make morality merely a matter of power. God exists because goodness requires a guarantor, not the other way around. This inverts the standard theistic relationship between God and value.
-
-### 98 · Ground of beauty — God aims at maximum richness for each
-
-God is the ground of value — not moral value alone but the entire spectrum of aesthetic and intellectual worth: beauty, truth, intensity of experience, harmony, adventure. The initial aim God offers each creature is not a moral command but a vision of the maximum beauty and richness available to that creature in that moment. Ethics in Whitehead is downstream from aesthetics: the good life is the richly experienced life, the life of maximum realized value. God's moral nature is therefore not that of a moral postulate (Kant) or an impersonal necessity (Spinoza) or a source of natural harmony (Laozi) — it is the ground of beauty, the inexhaustible source of the ideal toward which each moment strives.
-
-### 09 · Alignment — not union, not identity, but return
-
-The sage does not seek to merge with the Tao or identify with it — those would be acts of striving, which are precisely what the Tao's movement dissolves. The relationship is alignment: moving so naturally with the Tao that resistance disappears, as a boat disappears into the current it has stopped fighting. The sage is like water — yielding to every obstacle and eventually wearing away stone. This distinguishes the Taoist path from Plotinus's henosis (a dramatic event of union), Shankara's recognition (a cognitive discovery), and Ibn Arabi's mirroring (a metaphysics of self-disclosure). Alignment has no climax, no moment of arrival. The return was never to somewhere else.
-
-### 19 · Soul akin to the Forms — philosophy as homecoming
-
-The soul is immortal and naturally akin to the eternal Forms — it encountered them before birth and can remember them through philosophical recollection (*anamnesis*). The philosophical life is the soul's gradual return to its proper home in the realm of the eternal and intelligible. At death, the philosopher's soul is freed from the body's distortions and can contemplate the Forms directly. This is as close as Plato comes to mystical union — not absorption into the Good (as in Plotinus) nor identity with it (as in Shankara), but direct intellectual companionship with the unchanging truth. The soul does not become the Good; it finally sees it clearly, the way a traveler finally reaches the summit they were always climbing toward.
-
-### 29 · No self — liberation is the dissolution of the seeker
-
-*Anātman* — no-self — means there is no permanent, inherent self to be in any relationship with a God. The soul is a conventional label for a stream of dependently arisen events, no more inherently real than a river is inherently distinct from the water passing through it. Liberation is not union with God (Plotinus), nor identity with Brahman (Shankara), nor intellectual love of God (Spinoza), nor approaching the Form of the Good (Plato). It is the direct recognition that the self who was seeking liberation was always already empty of the inherent existence it took itself to have. Nothing is found; nothing is attained. The path dissolves at the destination — and the destination dissolves too.
-
-### 39 · Soul's descent and return — the great arc of existence
-
-The human soul is an emanation of the World Soul, which itself emanates from the Intellect, which emanates from the One. The soul's descent into matter is a falling-away from the source; the spiritual life is the return: gathering oneself inward, stripping away attachment to the material, ascending through Intellect back toward the One. The soul's highest faculty has never fully left the One — it is always already in contact with the divine ground. This means *henosis* is not the acquisition of something new but the recovery of what was always there. Shankara will say almost exactly the same thing in different language: liberation is not achievement but recognition, the removal of a superimposition that was never real. The deepest convergence in the table is here, between Athens and Varanasi, seventeen centuries apart.
-
-### 49 · Ātman IS Brahman — identity, not union
-
-*Tat tvam asi* — That thou art. The individual soul (*Ātman*) is not similar to Brahman, not created by Brahman, not approaching Brahman — it is numerically identical to Brahman. The apparent difference is due entirely to *māyā* and *avidyā* (ignorance). Liberation (*mokṣa*) is therefore not a journey toward God; it is the recognition of an identity that was always already the case. The wave discovers it is the ocean — not that it has joined the ocean, not that it resembles the ocean, but that it *is* the ocean and always was. This is perhaps the boldest claim in this table about the relation between the finite and the infinite — bolder than Plotinus's union (which requires a mystical event and is temporary), bolder than Ibn Arabi's mirroring (which preserves distinction), bolder than Spinoza's mode-of-substance (which lacks the warmth of recognition).
-
-### 59 · Intellectual love — the soul perfects itself toward God
-
-The highest human achievement is intellectual perfection — the actualization of the intellect through philosophical and theological understanding. This is the soul's closest approach to God: not mystical absorption, not emotional union, not identity, but the purification of intellect until it grasps the highest truths and in doing so becomes most like the divine intellect. The immortality of the soul is, for Maimonides, the immortality of the acquired intellect — the conceptual understanding that a person genuinely achieves during life persists after death. The more a person truly knows, the more they persist. This is a more restrained and demanding vision of the soul's relationship to God than almost anything else in the table — there is no ecstasy, no dissolution, only the quiet, earned proximity of a mind that has made itself more like the infinite mind it can never fully reach.
-
-### 69 · The Perfect Human — the fullest mirror of all Names
-
-The human being is the most complete mirror of God in creation — the only being in whom all divine Names are simultaneously present. The *Insān al-Kāmil* (Perfect Human) — whose exemplar is the Prophet Muhammad — is the full actualization of this completeness: every divine attribute present, perfectly balanced, in harmonious expression. The soul's journey is the progressive realization of this wholeness: the unveiling of the divine face that was always there, hidden beneath the veil of particular, limited identity. Contrast Plotinus (who must strip away the particular to find the universal) and Shankara (who must recognize the identity beneath difference): Ibn Arabi says the particular IS the universal — each face is a divine Name, and the soul's completion is not the loss of its face but its full disclosure.
-
-### 79 · Mind is a mode of God's infinite intellect
-
-The human mind is a finite mode of God's infinite attribute of Thought — God's intellect expressed finitely, the way a wave is the ocean expressed finitely. To know oneself adequately is to know God, because the same infinite necessity that constitutes God's nature constitutes the human mind as one of its particular expressions. The soul's relationship to God is therefore not a journey (there is nowhere to go) nor a union (there was never a separation) but a recognition: the mode recognizes itself as a mode of the substance it has always been. Compare Shankara's Ātman-is-Brahman: both insist on identity rather than union, both dissolve the distance between the finite and the infinite — but Shankara's identity is the identity of consciousness with consciousness, warm and luminous; Spinoza's is the identity of logical structure with logical structure, cold and exact and, in its own way, just as liberating.
-
-### 89 · Immortal soul as moral postulate — duty's infinite horizon
-
-The immortality of the soul is, like God's existence, a postulate of practical reason. The moral law demands perfect virtue — a complete alignment of will with the moral law — but this is an infinite task that cannot be completed in a finite lifetime. Therefore, morality requires us to postulate an infinite time for moral progress: the soul must be immortal. This is entirely different from the soul-God relationships in the rest of the table. There is no mystical union (Plotinus), no identity recognition (Shankara), no mirroring of divine names (Ibn Arabi), no intellectual love (Spinoza) — only the sober duty-relationship of a moral agent to the infinite demands of the moral law and the rational postulates that law requires. Perhaps the most austere soul-concept in the table, and in its very austerity, perhaps the most honest.
-
-### 99 · Genuine reciprocity — the soul gives to God as God gives
-
-Every experience of every actual occasion — including every human experience — flows into God's consequent nature and is received, preserved, and harmonized there. This is the most reciprocal soul-God relation in the entire table. Plotinus's soul returns to the One but gives it nothing (the One is already complete). Shankara's Ātman recognizes identity with Brahman but contributes nothing to Brahman (which is unchangeable). Ibn Arabi's soul reveals divine Names but the Essence remains untouched. Spinoza's mind recognizes itself as a mode but does not enrich the substance. Only Whitehead's consequent God is genuinely enriched by what the soul experiences and achieves. Nothing genuinely lived is ever lost: the soul's joy, creativity, and suffering are permanently preserved in the divine memory — which is what Whitehead means when he says *"God is the great companion."*
 
 # নবি
 
 axes:
-  rows: Prophet
-  cols: Property
+  rows: নবি
+  cols: খোদার স্বরূপ
 
 ## Columns
 
-### Col 0 · Nature
+### Col 0 · প্রত্যাদেশ
 
-short: How is ultimate reality characterised?
+short: খোদা কীভাবে নবির সঙ্গে, মানুষের সঙ্গে কথা বলেন?
 
-The Luminous Ground — God as radiant, living, moral presence
+এই সারির প্রায় প্রত্যেকের অভিজ্ঞতায় সত্য আসে দান হয়ে, অর্জন হয়ে নয়। জরথুস্ত্র প্রশ্ন করেন, জ্ঞানী প্রভু উত্তর দেন; মুসা জ্বলন্ত ঝোপের সামনে নিজের নাম ধরে ডাক শোনেন; যুদ্ধক্ষেত্রে দ্বিধায় ভেঙে পড়া অর্জুনকে কৃষ্ণ নিজে বোঝান; জিবরাইলের মারফত মুহাম্মদের কাছে কোরআন নাজিল হয়; নানক নদীতে ডুব দিয়ে তিন দিন পর উঠে আসেন শবদ নিয়ে। মানুষ খোদার দিকে হাত বাড়ানোর আগেই খোদা মানুষের দিকে হাত বাড়ান — হুকুমের আগে আসে অনুগ্রহ, বিধানের আগে আসে দান।
 
-Across ten traditions of revealed religion, the divine reveals itself not as abstract principle but as presence — luminous, living, and morally charged. Akhenaten's Aten shines impartially on all; Zarathustra's Ahura Mazda is truth itself; Moses's YHWH is the self-sufficient ground of being; Muhammad's Allah is the Living, Self-Subsisting. Even where the divine is most abstract (Confucius's Heaven, the Buddha's Nirvana), it carries moral weight — a claim on human behaviour, a standard against which human life is measured. The prophetic experience of God is less a metaphysical deduction than an encounter: something breaks through that was already there, and the prophet is commissioned to announce it.
+তবে এক প্রত্যাদেশ নানা মাধ্যমে আসে, আর মাধ্যমটাই ধর্মের চেহারা ঠিক করে দেয়। জরথুস্ত্রের কাছে তা তর্ক-বিতর্কের আলাপ, মুসার কাছে পাথরে খোদাই করা বিধান, গীতায় গুরু-শিষ্যের সংলাপ, কোরআনে হুবহু উচ্চারিত কালাম, নানকের কাছে গান। খ্রিষ্টীয় বোঝাপড়ায় ঈসার বেলায় বার্তা আর বাহক এক হয়ে যায় — প্রত্যাদেশ একটা গোটা জীবন। আর বুদ্ধ এই কলামের একমাত্র ব্যতিক্রম: বোধিবৃক্ষের নিচে কেউ তাঁকে কিছু বলেনি, যা এসেছিল তা এসেছিল নিজের অভিজ্ঞতার দীর্ঘ, নিবিষ্ট পর্যবেক্ষণ থেকে। এই ব্যতিক্রমটাই বাকিদের স্পষ্ট করে দেয় — অন্যদের সত্য আসে বাইরে থেকে ভেতরে, বুদ্ধের সত্য ভেতর থেকেই জাগে।
 
-### Col 1 · Revelation
+### Col 1 · একত্ব
 
-short: How does God speak to the prophet and humanity?
+short: খোদা কি এক? সেই একত্ব কীভাবে ঘোষিত হয়?
 
-Revelation as gift — God breaks silence to reach the human heart
+এই ছকে এর চেয়ে জোরালো মিল আর কোথাও নেই। জরথুস্ত্র এক জ্ঞানী প্রভুর কথা বলেন; মুসার প্রথম হুকুম অন্য কোনো উপাস্য না রাখা; ঈসা সেই প্রাচীন ঘোষণাকেই সবচেয়ে বড় হুকুম বলে উদ্ধৃত করেন; মুহাম্মদের তাওহিদ ইসলামের ভিত; নানকের গ্রন্থ খোলে "ইক ওংকার" দিয়ে। ব্যাসের অগণিত দেবতা এক ব্রহ্মেরই নানা মুখ। নানা দেশে, নানা ভাষায় একই অন্তর্দৃষ্টি: অনেকের পেছনে আছেন এক।
 
-Every figure in this table carries the experience of something given rather than achieved. Akhenaten's light pours down; Zarathustra hears the Wise Lord; Moses encounters the burning bush; Muhammad receives the Qur'an through Gabriel; Nanak emerges from the river with the divine Word. Even Homer invokes the Muse; even Confucius speaks of Heaven's virtue placed within him; even Vyasa transmits the Gita's dialogue. The dominant pattern is receptivity: the divine reaches toward the human before the human has reached toward the divine. Revelation is grace before it is command, gift before it is law.
+কিন্তু "এক" শব্দটা প্রতিবার একই কাজ করে না। মুসার কাছে একত্ব আনুগত্যের দাবি — চুক্তিতে কোনো প্রতিদ্বন্দ্বী চলবে না। মুহাম্মদের কাছে তা নিরঙ্কুশ সত্তাগত সত্য — শরিক নেই, তুলনা নেই। ব্যাসের কাছে তা উদার — সব আন্তরিক উপাসনা একই উৎসে পৌঁছায়। নানকের কাছে তা সামাজিক — খোদা এক বলেই মানুষও এক, হিন্দু-মুসলমানের দেয়াল গৌণ। জরথুস্ত্রের একত্ব এক প্রতিপক্ষের ছায়ায় টানটান। আর বুদ্ধ এখানেও চুপ: তাঁর কেন্দ্রে কোনো সত্তা নেই, আছে একটা নিয়ম — সবকিছু শর্ত থেকে জন্মায়, শর্ত ফুরোলে থামে।
 
-### Col 2 · Singularity
+### Col 2 · দাবি
 
-short: Is God one? How is unity proclaimed?
+short: খোদা মানুষের কাছে কী চান?
 
-The One — proclaimed across every tradition in this table
+প্রতিটি নবির পথেই একটা নৈতিক দাবি আছে, আর সেই দাবির সবসময় দুটো মেরু — একটা ভেতরের (ভালোবাসা, তাকওয়া, সৎ নিয়ত), আরেকটা বাইরের (ইবাদত, বিধান, সেবা, সমাজ)। জরথুস্ত্র চান ভালো চিন্তা, ভালো কথা, ভালো কাজ। মুসা চান খোদাকে ভালোবাসা আর তাঁর বিধান মানা। ঈসা চান খোদাকে আর প্রতিবেশীকে ভালোবাসা। মুহাম্মদ চান পাঁচ স্তম্ভের ভেতর দিয়ে গোটা জীবনের আত্মসমর্পণ। নানক চান নামের স্মরণ, যা প্রকাশ পায় গরিবের সেবায়। প্রতিবারই ভেতরটা ছাড়া বাইরেরটা ফাঁপা আনুষ্ঠানিকতা, আর বাইরেরটা ছাড়া ভেতরটা নিছক আবেগ। খোদা গোটা মানুষটাকে চান।
 
-No convergence in this table is more striking than the insistence on divine unity. Akhenaten abolishes the Egyptian pantheon; Zarathustra proclaims one Wise Lord; Moses declares one God; Muhammad's tawhid is the theological bedrock of Islam; Nanak's Ik Onkar opens the Sikh scripture. Even Homer and Confucius point toward a single governing principle: Fate in Homer, Heaven in Confucius. Vyasa's many gods are faces of one Brahman; the Buddha's Nirvana is one unconditioned reality. The prophetic intuition is the same across traditions: behind the many, there is the one.
+পার্থক্যটা ওজনের। মুসা আর মুহাম্মদের কাছে দাবি একটা বিস্তৃত বিধান, যা খাওয়া থেকে বিচার পর্যন্ত সব ছুঁয়ে যায়। ঈসা সেই বিধানকে দুটো হুকুমে গুটিয়ে আনেন, তারপর মানদণ্ড এত উঁচুতে তোলেন যে কেবল অনুগ্রহই সেখানে পৌঁছাতে পারে। ব্যাস চান ফলের আশা ছেড়ে নিজের কর্তব্য খোদাকে নিবেদন করা। বুদ্ধের দাবি কোনো খোদার দাবি নয়, একটা পথ — যা বদলায় দুঃখ-ভোগ করা মনটাকে। নানকের পথ সবচেয়ে বেশি সমাজমুখী: লঙ্গরের পাতে বসে সবাই একসঙ্গে খায়।
 
-### Col 3 · Creation
+### Col 3 · বিচার
 
-short: What is the world's origin and relation to God?
+short: খোদা কি বিচার করেন, পুরস্কার দেন, শাস্তি দেন?
 
-The world is gift and arena — created for relationship, not illusion
+নবিদের কাছে খোদার বিচার ঐচ্ছিক নয়, শুধু ভবিষ্যতেরও নয়। জরথুস্ত্রের চিনভাত সেতু, মুসার চুক্তির বরকত আর অভিশাপ, মুহাম্মদের কিয়ামত, ব্যাসের কর্মফল, বুদ্ধের কার্যকারণ — সবাই জোর দিয়ে বলেন, আমরা যা করি তার মূল্য আছে, তার পরিণাম আছে, জগতের নৈতিক কাঠামো মানুষের কাজের প্রতি উদাসীন নয়। খোদার অভিজ্ঞতা আর জবাবদিহির অভিজ্ঞতা এখানে আলাদা করা যায় না — এমন এক দৃষ্টির নিচে বেঁচে থাকা, যা সব দেখে আর চোখ ফেরায় না।
 
-The dominant prophetic vision of the world is neither illusion nor meaningless but gift and arena. The Aten gives the world daily as a renewed miracle of light; Allah creates by a word and sustains without cessation; Krishna pours his inexhaustible life into the world. Even the Buddha, who refuses cosmological speculation, treats the world as the arena in which suffering can be understood and ended. The prophetic instinct is that the world is here for something — for relationship, for moral testing, for the encounter between the divine and the human that is the deepest purpose of existence.
+তবে বিচার কোথায় ঘটে, সেখানেই পথ ভাগ হয়। মুসার বিচার ইতিহাসে — জাতির ভাগ্যে, এই জীবনেই। জরথুস্ত্র আর মুহাম্মদের বিচার মৃত্যুর পরে আর সময়ের শেষে — সেতু, পাল্লা, আমলনামা। ব্যাস আর বুদ্ধের বিচারে কোনো বিচারকই নেই; কর্ম নিজেই নিজের ফল বয়ে আনে, মাধ্যাকর্ষণের মতো। নানকের বিচার চলমান — হুকুম প্রতিটি মুহূর্তে সব চালায়, হিসাব কোনো এক দিনের জন্য জমা থাকে না। আর ঈসা বিচারের মাপকাঠি বেঁধে দেন সবচেয়ে অসহায় মানুষটির সঙ্গে আচরণে, তারপর এমন এক রহমতের কথা বলেন যা বিচারকে বাতিল করে না, ছাপিয়ে যায়।
 
-### Col 4 · Transcendence
+### Col 4 · প্রেম
 
-short: Is God remote and holy, or intimately present?
+short: মানুষের কষ্ট আর আকুতিতে খোদা কীভাবে সাড়া দেন?
 
-Near and far — the prophetic tension no tradition resolves
+প্রায় প্রতিটি ধারাই জোর দিয়ে বলে, মানুষের কষ্ট খোদাকে নাড়া দেয়। মুসার খোদা দাসত্বে থাকা মানুষের কান্না শোনেন আর তাদের উদ্ধার করতে নেমে আসেন। ইঞ্জিলের ঈসা লাজারাসের কবরের সামনে কাঁদেন। মুহাম্মদের খোদার প্রায় প্রতিটি সুরা শুরু হয় রহমতের দুই নামে। নানকের খোদা মানুষ ফেরার আগেই তার দিকে ফেরেন। জরথুস্ত্রের আহুরা মাজদাও নিজের ভালো সৃষ্টিতে অমঙ্গলের হানায় শোক করেন। নবিরা উদাসীন ক্ষমতার কোনো খোদার দেখা পাননি — পেয়েছেন এমন খোদা, যাঁর ক্ষমতাই প্রেমের ক্ষমতা, আর সেই প্রেম বিশেষভাবে সাড়া দেয় যন্ত্রণায়।
 
-Every tradition in this table holds the same paradox: God is utterly beyond and intimately near. The Aten withdraws at night and returns at dawn. Moses cannot see God's face and live, yet God speaks to him as a friend. Allah is beyond all likeness and nearer than the jugular vein. Jesus's Abba is both "Our Father in heaven" and present in the face of the poor. Nanak's God is farther than the farthest and fills every breath. No tradition resolves this tension — all live within it. The prophetic experience is precisely this: an encounter with something so other that it silences, and so near that it breathes through you.
+প্রেম কতদূর যায়, সেখানেই তফাত। ব্যাসের কৃষ্ণ ভক্তকে কখনো হারাতে দেন না; নানকের নদর যোগ্যতার হিসাব না করেই কর্মের বাঁধন গলিয়ে দেয় — দুজনের কাছেই প্রেম কর্মফলের চেয়ে বড়। খ্রিষ্টীয় বিশ্বাসে ঈসার ক্রুশ সবচেয়ে দুঃসাহসী দাবি: খোদা দূর থেকে কষ্ট দেখেন না, নিজে তার ভেতরে ঢোকেন। আর বুদ্ধ, যিনি কোনো করুণাময় খোদার কথা বলেন না, করুণাকে বসান সাধনার একেবারে কেন্দ্রে — খোদা ছাড়াও মানুষ অন্য প্রাণের কষ্ট দেখে মুখ ফিরিয়ে নিতে পারে না।
 
-### Col 5 · Demand
+### Col 5 · মুক্তি
 
-short: What does God require of human beings?
+short: খোদা, সত্য বা মুক্তির দিকে পথ কোনটা?
 
-Love and justice — what God requires is always both
+মুক্তির পথগুলো চেহারায় অসম্ভব রকম আলাদা, কিন্তু দিকে আশ্চর্য রকম এক: সেই অহংকে গলিয়ে দেওয়ার দিকে, যা মানুষকে খোদা থেকে, সত্য থেকে আলাদা করে রাখে। জরথুস্ত্র বলেন, সত্য বেছে নাও। মুসা বলেন, চুক্তিতে ফিরে এসো। ঈসা বলেন, মন ফেরাও, ভরসা রাখো। মুহাম্মদ বলেন, নিজেকে পুরোপুরি খোদার কাছে সঁপে দাও। নানক বলেন, নাম দিয়ে অহংকে গলিয়ে দাও। ব্যাস বলেন, সব কাজ খোদাকে নিবেদন করো। বুদ্ধ বলেন, তৃষ্ণা নিভিয়ে দাও।
 
-Every prophetic tradition imposes a moral demand, but the demand consistently has two poles: something internal (love, piety, right intention) and something external (ritual, law, service, community). Zarathustra: good thoughts, words, and deeds. Moses: love God and keep the commandments. Jesus: love God and love your neighbour. Muhammad: surrender the whole self through the Five Pillars. Nanak: remembrance of the Name expressed in service to the poor. Confucius: inner human-heartedness expressed through ritual propriety. In every case, the external without the internal is empty formalism, and the internal without the external is sentimentality. God requires the whole person.
+রূপ আলাদা — বিধান, প্রেম, আত্মসমর্পণ, সাধনা — কিন্তু গতি এক: নিজের ওপর নির্ভরতা থেকে সরে এমন এক ভিত্তির দিকে যাওয়া, যা সবকিছু ধরে রাখে অথচ বদলে কিছু চায় না। আর গন্তব্যও কিছুটা ভাগ হয়। মুসার মুক্তি সামাজিক — একটা সম্প্রদায়ের খোদা আর পরস্পরের সঙ্গে ঠিক সম্পর্কে থাকা। মুহাম্মদ আর ঈসার মুক্তি সম্পর্কের পূর্ণতা — বান্দা তার প্রভুর সান্নিধ্যে। ব্যাস আর নানকের মুক্তি ঘরে ফেরা। বুদ্ধের মুক্তি কোনো জায়গা নয়, কোনো অবস্থাও নয় — নিভে যাওয়া। তবু সবার পথে প্রথম পা একই: নিজেকে কেন্দ্র থেকে সরানো।
 
-### Col 6 · Justice
+### Col 6 · পরিণতি
 
-short: Does God judge, reward, and punish?
+short: আত্মা কী, আর তার জন্য কী অপেক্ষা করছে?
 
-Justice is real — God does not look away from what we do
+প্রায় সব ধারাতেই মৃত্যু আত্মার পুরো বিলোপ নয়। জরথুস্ত্রের আত্মা সেতু পেরোয়; মুহাম্মদের আত্মা খোদার কাছে ফেরে আর কিয়ামতে আবার ওঠে; ঈসার শিক্ষায় গোটা মানুষ পুনরুত্থিত হয়; ব্যাসের আত্মা কখনো জন্মায় না, কখনো মরে না; নানকের আত্মা খোদার মধ্যে মিশে যায়, যেভাবে শিখা থাকে আলোর ভেতর। এমনকি বুদ্ধ, যিনি স্থায়ী আত্মা মানেন না, তিনিও এক চলমান ধারার কথা বলেন, যা নির্বাণ পর্যন্ত বয়ে চলে। অন্তর্দৃষ্টিটা এক: আত্মার গভীরতম সত্তা হঠাৎ থেমে যেতে পারে না।
 
-Across the prophetic traditions, divine justice is not optional and not purely future. Zarathustra's Chinvat bridge, Moses's covenantal blessings and curses, Muhammad's Day of Judgment, Vyasa's karma, the Buddha's dependent origination — all insist that what we do matters, that it has consequences, that the moral order is not indifferent to human action. Even Homer's Fate, for all its indifference to individual merit, avenges broken oaths and punishes excessive pride. The prophetic experience of God is inseparable from the experience of being held accountable — of existing under a gaze that sees everything and does not look away.
-
-### Col 7 · Love
-
-short: How does God relate to human pain and longing?
-
-The heart of compassion — God moves toward the suffering
-
-Virtually every prophetic tradition insists that God is moved by human suffering. YHWH hears the cry of the enslaved and comes down to deliver. Jesus weeps at Lazarus's tomb. Muhammad's God opens every chapter with the names of compassion. Nanak's God turns toward the soul before it has turned toward God. Even Zarathustra's Ahura Mazda grieves the invasion of evil into the good creation. The prophets did not encounter a God of indifferent power — they encountered a God whose power is the power of love, and whose love is specifically responsive to pain.
-
-### Col 8 · Salvation
-
-short: What is the path to freedom, God, or truth?
-
-The path home — surrender, love, and the transformation of self
-
-The paths of salvation in this table are extraordinarily diverse in their forms but strikingly convergent in their direction: toward the dissolution of the ego that separates the human from the divine. Zarathustra: choose truth. Moses: return to the covenant. Jesus: be born again through repentance and faith. Muhammad: submit the whole self to God. Nanak: let the Name dissolve the ego. Vyasa: offer all action to God. The Buddha: extinguish craving. The forms differ — law, love, surrender, practice — but the movement is the same: away from self-sufficiency, toward the ground of being that sustains all things without needing anything in return.
-
-### Col 9 · Destiny
-
-short: What is the soul, and what awaits it?
-
-The soul is not lost — every tradition promises it a home
-
-Across ten traditions — Egyptian, Iranian, Jewish, Greek, Chinese, Indian, Buddhist, Christian, Islamic, Sikh — the soul is not simply annihilated at death. Even the most minimal afterlife (Homer's dim shades in Hades) preserves the soul's continuation. The Buddha's no-self still allows a stream of consciousness to continue until Nirvana. Every other tradition offers something more — resurrection, liberation, absorption, union. The prophetic intuition is that what the soul most deeply is cannot simply stop. The precise form of its continuation — reward, liberation, absorption, union — is the great question on which the traditions diverge most profoundly.
+কিন্তু ঠিক কোন রূপে সে টিকে থাকে — পুরস্কার, মুক্তি, বিলীন হওয়া, মিলন — এখানেই ধারাগুলো সবচেয়ে গভীরভাবে আলাদা। মুসা সবচেয়ে কম বলেন: তাওরাতের নজর এই জীবনে, কীভাবে বাঁচবে তাতে, মরার পর কোথায় যাবে তাতে নয়। জরথুস্ত্র আর মুহাম্মদ সবচেয়ে বেশি স্পষ্ট — বিচার, জান্নাত, জাহান্নাম। ঈসা কেবল টিকে থাকা নয়, রূপান্তরের কথা বলেন। ব্যাস আর নানক শেষ দেখেন মিলনে, বুদ্ধ শেষ দেখেন নিভে যাওয়ায়। নানকের শেষ কথাটা গানের মতো: মুক্ত আত্মা খোদার গুণগান গায়, কারণ এর জন্যই সে তৈরি হয়েছিল।
 
 ## Rows
 
-### Row 0 · Akhenaten
-desc: ~1353–1336 BCE · Egyptian / Amarna
-short: Akhenaten: the world lives by light; gratitude is the only response
+### Row 0 · জরথুস্ত্র
 
-<strong>The divine:</strong> The Aten — the solar disc, the energy of light that pours down on all creation, the single divine source that replaced Egypt's entire pantheon.<strong>Revelation:</strong> Through light itself, interpreted through Akhenaten as sole mediator. Visual and embodied, not verbal.<strong>Creation:</strong> Daily and continuous — every sunrise is a new creation; every sunset a small death.<strong>Moral demand:</strong> No commandments — only gratitude, wonder, and alignment with the beauty of creation. The most aesthetic religion in the table.<strong>Justice:</strong> None — the Aten shines equally on all. No reward, no punishment, no judgment.<strong>The soul:</strong> Bound to the Aten's light; rests in darkness at night, renewed at dawn.<strong>The single idea:</strong> God is light — the inexhaustible, impartial gift of radiance that makes all life possible and asks only to be received with gratitude.
+desc: খ্রিষ্টপূর্ব আনু. ১৫০০–১০০০ · ইরানি / জরথুস্ত্রীয়
 
-### Row 1 · Zarathustra
-desc: ~1500–1000 BCE · Iranian / Zoroastrian
-short: Zarathustra: truth against the Lie — the whole cosmos is the battlefield
+জরথুস্ত্রের খোদা আহুরা মাজদা — জ্ঞানী প্রভু, যাঁর স্বভাবই সত্য, আর যাঁর মুখোমুখি দাঁড়িয়ে আছে আদি এক ধ্বংসের আত্মা। প্রত্যাদেশ এখানে হুকুম নয়, আলাপ: গাথাগুলোতে নবি প্রশ্ন করেন, সন্দেহ করেন, তর্ক করেন। একত্ব আছে, কিন্তু এক প্রতিপক্ষের ছায়ায় — গোটা জগৎ সত্য আর মিথ্যার যুদ্ধক্ষেত্র। দাবি তিন শব্দে: ভালো চিন্তা, ভালো কথা, ভালো কাজ। বিচার আসে মৃত্যুর পর চিনভাত সেতুতে, আর সময়ের শেষে গোটা জগতের নবায়নে। খোদা নিজের সৃষ্টির কষ্টে শোক করেন আর তার জন্য সৎ মানুষের সহযোগিতা চান। মুক্তি নিজে বেছে নেওয়ার ব্যাপার; আত্মা গানের ঘরে অপেক্ষা করে সেই দিনের, যেদিন সব আত্মা পবিত্র হবে।
 
-<strong>The divine:</strong> Ahura Mazda — the Wise Lord, whose very nature is truth, standing in primordial opposition to the Destructive Spirit.<strong>Revelation:</strong> Direct visionary dialogue — intimate, questioning, intellectually engaged. The Gathas are a conversation, not a dictation.<strong>Creation:</strong> A good world invaded by evil. History is the battle between truth and the Lie, destined for final renovation.<strong>Moral demand:</strong> Good thoughts, good words, good deeds — the whole person aligned with truth.<strong>Justice:</strong> The Chinvat bridge at death; the final renovation at the end of time. The most eschatologically influential theology in the table.<strong>The soul:</strong> Crosses the bridge of judgment; dwells in the House of Song until the final renovation, when all souls are purified.<strong>The single idea:</strong> Every human choice matters cosmically — when you choose truth, you fight on God's side; when you lie, you serve the enemy.
+এই সারির কেন্দ্র প্রত্যাদেশ — কারণ জরথুস্ত্রের প্রত্যাদেশ নিজেই তাঁর ধর্মের সবচেয়ে বড় কথা বলে দেয়। যে খোদা প্রশ্নের উত্তর দেন, তিনি মানুষকে বিচার-বুদ্ধিসম্পন্ন এক সহযোদ্ধা হিসেবে দেখেন, অনুগত দাস হিসেবে নয়। এখান থেকেই আসে তাঁর মূল শিক্ষা: মানুষের প্রতিটি বাছাই মহাজাগতিক ওজন বহন করে। সত্য বেছে নিলে তুমি খোদার পক্ষে লড়ছ; মিথ্যা বললে তুমি শত্রুর সেবা করছ।
 
-### Row 2 · Moses
-desc: ~13th c. BCE · Israelite / Jewish
-short: Moses: YHWH the covenant God — law, liberation, and holy fire
+### Row 1 · মুসা
 
-<strong>The divine:</strong> YHWH — the self-sufficient, jealous, holy God who liberates and commands, whose name means "I am that I am."<strong>Revelation:</strong> Verbal, legislative, communal — the burning bush, Sinai's thunder, the written Torah.<strong>Creation:</strong> God creates by speech — "Let there be light." The world is entirely good and entirely dependent on God.<strong>Moral demand:</strong> 613 commandments governing every aspect of life. Obedience is covenantal loyalty.<strong>Justice:</strong> Historical — blessing for obedience, curse for rebellion. The fate of nations hangs on covenant fidelity.<strong>The soul:</strong> Belongs to God; returns to God at death. The Torah focuses overwhelmingly on this-worldly life.<strong>The single idea:</strong> God liberated a people and bound them in covenant — their freedom and their law are inseparable.
+desc: খ্রিষ্টপূর্ব আনু. ১৩শ শতক · বনি ইসরাইল / ইহুদি
 
-### Row 3 · Homer
-desc: ~8th c. BCE · Greek
-short: Homer: the gods are beautiful, terrible, and bound by Fate
+মুসার খোদা নিজের নাম বলেন এমন এক বাক্যে, যার অনুবাদ হয় না: "আমি যে আছি, সেই আছি।" তিনি স্বয়ম্ভূ, পবিত্র, আর ঈর্ষাপরায়ণ — মুক্তি দেন, আবার হুকুমও দেন। প্রত্যাদেশ এখানে কথায়, বিধানে, সমষ্টিতে: জ্বলন্ত ঝোপ, তুর পাহাড়ের বজ্র, পাথরের ফলক। দাবি এক বিস্তৃত বিধান, যা জীবনের প্রতিটি কোণ ছুঁয়ে যায়; আনুগত্য মানে চুক্তির প্রতি বিশ্বস্ততা। বিচার ঘটে ইতিহাসে — আনুগত্যে বরকত, অবাধ্যতায় অভিশাপ, জাতির ভাগ্য ঝুলে থাকে চুক্তির ওপর। খোদা মজলুমের কান্না শোনেন আর নেমে আসেন। মুক্তির পথ হলো ফিরে আসা; আর পরকাল নিয়ে তাওরাত প্রায় চুপ, কারণ তার সব মনোযোগ এই জীবনে।
 
-<strong>The divine:</strong> A quarrelsome family of immortal gods ruled by Zeus — powerful, personal, anthropomorphic, and subject to Fate (Moira).<strong>Revelation:</strong> Through dream, omen, epiphany, and oracle — unpredictable irruptions of divine presence.<strong>Creation:</strong> The gods did not create the world — it simply is. They govern its domains without having made it.<strong>Moral demand:</strong> Ritual piety (sacrifice, prayer, honouring oaths) and social excellence (aretē).<strong>Justice:</strong> Fate is absolute — even the gods cannot save the fated from death. Oaths are avenged; hubris is punished.<strong>The soul:</strong> Ends in Hades — a dim, joyless underworld where all shades dwell alike.<strong>The single idea:</strong> The gods show us beauty, power, and indifference — and remind us that we are mortal. Glory (kleos) is the only transcendence available.
+এই সারির কেন্দ্র একত্ব, কিন্তু সেই একত্ব দার্শনিক প্রস্তাব নয়, সম্পর্কের ঘোষণা: "আমি ছাড়া আর কোনো উপাস্য তোমার থাকবে না।" যে খোদা একটা জাতিকে দাসত্ব থেকে বের করে এনেছেন, তিনিই তাদের চুক্তিতে বেঁধেছেন — আর এই সারির মূল কথা হলো, সেই মুক্তি আর সেই বিধান আলাদা করা যায় না। এক খোদার প্রতি একনিষ্ঠতাই এখানে স্বাধীনতার রূপ।
 
-### Row 4 · Confucius
-desc: ~551–479 BCE · Chinese
-short: Confucius: Heaven's silent moral order — cultivate yourself and serve
+### Row 2 · ব্যাস
 
-<strong>The divine:</strong> Tian (Heaven) — the cosmic moral order that grounds all human ethical life, communicating through history and the cultivated human heart.<strong>Revelation:</strong> Through the accumulated wisdom of the ancient sages, transmitted in classical texts and ritual.<strong>Creation:</strong> Not Confucius's concern — the moral order within the given world is Heaven's gift and humanity's responsibility.<strong>Moral demand:</strong> Li (ritual propriety) and ren (human-heartedness) — character cultivated through proper relationships and genuine love for others.<strong>Justice:</strong> Historical — the Mandate of Heaven rewards virtuous rulers and withdraws from corrupt ones. No eschatological judgment.<strong>The soul:</strong> Agnostic — Confucius refused to speculate. Focus on how to live, not where the soul goes.<strong>The single idea:</strong> Heaven's moral order is already here — your task is to study it, embody it, and transmit it to the next generation.
+desc: খ্রিষ্টপূর্ব আনু. ৪র্থ–৩য় শতক · ভারতীয় / হিন্দু
 
-### Row 5 · Vyasa
-desc: ~4th–3rd c. BCE · Indian / Hindu
-short: Vyasa: God is everything — the Gita as the fullest divine discourse
+ব্যাসের খোদা একইসঙ্গে নৈর্ব্যক্তিক ব্রহ্ম আর ব্যক্তিরূপ কৃষ্ণ — সবকিছুর পরম ভিত আর তার ভালোবাসার মুখ। প্রত্যাদেশ আসে গীতায়: কৃষ্ণ নিজে, কুরুক্ষেত্রের মাঝখানে, অর্জুনের প্রতিটি দ্বিধার উত্তর দেন। একত্ব উদার — অগণিত দেবতা আর অগণিত পথ এক সত্তারই নানা রূপ। বিচার হলো কর্মফল — নিখুঁত, নৈর্ব্যক্তিক, বহু জন্ম জুড়ে নিজে নিজে চলে; কিন্তু তার পাশেই আছে খোদার প্রেম, যা ভক্তকে কর্মের বাঁধন থেকে ছাড়িয়ে আনতে পারে। মুক্তির পথ তিনটি — জ্ঞান, কর্ম, ভক্তি — যার যেমন স্বভাব। আর আত্মা অবিনাশী; দেহ বদলায় পুরোনো কাপড় বদলানোর মতো, যতদিন না মোক্ষ আসে।
 
-<strong>The divine:</strong> Both the impersonal Brahman and the personal Krishna — the absolute ground and its loving face, the most theologically comprehensive God-concept in the table.<strong>Revelation:</strong> Krishna speaks directly to Arjuna in the Gita — intimate, sustained, philosophical, and loving.<strong>Creation:</strong> Cyclical and vast — worlds arise and dissolve over billions of years in the eternal rhythm of divine creation and dissolution.<strong>Moral demand:</strong> Svadharma — one's own righteous duty, performed as an offering to God, without attachment to results. Three paths: knowledge, action, devotion.<strong>Justice:</strong> Karma — perfect, impersonal, self-executing across many lifetimes. Combined with divine grace that can dissolve what karma cannot.<strong>The soul:</strong> Eternal, never truly born or dying — it sheds bodies until liberation (moksha) in union with or proximity to God.<strong>The single idea:</strong> God is everything; the soul is eternal; surrender to God is the only action that frees you from the consequences of action.
+এই সারির কেন্দ্র দাবি, কারণ গীতার মূল প্রশ্নটাই দাবির প্রশ্ন: যুদ্ধের ময়দানে দাঁড়িয়ে আমার কর্তব্য কী? কৃষ্ণের উত্তর — নিজের ধর্ম পালন করো, কিন্তু ফলের আশা ছেড়ে, সব কাজ খোদাকে নিবেদন করে। খোদা সবকিছু, আত্মা চিরন্তন, আর খোদার কাছে আত্মসমর্পণই একমাত্র কাজ, যা মানুষকে কাজের পরিণাম থেকে মুক্ত করে।
 
-### Row 6 · Buddha
-desc: ~5th c. BCE · Indian / Buddhist
-short: Buddha: no God, but a path out of suffering — the most honest answer
+### Row 3 · বুদ্ধ
 
-<strong>The divine:</strong> No creator God — the ultimate is Nirvana, the unconditioned, unborn, unmade.<strong>Revelation:</strong> Not revelation but awakening — the Buddha's insight was achieved through sustained investigation, not divine commission.<strong>Creation:</strong> The world of suffering arises through ignorance — no divine plan, no cosmic battle, no creator.<strong>Moral demand:</strong> The Noble Eightfold Path — the middle way of disciplined, lucid, compassionate engagement with life.<strong>Justice:</strong> Karma — impersonal, mechanical, operating without a divine judge.<strong>The soul:</strong> No permanent self — a stream of conditioned processes continuing until Nirvana, where it ceases.<strong>The single idea:</strong> Suffering arises from craving; craving arises from ignorance; the path out is available to anyone willing to look clearly at their own experience.
+desc: খ্রিষ্টপূর্ব আনু. ৫ম শতক · ভারতীয় / বৌদ্ধ
 
-### Row 7 · Jesus
-desc: ~4 BCE–30 CE · Jewish / Christian
-short: Jesus: God is love — and love enters the darkness to find you
+বুদ্ধের কেন্দ্রে কোনো স্রষ্টা খোদা নেই; পরম সত্য হলো নির্বাণ — যা শর্তহীন, অজাত, অকৃত। প্রত্যাদেশও নেই, আছে জাগরণ: কারও নির্দেশে নয়, নিজের অভিজ্ঞতার নিবিষ্ট পর্যবেক্ষণে পাওয়া অন্তর্দৃষ্টি। একত্বের জায়গায় আছে একটা নিয়ম — সবকিছু শর্ত থেকে জন্মায়, শর্ত ফুরোলে থামে। দাবি কোনো খোদার হুকুম নয়, একটা পথ: আর্য অষ্টাঙ্গিক মার্গ, ভোগ আর কৃচ্ছ্রের মাঝখানের মধ্যপথ। কোনো করুণাময় খোদা নেই, তবু করুণা সাধনার হৃদয়। মুক্তি হলো তৃষ্ণার নিভে যাওয়া। আর স্থায়ী কোনো আত্মা নেই — আছে এক চলমান ধারা, যা নির্বাণে গিয়ে থামে।
 
-<strong>The divine:</strong> Abba — Father, intimate and personal beyond any prior concept of God. A God who runs to meet the returning prodigal, who weeps at the tomb.<strong>Revelation:</strong> The incarnation — God reveals himself not through a text but through a life, a death, and a resurrection.<strong>Creation:</strong> God the Father made all things good — the world is a garden of divine generosity.<strong>Moral demand:</strong> Love God with all your being; love your neighbour as yourself. Including your enemy.<strong>Justice:</strong> Judgment based on how you treated the least — but mercy that exceeds justice.<strong>The soul:</strong> Resurrection — not just survival but transformation. The whole person renewed in the fullness of God's love.<strong>The single idea:</strong> God is love. And love, taken seriously enough, suffers everything to reach the beloved.
+এই সারির কেন্দ্র বিচার, আর সেটাই সবচেয়ে বিস্ময়কর। যেখানে অন্যদের খোদা বিচারক, বুদ্ধের জগতে কোনো বিচারক নেই — অথচ বিচার আছে, আর তা কোনো খোদার বিচারের চেয়ে কম কঠোর নয়। কর্ম নিজেই নিজের ফল আনে। তাঁর মূল কথা: দুঃখ আসে তৃষ্ণা থেকে, তৃষ্ণা আসে অজ্ঞতা থেকে, আর বেরোনোর পথ খোলা সেই যে কোনো মানুষের জন্য, যে নিজের অভিজ্ঞতার দিকে স্থির চোখে তাকাতে রাজি।
 
-### Row 8 · Muhammad
-desc: ~570–632 CE · Arabian / Islamic
-short: Muhammad: God is One — and submission to that One is the whole of life
+### Row 4 · ঈসা
 
-<strong>The divine:</strong> Allah — absolute, indivisible, self-subsisting, infinitely compassionate.<strong>Revelation:</strong> The Qur'an as direct divine speech — the most linguistically specific revelation in the table.<strong>Creation:</strong> God creates by command ("Be!") and sustains without ceasing.<strong>Moral demand:</strong> Total submission — the Five Pillars and Sharia governing every domain of life.<strong>Justice:</strong> The Day of Judgment — every soul accountable for every atom of good and evil.<strong>The soul:</strong> Returns to God at death; resurrected on the Day of Judgment; paradise as the full flowering of life in God's perpetual presence.<strong>The single idea:</strong> There is no God but God — and the whole of life is the working out of what that means.
+desc: খ্রিষ্টপূর্ব আনু. ৪ – ৩০ খ্রিষ্টাব্দ · ইহুদি / খ্রিষ্টান
 
-### Row 9 · Nanak
-desc: 1469–1539 CE · Punjabi / Sikh
-short: Nanak: God is One Being — remember the Name, serve the poor, go home
+ইঞ্জিলের ঈসা খোদাকে ডাকেন "আব্বা" বলে — শিশু যেভাবে বাবাকে ডাকে। এ খোদা ফিরে আসা হারানো ছেলের দিকে ছুটে যান, কবরের সামনে কাঁদেন। খ্রিষ্টীয় বোঝাপড়ায় প্রত্যাদেশ এখানে কোনো কিতাব নয়, একটা জীবন — জন্ম, মৃত্যু আর পুনরুত্থান। একত্বের পুরোনো ঘোষণা তিনি অক্ষুণ্ণ রাখেন। দাবি দুটো: খোদাকে পুরো সত্তা দিয়ে ভালোবাসো, প্রতিবেশীকে নিজের মতো ভালোবাসো — শত্রুকেও। বিচারের মাপকাঠি সবচেয়ে অসহায় মানুষটির সঙ্গে আচরণ, কিন্তু রহমত বিচারকে ছাপিয়ে যায়। মুক্তি আসে মন ফেরানো আর ভরসায়, অর্জন হিসেবে নয়, দান হিসেবে। আর পরিণতি পুনরুত্থান — কেবল টিকে থাকা নয়, গোটা মানুষের রূপান্তর।
 
-<strong>The divine:</strong> Waheguru — the Wonderful Lord, approached through the True Name (Sat Nam), which is reality itself beneath all naming.<strong>Revelation:</strong> Divine music flowing through a tuned human instrument — the Shabad (divine Word) embodied in the Guru Granth Sahib.<strong>Creation:</strong> God creates through the divine Word — the world is God's play (khel), real and good, to be engaged with joyfully.<strong>Moral demand:</strong> Naam simran (remembrance), kirat karni (honest labour), vand chhakna (sharing) — the most communitarian path in the table.<strong>Justice:</strong> Hukam — divine will governs all things continuously. No eschatological judgment day.<strong>The soul:</strong> Merges with God in sachkhand — homecoming, like a flame dwelling in light. The liberated soul sings God's glory, which is what it was always made to do.<strong>The single idea:</strong> Ik Onkar — One Being. The unity of God implies the unity of humanity; the memory of God dissolves the ego; the ego's dissolution is the homecoming the soul was always seeking.
+এই সারির কেন্দ্র প্রেম, আর বাকি সব কলাম তার দিকেই ঝুঁকে আছে: বিধান প্রেমে গুটিয়ে আসে, বিচার প্রেমে নরম হয়, মুক্তি প্রেমের দান। তাঁর অনুসারীরা পরে কথাটা এক বাক্যে লিখে রাখলেন — খোদা প্রেম। আর সেই প্রেম, যথেষ্ট গুরুত্ব দিয়ে নিলে, প্রিয়জনের কাছে পৌঁছাতে সবকিছু সয়ে নেয়।
+
+### Row 5 · মুহাম্মদ
+
+desc: আনু. ৫৭০–৬৩২ খ্রিষ্টাব্দ · আরব / ইসলামি
+
+মুহাম্মদের খোদা আল্লাহ — নিরঙ্কুশ, অবিভাজ্য, চিরঞ্জীব, সবকিছুর ধারক, আর অসীম দয়ালু। প্রত্যাদেশ কোরআন — জিবরাইলের মারফত আরবিতে নাজিল হওয়া খোদার হুবহু কালাম, এই ছকে ভাষার দিক থেকে সবচেয়ে নির্দিষ্ট প্রত্যাদেশ। একত্ব তাওহিদ — শরিক নেই, তুলনা নেই, আর শিরকই সবচেয়ে বড় গুনাহ। দাবি পাঁচ স্তম্ভ আর শরিয়তে গাঁথা এক পূর্ণ জীবন। বিচার কিয়ামতের দিন — অণু পরিমাণ ভালো-মন্দেরও হিসাব। কিন্তু সেই বিচারের আগে আর তাকে ঘিরে আছে রহমত: প্রায় প্রতিটি সুরা শুরু হয় আর-রাহমান আর-রাহিম নামে। আর পরিণতি — আত্মা খোদার কাছে ফেরে, কিয়ামতে আবার ওঠে, জান্নাতে পায় খোদার চিরস্থায়ী সান্নিধ্যে জীবনের পূর্ণ বিকাশ।
+
+এই সারির কেন্দ্র মুক্তি, কারণ ধর্মটার নামই তার মুক্তির পথ: ইসলাম মানে আত্মসমর্পণ। তাওহিদ, ইবাদত, শরিয়ত, বিচার — সবই সেই এক কাজের নানা দিক, পুরো নিজেকে খোদার কাছে সঁপে দেওয়া। খোদা ছাড়া কোনো উপাস্য নেই — আর গোটা জীবন এই কথাটার মানে বুঝে ওঠার কাজ।
+
+### Row 6 · নানক
+
+desc: ১৪৬৯–১৫৩৯ খ্রিষ্টাব্দ · পাঞ্জাবি / শিখ
+
+নানকের খোদা ওয়াহেগুরু — আশ্চর্য প্রভু, যাঁর কাছে পৌঁছানো যায় সতনামের ভেতর দিয়ে, সেই সত্য নাম যা সব নামের নিচের বাস্তবতা। প্রত্যাদেশ শবদ — এক সুরে বাঁধা মানুষের ভেতর দিয়ে বয়ে আসা খোদার গান, যা ধরা আছে গুরু গ্রন্থ সাহিবে। একত্ব ইক ওংকার — খোদা হিন্দুরও নন, মুসলমানেরও নন, তিনি এক, আর তাই মানুষও এক। দাবি তিন কথায়: নাম জপো, সৎভাবে খেটে খাও, ভাগ করে খাও। বিচার কোনো এক দিনের জন্য জমা থাকে না — হুকুম প্রতিটি মুহূর্তে সব চালায়। প্রেম আসে নদর হয়ে, সেই কৃপার দৃষ্টি যা কর্মের বাঁধন গলিয়ে দেয়। মুক্তি অহং গলে যাওয়া।
+
+এই সারির কেন্দ্র পরিণতি, কারণ নানকের পুরো পথ এক ঘরে ফেরার গল্প। খোদা এক বলে মানুষ এক; খোদার স্মরণ অহং গলায়; আর অহং গলে যাওয়াই সেই ঘরে ফেরা, যা আত্মা সবসময় খুঁজছিল। শেষে আত্মা সচখণ্ডে পৌঁছায়, আলোর ভেতর শিখার মতো — আলাদা, তবু অবিচ্ছেদ্য — আর খোদার গুণগান গায়, যার জন্যই সে তৈরি।
 
 ## Cells
 
-### 00 · The Aten — sole source of all life and light
+### 00 · গাথা — প্রশ্নে-উত্তরে প্রত্যাদেশ
 
-Akhenaten's revolution was the most radical theological transformation in ancient history: the abolition of Egypt's vast polytheistic pantheon and its replacement with a single divine principle — the *Aten*, the solar disc. But the Aten is not simply the sun; it is what the sun *does*: the energy of light that pours down, makes things grow, warms the earth, animates every living creature. The divine is not a hidden being behind the visible — it *is* the visible gift of radiance itself. The *Great Hymn to the Aten* is the earliest known sustained monotheistic poem, predating Moses by at least a century, and it is a theology of sheer luminous generosity.
+জরথুস্ত্র তাঁর প্রত্যাদেশ পেয়েছিলেন আহুরা মাজদা আর তাঁর থেকে বিচ্ছুরিত পবিত্র সত্তাদের — আমেশা স্পেন্তাদের — সঙ্গে একের পর এক সরাসরি দর্শনে। গাথাগুলো জরথুস্ত্রীয় ধারার সবচেয়ে পুরোনো স্তোত্র, প্রায় নিশ্চিতভাবে তাঁর নিজের রচনা, আর এগুলো আশ্চর্য রকম ব্যক্তিগত। সেখানে নবির প্রশ্ন আছে, সন্দেহ আছে, হতাশা আছে, হঠাৎ আলোয় ভরে ওঠার মুহূর্তও আছে।
 
-### 10 · Ahura Mazda — the Wise Lord, the source of truth
+এই প্রত্যাদেশ সংলাপের। জরথুস্ত্র কেবল গ্রহণ করেন না — তর্ক করেন, প্রশ্ন তোলেন, খোদার সঙ্গে কুস্তি লড়েন: "আমাকে সত্যি করে বলো, প্রভু…" — গাথার এক গোটা অধ্যায় এই কথা দিয়ে বারবার শুরু হয়। ফলে অন্য প্রায় যেকোনো নবুয়তের গ্রন্থের চেয়ে গাথা বেশি চিন্তাশীল, বেশি জিজ্ঞাসু। যে খোদা এভাবে কথা বলেন, তিনি মানুষের বুদ্ধিকে ভয় পান না; তিনি চান মানুষ বুঝে-শুনে তাঁর পক্ষ নিক।
 
-Zarathustra's God — *Ahura Mazda*, the Wise Lord — is one of the oldest clearly articulated monotheistic concepts in human history. Unlike the Aten (identified with the sun's physical radiance), Ahura Mazda is a cosmic moral intelligence: the source of truth (*asha*), righteousness, light, and wisdom. He is not simply the most powerful being — he is the being whose very nature is truth. The universe is structured by the opposition between Ahura Mazda's principle of truth and the opposing principle of the Lie (*druj*). This cosmic moral dualism shaped Jewish apocalypticism, Christian demonology, and Gnostic cosmology.
+### 10 · জ্বলন্ত ঝোপ, তুর পাহাড়, লিখিত বিধান
 
-### 20 · YHWH — the One who IS, absolute and jealous
+পশ্চিম এশিয়ার নবুয়তি ধারায় মুসার অভিজ্ঞতাই প্রত্যাদেশের আদর্শ নমুনা: এমন এক ঝোপ, যা জ্বলছে অথচ পুড়ে শেষ হচ্ছে না; এমন এক কণ্ঠ, যা নাম ধরে ডাকে; আর খোদার পক্ষ থেকে কথা বলার দায়িত্ব। তুর পাহাড়ে এসে প্রত্যাদেশ হয়ে ওঠে সমষ্টির — গোটা এক জাতি বজ্র আর আগুনের ভেতর খোদার কণ্ঠ শোনে।
 
-The God who reveals himself to Moses at the burning bush gives a name that resists translation: *Ehyeh asher ehyeh* — I am that I am, or I will be what I will be. This is a God whose very name is a declaration of self-sufficient, underived existence. Unlike the Aten (identified with light) or Ahura Mazda (identified with truth), YHWH's being is identified with *being itself* — pure, self-grounding, refusing to be subsumed under any category. He is historically particular, covenantally committed — and simultaneously the source of all that is. He is also, emphatically, a jealous God: he tolerates no rivals, no images, no divided loyalty.
+তাওরাত তাই কেবল মুসার শিক্ষা নয়; বিশ্বাসীদের কাছে তা খোদার নিজের কথা, পাথরের ফলকে খোদার হাতে লেখা। খোদা বক্তা, নবি বাহক, কিতাব পবিত্র আমানত — প্রত্যাদেশের এই কথায়-গাঁথা, বিধানমুখী রূপটাই পরে গোটা ইব্রাহিমি ধারার কাঠামো ঠিক করে দেয়। মুসার পরে যারা এসেছেন, তাঁদের প্রত্যেকের প্রত্যাদেশ কোনো না কোনোভাবে এই ছাঁচের সঙ্গে কথা বলে।
 
-### 30 · Zeus supreme — but Fate governs even the gods
+### 20 · গীতা — খোদার নিজমুখের শিক্ষা
 
-Homer's divine world is genuinely polytheistic: a family of immortal, anthropomorphic gods ruled by Zeus — powerful, personal, and subject to Fate (*Moira*). Zeus is the most powerful, the father of gods and men, the enforcer of fate — but he is not omnipotent. He is bound by Fate: even Zeus cannot save his son Sarpedon from death when his allotted time has come. The divine in Homer is not a single transcendent absolute but a plural, quarrelsome set of forces that shape the world from above and within. To encounter the divine in Homer is to encounter beauty, power, and indifference in a single overwhelming moment.
+ভগবদ্গীতায় প্রত্যাদেশ এক অনন্য অন্তরঙ্গতা পায়: খোদা নিজে, কৃষ্ণ হয়ে, দ্বিধায় কাঁপতে থাকা যোদ্ধা অর্জুনের সঙ্গে সরাসরি আর লম্বা সময় ধরে কথা বলেন। দুই সেনাবাহিনীর মাঝখানে দাঁড়িয়ে অর্জুন অস্ত্র নামিয়ে রেখেছেন; আত্মীয়দের মারতে তিনি পারবেন না। কৃষ্ণ তাঁর নির্দিষ্ট ভয় আর সন্দেহগুলোর জবাব দেন যত্ন আর ভালোবাসা দিয়ে।
 
-### 40 · Tian — Heaven as the moral order of the cosmos
+এই প্রত্যাদেশ ব্যক্তিগত, প্রসঙ্গ-নির্ভর, প্রশ্নের প্রতি সাড়া দেওয়া। আবার তা বিশ্বকোষের মতো বিস্তৃতও: আঠারো অধ্যায়ে কৃষ্ণ সত্তার স্বরূপ, মনের গঠন, নৈতিকতা, ভক্তি, কর্ম, জ্ঞান আর খোদার প্রকৃতি — সবই ছুঁয়ে যান। বিশ্বসাহিত্যে খোদার একটানা কথা বলার এর চেয়ে পূর্ণাঙ্গ নমুনা খুব কম। আর এর গোটা কাঠামোটাই একটা সংকট থেকে জন্মানো — শিক্ষা আসে ঠিক সেই মুহূর্তে, যখন একজন মানুষ জানে না কী করবে।
 
-Confucius speaks rarely and carefully about the divine, but when he speaks of *Tian* (Heaven), he speaks of something profoundly real and morally authoritative. Tian is not a personal God in the Abrahamic sense — it does not speak in thunder, does not issue commandments, does not reveal itself in visions. It is the cosmic moral order itself: the principle that rulers should rule with benevolence, that family relationships should be governed by love and respect, that human society should embody ritual propriety. Heaven is the ultimate ground and guarantor of this moral order — and it communicates not through words but through the pattern of history and the moral intuitions of the cultivated human heart.
+### 30 · প্রত্যাদেশ নয়, জাগরণ
 
-### 50 · Brahman and Krishna — absolute ground and its personal face
+বুদ্ধ কোনো খোদার কাছ থেকে প্রত্যাদেশ পাননি। বোধিবৃক্ষের নিচে তাঁর জাগরণ এসেছিল নিজের অভিজ্ঞতার দীর্ঘ, শৃঙ্খলাবদ্ধ অনুসন্ধান থেকে — শরীর আর মনের প্রতিটি ঘটনা কীভাবে ওঠে আর মিলিয়ে যায়, তার সরাসরি পর্যবেক্ষণ থেকে। তিনি শিক্ষা দিতে শুরু করলেন খোদার হুকুমে নয়, করুণার টানে: দুঃখ থেকে বেরোনোর পথ তিনি খুঁজে পেয়েছিলেন, আর তা নিজের কাছে আটকে রাখতে পারেননি।
 
-Vyasa's theological achievement is the synthesis of impersonal absolute and personal God into a single, rich, multi-layered vision. In the Bhagavad Gita, Krishna reveals himself to Arjuna as simultaneously the personal God who loves and guides (*Bhagavan*) and the impersonal absolute ground of all existence (*Brahman*). In the Puranas attributed to him, the divine takes innumerable personal forms — Vishnu, Shiva, Devi — each a face of the one ultimate reality. Vyasa's God is the most theologically comprehensive in the table: neither purely personal nor purely impersonal, but the inexhaustible fullness that includes and transcends both.
+তাঁর কর্তৃত্ব তাই কোনো ঐশী দায়িত্ব থেকে আসে না, আসে জাগ্রত অন্তর্দৃষ্টি থেকে — আর নীতিগতভাবে সেই অন্তর্দৃষ্টি যাচাই করে দেখতে পারে যে কেউ, যে একই অনুসন্ধান করতে রাজি। এই সারিতে তিনিই একমাত্র, যাঁর শিক্ষা নিজেকে হাজির করে ঐশী বাণী হিসেবে নয়, পরীক্ষা করে দেখার মতো সত্য হিসেবে: "এসো, দেখে যাও।"
 
-### 60 · No creator God — the ultimate is Nirvana, unconditioned
+### 40 · বাণী নয়, একটা জীবন
 
-The Buddha explicitly refused to affirm a creator God and classified the question among the "undetermined questions" (*avyākata*) — questions whose answer does not contribute to liberation and should be set aside. What he did affirm with unambiguous clarity is *Nirvana*: the unconditioned, unborn, unbecome, unmade — the still point beyond all conditioned existence. Nirvana is not God in any personal sense, but it functions as the ultimate does in other traditions: the ground of liberation, the goal of the path, the reality that makes freedom possible.
+খ্রিষ্টীয় বোঝাপড়ায় ঈসা কেবল খোদার কাছ থেকে প্রত্যাদেশ পান না — তিনি নিজেই প্রত্যাদেশ। ইঞ্জিলে তাঁর মুখে আছে: "পুত্র ছাড়া পিতাকে কেউ জানে না।" এখানে খোদা নিজেকে প্রকাশ করেন জ্বলন্ত ঝোপ বা লিখিত কিতাবের ভেতর দিয়ে নয়, একটা মানুষের জীবনের ভেতর দিয়ে — যে জীবন জন্মায়, ক্ষুধার্ত হয়, ভয় পায়, শোক করে, মরে।
 
-### 70 · Abba — Father; God as intimate, unconditional love
+খ্রিষ্টানদের কাছে এটাই খোদার আত্মপ্রকাশের সবচেয়ে চরম রূপ: খোদা নিজের সম্পর্কে কথা বলছেন না, মানুষের গল্পে নিজেই একটা চরিত্র হয়ে নামছেন, তার সব হিংস্রতার সামনে খোলা। এই দাবি নিয়ে ধারাগুলোর মধ্যে মতভেদ গভীর — ইসলামে ঈসা সম্মানিত নবি, খোদার দেহধারী রূপ নন। কিন্তু ছকের ভেতরে এর জায়গাটা স্পষ্ট: অন্যরা বার্তা বয়ে আনেন, এখানে বাহক আর বার্তা এক।
 
-Jesus's most distinctive contribution to the concept of God is the word *Abba* — the Aramaic word for father that a child uses, warm and intimate. In addressing God as Abba, Jesus opens a window into a relationship with the divine that is not primarily legal (as in Moses), cosmic (as in Zarathustra), or philosophical (as in Plato) but filial: God as the one who knows each person by name, who counts the hairs on their head, who rejoices when the lost is found, who runs to meet the returning prodigal before they have finished their apology. This is the most personally intimate God-concept in the table, and it permanently changed the emotional register of Western religion.
+### 50 · কোরআন — খোদার হুবহু কালাম
 
-### 80 · Allah — the One, Living, Self-Subsisting, beyond all likeness
+মুহাম্মদের প্রত্যাদেশ এই ছকে ভাষার দিক থেকে সবচেয়ে নির্দিষ্ট: মুসলমানদের বিশ্বাসে কোরআন খোদার সরাসরি কালাম, জিবরাইলের মারফত নাজিল, আরবি ভাষায়, কোনো রদবদল ছাড়াই সংরক্ষিত। প্রতিটি শব্দ খোদার, প্রতিটি বিন্যাসও খোদার। এই কারণেই কোরআনের অনুবাদকে কোরআন বলা হয় না — বলা হয় অর্থের অনুবাদ।
 
-The God of the Qur'an as revealed to Muhammad is characterised with philosophical precision and devotional intensity: *Allah* is *Al-Hayy al-Qayyūm* — the Living, the Self-Subsisting. The most famous description is the Throne Verse: *"Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep."* God is without partner, without equal, without image, without child — pure, self-sufficient, absolute, and yet closer to every human being than their jugular vein.
+মুহাম্মদ সেই বাহক, শেষ নবি — খাতামুন নাবিয়্যিন — যাঁর মাধ্যমে খোদার চূড়ান্ত বাণী মানুষের কাছে পৌঁছায়। প্রথম নাজিল হওয়া শব্দটাই ছিল হুকুম: "পড়ো।" কোরআন কেবল খোদার দিকে ইশারা করে না; বিশ্বাসীদের কাছে তা খোদার কণ্ঠ, যা সময় পেরিয়ে আজও শোনা যায় — তেলাওয়াতে, মুখস্থে, নামাজের প্রতিটি রাকাতে।
 
-### 90 · Ik Onkar — One Being, the true Name beyond all names
+### 60 · শবদ — মানুষের বুকে খোদার গান
 
-The Guru Granth Sahib opens with the most compressed theological statement in the table: *Ik Onkar* — One Being. Not one God among possible others, but the irreducible fact of oneness underlying all apparent multiplicity. Nanak's God is *Waheguru* — the Wonderful Lord — approached through the True Name (*Sat Nām*), which is not a word but the reality that all words point toward and fail to reach. Unlike Moses's YHWH (a specific name given in specific revelation) or Muhammad's Allah (the definitive name in a definitive text), Nanak's True Name is the name beneath all names — the reality that transcends the naming relation while requiring it.
+নানকের প্রত্যাদেশ এসেছিল এক সরাসরি মরমি অভিজ্ঞতায়। বর্ণনা আছে, তিনি বেঈ নদীতে নেমে হারিয়ে যান, আর তিন দিন পর উঠে এসে প্রথম যে কথা বলেন তা হলো: "কেউ হিন্দু নয়, কেউ মুসলমান নয়।" এরপর তাঁর সব শিক্ষা এসেছে খোদার শবদ হয়ে — যে বাণী বয়ে গেছে তাঁর ভেতর দিয়ে, পরের গুরুদের ধারা ধরে, আর শেষে স্থায়ী হয়েছে গুরু গ্রন্থ সাহিবে।
 
-### 01 · God reveals through light, not words
+এই প্রত্যাদেশ বিধানের সংকলন নয় (মুসা), হুবহু উচ্চারিত কালামও নয় (মুহাম্মদ) — এ যেন এক সুরে বাঁধা মানুষ-যন্ত্রের ভেতর দিয়ে বেজে ওঠা খোদার সংগীত। গ্রন্থ সাহিবের স্তোত্রগুলো রাগে সাজানো; তা যতটা পড়ার, ততটাই গাওয়ার। নানক নিজে গাইতেন, পাশে রবাব বাজাতেন তাঁর মুসলমান সঙ্গী মর্দানা — প্রত্যাদেশের শুরু থেকেই দুই সম্প্রদায় এক সুরে।
 
-Unlike Moses, who receives words at a burning bush, or Muhammad, who hears the voice of Gabriel, Akhenaten's God reveals itself not through language but through the act of shining. The rays of the Aten are its speech — each morning when the sun rises, God is speaking; each beam of light that reaches a living creature is a divine address. Akhenaten himself is the sole mediator: only through the pharaoh can human beings enter into relationship with the Aten. This makes Akhenaten's revelation deeply visual and embodied rather than verbal, more like the encounter with overwhelming beauty than the receipt of a message.
+### 01 · এক খোদা, তবু অমঙ্গল সত্য
 
-### 11 · Revealed through inner fire and visionary dialogue
+আহুরা মাজদা সর্বোচ্চ খোদা, এক ও অদ্বিতীয়। কিন্তু জরথুস্ত্রের একত্ব জটিল হয়ে ওঠে আংরা মাইনুর কারণে — সেই ধ্বংসের আত্মা, যাকে আহুরা মাজদা সৃষ্টি করেননি, অথচ যে আদি থেকেই তাঁর মুখোমুখি দাঁড়িয়ে আছে। অমঙ্গল এখানে খোদার পরীক্ষা বা মানুষের দুর্বলতা মাত্র নয়; তা জগতে এক সত্যিকারের শক্তি।
 
-Zarathustra received his revelation through a series of direct visionary encounters with Ahura Mazda and the divine beings (*Amesha Spentas*) who emanate from him. The *Gathas* — the oldest surviving Zoroastrian hymns, almost certainly composed by Zarathustra himself — are intensely personal: they record his questions, doubts, frustrations, and moments of illumination. The revelation is dialogic: Zarathustra does not simply receive but argues, questions, and wrestles with the divine. This makes the Gatha-revelation more intellectually engaged than almost any other prophetic corpus.
+এ তাই মুসা বা মুহাম্মদের নিরঙ্কুশ একত্ববাদ নয়; এটা একত্ববাদী কাঠামোর ভেতরে এক নৈতিক দ্বৈতবাদ — এক ভালো খোদা, এক মন্দ প্রতিনীতি, আর গোটা জগৎ তাদের যুদ্ধক্ষেত্র। ইতিহাস এই যুদ্ধেরই কাহিনি। কিন্তু একত্বটা শেষ পর্যন্ত অটুট থাকে ভবিষ্যতে: যুদ্ধে সত্যের জয় অবধারিত, আর সময়ের শেষে মিথ্যা নিশ্চিহ্ন হবে। জরথুস্ত্রের একত্ব তাই এখনকার অবস্থা নয়, একটা প্রতিশ্রুতি।
 
-### 21 · God speaks directly — burning bush, thunder, and written law
+### 11 · আমি ছাড়া আর কোনো খোদা নয়
 
-Moses's encounter with the divine is the paradigm of prophetic revelation in the Western tradition: the burning bush that is not consumed, the voice that calls by name, the commissioning to speak on behalf of God. At Sinai, the revelation becomes communal: an entire people hears the voice of God in thunder and fire. The Torah is not merely Moses's teaching but the direct speech of God, written by the divine hand on stone tablets. This verbal, legislative model of revelation — God as speaker, prophet as transmitter, text as sacred deposit — defines the entire Abrahamic tradition.
+প্রথম হুকুমটা কোনো দার্শনিক প্রস্তাব নয়, এক ধরনের রাজনৈতিক ঘোষণা: "আমি তোমার খোদা, যিনি তোমাকে মিসর থেকে, দাসত্বের ঘর থেকে বের করে এনেছেন। আমি ছাড়া আর কোনো উপাস্য তোমার থাকবে না।" এখানে একত্ব চুক্তির প্রতি আনুগত্য, অধিবিদ্যার যুক্তি নয়। অন্য দেবতারা আছে কি নেই, সেটা মুসার প্রথম চিন্তা নয় — আসল কথা, বনি ইসরাইল তাদের কারও উপাসনা করবে না।
 
-### 31 · Gods reveal through dream, omen, and sudden epiphany
+শতাব্দীর পর শতাব্দী ধরে এই একনিষ্ঠ আনুগত্য ধীরে ধীরে রূপ নেয় এক সত্তাগত দাবিতে: খোদা ছাড়া আর কোনো খোদা আদৌ নেই। "শোনো, হে ইসরাইল, আমাদের খোদা প্রভু, প্রভু এক" — এই বাক্য ইহুদি প্রার্থনার কেন্দ্রে বসে যায়। কিন্তু মুসার নিজের ঘোষণায় বিপ্লবী দাবিটা সম্পর্কের: খোদা আর তাঁর জাতি এমন এক চুক্তিতে বাঁধা, যেখানে তৃতীয় কারও জায়গা নেই। কোনো মূর্তি নয়, কোনো ভাগ করা আনুগত্য নয়।
 
-The Homeric gods communicate with humans through dreams, through omens (the flight of eagles, the sign of the snake and the sparrows), through prophets and oracles, and through direct physical appearance. A god may disguise himself as a friend, an old man, or a bird; occasionally a god reveals himself in full divine splendour, blinding and terrifying. These epiphanies are not verbal revelations — they are events, eruptions of divine presence into the human world. The sacred in Homer is not a stable background but an unpredictable irruption.
+### 21 · এক সত্তা, অগণিত রূপ
 
-### 41 · Heaven speaks through history, classics, and the cultivated sage
+ভগবদ্গীতার ধর্মতত্ত্ব খুব স্পষ্ট: পরম সত্তা একটাই — ব্রহ্ম — আর কৃষ্ণ তার সর্বোচ্চ ব্যক্তিরূপ। হিন্দু ঐতিহ্যের অসংখ্য দেবতা এই এক সত্তারই নানা মুখ; সাধনার অসংখ্য পথ একই চূড়ায় পৌঁছায়। কৃষ্ণ বলেন: "যে ভক্ত শ্রদ্ধা নিয়ে যে রূপের উপাসনা করতে চায়, আমি তার সেই শ্রদ্ধাকেই অটল করে দিই।"
 
-Confucius did not claim prophetic revelation. He described himself as a transmitter, not a creator — someone who loved and studied the ancient ways and passed them on. Yet he also spoke of a special relationship with Heaven: *"Heaven produced the virtue that is in me."* Heaven reveals itself not through dramatic theophanies but through the accumulated wisdom of the ancient sages, preserved in ritual, music, and classical texts, and through the moral sensitivity of those who have cultivated themselves sufficiently to read the signs of Heaven in history and natural events.
+এটা এই ছকে সবচেয়ে উদার একত্ববাদ। মুসার একত্ব বেড়া দেয় — এর বাইরে কিছু চলবে না; গীতার একত্ব জড়িয়ে নেয় — সব আন্তরিক উপাসনা শেষ পর্যন্ত এক খোদার কাছেই পৌঁছায়, উপাসক জানুক বা না-ই জানুক। এর শক্তি তার উদারতায়; এর ঝুঁকি হলো, সবকিছুকে জায়গা দিতে গিয়ে কোনো কিছুকেই আর ভুল বলা কঠিন হয়ে যায়। তবু এখানেও কেন্দ্রটা অনড়: রূপ অনেক, সত্তা এক।
 
-### 51 · God speaks through the sage — the Gita as direct divine teaching
+### 31 · খোদা নেই, আছে কার্যকারণের নিয়ম
 
-In the Bhagavad Gita, the divine revelation is uniquely intimate: God himself, as Krishna, speaks directly and at length to the wavering warrior Arjuna — addressing his specific doubts and fears with precision and love. The revelation is personal, contextual, and responsive. It is also encyclopaedic: in eighteen chapters, Krishna covers ontology, psychology, ethics, devotion, action, knowledge, and the nature of God — the most comprehensive single divine discourse in world literature.
+বুদ্ধ খোদার একত্ব ঘোষণা করেন না, কারণ তিনি কোনো খোদাই ঘোষণা করেন না। অস্তিত্বের গভীরতম কাঠামোগত সত্য হিসেবে তিনি যা ঘোষণা করেন, তা হলো প্রতীত্যসমুৎপাদ — সবকিছু শর্তের ওপর নির্ভর করে জন্মায়, আর শর্ত ফুরোলে থেমে যায়। "এটা থাকলে ওটা হয়; এটা না থাকলে ওটা হয় না।"
 
-### 61 · No divine revelation — the Buddha awakened through investigation
+বুদ্ধ যদি কোনো "একত্ব" দেন, তা এই: কোনো একক ঐশী সত্তার একত্ব নয়, সেই নিয়মের একত্ব, যা দিয়ে সবকিছু ওঠে আর মিলিয়ে যায়। এই সারির বাকি সবার কেন্দ্রে একজন খোদা আছেন; বুদ্ধের কেন্দ্রে আছে একটা নিয়ম। আর সেটা কোনো অভাব নয়, ইচ্ছাকৃত নীরবতা — স্রষ্টার প্রশ্নকে তিনি রেখে দিয়েছিলেন সেই প্রশ্নগুলোর তালিকায়, যার উত্তর মুক্তির কাজে লাগে না।
 
-The Buddha did not receive revelation from a god. His awakening under the Bodhi tree was the result of sustained, disciplined investigation of his own experience — the direct observation of the arising and passing of mental and physical phenomena. He taught not because God commanded him but because compassion moved him: he had found the path out of suffering and could not withhold it. His authority is not divine commission but awakened insight — verified, in principle, by anyone willing to do the same investigation. He is the only figure in this table whose teaching is presented as empirically testable rather than divinely revealed.
+### 41 · খোদা এক, আর তিনি প্রেম
 
-### 71 · God reveals through the Son — incarnation as ultimate disclosure
+ঈসা তাঁর ইহুদি ঐতিহ্যের নিরঙ্কুশ একত্ববাদ পুরোপুরি ধরে রাখেন। সবচেয়ে বড় হুকুম কোনটা — এই প্রশ্নের উত্তরে তিনি কোনো শর্ত ছাড়াই উদ্ধৃত করেন: "শোনো, হে ইসরাইল, আমাদের খোদা প্রভু, প্রভু এক।" এ ব্যাপারে তিনি নতুন কিছু যোগ করেন না, কিছু কমানও না।
 
-Jesus does not merely receive revelation from God — in Christian understanding and, more subtly, in Jesus's own self-presentation, he *is* the revelation. *"No one knows the Father except the Son."* The divine reveals itself not through a burning bush or a dictated text but through a human life — born, hungry, afraid, grieving, dying. The incarnation is the most radical form of divine self-disclosure in the table: God not communicating about himself but becoming a character in the human story, vulnerable to its full violence.
+নতুন যা আসে, তা একত্বের চরিত্রে। তাঁর অনুসারীরা পরে কথাটা এক বাক্যে লিখে রাখলেন: "খোদা প্রেম।" এটা খোদার সরলতা নিয়ে কোনো অধিবিদ্যার দাবি নয়; এটা সম্পর্কের, নৈতিকতার দাবি — খোদার সবচেয়ে গভীর সত্য হলো, ভালোবাসাই তাঁর অস্তিত্বের মূল ধরন। খোদার একত্ব এখানে প্রেমের একত্ব। পরে খ্রিষ্টীয় ধর্মতত্ত্ব এই একত্বকে ত্রিত্বের ভাষায় ব্যাখ্যা করবে, আর সেখানেই অন্য ইব্রাহিমি ধারাগুলোর সঙ্গে তার সবচেয়ে বড় মতভেদ তৈরি হবে।
 
-### 81 · The Qur'an as direct divine speech — Muhammad as the final seal
+### 51 · তাওহিদ — শরিক নেই, তুলনা নেই
 
-Muhammad's revelation is the most linguistically specific in this table: the Qur'an is the direct, unmediated speech of God, transmitted through the angel Gabriel, preserved without alteration, in Arabic. Every word is divine; every arrangement is divine. Muhammad is the vessel — the final prophet, the seal of the prophets — through whom God's definitive self-disclosure reaches humanity. The Qur'an does not merely point toward God; it is, in Muslim understanding, the voice of God heard across time.
+লা ইলাহা ইল্লাল্লাহ — আল্লাহ ছাড়া কোনো উপাস্য নেই। তাওহিদ, খোদার নিরঙ্কুশ একত্ব, ইসলামের কেন্দ্রীয় নীতি। সুরা ইখলাস চার আয়াতে তা বলে দেয়: তিনি এক; তিনি কারও মুখাপেক্ষী নন; তিনি কাউকে জন্ম দেননি, কেউ তাঁকে জন্ম দেয়নি; তাঁর সমতুল্য কেউ নেই। তাঁর কোনো শরিক নেই, কোনো দেহ নেই, কোনো প্রতিদ্বন্দ্বী নেই।
 
-### 91 · God speaks through the Guru — divine music poured into the human heart
+কোরআনে সবচেয়ে বড় গুনাহ শিরক — খোদার সঙ্গে অন্য কিছুকে শরিক করা। এই ছকে একত্বের এর চেয়ে আপসহীন বক্তব্য আর নেই: অনেকের মধ্যে সবচেয়ে বড়জনের একত্ব নয়, এক প্রতিপক্ষের মুখোমুখি থাকা একত্বও নয়, সব রূপকে জড়িয়ে নেওয়া একত্বও নয় — খোদার নিখাদ, অবিভাজ্য অদ্বিতীয়তা। আর এই একত্ব কেবল বিশ্বাস নয়, জীবনের কাঠামো: এক খোদার সামনে সব মানুষ সমান, কাতারে সবাই কাঁধে কাঁধ মিলিয়ে দাঁড়ায়।
 
-Nanak received his revelation in a direct mystical encounter: he disappeared into a river and emerged saying *"There is no Hindu, there is no Muslim."* His subsequent teaching came through direct divine inspiration — God's Word (*Shabad*) flowing through him and through the lineage of Sikh Gurus, and ultimately the Guru Granth Sahib. This is revelation not as legal code (Moses) or verbal dictation (Muhammad) but as divine music pouring through a tuned human instrument. The Granth is meant to be sung as much as read.
+### 61 · ইক ওংকার — হিন্দুও নন, মুসলমানও নন
 
-### 02 · One God only — all others abolished by decree
+গুরু গ্রন্থ সাহিব শুরু হয় এক অক্ষরের মতো সংক্ষিপ্ত এক ঘোষণায়: ইক ওংকার — এক সত্তা। সম্ভাব্য অনেক খোদার মধ্যে একজন নয়, বরং সেই অবিভাজ্য একত্ব, যা সব আপাত বহুত্বের নিচে আছে। নানকের খোদা ওয়াহেগুরু — আশ্চর্য প্রভু — যাঁর কাছে পৌঁছানো যায় সতনামের ভেতর দিয়ে; আর সেই সত্য নাম কোনো শব্দ নয়, সেই বাস্তবতা, যার দিকে সব শব্দ ইশারা করে আর পৌঁছাতে পারে না।
 
-The Atenist reform was enforced monotheism. The names of other gods were literally chiselled off temple walls. The Aten alone is divine, and the Aten is one. Yet this unity differs from the abstract unity of Maimonides or the metaphysical oneness of Plotinus. The Aten's oneness is experienced as the oneness of the sun in the sky: there is only one sun, and all life depends equally on that one sun, whether you live in Egypt, Nubia, or Syria — *"How manifold are your works, hidden from sight, O sole God beside whom there is none!"*
+নানকের একত্ববাদ এক নির্দিষ্ট অর্থে বৈপ্লবিক: খোদার নিরঙ্কুশ একত্বের ওপর জোর দিয়ে তা ভেঙে দেয় সেই সামাজিক আর ধর্মীয় দেয়াল, যা মানুষকে ভাগ করে। খোদা বিশেষ করে হিন্দুর নন, বিশেষ করে মুসলমানেরও নন; পুরুষও নন, নারীও নন; মূর্তিতে ধরা নন, কোনো এক উপাসনালয়ে আটকানোও নন। ইক ওংকার সেই সত্য, যার সামনে সব ধর্মীয় বিভাজন গৌণ। খোদার একত্ব মানে মানুষের একত্ব।
 
-### 12 · One God — but evil exists as a genuine cosmic force
+### 02 · ভালো চিন্তা, ভালো কথা, ভালো কাজ
 
-Ahura Mazda is the supreme God, one and supreme. But Zarathustra's monotheism is complicated by the genuine existence of Angra Mainyu — the Destructive Spirit — who is not created by Ahura Mazda but stands in primordial opposition to him. This is not the absolute monotheism of Moses or Muhammad — it is a moral dualism within a monotheistic framework: one good God, one evil counter-principle, and the entire cosmos as their battleground. History is the story of this battle, which truth is destined to win.
+জরথুস্ত্রের নৈতিক দাবি সরলতায় সুন্দর, আর পরিসরে সম্পূর্ণ: হুমত, হুখত, হ্বরশত — ভালো চিন্তা, ভালো কথা, ভালো কাজ। নৈতিক জীবন এখানে আচারের শুদ্ধতা বা বিধান মানার ব্যাপার নয়; এ হলো গোটা মানুষটাকে — মন, মুখ আর হাত — সত্যের সঙ্গে এক সুরে বাঁধা। জরথুস্ত্রীয় ভাষায় এই সত্যের নাম আশা: যে বিধানে জগৎ ঠিকঠাক চলে।
 
-### 22 · Absolute monotheism — no other gods before me
+তুমি যখন সত্যভাবে ভাবো, বলো আর করো, তখন তুমি মিথ্যার বিরুদ্ধে মহাজাগতিক যুদ্ধে আহুরা মাজদার পক্ষে লড়ছ। প্রতিটি ভালো চিন্তা আংরা মাইনুর গায়ে একটা আঘাত; প্রতিটি মিথ্যা শত্রুর হাতে একটা উপহার। এর ফলে সাধারণ দৈনন্দিন জীবন — কথা রাখা, ঋণ শোধ করা, মাটি চাষ করা — অসাধারণ ওজন পায়। এখানে ছোট কাজ বলে কিছু নেই।
 
-The first commandment is not a philosophical proposition but a political declaration: *"I am YHWH your God... you shall have no other gods before me."* This is monotheism as covenant loyalty, not as metaphysical argument. Whether other gods exist is not Moses's primary concern — what matters is that Israel must worship none of them. Over centuries, this exclusive loyalty gradually transforms into the metaphysical claim that no other gods exist at all. In Moses's own proclamation, the radical claim is relational: YHWH and Israel are bound in covenant that admits no rivals.
+### 12 · ৬১৩ বিধান — চুক্তির কাঠামো
 
-### 32 · Many gods — unity only in Zeus's authority and in Fate
+তুর পাহাড়ের প্রত্যাদেশ মূলত বিধানের প্রত্যাদেশ। খোদা বনি ইসরাইলকে কেবল নৈতিক নীতি দেন না, দেন জীবনের প্রতিটি দিক ঢেকে দেওয়া এক পূর্ণাঙ্গ আইনসংহিতা — ইবাদত, খাবার, বিয়ে-সংসার, সম্পত্তি, বিচার, পবিত্রতা। ইহুদি ঐতিহ্যের হিসাবে তাওরাতে ৬১৩টি বিধান, আর সেগুলোই খোদা আর তাঁর জাতির মধ্যে চুক্তির শর্ত।
 
-Homer's theology is explicitly polytheistic; any concept of divine unity must be found not in a single supreme being but in the structural framework that binds the gods: Zeus's authority as king, and Fate as the ultimate order that even the gods cannot overturn. There is a hint of something like monotheistic unity in the reverence for Fate — the ordered dispensation of life and death that no one can escape. But Homer does not develop this into an explicit theology. The gods are many, they conflict, they favour different sides.
+আনুগত্য এখানে কেবল উপকারী নয়, চুক্তির দাবি; অবাধ্যতা মানে খোদার সঙ্গে সম্পর্কে ফাটল। এই ছকে মুসার খোদা সবচেয়ে বেশি বিধানদাতা — মুহাম্মদের চেয়েও, কারণ কোরআনের ভিত অনেকটাই কাহিনি আর উপদেশে, বিস্তারিত বিধি এসেছে সুন্নাহ আর ফিকহের ভেতর দিয়ে। কিন্তু এই বিধানের ভার বোঝা নয়: ইহুদি প্রার্থনায় তাওরাতকে বলা হয় দান, আর তা হাতে পাওয়ার দিনটা উৎসবের।
 
-### 42 · Heaven is one — expressed through the moral order of human life
+### 22 · স্বধর্ম — খোদাকে নিবেদিত কর্ম
 
-Confucius does not articulate a theology of divine unity in the metaphysical sense of Moses or Muhammad. He takes Heaven's moral authority as given and focuses on how human beings should respond to it. But within his framework, Heaven is implicitly one: there is one moral order, one proper way for human beings to live together, one standard of ritual propriety and ethical excellence. Confucius's unity is ethical rather than metaphysical: the unity of the right way to live.
+গীতার কেন্দ্রীয় ব্যবহারিক শিক্ষা স্বধর্ম — নিজের স্বভাব, জীবনের পর্যায় আর সমাজে নিজের জায়গা অনুযায়ী নিজের কর্তব্য। অর্জুন যোদ্ধা; যুদ্ধ থেকে পালানো তাঁর ধর্ম নয়। কিন্তু সেই কর্তব্য পালন করতে হবে খোদার প্রতি নিবেদন হিসেবে, ফলের আশা না রেখে: "কর্মে তোমার অধিকার, ফলে কখনো নয়।"
 
-### 52 · One reality manifesting through countless forms
+এটা বিধান মেনে চলার আইনি আনুগত্য নয়, আচার ঠিকঠাক পালনের শুদ্ধতাও নয়। এ হলো প্রতিটি কাজকে নিজের গভীরতম স্বভাব আর খোদার ইচ্ছার সঙ্গে এক সুরে বাঁধা, কাজের ফল খোদার হাতে ছেড়ে দিয়ে পুরোপুরি উপস্থিত থেকে কাজ করা। এখানেই গীতা তার সবচেয়ে কঠিন কথা বলে: কাজ ছেড়ে দিলে মুক্তি আসে না, আসে কাজের প্রতি আসক্তি ছাড়লে। দাবিটা তাই কাজের ধরন নিয়ে নয়, মনের অবস্থান নিয়ে।
 
-The Bhagavad Gita's theology is explicit: there is one ultimate reality (*Brahman*), and Krishna is its supreme personal expression. The many gods of the Hindu pantheon are faces of this one reality; the many paths of spiritual practice all lead to the same summit. *"Whatever form a devotee chooses to worship with faith, I make that faith steady."* This is the most theologically inclusive monotheism in the table: not the exclusive monotheism of Moses, but the generous recognition that all sincere worship reaches the one divine ground.
+### 32 · আর্য অষ্টাঙ্গিক মার্গ — মধ্যপথ
 
-### 62 · No divine unity to proclaim — dependent origination is the deepest truth
+বুদ্ধের নৈতিক আর ব্যবহারিক দাবি আর্য অষ্টাঙ্গিক মার্গ: সঠিক দৃষ্টি, সঠিক সংকল্প, সঠিক কথা, সঠিক কাজ, সঠিক জীবিকা, সঠিক প্রচেষ্টা, সঠিক স্মৃতি আর সঠিক সমাধি। এটা ভোগের চরম আর কঠোর কৃচ্ছ্রের চরম — দুইয়ের মাঝখানের মধ্যপথ; বুদ্ধ নিজে দুটোই পরখ করে দেখেছিলেন, আর দুটোকেই ব্যর্থ পেয়েছিলেন।
 
-The Buddha does not proclaim divine unity because he does not proclaim a divine being. What he proclaims as the deepest structural truth of existence is *pratītyasamutpāda* — dependent origination: all things arise in dependence on conditions and cease when conditions cease. This is the "unity" the Buddha offers: not the unity of a single divine substance but the unity of the law by which all things arise and pass. Every other figure in this table has a divine being at the centre; the Buddha has a law.
+এ হলো জীবনের সঙ্গে শৃঙ্খলাবদ্ধ, স্বচ্ছ আর করুণাময় এক সম্পর্কের পথ। মুসার বিধান যেখানে সমাজকে সাজায়, অষ্টাঙ্গিক মার্গ সেখানে মূলত মনের পথ: তার লক্ষ্য চারপাশের জগৎ বদলানো নয়, যে মন দুঃখ ভোগ করে সেই মনটাকে বদলানো। আর এর দাবিদার কোনো খোদা নয় — দুঃখ নিজেই। যে দেখেছে আগুন লেগেছে, তাকে বেরোতে বলার জন্য হুকুম লাগে না।
 
-### 72 · God is one — and is love
+### 42 · খোদাকে ভালোবাসো, শত্রুকেও
 
-Jesus inherits the absolute monotheism of his Jewish tradition: *"Hear, O Israel, the Lord our God, the Lord is one."* He quotes this as the first commandment without qualification. But he adds a new characterisation: *"God is love."* This is not a metaphysical claim about divine simplicity — it is an ethical and relational claim: the deepest truth about God's nature is that God's primary mode of existence is loving. The divine unity is a unity of love.
+সবচেয়ে বড় হুকুম কোনটা — এই প্রশ্নের উত্তরে ঈসার জবাব সরলতায় বৈপ্লবিক: খোদাকে পুরো অন্তর, পুরো প্রাণ, পুরো মন দিয়ে ভালোবাসো, আর প্রতিবেশীকে ভালোবাসো নিজের মতো। গোটা বিধান আর সব নবির কথা এই দুই হুকুমের ওপর ঝুলে আছে।
 
-### 82 · Tawhid — absolute, indivisible divine unity; shirk is the gravest sin
+পাহাড়ের ওপরের উপদেশে স্পষ্ট হয় এর মানে কী: খুন না করাই যথেষ্ট নয়, রাগও না করা; ব্যভিচার না করাই যথেষ্ট নয়, লালসার দৃষ্টিও না দেওয়া; বন্ধুকে ভালোবাসাই যথেষ্ট নয়, শত্রুকেও ভালোবাসা, যে তোমাকে কষ্ট দেয় তার জন্যও দোয়া করা। নৈতিকতার মানদণ্ড এখানে এত উঁচুতে তোলা হয় যে কেবল অনুগ্রহই সেখানে পৌঁছাতে পারে। দাবিটা তাই একইসঙ্গে সবচেয়ে সংক্ষিপ্ত আর সবচেয়ে অসম্ভব — আর সেই অসম্ভবতাই মানুষকে নিজের শক্তির বাইরে কিছুর দিকে ঠেলে দেয়।
 
-*Lā ilāha illā Allāh* — there is no god but God. *Tawhid* (the absolute oneness of God) is Islam's central theological principle. God has no partner, no associate, no equal, no child, no physical form, no rival. The gravest sin in the Qur'an is *shirk* — associating anything with God. This is the most uncompromising statement of divine unity in the table: not the unity of a highest God among many (Homer), not the unity of a cosmic moral order (Confucius), not the unity of an absolute that includes its opposites (Ibn Arabi) — but the stark, non-negotiable singularity of the divine.
+### 52 · পূর্ণ আত্মসমর্পণ — পাঁচ স্তম্ভ, শরিয়ত
 
-### 92 · God is One — beyond Hindu and Muslim, male and female
+ইসলাম মানে আত্মসমর্পণ — নিজের গোটা জীবনকে খোদার দিকে ফেরানো। পাঁচ স্তম্ভ এই আত্মসমর্পণকে মূর্ত রূপ দেয়: কালিমা, দিনে পাঁচ ওয়াক্ত নামাজ, রমজানের রোজা, জাকাত আর হজ। এর বাইরেও শরিয়ত জীবনের প্রতিটি ক্ষেত্রকে ঘিরে রাখে — লেনদেন, বিয়ে, উত্তরাধিকার, খাবার, বিচার।
 
-Nanak's monotheism is radical in a specific way: it dissolves the social and religious boundaries that divide human beings by insisting on the absolute unity of the divine that all traditions point toward. God is neither specifically Hindu nor specifically Muslim, neither male nor female, neither manifested in idol nor confined to mosque. *Ik Onkar* — one being — is the truth that makes all religious divisions secondary. The unity of God implies the unity of humanity.
+তবে বাইরের এই কাঠামো ভেতরের অবস্থা ছাড়া অসম্পূর্ণ। নবির হাদিস: "সব কাজ নিয়তের ওপর নির্ভর করে।" কোরআন বলে, কোরবানির গোশত বা রক্ত খোদার কাছে পৌঁছায় না, পৌঁছায় তোমাদের তাকওয়া। এই ছকে খোদার দাবির এর চেয়ে পূর্ণাঙ্গ ব্যবস্থা আর নেই — ঈসার দুই হুকুমের চেয়ে বেশি বিধিবদ্ধ, এক জাতির সঙ্গে চুক্তির চেয়ে বেশি সর্বজনীন। দিনে পাঁচবার কাজ থামিয়ে কেবলার দিকে ফেরা: সময়টাই আত্মসমর্পণের ছন্দে বাঁধা।
 
-### 03 · God creates by shining — the world lives by light
+### 62 · নাম জপো, খেটে খাও, ভাগ করো
 
-In the Great Hymn, creation is an act of illumination: when the Aten rises, the world wakes, animals emerge, flowers open, ships sail. When the Aten sets, the world falls into a kind of death. The cosmos is therefore not a manufactured product but a continuous, daily, renewable gift of divine radiance. Every sunrise is a new creation. The world's existence is not a past event but a perpetual miracle of light — the most radically presentist creation theology in the table.
+নানকের তিন-ভাগের পথ: নাম সিমরন — খোদার নামের নিরন্তর স্মরণ; কিরত করনি — সৎ পরিশ্রমে রোজগার; ওয়ান্ড ছাকনা — যা আছে তা অন্যদের সঙ্গে ভাগ করে নেওয়া। মরমি ভক্তি এখানে জগৎ থেকে পালানো নয়, জগতের সঙ্গে সম্পর্কের রূপান্তর। নানক সন্ন্যাস প্রত্যাখ্যান করেছিলেন; তাঁর শেষ জীবন কেটেছে কর্তারপুরে, নিজের হাতে খেত চাষ করে।
 
-### 13 · Good creation invaded by evil — renovation is the goal
+শিখদের লঙ্গর — সেই বিনা পয়সার সমষ্টিগত রান্নাঘর, যেখানে জাত, ধর্ম, মর্যাদা নির্বিশেষে সবাই এক সারিতে মাটিতে বসে খায় — নানকের ধর্মতত্ত্বেরই মূর্ত রূপ: গরিবের সেবা করেই খোদার সেবা। এই ছকে এটাই সবচেয়ে সমাজমুখী আর সবচেয়ে সাম্যবাদী পথ। খোদার স্মরণ আর ক্ষুধার্তকে খাওয়ানো এখানে দুটো আলাদা কাজ নয়, একই কাজের দুই দিক।
 
-Zarathustra's cosmology is a story of invasion: Ahura Mazda created a perfect, good world, and Angra Mainyu broke into it, corrupting matter, introducing death, disease, and lying. The world we inhabit is a mixed reality — good in its origin, corrupted in its present state, destined for renovation (*frashokeret*) at the end of time. Every righteous human act of truth contributes to its eventual restoration. This gives Zoroastrianism a profoundly historical vision: God did not create an imperfect world, nor is the world an illusion — it is a good creation under siege.
+### 03 · চিনভাত সেতু, তারপর জগতের নবায়ন
 
-### 23 · Creator of heaven and earth by divine speech alone
+মৃত্যুর পর প্রতিটি আত্মাকে পার হতে হয় চিনভাত সেতু: সৎ মানুষের জন্য তা চওড়া আর সহজ, পাপীর জন্য তা সরু হয়ে আসে ক্ষুরের ধারের মতো। আর সময়ের শেষে আহুরা মাজদা মহাজাগতিক যুদ্ধে পুরোপুরি জয়ী হবেন; তখন ঘটবে ফ্রাশোকেরেতি — গোটা জগতের চূড়ান্ত নবায়ন, যখন মৃতেরা আবার উঠবে আর অমঙ্গল চিরতরে মুছে যাবে।
 
-The opening words of Genesis — *Bereshit bara Elohim*, "In the beginning God created" — establish the God of Moses as the creator of all things, prior to and sovereign over the entire cosmos. Unlike Plato's Demiurge (who orders pre-existing matter) or Zarathustra's Ahura Mazda (whose good creation was invaded by evil), YHWH creates by divine speech alone: *"And God said, 'Let there be light,' and there was light."* The world is entirely dependent on God, entirely good as created, and entirely subject to divine sovereignty.
+ব্যক্তির বিচার মৃত্যুর পর, জগতের বিচার সময়ের শেষে, মৃতের পুনরুত্থান, চূড়ান্ত নবায়ন — জরথুস্ত্রের এই পরকাল-ভাবনা অনেক গবেষকের চোখে ধর্মের ইতিহাসে সবচেয়ে প্রভাবশালী চিন্তাগুলোর একটি; পরের ধারাগুলোর পরকাল-চিত্রের সঙ্গে এর আত্মীয়তা স্পষ্ট। আর এই বিচারের সবচেয়ে মানবিক দিক হলো, শেষ পর্যন্ত তা শাস্তিতে থামে না — শুদ্ধিতে থামে।
 
-### 33 · Gods created nothing — the world simply is
+### 13 · আনুগত্যে বরকত, অবাধ্যতায় অভিশাপ
 
-The Homeric gods did not create the world. The world — earth, sea, sky, underworld — pre-exists the gods or comes into being with them, not from them. There is no Homeric creation narrative. The gods are powers within the world: they govern its domains, influence its events, care about its mortal inhabitants — but they did not make it. This contrasts sharply with every other tradition in this table. For Homer, the question "why is there something rather than nothing?" simply does not arise — the world is given, and the divine task is to manage it.
+দ্বিতীয় বিবরণের ধর্মতত্ত্ব কঠোর আর সোজাসাপ্টা: "দেখো, আজ আমি তোমাদের সামনে রাখছি জীবন আর মৃত্যু, বরকত আর অভিশাপ — তাই জীবন বেছে নাও।" আনুগত্য আনে বরকত, অবাধ্যতা আনে অভিশাপ। খোদা সাড়া দেন, পুরস্কার দেন, শাস্তি দেন — নাটকীয় তীব্রতায়।
 
-### 43 · Heaven created the moral order — humans must maintain it
+হিব্রু বাইবেলে বনি ইসরাইলের ইতিহাস এক অবিরাম চক্র: চুক্তির প্রতি বিশ্বস্ততা আর বিশ্বাসঘাতকতা, খোদার বরকত আর খোদার ক্রোধ, নির্বাসন আর ঘরে ফেরা। মুসার খোদার বিচার ঐতিহাসিক — তা ঘটে জাতির জীবনে, কেবল আত্মার ভাগ্যে নয়, আর ঘটে এই পৃথিবীতেই। এতে মুসার ধর্মতত্ত্ব এমন এক ইহজাগতিক, রাজনৈতিক জরুরি ভাব পায়, যা অন্যদের বেশি ব্যক্তিকেন্দ্রিক বা মহাজাগতিক কাঠামোতে নেই। বিচার এখানে ভবিষ্যতের হুমকি নয়, খবরের কাগজের মতো রোজকার বাস্তবতা।
 
-For Confucius, the cosmos is already given — he is not concerned with how it came to be. What concerns him is the moral order that Heaven has embedded in human social life: the five relationships, each governed by its appropriate virtue. Heaven created this order; human beings must study, cultivate, and embody it. Social and political disorder is the failure of human beings to align themselves with the Heaven-given structure of human life. Heaven does not recreate the world; it is the world's moral backbone.
+### 23 · কর্মফল — নিখুঁত, নিজে-চলা বিচার
 
-### 53 · God creates, sustains, and dissolves in endless cosmic cycles
+কর্মের বিধান — কাজ আর তার অনিবার্য পরিণাম — ব্যাসের মহাজাগতিক বিচারের ব্যাখ্যা। প্রতিটি কাজ, চিন্তা আর উদ্দেশ্য তার অনুরূপ ফল তৈরি করে, আর আত্মাকে সেই ফল ভোগ করতেই হয় — এই জীবনে, নয়তো পরের কোনো জীবনে। কোনো খেয়ালি বিচার নেই; কর্ম হলো জগতের নিজে-চলা নৈতিক কাঠামো, যা কাজ করে প্রকৃতির নিয়মের মতো অনিবার্যতায়।
 
-Vyasa's cosmology is cyclical and vast: worlds arise, exist for billions of years, and are dissolved back into the divine, only to arise again. Krishna declares: *"At the end of a cycle of ages, all beings return to my nature; at the beginning of another cycle, I send them forth again."* Time is not linear (as in the Abrahamic traditions) but cyclical; creation is not a unique past event but an ongoing rhythmic pulsation of the divine. Each universe is a thought of God, lasting incomprehensible ages, then released back into the divine silence.
+কিন্তু গীতায় এই নৈর্ব্যক্তিক বিচারের পাশে দাঁড়িয়ে আছেন এক ব্যক্তিরূপ খোদা, যিনি তাঁর কাছে আত্মসমর্পণকারীকে কর্মের বাঁধন পুরোপুরি ছাড়িয়ে যেতে সাহায্য করেন: "সব ধর্ম ছেড়ে কেবল আমার শরণ নাও; আমি তোমাকে সব পাপ থেকে মুক্ত করব, শোক কোরো না।" নিয়ম নিখুঁত, কিন্তু শেষ কথা নিয়মের নয়। ব্যাসের জগতে বিচার যন্ত্রের মতো চলে, আর প্রেম সেই যন্ত্রের বাইরে দাঁড়িয়ে থাকে।
 
-### 63 · The world arises through ignorance — no divine creation
+### 33 · বিচারক নেই, আছে কর্মের নিয়ম
 
-The Buddha's account of the world's arising is psychological rather than cosmological. In his teaching on dependent origination, the world of suffering arises from ignorance (*avidyā*) — the fundamental misperception of reality. There is no creator God, no divine plan, no cosmic battle between good and evil. The world of suffering is self-generated by ignorant minds — and the path of liberation is the reversal of this ignorance through clear seeing. This is the most psychologically sophisticated account of the world's origin in the table.
+বুদ্ধ কর্ম আর পুনর্জন্মকে শিখিয়েছেন সেই কাঠামো হিসেবে, যার ভেতর দুঃখ কাজ করে: অমীমাংসিত তৃষ্ণা আর বিদ্বেষ মনকে বেঁধে রাখে জীবনের পর জীবন ধরে চলতে থাকা অস্তিত্বে। ব্যাসের কর্ম চলে এক প্রেমময় খোদার সৃষ্ট ও লালিত জগতের ভেতর; বুদ্ধের কর্ম চলে এমন এক জগতে, যার ওপর কোনো ঐশী তত্ত্বাবধায়ক নেই — মাধ্যাকর্ষণের মতো নিজে-চলা এক প্রাকৃতিক নিয়ম।
 
-### 73 · God the Father made all things — the world is a garden of divine care
+বিচার এখানে শর্তসাপেক্ষ অস্তিত্বের কাঠামোতেই গাঁথা। কোনো বিচারক নেই, কোনো হিসাবের দিন নেই — আছে কেবল কাজ আর তার ফলের ধৈর্যশীল উন্মোচন। আর এখানেই এই কলামে বুদ্ধের সবচেয়ে গভীর কথা: শাস্তি বাইরে থেকে আসে না। লোভ নিজেই লোভীকে পোড়ায়, ঘৃণা নিজেই ঘৃণাকারীকে বাঁধে। বিচারকের দরকার নেই, কারণ প্রতিটি কাজ তার নিজের রায় সঙ্গে নিয়ে আসে।
 
-Jesus does not develop an elaborate creation theology, but he inherits and deepens the Jewish understanding that God created all things and that creation is fundamentally good. His parables draw on the beauty of the natural world — flowers more gloriously clothed than Solomon, birds fed by the Father without anxiety — as evidence of God's generous, attentive care for every creature. The world is not an illusion (Shankara) nor a cosmic battleground (Zarathustra) — it is a garden in which the Father's generosity is visible to those with eyes to see.
+### 43 · সবচেয়ে ছোটজনের সঙ্গে আচরণই বিচার
 
-### 83 · God created all from nothing by the command 'Be!'
+ইঞ্জিলে ঈসা এক শেষ বিচারের কথা বলেন, যেখানে প্রতিটি মানুষের বিচার হবে একটা প্রশ্নে: ক্ষুধার্ত, অচেনা, অসুস্থ আর কয়েদির সঙ্গে সে কেমন ব্যবহার করেছে। "আমার এই সবচেয়ে ছোট ভাইদের একজনের প্রতি তোমরা যা করেছ, তা আমার প্রতিই করেছ।" যারা বিচারে টেকে, তারা নিজেরাও জানত না যে খোদার সেবা করছে — তারা কেবল সামনের মানুষটাকে দেখেছিল।
 
-The Qur'anic account of creation is simultaneous with God's command: *"When He decrees a matter, He only says 'Be!' and it is."* Creation is an act of pure divine will — instantaneous, effortless, total. Unlike Plato's Demiurge (working with pre-existing matter) or Vyasa's God (creating in cyclical time) or Zarathustra's Ahura Mazda (whose creation was invaded by evil), Allah's creation is unconstrained, unresisted, and unrepeatable. God continuously sustains it: *"He will not cease to give it His attention."*
+কিন্তু ঈসা এমন এক রহমতের কথাও বলেন, যা সরল ন্যায়ের হিসাব উল্টে দেয়: হারানো ছেলে ক্ষমা চাওয়া শেষ করার আগেই বাবা তাকে জড়িয়ে ধরেন; দিনের শেষ ঘণ্টায় কাজে আসা মজুর পায় সারাদিনের মজুরি। খোদার রহমত বিচারকে বাতিল করে না — ছাপিয়ে যায়। দুই প্রান্ত একসঙ্গে ধরে রাখাই এখানে কঠিন কাজ: বিচার সত্যি, আর রহমত তার চেয়েও বড়।
 
-### 93 · God created all through the divine Word — the world is God's play
+### 53 · কিয়ামত — অণু পরিমাণেরও হিসাব
 
-In Nanak's cosmology, God created the world through the divine Word (*Shabad*) — the vibratory emanation of divine being that sustains all things. The world is God's *khel* — play, creative expression — not a problem to be escaped (Buddhism) nor a cosmic battleground (Zarathustra) nor an illusion to be seen through (Shankara). It is the divine at play in forms, sustaining everything, calling everything back to itself. This gives Sikh theology a joyful, affirmative relationship to the created world.
+কিয়ামতের দিন কোরআনের সবচেয়ে বারবার ফিরে আসা আর সবচেয়ে জীবন্ত বিষয়গুলোর একটি: যেদিন প্রতিটি আত্মা খোদার সামনে দাঁড়াবে, আর প্রতিটি কাজের হিসাব হবে। "কেউ অণু পরিমাণ ভালো করলে সে তা দেখবে, আর কেউ অণু পরিমাণ মন্দ করলে সে-ও তা দেখবে।" মিজানে আমল মাপা হবে, আমলনামা পড়া হবে, জান্নাত আর জাহান্নাম তাদের বাসিন্দাদের পাবে।
 
-### 04 · Aten fills the world — no corner without its light
+এই ছকে এটাই সবচেয়ে পূর্ণাঙ্গ ঐশী বিচার: কর্মফলের চেয়ে বেশি ব্যক্তিনির্দিষ্ট, কারণ বিচারক এক জীবন্ত খোদা; ইতিহাসের বিচারের চেয়ে বেশি চূড়ান্ত; চুক্তির কাঠামোর চেয়ে বেশি স্পষ্ট পরকালমুখী। তবু এই বিচারের ভাষাও রহমতে মোড়া: কোরআন বারবার মনে করিয়ে দেয়, খোদা কারও ওপর অণু পরিমাণও জুলুম করেন না, আর তওবার দরজা শেষ নিঃশ্বাস পর্যন্ত খোলা।
 
-The Aten's presence is universal and impartial: it shines on Egypt and on the foreign lands equally; it warms the chick in the egg and the man in the field. There is no distance between God and creation — the Aten is wherever its light reaches, which is everywhere. Yet the Aten is also radically beyond: it travels across the sky, it sets and withdraws. The tension between universal presence and irreducible otherness — the sun is everywhere but the sun is not the world — gives Atenism a paradox that anticipates the entire later Abrahamic discussion.
+### 63 · হুকুম — খোদার ইচ্ছাই সব চালায়
 
-### 14 · Near to the truthful, distant from liars
+নানকের কাছে খোদার বিচারের নাম হুকুম — সেই ঐশী ইচ্ছা বা আদেশ, যা সবকিছু চালায়। জন্ম আর মৃত্যু, আনন্দ আর কষ্ট — সবই ঘটে হুকুম অনুযায়ী: "হুকুমে সব রূপ তৈরি হয়, হুকুমের বাইরে কিছু নেই।" খোদার বিচার এখানে ভবিষ্যতের কোনো দিন নয়, বরং বর্তমানে প্রতিটি অস্তিত্বের ওপর ঐশী ইচ্ছার সার্বিক শাসন।
 
-Ahura Mazda is present to and known by those who choose truth — the righteous, the generous, the honest — and absent from those who choose the Lie. Proximity to God is therefore an ethical achievement: the closer you live to truth, the closer God is to you. This makes transcendence and immanence functions of moral choice rather than metaphysical category. God is always there; it is the human being who moves toward or away from divine presence through the choices they make.
+যারা নিজেদের হুকুমের সঙ্গে মিলিয়ে নেয় — অহং ছেড়ে দেয়, যা দেওয়া হয়েছে তা মেনে নেয় — তারা শান্তি পায়। যারা হুকুমের বিরুদ্ধে দাঁড়ায় — হউমে, অর্থাৎ অহংয়ের ভেতর বাস করে — তারা কষ্ট পায়। হিসাব তাই নিরন্তর, কোনো এক দিনের জন্য জমা নয়। লক্ষ করার মতো, এখানে শাস্তি আর অহং প্রায় এক জিনিস: অহংয়ে বেঁচে থাকাটাই রায়, আর তা থেকে মুক্তি পাওয়াটাই খালাস।
 
-### 24 · Holy and far — yet walks in the garden and calls by name
+### 04 · জগতের কষ্টে আহুরা মাজদার শোক
 
-YHWH is *kadosh* — holy, set apart, radically other than the world and its creatures. He dwells in unapproachable fire; no one may see his face and live. Yet the same God walks in the garden of Eden in the cool of the day, argues with Abraham over the fate of Sodom, and speaks to Moses face to face as a man speaks to a friend. The tension between divine holiness (radical transcendence) and divine intimacy (relational nearness) is the defining tension of the entire Hebrew Bible — and it is never resolved, only held.
+গাথায় এমন কিছু অংশ আছে, যার কোমলতা অবাক করে। সেখানে জরথুস্ত্র বর্ণনা করেন, অমঙ্গলের আক্রমণে ভালো সৃষ্টির কষ্ট দেখে আহুরা মাজদা কীভাবে ব্যথিত হন। এক জায়গায় গরু — অর্থাৎ পৃথিবী আর তার প্রাণ — নিজেই খোদার কাছে নালিশ জানায়: কেন আমাকে বানালে, কে আমাকে রক্ষা করবে? আর খোদা উত্তরে একজন রক্ষক পাঠান — জরথুস্ত্রকে।
 
-### 34 · Gods dwell on Olympus — but erupt unpredictably into life
+খোদা এখানে উদাসীন নন। তিনি সৃষ্টির সঙ্গে কষ্ট পান, তার পুনরুদ্ধার চান, আর সেই নবায়ন ঘটাতে তাঁর সৎ মানুষের সহযোগিতা দরকার। গাথার খোদা জগতের পচনে আহত, আর মানুষের বিশ্বস্ততায় শক্তি পান। এটা এক অসাধারণ চিন্তা: খোদার প্রেম এখানে মানুষকে কেবল উদ্ধার করে না, তাকে ডেকে নেয় — উদ্ধারের কাজে অংশীদার হতে।
 
-The Olympian gods live apart — feasting and watching from golden halls on Olympus. They are transcendent in the sense of being different in kind from humans: immortal, beautiful, powerful beyond comparison. Yet they are radically immanent in the narrative sense: they walk among humans disguised, they grip the sword-arm of a warrior at a critical moment, they take sides in human wars. The divine is not a stable background presence but an active, interventionist, sometimes terrifyingly close force that can arrive without warning and depart just as suddenly.
+### 14 · মজলুমের কান্না খোদা শোনেন
 
-### 44 · Heaven is silent — it communicates through moral pattern
+মিসর থেকে বেরিয়ে আসার কাহিনি খোদার করুণার আদর্শ ঘোষণা: "আমি আমার লোকদের দুর্দশা দেখেছি… তাদের কান্না শুনেছি… তাদের যন্ত্রণা আমি জানি, আর তাদের উদ্ধার করতে নেমে এসেছি।" খোদা মানুষের কষ্টের প্রতি উদাসীন নন — কষ্ট তাঁকে নাড়া দেয়, তিনি তার ভেতরে ঢোকেন, আর তা শেষ করতে চূড়ান্তভাবে কাজ করেন।
 
-Confucius was famously reticent: *"Does Heaven speak? The four seasons pursue their courses, and all things are continually being produced, but does Heaven say anything?"* Heaven's transcendence is expressed not through distance or inaccessibility but through silence — the silence of the moral order itself, which does not need to announce itself because it is everywhere present in the structure of human relationships and natural rhythms. This makes Heaven both radically transcendent (not a being you can address) and radically immanent (the ground of every human relationship).
+দাসত্ব থেকে এই মুক্তি পরের সব ইহুদি নৈতিকতার ভিত হয়ে ওঠে: তোমরা নিজেরাই দাস ছিলে, তাই তোমরা জানো কষ্ট কী, তাই অচেনা মানুষের ওপর জুলুম কোরো না। "অচেনাকে ভালোবাসো" — এই হুকুম তাওরাতে যতবার এসেছে, অন্য প্রায় কোনো হুকুম ততবার আসেনি। খোদার প্রেম এখানে আবেগ নয়, একটা ঘটনা — আর সেই ঘটনার স্মৃতিই মানুষের দায় হয়ে যায়।
 
-### 54 · God is all — the taste in water, the light in the sun
+### 24 · ভক্ত কৃষ্ণের কাছে হারায় না
 
-Krishna's declaration in the Gita is the most comprehensive statement of divine immanence in the table: *"I am the taste in water, I am the light in the sun and moon, the sacred syllable Om in all the Vedas, the sound in space, the manhood in men."* God is not merely present in the world — God is what every beautiful, powerful, or meaningful thing is when you encounter it at its essence. The world is transparent to the divine for those who have the eyes to see.
+ভগবদ্গীতার সবচেয়ে মর্মস্পর্শী অংশগুলো সেখানে, যেখানে কৃষ্ণ তাঁর ভক্তদের প্রতি ভালোবাসা ঘোষণা করেন: "যারা ভক্তি নিয়ে আমার উপাসনা করে, তারা আমাতে, আর আমিও তাদের মধ্যে।" আর অর্জুনকে তিনি কথা দেন: "নিশ্চিত জেনো, আমার ভক্ত কখনো বিনষ্ট হয় না।"
 
-### 64 · Transcendence and immanence are the wrong questions
+এমনকি সবচেয়ে বড় পাপীও, জ্ঞানের নৌকায় চড়ে পাপের সমুদ্র পার হলে, সব পাপ থেকে মুক্ত হয়। খোদার ভালোবাসার এই ছবি কর্ম আর যোগ্যতার হিসাব ছাপিয়ে যায় — ভালোবাসা প্রাপ্যের মাপে আসে না, উপচে পড়ে। কর্মফলের নিখুঁত, নিজে-চলা নিয়মের পাশে এটাই গীতার ভারসাম্য: নিয়ম আছে, কিন্তু যে খোদার দিকে ফেরে, তার জন্য নিয়মের চেয়ে বড় একটা আশ্রয়ও আছে।
 
-The Buddha famously compared himself to a man struck by an arrow who, instead of letting the arrow be removed, demands to know who shot it. The questions of God's transcendence or immanence — these are the irrelevant questions about the arrow's origin. What matters is removing the arrow: ending suffering now, in this body, in this life, through the practice of the Eightfold Path. The question of transcendence and immanence belongs to the undetermined questions — the Buddha's silence on them is not agnosticism but a redirect toward what actually helps.
+### 34 · খোদা নেই, তবু সব প্রাণে করুণা
 
-### 74 · The Kingdom is at hand — God near enough to touch
+বুদ্ধ কোনো করুণাময় খোদার কথা বলেন না, তবু করুণা তাঁর শিক্ষার আবেগময় হৃদয়। মৈত্রীর সাধনা — ছোট্ট পোকা থেকে সবচেয়ে উঁচু দেবতা পর্যন্ত, কোনো ব্যতিক্রম ছাড়া, সব প্রাণীর সুখ কামনা করা — এই প্রশ্নের বুদ্ধের উত্তর: যার কোনো খোদা নেই, সে অন্য প্রাণের সঙ্গে কীভাবে সম্পর্ক রাখবে? "মা যেমন নিজের একমাত্র সন্তানকে প্রাণ দিয়ে আগলে রাখে, তেমনি সব প্রাণীর প্রতি সীমাহীন মন গড়ে তোলো।"
 
-Jesus's central proclamation is the Kingdom of God — a reign of divine love, justice, and wholeness that is breaking into the present moment. *"The Kingdom of God is among you."* God is transcendent ("Our Father who art in heaven") and simultaneously so near that the sick are healed by a touch and the dead are raised by a word. God is not the impartial solar radiance of the Aten, nor the Tao's silent ubiquity — he is the active, particular nearness of a God who is arriving, who can be found in the face of the poor, the sick, and the outcast.
+করুণা এখানে খোদার হুকুম থেকে আসে না, আসে স্পষ্ট দেখা থেকে। তুমি যখন সত্যিই অন্যের কষ্ট দেখো, আর সত্যিই বোঝো যে সে-ও তোমার মতো অজ্ঞতায় আটকা, তখন তাকে বের করে আনার ইচ্ছাটাই একমাত্র স্বাভাবিক সাড়া। বুদ্ধের নিজের শিক্ষা দিতে বেরোনোও এই করুণা থেকেই। এই কলাম দেখায়, প্রেম যে খোদারই গুণ হতে হবে তা নয়; খোদাহীন পথেও তা কেন্দ্রে বসে।
 
-### 84 · Transcendent beyond compare — yet nearer than the jugular vein
+### 44 · ক্রুশ — খোদা কষ্টের ভেতরে
 
-The Qur'an holds divine transcendence and divine nearness in a tension that is never resolved. On one side: *"There is nothing like unto Him"* — God is beyond all likeness, all analogy, all human conception. On the other: *"We are closer to him than his jugular vein."* God is not located anywhere — he has no body, no spatial position — yet he is with you wherever you are. This is not Shankara's identity (the self IS God) or Spinoza's immanence (God IS the world) — it is a relational nearness that preserves absolute divine otherness.
+খ্রিষ্টীয় ধর্মতত্ত্বের কেন্দ্রীয় প্রতীক ক্রুশ। ইঞ্জিলের বর্ণনায়, যিনি খোদার প্রেমের কথা প্রচার করেছিলেন, তাঁকেই মৃত্যুদণ্ড দেওয়া হয়, আর তিনি চিৎকার করে ওঠেন: "খোদা আমার, খোদা আমার, কেন আমাকে ছেড়ে গেলে?" (ইসলামি বিশ্বাসে অবশ্য ঈসাকে ক্রুশে মারা হয়নি, খোদা তাঁকে তুলে নিয়েছিলেন — এই বিন্দুতেই দুই ধারা সবচেয়ে স্পষ্টভাবে আলাদা।)
 
-### 94 · Farther than the farthest — and nearer than breathing
+খ্রিষ্টানদের কাছে এটাই খোদার কষ্ট নিয়ে সবচেয়ে দুঃসাহসী দাবি: খোদা নিরাপদ দূরত্ব থেকে মানুষের যন্ত্রণা দেখেন না, তার ভেতরে পুরোপুরি ঢোকেন — একেবারে পরিত্যক্ত হওয়ার অনুভূতি পর্যন্ত। এ খোদা কোনো নির্বিকার পূর্ণ সত্তা নন; তিনি লাজারাসের কবরের সামনে কাঁদেন, আর ক্রুশে জগতের কষ্টের ভার নিজের ওপর নিয়ে তাকে বদলে দেন। প্রেমের মাপ এখানে এই: সে কতটা সইতে রাজি।
 
-Nanak's description of divine transcendence and immanence is among the most lyrical in the table: God is beyond the beyond, higher than the highest, and simultaneously suffusing every breath, present in every atom. *"He is within us; we are within Him. He is not far; He is very near."* The God who is infinite and unapproachable is also the one whose presence is felt in the very act of breathing, whose name is heard in every heartbeat by those who listen.
+### 54 · আর-রাহমান আর-রাহিম — প্রথম পরিচয়
 
-### 05 · Gratitude and beauty — no commandments, only receiving
+কোরআনের একটি বাদে প্রতিটি সুরা শুরু হয় "বিসমিল্লাহির রাহমানির রাহিম" দিয়ে — পরম করুণাময়, অসীম দয়ালু আল্লাহর নামে। দুটো নামই এসেছে সেই আরবি মূল থেকে, যা থেকে এসেছে রেহেম — মায়ের গর্ভ। খোদার রহমত তাই গর্ভের মতো: যা ধারণ করে, লালন করে, জন্ম দেয়। কোরআনে খোদার গুণের মধ্যে এই দুটোই সবচেয়ে বেশিবার এসেছে।
 
-Remarkably, the Aten makes no moral demands in the surviving texts. There are no commandments, no prohibitions, no covenant. The appropriate human response to the Aten is not obedience but gratitude — wonder at the beauty of creation, delight in the generosity of light. The Atenist religion is aesthetic before it is ethical — God is beautiful, and the right response is to see and celebrate that beauty. This distinguishes Akhenaten sharply from every other figure in this table, all of whom combine their vision of the divine with some form of moral demand.
+খোদার রহমত সর্বব্যাপী আর আদি: "আমার রহমত সবকিছু ঘিরে আছে।" এক হাদিসে কুদসিতে খোদা বলেন, তাঁর রহমত তাঁর ক্রোধকে ছাড়িয়ে গেছে। এই রহমত বিচারকে বাতিল করে না — কিয়ামত সত্যি — কিন্তু খোদার প্রথম আর গভীরতম পরিচয় এটাই, সেই সমুদ্র, যার ভেতরে বিচার ঘটে। মুসলমান প্রতিটি কাজ শুরু করেন এই দুই নাম মুখে নিয়ে; প্রেম এখানে একটা অভ্যাস, দিনে অগণিতবার উচ্চারিত।
 
-### 15 · Good thoughts, words, and deeds — total alignment with truth
+### 64 · নদর — যোগ্যতা ছাপিয়ে কৃপা
 
-Zarathustra's moral demand is elegant in its simplicity and total in its scope: *humata, hūkhta, hvarshta* — good thoughts, good words, good deeds. The ethical life is not about ritual purity or legal compliance but about the alignment of the entire person — mind, speech, and action — with truth (*asha*). When you think, speak, and act truthfully, you are fighting on Ahura Mazda's side in the great cosmic battle against the Lie. Every good thought is a blow against Angra Mainyu; every lie is a gift to the enemy.
+নানকের সবচেয়ে কোমল শিক্ষা: খোদার নদর — কৃপার দৃষ্টি, শব্দটা ফারসি "নজর"-এরই আত্মীয় — সেই কর্মের বাঁধনও গলিয়ে দিতে পারে, যা না হলে আত্মাকে অগণিত জন্ম ধরে বেঁধে রাখত। "কর্মে দেহ পাওয়া যায়, কিন্তু মুক্তির দরজা খোলে তাঁর নদরে।"
 
-### 25 · 613 commandments — law as the structure of covenant
+হউমে — অহং, সেই মৌলিক বিচ্ছিন্নতা — সব দুঃখের মূল, আর কোনো ধর্মীয় চেষ্টা একা তাকে গলাতে পারে না। কেবল খোদার কৃপা, যা মেলে নামের স্মরণে আর সাধসঙ্গতে — ভালো মানুষের সঙ্গে — আত্মাকে তার নিজের হাতে গড়া কারাগার থেকে মুক্ত করতে পারে। এই বিন্দুতে নানক তাঁর চারপাশের কর্ম-ধর্মের হিসাব থেকে সরে আসেন অনুগ্রহের দিকে: মানুষ চেষ্টা করে, কিন্তু শেষ দরজাটা খোলে ভালোবাসা।
 
-The revelation at Sinai is primarily a legal revelation: YHWH gives Israel not just moral principles but a comprehensive legal code governing every aspect of life — worship, diet, sexuality, property, justice, purity. The 613 commandments of the Torah are the terms of the covenant between YHWH and Israel. Obedience is not merely beneficial but covenantally required. Disobedience is a breach of the relationship with God. This makes Moses's God the most law-giving God in the table — more legislative even than Muhammad's, whose Qur'anic foundation is more narrative and less exhaustively codified.
+### 05 · সত্য বেছে নাও — সেটাই মুক্তি
 
-### 35 · Honour the gods — sacrifice, piety, and keeping oaths
+জরথুস্ত্রের কাঠামোতে মুক্তি এক মহাজাগতিক বাছাইয়ের ফল। প্রতিটি মানুষ জন্মায় সত্য আর মিথ্যার যুদ্ধক্ষেত্রে, আর তাকে স্বাধীনভাবে বেছে নিতে হয় কোন পক্ষে লড়বে। গাথায় আছে, আদিতেই দুই আত্মা বেছে নিয়েছিল — একজন সত্য, আরেকজন মিথ্যা; আর মানুষকেও একই বাছাই করতে হয়, প্রতিদিন।
 
-Homeric piety consists primarily in giving the gods what they are due: sacrificing properly, praying correctly, honouring oaths sworn in their names, showing hospitality (which is under Zeus's protection). The gods reward those who honour them and punish those who neglect or insult them — but not with the systematic moral consistency of YHWH or Ahura Mazda. A god may protect a favourite who is morally flawed and punish a righteous person who has somehow offended. Homeric ethics is more about social and ritual obligation than about inner moral transformation.
+এটা ধর্মের ইতিহাসে নৈতিক স্বাধীনতার সবচেয়ে পুরোনো টিকে থাকা দর্শন: খোদা ফল আগে থেকে ঠিক করে রাখেন না; মানুষ সত্যিকারের নৈতিক কর্তা, যার বাছাইয়ের মহাজাগতিক ওজন আছে। মুক্তি হলো সত্যের চূড়ান্ত বিজয়, আর যারা সত্য বেছে নিয়েছিল তারা সেই বিজয়ের অংশীদার। এখানে অনুগ্রহের ভূমিকা কম — আছে মানুষের মর্যাদা আর দায়িত্ব, নিজে বেছে নেওয়ার ভার।
 
-### 45 · Li and ren — ritual propriety and human-heartedness
+### 15 · চুক্তি আর তেশুভা — ফিরে আসা
 
-Confucius's moral demand centres on two interlocking virtues: *lǐ* (ritual propriety — the correct performance of every human relationship and social role) and *rén* (human-heartedness, benevolence, love — the inner disposition that gives ritual its life). Without lǐ, rén is sentimentality; without rén, lǐ is empty formalism. Together they constitute the Confucian path: the cultivation of a person so fully formed by proper ritual relationships and genuine love for others that their every action naturally expresses Heaven's moral order.
+মুসার মুক্তির পথ চুক্তির পথ: চুক্তির শর্ত মেনে চলো — কেবল খোদার উপাসনা করো, তাওরাত মানো, পরস্পরের সঙ্গে ন্যায় করো — তাহলে দেশে শান্তি আর সমৃদ্ধিতে বাস করবে। আর যখন ব্যর্থ হও, তখন তেশুভা — ফিরে আসা। শব্দটার মানে আর আমাদের "তওবা"-র মানে প্রায় এক: মুখ ঘুরিয়ে আবার চুক্তির দিকে ফেরা।
 
-### 55 · Dharma — righteous action as offering to God
+এখানে অনুগ্রহের কোনো বিস্তারিত তত্ত্ব নেই, পুনর্জন্মের চক্র থেকে মুক্তি নেই, মরমি মিলনও নেই। মুক্তি মূলত সামাজিক আর সমষ্টিগত: চুক্তিবদ্ধ সম্প্রদায় খোদা আর পরস্পরের সঙ্গে ঠিক সম্পর্কে থেকে বিকশিত হবে। একা কেউ উদ্ধার পায় না; উদ্ধার পায় একটা জাতি, যার প্রত্যেকে প্রত্যেকের জন্য দায়ী। আর ফেরার দরজা কখনো বন্ধ হয় না — বারবার ব্যর্থ হওয়া জাতিকে খোদা বারবার ফিরিয়ে নেন।
 
-The Gita's central practical teaching is the doctrine of *svadharma* — one's own duty according to one's nature, stage of life, and social position — performed as an offering to God, without attachment to results. This is not the legal compliance of Mosaic religion nor the ritual correctness of Homeric piety — it is the alignment of every action with one's deepest nature and with the will of God, releasing the fruits of action to God and acting from a place of pure presence.
+### 25 · জ্ঞান, কর্ম, ভক্তি — তিন পথে ঘরে
 
-### 65 · The Noble Eightfold Path — the middle way between extremes
+গীতার প্রতিভা এই উপলব্ধিতে যে মানুষ খোদার কাছে যায় নিজের নিজের স্বভাব নিয়ে। জ্ঞানযোগ — যাদের মন দার্শনিক, তাদের জন্য; কর্মযোগ — নিঃস্বার্থ কাজ, যাদের স্বভাব কর্মঠ, তাদের জন্য; ভক্তিযোগ — যাদের হৃদয় ভক্তিতে ভরা, তাদের জন্য। তিনটি পথই আন্তরিকভাবে অনুসরণ করলে মুক্তিতে পৌঁছায়।
 
-The Buddha's moral and practical demand is the Noble Eightfold Path: right understanding, right intention, right speech, right action, right livelihood, right effort, right mindfulness, right concentration. This is the Middle Way between the extremes of sensual indulgence and harsh asceticism — a path of disciplined, lucid, compassionate engagement with life. Unlike Moses's legal code or Confucius's ritual propriety, the Eightfold Path is fundamentally psychological: it is about transforming the mind that experiences suffering, not the society that surrounds it.
+খোদা এতটাই উদার যে প্রত্যেক সাধককে তার নিজের জায়গায় এসে দেখা দেন, আর তার নিজের স্বাভাবিক পথ ধরেই তাকে ঘরে নিয়ে যান। তবু গীতার শেষ অধ্যায়গুলোতে একটা পথ অন্যগুলোর চেয়ে একটু উঁচুতে ওঠে — ভক্তি: "আমাতে মন রাখো, আমার ভক্ত হও, আমাকে প্রণাম করো — তুমি আমার কাছেই আসবে।" তিন দরজা, কিন্তু ঘর একটাই, আর সবচেয়ে কাছের দরজাটা ভালোবাসার।
 
-### 75 · Love God and love your neighbour — including your enemy
+### 35 · নির্বাণ — তৃষ্ণার নিভে যাওয়া
 
-When asked which commandment is greatest, Jesus's answer is radical in its simplicity: love God with your whole being, and love your neighbour as yourself. On these two commandments hang all the Law and the Prophets. The Sermon on the Mount makes explicit what this means: not merely avoiding murder but avoiding anger; not merely avoiding adultery but avoiding lustful thought; not merely loving friends but loving enemies. The ethical bar is raised to the point where only grace can meet it.
+বুদ্ধের শিক্ষায় মুক্তির নাম নির্বাণ: তৃষ্ণা, বিদ্বেষ আর অজ্ঞতার সম্পূর্ণ নিভে যাওয়া, আর তাদের সঙ্গে তাদের তৈরি দুঃখেরও অবসান। শব্দটার আক্ষরিক মানে নিভে যাওয়া — প্রদীপের মতো, যার তেল ফুরিয়ে গেছে।
 
-### 85 · Total submission — Five Pillars and Sharia governing all of life
+নির্বাণ কোনো জায়গা নয়, আনন্দের কোনো অবস্থা নয়, খোদার সঙ্গে মিলনও নয় — তা শর্তহীন, অজাত, অকৃত। বুদ্ধ একে বর্ণনা করেছেন প্রায় পুরোপুরি নেতিবাচক ভাষায় — এটা নয়, ওটা নয় — কারণ সব ইতিবাচক বর্ণনা সেই শর্তসাপেক্ষ জগতের, যাকে নির্বাণ ছাড়িয়ে যায়। নাম দিতে গেলেই ভুল হয়, কারণ নাম দেওয়াটাই সমস্যার অংশ। তবু বুদ্ধ একে বলেছেন "পরম শান্তি" — এই সারির অন্য সবার গন্তব্য যেখানে কারও সান্নিধ্য, এখানে গন্তব্য কোলাহলের থেমে যাওয়া।
 
-Islam means submission — the total orientation of one's life toward God. The Five Pillars give this submission a concrete form: the declaration of faith, five daily prayers, fasting in Ramadan, giving to the poor, and pilgrimage to Mecca. Beyond these, the Sharia governs every domain of life. This is the most comprehensive system of divine demand in the table: more codified than Jesus's two commandments, more universal than Moses's covenant with one people, more practically specific than Confucius's cultivation of the exemplary person.
+### 45 · মন ফেরানো আর ভরসা — দানের রাজ্য
 
-### 95 · Naam simran, kirat karni, vand chhakna — remember, work, share
+ঈসার মুক্তির পথ খোদার রাজ্যে প্রবেশ — মন ফেরানো (গোটা মানুষটার খোদার দিকে ঘুরে দাঁড়ানো) আর ভরসা (খোদার প্রেম আর ক্ষমতার ওপর আস্থা) দিয়ে। এটা দার্শনিক শিক্ষার পথ নয়, বিধান মানার পথ নয়, নৈতিক আত্মগঠনের পথও নয়। এটা রূপান্তরের পথ — নতুন জন্ম — যা আসে অর্জন হিসেবে নয়, দান হিসেবে গ্রহণ করলে।
 
-Nanak's threefold path is *nām simran* (constant remembrance of God's Name), *kirat karni* (honest labour), and *vand chhakna* (sharing with others). Mystical devotion is not an escape from the world but a transformation of engagement with it. The Sikh institution of *langar* (the free community kitchen that feeds everyone regardless of caste, religion, or status) is the embodiment of Nanak's theology: God is served by serving the poor. This is the most communitarian and most egalitarian path in the table.
+ইঞ্জিলের এক গল্পে দুজন মানুষ প্রার্থনা করতে যায়। একজন ধার্মিক, নিজের সব নেক কাজের তালিকা পড়ে শোনায়; আরেকজন খাজনা-আদায়কারী, ঘৃণিত পেশার মানুষ, দূরে দাঁড়িয়ে বুক চাপড়ে কেবল বলে: "খোদা, আমি গুনাহগার, আমার প্রতি দয়া করো।" ঈসা বলেন, দ্বিতীয়জনই খোদার কাছে গ্রহণযোগ্য হয়ে ঘরে ফেরে। শিশুর মতো না হলে রাজ্যে ঢোকা যায় না — খালি হাতে, পাওয়ার জন্য খোলা।
 
-### 06 · No judgment — the Aten shines equally on all
+### 55 · আত্মসমর্পণ — সরল পথ, জান্নাত
 
-The Aten does not judge. It does not reward the righteous and punish the wicked. It shines equally on all — the farmer and the thief, Egypt and its enemies. The entire apparatus of Egyptian religion — the weighing of souls, the judgment of Osiris, the Book of the Dead — was swept away by Akhenaten's reform, leaving only the naked generosity of light. This is the most striking theological absence in the table: a God of absolute moral authority without a corresponding structure of divine justice.
+ইসলামের পথ "ইসলাম" নিজেই — খোদার ইচ্ছার কাছে নিজের সম্পূর্ণ আত্মসমর্পণ, যার প্রকাশ পাঁচ স্তম্ভে, শরিয়তে, আর ভেতরে তাকওয়া গড়ে তোলায়। যারা আন্তরিকভাবে আত্মসমর্পণ করে, তারা পরিচালিত হয় সিরাতুল মুস্তাকিমে — সরল পথে — এই জীবনের ভেতর দিয়ে জান্নাত পর্যন্ত। প্রতিটি নামাজের প্রতিটি রাকাতে মুসলমান এই পথটাই চেয়ে নেন: "আমাদের সরল পথ দেখাও।"
 
-### 16 · The Chinvat bridge — judgment, then cosmic renovation
+এই ছকে এই পথের গন্তব্য স্বতন্ত্র। তা শর্তসাপেক্ষ অস্তিত্বের নিভে যাওয়া নয়, খোদার মধ্যে বিলীন হওয়াও নয় — তা খোদার সঙ্গে সম্পর্কের পূর্ণতম রূপ: বান্দা আর তার প্রভুর চিরস্থায়ী অন্তরঙ্গতা, যে প্রভুর ভালোবাসার কোনো মাপ নেই। বান্দা বান্দাই থাকে, আর সেখানেই তার মর্যাদা। আত্মসমর্পণ এখানে নিজেকে হারানো নয়; নিজের ঠিক জায়গাটা খুঁজে পাওয়া।
 
-At the end of time, Ahura Mazda will win the cosmic battle absolutely, and a final renovation of the world (*frashokeret*) will occur. Before that, each soul at death must cross the *Chinvat* bridge: for the righteous, it is wide and easy; for the wicked, it narrows to a razor's edge. Zarathustra's eschatology — individual judgment after death, cosmic judgment at the end of time, resurrection of the dead, final renovation — is arguably the most important single contribution to the subsequent Jewish, Christian, and Islamic traditions.
+### 65 · নাম সিমরন — অহং গলে ঘরে ফেরা
 
-### 26 · Blessing for obedience, curse for rebellion — historical justice
+শিখ পথ হলো খোদার নামের নিরন্তর স্মরণ — নাম সিমরন — যা চলে সঙ্গতে, অর্থাৎ সমষ্টির ভেতরে, আর প্রকাশ পায় সেবায়। নিরন্তর স্মরণের ভেতর দিয়ে অহং ধীরে ধীরে গলে যায়; আত্মা শবদের সুরে বাঁধা পড়ে; আর মুক্তি আসে।
 
-The Deuteronomic theology is stark: obedience brings blessing, disobedience brings curse. YHWH responds, rewards, and punishes with dramatic intensity. The history of Israel as told in the Hebrew Bible is a continuous cycle of covenant fidelity and infidelity, divine blessing and divine wrath, exile and return. YHWH's justice is historical: it plays out in the life of nations, not just in the fate of individual souls. This gives Mosaic theology a this-worldly, political urgency absent from the more individualistic or cosmic frameworks of the other prophets.
+কিন্তু সেই মুক্তি কোনো নাটকীয় ঘটনা নয় — ধীর, কোমল এক ঘরে ফেরা, সেই সান্নিধ্যে, যা সবসময়ই ছিল। শিখ গুরুদের বাণীতে এই ছবি বারবার ফেরে: যেমন ফুলে সুবাস, যেমন আয়নায় মুখ, খোদা তেমনই ভেতরে আছেন — তাঁকে বাইরে খোঁজার দরকার নেই। মুক্ত আত্মা নিজেকে হারায় না; সে শেষ পর্যন্ত নিজেকে খুঁজে পায়, খোদার মধ্যে। আর এই মুক্তি মৃত্যুর অপেক্ষায় থাকে না — জীবিত অবস্থাতেই কেউ মুক্ত হতে পারে, সংসারের মাঝখানে থেকেই।
 
-### 36 · Fate is absolute — even gods cannot save the fated
+### 06 · আত্মা সেতু পেরোয় — কর্মই ছাড়পত্র
 
-The most profound theological claim in Homer is the inescapability of Fate. When Zeus weighs the fates of Achilles and Hector on his golden scales, he is reading an already-written verdict. Even Zeus cannot override Fate to save his beloved son Sarpedon. This absolute justice of Fate operates entirely independently of human merit — the great die young, the unworthy survive. There is justice in Fate — oaths are avenged, hubris is punished — but it is not the justice of a moral legislator so much as the tragic justice of cosmic necessity.
+মৃত্যুর পর জরথুস্ত্রীয় আত্মার দেখা হয় তার নিজের দায়েনার সঙ্গে — জীবনের সব কাজের মূর্ত রূপ, যে সৎ মানুষের সামনে আসে এক সুন্দরী তরুণী হয়ে, আর পাপীর সামনে এক কুৎসিত বুড়ি হয়ে। মানুষ মৃত্যুর পর মুখোমুখি হয় নিজেরই — নিজের কাজের চেহারার।
 
-### 46 · Heaven rewards virtue through history — justice is slow
+তারপর আত্মা চিনভাত সেতু পার হয়, যার চওড়া ঠিক হয় তার জীবনের সত্য আর মিথ্যার পাল্লায়। সৎ আত্মা ওঠে গানের ঘরে; পাপী নামে নিকৃষ্টতম অস্তিত্বের ঘরে। কিন্তু এই অবস্থা অস্থায়ী — চূড়ান্ত নবায়নের সময় সব আত্মা শুদ্ধ হবে, ফিরে পাবে তাদের আসল রূপ। জরথুস্ত্রের পরকাল তাই শেষ বিচারে নয়, শেষ ক্ষমায় গিয়ে থামে; জাহান্নামও এখানে কারাগার নয়, এক রকম শুদ্ধিশালা।
 
-Confucius believed that Heaven ultimately rewards virtue and punishes vice — but through the long arc of history rather than through immediate divine intervention. A virtuous ruler's dynasty flourishes; a corrupt ruler loses the Mandate of Heaven and falls. This is historical justice, not eschatological justice — there is no final judgment day, no afterlife reckoning. Confucius himself died without seeing the moral renewal he worked for, and his acceptance of this is one of the most moving moments in any prophetic biography.
+### 16 · প্রাণ খোদার — তাওরাতের নজর জীবনে
 
-### 56 · Karma is perfect justice — every action bears its fruit
+পরকাল নিয়ে তাওরাত আশ্চর্য রকম কম কথা বলে। মুসার পাঁচ কিতাবে জোর প্রায় পুরোটাই ইহজীবনে — ইহজগতের ন্যায়, ইহজগতের চুক্তি। নেফেশ — প্রাণ — খোদার দেওয়া জীবনের মূলনীতি; মৃত্যুতে তা খোদার কাছে ফিরে যায়। প্রতিবেশী মিসরের বিস্তারিত পরকাল-চিত্র, মৃতের বই আর সমাধির বিপুল আয়োজন, তাওরাতে চোখে পড়ার মতো অনুপস্থিত।
 
-The law of karma — action and its inevitable consequences — is Vyasa's account of cosmic justice: every action, thought, and intention creates corresponding consequences that the soul must eventually experience, across this life or many lives. There is no arbitrary divine judgment — karma is the self-executing moral order of the universe, operating with the necessity of natural law. This impersonal cosmic justice is combined in the Gita with a personal God who graciously assists those who surrender to him in transcending karma entirely.
+পুনরুত্থান আর পরকালের বিচার ইহুদি চিন্তার কেন্দ্রে আসে পরের যুগে, নবিদের কিতাব আর রাব্বিদের শিক্ষার ভেতর দিয়ে। কিন্তু মুসার নিজের কাছে খোদা জীবিতদের খোদা: চুক্তির প্রশ্ন হলো তুমি কীভাবে বাঁচবে, মরার পর কোথায় যাবে তা নয়। এই নীরবতা অভাব নয়, একটা অবস্থান — পরের জীবনের ভয় বা লোভ দিয়ে নয়, এই জীবনের ন্যায় দিয়ে খোদার প্রতি বিশ্বস্ততা মাপা।
 
-### 66 · Karma and rebirth — suffering continues until liberation
+### 26 · আত্মা অবিনাশী — মরে না কখনো
 
-The Buddha taught karma and rebirth as the framework within which suffering operates: unresolved craving and aversion bind the mind to continued existence, life after life. But unlike Vyasa's karma (which operates within a universe created and sustained by a loving God), the Buddha's karma operates in a universe with no divine overseer — it is a self-executing natural law, like gravity. Justice is built into the structure of conditioned existence itself; there is no judge, no final day of reckoning — only the patient unfolding of actions and their consequences.
+গীতার সবচেয়ে বিখ্যাত ঘোষণাগুলোর একটি: "আত্মা কখনো জন্মায় না, কখনো মরে না; সে ছিল না এমন নয়, থাকবে না এমনও নয়। সে অজাত, নিত্য, শাশ্বত, পুরাতন — দেহ মরলেও সে মরে না।" অর্জুন আত্মীয়দের মৃত্যুর ভয়ে কাঁপছিলেন; কৃষ্ণের প্রথম সান্ত্বনা এটাই — যাকে মারার ভয় পাচ্ছ, তাকে মারা যায় না।
 
-### 76 · Judgment based on how you treated the least — and mercy beyond justice
+মৃত্যু হলো এক দেহ ছেড়ে আরেক দেহ নেওয়া, যেভাবে মানুষ পুরোনো কাপড় ছেড়ে নতুন কাপড় পরে। আত্মার চূড়ান্ত পরিণতি মোক্ষ — পুনর্জন্মের চক্র থেকে মুক্তি, খোদার সঙ্গে চিরস্থায়ী মিলন বা তাঁর সান্নিধ্য। ভারতীয় দর্শনের নানা ধারা এই শেষ বিন্দুতে তর্ক করে — আত্মা কি খোদায় পুরোপুরি মিশে যায়, নাকি ভক্ত হিসেবে আলাদা থেকে তাঁর কাছে থাকে? গীতা দুটো দরজাই খোলা রাখে।
 
-Jesus teaches a Last Judgment in which every person will be judged on how they treated the hungry, the stranger, the sick, and the prisoner — because *"whatever you did to the least of these my brothers, you did to me."* Yet Jesus also teaches a mercy that disrupts simple justice: the prodigal is welcomed before he finishes his apology; the thief on the cross is promised paradise that same day. Divine mercy does not abolish justice — it exceeds it.
+### 36 · স্থায়ী আত্মা নেই — নির্বাণ পর্যন্ত ধারা
 
-### 86 · The Day of Judgment — every soul accountable for every atom
+বুদ্ধের সবচেয়ে কঠিন শিক্ষা অনাত্ম: কোনো স্থায়ী, অপরিবর্তনীয় "আমি" নেই। যাকে আমরা "আমি" বলি, তা শরীর আর মনের নিরন্তর বদলাতে থাকা ঘটনাপ্রবাহের একটা প্রচলিত নাম — রূপ, বেদনা, সংজ্ঞা, সংস্কার আর বিজ্ঞান, এই পাঁচ স্কন্ধের এক অস্থায়ী জোট, যা শর্তের ওপর নির্ভর করে ওঠে আর মিলিয়ে যায়।
 
-The Day of Judgment (*Yawm al-Qiyāma*) is one of the Qur'an's most insistent and vivid themes: the day when every soul will stand before God and every deed — the weight of an atom's worth of good or evil — will be accounted for. The scales will be balanced; the scrolls of deeds will be read; heaven and hell will receive their inhabitants. This is the most thoroughgoing divine justice in the table: more individually precise than the karma of Vyasa, more final than the historical justice of Confucius, more eschatologically explicit than the Mosaic covenantal structure.
+এই ধারা কর্মের বেগে জীবনের পর জীবন ধরে চলতে থাকে, যতদিন না অজ্ঞতা দূর হয় আর ধারাটা নির্বাণে থেমে যায়। কোনো আত্মা দেহ থেকে দেহে পাড়ি দেয় না; আছে কেবল শর্তসাপেক্ষ প্রক্রিয়ার চলমান বেগ — যেন এক মোমবাতি থেকে আরেক মোমবাতিতে শিখা জ্বালানো: একই আগুন, অথচ ঠিক একই আগুন নয়। এই সারির বাকি সবাই আত্মার একটা ঠিকানা খোঁজেন; বুদ্ধ প্রশ্ন করেন, ঠিকানাটা খুঁজছে কে।
 
-### 96 · Hukam — divine will governs all; ego is the source of suffering
+### 46 · পুনরুত্থান — টিকে থাকা নয়, রূপান্তর
 
-Nanak's concept of divine justice is the *hukam* — the divine will or command that governs all things. Everything happens according to the hukam: birth and death, joy and suffering. Divine justice is not a future judgment but the present and total governance of all existence by the divine will. Those who align themselves with the hukam — who surrender the ego and accept what is given — find peace; those who resist it — who live in *haumai* (ego) — experience suffering. The reckoning is continuous, not eschatological.
+ইঞ্জিলের ঈসা কেবল আত্মার অমরত্বের কথা বলেন না, বলেন পুনরুত্থানের কথা — আগামী যুগে গোটা মানুষের, দেহ আর আত্মা দুয়েরই, উদ্ধার আর রূপান্তর। "আমিই পুনরুত্থান আর জীবন।" (পুনরুত্থান ইসলামি বিশ্বাসেরও কেন্দ্রে; মতভেদ ঈসার নিজের ভূমিকা নিয়ে, উত্থানের সত্যতা নিয়ে নয়।)
 
-### 07 · God as nourisher — the Aten tends all creatures
+আত্মার পরিণতি এখানে খোদায় বিলীন হওয়া নয়, পুনর্জন্ম থেকে নিভে যাওয়াও নয় — তা খোদার প্রেমের পূর্ণতায় এক নতুন, রূপান্তরিত জীবনের দান। মৃত্যু শেষ নয়, বরং এমন এক জীবনের চৌকাঠ, যা এখনকার জীবনের চেয়েও বেশি বাস্তব। শরীরের ওপর জোরটা লক্ষ করার মতো: যে দেহ ক্ষুধা পায়, কাঁদে, ক্ষত বয়ে বেড়ায়, তাকে ফেলে দেওয়া হয় না — তাকেও নতুন করা হয়।
 
-The Great Hymn is suffused with tenderness toward every living creature — the chick breaking its shell, the fish leaping in the river, the child at the breast. The Aten tends each creature individually, providing what each needs at the moment of its need. This is not the compassion of a personal God who hears prayers but something more impersonal and more total: the indiscriminate generosity of light, which cannot withhold itself and cannot play favourites. Suffering, in this framework, is simply the absence of the Aten's light — darkness, cold, withdrawal.
+### 56 · প্রাণ খোদার কাছে ফেরে — জান্নাত
 
-### 17 · Ahura Mazda mourns the suffering of creation
+"প্রত্যেক প্রাণকে মৃত্যুর স্বাদ নিতে হবে, আর কিয়ামতের দিন তোমাদের পুরো প্রতিদান দেওয়া হবে।" আত্মা খোদার আমানত — সৃষ্টির সময় মানবদেহে ফুঁকে দেওয়া, মৃত্যুতে খোদার কাছে ফেরত যাওয়া, আর কিয়ামত পর্যন্ত বরজখে — এক মধ্যবর্তী অবস্থায় — অপেক্ষমাণ। "আমরা খোদারই, আর তাঁর কাছেই ফিরব" — প্রতিটি মৃত্যুসংবাদে মুসলমানের মুখে এই কথা।
 
-The Gathas contain passages of extraordinary tenderness in which Zarathustra describes Ahura Mazda's grief at the suffering of the good creation under the assault of evil. God is not indifferent — he suffers with creation, longs for its restoration, needs the cooperation of righteous human beings to bring about the renovation. The God of the Gathas is wounded by the world's corruption and sustained by human faithfulness. This makes Zarathustra's God more personally engaged with suffering than the Aten's impartial radiance.
+জান্নাত ব্যক্তিত্বের নিভে যাওয়া নয়, খোদায় বিলীন হওয়াও নয় — তা খোদার চিরস্থায়ী সান্নিধ্যে মানবজীবনের পূর্ণ বিকাশ: সৌন্দর্য, শান্তি, ভালোবাসা, আর খোদার দিদার, যা আত্মার সর্বোচ্চ আনন্দ। কোরআনের জান্নাত-বর্ণনা ইন্দ্রিয়ময় — বাগান, বয়ে চলা নহর, ছায়া — কারণ সেখানে মানুষ মানুষই থাকে, কেবল তার সব আকাঙ্ক্ষা অবশেষে তার যোগ্য গন্তব্য পায়। আর সেখানকার অভিবাদন একটাই শব্দ: সালাম।
 
-### 27 · God hears the cry of the oppressed — Exodus as liberation
+### 66 · সচখণ্ড — আলোর ভেতর শিখা
 
-The Exodus narrative is the paradigmatic statement of YHWH's compassion: *"I have seen the affliction of my people... I have heard their cry... I know their sufferings, and I have come down to deliver them."* God is not indifferent to human suffering — he is moved by it, enters into it, and acts decisively to end it. The liberation from Egypt becomes the theological foundation of all subsequent Jewish ethics: you were slaves, therefore you know what suffering is, therefore you must not oppress the stranger.
+শিখ ধারায় আত্মার চূড়ান্ত পরিণতি সচখণ্ড — সত্যের রাজ্য, খোদার সেই সান্নিধ্য, যেখানে মুক্ত আত্মা খোদার সঙ্গে মিলনে বাস করে। এটা নির্বাণের নিভে যাওয়া নয়, সব পার্থক্য মুছে ফেলা বিলয়ও নয়, আবার জান্নাতের বান্দা-প্রভুর সম্পর্কও ঠিক নয় — এটা ঘরে ফেরা।
 
-### 37 · Gods feel — they grieve, love, rage, and cannot prevent death
-
-The Homeric gods are profoundly emotional: they grieve over the deaths of their mortal children, they rage at insults, they ache with desire. Zeus weeps drops of blood when Sarpedon must die. Thetis mourns her son Achilles before he has even fallen. This divine feeling is not the compassion of the Christian God (who enters into suffering to save) — it is the pathos of beings who are powerful enough to see what is coming but not powerful enough to prevent it. The gods suffer the same helplessness before Fate that mortals do, only with clearer vision and longer grief.
-
-### 47 · Confucius mourns the loss of virtue — prophetic grief
-
-Confucius expressed what can only be called prophetic grief: he wept over the decline of ritual, the corruption of rulers, the loss of the ancient standards of civilisation. His mourning was not personal disappointment but something deeper — the recognition that Heaven's order was being violated. This is not the compassion of a God who enters human suffering (as in Jesus) or who promises rescue (as in Moses) — it is the grief of a sage who sees the gap between what Heaven intends and what human beings are doing, and cannot stop trying to close it.
-
-### 57 · God loves — the devotee is never lost to Krishna
-
-The Bhagavad Gita's most moving passages are those in which Krishna declares his love for his devotees: *"Those who worship me with devotion, they are in me and I am in them."* Even the most sinful person, if they cross the sea of evil with the boat of knowledge, is freed from all evil. This vision of divine love that transcends karma and merit is the closest the Gita comes to the Christian concept of grace — a personal God whose love is not proportionate to desert but overflows it.
-
-### 67 · Compassion for all beings — metta as the heart of practice
-
-Although the Buddha does not affirm a compassionate God, compassion (*karuṇā*) is the emotional heart of his teaching. The practice of *mettā* (loving-kindness) — wishing happiness to all beings without exception, from the smallest insect to the highest divine being — is the Buddha's answer to how a being without a God should relate to other beings. Compassion arises not from divine command but from clear seeing: when you truly perceive the suffering of others, and truly understand that they, like you, are trapped in ignorance, the only natural response is the wish to help them out.
-
-### 77 · God suffers with us — the cross as divine solidarity
-
-The central symbol of Jesus's theology is the cross — the execution of the one who proclaimed God's love, crying out *"My God, my God, why have you forsaken me?"* This is the most theologically audacious claim about divine suffering in world religion: God does not observe human pain from a safe distance but enters into it fully, to the point of desolation. The God of Jesus is not the impassive perfect being of Aristotle or Maimonides — he is the God who weeps at Lazarus's tomb, who on the cross takes the weight of the world's suffering into himself and transforms it.
-
-### 87 · Al-Rahman al-Rahim — infinite compassion, the first and deepest name
-
-Every chapter of the Qur'an (except one) begins with *Bismillah al-Rahman al-Rahim* — In the name of God, the Infinitely Compassionate, the Especially Merciful. Both names derive from the Arabic root for womb, *rahm* — they are the divine attributes most frequently cited in the Qur'an. God's mercy is universal and primordial: *"My mercy encompasses all things."* This mercy does not abolish justice — the Day of Judgment is real — but it is the first and deepest fact about God, the ocean within which judgment takes place.
-
-### 97 · God loves beyond merit — grace dissolves what karma cannot
-
-Nanak's most tender teaching: God's grace (*nadar* — divine glance, divine favour) can dissolve karma that would otherwise bind a soul across countless lifetimes. The ego (*haumai*) — the fundamental separateness — is the root of all suffering, and no amount of religious effort can dissolve it by itself. Only divine grace, encountered through the remembrance of the Name and the company of the holy (*sadh sangat*), can free the soul from its own self-created prison. This makes Sikhism theologically closer to Christian grace than to Hindu karma-dharma.
-
-### 08 · Living in beauty — alignment with light is enough
-
-Atenism has no soteriology in the conventional sense — no path from sin to redemption, no liberation from the cycle of rebirth. What it offers is a way of living in alignment with the generous outpouring of divine light: gratitude, beauty, simplicity, the celebration of the natural world. Akhenaten's city of Amarna, built in the desert, open to the sky, was itself a kind of embodied theology — a place designed to receive the Aten's light without obstruction. The "salvation" offered is not rescue from a fallen condition but full awakening to the magnificent gift already being given.
-
-### 18 · Choose truth — salvation is the victory of asha over the Lie
-
-Salvation in Zarathustra's framework is the outcome of a cosmic choice. Each human being is born into the battleground between truth and the Lie, and must freely choose which side to fight for. This is the earliest extant theology of moral freedom in world religion: God does not predetermine the outcome; human beings are genuine moral agents whose choices matter cosmically. Salvation is the eventual triumph of truth, and those who chose truth participate in that triumph. No grace in the Christian sense — only the dignity and responsibility of free moral choice.
-
-### 28 · Covenant and teshuva — the path is return
-
-The Mosaic path to salvation is covenantal: maintain the terms of the covenant — worship YHWH alone, observe the Torah, treat one another justly — and you will dwell in the land in peace and prosperity. When you fail, repent (*teshuva* — turning back) and return to the covenant. There is no elaborate soteriology of grace, no liberation from the cycle of rebirth, no mystical union. Salvation is fundamentally political and communal: the flourishing of the covenantal community in right relationship with God and one another.
-
-### 38 · No path — excellence and acceptance of fate
-
-Homer offers no soteriology — no path from a fallen condition to redemption, no liberation from a cycle of rebirth. What he offers is a vision of how to live and die with excellence (*aretē*) in the face of inevitable mortality. Achilles chooses a short glorious life over a long obscure one; Odysseus chooses home and mortality over Calypso's immortality. The "salvation" Homer imagines is not escape from the human condition but its fullest, most beautiful expression. Glory (*kleos*) — the fame that outlasts death — is the closest Homer comes to a transcendent hope.
-
-### 48 · Self-cultivation — becoming fully human is the path
-
-For Confucius, the path to alignment with Heaven is not prayer, sacrifice, or mystical practice — it is the lifelong cultivation of character through study of the classics, practice of ritual, and cultivation of human-heartedness in every relationship. The goal is not salvation from the human condition but the full realisation of it: becoming the *junzi*, the exemplary person, in whom Heaven's moral order is perfectly embodied. This is the most this-worldly and most humanistic path in the table.
-
-### 58 · Three paths — knowledge, action, and devotion all lead home
-
-The Gita's genius is its recognition that human beings approach the divine by different temperaments. The path of *jñāna* (knowledge) is for those of philosophical temperament; *karma yoga* (selfless action) for those of active temperament; *bhakti* (devotion) for those of devotional temperament. All three paths, sincerely followed, lead to liberation. God is generous enough to meet each seeker where they are and guide them home by their own natural route.
-
-### 68 · Nirvana — the cessation of craving, the unconditioned peace
-
-Liberation in the Buddha's teaching is *Nirvana*: the complete cessation of craving, aversion, and ignorance, and with them the cessation of the suffering these generate. Nirvana is not a place, not a state of bliss, not union with God — it is the unconditioned, the unborn, the unmade. The Buddha described it in negative terms: not this, not that — because all positive descriptions belong to the conditioned world that Nirvana transcends. The closest parallel in the table is Nagarjuna's emptiness: both point to what cannot be named by insisting that the naming is the problem.
-
-### 78 · Repentance and faith — the Kingdom received as a gift
-
-Jesus's path to salvation is entry into the Kingdom of God through *metanoia* (repentance — a turning of the whole person toward God) and faith (trust in God's love and power). This is not a path of philosophical education (Plato), legal observance (Moses), or moral self-cultivation (Confucius). It is a path of transformation — a new birth, available to those who receive it as a gift rather than achieving it as an accomplishment. The tax collector who prays "God, be merciful to me, a sinner" goes home justified rather than the Pharisee who catalogues his religious achievements.
-
-### 88 · Surrender to God — the straight path leads to paradise
-
-The Islamic path is *islām* — total surrender of the self to God's will, expressed through the Five Pillars, the Sharia, and the cultivation of inner piety (*taqwā*). Those who surrender sincerely are guided on the *sirāt al-mustaqīm*, the straight path, through this life and into paradise (*janna*). Unlike the Buddhist path (which leads to the cessation of conditioned existence) or Shankara's path (which ends in identity recognition), the Islamic path leads to the fullest form of relationship with God — not union but the permanent intimacy of the servant with the divine master who loves beyond all measure.
-
-### 98 · Naam simran — the Name dissolves the ego; liberation is homecoming
-
-The Sikh path is the constant remembrance of God's Name (*nām simran*), practiced in community (*sangat*), expressed in service (*seva*). Through continuous remembrance, the ego gradually dissolves; the soul becomes tuned to the divine Word (*Shabad*); and liberation (*mukti*) occurs — not as a dramatic event but as a gradual, gentle homecoming into the presence that was always there. The liberated soul does not lose itself; it finds itself, at last, in God.
-
-### 09 · Soul lives as long as the Aten shines on it
-
-Traditional Egyptian religion offered elaborate post-mortem survival — the journey through the Duat, judgment before Osiris, immortality in the Field of Reeds. Akhenaten's reform dramatically simplified this: the soul's life is bound to the Aten's light. The emphasis shifts from elaborate post-mortem theology to the present experience of living in the Aten's radiance. Whether this implies a genuine afterlife or a more naturalistic understanding of the soul's dissolution into the cycle of light and darkness is one of the great unresolved questions of Atenist interpretation.
-
-### 19 · The soul crosses the bridge — deeds are its passport
-
-At death, the Zoroastrian soul encounters its own *daena* — the embodiment of its deeds in life, appearing as a beautiful maiden to the righteous and a hideous hag to the wicked. It then crosses the Chinvat bridge, whose width is determined by the balance of truth and lie in the soul's life. The righteous ascend to the House of Song; the wicked descend to the House of Worst Existence. This is a temporary state — at the final renovation, all souls will be purified and restored. Zarathustra's afterlife doctrine is the direct ancestor of Christian and Islamic eschatology.
-
-### 29 · The soul belongs to God — the Torah focuses on how to live
-
-Mosaic theology says remarkably little about the afterlife compared to Egyptian religion or Zoroastrianism. The emphasis is overwhelmingly on this-worldly life, this-worldly justice, and this-worldly covenant. The soul (*nefesh*) is the life-principle given by God; at death it returns to God. The elaborate afterlife of Egyptian religion is conspicuously absent from the Torah. It is only in later Jewish thought, under Persian and Hellenistic influence, that resurrection and individual afterlife judgment become central. Moses's God is God of the living: the covenant is about how you live, not where you go when you die.
-
-### 39 · Shades in Hades — dim and joyless, hero and coward alike
-
-The Homeric afterlife is one of the most melancholy in world religion. All souls — hero and coward, righteous and wicked alike — go to Hades as bloodless, mindless shades, flitting through an underground world of darkness and dust. When Odysseus calls up the shade of Achilles, Achilles says he would rather be a living slave than a dead king. Death, in Homer, is the absolute end of what makes life worth living — and the gods, for all their power, cannot prevent it.
-
-### 49 · Ancestors survive in memory and ritual — afterlife is uncertain
-
-When asked about death and the spirits, Confucius replied: *"While you do not know life, how can you know about death?"* He was scrupulously agnostic about the afterlife. He insisted on the performance of ancestral rites with full sincerity because the cultivation of filial piety was morally essential regardless of metaphysical certainty. The soul's destiny, in Confucian thought, is not a central concern: what matters is how you live, how you treat those in your care, and whether you leave the world more ordered and humane than you found it.
-
-### 59 · The soul is eternal — it never truly dies
-
-One of the Gita's most famous declarations: *"The soul is never born nor dies at any time. It has not come into being, does not come into being, and will not come into being. It is unborn, eternal, ever-existing, and primeval."* Death is the shedding of one body for another, the way a person changes clothes. The soul's ultimate destiny is liberation (*moksha*) — release from the cycle of rebirth into eternal union with or proximity to the divine.
-
-### 69 · No permanent soul — a stream continuing until Nirvana
-
-The Buddha's most challenging teaching: there is no permanent, unchanging self (*anātman*). What we call "the self" is a conventional label for a constantly changing stream of physical and mental events arising and passing in dependence on conditions. This stream continues across lifetimes, driven by karma, until ignorance is dissolved and the stream ceases in Nirvana. There is no soul that migrates from body to body; there is only the continuing momentum of conditioned processes, like a flame passing from candle to candle — same fire, but not the same fire.
-
-### 79 · Resurrection — the soul transformed, not just survived
-
-Jesus teaches not merely the immortality of the soul but resurrection — the redemption and transformation of the whole person, body and soul, in the age to come. *"I am the resurrection and the life."* The soul's destiny is not absorption into the divine (Shankara) nor liberation from rebirth (Buddha) nor a dim shade in Hades (Homer) — it is the gift of a new and transformed life in the fullness of God's love. Death is not the end but the threshold of a life more real than the present one.
-
-### 89 · The soul returns to God — paradise as the full flowering of life
-
-*"Every soul shall taste death, and you will be paid in full only on the Day of Resurrection."* The soul is God's trust — breathed into the human body at creation, returned to God at death, held in an intermediate state until the Day of Resurrection. Paradise (*janna*) is not the cessation of personality (Buddha) nor absorption into the divine (Plotinus) nor a dim underworld (Homer) — it is the full flowering of human life in the perpetual presence of God: beauty, peace, love, and the vision of God that is the soul's supreme joy.
-
-### 99 · The soul merges with God — liberation is the homecoming it always sought
-
-The soul's ultimate destiny in Sikhism is *sachkhand* — the realm of truth, the divine presence in which the liberated soul dwells in union with God. This is not the cessation of Nirvana nor the absorption that dissolves all distinction (Shankara) nor the relational paradise of Islam — it is a homecoming: the soul, having shed the ego that kept it separate, dwells in the divine presence as a flame dwells in light, distinct but inseparable. Nanak's final word on the soul's destiny is musical: the liberated soul sings the glory of God, which is what it was always made to do, and the singing itself is the peace it was always seeking.
+যে অহং আত্মাকে আলাদা করে রেখেছিল, তা ঝরে গেলে আত্মা খোদার সান্নিধ্যে থাকে যেভাবে শিখা থাকে আলোর ভেতর — আলাদা, তবু অবিচ্ছেদ্য; যেভাবে ঢেউ ফেরে সমুদ্রে, পানি পানিতে মেশে। আত্মার পরিণতি নিয়ে নানকের শেষ কথা গানের মতো: মুক্ত আত্মা খোদার গুণগান গায়, কারণ এর জন্যই সে সবসময় তৈরি হয়েছিল — আর সেই গাওয়াটাই সেই শান্তি, যা সে এতদিন খুঁজছিল।
