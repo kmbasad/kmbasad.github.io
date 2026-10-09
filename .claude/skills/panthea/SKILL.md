@@ -1,6 +1,6 @@
 ---
 name: panthea
-description: The complete design of Panthea — the Bengali epic's world (island, 1000-floor tower মিনার, 1000-floor underworld পাতাল), its canonical geometry and segment names, and how every /panthea/ page is built. Load before touching anything under src/pages/panthea/, src/components/PantheaFloor.astro, src/data/panthea-tiers.js, src/stories/panthea/, or public/css/panthea.css — or when asked about Panthea's floors, তলা, স্তর, segments, the maps, the floor plan, the elevator ride, or the floor-grid box.
+description: The complete design of Panthea — the Bengali epic's world (island, 1000-floor tower minar, 1000-floor underworld patal), its canonical geometry and numbered segments (names come with the stories), and how every /panthea/ page is built. Load before touching anything under src/pages/panthea/, src/components/PantheaFloor.astro, src/data/panthea-tiers.js, src/stories/panthea/, or public/css/panthea.css — or when asked about Panthea's floors, tola, stor, segments, the maps, the floor plan, the elevator ride, or the floor-grid box.
 ---
 
 # Panthea
@@ -71,11 +71,11 @@ Every silhouette on the site walks this one function.
    slabs**: no habitable room sits 800 m from a window.
 3. **Below, the limit is rock.** ~106 MPa of vertical stress at 4 km. The well is only 600 m
    because the tower's foundation ring must land on solid ground outside it, and because a
-   mouth that size still drops daylight into লিম্বো. It swells to a 1400 m belly at 600 m
+   mouth that size still drops daylight into the patal's upper floors. It swells to a 1400 m belly at 600 m
    depth — where rock is strong and unloaded — then tapers as stress climbs. A flask, not a
    cone.
 4. **The island is wider than the tower's foot, deliberately.** 3000 m against 1600 m: a base
-   that size needs solid ground with room to spare, and the surplus ring is where মারিনা's
+   that size needs solid ground with room to spare, and the surplus ring is where the
    jetties and docks are. Because the ground plate is drawn at the island's full width, it
    necessarily overruns the 1600 m dimension bracket — so **both figures are labelled
    separately** (`দ্বীপ ৩০০০ মিটার` set inside the plate, `ব্যাস ১৬০০ মিটার` bracketed below),
@@ -88,57 +88,35 @@ Every silhouette on the site walks this one function.
 
 `SHARES = [100, 95, 90, 85, 80, 75, 75, 70, 70, 65, 60, 50, 45, 40]` — sums to 1000, no
 segment over 100 floors, tapering toward the extremes because higher/deeper floors are
-smaller and need fewer of them to read as a neighbourhood.
+smaller and need fewer of them to read as a neighbourhood. The same spans run both ways,
+counted outward from গ্রাউন্ড.
 
-Names are **modern-mythic loanwords written in Bengali letters** — Greek, Latin, Arabic,
-Norse. Each carries an `originBn` gloss and an `epithetBn`. The two endpoints are the
-astronomer's pair: **জেনিথ** overhead, **নাদির** underfoot.
+**The segments are unnamed (2026-10-09).** Each one is only its number — `bn` is
+`স্তর <n>` and the slug is positional (`t1…t14` up, `p1…p14` down). The author is writing
+the stories afresh and the segments will be **named gradually as the stories name them**;
+add a name only when he gives it, and then only to that one segment (in `TOWER_NAMES` /
+`PATAL_NAMES` in `panthea-tiers.js`). The earlier mythic-loanword names, their glosses and
+epithets, and the old private workshop are **retired, not to be revived**.
 
-> **Naming history — do not re-litigate without asking.** A strictly scientific scheme
-> (meteorology ascending / geology descending: সালিনা, স্ট্র্যাটাস, কিউমুলাস … / রেগোলিথ,
-> ক্যাভার্ন, স্ট্র্যাটা …) was built and then **rejected**; the mythic frame is the author's
-> deliberate choice. Keep it.
-
-### মিনার ↑ (sea → summit)
-
-| # | name | floors | metres | ব্যাস |
+| # | floors | metres (up / down) | ব্যাস up | ব্যাস down |
 |---|---|---|---|---|
-| 1 | মারিনা | 1–100 | 0–400 | 1600 → 1367 |
-| 2 | ট্রাইটন | 101–195 | 400–780 | 1367 → 1160 |
-| 3 | মনসুন | 196–285 | 780–1140 | 1160 → 977 |
-| 4 | নিম্বাস | 286–370 | 1140–1480 | 977 → 816 |
-| 5 | আইরিস | 371–450 | 1480–1800 | 816 → 676 |
-| 6 | জেফির | 451–525 | 1800–2100 | 676 → 556 |
-| 7 | অ্যাটলাস | 526–600 | 2100–2400 | 556 → 446 |
-| 8 | অরোরা | 601–670 | 2400–2680 | 446 → 355 |
-| 9 | সোলারিস | 671–740 | 2680–2960 | 355 → 274 |
-| 10 | হাইপেরিয়ন | 741–805 | 2960–3220 | 274 → 210 |
-| 11 | বোরিয়াল | 806–865 | 3220–3460 | 210 → 161 |
-| 12 | স্ট্রাটোস | 866–915 | 3460–3660 | 161 → 129 |
-| 13 | অলিম্পাস | 916–960 | 3660–3840 | 129 → 109 |
-| 14 | জেনিথ | 961–1000 | 3840–4000 | 109 → 100 |
+| 1 | 1–100 | 0–400 | 1600 → 1367 | 600 → 1293 |
+| 2 | 101–195 | 400–780 | 1367 → 1160 | 1293 → 1279 *(belly 1400 at 600)* |
+| 3 | 196–285 | 780–1140 | 1160 → 977 | 1279 → 1052 |
+| 4 | 286–370 | 1140–1480 | 977 → 816 | 1052 → 858 |
+| 5 | 371–450 | 1480–1800 | 816 → 676 | 858 → 694 |
+| 6 | 451–525 | 1800–2100 | 676 → 556 | 694 → 556 |
+| 7 | 526–600 | 2100–2400 | 556 → 446 | 556 → 435 |
+| 8 | 601–670 | 2400–2680 | 446 → 355 | 435 → 337 |
+| 9 | 671–740 | 2680–2960 | 355 → 274 | 337 → 254 |
+| 10 | 741–805 | 2960–3220 | 274 → 210 | 254 → 192 |
+| 11 | 806–865 | 3220–3460 | 210 → 161 | 192 → 147 |
+| 12 | 866–915 | 3460–3660 | 161 → 129 | 147 → 121 |
+| 13 | 916–960 | 3660–3840 | 129 → 109 | 121 → 105 |
+| 14 | 961–1000 | 3840–4000 | 109 → 100 | 105 → 100 |
 
-### পাতাল ↓ (mouth → nadir)
-
-| # | name | floors | metres deep | ব্যাস |
-|---|---|---|---|---|
-| 1 | লিম্বো | 1–100 | 0–400 | 600 → 1293 |
-| 2 | ক্যাটাকম্ব | 101–195 | 400–780 | 1293 → 1279 *(belly 1400 at 600)* |
-| 3 | লেথে | 196–285 | 780–1140 | 1279 → 1052 |
-| 4 | স্টিক্স | 286–370 | 1140–1480 | 1052 → 858 |
-| 5 | প্লুটো | 371–450 | 1480–1800 | 858 → 694 |
-| 6 | নেক্রোপলিস | 451–525 | 1800–2100 | 694 → 556 |
-| 7 | টার্মিনাস | 526–600 | 2100–2400 | 556 → 435 |
-| 8 | গিজার | 601–670 | 2400–2680 | 435 → 337 |
-| 9 | ইনফার্নো | 671–740 | 2680–2960 | 337 → 254 |
-| 10 | ভলকান | 741–805 | 2960–3220 | 254 → 192 |
-| 11 | ম্যাগমা | 806–865 | 3220–3460 | 192 → 147 |
-| 12 | ওবসিডিয়ান | 866–915 | 3460–3660 | 147 → 121 |
-| 13 | অ্যাবিস | 916–960 | 3660–3840 | 121 → 105 |
-| 14 | নাদির | 961–1000 | 3840–4000 | 105 → 100 |
-
-Note the belly falls **inside ক্যাটাকম্ব**, so Panthea's widest floors are underground, not up
-the tower.
+Note the belly falls **inside পাতাল segment 2**, so Panthea's widest floors are underground,
+not up the tower.
 
 ---
 
@@ -228,7 +206,7 @@ Two SVG slides in `.pn-slider` (`data-active` 0/1), tabs in the design bar.
 - **One scale for both maps**: `U = 116 / (MINAR_BASE_M / 2)` units per metre of radius, so
   no silhouette can drift from the printed diameters
 - Tower: `T_BASE = 540` (sea) → `T_TOP = 48` (summit). Patal: `P_TOP = 78` → `P_BOT = 566`
-- Metre scale in the left gutter, তলা scale at the far right, segment names set between the
+- Metre scale in the left gutter, তলা scale at the far right, segment numbers set between the
   boundary lines hugging the slope
 - Each of the 14 bands is a polygon walked along the real profile (12 samples), tinted
   `pn-band-t1…14` / `pn-band-u1…14`, and is itself the hover/click target
@@ -278,8 +256,8 @@ exactly ten rows with no orphan. Height is `auto`, so the box is as tall as its 
 
 Two traps, both hit once already:
 
-1. **The track minimum must be 36px.** `১০০০` is the only four-digit chip on the site (জেনিথ
-   and নাদির only) and needs 36px; a 34px track left it hanging outside its column.
+1. **The track minimum must be 36px.** `১০০০` is the only four-digit chip on the site (the summit
+   and nadir segments only) and needs 36px; a 34px track left it hanging outside its column.
 2. **`.pn-chips` must name both overflow axes** (`overflow: hidden auto`). A lone
    `overflow-y: auto` promotes the still-`visible` x axis to `auto`, and then a fraction of a
    pixel of grid rounding hangs a horizontal scrollbar under the numbers.

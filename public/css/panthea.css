@@ -13,7 +13,7 @@
    light: the crown is the one band struck gold, and the beacon on it is the
    only lapis in the drawing. The পাতাল runs the other way — daylight at the
    mouth, cooling and turning through indigo into violet under pressure, and
-   ending at নাদির in the exact ink the site writes with. */
+   ending at the nadir in the exact ink the site writes with. */
 :root {
   --pn-line: rgba(14, 26, 43, 0.34);
   --pn-line-soft: rgba(14, 26, 43, 0.15);
@@ -313,7 +313,7 @@
   /* Ten columns is what makes a 100-floor স্তর exactly ten rows, with no
      orphan on a line of its own — so the width is derived from that, not
      chosen. A column has to fit the widest chip in the building, and that is
-     জেনিথ's ও নাদিরের ১০০০: four Bengali digits, 36px with its padding and
+     the summit's ও the nadirের ১০০০: four Bengali digits, 36px with its padding and
      border. Ten of those plus nine 4px gaps is 396px of grid; border-box adds
      2px border and 24px padding, and 432 leaves ~1px of slack per track
      against font rounding while still being far too narrow for an eleventh

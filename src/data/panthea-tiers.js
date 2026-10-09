@@ -8,9 +8,8 @@
 //
 // Both worlds are divided into fourteen segments that thin toward the
 // extremes (wide neighbourhoods near the ground, small ones at summit and
-// nadir), so no segment holds more than 100 floors. Segment names are
-// modern-mythic loanwords written in Bengali letters; the two endpoints are
-// the astronomer's pair — জেনিথ at the summit, নাদির at the bottom.
+// nadir), so no segment holds more than 100 floors. The segments carry only
+// their numbers for now; they will be named as the stories are written.
 //
 // This file is the single source of truth: the map-TOC SVGs on /panthea/, the
 // floor routes (/panthea/minar/[floor], /panthea/patal/[floor], /panthea/bhumi)
@@ -41,7 +40,7 @@ export const PATAL_DEPTH_M = PATAL_FLOORS * PATAL_FLOOR_M;   // 4000
 //      the datum the two worlds are hung on.
 //   2. THE TIP FOLLOWS FROM THE SPINE. Both ends close at 100 m — the core
 //      plus a 20 m landing gallery all round, the least a floor can be and
-//      still be a floor. জেনিথ's crown and নাদির's last cell are the same
+//      still be a floor. The summit crown and the nadir's last cell are the same
 //      size, and that is the one plan dimension the two worlds share.
 //   3. ABOVE, THE LIMIT IS WIND, NOT WEIGHT. At 4 km, gravity is not what
 //      shapes a tower — with modern high-strength concrete the base need only
@@ -57,7 +56,7 @@ export const PATAL_DEPTH_M = PATAL_FLOORS * PATAL_FLOOR_M;   // 4000
 //      the মিনার upside down. It opens as a 600 m well through the island's
 //      crust — narrow, because the tower's foundation ring has to land on
 //      solid ground outside it, and because a well that size still drops
-//      daylight into লিম্বো — then swells beneath the crust to a 1400 m belly
+//      daylight into the patal's upper floors — then swells beneath the crust to a 1400 m belly
 //      at 600 m depth, where the rock is strong and unloaded, and tapers away
 //      from there as stress climbs. A flask, not a cone.
 export const CORE_DIAMETER_M = 60;    // the spine — constant, summit to nadir
@@ -66,7 +65,7 @@ export const TIP_DIAMETER_M = CORE_DIAMETER_M + 2 * CORE_GALLERY_M;  // 100
 export const MINAR_BASE_M = 1600;     // envelope where the tower meets ground
 // The island is wider than the tower's foot, and deliberately: a 1600 m base
 // has to land on solid ground with room to spare, and the শোর ring is where
-// মারিনা's jetties are. So the ground plate is the widest thing in the section
+// the jetties and docks are. So the ground plate is the widest thing in the section
 // and outreaches the ১৬০০ that the base is dimensioned at — every drawing
 // labels the two separately rather than letting the plate read as an overrun.
 export const ISLAND_DIAMETER_M = 3000;  // the island the whole thing stands on
@@ -123,7 +122,7 @@ export const profileSamples = (kind, from, to, steps = 10) =>
 
 // ── The level axis ──
 // The whole construction is one shaft of 2001 stops, so it is one number:
-// +1000 at জেনিথ's last floor, 0 at গ্রাউন্ড, −1000 at নাদির's, with the roof
+// +1000 at the summit, 0 at গ্রাউন্ড, −1000 at the nadir, with the roof
 // (the Panthea home) one step above the top. Both the ↑/↓ links and the
 // ctrl+arrow elevator ride step along it, which is what lets a ride pass
 // through গ্রাউন্ড into the other world without a special case.
@@ -188,41 +187,14 @@ const spansFrom = (shares) => {
 const TOWER_SPANS = spansFrom(SHARES);  // 1–100 … 961–1000
 const PATAL_SPANS = spansFrom(SHARES);  // 1–100 … 961–1000
 
-// ── উপরে — the fourteen segments of the tower, sea to summit ──
-const TOWER_NAMES = [
-  { slug: 'marina',    bn: 'মারিনা',      originBn: 'লাতিন — সমুদ্রের',            epithetBn: 'জেটি আর নোনা হাওয়া' },
-  { slug: 'triton',    bn: 'ট্রাইটন',     originBn: 'গ্রিক সাগর-দেবতা',            epithetBn: 'ঢেউয়ের ওপরের শহর' },
-  { slug: 'monsoon',   bn: 'মনসুন',       originBn: 'আরবি মৌসিম থেকে',            epithetBn: 'বৃষ্টির কোমরবন্ধ' },
-  { slug: 'nimbus',    bn: 'নিম্বাস',      originBn: 'লাতিন — মেঘ ও জ্যোতি',        epithetBn: 'মেঘের ভিতরের মহল্লা' },
-  { slug: 'iris',      bn: 'আইরিস',       originBn: 'গ্রিক রংধনু-দেবী',            epithetBn: 'মেঘছাদের রং' },
-  { slug: 'zephyr',    bn: 'জেফির',       originBn: 'গ্রিক পশ্চিমা হাওয়া',         epithetBn: 'হালকা হাওয়ার দেশ' },
-  { slug: 'atlas',     bn: 'অ্যাটলাস',    originBn: 'আকাশ-বহা টাইটান',            epithetBn: 'মিনারের মেরুদণ্ড' },
-  { slug: 'aurora',    bn: 'অরোরা',       originBn: 'লাতিন ভোরের দেবী',           epithetBn: 'প্রথম আলোর তলা' },
-  { slug: 'solaris',   bn: 'সোলারিস',     originBn: 'লাতিন — সূর্যের',             epithetBn: 'রোদের রাজ্য' },
-  { slug: 'hyperion',  bn: 'হাইপেরিয়ন',   originBn: 'আলোর টাইটান',               epithetBn: 'উঁচু আলোর বন' },
-  { slug: 'boreal',    bn: 'বোরিয়াল',     originBn: 'লাতিন — উত্তুরে, মেরুর',      epithetBn: 'তুষারের সীমান্ত' },
-  { slug: 'stratos',   bn: 'স্ট্রাটোস',    originBn: 'গ্রিক — স্তর, ঊর্ধ্বাকাশ',     epithetBn: 'পাতলা বাতাসের স্তর' },
-  { slug: 'olympus',   bn: 'অলিম্পাস',    originBn: 'দেবতাদের পর্বত',             epithetBn: 'গম্বুজের পাড়া' },
-  { slug: 'zenith',    bn: 'জেনিথ',       originBn: 'আরবি সামত — মাথার ওপরের বিন্দু', epithetBn: 'মুকুট ও বিকন' },
-];
-
-// ── নিচে — the fourteen segments of the underworld, mouth to nadir ──
-const PATAL_NAMES = [
-  { slug: 'limbo',      bn: 'লিম্বো',       originBn: 'লাতিন — কিনারা',             epithetBn: 'ধার-করা আলোর দালান' },
-  { slug: 'catacomb',   bn: 'ক্যাটাকম্ব',   originBn: 'লাতিন — ভূগর্ভ সমাধিপথ',     epithetBn: 'খিলানের গোলকধাঁধা' },
-  { slug: 'lethe',      bn: 'লেথে',        originBn: 'গ্রিক বিস্মৃতির নদী',         epithetBn: 'আর্কাইভের নীরবতা' },
-  { slug: 'styx',       bn: 'স্টিক্স',      originBn: 'গ্রিক শপথের নদী',            epithetBn: 'কালো ক্যানালের পারাপার' },
-  { slug: 'pluto',      bn: 'প্লুটো',       originBn: 'রোমান গভীরের দেবতা',         epithetBn: 'খনির ঐশ্বর্য' },
-  { slug: 'necropolis', bn: 'নেক্রোপলিস',  originBn: 'গ্রিক — মৃতদের নগর',         epithetBn: 'ধূসর মেট্রোপলিস' },
-  { slug: 'terminus',   bn: 'টার্মিনাস',    originBn: 'রোমান সীমান্ত-দেবতা',        epithetBn: 'শেষ চেকপয়েন্ট' },
-  { slug: 'geyser',     bn: 'গিজার',       originBn: 'নর্স গেইসির থেকে',           epithetBn: 'স্টিমের ফোয়ারা' },
-  { slug: 'inferno',    bn: 'ইনফার্নো',    originBn: 'লাতিন — আগুনের গহ্বর',       epithetBn: 'প্রথম আগুন' },
-  { slug: 'vulcan',     bn: 'ভলকান',       originBn: 'রোমান কামার-দেবতা',          epithetBn: 'ফাউন্ড্রির জেলা' },
-  { slug: 'magma',      bn: 'ম্যাগমা',      originBn: 'গ্রিক — গলিত মণ্ড',           epithetBn: 'গলন্ত নদী' },
-  { slug: 'obsidian',   bn: 'ওবসিডিয়ান',   originBn: 'আগ্নেয় কালো কাচ',           epithetBn: 'কাচের খিলান' },
-  { slug: 'abyss',      bn: 'অ্যাবিস',      originBn: 'গ্রিক — অতল',                epithetBn: 'সিল-করা শূন্য' },
-  { slug: 'nadir',      bn: 'নাদির',       originBn: 'আরবি নাজির — পায়ের নিচের বিন্দু', epithetBn: 'শেষ বিন্দু' },
-];
+// The segments are unnamed for now: each one is its number, a স্তর, until the
+// stories name it. Slugs are positional (t1…t14 up, p1…p14 down).
+const numbered = (prefix) => SHARES.map((_, i) => ({
+  slug: `${prefix}${i + 1}`,
+  bn: `স্তর ${toBn(i + 1)}`,
+}));
+const TOWER_NAMES = numbered('t');
+const PATAL_NAMES = numbered('p');
 
 const buildSegments = (names, spans, floorM) =>
   names.map((n, i) => {
@@ -245,8 +217,7 @@ export const patalSegments = buildSegments(PATAL_NAMES, PATAL_SPANS, PATAL_FLOOR
 export const ground = {
   slug: 'bhumi',
   bn: 'গ্রাউন্ড',
-  originBn: 'তলা ০ — দ্বীপ',
-  epithetBn: 'সব পথের মোহনা',
+  originBn: 'তলা ০',
 };
 
 export const towerSegmentOf = (floor) =>
@@ -254,7 +225,7 @@ export const towerSegmentOf = (floor) =>
 export const patalSegmentOf = (floor) =>
   patalSegments.find((s) => floor >= s.floors[0] && floor <= s.floors[1]);
 
-// the level axis, named: the roof sits one step above জেনিথ's last floor
+// the level axis, named: the roof sits one step above the tower's last floor
 export const levelTitle = (l) =>
   l > LEVEL_MAX ? 'ছাদ'
   : l > 0 ? `তলা ${toBn(l)}`

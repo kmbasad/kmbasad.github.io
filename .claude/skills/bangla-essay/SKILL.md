@@ -1,6 +1,6 @@
 ---
 name: bangla-essay
-description: How the author's Bangla essays are written — poetry plus philosophy, growing like a trellis: lyrical read-aloud prose fused with clear questions, answers, step-by-step argument, Socratic exchange, investigation and discovery (story only as brief evidence); every sentence complete, no dashes, colons and semicolons rare, Dhaka register, খোদা for God. Load before writing, rewriting or editing any essay on the site (the trellis essays in public/trellises/*/essay.md, and any other Bangla prose page), before briefing an agent to write one, or when asked about the author's prose style.
+description: How the author's Bangla essays are written — poetry plus philosophy, growing like a trellis: lyrical read-aloud prose fused with clear questions, answers, step-by-step argument, Socratic exchange, investigation and discovery (story only as brief evidence); every sentence complete, no dashes, colons and semicolons rare, Dhaka register, khoda for God. Load before writing, rewriting or editing any essay on the site (the trellis essays in public/trellises/*/essay.md, and any other Bangla prose page), before briefing an agent to write one, or when asked about the author's prose style.
 ---
 
 # Bangla essays

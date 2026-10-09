@@ -315,7 +315,7 @@ None of it ships: no endpoint, no script and no `data-md` attribute in the produ
   `patal/<n>.md` per floor — missing file → the empty-floor stub line), rendered **at build
   time** (imported in `index.astro` / globbed in `PantheaFloor.astro`). Conventions instead of
   HTML: first paragraph = lede, `*…*` inside a heading = the small floor-range tag
-  (`### মারিনা *তলা ১–১০০*`), a `>` blockquote = the italic coda — styled in
+  (`### স্তর ১ *তলা ১–১০০*`), a `>` blockquote = the italic coda — styled in
   `public/css/panthea.css`. Editable in place on `npm run dev` like everything else (see *The in-place editor*). The story container carries
   `data-toc-scan="h2, h3"`, which is the whole of Panthea's সূচি — a floor whose Markdown does
   not exist has no headings and so no সূচি key.

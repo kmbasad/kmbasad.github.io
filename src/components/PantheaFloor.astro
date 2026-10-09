@@ -56,7 +56,7 @@ const titleBn =
 // so the tab reads "তলা ৫০০ — প্যান্থিয়া", which a bare numeral could not.
 const floorBn = kind === 'bhumi' ? ground.bn : toBn(floor);
 
-const segBn = kind === 'bhumi' ? ground.originBn : `${segment.bn} · ${segment.originBn}`;
+const segBn = kind === 'bhumi' ? ground.originBn : segment.bn;
 
 // ── prev / next, one step along the level axis (see panthea-tiers.js); the
 // Panthea home is the roof, so তলা ১০০০-এর up leads back onto it ──
