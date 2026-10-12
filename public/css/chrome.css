@@ -219,7 +219,7 @@ html.sheet-open .mast { position: fixed; top: 0; left: 0; right: 0; z-index: 700
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
-  padding: clamp(3rem, 8vh, 5.5rem) 12px 3rem 12px;
+  padding: var(--page-top) 12px 3rem 12px;
   margin: 0 -12px;
   text-align: right;
 }

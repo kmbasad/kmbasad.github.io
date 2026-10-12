@@ -197,10 +197,48 @@ function inPlaceEditor() {
   };
 }
 
+// ── Notes in {curly brackets} never ship ────────────────────────────────────
+// The author leaves notes for revision inside {…} in the site's text (often
+// with the in-place editor). They may show on the dev server, but a
+// production build stops while any remain. Only the content Markdown is
+// scanned; in .astro and .js sources braces are code. The error names file
+// and line only, never the text.
+const NOTE_ROOTS = ['src/stories', 'public/translations', 'public/pangea', 'public/trellises']
+  .map((d) => path.join(ROOT, d));
+const NOTE = /\{[^}]*\}/;
+
+function noNotes() {
+  return {
+    name: 'no-author-notes',
+    hooks: {
+      'astro:build:start'() {
+        /** @type {string[]} */
+        const found = [];
+        const walk = (/** @type {string} */ dir) => {
+          if (!fs.existsSync(dir)) return;
+          for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+            const p = path.join(dir, e.name);
+            if (e.isDirectory()) walk(p);
+            else if (e.name.endsWith('.md')) {
+              fs.readFileSync(p, 'utf8').split('\n').forEach((l, i) => {
+                if (NOTE.test(l)) found.push(`${path.relative(ROOT, p)}:${i + 1}`);
+              });
+            }
+          }
+        };
+        NOTE_ROOTS.forEach(walk);
+        if (found.length) {
+          throw new Error(`${found.length} {note}(s) still in the text:\n  ${found.join('\n  ')}`);
+        }
+      },
+    },
+  };
+}
+
 // kmbasad.github.io is a GitHub *user* site → served at the domain root,
 // so no `base` prefix is needed. Absolute paths like /css/... and /js/...
 // resolve against public/ exactly as the legacy site expected.
 export default defineConfig({
   site: 'https://kmbasad.github.io',
-  integrations: [inPlaceEditor()],
+  integrations: [inPlaceEditor(), noNotes()],
 });

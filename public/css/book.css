@@ -53,7 +53,7 @@ body.book-page .shell { transition: padding-right var(--dur-slow) var(--ease-out
     width: fit-content;
     min-width: min(100%, 46rem);
     margin: 0;
-    padding: clamp(2.4rem, 6vh, 4.5rem) 0 0;
+    padding: var(--page-top) 0 0;
   }
 
   .book-dict {

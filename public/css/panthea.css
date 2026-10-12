@@ -373,7 +373,7 @@
     "story inset";
   justify-content: start;
   column-gap: clamp(32px, 4vw, 72px);
-  padding: clamp(3rem, 8vh, 5.5rem) 0 0;
+  padding: var(--page-top) 0 0;
 }
 
 /* the section, small, beside the column: it sticks while the story runs */
@@ -396,7 +396,7 @@
 .pn-head {
   grid-area: head;
   margin-bottom: 2.6rem;
-  padding-bottom: 2.2rem;
+  padding-bottom: 1.8rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -405,15 +405,16 @@
   align-items: center;
   gap: 0.55rem;
   font-family: var(--bn-font);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--tint-ink, #3d6a8e);
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.6rem;
 }
 .pn-kicker .pn-seg-dot { width: 11px; height: 11px; flex-basis: 11px; }
 .pn-kicker-sep { color: var(--text-4); font-weight: 400; }
 
 .pn-title {
+  margin: 0;
   font-family: var(--bn-display);
   font-size: var(--title-fs);
   font-weight: 600;
@@ -448,7 +449,7 @@
   text-align: left;
 }
 
-.pn-story > p:first-child:not(.pn-story-empty) {
+.pn-story > p:first-of-type:not(.pn-story-empty) {
   color: var(--text);
 }
 
@@ -505,6 +506,25 @@
   padding: 0.2rem 0 0.2rem 1.4rem;
   border-left: 3px solid var(--accent-2);
 }
+
+/* a drawing in the story (Klee's line, redrawn): on the paper itself, no frame,
+   at the text's left edge; at the story's head it needs no caption, the lede
+   names it */
+.pn-story .pn-figure {
+  margin: 3rem 0 0;
+}
+.pn-story .pn-figure img {
+  display: block;
+  width: clamp(14rem, 22vw, 20rem);
+  height: auto;
+}
+.pn-story > .pn-figure:first-child { margin: 0 0 2.6rem; }
+@media (max-width: 760px) {
+  .pn-story .pn-figure img { width: min(62vw, 15rem); }
+}
+
+/* a coda emptied in the editor leaves a bare `>`: it takes no room */
+.pn-story blockquote:not(:has(p)) { display: none; }
 
 .pn-story blockquote p {
   color: var(--text-2);
@@ -619,7 +639,7 @@ body.pn-riding .rail-title { color: var(--accent); }
     line-height: var(--m-read-lh);
   }
 
-  .pn-story > p:first-child:not(.pn-story-empty) { font-size: var(--m-read-fs); }
+  .pn-story > p:first-of-type:not(.pn-story-empty) { font-size: var(--m-read-fs); }
   .pn-prose p:has(br) { padding-left: 0.9em; }
 }
 
