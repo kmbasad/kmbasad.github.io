@@ -2,62 +2,81 @@
    book.css — the Translations reading room (BookReader.astro + book.js)
 
    Desktop:  two panes under the menubar — the parallel text (its own
-             scroll column) and the শব্দকোষ dictionary panel on the right.
-   Tablet:   one flowing page; the শব্দকোষ becomes a bottom sheet that
+             scroll column) and the অভিধান dictionary panel on the right.
+   Tablet:   one flowing page; the অভিধান becomes a bottom sheet that
              rises when a source word is clicked.
    Phone:    the Bangla reads as a book page (translation-table.css);
              prosody chips stay, the dictionary sleeps.
 
    Palette: Lapis & Gold — lapis for structure and interaction, gold for
-   marginalia (line numbers, prosody dividers, the শব্দকোষ kicker).
+   marginalia (line numbers, prosody dividers, the অভিধান kicker).
    ========================================================================= */
 
 :root {
   --book-dict-w: 21.5rem;
 }
 
-/* ── Desktop: the reading room ──────────────────────────────────────────── */
-@media (min-width: 900px) {
-  body.book-page {
-    overflow: hidden;
+/* the poem sits close beside the rail; the dictionary, open, takes the
+   screen's right edge and the composition centres in what is left */
+body.book-page .shell { --main-w: 66rem; transition: padding-right var(--dur-slow) var(--ease-out); }
+@media (min-width: 1100px) {
+  body.book-page:not(.dict-collapsed) .shell { padding-right: var(--book-dict-w); }
+}
+/* below a very wide screen there is no room for the rail, the poem and the
+   dictionary at once: while the dictionary is open the rail steps aside and
+   the poem takes its place */
+body.book-page .shell { transition: padding-right var(--dur-slow) var(--ease-out), grid-template-columns var(--dur-slow) var(--ease-out); }
+@media (min-width: 1100px) and (max-width: 1799px) {
+  body.book-page:not(.dict-collapsed) .shell {
+    grid-template-columns: 0 0 minmax(0, var(--main-w)) minmax(1.5rem, 1fr);
   }
+  body.book-page:not(.dict-collapsed) .rail { visibility: hidden; opacity: 0; }
+}
+.book-dict .dict-word, .book-dict .dict-line, .book-dict .dict-sub { text-align: left; }
+.book-dict .dict-word[dir="rtl"] { text-align: right; }
 
+/* ── Desktop: the reading room ──────────────────────────────────────────── */
+@media (min-width: 1100px) {
+  /* the page scrolls as one; the dictionary stands beside the poem at the
+     screen's right edge, a full screen tall, and sticks */
   .book-layout {
     display: flex;
-    flex: none;
-    height: calc(100svh - var(--nav-now) - var(--m-rule) - var(--foot-h));
-    transition: height var(--dur-slow) var(--ease-out);
-    overflow: hidden;
+    align-items: flex-start;
   }
 
   .book-text-panel {
     flex: 1;
     min-width: 0;
-    overflow: auto;
   }
 
   .book-text-body {
     width: fit-content;
     min-width: min(100%, 46rem);
-    margin: 0 auto;
-    padding: 1.1rem clamp(1.4rem, 4vw, 3.2rem) 0;
+    margin: 0;
+    padding: clamp(2.4rem, 6vh, 4.5rem) 0 0;
   }
 
   .book-dict {
+    position: fixed;
+    top: var(--leaf-top, 0px);
+    right: 0;
+    bottom: 0;
+    z-index: 60;
     flex: 0 0 var(--book-dict-w);
     width: var(--book-dict-w);
     min-width: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    border-left: 1px solid var(--border);
-    background: var(--surface);
   }
 
-  /* The seam between the poem and the শব্দকোষ — a drag handle. A hairline
+  /* The seam between the poem and the অভিধান — a drag handle. A hairline
      at rest; the lapis shows on hover and while dragging. */
   .book-dict-grip {
-    flex: 0 0 7px;
-    margin-right: -4px;           /* sit over the panel's border */
+    position: fixed;
+    top: var(--leaf-top, 0px);
+    bottom: 0;
+    right: calc(var(--book-dict-w) - 4px);   /* over the panel's border */
+    width: 7px;
     position: relative;
     z-index: 2;
     cursor: col-resize;
@@ -106,17 +125,15 @@
     top: 50%;
     z-index: 310;
     transform: translateY(-50%);
-    padding: 0.75rem 0.42rem 0.75rem 0.5rem;
-    border: 1px solid var(--accent-mid);
+    padding: 0.9rem 0.45rem;
+    border: 2px solid var(--t-line);
     border-right: none;
-    border-radius: var(--r) 0 0 var(--r);
-    background: color-mix(in srgb, var(--surface) 88%, transparent);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: var(--accent);
+    border-radius: 0;
+    background: var(--t-cream);
+    color: var(--t-line);
     cursor: pointer;
-    box-shadow: var(--sh-sm);
-    transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    box-shadow: inset 0 5px 0 var(--tint-d, var(--t-blue-d));
+    transition: background var(--dur) var(--ease);
   }
 
   .dict-reopen span {
@@ -127,17 +144,14 @@
     letter-spacing: 0.08em;
   }
 
-  .dict-reopen:hover {
-    background: var(--surface);
-    border-color: var(--accent);
-  }
+  .dict-reopen:hover { background: var(--tint, var(--t-blue)); }
 
   /* On the desktop the × folds the panel (book.js) — so it stays visible */
   .dict-close { display: inline-flex; align-items: center; justify-content: center; }
 }
 
 /* The seam and the tab are desktop furniture only */
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   .book-dict-grip,
   .dict-reopen {
     display: none !important;
@@ -145,7 +159,7 @@
 }
 
 /* ── Tablet & phone: one flowing page ──────────────────────────────────── */
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   .book-text-body {
     padding: 0.8rem 1rem 0;
   }
@@ -153,15 +167,17 @@
   /* The শব্দকোষ waits below the fold as a sheet; book.js raises it. */
   .book-dict {
     position: fixed;
+    top: auto;
     left: 0;
     right: 0;
     bottom: 0;
+    border-left: none;
     z-index: 320;
     max-height: 62vh;
     overflow-y: auto;
     background: var(--surface);
-    border-top: 1px solid var(--border-2);
-    border-radius: 14px 14px 0 0;
+    border-top: 3px solid var(--t-line);
+    border-radius: 0;
     box-shadow: 0 -10px 40px rgba(14, 26, 43, 0.18);
     transform: translateY(105%);
     transition: transform var(--dur-slow) var(--ease-out);
@@ -244,184 +260,205 @@ body.book-has-dict .tt-table td.en .w {
   cursor: pointer;
 }
 
-/* ── The শব্দকোষ panel ─────────────────────────────────────────────────── */
+/* -- The dictionary's contents --
+   The leaf itself (paper, charcoal edge, painted band, close key) is
+   chrome.css's, shared with the trellis cell. Here: the search field, the
+   word large in its own script, the Bangla it became in this line, the
+   senses by part of speech, the root word when the clicked one is only a
+   form of it, the words looked up before, and the other dictionaries. */
 .dict-inner {
-  padding: 1.2rem 1.3rem 2.4rem;
+  padding: 1.1rem 1.5rem 2.6rem;
 }
 
-.dict-top {
+.leaf-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.9rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.dict-kicker {
-  font-family: var(--bn-display);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--accent-2);
-}
-
-.dict-close {
-  width: 1.9rem;
-  height: 1.9rem;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--text-3);
-  font-size: 1.05rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.dict-close:hover {
+.dict-search input {
+  width: 100%;
+  height: 2.6rem;
+  padding: 0 0.9rem;
+  border: 2px solid var(--t-line);
+  border-radius: 0;
+  background: #fff;
   color: var(--text);
-  border-color: var(--border-2);
+  font-family: var(--serif-font);
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.2s var(--ease);
 }
+.dict-search input::placeholder { font-family: var(--bn-font); font-size: 0.9rem; color: var(--text-4); }
+.dict-search input:focus { box-shadow: inset 6px 0 0 var(--tint-d, var(--t-blue-d)); }
 
 .dict-word {
-  margin: 0 0 0.5rem;
+  margin: 1.4rem 0 0.3rem;
   font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   font-style: italic;
-  font-size: 1.55rem;
+  font-size: 2.3rem;
   font-weight: 500;
-  line-height: 1.2;
-  color: var(--accent);
+  line-height: 1.1;
+  color: var(--text);
   overflow-wrap: anywhere;
 }
-
+.dict-word:empty { display: none; }
 .dict-word[dir="rtl"] {
   font-family: "Noto Naskh Arabic", "Scheherazade New", "Traditional Arabic", serif;
   font-style: normal;
+  font-size: 2.1rem;
   text-align: right;
 }
 
-.dict-word:not(.has-word) {
-  color: var(--text-4);
-  font-size: 1.2rem;
+/* small bold labels inside the leaf */
+.dict-sub {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--bn-font);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+}
+
+/* the Bangla it became here */
+.dict-line {
+  margin: 0.8rem 0 0;
+  padding: 0.55rem 0 0.6rem 0.9rem;
+  border-left: 3px solid var(--tint-d, var(--t-blue-d));
+}
+.dict-line b {
+  font-family: var(--bn-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .dict-hint,
 .dict-note {
-  margin: 0 0 0.6rem;
+  margin: 1rem 0 0;
   font-family: var(--bn-font);
-  font-size: 0.84rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.75;
   color: var(--text-3);
 }
+.dict-wait { animation: dictPulse 1.1s ease-in-out infinite alternate; }
+@keyframes dictPulse { from { opacity: 0.45; } to { opacity: 1; } }
+.dict-found { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 1.05rem; }
 
-.dict-lemma {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-style: italic;
-  color: var(--text-4);
-}
+.dict-body { margin-top: 0.4rem; }
 
+.dict-pos { margin-top: 1.4rem; }
 .dict-pos h3 {
-  margin: 0.9rem 0 0.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+.pos-bn {
+  font-family: var(--bn-font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--tint-ink, var(--text));
+}
+.pos-en {
   font-family: var(--ui-font);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-4);
 }
 
 .dict-pos ol {
   margin: 0;
-  padding-left: 1.15rem;
+  padding-left: 1.3rem;
   font-family: var(--serif-font);
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   line-height: 1.6;
   color: var(--text-2);
 }
-
-.dict-pos li {
-  margin-bottom: 0.4rem;
-}
-
+.dict-pos li { margin-bottom: 0.45rem; padding-left: 0.2rem; }
+.dict-pos li::marker { font-family: var(--ui-font); font-size: 0.75rem; color: var(--accent-2); }
 .dict-pos li a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-light);
+  background-image: none;
+  border-bottom: 1px solid var(--accent-mid);
 }
+.dict-pos li a:hover { border-bottom-color: var(--accent); }
+.dict-pos li ul, .dict-pos li dl { display: none; }   /* nested quotations */
 
-.dict-pos li a:hover {
-  border-bottom-color: var(--accent);
+/* the root word, when the clicked one is only a form of it */
+.dict-lemma-block {
+  margin-top: 1.8rem;
+  padding-top: 1.1rem;
+  border-top: 2px solid var(--t-line);
 }
+.dict-lemma-head { margin: 0; }
+.dict-lemma-word {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+}
+.dict-lemma-word[dir="rtl"] { font-family: "Noto Naskh Arabic", serif; font-style: normal; }
+.dict-lemma-word:hover { color: var(--accent); }
 
+/* the words looked up before */
+.dict-recent { margin-top: 2rem; }
+.dict-chip {
+  display: inline-block;
+  margin: 0.25rem 0.3rem 0 0;
+  padding: 0.2rem 0.7rem;
+  border: 1.5px solid var(--t-line);
+  border-radius: 0;
+  background: var(--t-cream);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--t-line);
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+}
+.dict-chip[dir="rtl"] { font-family: "Noto Naskh Arabic", serif; font-style: normal; }
+.dict-chip:hover { background: var(--tint, var(--t-blue)); }
+
+/* the other dictionaries */
 .dict-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 1.2rem;
-  padding-top: 0.8rem;
+  margin-top: 1.8rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
-
 .dict-links a {
+  display: inline-block;
+  margin: 0 1rem 0.4rem 0;
   font-family: var(--ui-font);
-  font-size: 0.74rem;
-  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--accent);
   text-decoration: none;
-}
-
-.dict-links a:hover {
-  text-decoration: underline;
-}
-
-/* ── The foot of the page: three arrows, nothing else ──
-   Previous, back to the top, next: three square cells joined edge to edge
-   by the site's charcoal lines, centred, each filling with one of the
-   painting's tints under the pointer. (The contents are in the menubar.) */
-.book-nav {
-  display: flex;
-  justify-content: center;
-  margin: 3rem auto 2.5rem;
-}
-
-.book-nav-btn {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  margin-left: -2px;
-  font: inherit;
-  color: var(--t-line);
-  text-decoration: none;
-  background: var(--surface);
   background-image: none;
-  border: 2px solid var(--t-line);
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s var(--ease-out);
 }
-
-.book-nav-btn:first-child { margin-left: 0; }
-
-.book-nav-prev:not(.book-nav-disabled):hover { background: var(--t-blue-d); }
-.book-nav-top:hover { background: var(--t-ochre-d); }
-.book-nav-next:not(.book-nav-disabled):hover { background: var(--t-pink-d); }
-.book-nav-btn:not(.book-nav-disabled):active { transform: translateY(1px); }
-
-.book-nav-disabled {
-  cursor: default;
-  color: var(--text-4);
-  background: transparent;
-}
-
-.book-nav-arrow {
-  font-size: 1.25rem;
-  line-height: 1;
-}
+.dict-links a::after { content: ' \2197'; font-size: 0.75em; }
+.dict-links a:hover { text-decoration: underline; }
 
 /* ── Phones ──────────────────────────────────────────────────────────────
    The verse cells carry their own side padding (≤640 block in
    translation-table.css), so the body goes edge-to-edge; the head and
    chips keep a book margin of their own. Last in the file so these win
    over the base rules above. */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .book-text-body {
     padding: 0.5rem 0 0;
   }
@@ -435,71 +472,40 @@ body.book-has-dict .tt-table td.en .w {
   }
 }
 
-/* ── The page's own title ──
-   On a wide screen it stands upright in a narrow column of its own at the
-   text's left, read from the foot up, like the name on a book's spine: the
-   work's name small, the part's name larger, a short ochre bar at its head
-   (a plane of the painting) — and it stays in view while the poem scrolls,
-   costing the reading column no height. On a narrower screen it simply
-   opens the page, compact, above the poem. */
+/* -- The page's own headline --
+   The work's name over the part's, like a magazine's kicker and headline,
+   closed by a hairline before the poem begins. */
 .book-spine {
-  margin: 0 0 1.4rem;
-  padding: 0.2rem 0 0.9rem;
-  border-bottom: 2px solid var(--t-line);
+  margin: 0 0 2.6rem;
+  padding: 0 0 1.8rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .book-spine-work {
   display: block;
   font-family: var(--bn-font);
-  font-size: 0.85rem;
-  color: var(--text-3);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--tint-ink, #8a6a12);
 }
 
 .book-spine-title {
-  margin: 0.15rem 0 0;
+  margin: 0.6rem 0 0;
   font-family: var(--bn-display);
-  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  font-size: var(--title-fs);
   font-weight: 600;
-  line-height: 1.25;
-  color: var(--t-line);
+  line-height: 1.3;
+  color: var(--text);
   text-align: left;
 }
 
-@media (min-width: 1200px) {
-  .book-spine {
-    position: fixed;
-    top: calc(var(--nav-now) + var(--m-rule) + 28px);
-    left: 46px;
-    z-index: 3;
-    margin: 0;
-    padding: 18px 0 0;
-    border-bottom: none;
-    border-top: 6px solid var(--t-ochre-d);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    max-height: calc(100svh - var(--nav-now) - 80px);
-  }
-
-  .book-spine-work,
-  .book-spine-title {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    white-space: nowrap;
-  }
-
-  .book-spine-work { font-size: 0.9rem; order: 2; }
-  .book-spine-title { margin: 0; font-size: 1.55rem; order: 1; }
-}
-
-/* on a phone the poem's cells carry their own margins, so the title takes
+/* on a phone the poem's cells carry their own margins, so the headline takes
    the site's reading margin itself */
 @media (max-width: 760px) {
-  .book-spine { padding-left: var(--m-read-pad); padding-right: var(--m-read-pad); }
+  .book-spine {
+    margin-bottom: 1.8rem;
+    padding: 0.6rem var(--m-read-pad) 1.3rem;
+  }
+  .book-spine-title { font-size: 1.75rem; }
 }
-
-/* The title is on the page, so the menubar need not say it again: on a
-   reading page the bar keeps the trail and the contents key alone. */
-body.book-page .nav-here .nav-cur { display: none; }
-body.book-page .nav .nav-here .toc-key { border-left: none; margin-left: 0; padding-left: 4px; }
+body:has(.book-dict.is-open) .rail-key { opacity: 0; pointer-events: none; }

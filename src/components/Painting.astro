@@ -23,9 +23,11 @@ interface Props {
   paper?: string;
   rule?: string;          // the sheet's ink and rules (defaults to the ground)
   label?: string;         // the painting's name, for the accessible label
+  parentHref?: string;    // the index one step out, named over the title
+  parentLabel?: string;
 }
 
-const { planes, sheet, gap = 10, ground = '#141518', paper = '#f2efe6', rule = ground, label = '' } = Astro.props;
+const { planes, sheet, gap = 10, ground = '#141518', paper = '#f2efe6', rule = ground, label = '', parentHref = '', parentLabel = '' } = Astro.props;
 
 // half a line in from each neighbour; at the screen's edge, past it
 const box = (r, k) => {
@@ -49,5 +51,6 @@ const sheetStyle =
 </div>
 
 <main class="pt-sheet" style={sheetStyle}>
+  {parentHref && parentLabel && <a class="pt-parent" href={parentHref}>{parentLabel}</a>}
   <slot />
 </main>

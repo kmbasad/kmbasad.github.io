@@ -354,10 +354,40 @@
     return !/(?:^|\s)(?:tt-section|tt-title|tt-marker)(?:\s|$)/.test(tr.className);
   }
 
+  /* Beside its original, on a tablet or a narrow desktop: if the parallel
+   * table is wider than its column, shrink the page's verse (--par-fit)
+   * just enough that it fits, floored at 16px; past that only the original may wrap, the Bangla never. */
+  function fitParallel() {
+    var doc = document.documentElement;
+    doc.style.removeProperty("--par-fit");
+    doc.classList.remove("tt-src-wrap");
+    var table = document.querySelector(".tt-table");
+    if (!table || !table.querySelector("td.it, td.en, td.fa")) return;
+    // the column it has (the reading room's text pane, a chapter's page),
+    // not its own fit-content wrapper, which only grows with it
+    var box = table.closest(".book-text-panel, .pangea-page, .shell-main") || table.parentElement;
+    var cs = getComputedStyle(box);
+    var have = box.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+    var need = table.scrollWidth;
+    if (!have || need <= have) return;
+    var probe = table.querySelector("tr td.bn");
+    var fs = parseFloat(getComputedStyle(probe).fontSize) || 18;
+    for (var pass = 0; pass < 4 && need > have; pass++) {
+      fs = Math.max(16, Math.floor(fs * (have / need) * 0.985 * 10) / 10);
+      doc.style.setProperty("--par-fit", fs + "px");
+      if (fs <= 16) break;
+      need = table.scrollWidth;
+    }
+    /* the Bangla is what is read: it stops shrinking at 16px, and if the
+       table still does not fit, the original (the reference) may wrap */
+    if (table.scrollWidth > have) doc.classList.add("tt-src-wrap");
+  }
+
   function fitVerse() {
     var doc = document.documentElement;
     doc.style.removeProperty("--verse-fs");
-    if (window.innerWidth > 640) return;
+    doc.style.removeProperty("--par-fit");
+    if (window.innerWidth > 760) return fitParallel();
 
     var cells = document.querySelectorAll(".tt-table td.bn");
     if (!cells.length) return;

@@ -70,15 +70,15 @@ const bands = [
   key,
   index: s.index,
   tip: `${s.bn} · ${s.floorsLabel}`,
-  points: glyphOutline(kind, s.metres[0], s.metres[1], 16),
+  points: glyphOutline(kind, s.metres[0], s.metres[1], 48),
   here: hereKind === kind && hereSeg?.index === s.index,
   y0: R(glyphY(kind, s.metres[kind === 'patal' ? 0 : 1])),
   y1: R(glyphY(kind, s.metres[kind === 'patal' ? 1 : 0])),
 }));
 const tower = bands.filter((b) => b.kind === 'minar');
 const patal = bands.filter((b) => b.kind === 'patal');
-const towerOutline = glyphOutline('minar', 0, TOWER_HEIGHT_M, 48);
-const patalOutline = glyphOutline('patal', 0, PATAL_DEPTH_M, 48);
+const towerOutline = glyphOutline('minar', 0, TOWER_HEIGHT_M, 160);
+const patalOutline = glyphOutline('patal', 0, PATAL_DEPTH_M, 160);
 
 // mechanical floors: a darker line at every ধাপ boundary, as on a real tower
 const seams = bands
@@ -90,6 +90,17 @@ const seams = bands
   });
 
 const coreHalf = (CORE_DIAMETER_M / 2) * U;
+
+// the floors, drawn as hairlines every twenty floors (a repeating stripe
+// pattern was used first, and shimmered at the drawing's small size)
+const floorLines = [];
+for (const kind of ['minar', 'patal']) {
+  for (let f = 20; f < 700; f += 20) {
+    if (f % 100 === 0) continue;
+    const m = floorMetres(kind, f);
+    floorLines.push({ kind, y: R(glyphY(kind, m)), h: R(glyphHalf(kind, m)) });
+  }
+}
 
 // floor texture: one line every ten floors
 const TEX = 10 * TOWER_FLOOR_M * (GLYPH.Y_GROUND - GLYPH.Y_SUMMIT) / TOWER_HEIGHT_M;
@@ -140,7 +151,7 @@ const label = map
 ---
 
 <svg class:list={['pn-section', `pn-section--${variant}`]} viewBox={viewBox}
-     preserveAspectRatio="xMidYMid slice" role="img" aria-label={label}>
+     preserveAspectRatio="xMidYMid slice" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" role="img" aria-label={label}>
   <defs>
     <!-- the tower's glass, lit from the upper left: a cylinder's falloff -->
     <linearGradient id={id('glass')} x1="0" y1="0" x2="1" y2="0">
@@ -173,23 +184,24 @@ const label = map
       <stop offset="0.8" stop-color="#0b0d16" stop-opacity="0.24" />
       <stop offset="1" stop-color="#0b0d16" stop-opacity="0.5" />
     </linearGradient>
-    <pattern id={id('floors')} patternUnits="userSpaceOnUse" width="8" height={R(TEX)}>
-      <rect width="8" height={R(TEX * 0.16)} fill="#0e1a2b" fill-opacity="0.13" />
-    </pattern>
   </defs>
 
   <g>
     <!-- the পাতাল: stone, banded at each ধাপ, lit like the tower -->
     <polygon points={patalOutline} fill={url('deep')} />
     {patal.map((b) => <polygon points={b.points} fill={url('shade')} />)}
-    <polygon points={patalOutline} fill={url('floors')} />
     <polygon points={patalOutline} class="pn-skin pn-skin--deep" />
 
     <!-- the মিনার: glass, banded at each ধাপ, hazed with height -->
     {tower.map((b) => <polygon points={b.points} fill={url('glass')} />)}
-    <polygon points={towerOutline} fill={url('floors')} />
     <polygon points={towerOutline} fill={url('haze')} />
     <polygon points={towerOutline} class="pn-skin" />
+
+    <g class="pn-floorlines">
+      {floorLines.map((l) => (
+        <line class={`pn-fl-${l.kind}`} x1={R(CX - l.h)} y1={l.y} x2={R(CX + l.h)} y2={l.y} />
+      ))}
+    </g>
 
     <g class="pn-seams">
       {seams.map((s) => (

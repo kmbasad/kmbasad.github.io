@@ -2,31 +2,30 @@
 /**
  * BookReader.astro — the shared shell of every Translations reading page.
  *
- * Two panes under the menubar, in the manner of the books workshop:
- *   · left — the parallel text (বাংলা · মূল · #), fed by md-loader.js +
- *     translation-table.js into the empty .tt-table, scrolling on its own
- *     (data-page-scroll: the menubar reads this column's scroll);
- *   · right — the শব্দকোষ: click any source-language word and book.js
- *     fetches its meaning from Wiktionary into this panel, with links out
- *     to the classic dictionaries of that language.
+ * One page that scrolls as a whole, beside the reading rail (Base):
+ *   - the page's headline (`work` as the kicker, `title` as the title), then
+ *     the parallel text, fed by md-loader.js + translation-table.js into the
+ *     empty .tt-table;
+ *   - the dictionary, a leaf fixed on the screen's right edge (chrome.css
+ *     draws the leaf, book.css its contents): click any source-language word
+ *     and book.js looks it up on Wiktionary, follows an inflected form to its
+ *     lemma, shows the Bangla the word became in its line, and links out to
+ *     the classic dictionaries of that language. It starts folded; a tab on
+ *     the right edge opens it; while it is open the rail may step aside.
  *
  * Word-hover cross-highlighting between the Bangla and the source is
- * translation-table.js, unchanged. No image panel — the plates will
- * return in another form later. The page's title is its own again: on
- * a phone it opens the page, on a wide screen it stands upright beside the
- * text like a book's spine (`title`, `work`); the menubar keeps the trail
- * and the contents key.
+ * translation-table.js. No image panel; the plates will return in another
+ * form later.
  *
  * Props: `title`, `work`, and `config`, which becomes window.TRANS_CONFIG (src, dict?,
  * dictLang, meters?, marginSections?, tocStyle?, toc/prev/next…).
  */
 interface Props {
   config: Record<string, unknown>;
-  title?: string;     // this part's name (the same the menubar carries)
+  title?: string;     // this part's name (the same the rail carries)
   work?: string;      // the work it belongs to
 }
 const { config, title, work } = Astro.props;
-import MondrianEdge from './MondrianEdge.astro';
 ---
 
 <!-- the dictionary starts folded on every visit: fold it before first
@@ -34,7 +33,7 @@ import MondrianEdge from './MondrianEdge.astro';
 <script is:inline>document.body.classList.add('dict-collapsed');</script>
 
 <div class="book-layout">
-  <div class="book-text-panel" data-page-scroll>
+  <div class="book-text-panel">
     <div class="book-text-body">
       <!-- The page's own title. On a phone it opens the page, compact; on a
            wide screen it stands upright in a narrow column of its own at the
@@ -52,33 +51,41 @@ import MondrianEdge from './MondrianEdge.astro';
     </div>
   </div>
 
-  <!-- Desktop: drag this seam to resize the শব্দকোষ (book.js); double-click
+  <!-- Desktop: drag this seam to resize the অভিধান (book.js); double-click
        it to restore the default width. -->
   <div class="book-dict-grip" id="book-dict-grip" role="separator" aria-orientation="vertical"
-       aria-label="শব্দকোষের প্রস্থ" tabindex="0" title="টেনে প্রস্থ বদলান · দুই ক্লিকে আগের মাপ"></div>
+       aria-label="অভিধানের প্রস্থ" tabindex="0" title="টেনে প্রস্থ বদলান · দুই ক্লিকে আগের মাপ"></div>
 
-  <aside class="book-dict" id="book-dict" aria-label="শব্দকোষ">
+  <aside class="book-dict leaf" id="book-dict" aria-label="অভিধান">
+    <!-- a band of the room's painting along the leaf's head -->
+    <span class="leaf-band" aria-hidden="true"></span>
     <div class="dict-inner">
-      <div class="dict-top">
-        <span class="dict-kicker">শব্দকোষ</span>
-        <button class="dict-close" id="dict-close" type="button" aria-label="শব্দকোষ গুটিয়ে রাখুন" title="গুটিয়ে রাখুন">×</button>
+      <div class="leaf-top">
+        <span class="leaf-kicker" id="dict-kicker">অভিধান</span>
+        <button class="leaf-close dict-close" id="dict-close" type="button" aria-label="অভিধান গুটিয়ে রাখুন" title="গুটিয়ে রাখুন">{'\u00d7'}</button>
       </div>
-      <h2 class="dict-word" id="dict-word">অভিধান</h2>
-      <p class="dict-hint" id="dict-hint">মূল পাঠের যেকোনো শব্দে ক্লিক করুন — অর্থ এখানে আসবে।</p>
+      <!-- look up any word by hand, not only by clicking one -->
+      <form class="dict-search" id="dict-search" autocomplete="off">
+        <input id="dict-q" type="search" spellcheck="false" />
+      </form>
+      <h2 class="dict-word" id="dict-word"></h2>
+      <!-- the Bangla this word became in its own line, when the word-list knows -->
+      <p class="dict-line" id="dict-line" hidden></p>
+      <p class="dict-hint" id="dict-hint"></p>
       <div class="dict-body" id="dict-body"></div>
-      <nav class="dict-links" id="dict-links" hidden aria-label="বাইরের অভিধান"></nav>
+      <div class="dict-recent" id="dict-recent" hidden></div>
+      <nav class="dict-links" id="dict-links" hidden></nav>
     </div>
   </aside>
 
   <!-- Desktop: the folded panel's tab on the page's right edge — press it to
-       open the শব্দকোষ again. -->
-  <button class="dict-reopen" id="dict-reopen" type="button" aria-label="শব্দকোষ খুলুন" hidden>
-    <span>শব্দকোষ</span>
+       open the অভিধান again. -->
+  <button class="dict-reopen" id="dict-reopen" type="button" aria-label="অভিধান খুলুন" hidden>
+    <span>অভিধান</span>
   </button>
 </div>
 
-<!-- a sparing Mondrian at the screen's edges -->
-<MondrianEdge seed={`book-${title ?? ''}`} />
+
 
 <script is:inline define:vars={{ config }}>
   window.TRANS_CONFIG = config;

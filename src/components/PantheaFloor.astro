@@ -1,14 +1,13 @@
 ---
-// One floor of প্যান্থিয়া — ১ to তলা ৭০০ up the tower, −১ to −তলা ৭০০ down
-// the পাতাল. There is no zero floor.
-// The page is the story, in one centred reading column, and nothing else but
-// a small inset in the top-right corner: the whole construction in section
-// (the home page's navigator, drawn small), your ধাপ lit and your floor a
-// hairline across it. Every ধাপ in it can be pressed, to open its floors.
+// One floor of Panthea: TALA 1 to 700 up the tower, -1 to -700 down beneath
+// it. There is no zero floor.
+// The page is the story, in one reading column with its headline, and beside
+// it the building in section, small (the home page's navigator), your DHAP
+// lit and your floor a hairline across it. The rail carries where you are:
+// the DHAP with its arrows, its hundred floors as a lift's buttons, and the
+// story's contents.
 import Base from '../layouts/Base.astro';
-import NavChevron from './NavChevron.astro';
 import PantheaSection from './PantheaSection.astro';
-import MondrianEdge from './MondrianEdge.astro';
 import {
   toBn,
   levelOf,
@@ -27,21 +26,27 @@ interface Props {
 
 const { kind, floor, segment } = Astro.props;
 
-// ── Story (optional per-floor markdown) ──
-// A floor's story lives at src/stories/panthea/<kind>/<floor>.md (a পাতাল
-// floor by its number without the minus). No file → the empty-stub line. In dev it is editable in
-// place like every other text on the site (see astro.config.mjs).
+// the few words this page says of itself
+const W = {
+  panthea: 'প্যান্থিয়া',
+  stub: '\u098f\u0987 \u0997\u09b2\u09cd\u09aa \u098f\u0996\u09a8\u09cb \u09b2\u09c7\u0996\u09be \u09b9\u09af\u09bc\u09a8\u09bf\u0964',
+};
+
+// -- Story (optional per-floor markdown) --
+// A floor's story lives at src/stories/panthea/<level>.md, named by the floor's
+// signed number (1.md, -5.md); its frontmatter title and synopsis are the
+// page's headline and standfirst. No file -> the stub line. In dev it is
+// editable in place like every other text on the site (see astro.config.mjs).
 const stories = import.meta.glob('../stories/panthea/**/*.md', { eager: true });
-const storyKey = `${kind}/${floor}.md`;
-const Story = (stories[`../stories/panthea/${storyKey}`] as any)?.Content ?? null;
+const storyKey = `${kind === 'patal' ? -floor : floor}.md`;
+const mod = stories[`../stories/panthea/${storyKey}`] as any;
+const Story = mod?.Content ?? null;
+const fm = mod?.frontmatter ?? {};
 const editSrc = import.meta.env.DEV ? storyKey : null;
 
-// ── prev / next, one step along the level axis (see panthea-tiers.js); the
-// Panthea home is the roof, so তলা ৭০০'s up leads back onto it ──
 const level = levelOf(kind, floor);
-// The name, said in full in the bar as in the tab: ৬৫১ তলা, পাতালের ৫ তলা.
 const titleBn = levelTitle(level);
-// One step along the axis, the missing zero skipped: ১ তলা's down is −১.
+// One step along the axis, the missing zero skipped; the Panthea home is the roof.
 const step = (l, d) => {
   if (d > 0 && l === LEVEL_MAX) return { href: levelHref(LEVEL_MAX + 1), bn: levelTitle(LEVEL_MAX + 1) };
   if (d < 0 && l === LEVEL_MIN) return null;
@@ -51,101 +56,64 @@ const step = (l, d) => {
 const up = step(level, 1);
 const down = step(level, -1);
 
-// ── The ধাপ key's own arrows ──
-// One press crosses the boundary into the neighbouring ধাপ and lands on its
-// nearest floor, so the two arrows are exact inverses of each other. Worked in
-// level space (+700 … −700), which makes মিনার and পাতাল the same sum.
-const segLo = kind === 'patal' ? -segment.floors[1] : segment.floors[0];
-const segHi = kind === 'patal' ? -segment.floors[0] : segment.floors[1];
-const segUp = step(segHi, 1);
-const segDown = step(segLo, -1);
-
-// ── The ধাপ key and its floor grid ──
-// The key wears the segment's colour and name and drops the glass floor grid
-// for your own ধাপ. (The inset's bands go to the home instead.)
 const segKey = `${kind === 'patal' ? 'u' : 't'}${segment.index}`;
 const segDot = `pn-dot-${segKey}`;
-const segBase = kind === 'patal' ? '/panthea/patal' : '/panthea/minar';
-const segFloors = Array.from({ length: segment.count }, (_, i) => segment.floors[0] + i);
 ---
 
 <Base
-  description={`প্যান্থিয়া: ${titleBn}, ${segment.bn}`}
+  rail
+  description={`${W.panthea} ${titleBn}${fm.title ? ': ' + fm.title : ''}`}
   section="panthea"
   bodyClass="panthea-page"
   footPrev={down?.href ?? null}
   footNext={up?.href ?? null}
+  prevLabel={down?.bn}
+  nextLabel={up?.bn}
   styles={['/css/panthea.css']}
   navTitle={titleBn}
   navParentHref="/panthea/"
-  navParentLabel="প্যান্থিয়া"
+  navParentLabel={W.panthea}
 >
-  <!-- ── the breadcrumb is the whole of this page's chrome ──
-       [↑ ধাপ ↓] › [↑ ৬৫১ তলা ↓] — the ধাপ key drops the floor grid, the
-       arrows step a ধাপ or a floor, and .nav-cur is the name the ride scrubs. -->
-  <Fragment slot="nav-crumbs">
-    <span class="pn-seg-crumb">
-      <span class="pn-key-group">
-        <a class="pn-nav-arrow pn-seg-up" href={segUp?.href ?? '#'}
-           title={`উপরের ধাপ · ${segUp?.bn ?? ''}`} aria-label="উপরের ধাপ">↑</a>
-        <button type="button" class="nav-parent pn-seg-key" aria-expanded="false"
-                aria-haspopup="true" title="এই ধাপের সব তলা">
-          <span class:list={['pn-seg-dot', segDot]} aria-hidden="true"></span>
-          <span class="pn-seg-key-name">{segment.bn}</span>
-        </button>
-        <a class="pn-nav-arrow pn-seg-down" href={segDown?.href ?? '#'}
-           title={`নিচের ধাপ · ${segDown?.bn ?? ''}`} aria-label="নিচের ধাপ">↓</a>
-      </span>
-      <NavChevron />
-    </span>
-  </Fragment>
-
-  <Fragment slot="nav-here">
-    {up && <a class="pn-nav-arrow" href={up.href} title={`${up.bn} · ctrl+↑`} aria-label={up.bn}>↑</a>}
-    <span class="nav-cur">{titleBn}</span>
-    {down && <a class="pn-nav-arrow" href={down.href} title={`${down.bn} · ctrl+↓`} aria-label={down.bn}>↓</a>}
-  </Fragment>
-
-  <!-- The floor grid of your ধাপ. It lives out here, not in
-       the bar (.nav-page-info clips its overflow), fixed-positioned and hung
-       by the script under the key. -->
-  <div class="pn-floors pn-floors--drop" data-seg={segKey}>
-    <div class="pn-floors-head">
+  <!-- in the rail's path: the DHAP, a step between Panthea and the floor -->
+  <li slot="rail-crumbs" class="pn-rail" data-seg={segKey}>
+    <a class="rail-crumb pn-seg-name" href={`/panthea/#${segKey}`}>
       <span class:list={['pn-seg-dot', segDot]} aria-hidden="true"></span>
-      <b>{segment.bn}</b>
-      <span class="pn-floors-meta">{segment.floorsLabel} · {segment.metresBn}</span>
-      <button type="button" class="pn-floors-close" aria-label="বন্ধ করা">×</button>
-    </div>
-    <div class="pn-chips">
-      {segFloors.map((f) => (
-        <a class:list={['pn-chip', { 'pn-chip-here': f === floor }]} href={`${segBase}/${f}/`}>{toBn(f)}</a>
-      ))}
-    </div>
-  </div>
+      <span class="pn-seg-key-name">{segment.bn}</span>
+    </a>
+  </li>
 
   <div class="pn-page" data-level={level}>
-    <!-- where you are: the home's navigator, small, top right -->
+    <!-- where you are: the home's navigator, small, beside the story -->
     <aside class="pn-inset">
       <PantheaSection variant="inset" level={level} />
     </aside>
 
+    <header class="pn-head">
+      <p class="pn-kicker">
+        <span class:list={['pn-seg-dot', segDot]} aria-hidden="true"></span>
+        <span>{titleBn}</span>
+      </p>
+      <h1 class="pn-title">{fm.title || titleBn}</h1>
+      {fm.synopsis && <p class="pn-standfirst">{fm.synopsis}</p>}
+    </header>
+
     <!-- data-toc-scan: site.js stamps these headings and lists them in the
-         menubar সূচি. No headings (an unwritten floor) → no সূচি key. -->
+         rail's contents. No headings (an unwritten floor), no contents. -->
     <article class="pn-story pn-prose" data-md={editSrc} data-toc-scan="h2, h3">
       {Story
         ? <Story />
-        : <p class="pn-story-empty">এই তলার গল্প এখনো লেখা হয়নি।</p>}
+        : <p class="pn-story-empty">{W.stub}</p>}
     </article>
   </div>
 
   <script>
-    // ── The elevator: ctrl+↑ / ctrl+↓ ──
+    // -- The elevator: ctrl+up / ctrl+down --
     // One tap steps a floor; hold and the car accelerates and keeps running,
-    // 1400 stops on one axis, straight from ১ তলা to −১ into the other world.
+    // 1400 stops on one axis, straight from the top into the other world.
     // A page load per floor would be unridable, so the ride is scrubbed in
-    // place — the name in the bar, the ধাপ key, and the inset's lit band and
-    // hairline all redraw from the same functions the build used, and only
-    // the floor you let go on is actually navigated to.
+    // place (the name in the rail, the DHAP and its lift, the inset's lit band
+    // and hairline all redraw from the same functions the build used) and
+    // only the floor you let go on is actually navigated to.
     import {
       toBn,
       GLYPH,
@@ -165,126 +133,45 @@ const segFloors = Array.from({ length: segment.count }, (_, i) => segment.floors
     } from '../data/panthea-tiers.js';
 
     const page = document.querySelector('.pn-page');
-    if (page) {
+    const railBox = document.querySelector('.pn-rail');
+    if (page && railBox) {
       const START = Number(page.dataset.level);
       const R = (n) => Math.round(n * 10) / 10;
       const q = (sel) => document.querySelector(sel);
       const el = {
-        title: q('.nav-cur'),
-        inset: q('.pn-inset'),
+        title: q('.rail-title'),
         bands: [...document.querySelectorAll('.pn-inset .pn-band')],
         hair: q('.pn-inset .pn-hair'),
-        segCrumb: q('.pn-seg-crumb'),
-        segBtn: q('.pn-seg-key'),
-        segUp: q('.pn-seg-up'),
-        segDown: q('.pn-seg-down'),
+        segLink: q('.pn-seg-name'),
         segName: q('.pn-seg-key-name'),
-        keyDot: q('.pn-seg-key .pn-seg-dot'),
-        box: q('.pn-floors--drop'),
-        boxDot: q('.pn-floors--drop .pn-seg-dot'),
-        boxName: q('.pn-floors--drop .pn-floors-head b'),
-        boxMeta: q('.pn-floors--drop .pn-floors-meta'),
-        chips: q('.pn-floors--drop .pn-chips'),
+        keyDot: q('.pn-seg-name .pn-seg-dot'),
       };
-      const phone = matchMedia('(max-width: 760px)');
-
       let level = START;
       let raf = 0, holdTimer = 0, dir = 0;
 
-      // ── the floor grid the ধাপ key drops ──
-      // Filled for the ধাপ you are in when it opens — the chips are rebuilt
-      // only when that has changed (the ride crosses ধাপ) — with your floor lit.
-      let boxKey = el.box.dataset.seg;
-      const WORLD = { t: [towerSegments, '/panthea/minar'],
-                      u: [patalSegments, '/panthea/patal'] };
-
-      const fillBox = (key) => {
-        const [segs, base] = WORLD[key[0]];
-        const seg = segs[Number(key.slice(1)) - 1];
-        if (key !== boxKey) {
-          boxKey = el.box.dataset.seg = key;
-          el.boxDot.className = `pn-seg-dot pn-dot-${key}`;
-          el.boxName.textContent = seg.bn;
-          el.boxMeta.textContent = `${seg.floorsLabel} · ${seg.metresBn}`;
-          let html = '';
-          for (let f = seg.floors[0]; f <= seg.floors[1]; f++)
-            html += `<a class="pn-chip" href="${base}/${f}/">${toBn(f)}</a>`;
-          el.chips.innerHTML = html;
-        }
-        const here = level > 0 ? 't' : 'u';
-        const f = levelFloor(level);
-        [...el.chips.children].forEach((c, i) =>
-          c.classList.toggle('pn-chip-here', key[0] === here && seg.floors[0] + i === f));
-      };
-
-      // fixed-positioned under the ধাপ key; on phones a bottom sheet the
-      // stylesheet places
-      const place = () => {
-        if (phone.matches) return void (el.box.style.left = el.box.style.top = '');
-        const w = el.box.offsetWidth;
-        const k = el.segBtn.getBoundingClientRect();
-        el.box.style.left = `${Math.min(Math.max(8, k.left), window.innerWidth - w - 8)}px`;
-        el.box.style.top = `${k.bottom + 8}px`;
-      };
-
-      const closeBox = () => {
-        el.box.classList.remove('open');
-        el.segBtn.setAttribute('aria-expanded', 'false');
-      };
-
-      const openBox = (key) => {
-        if (el.box.classList.contains('open')) return closeBox();
-        fillBox(key);
-        el.segBtn.setAttribute('aria-expanded', 'true');
-        el.box.classList.add('open');
-        place();
-      };
-
-      el.segBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const seg = levelSegment(level);
-        if (seg) openBox(`${level > 0 ? 't' : 'u'}${seg.index}`);
-      });
-      // the inset is the home's navigator drawn small: a ধাপ pressed here
-      // opens the home on that ধাপ, cut open, every floor drawn
+      // the inset is the home's navigator drawn small: a DHAP pressed here
+      // opens the home on that DHAP, cut open, every floor drawn
       el.bands.forEach((band) =>
         band.addEventListener('click', () => {
           location.href = `/panthea/#${band.dataset.key}`;
         }));
-      el.box.querySelector('.pn-floors-close').addEventListener('click', closeBox);
-      document.addEventListener('click', (e) => {
-        if (!el.box.contains(e.target) && !el.segCrumb.contains(e.target)) closeBox();
-      });
-      document.addEventListener('keydown', (e) => e.key === 'Escape' && closeBox());
-      /* the bar narrows on scroll, so a box left open would drift off its key */
-      const replace = () => el.box.classList.contains('open') && place();
-      window.addEventListener('scroll', replace, { passive: true });
-      window.addEventListener('resize', replace, { passive: true });
 
-      // ── the ধাপ key, following the ride across ধাপ and worlds ──
+      // -- the DHAP in the rail's path, following the ride across worlds --
       const paintSeg = () => {
         const seg = levelSegment(level);
+        const key = `${level > 0 ? 't' : 'u'}${seg.index}`;
         el.segName.textContent = seg.bn;
-        el.keyDot.className = `pn-seg-dot pn-dot-${level > 0 ? 't' : 'u'}${seg.index}`;
-
-        // the ধাপ arrows step across this segment's own boundaries
-        const lo = level > 0 ? seg.floors[0] : -seg.floors[1];
-        const hi = level > 0 ? seg.floors[1] : -seg.floors[0];
-        const up = hi === LEVEL_MAX ? LEVEL_MAX + 1 : levelAdd(hi, 1);
-        const down = levelAdd(lo, -1);
-        el.segUp.href = levelHref(up);
-        el.segUp.title = `উপরের ধাপ · ${levelTitle(up)}`;
-        el.segDown.href = levelHref(down);
-        el.segDown.title = `নিচের ধাপ · ${levelTitle(down)}`;
+        el.keyDot.className = `pn-seg-dot pn-dot-${key}`;
+        el.segLink.href = `/panthea/#${key}`;
       };
 
-      // ── the inset: move the lit band and the hairline ──
+      // -- the inset: move the lit band and the hairline --
       const draw = () => {
         const kind = levelKind(level), floor = levelFloor(level);
         const seg = levelSegment(level);
         const key = `${level > 0 ? 't' : 'u'}${seg.index}`;
 
-        el.title.textContent = levelTitle(level);
+        if (el.title) el.title.textContent = levelTitle(level);
         el.bands.forEach((b) => b.classList.toggle('pn-here', b.dataset.key === key));
         paintSeg();
 
@@ -340,7 +227,6 @@ const segFloors = Array.from({ length: segment.count }, (_, i) => segment.floors
         e.preventDefault();
         if (dir) return;                       // already engaged — swallow key-repeat
         dir = d;
-        closeBox();                            // the box can't follow a moving car
         // the roof sits one step above the top floor, as the ↑ link does
         if (d === 1 && level === LEVEL_MAX) return void (location.href = levelHref(LEVEL_MAX + 1));
         stepTo(levelAdd(level, d));
@@ -353,7 +239,4 @@ const segFloors = Array.from({ length: segment.count }, (_, i) => segment.floors
       window.addEventListener('blur', () => dir && arrive());
     }
   </script>
-
-  <!-- a sparing Mondrian at the screen's edges, framing the story -->
-  <MondrianEdge seed={`panthea-${level}`} />
 </Base>

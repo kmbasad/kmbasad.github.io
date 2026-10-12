@@ -1,0 +1,37 @@
+---
+// The mark: the site's one piece of identity, after Mondrian's lozenges (the
+// square stood on its point, his most spiritual format), standing by itself.
+// Inside it a vertical and a horizontal line cross a little above the centre
+// (Mondrian's spirit and matter meeting); two planes take colour, gold at the
+// head (a light, brightest near the crossing) and lapis below. Fine charcoal
+// lines on paper.
+//
+// `breathe` lets the gold slowly brighten and fade (the home). The favicon
+// (public/favicon.svg) is the same drawing with slightly firmer lines so it
+// reads at 16px; the two PNG icons are rendered from it.
+interface Props { class?: string; title?: string; breathe?: boolean }
+const { class: cls = '', title, breathe = false } = Astro.props;
+const id = `mk${Math.random().toString(36).slice(2, 7)}`;
+const L = 'M50,3 L97,50 L50,97 L3,50 Z';
+---
+
+<svg class:list={['mark', breathe && 'mark--breathe', cls]} viewBox="0 0 100 100" role={title ? 'img' : undefined}
+     aria-label={title} aria-hidden={title ? undefined : 'true'} focusable="false">
+  <defs>
+    <clipPath id={`${id}c`}><path d={L} /></clipPath>
+    <radialGradient id={`${id}g`} gradientUnits="userSpaceOnUse" cx="52" cy="38" r="44">
+      <stop offset="0" stop-color="#fbe6a2" />
+      <stop offset="0.5" stop-color="#ebbd45" />
+      <stop offset="1" stop-color="#d7a22a" />
+    </radialGradient>
+  </defs>
+  <g clip-path={`url(#${id}c)`}>
+    <rect class="mk-paper" x="0" y="0" width="100" height="100" />
+    <rect class="mk-gold" x="50" y="0" width="50" height="40" fill={`url(#${id}g)`} />
+    <rect class="mk-lapis" x="0" y="40" width="50" height="60" />
+    <line class="mk-line" x1="50" y1="0" x2="50" y2="100" />
+    <line class="mk-line" x1="0" y1="40" x2="100" y2="40" />
+  </g>
+  <path class="mk-edge" d={L} />
+</svg>
+<!-- its look lives in public/css/chrome.css (.mark) -->

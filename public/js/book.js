@@ -3,9 +3,9 @@
  *
  * Runs inside the BookReader shell (src/components/BookReader.astro):
  * the parallel table on the left (built by md-loader.js, word-wrapped by
- * translation-table.js) and the শব্দকোষ panel on the right.
+ * translation-table.js) and the অভিধান panel on the right.
  *
- *   · শব্দকোষ — click any source-language word and its meaning is fetched
+ *   · অভিধান — click any source-language word and its meaning is fetched
  *     from Wiktionary (filtered to that language) into the side panel,
  *     with links out to the classic dictionaries of the language
  *     (Logeion/Whitaker/Perseus for Latin, Treccani for Italian,
@@ -15,18 +15,18 @@
  *     dividers walked over the Bangla line; পর্ব: Latin dactylic-hexameter
  *     foot boundaries. Both insert separator glyphs into the live text
  *     without disturbing the .w hover-highlight spans.
- *   · Footer nav (আগের / সূচিপত্র / পরের) + Ctrl←/→ chapter keys.
+ *   - Ctrl+Left/Right: the previous / next part (the way on is shown in the rail).
  *
  * Config (window.TRANS_CONFIG, shared with md-loader.js):
  *   dictLang: 'la' | 'it' | 'fa' | 'en'   — the source language of this page
  *   meters:   { matra: [8,16], feet: true }   — which toggles to offer
- *   prev, next                     — ctrl+arrow keys (the footer is SiteFoot.astro)
+ *   prev, next                     — ctrl+arrow keys (shown in the reading rail)
  */
 (function () {
   'use strict';
 
   var cfg = window.TRANS_CONFIG || {};
-  var MQ_NARROW = window.matchMedia('(max-width: 899px)');
+  var MQ_NARROW = window.matchMedia('(max-width: 1099px)');
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -35,7 +35,7 @@
   var eu = encodeURIComponent;
 
   /* ═════════════════════════════════════════════════════════════════════
-   * শব্দকোষ — the dictionary panel
+   * অভিধান — the dictionary panel
    * ═════════════════════════════════════════════════════════════════════ */
 
   var LANGS = {
@@ -97,72 +97,194 @@
       });
   }
 
-  /* Lookup candidates, best first, per language. */
+  /* The words the dictionary itself says. */
+  var T = {
+    dict: 'অভিধান',
+    inLine: 'এই চরণে',
+    lemma: 'মূল শব্দ',
+    searching: 'খুঁজছি…',
+    notFound: 'এই শব্দটি উইকিঅভিধানে পাওয়া গেল না। নিচের অভিধানগুলোতে দেখুন।',
+    recent: 'আগে দেখা',
+    search: 'শব্দ খুঁজুন',
+    others: 'অন্যান্য অভিধান',
+    lang: {
+      la: 'লাতিন',
+      it: 'ইতালীয়',
+      en: 'ইংরেজি',
+      fa: 'ফারসি'
+    }
+  };
+  var AVYAY = 'অব্যয়';
+  var POS_BN = {
+    'Noun': 'বিশেষ্য',
+    'Proper noun': 'নামবাচক বিশেষ্য',
+    'Verb': 'ক্রিয়া',
+    'Adjective': 'বিশেষণ',
+    'Adverb': 'ক্রিয়াবিশেষণ',
+    'Pronoun': 'সর্বনাম',
+    'Conjunction': 'সংযোজক ' + AVYAY,
+    'Preposition': 'পদান্বয়ী ' + AVYAY,
+    'Postposition': 'পদান্বয়ী ' + AVYAY,
+    'Interjection': 'আবেগসূচক ' + AVYAY,
+    'Particle': AVYAY,
+    'Participle': 'কৃদন্ত',
+    'Numeral': 'সংখ্যাবাচক',
+    'Article': 'নির্দেশক',
+    'Determiner': 'নির্দেশক',
+    'Suffix': 'প্রত্যয়',
+    'Prefix': 'উপসর্গ'
+  };
+
+  /* ~ Finding the word ~
+     A word in a poem is rarely the word in a dictionary: Ovid's are
+     inflected and carry enclitics, Dante's are elided and cut short,
+     Shakespeare's are contracted and wear old endings, Hafez's carry
+     Persian suffixes and Arabic letter forms. So each click is turned into
+     a short list of candidates, best first; the first that Wiktionary
+     knows in the right language wins. If none does, Wiktionary's own
+     search is asked for near spellings. And a form that is only an
+     inflection ("ablative plural of ...") is followed to its lemma, whose
+     senses are shown beneath. */
+
+  var IT_ELIDED = { "ch'": 'che', "s'": 'si', "m'": 'mi', "t'": 'ti', "v'": 'vi', "n'": 'ne',
+                    "c'": 'ci', "l'": 'lo', "d'": 'di', "e'": 'ei', "de'": 'dei', "ne'": 'nei',
+                    "co'": 'coi', "a'": 'ai', "da'": 'dai', "su'": 'sui', "fe'": 'fece', "po'": 'poco' };
+  var EN_ARCHAIC = { "o'er": 'over', "e'er": 'ever', "ne'er": 'never', "'tis": 'it', "'twas": 'it',
+                     "'gainst": 'against', "th'": 'the', "i'": 'in', "ta'en": 'taken', "e'en": 'even',
+                     'hast': 'have', 'hath': 'have', 'dost': 'do', 'doth': 'do', 'art': 'be', 'wert': 'be',
+                     'shalt': 'shall', 'wilt': 'will', 'canst': 'can', 'couldst': 'could', 'wouldst': 'would',
+                     'shouldst': 'should', 'mayst': 'may', 'mightst': 'might', 'didst': 'do', 'hadst': 'have' };
+  var FA_SUFFIXES = ['هایی', 'های', 'ها', 'ان', 'شان',
+                     'تان', 'مان', 'یی', 'ام', 'ات', 'اش',
+                     'ست', 'ی', 'م', 'ت', 'ش'];
+
   function candidates(word) {
     var out = [];
     function add(w) { if (w && w.length > 0 && out.indexOf(w) === -1) out.push(w); }
 
     if (cfg.dictLang === 'la') {
-      var w = stripMacrons(word);
-      add(w.toLowerCase());
-      if (w !== w.toLowerCase()) add(w);                    // Iuppiter, Phoebe…
-      ['que', 'ne', 've'].forEach(function (enc) {
-        if (w.length > enc.length + 2 && w.toLowerCase().slice(-enc.length) === enc) {
-          add(w.toLowerCase().slice(0, -enc.length));
-        }
+      var w = stripMacrons(word), lw = w.toLowerCase();
+      add(lw);
+      if (w !== lw) add(w);                                   // Iuppiter, Phoebe
+      add(lw.replace(/j/g, 'i'));
+      if (/^u[aeiou]/.test(lw)) add('v' + lw.slice(1));       // uirum -> virum
+      ['que', 'ne', 've', 'ce'].forEach(function (enc) {
+        if (lw.length > enc.length + 2 && lw.slice(-enc.length) === enc) add(lw.slice(0, -enc.length));
       });
     } else if (cfg.dictLang === 'it') {
-      var lw = word.toLowerCase().replace(/’/g, "'");
-      add(lw);
-      if (lw.indexOf("'") !== -1) {
-        var parts = lw.split("'").filter(Boolean);
-        parts.forEach(function (p) { if (p.length >= 2) add(p); });
-        if (parts[0] && parts[0].length <= 2) add(parts[0] + "'");   // l', d', ch'
-        parts.forEach(function (p) { if (p.length === 1) add(p); }); // i, e…
+      var iw = word.toLowerCase().replace(/[’‘]/g, "'");
+      add(iw);
+      if (iw.indexOf("'") !== -1) {
+        var head = iw.slice(0, iw.indexOf("'") + 1), rest = iw.slice(iw.indexOf("'") + 1);
+        if (IT_ELIDED[head]) add(IT_ELIDED[head]);
+        if (rest.length >= 2) add(rest);
+        add(iw.replace(/'$/, ''));
+        add(head);
       }
+      if (/[lrnm]$/.test(iw)) { add(iw + 'e'); add(iw + 'o'); }  // Dante's apocope: voler, cammin
+      if (/[àèéìòù]$/.test(iw)) add(iw.normalize('NFD').replace(/[̀-ͯ]/g, ''));
     } else if (cfg.dictLang === 'fa') {
-      add(word);
-      add(word.replace(/‌/g, ''));                     // ZWNJ collapsed
+      var f = word.replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/ة/g, 'ه');
+      add(f);
+      var bare = f.replace(/‌/g, '');
+      add(bare);
+      var stems = [f, bare];
+      [/^نمی‌?/, /^می‌?/].forEach(function (re) {
+        if (re.test(f)) stems.push(f.replace(re, ''));
+      });
+      stems.slice().forEach(function (st) {
+        FA_SUFFIXES.forEach(function (suf) {
+          var t = st.replace(/‌$/, '');
+          if (t.length > suf.length + 1 && t.slice(-suf.length) === suf) stems.push(t.slice(0, -suf.length).replace(/‌$/, ''));
+        });
+      });
+      stems.forEach(add);
+      if (/^[بن]/.test(bare) && bare.length > 3) add(bare.slice(1));
     } else {
-      add(word);
+      var ew = word.replace(/[’‘]/g, "'"), el = ew.toLowerCase();
+      add(ew); add(el);
+      if (EN_ARCHAIC[el]) add(EN_ARCHAIC[el]);
+      if (/'d$/.test(el)) { add(el.replace(/'d$/, 'ed')); add(el.replace(/'d$/, 'e')); add(el.replace(/'d$/, '')); }
+      if (/'st$/.test(el)) { add(el.replace(/'st$/, 'e')); add(el.replace(/'st$/, '')); }
+      if (/eth$/.test(el)) { add(el.replace(/eth$/, 'e')); add(el.replace(/eth$/, '')); add(el.replace(/eth$/, 's')); }
+      if (/est$/.test(el) && el.length > 5) { add(el.replace(/est$/, '')); add(el.replace(/est$/, 'e')); }
+      if (/'s$/.test(el)) add(el.replace(/'s$/, ''));
+      add(el.replace(/'/g, ''));
     }
-    return out.slice(0, 6);
+    return out.slice(0, 10);
+  }
+
+  var cache = {};
+  function getJSON(url) {
+    if (cache[url]) return cache[url];
+    cache[url] = fetch(url).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    return cache[url];
   }
 
   function wiktionary(word) {
-    var url = 'https://en.wiktionary.org/api/rest_v1/page/definition/' +
-              eu(word) + '?redirect=true';
-    return fetch(url).then(function (res) {
-      if (!res.ok) return null;
-      return res.json().then(function (data) {
+    return getJSON('https://en.wiktionary.org/api/rest_v1/page/definition/' + eu(word) + '?redirect=true')
+      .then(function (data) {
+        if (!data) return null;
         var keys = Object.keys(data);
         for (var i = 0; i < keys.length; i++) {
-          var hits = data[keys[i]].filter(function (e) { return e.language === LANG.wikt; });
+          var hits = (data[keys[i]] || []).filter(function (e) { return e.language === LANG.wikt; });
           if (hits.length) return hits;
         }
         return null;
       });
+  }
+
+  function suggest(word) {
+    return getJSON('https://en.wiktionary.org/w/api.php?action=opensearch&format=json&origin=*&limit=6&search=' + eu(word))
+      .then(function (d) { return (d && d[1]) || []; });
+  }
+
+  /* Wiktionary's definition HTML, cleaned: no styles, no references */
+  var parser = new DOMParser();
+  function cleanDef(html) {
+    var doc = parser.parseFromString('<div>' + (html || '') + '</div>', 'text/html');
+    var root = doc.body.firstChild;
+    root.querySelectorAll('style, script, sup.reference, .HQToggle, link').forEach(function (n) { n.remove(); });
+    root.querySelectorAll('[style]').forEach(function (n) { n.removeAttribute('style'); });
+    return root;
+  }
+
+  /* the lemmas an inflected form points to */
+  function lemmasOf(entries, word) {
+    var out = [];
+    entries.forEach(function (e) {
+      (e.definitions || []).forEach(function (d) {
+        cleanDef(d.definition).querySelectorAll('.form-of-definition-link a, .form-of-definition a').forEach(function (a) {
+          var t = (a.getAttribute('title') || a.textContent || '').trim();
+          if (t && t !== word && out.indexOf(t) === -1 && out.length < 2) out.push(t);
+        });
+      });
     });
+    return out;
   }
 
   function renderEntries(entries) {
     return entries.map(function (e) {
+      var pos = e.partOfSpeech || '';
+      var bn = POS_BN[pos];
+      var defs = (e.definitions || []).filter(function (d) { return (d.definition || '').trim(); });
+      if (!defs.length) return '';
       return '<section class="dict-pos">' +
-        '<h3>' + esc(e.partOfSpeech || '') + '</h3>' +
-        '<ol>' + e.definitions.map(function (d) {
-          return '<li>' + (d.definition || '') + '</li>';
+        '<h3>' + (bn ? '<span class="pos-bn">' + esc(bn) + '</span>' : '') +
+        '<span class="pos-en">' + esc(pos) + '</span></h3>' +
+        '<ol>' + defs.map(function (d) {
+          return '<li>' + cleanDef(d.definition).innerHTML + '</li>';
         }).join('') + '</ol></section>';
     }).join('');
   }
 
-  /* Wiktionary definitions embed links ("inflection of dīcō") —
-     turn them into in-panel lookups instead of navigation. */
-  function hookDefinitionLinks() {
-    $('dict-body').querySelectorAll('a').forEach(function (a) {
+  /* links inside a definition ("inflection of arma") look up in place */
+  function hookDefinitionLinks(box) {
+    box.querySelectorAll('a').forEach(function (a) {
       var href = a.getAttribute('href') || '';
       var m = href.match(/\/wiki\/([^#?]+)|^\.\/([^#?]+)/);
       if (m) {
-        var target = decodeURIComponent(m[1] || m[2]);
+        var target = decodeURIComponent(m[1] || m[2]).replace(/_/g, ' ');
         a.setAttribute('href', '#');
         a.addEventListener('click', function (ev) {
           ev.preventDefault();
@@ -275,42 +397,112 @@
   }
 
   var lookupSeq = 0;
+  var recentKey = 'dict-recent-' + (cfg.dictLang || '');
+  var recent = (function () { try { return JSON.parse(localStorage.getItem(recentKey) || '[]'); } catch (e) { return []; } })();
 
-  function lookup(word) {
+  function remember(word) {
+    recent = [word].concat(recent.filter(function (w) { return w !== word; })).slice(0, 10);
+    try { localStorage.setItem(recentKey, JSON.stringify(recent)); } catch (e) {}
+    drawRecent(word);
+  }
+
+  function drawRecent(current) {
+    var box = $('dict-recent');
+    if (!box) return;
+    var others = recent.filter(function (w) { return w !== current; });
+    box.hidden = !others.length;
+    box.innerHTML = '<p class="dict-sub">' + esc(T.recent) + '</p>' + others.map(function (w) {
+      return '<button type="button" class="dict-chip"' + (LANG.rtl ? ' dir="rtl"' : '') + '>' + esc(w) + '</button>';
+    }).join('');
+    box.querySelectorAll('.dict-chip').forEach(function (b) {
+      b.addEventListener('click', function () { lookup(b.textContent); });
+    });
+  }
+
+  /* the Bangla this word became in its own line: the word-list's pairing,
+     when it has one (positional guesses are not shown) */
+  function alignedBangla(span) {
+    if (!span) return '';
+    var key = span.dataset.w || '';
+    if (!key || /^U_|^L\d/.test(key)) return '';
+    var tr = span.closest('tr');
+    if (!tr) return '';
+    var seen = [];
+    tr.querySelectorAll('td.bn .w').forEach(function (s) {
+      if (s.dataset.w === key) seen.push(coreWord(s.textContent));
+    });
+    return seen.filter(Boolean).join(' ');
+  }
+
+  function lookup(word, span) {
     if (!LANG || !dictEl) return;
     var seq = ++lookupSeq;
-    var wordEl = $('dict-word'), bodyEl = $('dict-body'), linksEl = $('dict-links');
+    var wordEl = $('dict-word'), bodyEl = $('dict-body'), linksEl = $('dict-links'), lineEl = $('dict-line');
 
     wordEl.textContent = word;
     if (LANG.rtl) wordEl.setAttribute('dir', 'rtl'); else wordEl.removeAttribute('dir');
     wordEl.classList.add('has-word');
     $('dict-hint').hidden = true;
-    bodyEl.innerHTML = '<p class="dict-note">খুঁজছি…</p>';
+
+    var bn = alignedBangla(span);
+    if (lineEl) {
+      lineEl.hidden = !bn;
+      lineEl.innerHTML = bn ? '<span class="dict-sub">' + esc(T.inLine) + '</span><b>' + esc(bn) + '</b>' : '';
+    }
+
+    bodyEl.innerHTML = '<p class="dict-note dict-wait">' + esc(T.searching) + '</p>';
 
     var q = cfg.dictLang === 'la' ? stripMacrons(word).toLowerCase() : word;
-    linksEl.innerHTML = LANG.links.map(function (l) {
+    linksEl.innerHTML = '<p class="dict-sub">' + esc(T.others) + '</p>' + LANG.links.map(function (l) {
       return '<a href="' + esc(l[1](q)) + '" target="_blank" rel="noopener">' + esc(l[0]) + '</a>';
     }).join('');
     linksEl.hidden = false;
     openSheet();
+    remember(word);
 
-    var cands = candidates(word);
-    (function tryNext(i) {
-      if (seq !== lookupSeq) return;                        // a newer click won
-      if (i >= cands.length) {
-        bodyEl.innerHTML =
-          '<p class="dict-note">উইকশনারিতে সরাসরি পাওয়া গেল না — নিচের অভিধানগুলো দেখুন।</p>';
-        return;
-      }
-      wiktionary(cands[i]).then(function (entries) {
+    var tried = [];
+    function show(found, entries) {
+      var note = found.toLowerCase() !== word.toLowerCase()
+        ? '<p class="dict-note dict-found">→ <span' + (LANG.rtl ? ' dir="rtl"' : '') + '>' + esc(found) + '</span></p>' : '';
+      bodyEl.innerHTML = note + renderEntries(entries);
+      hookDefinitionLinks(bodyEl);
+      // an inflected form: follow it to its lemma and show that too
+      var lemmas = lemmasOf(entries, found);
+      lemmas.forEach(function (lem) {
+        wiktionary(lem).then(function (lemEntries) {
+          if (seq !== lookupSeq || !lemEntries) return;
+          var block = document.createElement('div');
+          block.className = 'dict-lemma-block';
+          block.innerHTML = '<p class="dict-lemma-head"><span class="dict-sub">' + esc(T.lemma) + '</span>' +
+            '<button type="button" class="dict-lemma-word"' + (LANG.rtl ? ' dir="rtl"' : '') + '>' + esc(lem) + '</button></p>' +
+            renderEntries(lemEntries);
+          block.querySelector('.dict-lemma-word').addEventListener('click', function () { lookup(lem); });
+          hookDefinitionLinks(block);
+          bodyEl.appendChild(block);
+        });
+      });
+    }
+    function fail() {
+      bodyEl.innerHTML = '<p class="dict-note">' + esc(T.notFound) + '</p>';
+    }
+    function tryList(list, i, then) {
+      if (seq !== lookupSeq) return;
+      if (i >= list.length) return then();
+      if (tried.indexOf(list[i]) !== -1) return tryList(list, i + 1, then);
+      tried.push(list[i]);
+      wiktionary(list[i]).then(function (entries) {
         if (seq !== lookupSeq) return;
-        if (!entries) { tryNext(i + 1); return; }
-        var note = cands[i] !== word
-          ? '<p class="dict-note dict-lemma">→ ' + esc(cands[i]) + '</p>' : '';
-        bodyEl.innerHTML = note + renderEntries(entries);
-        hookDefinitionLinks();
-      }).catch(function () { tryNext(i + 1); });
-    })(0);
+        if (entries) show(list[i], entries);
+        else tryList(list, i + 1, then);
+      });
+    }
+    tryList(candidates(word), 0, function () {
+      // nothing by rule: ask Wiktionary for near spellings of the word
+      suggest(candidates(word)[0] || word).then(function (titles) {
+        if (seq !== lookupSeq) return;
+        tryList(titles.slice(0, 4), 0, fail);
+      });
+    });
   }
 
   /* The visible text of a word span, prosody separators excluded. */
@@ -324,6 +516,19 @@
     if (!LANG || !dictEl) return;
     document.body.classList.add('book-has-dict');
     $('dict-hint').textContent = LANG.hint;
+    var kicker = $('dict-kicker');
+    if (kicker) kicker.textContent = T.dict + ' · ' + (T.lang[cfg.dictLang] || '');
+    var qEl = $('dict-q');
+    if (qEl) {
+      qEl.placeholder = T.search;
+      if (LANG.rtl) qEl.setAttribute('dir', 'rtl');
+      $('dict-search').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var w = coreWord(qEl.value);
+        if (w) { lookup(w); qEl.blur(); }
+      });
+    }
+    drawRecent('');
 
     /* Click any word in a source-language cell (md-loader renders Latin
        into .it cells too; bn and ln-col are not lookup targets). */
@@ -333,13 +538,13 @@
       var td = span.closest('td');
       if (!td || td.classList.contains('bn') || td.classList.contains('ln-col')) return;
       var word = spanWord(span);
-      if (word) lookup(word);
+      if (word) lookup(word, span);
     });
 
     var closeBtn = $('dict-close');
     if (closeBtn) closeBtn.addEventListener('click', closeSheet);
     document.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape') closeSheet();
+      if (ev.key === 'Escape' && document.activeElement !== qEl) closeSheet();
     });
   }
 
@@ -687,7 +892,7 @@
     });
   }
 
-  /* The মিটার স্ক্যান bar lives at the head of the শব্দকোষ panel:
+  /* The মিটার স্ক্যান bar lives at the head of the অভিধান panel:
      বাংলা toggles the matrabritta dividers, লাতিন the hexameter feet. */
   function setupMeters() {
     if (!cfg.meters) return;
@@ -736,7 +941,7 @@
   }
 
   /* ═════════════════════════════════════════════════════════════════════
-   * Footer nav (আগের / সূচিপত্র / পরের) + keyboard
+   * Ctrl+Left/Right: the previous / next part
    * ═════════════════════════════════════════════════════════════════════ */
 
   function isTypingTarget(el) {

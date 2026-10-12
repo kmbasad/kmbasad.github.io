@@ -73,7 +73,7 @@
 }
 
 /* Hide fullscreen button on phones */
-@media (max-width: 767px) {
+@media (max-width: 760px) {
   .matrix-fs-btn { display: none; }
 }
 
@@ -466,10 +466,6 @@ tbody tr td.is-diagonal .cell-btn.active {
   box-shadow: inset 0 3px 0 var(--diag-accent), inset 0 0 0 2px var(--cell-active-accent);
 }
 
-/* Amber panel bar when a diagonal cell is open */
-.table-panel.panel-diagonal .panel-bar {
-  background: linear-gradient(90deg, var(--diag-accent), rgba(232, 205, 140, 0.55));
-}
 /* ── Cross-highlight: row header + col header highlight on cell hover ─────── */
 tbody th.row-cross {
   background: var(--cell-cross-bg);
@@ -520,203 +516,19 @@ thead th:not(:first-child):hover .th-name {
   color: var(--accent);
 }
 
-/* ── PANEL + OVERLAY ─────────────────────────────────────────────────────── */
+/* -- the overlay and the cell's leaf --
+   The leaf is drawn in chrome.css, one with the dictionary's, so the panels
+   that open from the right look the same everywhere on the site. */
 .table-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(14, 26, 43, .38);
+  top: var(--leaf-top, 0px);
+  background: rgba(14, 26, 43, .28);
   z-index: 90;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
 }
+.table-overlay.visible { display: block; }
 
-.table-overlay.visible {
-  display: block
-}
-
-.table-panel {
-  position: fixed;
-  top: 0;
-  right: -520px;
-  width: 460px;
-  height: 100vh;
-  background: var(--surface);
-  border-left: 1px solid var(--border);
-  box-shadow: -8px 0 40px rgba(14, 26, 43, .16);
-  z-index: 100;
-  overflow-y: auto;
-  transition: right .3s cubic-bezier(.22,.68,0,1.2);
-  display: flex;
-  flex-direction: column;
-}
-
-.table-panel.open {
-  right: 0
-}
-
-/* Accent bar at top */
-.panel-bar {
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-mid));
-  flex-shrink: 0;
-  transition: background .3s ease;
-}
-
-.panel-close-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: var(--surface-3);
-  border: 1px solid var(--border);
-  color: var(--text-3);
-  font-size: 13px;
-  width: 28px;
-  height: 28px;
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: inherit;
-  transition: background .12s, color .12s, border-color .12s;
-  z-index: 2;
-}
-
-.panel-close-btn:hover {
-  background: var(--surface-2);
-  color: var(--text);
-  border-color: var(--border-2)
-}
-
-.panel-head {
-  padding: 20px 20px 16px;
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-  background: var(--surface-2)
-}
-
-.panel-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  color: var(--text-4);
-  text-transform: uppercase;
-  margin-bottom: 5px
-}
-
-.panel-prop {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 10px;
-  line-height: 1.25
-}
-
-.panel-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent)
-}
-
-.panel-meta {
-  font-size: 12px;
-  color: var(--text-3);
-  margin-top: 2px
-}
-
-/* ── Panel body with fade animation on content change ────────────────────── */
-@keyframes panelContentIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.panel-body {
-  padding: 18px 20px 40px;
-  flex: 1;
-}
-
-.panel-body.panel-refresh {
-  animation: panelContentIn .22s ease forwards;
-}
-
-.panel-head.panel-refresh {
-  animation: panelContentIn .18s ease forwards;
-}
-
-.panel-short {
-  font-size: 12.5px;
-  color: var(--text-2);
-  background: var(--accent-light);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 var(--r-sm) var(--r-sm) 0;
-  padding: 8px 12px;
-  margin-bottom: 18px;
-  line-height: 1.5;
-}
-
-.panel-meta:empty,
-.panel-short:empty { display: none; }
-
-.panel-long {
-  font-size: 15px;
-  line-height: 1.77;
-  color: var(--text)
-}
-
-.panel-long p {
-  margin-bottom: 13px
-}
-
-.panel-long p:last-child {
-  margin-bottom: 0
-}
-
-.panel-long em {
-  font-style: italic;
-  color: var(--accent)
-}
-
-.panel-nav {
-  display: flex;
-  gap: 8px;
-  padding: 12px 20px;
-  border-top: 1px solid var(--border);
-  flex-shrink: 0;
-  background: var(--surface-2)
-}
-
-.panel-nav button {
-  flex: 1;
-  padding: 8px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: inherit;
-  background: var(--surface);
-  border: 1px solid var(--border-2);
-  color: var(--text-2);
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  transition: all .15s ease;
-}
-
-.panel-nav button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-light)
-}
-
-.panel-nav button:disabled {
-  opacity: .3;
-  cursor: default
-}
-
-@media(max-width:640px) {
-  .table-panel {
-    width: 100%;
-    right: -100%
-  }
-}
 
 /* ── PAGE SECTIONS ───────────────────────────────────────────────────────── */
 
@@ -780,7 +592,7 @@ thead th:not(:first-child):hover .th-name {
    pinned so every cell keeps its row context. border-collapse:separate is
    required for position:sticky to work on table cells; left borders are
    dropped so the un-collapsed borders stay single, not doubled.           */
-@media (max-width: 767px) {
+@media (max-width: 760px) {
   /* READING FIRST: the essay is seated above the matrix — the writing is
      the phone's page, the grid follows as apparatus. (An empty essay is
      display:none via :has, so a matrix-only trellis still opens on the
@@ -819,7 +631,7 @@ thead th:not(:first-child):hover .th-name {
   .trellis-cue { display: none; }
 
   /* the grid already scrolls sideways inside each slide — a swipe must not
-     also turn the slide, so on phones only the tabs do */
+     also turn the slide, so on phones the rail's contents turn it */
   .mx-track { overflow-x: hidden; }
 
   .article-legend {
@@ -917,9 +729,175 @@ thead th:not(:first-child):hover .th-name {
 .trellis-cue:hover span { transform: translateY(3px); }
 .trellis-page:has(#essay-mount:empty) .trellis-cue { display: none; }
 
-@media (min-width: 768px) {
+@media (min-width: 761px) {
   .trellis-hero {
-    height: calc(100svh - var(--nav-h));
+    height: calc(100svh - var(--mast-h));
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 24px 0;
+  }
+  .trellis-page:has(#essay-mount:empty) .trellis-hero { padding-bottom: 24px; }
+
+  .trellis-hero #trellis-mount,
+  .trellis-hero .mx-slider,
+  .trellis-hero .mx-track,
+  .trellis-hero .matrix-container {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trellis-hero .table-scroll {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;   /* sized to fit — never scrolls */
+  }
+
+  .trellis-hero .mx-track { flex-direction: row; }
+  .trellis-hero .mx-slide { display: flex; flex-direction: column; }
+
+  .trellis-hero table { table-layout: fixed; width: 100%; }
+
+  .trellis-hero td,
+  .trellis-hero thead th:not(:first-child) {
+    width: var(--fs-cell-w, 148px);
+    min-width: unset;
+  }
+
+  .trellis-hero thead th:first-child,
+  .trellis-hero .corner-th,
+  .trellis-hero tbody th {
+    width: 196px;
+    min-width: 196px;
+  }
+
+  .trellis-hero .cell-btn {
+    height: var(--fs-cell-h, 72px);
+    min-height: var(--fs-cell-h, 72px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px 14px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .trellis-hero .th-name,
+  .trellis-hero .prop-name {
+    font-family: var(--bn-display);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .trellis-hero .prop-desc { font-size: 12.5px; font-style: normal; }
+  .trellis-hero tbody th { vertical-align: middle; padding: 10px 16px; }
+}
+
+/* ── The slider (a file with several matrices — খোদা) ──────────────────── */
+.mx-track { overflow-x: hidden; }
+
+  .article-legend {
+    font-size: 13px;
+    padding: 10px 4px 24px;
+  }
+
+  .table-scroll table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  thead th,
+  tbody th,
+  td {
+    border-left: none;
+  }
+
+  thead th:first-child,
+  tbody th {
+    border-left: 1px solid var(--border);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+  }
+
+  thead th:first-child {
+    z-index: 3;
+  }
+
+  tbody th {
+    box-shadow: 4px 0 10px -4px rgba(14, 26, 43, 0.20);
+  }
+
+  /* Narrower columns — more of the grid on screen at once */
+  thead th:first-child,
+  .corner-th,
+  tbody th {
+    width: 124px;
+    min-width: 124px;
+  }
+
+  thead th,
+  td {
+    width: 138px;
+    min-width: 138px;
+  }
+
+  .corner-row-label,
+  .corner-col-label {
+    font-size: 12px;
+  }
+
+  .cell-btn {
+    padding: 8px 9px 16px;
+  }
+
+  /* Detail panel: full-screen sheet, safe-area aware */
+  .panel-nav {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .panel-close-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE HERO — the matrix takes the first screen, the essay waits below
+   ═══════════════════════════════════════════════════════════════════════════
+   Desktop: the hero is exactly one screen under the bar at rest. CSS lays
+   out the box (tabs, grid, cue); trellis.js only divides the grid's box into
+   seven-by-seven (--fs-cell-w / --fs-cell-h), the same arithmetic as the
+   pseudo-fullscreen. Phones keep the natural grid, below the essay.        */
+
+.trellis-hero { position: relative; }
+
+/* the cue — a quiet way down to the essay; gone when there is none */
+.trellis-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  flex-shrink: 0;
+  font-family: var(--bn-display);
+  font-size: 15px;
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.trellis-cue span { color: var(--accent-2); transition: transform .2s ease; }
+.trellis-cue:hover { color: var(--accent); }
+.trellis-cue:hover span { transform: translateY(3px); }
+.trellis-page:has(#essay-mount:empty) .trellis-cue { display: none; }
+
+@media (min-width: 761px) {
+  .trellis-hero {
+    height: calc(100svh - var(--mast-h));
     min-height: 560px;
     display: flex;
     flex-direction: column;
@@ -1325,4 +1303,69 @@ a.cell-ref:hover {
 .matrix-container.is-klee[class][class] thead th.col-active .th-name {
   color: var(--k-ink);
   transition: color 0.2s ease 0.08s;
+}
+
+
+/* beside the reading rail the matrix takes a wide column of its own */
+body.has-rail .shell { --main-w: 80rem; }
+
+
+/* -- The essay in the site's reading voice (style.css --read-*) --
+   Set on the column's left edge, not centred; its title and its one-line
+   intro are the page's headline and standfirst, as on every reading page. */
+.trellis-essay { padding: clamp(3rem, 7vh, 5rem) 0 0; border-top: none; }
+.trellis-essay #essay-mount { max-width: var(--read-measure); }
+.trellis-essay .section-title {
+  font-family: var(--bn-display);
+  font-size: var(--title-fs);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  text-align: left;
+  margin: 0;
+}
+.trellis-essay .section-intro {
+  font-family: var(--bn-font);
+  font-style: normal;
+  font-size: var(--stand-fs);
+  line-height: 1.8;
+  color: var(--text-3);
+  text-align: left;
+  max-width: none;
+  margin: 1rem 0 2.6rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.trellis-essay .writing-col { max-width: none; margin: 0; padding: 0; }
+.trellis-essay .essay-body p {
+  font-family: var(--bn-font);
+  font-size: var(--read-fs);
+  font-weight: 400;
+  line-height: var(--read-lh);
+  letter-spacing: var(--read-ls);
+  color: var(--read-ink);
+  margin-bottom: var(--read-gap);
+  text-align: left;
+}
+@media (max-width: 760px) {
+  .trellis-essay { padding: 2rem var(--m-read-pad) 0; }
+  .trellis-essay .essay-body p { font-size: var(--m-read-fs); line-height: var(--m-read-lh); }
+  .trellis-essay .section-title { font-size: 1.85rem; }
+}
+/* the essay's body on the same left edge as its headline, on every screen
+   (style.css's old phone rule pads .essay; not here) */
+.trellis-essay .essay { padding: 0; }
+
+/* a tablet in landscape or a laptop with the rail beside the hero: the row
+   names narrow and the cell type steps down a little, so all seven columns
+   stay on the screen */
+@media (min-width: 761px) and (max-width: 1500px) {
+  .trellis-hero thead th:first-child,
+  .trellis-hero .corner-th,
+  .trellis-hero tbody th {
+    width: clamp(110px, 12vw, 196px);
+    min-width: clamp(110px, 12vw, 196px);
+  }
+  .trellis-hero .cell-btn { font-size: clamp(13px, 1.15vw, 16px); padding: 10px 10px 12px; }
+  .trellis-hero .th-name, .trellis-hero .prop-name { font-size: clamp(13px, 1.15vw, 16px); }
 }

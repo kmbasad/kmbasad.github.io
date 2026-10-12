@@ -9,7 +9,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  top: calc(var(--nav-now) + var(--m-rule));
+  top: 0;
   bottom: 0;
   z-index: 0;
   overflow: hidden;
@@ -32,7 +32,7 @@
   box-sizing: border-box;
   margin-left: var(--sx);
   width: var(--sw);
-  min-height: calc(100svh - var(--nav-now) - var(--m-rule) - var(--foot-h));
+  min-height: calc(100svh - var(--mast-h));
   padding: clamp(36px, 7vh, 80px) clamp(24px, 3.4vw, 56px) 80px;
   background: var(--paper);
   border-left: var(--gap) solid var(--ground);
@@ -149,3 +149,25 @@
   .pt-sheet h1 { font-size: clamp(36px, 11vw, 48px); }
   .pt-name { font-size: 18px; }
 }
+
+/* the index one step out, named over the title: a short bar of the room's
+   tint and its name, the way back now that the trail has left the masthead */
+.pt-parent {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  font-family: var(--bn-font);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--tint-ink, var(--text-2));
+  text-decoration: none;
+  background-image: none;
+}
+.pt-parent::before {
+  content: '';
+  display: block;
+  width: 2.4rem;
+  height: 4px;
+  margin-bottom: 0.8rem;
+  background: var(--tint-d, var(--t-line));
+}
+.pt-parent:hover { color: var(--accent); }

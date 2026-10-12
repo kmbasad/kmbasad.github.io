@@ -1,6 +1,5 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import MondrianEdge from '../../../components/MondrianEdge.astro';
 import { alaolChapters } from '../../../data/alaol-chapters.js';
 
 export function getStaticPaths() {
@@ -18,18 +17,22 @@ export function getStaticPaths() {
 
 const { chapter }                   = Astro.params;
 const { en, bn, hasEn, prev, next } = Astro.props;
+const WORK = 'সপ্ত পয়কর';
 ---
 
 <Base
+  rail
   section="pangea"
   styles={['/css/translation-table.css', '/css/book.css']}
   navTitle={bn}
   navParentHref="/pangea/alaol-sapta-paykar/"
-  navParentLabel="সপ্ত পয়কর"
+  navParentLabel={WORK}
   navGrandParentHref="/pangea/"
   navGrandParentLabel="প্যাঞ্জিয়া"
   footPrev={prev ? `/pangea/alaol-sapta-paykar/${prev.slug}/` : null}
   footNext={next ? `/pangea/alaol-sapta-paykar/${next.slug}/` : null}
+  prevLabel={prev?.bn}
+  nextLabel={next?.bn}
 >
   <Fragment slot="head">
     <link
@@ -39,6 +42,10 @@ const { en, bn, hasEn, prev, next } = Astro.props;
   </Fragment>
 
   <div class="pangea-page">
+    <header class="book-spine">
+      <span class="book-spine-work">{WORK}</span>
+      <h1 class="book-spine-title">{bn}</h1>
+    </header>
     <table class="tt-table">
       <tbody></tbody>
     </table>
@@ -48,23 +55,24 @@ const { en, bn, hasEn, prev, next } = Astro.props;
        parchment frame) so the colour, font, and feel match the translation
        pages — only the side-by-side image panel is absent here. -->
   <style is:global>
+    body.has-rail .shell { --main-w: 66rem; }
     .pangea-page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 36px 24px 64px;
+      max-width: none;
+      margin: 0;
+      padding: clamp(2.4rem, 6vh, 4.5rem) 24px 0;
     }
     .pangea-page .tt-table {
-      margin-inline: auto;
+      margin-inline: 0;
     }
     .pangea-page .tt-table thead { display: none; }
     .pangea-page .tt-table td {
       background: transparent !important;
       border-right: none;
     }
-    @media (max-width: 640px) {
+    @media (max-width: 760px) {
       /* Verse cells carry their own side padding on phones (≤640 block in
          translation-table.css), so the column goes edge-to-edge. */
-      .pangea-page { padding: 12px 0 48px; }
+      .pangea-page { padding: 12px 0 0; }
       }
   </style>
 
@@ -73,6 +81,5 @@ const { en, bn, hasEn, prev, next } = Astro.props;
   </script>
   <script is:inline src="/js/md-loader.js"></script>
   <script is:inline src="/js/translation-table.js"></script>
-  <!-- a sparing Mondrian at the screen's edges, framing the column -->
-  <MondrianEdge seed={`alaol-${Astro.params.chapter}`} />
+  
 </Base>

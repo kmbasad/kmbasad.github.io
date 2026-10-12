@@ -476,19 +476,13 @@
 }
 
 /* ── Responsive: tablet ───────────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 1099px) {
   .tt-table td {
     padding: 0.06rem 0.45rem;
   }
 
-  /* Columns share the width and wrap instead of forcing a sideways page */
-  .tt-table td.bn,
-  .tt-table td.it,
-  .tt-table td.en,
-  .tt-table td.fa,
-  .tt-table td.tl {
-    white-space: normal;
-  }
+  /* a verse line never wraps: the fitter in translation-table.js shrinks the
+     page's verse (--par-fit) until the table fits the column */
 
   .tt-table tr[data-ghazal] td {
     padding-top:    0.1rem;
@@ -516,7 +510,7 @@
    line NEVER breaks — the fitter in translation-table.js sets --verse-fs
    (down from --m-read-fs) until the page's longest line fits the screen —
    and the ghazal number is a centred ॥ N ॥ manuscript mark.              */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .tt-table td.it,
   .tt-table td.fa,
   .tt-table td.en,
@@ -595,10 +589,10 @@
 
   /* Section headings */
   .tt-table tr.tt-section td.bn {
-    font-size: 1.12rem;
-    padding: 1.9rem var(--m-read-pad) 0.65rem;
+    font-size: 1.25rem;
+    padding: 2.2rem var(--m-read-pad) 0.8rem;
     text-indent: 0;
-    border-bottom: 1px solid var(--tt-rule-strong);
+    border-bottom: none;
   }
 
   /* Margin sections: the ln-col is hidden on phones, so the section name
@@ -650,3 +644,74 @@
     border-radius: 0;
   }
 }
+
+/* -- The open page (2026-10 redesign) --
+   The page's headline (.book-spine) names the chapter, so the table's own
+   title row steps aside; a section opens the way a story's part does on the
+   rest of the site: an ink heading under a short gold rule, no bands. */
+.book-spine ~ .tt-table tr.tt-title { display: none; }
+
+.tt-table tr.tt-section td,
+.tt-table tr.tt-section td.ln-col {
+  border-bottom: none;
+}
+
+.tt-table tr.tt-section td.bn {
+  font-family: var(--bn-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--text);
+}
+
+.tt-table tr.tt-section td.bn::before {
+  content: '';
+  display: block;
+  width: 2.6rem;
+  height: 3px;
+  margin-bottom: 0.9rem;
+  background: var(--accent-2);
+}
+
+.tt-table tbody tr:first-child.tt-section td,
+.tt-table tr.tt-title + tr.tt-section td,
+.tt-table tr.tt-title ~ tr.tt-section:first-of-type td {
+  padding-top: 0.4rem;
+}
+
+
+/* -- The verse in the site's reading voice (style.css --read-*) --
+   The Bangla at the reading size with its lines a little closer; the
+   original beside it scaled to sit level (Cormorant draws small, Naskh
+   large); everything left-aligned but Persian, which runs from the right. */
+@media (min-width: 761px) {
+  .tt-table td.bn {
+    font-size: var(--read-fs);
+    line-height: var(--verse-lh);
+    letter-spacing: var(--read-ls);
+    color: var(--read-ink);
+  }
+  /* beside its original the Bangla scales with the screen, from the
+     reading size on a wide one down to where both columns still fit */
+  .tt-table:has(td.it, td.en, td.fa) td.bn { font-size: var(--par-fit, var(--par-fs)); }
+  .tt-table td.it,
+  .tt-table td.en {
+    font-size: calc(var(--par-fit, var(--par-fs)) * var(--src-scale));
+    line-height: calc(var(--verse-lh) / var(--src-scale));
+  }
+  .tt-table td.fa {
+    font-size: calc(var(--par-fit, var(--par-fs)) * 0.95);
+    line-height: calc(var(--verse-lh) / 0.95);
+  }
+  .tt-table td.ln-col { font-size: 0.85rem; }
+  .tt-table td { padding: 0 0.7rem; }
+  .tt-table td:first-child { padding-left: 0; }
+  /* the margin's section names may take two lines rather than widen it */
+  .tt-table td.ln-col .ln-sec { white-space: normal; display: inline-block; max-width: 7.5rem; text-align: right; line-height: 1.35; vertical-align: baseline; }
+}
+:root { --par-fs: clamp(1.05rem, calc(7.5px + 0.694vw), 1.25rem); }
+
+/* a table too wide even at the smallest reading size: the original wraps,
+   the Bangla never does (translation-table.js sets the class) */
+.tt-src-wrap .tt-table td.it,
+.tt-src-wrap .tt-table td.en,
+.tt-src-wrap .tt-table td.fa { white-space: normal; }

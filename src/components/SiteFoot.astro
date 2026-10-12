@@ -1,134 +1,50 @@
 ---
-// The foot of every page, the home and the indexes too (Base renders it, last
-// in <body>; a page passes `footPrev` / `footNext` to Base): a thin bar
-// across the full width at the very bottom, in the menubar's slate
-// and charcoal, so a page ends the way it begins. On the far left the
-// author's name, on the far right the licence, both in English; in the
-// middle three small cells: the previous page, back to the top, the next.
-// `prev` / `next` are hrefs; a missing one is drawn dimmed. A page that
-// holds itself to one screen subtracts --foot-h, so the foot is always in
-// view there; on a page that scrolls, it closes the page.
-import { AUTHOR_EN, LICENSE } from '../data/site.js';
+// The colophon: the foot of every page but the home (Base renders it, last in
+// <body>). A broad dark field closing the page the way the masthead opens it:
+// the selvedge of the painting along its top edge, then the site's name and
+// a few words about it, the four rooms each with its gloss, and the author:
+// his name, the ways to reach him, the licence.
+import { AUTHOR_EN, LICENSE, DECLARATION } from '../data/site.js';
+import { ROOMS, SITE_NAME, SITE_ABOUT } from '../data/rooms.js';
+import { UI } from '../data/ui.js';
 
-interface Props { prev?: string | null; next?: string | null }
-const { prev = null, next = null } = Astro.props;
+const STRIP = [
+  ['sage', 6], ['cream', 9], ['blue', 17], ['pink', 5], ['lav', 11], ['ochre', 8],
+  ['blue', 4], ['cream', 4], ['pink', 12], ['sage', 7], ['lav', 5], ['ochre', 3],
+];
+const CONTACT = [
+  { href: 'mailto:kasad@iub.edu.bd', label: 'kasad@iub.edu.bd' },
+  { href: 'https://cassa.bd/people/asad/', label: 'cassa.bd/people/asad' },
+  { href: 'https://www.facebook.com/kmbasad', label: 'Facebook' },
+];
 ---
 
-<footer class="site-foot">
-  <span class="foot-name">{AUTHOR_EN}</span>
-  <nav class="foot-arrows" aria-label="Previous, top, next">
-    {prev
-      ? <a class="foot-btn foot-prev" href={prev} aria-label="Previous" title="Previous"><span aria-hidden="true">←</span></a>
-      : <span class="foot-btn foot-off" aria-hidden="true">←</span>}
-    <button class="foot-btn foot-top" type="button" aria-label="Back to the top" title="Back to the top"><span aria-hidden="true">↑</span></button>
-    {next
-      ? <a class="foot-btn foot-next" href={next} aria-label="Next" title="Next"><span aria-hidden="true">→</span></a>
-      : <span class="foot-btn foot-off" aria-hidden="true">→</span>}
-  </nav>
-  <a class="foot-license" href={LICENSE.href} rel="license">© {LICENSE.name.replace(/ [\d.]+$/, '')}<span class="foot-ver">{LICENSE.name.match(/ [\d.]+$/)?.[0]}</span></a>
+<footer class="colophon">
+  <div class="selvedge" aria-hidden="true">
+    {STRIP.map(([c, w]) => <span class={`sv-${c}`} style={`flex-grow:${w}`}></span>)}
+  </div>
+
+  <div class="colo-inner">
+    <div class="colo-about">
+      <a class="colo-name" href="/">{SITE_NAME}</a>
+      <p>{SITE_ABOUT}</p>
+    </div>
+
+    <nav class="colo-rooms" aria-label={UI.sections}>
+      {ROOMS.map((r) => (
+        <a class={`colo-room room-${r.tint}`} href={r.href}>
+          <span class="colo-room-name">{r.label}</span>
+          <span class="colo-room-gloss">{r.gloss}</span>
+        </a>
+      ))}
+    </nav>
+
+    <ul class="colo-contact">
+      <li class="colo-author">{AUTHOR_EN}</li>
+      {CONTACT.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+      <li class="colo-declare">{DECLARATION}</li>
+      <li class="colo-license"><a href={LICENSE.href} rel="license">{LICENSE.name}</a></li>
+    </ul>
+  </div>
+
 </footer>
-
-<script is:inline>
-  (function () {
-    var b = document.currentScript && document.currentScript.previousElementSibling &&
-            document.currentScript.previousElementSibling.querySelector('.foot-top');
-    if (!b) return;
-    b.addEventListener('click', function () {
-      // a page that scrolls an inner column scrolls that; others, the window
-      var col = document.querySelector('[data-page-scroll]');
-      (col && col.scrollHeight > col.clientHeight ? col : window).scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-</script>
-
-<style is:global>
-  .site-foot {
-    position: relative;
-    z-index: 2;
-    box-sizing: border-box;
-    width: 100%;
-    flex: none;
-    height: var(--foot-h);
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    column-gap: 12px;
-    align-items: stretch;
-    padding: 0 clamp(14px, 3vw, 40px);
-    background: var(--t-slate);
-    border-top: var(--m-rule, 2px) solid var(--t-line);
-    font-family: var(--ui-font);
-    font-size: 12.5px;
-    letter-spacing: 0.03em;
-    color: #c9ced8;
-  }
-
-  /* On a page that carries the foot at its outer level, the page is a
-     column and the foot is pushed to its end: on a short page it still sits
-     at the very bottom of the screen. */
-  body:has(> .site-foot) {
-    display: flex;
-    flex-direction: column;
-    min-height: 100svh;
-  }
-  body:has(> .site-foot) > .site-foot { margin-top: auto; }
-  body:has(> .site-foot) > :where(.pn-page, .pangea-page, .trellis-page, .pn-home, .home-canvas, .book-layout) {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .foot-name { align-self: center; justify-self: start; white-space: nowrap; }
-
-  .foot-license {
-    align-self: center;
-    justify-self: end;
-    white-space: nowrap;
-    color: #c9ced8;
-    text-decoration: none;
-    background-image: none;
-  }
-
-  .foot-license:hover { color: #fff; }
-
-  /* the three cells, joined by charcoal lines, full height of the bar */
-  .foot-arrows {
-    display: flex;
-    border-left: var(--m-rule, 2px) solid var(--t-line);
-  }
-
-  .foot-btn {
-    display: grid;
-    place-items: center;
-    width: 46px;
-    font: inherit;
-    font-size: 15px;
-    line-height: 1;
-    color: var(--t-line);
-    text-decoration: none;
-    background: var(--t-cream);
-    background-image: none;
-    border: none;
-    border-right: var(--m-rule, 2px) solid var(--t-line);
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-
-  .foot-prev:hover { background: var(--t-blue-d); }
-  .foot-top:hover { background: var(--t-ochre-d); }
-  .foot-next:hover { background: var(--t-pink-d); }
-
-  .foot-off { cursor: default; color: rgba(42, 45, 51, 0.3); background: var(--t-lav); }
-
-  @media (max-width: 760px) {
-    .site-foot { font-size: 11px; padding: 0 10px; }
-    .foot-btn { width: 40px; }
-  }
-
-  @media (max-width: 480px) {
-    /* the narrowest screens: smaller, tighter type, narrower cells, and the
-       licence without its version (the link still goes to it) */
-    .site-foot { font-size: 10.5px; letter-spacing: 0; padding: 0 8px; column-gap: 8px; }
-    .foot-btn { width: 34px; font-size: 13px; }
-    .foot-ver { display: none; }
-  }
-</style>

@@ -1,0 +1,22 @@
+---
+// Every floor, named by its signed number: /panthea/1/ … /panthea/700/ above the
+// ground, /panthea/-1/ … /panthea/-700/ beneath it. No zero floor.
+import PantheaFloor from '../../components/PantheaFloor.astro';
+import {
+  towerSegmentOf, patalSegmentOf, TOWER_FLOORS, PATAL_FLOORS,
+} from '../../data/panthea-tiers.js';
+
+export function getStaticPaths() {
+  return [
+    ...Array.from({ length: TOWER_FLOORS }, (_, i) => ({ params: { level: String(i + 1) } })),
+    ...Array.from({ length: PATAL_FLOORS }, (_, i) => ({ params: { level: String(-(i + 1)) } })),
+  ];
+}
+
+const level = Number(Astro.params.level);
+const kind = level > 0 ? 'minar' : 'patal';
+const floor = Math.abs(level);
+const segment = level > 0 ? towerSegmentOf(floor) : patalSegmentOf(floor);
+---
+
+<PantheaFloor kind={kind} floor={floor} segment={segment} />

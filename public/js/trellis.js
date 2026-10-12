@@ -788,7 +788,7 @@
              !!container.closest('.trellis-hero');
     }
     function resizeForFullscreen() {
-      if (window.innerWidth < 768 || !isFitted()) {
+      if (window.innerWidth < 761 || !isFitted()) {
         container.style.removeProperty('--fs-cell-w');
         container.style.removeProperty('--fs-cell-h');
         return;
@@ -803,7 +803,7 @@
       // the painted matrix has seams between its cells (border-spacing):
       // nCols + 2 of them across, nRows + 2 down, counting both edges
       var seam = parseFloat(getComputedStyle(table).borderSpacing) || 0;
-      var colW = Math.max(100, Math.floor((scrollW - rowHeaderW - seam * (nCols + 2)) / nCols));
+      var colW = Math.max(60, Math.floor((scrollW - rowHeaderW - seam * (nCols + 2)) / nCols));
       // one px of border per row, so the last row does not slip under the clip
       var rowH = Math.max(52,  Math.floor((scrollH - theadH - nRows - 2 - seam * (nRows + 2)) / nRows));
 
@@ -812,7 +812,7 @@
     }
 
     function enterPseudoFS() {
-      if (window.innerWidth < 768) return;
+      if (window.innerWidth < 761) return;
       container.classList.add('is-fullscreen');
       // Prevent page scroll while fullscreen is active
       document.body.style.overflow = 'hidden';
@@ -1044,50 +1044,27 @@
     var wrap = document.createElement('div');
     wrap.className = 'mx-slider';
 
-    var bar = document.createElement('div');
-    bar.className = 'mx-tabs';
-    var prev = document.createElement('button');
-    prev.className = 'mx-step';
-    prev.setAttribute('aria-label', 'আগের ছক');
-    prev.innerHTML = '&#8249;';
-    var next = document.createElement('button');
-    next.className = 'mx-step';
-    next.setAttribute('aria-label', 'পরের ছক');
-    next.innerHTML = '&#8250;';
+    /* No tabs and no arrows: the rail's contents name every matrix, and a
+       swipe, a trackpad or the arrow keys turn the slide. */
 
     var track = document.createElement('div');
     track.className = 'mx-track';
 
-    var tabs = [], slots = [];
-    bar.appendChild(prev);
+    var slots = [];
+    var count = titles.length;
     titles.forEach(function (t, i) {
-      var tab = document.createElement('button');
-      tab.className = 'mx-tab';
-      tab.textContent = t || ('' + (i + 1));
-      tab.addEventListener('click', function () { go(i); });
-      bar.appendChild(tab);
-      tabs.push(tab);
-
       var slide = document.createElement('div');
       slide.className = 'mx-slide';
       track.appendChild(slide);
       slots.push(slide);
     });
-    bar.appendChild(next);
-
-    wrap.appendChild(bar);
     wrap.appendChild(track);
     mount.appendChild(wrap);
 
     var cur = 0;
-    function mark(i) {
-      cur = i;
-      tabs.forEach(function (t, k) { t.classList.toggle('active', k === i); });
-      prev.disabled = i <= 0;
-      next.disabled = i >= tabs.length - 1;
-    }
+    function mark(i) { cur = i; }
     function go(i, instant) {
-      i = Math.max(0, Math.min(tabs.length - 1, i));
+      i = Math.max(0, Math.min(count - 1, i));
       track.scrollTo({ left: i * track.clientWidth, behavior: instant ? 'auto' : 'smooth' });
       mark(i);
     }
@@ -1101,8 +1078,6 @@
         if (i !== cur) mark(i);
       }, 90);
     }, { passive: true });
-    prev.addEventListener('click', function () { go(cur - 1); });
-    next.addEventListener('click', function () { go(cur + 1); });
 
     // ←/→ turn the slide while the hero is on screen and no panel is open
     document.addEventListener('keydown', function (e) {

@@ -1,6 +1,8 @@
 ---
-import NavChevron from '../components/NavChevron.astro';
 import SiteFoot from '../components/SiteFoot.astro';
+import Mark from '../components/Mark.astro';
+import { ROOMS, SITE_NAME } from '../data/rooms.js';
+import { UI } from '../data/ui.js';
 
 interface Props {
   title?: string;
@@ -8,14 +10,19 @@ interface Props {
   section?: 'panthea' | 'pangea' | 'translations' | 'trellises' | '';
   bodyClass?: string;
   styles?: string[];
-  navTitle?: string;            // page name shown on the right of the nav bar
-  navParentHref?: string;       // breadcrumb parent URL
-  navParentLabel?: string;      // breadcrumb parent label
-  navGrandParentHref?: string;  // optional grandparent URL
-  navGrandParentLabel?: string; // optional grandparent label
-  tocStyle?: '' | 'grid';       // সূচি shape: a list of names, or a grid of numbers
-  footPrev?: string | null;     // the foot's ← (dimmed when absent)
-  footNext?: string | null;     // the foot's →
+  navTitle?: string;            // this page's name: the rail's title, and the tab's
+  navParentHref?: string;       // the trail, outward from the page
+  navParentLabel?: string;
+  navGrandParentHref?: string;
+  navGrandParentLabel?: string;
+  tocStyle?: '' | 'grid';       // the contents as a list of names, or a grid of numbers
+  rail?: boolean;               // a long page: the reading rail stands beside it
+  footPrev?: string | null;     // the previous and next reading, shown in the rail only
+  footNext?: string | null;
+  prevLabel?: string;           // their names, when the page knows them
+  nextLabel?: string;
+  chrome?: boolean;             // false: no masthead and no footer (the home)
+  foot?: boolean;               // false: no footer (a page held to one screen)
 }
 
 const {
@@ -30,17 +37,18 @@ const {
   navGrandParentHref = '',
   navGrandParentLabel = '',
   tocStyle = '',
+  rail = false,
   footPrev = null,
   footNext = null,
+  prevLabel = '',
+  nextLabel = '',
+  chrome = true,
+  foot = true,
 } = Astro.props;
 
-const isHome = Astro.url.pathname === '/';
-
-/* The tab title is the page's whole breadcrumb read outward, ending at the
-   site's name: title/h1 — parent — grandparent — যৌথ অচেতন. Pages with a
-   breadcrumb derive it from their nav props; pages without one pass `title`
-   (their h1); home passes nothing and gets the bare site name. */
-const SITE_NAME = 'যৌথ অচেতন';
+/* The tab title is the page's whole trail read outward, ending at the
+   site's name. Pages with a trail derive it from their nav props; pages
+   without one pass `title` (their h1); home gets the bare site name. */
 const crumbChain = navTitle ? [navTitle, navParentLabel, navGrandParentLabel] : [title];
 const pageTitle = crumbChain
   .filter(Boolean)
@@ -48,49 +56,63 @@ const pageTitle = crumbChain
   .concat(SITE_NAME)
   .join(' — ');
 
-/* হোম is not a link here — the mark is the way home. */
-const links = [
-  { href: '/panthea/',     label: 'প্যান্থিয়া', gloss: 'গদ্যকবিতায় লেখা গল্পের ধারা', active: section === 'panthea' },
-  { href: '/pangea/',      label: 'প্যাঞ্জিয়া', gloss: 'বাংলা সাহিত্যের আর্কাইভ',      active: section === 'pangea' },
-  { href: '/translations/',label: 'অনুবাদ',     gloss: 'বিশ্বসাহিত্যের বাংলা অনুবাদ',  active: section === 'translations' },
-  { href: '/trellises/',   label: 'মাচা',       gloss: 'চিন্তার মাচায় লেখা প্রবন্ধ',   active: section === 'trellises' },
-];
+const room = ROOMS.find((r) => r.key === section);
 
-/* Each room wears its own tint from the home page's painting, in the bar
-   and in the phone sheet alike; the chosen room wears the deeper one. */
-const TINTS = { '/panthea/': 'blue', '/pangea/': 'pink', '/translations/': 'ochre', '/trellises/': 'sage' };
-
-/* The breadcrumb's ancestors, outermost first, from the section root: the
-   page's half of the bar reads as a whole trail (প্যান্থিয়া › ধাপ ৩ › তলা
-   ২৫১), apart from the site's half where the same section is a room. */
+/* The rail's trail: the room first (its kicker), then the ancestors between
+   it and this page, outermost first. The room's own index is the kicker, so
+   it is not said twice. */
 const ancestors = [
   { href: navGrandParentHref, label: navGrandParentLabel },
   { href: navParentHref,      label: navParentLabel },
-].filter((a) => a.href && a.label);
+].filter((a) => a.href && a.label && a.href !== room?.href);
 
-/* The mark — the same graduated limb the home page prints large, cut down to
-   an eight-division rose with the zenith dot at its head — the identical
-   drawing the favicon carries, so the tab and the bar are one mark. Three
-   sizes: this, the watermark behind the menu sheet, and the home plate. */
-const markTicks = Array.from({ length: 8 }, (_, i) => {
-  const rad = (i * 45 - 67.5) * Math.PI / 180;
-  return {
-    x1: (50 + 33 * Math.cos(rad)).toFixed(2), y1: (50 + 33 * Math.sin(rad)).toFixed(2),
-    x2: (50 + 22 * Math.cos(rad)).toFixed(2), y2: (50 + 22 * Math.sin(rad)).toFixed(2),
+
+/* The selvedge: a thin band of the painting along the masthead's top edge,
+   the four rooms' tints among cream and lavender, irregular as in 1913. */
+const STRIP = [
+  ['blue', 13], ['cream', 5], ['pink', 8], ['lav', 19], ['ochre', 4], ['sage', 10],
+  ['cream', 7], ['blue', 6], ['pink', 3], ['lav', 9], ['ochre', 9], ['sage', 4], ['blue', 3],
+];
+const hasPager = !!(footPrev || footNext);
+const hasCrumbs = Astro.slots.has('rail-crumbs');
+
+/* The band under the page's name in the rail: a strip of the painting, its
+   planes cut from a seed taken from the page's path, so every page has its
+   own and keeps it. The room's tint carries the most of it; cream, lavender
+   and paper between, one note of another room's tint. */
+const band = (() => {
+  let seed = [...Astro.url.pathname].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) | 0, 7);
+  const rnd = () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
-});
+  const t = room?.tint ?? 'blue';
+  const other = ROOMS.filter((r) => r.key !== room?.key)[Math.floor(rnd() * 3)]?.tint ?? 'pink';
+  const fills = [`var(--t-${t}-d)`, 'var(--paper)', `var(--t-${t})`, 'var(--t-cream)',
+                 `var(--t-${t}-d)`, 'var(--t-lav)', `var(--t-${other})`, 'var(--paper)'];
+  // shuffle lightly, keep the room's deep tint first so it opens the strip
+  for (let i = fills.length - 1; i > 1; i--) {
+    const j = 1 + Math.floor(rnd() * i);
+    [fills[i], fills[j]] = [fills[j], fills[i]];
+  }
+  return fills.map((c) => ({ c, w: 1 + Math.floor(rnd() * 6) }));
+})();
+
+/* the way on: a plain line arrow, drawn once, mirrored for the way back */
+const arrowPath = 'M3 10h13.5M11.5 5l5 5-5 5';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#ebeff6" />
+    <meta name="theme-color" content="#fcfcfb" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
 
-    <!-- Bangla type: Noto Serif Bengali for every word on the site, Tiro Bangla for the menubar alone -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -103,6 +125,7 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/chrome.css" />
     {styles.map((href) => <link rel="stylesheet" href={href} />)}
 
     <script is:inline defer src="/js/site.js"></script>
@@ -112,104 +135,125 @@ const markTicks = Array.from({ length: 8 }, (_, i) => {
     <slot name="head" />
   </head>
 
-  <body class={bodyClass} data-toc-style={tocStyle || undefined}>
-    <nav class="nav" id="site-nav">
-      <div class="nav-inner">
-
-        <!-- Three things, the middle one at the bar's exact centre: the four
-             rooms (the site), the mark (the way home, and the divider), and
-             this page's trail and controls. On phones the rooms leave for the
-             sheet behind the burger, and the rest sits left-aligned. -->
-        <div class="nav-site">
-          <!-- one solid plane of the painting's lavender, to the screen's edge -->
-          <div class="nav-paint" aria-hidden="true"></div>
-          <div class="nav-links-wrap">
-            <span class="nav-glide" aria-hidden="true"></span>
-            <ul class="nav-links">
-              {links.map((l) => (
-                <li>
-                  <a href={l.href} class:list={[`room-${TINTS[l.href]}`, l.active && 'active']}>{l.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <body class:list={[bodyClass, room && `room-${room.tint}`, rail && 'has-rail', !chrome && 'no-chrome']} data-toc-style={tocStyle || undefined}>
+    {chrome && (
+      <header class="mast" id="site-nav">
+        <div class="selvedge" aria-hidden="true">
+          {STRIP.map(([c, w]) => <span class={`sv-${c}`} style={`flex-grow:${w}`}></span>)}
         </div>
-
-        <!-- the centre of the bar is the way home: the mark, in a wide cell of
-             its own, divides the site (left) from this page (right) -->
-        <a class:list={['nav-mark', isHome && 'is-here']} href="/" aria-label="খান মুহাম্মদ বিন আসাদ — প্রথম পাতা">
-          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <circle class="nm-ring" cx="50" cy="50" r="42" />
-            <g class="nm-ticks">
-              {markTicks.map((t) => <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />)}
-            </g>
-            <circle class="nm-zenith" cx="50" cy="8" r="6.5" />
-          </svg>
-        </a>
-
-        <!-- this page: breadcrumb and gilt key; site.js adds the সূচি here
-             (inside the gilt key, or on its own when there is no breadcrumb) -->
-        <div class="nav-page">
-          {!navTitle && isHome && <span class="nav-site-name">{SITE_NAME}</span>}
-          {navTitle && (
-            <div class="nav-page-info">
-              {ancestors.map((a) => (
-                <>
-                  <a class="nav-parent" href={a.href}>{a.label}</a>
-                  <NavChevron />
-                </>
-              ))}
-
-              <!-- a section may step in one more crumb of its own here — it
-                   need not be a link (Panthea's ধাপ key opens the floor grid);
-                   it draws its own trailing <NavChevron /> -->
-              <slot name="nav-crumbs" />
-
-              <span class="nav-here">
-                <!-- site.js slots the সূচি inside this gilt key; the whole
-                     key then opens the table of contents. The title is the
-                     default — a section needing controls beside it (Panthea's
-                     ↑ তলা ২৫১ ↓) replaces the whole content, keeping .nav-cur. -->
-                <slot name="nav-here"><span class="nav-cur">{navTitle}</span></slot>
-              </span>
-            </div>
-          )}
-        </div>
-
-        <!-- phones only: the burger, which brings the sheet down -->
-        <button class="nav-burger" type="button" aria-expanded="false"
-                aria-controls="nav-sheet" aria-label="মেনু">
-          <span></span><span></span><span></span>
-        </button>
-
-      </div>
-
-      <!-- how far through the page you are — drawn along the bar's edge -->
-      <span class="nav-progress" aria-hidden="true"></span>
-    </nav>
-
-    <!-- The sheet — phones only. The burger brings it down over the whole
-         screen: the site's rooms, large, each with its gloss. Kept outside
-         <nav> so its fixed position answers to the viewport. -->
-    <div class="nav-sheet" id="nav-sheet" aria-hidden="true">
-      <nav class="nav-sheet-inner" aria-label="বিভাগসমূহ">
-        <a class:list={['nav-sheet-item', isHome && 'active']} href="/">
-          <span class="nav-sheet-label">প্রথম পাতা</span>
-          <span class="nav-sheet-gloss">যৌথ অচেতন</span>
-        </a>
-        {links.map((l) => (
-          <a class:list={['nav-sheet-item', `room-${TINTS[l.href]}`, l.active && 'active']} href={l.href}
-             aria-current={l.active ? 'page' : undefined}>
-            <span class="nav-sheet-label">{l.label}</span>
-            <span class="nav-sheet-gloss">{l.gloss}</span>
+        <div class="mast-inner">
+          <a class="mast-home" href="/" aria-label={UI.home}>
+<Mark class="mast-mark" breathe />
+            <span class="mast-name">{SITE_NAME}</span>
           </a>
-        ))}
-      </nav>
-    </div>
 
-    <slot />
+          <nav class="mast-rooms" aria-label={UI.sections}>
+            {ROOMS.map((r) => (
+              <a href={r.href} class:list={['mast-room', `room-${r.tint}`, r.key === section && 'active']}
+                 aria-current={r.key === section ? 'true' : undefined}>{r.label}</a>
+            ))}
+          </nav>
 
-    <!-- the foot of every page, full width at the very bottom (SiteFoot) -->
-    <SiteFoot prev={footPrev || null} next={footNext || null} />
+          <!-- phones: the burger brings the rooms down as a sheet -->
+          <button class="mast-burger" type="button" aria-expanded="false"
+                  aria-controls="nav-sheet" aria-label={UI.menu}>
+            <span></span><span></span>
+          </button>
+        </div>
+      </header>
+    )}
+
+    {chrome && (
+      <div class="nav-sheet" id="nav-sheet" aria-hidden="true">
+        <nav class="nav-sheet-inner" aria-label={UI.sections}>
+          <a class="nav-sheet-item nav-sheet-home" href="/">
+            <span class="nav-sheet-label">{SITE_NAME}</span>
+            <span class="nav-sheet-gloss">{UI.home}</span>
+          </a>
+          {ROOMS.map((r) => (
+            <a class:list={['nav-sheet-item', `room-${r.tint}`, r.key === section && 'active']} href={r.href}
+               aria-current={r.key === section ? 'page' : undefined}>
+              <span class="nav-sheet-label">{r.label}</span>
+              <span class="nav-sheet-gloss">{r.gloss}</span>
+            </a>
+          ))}
+        </nav>
+      </div>
+    )}
+
+    {rail ? (
+      <div class="shell">
+        <!-- The reading rail: where you are, what this page holds, and the
+             way on. Beside the text on a wide screen, sticking as it scrolls;
+             below that, a sheet the floating key brings up. -->
+        <aside class="rail" id="rail" aria-label={UI.contents}>
+          <div class="rail-inner">
+            <!-- where you are: the room, the path down to this page, its name -->
+            <div class="rail-head">
+              {room && <a class={`rail-room room-${room.tint}`} href={room.href}>{room.label}</a>}
+              {(ancestors.length > 0 || hasCrumbs) && (
+                <ol class="rail-path">
+                  {ancestors.map((a) => <li><a class="rail-crumb" href={a.href}>{a.label}</a></li>)}
+                  <slot name="rail-crumbs" />
+                </ol>
+              )}
+              {navTitle && <p class="rail-title">{navTitle}</p>}
+              <!-- the band of the painting under the name, ending in the mark where
+                   the rail's axis ends; the mark turns as the page is read -->
+              <div class="rail-seal">
+                <span class="rail-band" aria-hidden="true">
+                  {band.map((b) => <span style={`flex-grow:${b.w};background:${b.c}`}></span>)}
+                </span>
+                <Mark class="rail-mark" breathe />
+              </div>
+              <slot name="rail-here" />
+            </div>
+            <!-- what it holds: site.js numbers the contents and draws the
+                 reading line beside them -->
+            <nav class="rail-toc" id="rail-toc" hidden></nav>
+            <!-- the way on: two planes of the painting side by side; the one
+                 under the pointer widens and names the page it leads to -->
+            {hasPager && (
+              <nav class="rail-pager" aria-label={`${UI.prev} / ${UI.next}`}>
+                {footPrev
+                  ? <a class="m-way m-prev" href={footPrev} rel="prev" aria-label={prevLabel ? `${UI.prev}: ${prevLabel}` : UI.prev}>
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d={arrowPath} transform="matrix(-1 0 0 1 20 0)" /></svg>
+                      <span class="m-way-text"><span class="m-way-dir">{UI.prev}</span>{prevLabel && <span class="m-way-name">{prevLabel}</span>}</span>
+                    </a>
+                  : <span class="m-way m-prev m-off" aria-hidden="true"><svg viewBox="0 0 20 20"><path d={arrowPath} transform="matrix(-1 0 0 1 20 0)" /></svg></span>}
+                {footNext
+                  ? <a class="m-way m-next" href={footNext} rel="next" aria-label={nextLabel ? `${UI.next}: ${nextLabel}` : UI.next}>
+                      <span class="m-way-text"><span class="m-way-dir">{UI.next}</span>{nextLabel && <span class="m-way-name">{nextLabel}</span>}</span>
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d={arrowPath} /></svg>
+                    </a>
+                  : <span class="m-way m-next m-off" aria-hidden="true"><svg viewBox="0 0 20 20"><path d={arrowPath} /></svg></span>}
+              </nav>
+            )}
+          </div>
+        </aside>
+
+        <div class="shell-main">
+          <slot />
+
+        </div>
+      </div>
+    ) : (
+      <slot />
+    )}
+
+    {rail && (
+      <>
+        <!-- below the wide screen: the key that brings the rail up as a sheet -->
+        <button class="rail-key" type="button" aria-controls="rail" aria-expanded="false">
+          <span class="rail-key-ring" aria-hidden="true"></span>
+          <span class="rail-key-label">{UI.contents}</span>
+        </button>
+        <div class="rail-scrim" aria-hidden="true"></div>
+        <!-- how far through the page you are, a hairline along the screen's top -->
+        <span class="read-progress" aria-hidden="true"></span>
+      </>
+    )}
+
+    {chrome && foot && <SiteFoot />}
   </body>
 </html>

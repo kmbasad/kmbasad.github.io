@@ -13,3 +13,17 @@ books/
 
 # python bytecode
 __pycache__/
+
+# Only what is published on the site is public. Everything else is private working
+# material and stays out of the repo:
+# agents (definitions, notebooks, plans, session transcripts); .claude/agents/*.md are
+# symlinks into agents/<name>/
+agents/
+# Claude Code: skills, agent links, settings
+.claude/
+CLAUDE.md
+AGENTS.md
+plan.md
+# working docs and one-off content-prep scripts
+docs/
+scripts/

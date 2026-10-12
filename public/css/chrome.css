@@ -1,0 +1,994 @@
+/* =========================================================================
+   chrome.css ~ the site's frame: the masthead, the reading rail, the phone
+   sheets and the colophon (Base.astro, SiteFoot.astro, site.js).
+
+   A magazine's frame, not an application's. The masthead opens the page and
+   scrolls away with it: the mark and the site's name on the left, the four
+   rooms on the right, nothing else. A long page carries its own furniture in
+   the rail beside the text (where you are, what the page holds, the way on),
+   which sticks while the masthead is gone. The colophon closes every page.
+   One thing on the paper at a time: no boxes, space and hairlines only.
+   ========================================================================= */
+
+/* ~ The four rooms' tints (Mondrian, "Composition in Blue, Gray and Pink") ~ */
+.room-blue  { --tint: var(--t-blue);  --tint-d: var(--t-blue-d);  --tint-ink: #3d6a8e; }
+.room-pink  { --tint: var(--t-pink);  --tint-d: var(--t-pink-d);  --tint-ink: #8a5468; }
+.room-ochre { --tint: var(--t-ochre); --tint-d: var(--t-ochre-d); --tint-ink: #8a6a12; }
+.room-sage  { --tint: var(--t-sage);  --tint-d: var(--t-sage-d);  --tint-ink: #626734; }
+
+body {
+  background: var(--paper);
+}
+
+:root {
+  --m-rule: 2px;              /* the weight of a painted line */
+  --rail-w: 18.5rem;          /* the reading rail, and its distance from the text */
+  --rail-gap: clamp(2.4rem, 3.5vw, 4rem);
+  --shell-pad: clamp(1.5rem, 6vw, 7rem);   /* the rail's distance from the screen's edge, the same on every page */
+}
+
+/* the old chalk glow and grain belong to the retired frame */
+body:not(.home-page)::before,
+body:not(.home-page)::after { content: none; }
+
+.mast a, .nav-sheet a, .rail a, .colophon a { background-image: none; }
+
+/* ~ The selvedge: a thin band of the painting, at the masthead's top edge
+   and the colophon's. Planes of tint parted by charcoal hairlines. ~ */
+.selvedge {
+  display: flex;
+  gap: 2px;
+  height: 6px;
+  background: var(--t-line);
+}
+.selvedge span { flex-basis: 0; }
+.sv-blue  { background: var(--t-blue-d); }
+.sv-pink  { background: var(--t-pink-d); }
+.sv-ochre { background: var(--t-ochre-d); }
+.sv-sage  { background: var(--t-sage-d); }
+.sv-cream { background: var(--t-cream); }
+.sv-lav   { background: var(--t-lav); }
+
+/* =========================================================================
+   THE MASTHEAD
+   ========================================================================= */
+
+.mast {
+  position: relative;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+
+.mast-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: var(--mast-h);
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+
+.mast-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.mast-mark {
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+
+.mast-name {
+  font-family: var(--bn-bar);
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  padding-top: 0.2em;          /* Tiro sits high in its box */
+}
+
+.mast-rooms {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 2.8rem);
+}
+
+/* a room: its name alone; its tint rises under it on hover, and stays,
+   deeper, under the room you are in */
+.mast-room {
+  position: relative;
+  font-family: var(--bn-bar);
+  font-size: 1.18rem;
+  line-height: 1;
+  padding: 0.55em 0 0.45em;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+
+.mast-room::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35em;
+  height: 4px;
+  background: var(--tint-d);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.36s var(--ease-out);
+}
+
+.mast-room:hover { color: var(--text); }
+.mast-room:hover::after { transform: scaleX(1); }
+.mast-room.active { color: var(--text); }
+.mast-room.active::after { transform: scaleX(1); background: var(--tint-d); }
+
+.mast-burger { display: none; }
+
+/* =========================================================================
+   THE PHONE SHEET (the burger's): the home and the four rooms, large
+   ========================================================================= */
+
+.nav-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--mast-h) + 6px) 0 env(safe-area-inset-bottom);
+  background: var(--paper);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.22s var(--ease), transform 0.3s var(--ease-out), visibility 0s 0.3s;
+}
+
+html.sheet-open { overflow: hidden; }
+html.sheet-open .nav-sheet {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.22s var(--ease), transform 0.3s var(--ease-out), visibility 0s;
+}
+/* the masthead stays above the sheet, so its burger closes it */
+html.sheet-open .mast { position: fixed; top: 0; left: 0; right: 0; z-index: 700; }
+
+.nav-sheet-inner {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.nav-sheet-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.15rem clamp(20px, 6vw, 40px) 1.15rem calc(clamp(20px, 6vw, 40px) + 14px);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-sheet-item::before {
+  content: '';
+  position: absolute;
+  left: clamp(20px, 6vw, 40px);
+  top: 1.3rem;
+  bottom: 1.3rem;
+  width: 4px;
+  background: var(--tint-d, var(--t-line));
+}
+
+.nav-sheet-label { font-family: var(--bn-bar); font-size: 1.6rem; line-height: 1.2; }
+.nav-sheet-gloss { font-family: var(--bn-font); font-size: 0.92rem; color: var(--text-3); }
+.nav-sheet-item.active .nav-sheet-label { color: var(--tint-ink, var(--accent)); }
+
+/* =========================================================================
+   THE READING RAIL
+   Close beside the text, set flush right against it: one vertical axis runs
+   down the rail's inner edge, and everything hangs from it. The room and the
+   path down to this page (a dot on the axis for each step), the page's name
+   large, then the contents, numbered, with the axis inked down to where you
+   are reading, and at the foot the way on. The rail stands at the same
+   place on every page (--shell-pad from the screen's left edge), the text
+   begins right after it, and a page widens its own column with --main-w.
+   ========================================================================= */
+
+.shell {
+  --main-w: 52rem;
+  display: grid;
+  grid-template-columns:
+    var(--rail-w) var(--rail-gap) minmax(0, var(--main-w)) minmax(1.5rem, 1fr);
+  padding-left: var(--shell-pad);
+}
+
+.rail { grid-column: 1; }
+.shell-main { grid-column: 3; min-width: 0; }
+
+.rail {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100svh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  padding: clamp(3rem, 8vh, 5.5rem) 12px 3rem 12px;
+  margin: 0 -12px;
+  text-align: right;
+}
+.rail::-webkit-scrollbar { display: none; }
+
+/* ~ where you are: the room, the path down, this page, each a small
+   square on one axis, the room's in its tint, this page's in ink ~ */
+.rail-head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 1.6rem;
+}
+.rail-head::before {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 0.75rem;
+  bottom: 1.1rem;
+  width: 1px;
+  background: var(--border-2);
+}
+
+.rail-room, .rail-path li, .rail-title { position: relative; }
+.rail-room::after, .rail-path li::after, .rail-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+}
+
+.rail-room {
+  font-family: var(--bn-font);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--tint-ink);
+  text-decoration: none;
+}
+.rail-room::after {
+  right: -1.6rem;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  background: var(--tint-d);
+  transition: transform 0.3s var(--ease-out);
+}
+.rail-room:hover::after { transform: scale(1.35); }
+
+.rail-path {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.rail-path li::after {
+  right: calc(-1.6rem + 1px);
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1.5px var(--text-4);
+}
+
+.rail-crumb {
+  display: inline-block;
+  font-family: var(--bn-font);
+  font-size: 0.95rem;
+  line-height: 2.1;
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+.rail-room:hover, .rail-crumb:hover { color: var(--accent); }
+
+.rail-title {
+  margin-top: 0.5rem;
+  font-family: var(--bn-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+.rail-title::after {
+  top: 0.65em;
+  right: -1.6rem;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  background: var(--text);
+}
+
+/* the band under the page's name: a strip of the painting */
+.rail-band {
+  display: flex;
+  gap: 2px;
+  width: min(100%, 13rem);
+  height: 11px;
+  margin-top: 1rem;
+  border: 2px solid var(--t-line);
+  background: var(--t-line);
+}
+.rail-band span { flex-basis: 0; }
+
+/* ~ what the page holds ~ */
+.rail-toc { margin-top: clamp(2.2rem, 5vh, 3.4rem); }
+
+.rail-label {
+  margin: 0 0 0.9rem;
+  padding-right: 1.6rem;
+  font-family: var(--bn-font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-3);
+  text-align: right;
+}
+
+.rail-toc ol {
+  position: relative;
+  list-style: none;
+}
+
+/* the reading line, and the ink down to where you are */
+.rail-line {
+  position: absolute;
+  right: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-2);
+}
+.rail-line-fill {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 3px;
+  height: 0;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: height 0.55s var(--ease-out);
+}
+.rail-line-fill::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4.5px var(--t-line);
+}
+
+.rail-toc a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 0.42rem 1.6rem 0.42rem 0;
+  font-family: var(--bn-font);
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+.rt-num {
+  flex: none;
+  min-width: 1.3rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  font-variant-numeric: tabular-nums;
+}
+.rail-toc a:hover { color: var(--accent); }
+.rail-toc a.is-past { color: var(--text-4); }
+.rail-toc a.is-past .rt-num { color: var(--text-4); }
+.rail-toc a.is-active { color: var(--text); font-weight: 600; }
+.rail-toc a.is-active .rt-num { color: var(--accent); }
+
+/* the ghazals and sonnets: a grid of bare numbers, flush right */
+.rail-toc.is-grid ol {
+  display: grid;
+  grid-template-columns: repeat(6, 2.3rem);
+  justify-content: end;
+  gap: 3px;
+}
+.rail-toc.is-grid .rail-label { padding-right: 0; }
+.rail-toc.is-grid a {
+  justify-content: center;
+  padding: 0.42rem 0;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  align-items: center;
+}
+.rail-toc.is-grid a.is-active { background: var(--accent); color: #fff; }
+.rail-toc.is-grid a.is-past { color: var(--text-4); }
+
+/* ~ the way on: two planes of the painting side by side, parted by a
+   charcoal line. At rest each holds its arrow and its word; the one under
+   the pointer widens, the other gives way, and the widened one names the
+   page it leads to ~ */
+.rail-pager {
+  display: flex;
+  gap: 2px;
+  width: min(100%, 15rem);
+  margin: clamp(2.4rem, 5vh, 3.6rem) 0 0 auto;
+  border: 2px solid var(--t-line);
+  background: var(--t-line);
+}
+
+.m-way {
+  flex: 1 1 0;
+  min-width: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 3.4rem;
+  padding: 0 0.85rem;
+  overflow: hidden;
+  background: var(--t-cream);
+  color: var(--t-line);
+  text-decoration: none;
+  transition: flex-grow 0.55s var(--ease-out), background 0.35s var(--ease);
+}
+.m-next { justify-content: flex-end; background: var(--tint, var(--t-blue)); text-align: right; }
+
+.m-way svg {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: square;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.m-way-text {
+  position: relative;
+  min-width: 0;
+  flex: 1;
+  display: grid;
+}
+.m-way-dir, .m-way-name {
+  grid-area: 1 / 1;
+  align-self: center;
+  overflow: hidden;
+  transition: opacity 0.3s var(--ease), transform 0.4s var(--ease-out);
+}
+.m-way-dir {
+  white-space: nowrap;
+  font-family: var(--bn-font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.m-way-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-family: var(--bn-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+/* the plane under the pointer widens and says where it goes */
+.rail-pager:hover .m-way:not(.m-off) { flex-grow: 0.35; }
+.rail-pager .m-way:not(.m-off):hover,
+.rail-pager .m-way:not(.m-off):focus-visible { flex-grow: 4; outline: none; }
+.m-prev:hover { background: var(--t-ochre); }
+.m-next:hover { background: var(--tint-d, var(--t-blue-d)); }
+.m-way:hover .m-way-name:not(:empty) { opacity: 1; transform: none; }
+.m-way:hover .m-way-text:has(.m-way-name) .m-way-dir { opacity: 0; transform: translateY(-0.5rem); }
+.rail-pager:hover .m-way:not(:hover) .m-way-text { opacity: 0; }
+.m-way-text { transition: opacity 0.25s var(--ease); }
+.m-next:hover svg { transform: translateX(3px); }
+.m-prev:hover svg { transform: translateX(-3px); }
+
+.m-off { background: var(--t-lav); color: rgba(42, 45, 51, 0.3); flex-grow: 0.5; }
+
+/* how far through the page: a hairline along the screen's top */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  height: 3px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--p, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.rail-key, .rail-scrim { display: none; }
+
+/* ~ Below the wide screen: the rail becomes a sheet the key brings up ~ */
+@media (max-width: 1099px) {
+  .shell { display: block; padding-left: 0; }
+
+  .rail {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 420;
+    max-height: min(80svh, 44rem);
+    padding: 1.6rem clamp(22px, 6vw, 40px) calc(1.6rem + env(safe-area-inset-bottom));
+    border-right: none;
+    background: var(--paper);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 40px rgba(14, 26, 43, 0.16);
+    transform: translateY(105%);
+    visibility: hidden;
+    transition: transform 0.34s var(--ease-out), visibility 0s 0.34s;
+  }
+
+  /* the grab-bar */
+  .rail::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+    border-radius: 2px;
+    background: var(--border-2);
+  }
+
+  html.rail-open { overflow: hidden; }
+  html.rail-open .rail {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.34s var(--ease-out), visibility 0s;
+  }
+
+  .rail-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 410;
+    background: rgba(14, 20, 30, 0.32);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease);
+  }
+  html.rail-open .rail-scrim { opacity: 1; pointer-events: auto; }
+
+  .rail-key {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 400;
+    height: 46px;
+    padding: 0 1.15rem 0 0.95rem;
+    border: none;
+    border-radius: 23px;
+    background: var(--t-slate);
+    color: #f3f4f6;
+    font-family: var(--bn-font);
+    font-size: 0.98rem;
+    box-shadow: 0 6px 22px rgba(14, 26, 43, 0.28);
+    cursor: pointer;
+    transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease);
+  }
+  .rail-key-label { padding-top: 0.1em; }
+
+  /* the key's ring fills as the page is read */
+  .rail-key-ring {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: conic-gradient(var(--t-ochre) calc(var(--p, 0) * 360deg), rgba(255, 255, 255, 0.22) 0);
+    -webkit-mask: radial-gradient(circle, transparent 5px, #000 5.5px);
+            mask: radial-gradient(circle, transparent 5px, #000 5.5px);
+  }
+
+  html.rail-open .rail-key { opacity: 0; pointer-events: none; }
+
+  /* in the sheet the rail reads from the left, its axis on the left edge */
+  .rail { text-align: left; }
+  .rail-head, .rail-path { align-items: flex-start; }
+  .rail-head { padding: 0 0 0 1.6rem; }
+  .rail-head::before { right: auto; left: 4px; }
+  .rail-room::after, .rail-title::after { right: auto; left: -1.6rem; }
+  .rail-path li::after { right: auto; left: calc(-1.6rem + 1px); }
+  .rail-title { font-size: 1.45rem; }
+  .rail-label { text-align: left; padding: 0 0 0 1.6rem; }
+  .rail-line { right: auto; left: 4px; }
+  .rail-toc a { flex-direction: row-reverse; justify-content: flex-end; padding: 0.5rem 0 0.5rem 1.6rem; }
+  .rail-toc.is-grid ol { justify-content: start; grid-template-columns: repeat(auto-fill, 2.5rem); }
+  .rail-toc.is-grid .rail-label { padding-left: 0; }
+  .rail { margin: 0; }
+  .rail-pager { margin-left: 0; width: 100%; }
+  .m-way-name { opacity: 1; transform: none; }
+  .m-way-text:has(.m-way-name) .m-way-dir { display: none; }
+  .rail-toc, .rail-pager { margin-top: 2rem; }
+}
+
+/* =========================================================================
+   THE COLOPHON
+   ========================================================================= */
+
+.colophon {
+  position: relative;
+  z-index: 20;                /* above a section index's fixed painting */
+  margin-top: 6rem;
+  background: var(--t-slate);
+  color: #c4c9d3;
+}
+
+.colo-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.6fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  padding: clamp(2.8rem, 5vw, 4.2rem) clamp(20px, 4vw, 56px) calc(clamp(2.8rem, 5vw, 4.2rem) + env(safe-area-inset-bottom));
+}
+
+.colo-name {
+  font-family: var(--bn-bar);
+  font-size: 1.7rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.colo-about p {
+  margin-top: 0.9rem;
+  max-width: 30em;
+  font-family: var(--bn-font);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #aab0bc;
+}
+
+.colo-rooms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem 2.2rem;
+  align-content: start;
+}
+
+.colo-room {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-left: 0.95rem;
+  border-left: 3px solid var(--tint-d);
+  text-decoration: none;
+}
+.colo-room-name { font-family: var(--bn-bar); font-size: 1.25rem; line-height: 1.25; color: var(--tint); }
+.colo-room-gloss { font-family: var(--bn-font); font-size: 0.86rem; line-height: 1.6; color: #9aa1ad; }
+.colo-room:hover .colo-room-name { color: #fff; }
+
+.colo-contact { list-style: none; display: flex; flex-direction: column; gap: 0.15rem; line-height: 1.6; }
+.colo-contact a { font-family: var(--ui-font); font-size: 0.88rem; color: #c4c9d3; text-decoration: none; }
+.colo-contact a:hover { color: #fff; }
+.colo-author { margin-bottom: 0.55rem; font-family: var(--ui-font); font-size: 0.95rem; font-weight: 600; color: #fff; }
+.colo-declare { margin-top: 0.75rem; max-width: 17rem; font-family: var(--ui-font); font-size: 0.78rem; line-height: 1.55; font-style: italic; color: #aab0bc; }
+.colo-license { margin-top: 0.35rem; }
+.colo-license a { font-size: 0.78rem; letter-spacing: 0.03em; color: #8c93a0; }
+
+.colo-base {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem clamp(20px, 4vw, 56px) calc(1.1rem + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-family: var(--ui-font);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: #8c93a0;
+}
+.colo-base a { color: #8c93a0; text-decoration: none; }
+.colo-base a:hover { color: #fff; }
+
+/* =========================================================================
+   TABLETS AND PHONES
+   ========================================================================= */
+
+@media (max-width: 1099px) {
+  .colo-inner { grid-template-columns: 1fr 1fr; }
+  .colo-about { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  :root { --mast-h: 60px; }
+
+  .mast-inner { padding: 0 max(18px, env(safe-area-inset-left)) 0 max(18px, env(safe-area-inset-left)); gap: 1rem; }
+  .mast-mark { width: 28px; height: 28px; }
+  .mast-name { font-size: 1.3rem; }
+  .mast-rooms { display: none; }
+
+  .mast-burger {
+    display: grid;
+    place-content: center;
+    gap: 7px;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .mast-burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    transition: transform 0.3s var(--ease-out);
+  }
+  html.sheet-open .mast-burger span:first-child { transform: translateY(4.5px) rotate(45deg); }
+  html.sheet-open .mast-burger span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+
+  .colophon { margin-top: 4rem; }
+  .colo-inner { grid-template-columns: 1fr; gap: 2.4rem; }
+  .colo-rooms { grid-template-columns: 1fr 1fr; gap: 1.4rem 1.2rem; }
+  .colo-base { flex-direction: column; gap: 0.3rem; }
+
+}
+
+@media (min-width: 761px) {
+  .nav-sheet { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-sheet, .rail, .rail-scrim, .rail-key, .mast-room::after, .mast-mark { transition: none; }
+}
+
+/* page changes crossfade where the browser can */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 0.24s; }
+
+/* a contents jump lands its target clear of the screen's top edge */
+[data-toc] { scroll-margin-top: 1.5rem; }
+
+/* =========================================================================
+   LEAVES ~ the panels that open from the right: the dictionary beside a
+   poem (.book-dict.leaf) and a trellis's cell (.table-panel). One look for
+   both: a sheet of paper standing on the screen's right edge, bound by a
+   charcoal line, a band of the room's painting along its head, its name in
+   small bold letters over a large word, and a square close key. It starts
+   where the masthead ends (--leaf-top, kept by site.js), so it never covers
+   the masthead, and takes the whole height once the masthead has gone.
+   ========================================================================= */
+
+.leaf,
+.table-panel {
+  position: fixed;
+  top: var(--leaf-top, 0px);
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--paper);
+  border-left: 3px solid var(--t-line);
+  box-shadow: -24px 0 48px -32px rgba(14, 26, 43, 0.45);
+}
+
+.table-panel {
+  width: min(460px, 100vw);
+  transform: translateX(105%);
+  visibility: hidden;
+  transition: transform 0.38s var(--ease-out), visibility 0s 0.38s;
+}
+.table-panel.open {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.38s var(--ease-out), visibility 0s;
+}
+
+/* the band of the painting along the head */
+.leaf-band,
+.panel-bar {
+  display: block;
+  flex: none;
+  height: 12px;
+  border-bottom: 2px solid var(--t-line);
+  background: linear-gradient(90deg,
+    var(--tint-d, var(--t-blue-d)) 0 34%, var(--t-line) 34% calc(34% + 2px),
+    var(--t-cream) calc(34% + 2px) 57%, var(--t-line) 57% calc(57% + 2px),
+    var(--tint, var(--t-blue)) calc(57% + 2px) 82%, var(--t-line) 82% calc(82% + 2px),
+    var(--t-lav) calc(82% + 2px) 100%);
+}
+
+/* the square close key */
+.leaf-close,
+.panel-close-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: 2px solid var(--t-line);
+  border-radius: 0;
+  background: var(--t-cream);
+  color: var(--t-line);
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+}
+.leaf-close:hover,
+.panel-close-btn:hover { background: var(--tint, var(--t-blue)); color: var(--t-line); }
+
+.leaf-kicker,
+.panel-label {
+  font-family: var(--bn-font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: var(--tint-ink, var(--text-3));
+}
+
+/* ~ the trellis cell, in the leaf's terms ~ */
+.panel-close-btn { position: absolute; top: calc(12px + 1.1rem); right: 1.2rem; z-index: 2; }
+
+.panel-head {
+  flex: none;
+  padding: 1.2rem 4.4rem 1.2rem 1.6rem;
+  background: none;
+  border-bottom: 1px solid var(--border);
+}
+.panel-label { margin-bottom: 0.7rem; }
+.panel-prop {
+  font-family: var(--bn-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+.panel-name {
+  margin-top: 0.5rem;
+  font-family: var(--bn-font);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--tint-ink, var(--accent));
+}
+.panel-meta {
+  margin-top: 0.15rem;
+  font-family: var(--bn-font);
+  font-size: 0.85rem;
+  color: var(--text-3);
+}
+.panel-meta:empty,
+.panel-short:empty { display: none; }
+
+.panel-body { flex: 1; padding: 1.4rem 1.6rem 2.4rem; }
+.panel-body.panel-refresh, .panel-head.panel-refresh { animation: leafIn 0.22s ease both; }
+@keyframes leafIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.panel-short {
+  margin-bottom: 1.3rem;
+  padding: 0.1rem 0 0.1rem 1rem;
+  border-left: 3px solid var(--tint-d, var(--t-blue-d));
+  font-family: var(--bn-font);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+.panel-long {
+  font-family: var(--bn-font);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text);
+}
+.panel-long p { margin-bottom: 0.9em; }
+.panel-long p:last-child { margin-bottom: 0; }
+.panel-long em { font-style: normal; color: var(--tint-ink, var(--accent)); }
+
+/* the way between cells: two planes parted by a charcoal line */
+.panel-nav {
+  flex: none;
+  display: flex;
+  gap: 2px;
+  margin: 0 1.6rem 1.4rem;
+  padding: 0;
+  border: 2px solid var(--t-line);
+  background: var(--t-line);
+  padding-bottom: 0 !important;
+}
+.panel-nav button {
+  flex: 1;
+  height: 2.9rem;
+  padding: 0 0.9rem;
+  border: none;
+  border-radius: 0;
+  background: var(--t-cream);
+  color: var(--t-line);
+  font-family: var(--bn-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s var(--ease);
+}
+.panel-nav button + button { background: var(--tint, var(--t-blue)); }
+.panel-nav button:hover:not(:disabled) { background: var(--tint-d, var(--t-blue-d)); }
+.panel-nav button:disabled { background: var(--t-lav); color: rgba(42, 45, 51, 0.35); cursor: default; }
+
+@media (max-width: 760px) {
+  .table-panel { width: 100vw; border-left: none; }
+}
+
+/* a section index is a painting to the screen's foot: the colophon follows
+   it directly, no strip of paper between */
+body.painting-page .colophon,
+body.pn-home-page .colophon { margin-top: 0; }
+
+/* -- The mark (src/components/Mark.astro): Mondrian's lozenge, white planes
+   and fine charcoal lines, gold at the head, lapis below -- */
+.mark { display: block; overflow: visible; }
+.mark .mk-paper { fill: #f7f4ec; }
+.mark .mk-lapis { fill: #1d4f9b; }
+.mark .mk-line { stroke: #22252b; stroke-width: 2.6; }
+.mark .mk-edge { fill: none; stroke: #22252b; stroke-width: 2.6; stroke-linejoin: miter; }
+.mark--breathe .mk-gold { animation: mk-breathe 8s ease-in-out infinite; }
+@keyframes mk-breathe {
+  0%, 100% { filter: brightness(0.94) saturate(0.95); }
+  50% { filter: brightness(1.12) saturate(1.15); }
+}
+@media (prefers-reduced-motion: reduce) { .mark--breathe .mk-gold { animation: none; } }
+
+/* under the pointer the lozenge turns a quarter round, and back */
+.mark { transition: transform 0.8s cubic-bezier(0.45, 0, 0.2, 1); }
+.mast-home:hover .mark,
+.hp--name:hover .home-mark { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { .mark { transition: none; } }
+
+/* the band under the page's name ends in the mark, centred on the rail's
+   axis (the markers' centre line, 4.5px in from the head's edge), where the
+   axis line ends; the mark turns half a revolution over the length of the
+   page as it is read (--p, kept by site.js) */
+.rail-seal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: calc(100% + 1.6rem + 8.5px);
+  margin: 1rem calc(-1.6rem - 8.5px) 0 0;
+}
+.rail-seal .rail-band { flex: 0 1 13rem; width: auto; margin: 0; }
+.rail-mark {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  transform: rotate(calc(var(--p, 0) * 180deg));
+}
+.rail-mark:hover { transform: rotate(calc(var(--p, 0) * 180deg + 90deg)); }
+.rail-head::before { bottom: 13px; }
+@media (max-width: 1099px) {
+  .rail-seal { flex-direction: row-reverse; justify-content: flex-end; margin: 1rem 0 0 calc(-1.6rem - 8.5px); }
+}

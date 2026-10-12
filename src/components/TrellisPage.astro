@@ -3,27 +3,26 @@
    whole first screen under the bar (a file with several matrices becomes a
    slider there) — and the essay waits below it, one scroll down. Phones keep
    the reading-first order: essay above, matrix after (trellis.css).
-   No in-page title: the name lives in the breadcrumb, and the সূচি beside it
-   holds the matrices and the essay. */
+   The name is in the rail, whose contents list the matrices and the essay;
+   the essay below carries its own headline. */
 import Base from '../layouts/Base.astro';
 import { trellisOrder } from '../data/trellis-order.js';
 
 const { title } = Astro.props;
-// the neighbours, for the footer's arrows
+// the neighbours, for the rail's previous / next
 const slug = (Astro.url.pathname.match(/trellises\/([^/]+)/) || [])[1];
 const at = trellisOrder.indexOf(slug);
 const prev = at > 0 ? `/trellises/${trellisOrder[at - 1]}/` : null;
 const next = at >= 0 && at < trellisOrder.length - 1 ? `/trellises/${trellisOrder[at + 1]}/` : null;
 ---
 
-<Base section="trellises" styles={['/css/trellis.css']}
+<Base rail section="trellises" styles={['/css/trellis.css']}
   navTitle={title} navParentHref="/trellises/" navParentLabel="মাচা"
   footPrev={prev} footNext={next}
 >
   <div class="trellis-page">
     <section class="trellis-hero">
       <div id="trellis-mount"></div>
-      <a class="trellis-cue" href="#essay">প্রবন্ধ <span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="trellis-essay essay-bn">

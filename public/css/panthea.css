@@ -93,60 +93,60 @@
    same gutter at both edges as between them. One type scale runs across
    both: the building's scale, the floor numbers and the captions are all
    --pn-fs-small; only the ধাপ's name is a step larger. */
-html:has(> body.pn-home-page),
-body.pn-home-page {
-  overflow: hidden;
-}
+/* the navigator is one screen under the masthead; the colophon follows
+   below it, as on every page */
 
 .pn-home {
-  --pn-gutter: clamp(20px, 3vw, 56px);
   --pn-fs-small: 12.5px;   /* keep in step with FS in index.astro */
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--pn-gutter);
-  /* the shelf's rule (--m-rule) is not in --nav-now */
-  flex: none;
-  height: calc(100svh - var(--nav-now) - var(--m-rule) - var(--foot-h));
-  padding: clamp(18px, 3.4vh, 40px) var(--pn-gutter);
-  box-sizing: border-box;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 3px;
+  height: calc(100svh - var(--mast-h));
+  overflow: hidden;
+  background: #141518;
+  border-top: 3px solid #141518;
+}
+
+/* the painting's own planes; the two that carry the page are white */
+.pn-fill { min-width: 0; min-height: 0; }
+.pn-fill--t { display: none; }
+
+/* a tablet held upright: a taller painting of its own, 12 by 16, the
+   building tall on the left and the lift in the plane beside it */
+@media (orientation: portrait) and (min-width: 761px) and (max-width: 1099px) {
+  .pn-home {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+  }
+  .pn-fill--w { display: none; }
+  .pn-fill--t { display: block; }
+  .pn-home .pn-half { grid-area: var(--area-t); }
 }
 
 .pn-half {
+  grid-area: var(--area);
   position: relative;
-  z-index: 1;
   min-width: 0;
   min-height: 0;
+  background: #f7f5ef;
 }
 
-/* Broadway Boogie Woogie, faint, behind the whole navigator */
-.pn-home { position: relative; }
-.pn-bbw {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.16;
-  pointer-events: none;
-}
-
-/* The two halves meet at the page's centre line: the building stands
-   against the inner edge of its half and the lift opens from the inner edge
-   of its own, the gutter between them and nothing more, so the pair reads as
-   one thing. The building is as tall as the half allows; on a narrow half it
-   gives up its margins (the svg slices), never its height. */
+/* the building stands in its tall plane, summit to nadir, its scale of the
+   cosmos in the plane's left margin */
 .pn-half--building {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  padding: 2.4vh 0.6rem;
 }
-
 .pn-section--map {
   display: block;
   height: 100%;
   width: auto;
   max-width: 100%;
   aspect-ratio: 176 / 446;
-  overflow: visible;         /* the scale stands out in the margin to its left */
+  overflow: visible;
 }
 
 /* ── the lift ── */
@@ -154,9 +154,7 @@ body.pn-home-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 660px;
-  width: 100%;
-  justify-self: start;
+  padding: clamp(1rem, 3vh, 2.4rem) clamp(1.2rem, 2.4vw, 2.6rem);
 }
 
 .pn-lift-head {
@@ -175,11 +173,16 @@ body.pn-home-page {
   text-align: left;
 }
 
+/* the DHAP's name (the arrows beside it are for phones) */
+.pn-lift-id { display: flex; align-items: center; gap: 0.8rem; }
+.pn-lift-id-text { min-width: 0; }
+.pn-step { display: none; }
+
 .pn-lift-name {
   margin: 0;
   text-align: left;
   font-family: var(--bn-display);
-  font-size: 19px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 1.3;
   color: var(--accent-2);
@@ -296,8 +299,11 @@ body.pn-home-page {
 
 
 /* ── the caption: the ধাপ's line at rest, the floor's গল্প on hover ── */
+/* Its height is fixed and its synopsis held to three lines, so whatever a
+   floor says, nothing on the page moves and no scroll bar appears. */
 .pn-say {
-  min-height: 5.6em;
+  height: 8.4em;
+  overflow: hidden;
   margin-top: clamp(8px, 2vh, 22px);
   text-align: left;
   font-family: var(--bn-font);
@@ -321,6 +327,10 @@ body.pn-home-page {
 }
 
 .pn-say-syn {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   max-width: 46ch;
   margin: 2px 0 0 !important;
   font-style: italic;
@@ -329,126 +339,6 @@ body.pn-home-page {
 .pn-say--floor:not(.pn-say--empty) .pn-say-syn {
   font-style: normal;
   color: var(--text-2);
-}
-
-/* ══ A floor — the story, centred, and where you are ══ */
-.pn-page {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: clamp(28px, 6vh, 64px) 20px 120px;
-}
-
-/* the section, small, in the corner: fixed beside the column while there is
-   room for it, set into the column's corner when there is not */
-.pn-inset {
-  position: fixed;
-  top: calc(var(--nav-now) + 18px);
-  right: clamp(16px, 2vw, 28px);
-  z-index: 5;
-  width: 84px;
-  aspect-ratio: 148 / 432;
-  transition: top 0.2s ease;
-}
-
-/* on wide screens a Mondrian strip runs down the edge: the inset steps in
-   past it */
-@media (min-width: 1100px) {
-  .pn-inset { right: calc(clamp(16px, 2vw, 28px) + 25px); }
-}
-
-.pn-inset .pn-section {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* ── The floor-grid box ──
-      ONE box with two homes: pinned into a corner of the maps on /panthea/,
-      and dropped from the segment button on a floor page. Everything about
-      how it LOOKS lives in this rule, so the two are the same object; the
-      modifiers further down say only where each one is anchored.
-
-      Its height is its content's. The width is fixed, so the chip grid always
-      falls into the same ten columns, and the number of ROWS is then just the
-      segment's floor count — a forty-floor ধাপ gets a short box, a hundred-
-      floor one a tall. The anchored edge stays put and the free edge moves.
-      Transparent enough that the metre scale stays legible beneath it. ── */
-.pn-floors {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  /* Ten columns is what makes a 100-floor ধাপ exactly ten rows, with no
-     orphan on a line of its own — so the width is derived from that, not
-     chosen. A column has to fit the widest chip in the building, and that is
-     the summit's ও the nadirের ১০০০: four Bengali digits, 36px with its padding and
-     border. Ten of those plus nine 4px gaps is 396px of grid; border-box adds
-     2px border and 24px padding, and 432 leaves ~1px of slack per track
-     against font rounding while still being far too narrow for an eleventh
-     column (which would want 436). */
-  width: 432px;
-  max-width: calc(100vw - 24px);
-  max-height: min(72vh, 540px);
-  background: color-mix(in srgb, var(--bg) 66%, transparent);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
-  padding: 10px 12px 12px;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  transition: opacity 0.16s ease, transform 0.16s ease;
-}
-
-.pn-floors.open {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-}
-
-
-.pn-floors-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px 8px;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-  font-family: var(--bn-font);
-}
-
-.pn-floors-head b {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.pn-floors-meta {
-  font-size: 11.5px;
-  color: var(--text-3);
-}
-
-.pn-floors-close {
-  margin-left: auto;
-  appearance: none;
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  line-height: 1;
-  font-size: 14px;
-  color: var(--text-3);
-  cursor: pointer;
-}
-
-.pn-floors-close:hover {
-  border-color: var(--accent);
-  color: var(--accent);
 }
 
 .pn-seg-dot {
@@ -469,283 +359,268 @@ body.pn-home-page {
 .pn-dot-u5 { background: var(--pn-u5); } .pn-dot-u6 { background: var(--pn-u6); }
 .pn-dot-u7 { background: var(--pn-u7); }
 
-/* ten columns at the box's fixed width; the rows follow from the floor count,
-   and the box's height follows from the rows. 36px is the four-digit floor
-   (১০০০) — a narrower track leaves that one chip hanging out of its column.
-   overflow must name BOTH axes: a lone `overflow-y: auto` promotes the
-   still-`visible` x axis to `auto` as well, and then a fraction of a pixel of
-   grid rounding is enough to hang a horizontal scrollbar under the numbers. */
-.pn-chips {
-  flex: 1;
-  min-height: 0;
+/* =========================================================================
+   A FLOOR ~ the story in one reading column under its headline, the
+   building in section small beside it; the rail (Base) carries the DHAP, its
+   lift of a hundred floors, and the story's contents.
+   ========================================================================= */
+
+.pn-page {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-  gap: 4px;
-  align-content: flex-start;
-  overflow: hidden auto;
+  grid-template-columns: minmax(0, var(--read-measure)) 84px;
+  grid-template-areas:
+    "head  inset"
+    "story inset";
+  justify-content: start;
+  column-gap: clamp(32px, 4vw, 72px);
+  padding: clamp(3rem, 8vh, 5.5rem) 0 0;
 }
 
-.pn-chip {
-  padding: 5px 6px;
-  text-align: center;
+/* the section, small, beside the column: it sticks while the story runs */
+.pn-inset {
+  grid-area: inset;
+  position: sticky;
+  top: var(--rail-top);
+  align-self: start;
+  width: 84px;
+  aspect-ratio: 148 / 432;
+}
+
+.pn-inset .pn-section {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ~ the headline: where, what, and the story in a sentence ~ */
+.pn-head {
+  grid-area: head;
+  margin-bottom: 2.6rem;
+  padding-bottom: 2.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pn-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: var(--bn-font);
-  font-size: 12.5px;
+  font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.25;
+  color: var(--tint-ink, #3d6a8e);
+  margin-bottom: 1.1rem;
+}
+.pn-kicker .pn-seg-dot { width: 11px; height: 11px; flex-basis: 11px; }
+.pn-kicker-sep { color: var(--text-4); font-weight: 400; }
+
+.pn-title {
+  font-family: var(--bn-display);
+  font-size: var(--title-fs);
+  font-weight: 600;
+  line-height: 1.3;
   color: var(--text);
-  text-decoration: none;
-  background: color-mix(in srgb, var(--bg) 45%, transparent);
-  border: 1px solid var(--border-2);
-  border-radius: 7px;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  letter-spacing: -0.005em;
 }
 
-.pn-chip:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+.pn-standfirst {
+  margin-top: 1.1rem;
+  font-family: var(--bn-font);
+  font-size: var(--stand-fs);
+  line-height: 1.8;
+  color: var(--text-3);
 }
 
-/* ══ Panthea in the menubar ══
-   All of Panthea's navigation is breadcrumb now: প্যান্থিয়া › ধাপ › ↑ floor ↓.
-   The ধাপ key and the floor arrows are glass keys of the same family as the
-   ancestor links they sit among — see .nav-parent in style.css. */
-
-/* the ধাপ crumb — the key plus its chevron, hidden together on গ্রাউন্ড, which
-   belongs to no ধাপ (hidden, never removed: the ride must restore it) */
-.pn-seg-crumb {
-  display: contents;
-}
-
-.pn-seg-crumb.pnf-off {
-  display: none;
-}
-
-/* the ধাপ key: an ancestor key that opens the floor grid instead of a page */
-.pn-seg-key {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  appearance: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-.pn-seg-key .pn-seg-dot {
-  width: 9px;
-  height: 9px;
-  flex: 0 0 9px;
-}
-
-/* ── The arrows ──
-   Both are stepped the same way: ↑ name ↓ — the ধাপ word crosses a whole
-   ধাপ, the gilt word one তলা. They are the primary way through 1400 pages,
-   so they are drawn in lapis and given a generous target; touched, a soft
-   lapis disc rises under the glyph. No frames, like the rest of the bar. */
-.pn-nav-arrow {
-  display: inline-grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--accent);
-  text-decoration: none;
-  background-image: none;
-  transition: color 0.15s ease, background 0.15s ease;
-}
-
-.pn-nav-arrow:hover {
-  color: #fff;
-  background: var(--accent);
-}
-
-/* on the bar's slate field the arrows and the ধাপ word are light type */
-.nav .pn-nav-arrow { color: #d6dae2; }
-.nav .pn-nav-arrow:hover { color: #fff; background: rgba(255, 255, 255, 0.14); }
-.nav .pn-seg-key { color: #d6dae2; }
-.nav .pn-seg-key:hover { color: #fff; }
-.nav .pn-seg-key .pn-seg-dot { border-color: rgba(255, 255, 255, 0.3); }
-
-/* on a phone the bar is narrow: the ধাপ word keeps its floor grid but gives
-   up its own arrows, so that the floor's name and arrows fit whole */
-@media (max-width: 760px) {
-  .nav .pn-seg-up,
-  .nav .pn-seg-down { display: none; }
-}
-
-/* the number sits between its arrows like any title */
-.panthea-page .nav-cur {
-  margin: 0 2px;
-}
-
-/* ── The ধাপ word and its arrows ── */
-.pn-key-group {
-  display: inline-flex;
-  align-items: center;
-  min-width: 0;
-}
-
-.pn-key-group .pn-seg-key {
-  border: none;
-  background: transparent;
-}
-
-/* ── home ২ of the floor-grid box: dropped from the ধাপ key in the menubar
-      rather than pinned into the design panel. .nav-page-info clips its
-      overflow, so this copy is fixed to the viewport and the component's JS
-      hangs it under the key on open. Anchoring only — every other property
-      comes from .pn-floors, so the two remain one object. ── */
-.pn-floors--drop {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 250;
-}
-
-/* the floor you are actually on, lit inside its own grid */
-.pn-chip-here {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--accent-light);
-}
-
-
-/* the story is pure Markdown (src/stories/panthea/): the opening paragraph
-   is the lede, *emphasis* inside a heading is the small floor-range tag,
-   and a blockquote sets the coda. */
-.pn-story > p:first-child:not(.pn-story-empty) {
-  font-size: 17.5px;
-  line-height: 2;
-  color: var(--text-2);
-  margin: 0 0 12px;
-}
+/* ~ the story: pure Markdown (src/stories/panthea/). The opening paragraph
+   is the lede, *emphasis* inside a heading is a small tag, a paragraph of
+   broken lines is verse, and a blockquote sets the coda. ~ */
+.pn-story { grid-area: story; min-width: 0; }
 
 .pn-prose {
   font-family: var(--bn-font);
-  font-size: 17px;
-  line-height: 2.05;
-  color: var(--text);
+  font-size: var(--read-fs);
+  line-height: var(--read-lh);
+  letter-spacing: var(--read-ls);
+  color: var(--read-ink);
 }
 
 .pn-prose p {
-  margin: 0 0 1.15em;
-  text-align: justify;
-}
-
-.pn-prose h2 {
-  font-family: var(--bn-font);
-  font-size: clamp(21px, 2.4vw, 27px);
-  font-weight: 700;
-  color: var(--text);
-  margin: 2.2em 0 0.8em;
-  padding-top: 1.2em;
-  border-top: 1px solid var(--border);
+  margin: 0 0 var(--read-gap);
   text-align: left;
 }
 
-.pn-prose h3 {
-  font-family: var(--bn-font);
-  font-size: 19px;
-  font-weight: 600;
+.pn-story > p:first-child:not(.pn-story-empty) {
   color: var(--text);
-  margin: 1.9em 0 0.6em;
+}
+
+/* verse: a paragraph of broken lines sits in from the left, unjustified */
+.pn-prose p:has(br) {
+  text-align: left;
+  padding-left: 1.6em;
+  line-height: var(--verse-lh);
+}
+
+.pn-prose del { color: var(--text-4); text-decoration-thickness: 1px; }
+
+.pn-prose h2 {
+  font-family: var(--bn-display);
+  font-size: var(--h2-fs);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+  margin: 2.8em 0 1em;
+  text-align: left;
+}
+
+/* a short gold rule stands over each part, the section break */
+.pn-prose h2::before {
+  content: '';
+  display: block;
+  width: 2.6rem;
+  height: 3px;
+  margin-bottom: 1.1rem;
+  background: var(--accent-2);
+}
+
+.pn-prose h3 {
+  font-family: var(--bn-display);
+  font-size: 1.24rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 2.2em 0 0.7em;
   text-align: left;
 }
 
 .pn-story h2 em,
 .pn-story h3 em {
   font-style: normal;
-  font-size: 13px;
+  font-size: 0.8rem;
   font-weight: 400;
   color: var(--text-3);
   margin-left: 8px;
 }
 
 .pn-story blockquote {
-  margin: 0;
-  font-style: italic;
+  margin: 3rem 0 0;
+  padding: 0.2rem 0 0.2rem 1.4rem;
+  border-left: 3px solid var(--accent-2);
 }
 
 .pn-story blockquote p {
   color: var(--text-2);
+  font-size: 1.1rem;
+  text-align: left;
 }
-
-
-/* ── The elevator (ctrl+↑ / ctrl+↓) ── */
-.pnf-off { display: none; }
-
-/* in transit the story steps back; the inset and the name in the bar are
-   what move */
-body.pn-riding .pn-story {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-body.pn-riding .nav-cur { color: var(--accent); }
-
-.pn-story { transition: opacity 0.22s ease; }
 
 /* the stub story on floors not yet written */
 .pn-prose .pn-story-empty {
-  font-style: italic;
   color: var(--text-3);
-  text-align: center;
+  text-align: left;
 }
 
-/* সূচি targets: the site-wide offset plus a little reading room */
+/* ~ in the rail's path: the DHAP, its colour beside its name ~ */
+.pn-seg-name { display: inline-flex; align-items: center; gap: 0.5rem; }
+.pn-seg-name .pn-seg-dot { width: 9px; height: 9px; flex-basis: 9px; border-radius: 2px; }
+
+/* the floor's column sits close beside the rail: the rail and the story are
+   one composition, centred on the screen */
+body.panthea-page .shell { --main-w: 62rem; }
+
+/* ~ the elevator (ctrl+up / ctrl+down): in transit the story steps back;
+   the rail and the inset are what move ~ */
+body.pn-riding .pn-story,
+body.pn-riding .pn-head {
+  opacity: 0.3;
+  pointer-events: none;
+}
+body.pn-riding .rail-title { color: var(--accent); }
+.pn-story, .pn-head { transition: opacity 0.22s ease; }
+
+/* contents jumps land with room above the heading */
 .pn-story h2,
-.pn-story h3 {
-  scroll-margin-top: calc(var(--nav-h-min) + 20px);
-}
+.pn-story h3 { scroll-margin-top: 2rem; }
 
-/* the column narrows: the inset leaves the margin and is set into the
-   story's top corner, the text running round it */
-@media (max-width: 1000px) {
+/* below the wide screen: one column; the building is set into the
+   headline's corner, the words running round it */
+@media (max-width: 1099px) {
+  .pn-page {
+    display: block;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(28px, 5vh, 56px) clamp(20px, 5vw, 40px) 0;
+  }
+
   .pn-inset {
     position: static;
     float: right;
-    width: 64px;
-    margin: 6px 0 14px 22px;
+    width: 60px;
+    margin: 0 0 14px 24px;
   }
 }
 
-/* phones: the building keeps the screen's height and gives up its sides;
-   the site's foot keeps the bottom */
+/* phones: the reading column of the whole site */
 @media (max-width: 760px) {
+  /* a phone: no room for the building beside the lift, so the page is a
+     column that scrolls. The title, the DHAP between its two arrows, the
+     lift as wide as the screen, the caption under it. */
+  html:has(> body.pn-home-page),
+  body.pn-home-page { overflow: auto; }
+
   .pn-home {
-    height: calc(100svh - var(--nav-now) - var(--m-rule) - var(--foot-h) - env(safe-area-inset-bottom));
-    grid-template-columns: 26fr 74fr;
-    --pn-gutter: 10px;
-    padding: 12px 10px;
+    display: block;
+    height: auto;
+    padding: 26px 16px 40px;
+    background: var(--paper);
+    border-top: none;
   }
+  .pn-fill { display: none; }
+  .pn-half { background: none; }
+  .pn-half--lift { padding: 0; }
+  .pn-half--building { display: none; }
+  .pn-half--lift { max-width: none; }
 
-  .pn-lift-name { font-size: 17px; }
-  .pn-lift-btn { font-size: clamp(10px, calc(var(--cell) * 0.36), 13px); }
-  .pn-say { min-height: 4.6em; }
+  .pn-lift-head { margin-bottom: 18px; }
+  .pn-title { font-size: 34px; }
+  .pn-lift-id {
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .pn-lift-id-text { flex: 1; text-align: center; }
+  .pn-lift-id-text * { text-align: center; }
+  .pn-step {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--t-line);
+    background: var(--t-cream);
+    color: var(--t-line);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .pn-step:active { background: var(--t-ochre); }
 
-  .pn-page { padding: 18px var(--m-read-pad) 48px; }
-  .pn-inset { width: 50px; margin-left: 16px; }
+  .pn-lift { margin: 0 auto; justify-content: center; }
+  .pn-lift-name { font-size: 19px; }
+  .pn-lift-btn { font-size: clamp(10px, calc(var(--cell) * 0.32), 14px); }
+  .pn-say { height: auto; min-height: 7em; margin-top: 16px; }
+
+  .pn-page { padding: 24px var(--m-read-pad) 0; }
+  .pn-inset { width: 46px; margin-left: 16px; }
+  .pn-head { margin-bottom: 2rem; padding-bottom: 1.6rem; }
+  .pn-title { font-size: 1.85rem; }
+  .pn-standfirst { font-size: 1.04rem; }
 
   .pn-prose {
     font-size: var(--m-read-fs);
     line-height: var(--m-read-lh);
   }
 
-  .pn-story > p:first-child:not(.pn-story-empty) {
-    font-size: var(--m-read-fs);
-  }
-
-  /* the floor grid becomes a sheet at the foot of the screen */
-  .pn-floors--drop {
-    left: 8px !important;
-    right: 8px;
-    top: auto !important;
-    bottom: calc(env(safe-area-inset-bottom) + 8px);
-    width: auto;
-  }
+  .pn-story > p:first-child:not(.pn-story-empty) { font-size: var(--m-read-fs); }
+  .pn-prose p:has(br) { padding-left: 0.9em; }
 }
 
 /* ── The scale of the cosmos ──
@@ -759,17 +634,10 @@ body.pn-riding .nav-cur { color: var(--accent); }
 .pn-hats-tick.long { stroke-width: 0.3; opacity: 0.5; }
 .pn-hats-num {
   font-family: var(--bn-font);
-  font-weight: 300;
+  font-weight: 400;
   font-size: calc(var(--pn-unit-fs, 5.4) * 0.95px);
   letter-spacing: 0.04em;
-  fill: var(--text-2);
-  opacity: 0.8;
-  /* a halo of the page's ground, so the figures read over the painting's
-     stripes wherever they fall */
-  stroke: var(--bg);
-  stroke-width: 0.5em;
-  stroke-linejoin: round;
-  paint-order: stroke;
+  fill: var(--text-3);
   dominant-baseline: central;
   font-variant-numeric: tabular-nums;
 }
@@ -781,3 +649,64 @@ body.pn-riding .nav-cur { color: var(--accent); }
 @media (max-width: 760px) {
   .pn-hats { display: none; }
 }
+.rail-path .pn-seg-name .pn-seg-dot { display: none; }
+
+
+/* ~ the floor's card: risen over the button under the pointer, a plane of
+   the painting (white, a black frame, a band of the floor's own colour); it
+   is fixed above everything, so nothing on the page moves for it ~ */
+.pn-card {
+  --band: #e9c43a;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  width: 19rem;
+  max-width: calc(100vw - 16px);
+  padding: 0.85rem 1.1rem 0.95rem 1.5rem;
+  background: #fbfaf6;
+  border: 3px solid #141518;
+  box-shadow: inset 9px 0 0 var(--band), 0 14px 30px -14px rgba(20, 21, 24, 0.55);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease;
+}
+.pn-card.on { opacity: 1; visibility: visible; }
+.pn-card p { margin: 0; text-align: left; }
+.pn-card p:empty { display: none; }
+.pn-card-floor {
+  font-family: var(--bn-font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+}
+.pn-card-title {
+  margin-top: 0.2rem !important;
+  font-family: var(--bn-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #141518;
+}
+.pn-card-syn {
+  margin-top: 0.35rem !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  font-family: var(--bn-font);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-2);
+}
+.pn-card--empty .pn-card-syn { color: var(--text-3); }
+
+/* the caption under the lift only says how many stories its DHAP holds */
+.pn-say { height: auto; min-height: 0; }
+
+/* the floors, every twenty: hairlines of the drawing's own ink */
+.pn-floorlines line { stroke-width: 0.6px; vector-effect: non-scaling-stroke; pointer-events: none; }
+.pn-fl-minar { stroke: rgba(14, 26, 43, 0.14); }
+.pn-fl-patal { stroke: rgba(8, 10, 20, 0.2); }

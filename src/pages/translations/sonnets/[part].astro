@@ -26,6 +26,7 @@ const { work, part, prev, next } = Astro.props;
 ---
 
 <Base
+  rail
   section="translations"
   bodyClass="book-page sonnet-page"
   styles={['/css/translation-table.css', '/css/book.css']}
@@ -33,6 +34,8 @@ const { work, part, prev, next } = Astro.props;
   tocStyle="grid"
   footPrev={prev ? `/translations/sonnets/${prev.slug}/` : null}
   footNext={next ? `/translations/sonnets/${next.slug}/` : null}
+  prevLabel={prev?.title}
+  nextLabel={next?.title}
 >
   <Fragment slot="head">
     <link

@@ -10,7 +10,7 @@
 // their numbers for now; they will be named as the stories are written.
 //
 // This file is the single source of truth: the map-TOC SVGs on /panthea/, the
-// floor routes (/panthea/minar/[floor], /panthea/patal/[floor])
+// floor route (/panthea/[level], the floor's signed number: /panthea/1/, /panthea/-5/)
 // and the floor-page headers all derive from it.
 
 export const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
@@ -138,8 +138,7 @@ export const levelAdd = (l, n) =>
   indexLevel(Math.min(PATAL_FLOORS + TOWER_FLOORS - 1, Math.max(0, levelIndex(l) + n)));
 export const levelHref = (l) =>
   l > LEVEL_MAX ? '/panthea/'
-  : l > 0 ? `/panthea/minar/${l}/`
-  : `/panthea/patal/${-l}/`;
+  : `/panthea/${l}/`;
 
 // ── The section: one drawing, summit to nadir ──
 // The home page's navigator and every floor page's corner inset are the SAME
@@ -203,13 +202,13 @@ const PATAL_SPANS = spansFrom(SHARES);  // 1–100 … 601–700
 // the one name for the whole building, so the ধাপ above the ground are ধাপ
 // ১…৭ and those beneath it ধাপ −১…−৭. A ধাপ is named only when its stories
 // name it. Slugs are positional (t1…t7 up, p1…p7 down).
-export const SEG_WORD = 'ধাপ';
+export const SEG_WORD = '';       // no word: a step is its number alone
 export const MINUS = '−';
 const numbered = (prefix, sign) => SHARES.map((_, i) => ({
   slug: `${prefix}${i + 1}`,
-  bn: `${SEG_WORD} ${sign}${toBn(i + 1)}`,
+  bn: `${sign}${toBn(i + 1)}`,
 }));
-const TOWER_NAMES = numbered('t', '');
+const TOWER_NAMES = numbered('t', '+');
 const PATAL_NAMES = numbered('p', MINUS);
 
 const buildSegments = (names, spans, floorM, floorBn) =>
@@ -223,8 +222,8 @@ const buildSegments = (names, spans, floorM, floorBn) =>
       count: floors[1] - floors[0] + 1,
       metres,
       floorsBn: `${toBn(floors[0])}–${toBn(floors[1])}`,
-      floorsLabel: `তলা ${floorBn(floors[0])} থেকে ${floorBn(floors[1])}`,
-      metresBn: `${toBn(metres[0])}–${toBn(metres[1])} মিটার`,
+      floorsLabel: `${n.bn}${n.bn[0]}${toBn(floors[0])} \u2013 ${n.bn}${n.bn[0]}${toBn(floors[1])}`,
+      metresBn: '',
     };
   });
 
@@ -240,5 +239,16 @@ export const patalSegmentOf = (floor) =>
 // the level axis, named as the ধাপ are, word then number: তলা ২৫১ beside
 // ধাপ ৩, and beneath the ground তলা −৫. The roof is ছাদ.
 export const levelNum = (l) => (l < 0 ? MINUS + toBn(-l) : toBn(l));
-export const levelTitle = (l) => (l > LEVEL_MAX ? 'ছাদ' : `তলা ${levelNum(l)}`);
+// A story's number is two numbers in one, its step and its floor, each
+// carrying its own sign: +3+251 is floor 251 in the third step up,
+// \u22121\u221240 floor 40 in the first step down. The floors run 1 to 700 each
+// way, never restarting in a step. No word says what they count. The roof is
+// Panthea itself.
+export const levelCode = (l) => {
+  if (l > LEVEL_MAX) return '\u09aa\u09cd\u09af\u09be\u09a8\u09cd\u09a5\u09bf\u09af\u09bc\u09be';
+  const seg = l > 0 ? towerSegmentOf(l) : patalSegmentOf(-l);
+  return `${seg.bn}${seg.bn[0]}${toBn(Math.abs(l))}`;
+};
+export const levelPlace = (l) => Math.abs(l) - (l > 0 ? towerSegmentOf(l) : patalSegmentOf(-l)).floors[0] + 1;
+export const levelTitle = levelCode;
 export const levelSegment = (l) => (l > 0 ? towerSegmentOf(l) : patalSegmentOf(-l));

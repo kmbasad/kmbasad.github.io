@@ -13,7 +13,7 @@ const art = compositions['alaol-sapta-paykar'];
 <Base title={work.title} section="pangea" bodyClass="painting-page" styles={['/css/painting.css']}
   navTitle="সপ্ত পয়কর" navParentHref="/pangea/" navParentLabel="প্যাঞ্জিয়া"
 >
-  <Painting planes={art.planes} sheet={art.sheet} gap={12} ground={INK} label={art.label}>
+  <Painting parentHref="/pangea/" parentLabel="প্যাঞ্জিয়া" planes={art.planes} sheet={art.sheet} gap={12} ground={INK} label={art.label}>
     <h1>{work.title}</h1>
     <ul class="pt-list">
       {alaolChapters.map((c) => (

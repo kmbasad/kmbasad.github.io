@@ -79,30 +79,47 @@ html {
   --dur-slow: 0.42s;
   /* Tracking for uppercase micro-labels */
   --ls-label: 0.14em;
-  /* The menubar's height. Anything that sticks under the nav — the book
-     page's full-height panels — measures from this, so the bar can be
-     resized in exactly one place. */
-  --nav-h: 40px;
-  --foot-h: 40px;              /* SiteFoot, the bar at the foot of every page */
-  /* …and what it draws back to once the page is moving. Anything that sticks
-     under the bar measures from THIS one, because sticking only ever happens
-     after the bar has already narrowed. */
-  --nav-h-min: 36px;
-  /* …and the one the layout should actually use right now. <html> carries
-     .nav-tight while the page is scrolled, so a full-height panel beside
-     the bar (the dual-panel translation pages) narrows with it. */
-  --nav-now: var(--nav-h);
+  /* The masthead's height. It does not stick: it closes the top of the page
+     and scrolls away with it. A page that holds itself to one screen
+     subtracts it; nothing sticks under it, since nothing is ever above. */
+  --mast-h: 78px;
+  /* The reading rail (the sidebar of a long page): its width, and where it
+     sticks once the masthead has scrolled away. */
+  --rail-top: 28px;
+  /* Paper: the near-white a page of reading sits on. */
+  --paper: #fcfcfb;
   /* ── The one mobile reading column ──
      Every section reads the same on a phone: same side margin, same Bangla
      size, same leading. The section stylesheets consume these tokens in
      their own phone blocks — never restate the numbers. The margin is
-     kindle-thin: the text fills the window. Prose justifies; verse never
+     kindle-thin: the text fills the window. Prose is ragged right, never justified; verse never
      breaks a line — the page's verse size (--verse-fs, set by the fitter in
      translation-table.js) shrinks from --m-read-fs until the longest line
      fits the screen. */
-  --m-read-pad: 12px;
-  --m-read-fs: 17.5px;
-  --m-read-lh: 2.0;
+  --m-read-pad: 16px;
+  --m-read-fs: 18px;
+  --m-read-lh: 1.85;
+
+  /* -- The reading type: one voice for everything on the site that is read --
+     Taken from the trellis essays, which read best: Noto Serif Bengali at
+     20px, ragged right (never justified: on a screen, and above all in
+     Bangla, which no browser hyphenates, justifying opens uneven gaps and
+     rivers), a softened ink, a hair of tracking, generous air between
+     paragraphs, about eighty characters to the line. Verse takes the same
+     size with its lines a little closer; the original beside a translation
+     is sized to sit level with the Bangla. Every reading page draws on
+     these; a section never restates the numbers. */
+  --read-fs: 1.25rem;
+  --read-lh: 1.9;
+  --verse-lh: 1.8;
+  --read-ls: 0.01em;
+  --read-ink: #2b2f37;
+  --read-gap: 1.6em;
+  --read-measure: 50rem;
+  --src-scale: 1.04;           /* Cormorant reads a little small beside Noto Bengali */
+  --title-fs: clamp(2rem, 3.2vw, 2.7rem);
+  --stand-fs: clamp(1.08rem, 1.3vw, 1.2rem);
+  --h2-fs: clamp(1.35rem, 1.9vw, 1.55rem);
 }
 
 body {
@@ -186,431 +203,6 @@ a:hover {
 
 /* no grey flash under a finger — the controls answer for themselves */
 a, button { -webkit-tap-highlight-color: transparent; }
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   THE MENUBAR
-   ═══════════════════════════════════════════════════════════════════════════
-   The top row of the home page's painting (Mondrian, "Composition in Blue,
-   Gray and Pink", 1913). Thin, and hinged at its exact centre on the mark —
-   the way home, in a wide cream cell of its own — which divides it into two
-   fields that could not be mistaken for each other:
-
-     left   the SITE, painted — the four rooms' cells, all of one width
-            whatever their names, each filled edge to edge with its tint (blue, pink,
-            ochre, sage), the chosen one in the deeper tint; soft charcoal
-            lines between the cells, running the bar's full height
-     right  this PAGE, a single slate field (the painting's line colour, so
-            the right half reads as one broad stroke) with the trail on it in
-            light type, the current page in pale ochre, the সূচি in lavender
-
-   The mark never moves: the rooms are right-aligned against it on every
-   page, so only the slate field's contents change as you go.
-   On phones (≤760px) the rooms leave for the sheet behind the burger; the
-   mark's cell, the slate field and the burger remain, left-aligned. */
-
-:root {
-  --m-rule: 2px;               /* the weight of the bar's lines */
-  --room-w: 108px;             /* every room's cell, whatever its name */
-  --mark-w: 92px;              /* the mark's cell, the hinge at the centre */
-}
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  /* the ground on the left, the slate on the right, meeting at the centre */
-  background: linear-gradient(90deg, var(--bg) 50%, var(--t-slate) 50%);
-  border-bottom: var(--m-rule) solid var(--t-line);
-  color: var(--t-line);
-  transition: box-shadow var(--dur) ease;
-}
-
-.nav.is-scrolled {
-  box-shadow: 0 10px 24px -18px rgba(42, 45, 51, 0.45);
-}
-
-/* the reading progress: ochre drawn over the rule along the foot */
-.nav-progress {
-  position: absolute;
-  left: 0;
-  bottom: calc(-1 * var(--m-rule));
-  width: 100%;
-  height: var(--m-rule);
-  transform-origin: left center;
-  transform: scaleX(var(--p, 0));
-  background: var(--t-ochre-d);
-  opacity: 0;
-  transition: opacity .3s ease;
-  pointer-events: none;
-}
-
-.nav.is-scrolled .nav-progress { opacity: 1; }
-
-.nav-inner {
-  height: var(--nav-now);
-  /* no padding: the painted strip runs to the left edge, the slate to the
-     right one */
-  padding: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: stretch;
-  column-gap: 0;
-  transition: height var(--dur-slow) var(--ease-out);
-}
-
-html.nav-tight { --nav-now: var(--nav-h-min); }
-
-/* One type size for the whole bar, breathing in when it narrows. */
-.nav { --nav-fs: 16px; }
-.nav.is-scrolled { --nav-fs: 15px; }
-
-/* ── the left field: painted cells ── */
-.nav-site {
-  justify-self: stretch;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
-  min-width: 0;
-}
-
-/* the far left: one solid plane of the painting's lavender grey, from the
-   screen's edge to the rooms — calmer than any room's tint, so the rooms
-   stay foremost, and a broad plane to answer the slate on the right */
-.nav-paint {
-  flex: 1 1 0;
-  min-width: 0;
-  background: var(--t-lav);
-}
-
-.nav-mark {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--mark-w);
-  padding: 0;
-  background: var(--t-cream);
-  background-image: none;
-  border-left: var(--m-rule) solid var(--t-line);
-  border-right: var(--m-rule) solid var(--t-line);
-  transition: background 0.2s ease;
-}
-
-.nav-mark:hover { background: var(--t-lav); }
-
-.nav-mark svg {
-  width: calc(var(--nav-now) - 14px);
-  height: calc(var(--nav-now) - 14px);
-  overflow: visible;
-  transition: width var(--dur-slow) var(--ease-out), height var(--dur-slow) var(--ease-out);
-}
-
-.nav-mark .nm-ring {
-  fill: none;
-  stroke: var(--t-line);
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-}
-
-.nav-mark .nm-ticks line {
-  stroke: var(--t-line);
-  stroke-width: 1.3;
-  vector-effect: non-scaling-stroke;
-}
-
-/* The dial reads the page: a quarter turn from the top of the document to
-   the bottom, plus a kick when you touch it. Both fold into one rotation. */
-.nav-mark .nm-ticks {
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: rotate(calc(var(--p, 0) * 90deg + var(--kick, 0deg)));
-  transition: transform .5s var(--ease-out);
-}
-
-.nav-mark .nm-zenith {
-  fill: var(--t-ochre-d);
-  r: 8;
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform var(--dur) var(--ease);
-}
-
-.nav-mark:hover,
-.nav-mark:focus-visible { --kick: 45deg; }
-.nav-mark:hover .nm-zenith { transform: scale(1.25); }
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-inner,
-  .nav-mark,
-  .nav-mark .nm-ticks { transition: none; }
-  .nav-mark .nm-ticks { transform: none; }
-}
-
-.nav-links-wrap {
-  position: relative;
-  display: flex;
-  min-width: 0;
-}
-
-/* no sliding block any more: every cell is filled edge to edge, itself */
-.nav-glide { display: none; }
-
-.nav-links {
-  display: flex;
-  align-items: stretch;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li {
-  display: flex;
-  flex: 0 0 var(--room-w);
-  border-left: var(--m-rule) solid var(--t-line);
-}
-
-.nav-links a {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 8px 1px;
-  font-family: var(--bn-bar);
-  font-size: var(--nav-fs);
-  letter-spacing: 0.02em;
-  line-height: 1.35;
-  color: var(--t-line);
-  white-space: nowrap;
-  background: var(--tint);
-  background-image: none;
-  transition: background 0.25s ease, font-size var(--dur-slow) var(--ease-out);
-}
-
-.room-blue  { --tint: var(--t-blue);  --tint-d: var(--t-blue-d); }
-.room-pink  { --tint: var(--t-pink);  --tint-d: var(--t-pink-d); }
-.room-ochre { --tint: var(--t-ochre); --tint-d: var(--t-ochre-d); }
-.room-sage  { --tint: var(--t-sage);  --tint-d: var(--t-sage-d); }
-
-.nav-links a:hover,
-.nav-links a.active { background: var(--tint-d); }
-
-/* the chosen room: deeper, and a charcoal bar standing on its foot */
-.nav-links a.active { box-shadow: inset 0 -4px 0 var(--t-line); }
-
-
-/* ── the right field: one slate stroke, light type on it ── */
-.nav-page {
-  justify-self: start;
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  max-width: 100%;
-  padding-left: 18px;
-  color: #d6dae2;
-}
-
-.nav-site-name {
-  font-family: var(--bn-bar);
-  font-size: var(--nav-fs);
-  color: var(--t-ochre);
-  letter-spacing: 0.02em;
-}
-
-.nav-page-info {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  min-width: 0;
-  font-family: var(--bn-bar);
-  font-size: var(--nav-fs);
-  letter-spacing: 0.01em;
-  line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.nav-parent {
-  flex-shrink: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 3px 4px 4px;
-  border: none;
-  background: none;
-  font-family: var(--bn-bar);
-  font-size: var(--nav-fs);
-  color: #aeb4c0;
-  text-decoration: none;
-  transition: color var(--dur) ease;
-}
-
-.nav-parent:hover { color: #fff; }
-
-.nav-sep {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  color: var(--t-lav);
-  opacity: 0.7;
-}
-
-.nav-sep svg { display: block; }
-
-.nav-here {
-  display: inline-flex;
-  align-items: center;
-  min-width: 0;
-}
-
-.nav-here.has-toc { cursor: pointer; }
-
-/* the current page: pale ochre, the one warm note on the slate */
-.nav-cur {
-  flex-shrink: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 3px 4px 4px;
-  font-size: var(--nav-fs);
-  color: var(--t-ochre);
-  transition: font-size var(--dur-slow) var(--ease-out), color var(--dur) ease;
-}
-
-.nav-here.has-toc:hover .nav-cur { color: #f3e2ae; }
-
-.nav .toc-key {
-  color: var(--t-lav);
-  border-left: 1px solid rgba(255, 255, 255, 0.22);
-  margin-left: 10px;
-  padding: 1px 4px 2px 12px;
-  background: none;
-}
-
-.nav .toc-key:hover,
-.nav .nav-here.has-toc:hover .toc-key,
-.nav .toc-key.is-open { color: #fff; background: none; }
-
-.nav-page > .toc-key { border-left: none; margin-left: 0; padding-left: 4px; }
-
-/* the burger: phones only */
-.nav-burger { display: none; }
-
-/* a narrow desktop: the ancestors bow out, the current page stays (and so
-   does a section's own crumb, which is a control, not an ancestor) */
-@media (max-width: 1100px) {
-  .nav-page-info > .nav-parent,
-  .nav-page-info > .nav-sep { display: none; }
-}
-
-/* ═══ Phones: the mark's cell, the slate field, the burger ═══ */
-@media (max-width: 760px) {
-  .nav { background: var(--t-slate); }
-
-  .nav-inner {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 0 0 env(safe-area-inset-left);
-  }
-
-  .nav-site { display: none; }
-  .nav-mark { order: -1; width: 48px; border-left: none; }
-
-  .nav-page { flex: 1 1 auto; padding-left: 12px; }
-  .nav-page-info { flex: 1 1 auto; }
-
-  .nav-burger {
-    display: grid;
-    place-content: center;
-    gap: 5px;
-    flex-shrink: 0;
-    align-self: stretch;
-    width: 48px;
-    margin-left: auto;
-    border: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.18);
-    background: none;
-    cursor: pointer;
-  }
-
-  .nav-burger span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: #e7eaf0;
-    transition: transform 0.3s var(--ease-out), opacity 0.2s ease;
-  }
-
-  .nav-burger span:nth-child(2) { width: 14px; justify-self: end; background: var(--t-ochre); }
-
-  html.sheet-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  html.sheet-open .nav-burger span:nth-child(2) { opacity: 0; }
-  html.sheet-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-}
-
-/* ── The sheet: the burger brings it down over the whole screen — the rooms
-      as planes of the painting, each in its tint ── */
-.nav-sheet {
-  position: fixed;
-  inset: 0;
-  z-index: 99;
-  display: none;
-  padding: calc(var(--nav-now) + var(--m-rule)) 0 calc(28px + env(safe-area-inset-bottom));
-  background: var(--bg);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  clip-path: inset(0 0 100% 0);
-  transition: clip-path 0.45s cubic-bezier(0.2, 0.75, 0.2, 1);
-}
-
-@media (max-width: 760px) {
-  .nav-sheet { display: block; }
-}
-
-html.sheet-open .nav-sheet { clip-path: inset(0 0 0 0); }
-html.sheet-open,
-html.sheet-open body { overflow: hidden; }
-
-.nav-sheet-inner { display: grid; }
-
-.nav-sheet-item {
-  display: grid;
-  gap: 2px;
-  padding: 18px max(22px, env(safe-area-inset-left)) 19px;
-  border-bottom: var(--m-rule) solid var(--t-line);
-  background: var(--tint, var(--t-cream));
-  text-decoration: none;
-  background-image: none;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.35s ease, transform 0.45s var(--ease-out), background 0.2s ease;
-}
-
-html.sheet-open .nav-sheet-item { opacity: 1; transform: none; }
-html.sheet-open .nav-sheet-item:nth-child(2) { transition-delay: 0.04s; }
-html.sheet-open .nav-sheet-item:nth-child(3) { transition-delay: 0.08s; }
-html.sheet-open .nav-sheet-item:nth-child(4) { transition-delay: 0.12s; }
-html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
-
-.nav-sheet-label {
-  font-family: var(--bn-bar);
-  font-size: 28px;
-  line-height: 1.25;
-  color: var(--t-line);
-}
-
-.nav-sheet-gloss {
-  font-family: var(--bn-font);
-  font-size: 13.5px;
-  color: var(--text-2);
-}
-
-.nav-sheet-item.active,
-.nav-sheet-item:active { background: var(--tint-d, var(--t-lav)); }
-.nav-sheet-item.active { box-shadow: inset 6px 0 0 var(--t-line); }
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-sheet, .nav-sheet-item { transition: none; }
-}
 
 /* PAGE INTRO — title block at the top of each page's content area */
 .page-intro {
@@ -796,13 +388,7 @@ html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
 }
 
 /* ── Mobile chrome ———————————————————————————————————————————————————— */
-@media(max-width:640px) {
-
-  .nav-inner {
-    padding-left: max(16px, env(safe-area-inset-left));
-    padding-right: max(14px, env(safe-area-inset-right));
-    gap: 12px;
-  }
+@media (max-width: 760px) {
 
   .main {
     padding: 44px var(--m-read-pad) 56px;
@@ -999,7 +585,7 @@ html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
 }
 
 /* ── Portrait tablet: 768px – 900px ─────────────────────────────────────── */
-@media (max-width: 900px) and (min-width: 768px) {
+@media (max-width: 1099px) and (min-width: 761px) {
   .writing-col {
     max-width: 100%;
     padding-left: 16px;
@@ -1024,7 +610,7 @@ html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
 }
 
 /* ── Phone: ≤ 767px ─────────────────────────────────────────────────────── */
-@media (max-width: 767px) {
+@media (max-width: 760px) {
   .writing-col {
     max-width: 100%;
     padding-left: 0;
@@ -1068,8 +654,8 @@ html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
   .essay-body p {
     font-size: var(--m-read-fs);
     line-height: var(--m-read-lh);
-    /* kindle rule: prose reads justified on the narrow page */
-    text-align: justify;
+    /* ragged right, like all the site's prose (no Bangla hyphenation) */
+    text-align: left;
   }
 
   .poem-body {
@@ -1223,13 +809,13 @@ html.sheet-open .nav-sheet-item:nth-child(5) { transition-delay: 0.16s; }
   padding-bottom: 14px;
 }
 
-@media (max-width: 900px) and (min-width: 768px) {
+@media (max-width: 1099px) and (min-width: 761px) {
   .trans-page {
     padding: 32px 16px 64px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 760px) {
   .trans-page {
     padding: 28px 0 56px;
   }
@@ -1359,213 +945,6 @@ body,
               box-shadow .3s ease;
 }
 
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   সূচি — the table of contents lives in the menubar (site.js injects the key
-   into .nav-right when a page has ≥2 [data-toc] targets). The key opens a
-   frosted panel hanging under the shelf: a list of section names, or — with
-   `tocStyle: 'grid'` in the page config — a grid of bare numbers (the
-   ghazals). Scroll-spy marks the active entry and dims the passed ones.
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.toc-key {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--bn-display);
-  font-size: var(--nav-fs);
-  line-height: 1.5;
-  color: var(--accent);
-  background: none;
-  border: none;
-  border-left: 1px solid var(--border);   /* the divider after the gilt word */
-  margin-left: 8px;
-  padding: 1px 4px 2px 12px;
-  cursor: pointer;
-  transition: color var(--dur) var(--ease), background var(--dur) var(--ease),
-              font-size var(--dur-slow) var(--ease-out);
-}
-
-.toc-key:hover,
-.nav-here.has-toc:hover .toc-key,
-.toc-key.is-open {
-  color: var(--accent-hover, var(--accent));
-}
-
-/* the standalone সূচি on a page with no breadcrumb: it still sits in the left
-   cluster beside the mark, as a word like the rest, with no divider */
-.nav-inner > .toc-key {
-  border-left: none;
-  margin-left: 0;
-  padding-left: 4px;
-}
-
-.toc-key-caret {
-  display: inline-block;
-  font-size: 0.6em;
-  opacity: 0.75;
-  transition: transform 0.18s var(--ease);
-}
-
-.toc-key.is-open .toc-key-caret {
-  transform: rotate(180deg);
-}
-
-/* A সূচি jump must not land its target under the shelf. Sticking only ever
-   happens after the bar has narrowed, so the offset is --nav-h-min; a page
-   with its own sticky rule under the bar adds that rule's height to this in
-   its own stylesheet. */
-[data-toc] {
-  scroll-margin-top: calc(var(--nav-h-min) + 12px);
-}
-
-.toc-menu {
-  position: fixed;
-  top: calc(var(--nav-now) + 8px);
-  /* the gilt key lives at the left of the shelf, so the panel hangs from its
-     LEFT edge; site.js sets this on open and clamps it to the viewport */
-  left: 10px;
-  right: auto;
-  z-index: 260;
-  min-width: 13rem;
-  max-width: min(34rem, calc(100vw - 20px));
-  /* never a scrollbar — a long list breaks into columns instead */
-  overflow: visible;
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
-  backdrop-filter: saturate(1.2) blur(14px);
-  -webkit-backdrop-filter: saturate(1.2) blur(14px);
-  border: 1px solid var(--border);
-  border-radius: calc(var(--r) + 4px);
-  box-shadow: var(--sh);
-  padding: 0.5rem;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease),
-              top var(--dur-slow) var(--ease-out);
-}
-
-.toc-menu.is-open {
-  opacity: 1;
-  transform: none;
-}
-
-.toc-menu__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* long lists fold into columns (site.js counts the entries) */
-.toc-menu--cols2 .toc-menu__list { columns: 2; column-gap: 0.5rem; }
-.toc-menu--cols3 .toc-menu__list { columns: 3; column-gap: 0.5rem; }
-
-.toc-menu--cols2 .toc-menu__list li,
-.toc-menu--cols3 .toc-menu__list li {
-  break-inside: avoid;
-}
-
-.toc-menu__link {
-  display: block;
-  padding: 0.32rem 0.75rem;
-  border-radius: var(--r-sm);
-  font-family: var(--bn-display);
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--text-2);
-  text-decoration: none;
-  background-image: none;
-}
-
-.toc-menu__link:hover {
-  background: var(--accent-light);
-  color: var(--accent);
-}
-
-.toc-menu__link.is-past { color: var(--text-4); }
-
-.toc-menu__link.is-active {
-  color: var(--accent);
-  font-weight: 600;
-  background: var(--accent-light);
-}
-
-/* Grid shape — the ghazals: bare numbers in rows of six */
-.toc-menu--grid {
-  min-width: 0;
-  width: 16.5rem;
-}
-
-.toc-menu--grid .toc-menu__list {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 3px;
-}
-
-.toc-menu--grid .toc-menu__link {
-  padding: 0.3rem 0;
-  text-align: center;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-
-/* ── Phones: the সূচি is a bottom sheet ──────────────────────────────────
-   A dropdown under a finger is a desktop habit. On a phone the panel rises
-   from the foot of the screen instead — full width, a grab-bar at its head,
-   scrollable when long (the no-scrollbar rule is a desktop rule; a sheet
-   that scrolls is what a thumb expects). site.js skips its dropdown
-   positioning below the fold breakpoint, so no inline left/top fights this. */
-@media (max-width: 760px) {
-  .toc-menu {
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    min-width: 0;
-    max-width: none;
-    width: 100%;
-    /* a sheet is a solid object — page text must never bleed through it */
-    background: var(--surface);
-    max-height: min(62vh, 480px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    border-radius: 16px 16px 0 0;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    box-shadow: 0 -14px 44px rgba(14, 26, 43, 0.22);
-    padding: 0.55rem 0.8rem calc(0.9rem + env(safe-area-inset-bottom));
-    transform: translateY(18px);
-  }
-
-  .toc-menu::before {
-    content: '';
-    display: block;
-    width: 38px;
-    height: 4px;
-    margin: 4px auto 10px;
-    border-radius: 2px;
-    background: var(--border-2);
-  }
-
-  .toc-menu.is-open { transform: none; }
-
-  /* thumb-size entries; long lists keep at most two columns */
-  .toc-menu__link {
-    padding: 0.55rem 0.75rem;
-    font-size: 1.02rem;
-  }
-
-  .toc-menu--cols3 .toc-menu__list { columns: 2; }
-
-  /* the number grid spreads to the sheet's width */
-  .toc-menu--grid { width: 100%; }
-  .toc-menu--grid .toc-menu__list { gap: 6px; }
-  .toc-menu--grid .toc-menu__link { padding: 0.5rem 0; font-size: 1.02rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .toc-menu { transition: none; }
-}
 
 /* ── Divine Comedy index ─────────────────────────────────────────────────── */
 .work-title {
