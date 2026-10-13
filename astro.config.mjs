@@ -26,6 +26,12 @@ import path from 'node:path';
 // (and close a trellis panel).
 const ROOT = fileURLToPath(new URL('.', import.meta.url));
 const EDIT_JS = fileURLToPath(new URL('./src/dev/edit.js', import.meta.url));
+// the sonnets' review overlay: what Claude changed in the author's lines
+const SONNET_DIFF_JS = fileURLToPath(new URL('./src/dev/sonnet-diff.js', import.meta.url));
+const SONNETS_ORIG = fileURLToPath(new URL('./docs/sonnets-original.json', import.meta.url));
+// the author's comments to Claude, pinned to words on any page (src/dev/comments.js)
+const COMMENTS_JS = fileURLToPath(new URL('./src/dev/comments.js', import.meta.url));
+const COMMENTS = fileURLToPath(new URL('./docs/comments.json', import.meta.url));
 const EDIT_ROOTS = [
   'public/translations', 'public/pangea', 'public/trellises',
   'src/stories', 'src/pages', 'src/components', 'src/layouts', 'src/data',
@@ -125,6 +131,63 @@ function inPlaceEditor() {
           if (req.method === 'GET' && url.pathname === '/edit.js') {
             res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
             res.end(fs.readFileSync(EDIT_JS));
+            return;
+          }
+
+          if (req.method === 'GET' && url.pathname === '/comments.js') {
+            res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+            res.end(fs.readFileSync(COMMENTS_JS));
+            return;
+          }
+          if (url.pathname === '/comments') {
+            const read = () => (fs.existsSync(COMMENTS)
+              ? JSON.parse(fs.readFileSync(COMMENTS, 'utf8')) : { comments: [] });
+            const send = (/** @type {any} */ d) => {
+              res.setHeader('Content-Type', 'application/json; charset=utf-8');
+              res.end(JSON.stringify(d));
+            };
+            if (req.method === 'GET') return send(read());
+            if (req.method !== 'POST') return next();
+            try {
+              const b = /** @type {any} */ (await readBody(req));
+              const d = read();
+              const now = new Date().toISOString();
+              const at = d.comments.findIndex((/** @type {any} */ c) => c.id === b.id);
+              if (b.op === 'add') {
+                const c = b.comment || {};
+                if (!c.page || !c.quote || !c.note) return fail(res, 400, 'page, quote and note are needed');
+                d.comments.push({
+                  id: 'c' + Date.now().toString(36), status: 'open', created: now,
+                  page: c.page, title: c.title, quote: c.quote, prefix: c.prefix, suffix: c.suffix,
+                  where: c.where, note: c.note,
+                });
+              } else if (b.op === 'update' && at >= 0) {
+                const p = b.patch || {};
+                for (const k of ['note', 'status', 'reply']) if (k in p) d.comments[at][k] = p[k];
+                if (p.status === 'done') d.comments[at].resolved = now;
+                if (p.status === 'open') delete d.comments[at].resolved;
+                d.comments[at].updated = now;
+              } else if (b.op === 'delete' && at >= 0) {
+                d.comments.splice(at, 1);
+              } else return fail(res, 400, 'unknown comment or operation');
+              quietUntil = Date.now() + 1500;
+              fs.mkdirSync(path.dirname(COMMENTS), { recursive: true });
+              fs.writeFileSync(COMMENTS, JSON.stringify(d, null, 2) + '\n');
+              return send(d);
+            } catch (e) {
+              return fail(res, 500, String(e));
+            }
+          }
+
+          if (req.method === 'GET' && url.pathname === '/sonnet-diff.js') {
+            res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+            res.end(fs.readFileSync(SONNET_DIFF_JS));
+            return;
+          }
+          if (req.method === 'GET' && url.pathname === '/sonnets-original.json') {
+            if (!fs.existsSync(SONNETS_ORIG)) return fail(res, 404, 'docs/sonnets-original.json missing');
+            res.setHeader('Content-Type', 'application/json; charset=utf-8');
+            res.end(fs.readFileSync(SONNETS_ORIG));
             return;
           }
 

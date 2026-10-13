@@ -1350,7 +1350,7 @@ body.has-rail .shell { --main-w: 80rem; }
 @media (max-width: 760px) {
   .trellis-essay { padding: 2rem var(--m-read-pad) 0; }
   .trellis-essay .essay-body p { font-size: var(--m-read-fs); line-height: var(--m-read-lh); }
-  .trellis-essay .section-title { font-size: 1.85rem; }
+  .trellis-essay .section-title { font-size: var(--m-title-fs); }
 }
 /* the essay's body on the same left edge as its headline, on every screen
    (style.css's old phone rule pads .essay; not here) */

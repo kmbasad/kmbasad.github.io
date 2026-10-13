@@ -44,6 +44,9 @@ const { work, part, prev, next } = Astro.props;
     />
   </Fragment>
 
+  {/* dev only: Claude's changes to the author's lines, marked (src/dev/sonnet-diff.js) */}
+  {import.meta.env.DEV && <script is:inline defer src="/__edit/sonnet-diff.js" slot="head"></script>}
+
   <BookReader title={part.title} work={work.title}
     config={{
       src: `${part.slug}.md`,

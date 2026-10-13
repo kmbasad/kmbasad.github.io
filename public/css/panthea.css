@@ -631,7 +631,7 @@ body.pn-riding .rail-title { color: var(--accent); }
   .pn-page { padding: 24px var(--m-read-pad) 0; }
   .pn-inset { width: 46px; margin-left: 16px; }
   .pn-head { margin-bottom: 2rem; padding-bottom: 1.6rem; }
-  .pn-title { font-size: 1.85rem; }
+  .pn-title { font-size: var(--m-title-fs); }
   .pn-standfirst { font-size: 1.04rem; }
 
   .pn-prose {

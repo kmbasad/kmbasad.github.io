@@ -340,13 +340,16 @@
   /* ═══════════════════════════════════════════════════════════════════
    * Verse fit — phones only
    *
-   * A verse line must never break. On the collapsed one-column page the
-   * bn cells are nowrap; this measures the page's longest line and sets
-   * --verse-fs (from the --m-read-fs base downward) so that line fits
-   * the screen. One size per page — a poem read at one size, not a
-   * ransom note — floored at 12.5px. Runs after md-loader has built and
-   * word-wrapped the table, again when the webfonts land (they change
-   * every width), and on resize.
+   * A verse line must never break, and verse reads in the prose's voice.
+   * On the collapsed one-column page the bn cells are nowrap at the prose
+   * size (--m-read-fs). The page's size (--verse-fs) comes down only when
+   * more than one line in twenty is too long for the screen, to where
+   * nineteen in twenty fit, and never below 16px; a line still too long is
+   * then set a little smaller on its own (floored at 12.5px), on the page's
+   * leading, so the poem keeps one size and one rhythm and no outlier drags
+   * the whole page down. Runs after md-loader has built and word-wrapped
+   * the table, again when the webfonts land (they change every width), and
+   * on resize.
    * ═══════════════════════════════════════════════════════════════════ */
   var fitRaf = null;
 
@@ -383,45 +386,51 @@
     if (table.scrollWidth > have) doc.classList.add("tt-src-wrap");
   }
 
+  var PAGE_FLOOR = 16, LINE_FLOOR = 12.5, FIT_SHARE = 0.05;
+
   function fitVerse() {
     var doc = document.documentElement;
     doc.style.removeProperty("--verse-fs");
     doc.style.removeProperty("--par-fit");
+    var all = document.querySelectorAll(".tt-table td.bn");
+    for (var c = 0; c < all.length; c++) all[c].style.removeProperty("font-size");
     if (window.innerWidth > 760) return fitParallel();
 
-    var cells = document.querySelectorAll(".tt-table td.bn");
-    if (!cells.length) return;
-
-    var pad = 0, probe = null, worst = null, minRatio = 1;
-    for (var i = 0; i < cells.length; i++) {
-      var td = cells[i];
-      if (!isVerseRow(td.parentNode)) continue;
-      if (!probe) {
-        probe = td;
-        var cs = getComputedStyle(td);
-        pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
-      }
-      var have = td.clientWidth - pad;
-      var need = td.scrollWidth - pad;
-      if (need > have && have > 0) {
-        var r = have / need;
-        if (r < minRatio) { minRatio = r; worst = td; }
-      }
+    var cells = [];
+    for (var i = 0; i < all.length; i++) {
+      if (isVerseRow(all[i].parentNode) && /\S/.test(all[i].textContent)) cells.push(all[i]);
     }
-    if (!worst) return;
+    if (!cells.length) return;
+    var cs = getComputedStyle(cells[0]);
+    var pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+    var base = parseFloat(cs.fontSize) || 18;
+    var room = function (td) {
+      var have = td.clientWidth - pad, need = td.scrollWidth - pad;
+      return have > 0 && need > have ? have / need : 1;
+    };
 
-    var base = parseFloat(getComputedStyle(probe).fontSize) || 17.5;
+    /* the page's size: where all but one line in twenty fit */
+    var ratios = cells.map(room).sort(function (a, b) { return a - b; });
+    var r = ratios[Math.floor(cells.length * FIT_SHARE)];
     var fs = base;
-    /* linear scale with a hair of slack, then verify against the worst
-       line — shaping isn't perfectly linear in the font size */
-    for (var pass = 0; pass < 3; pass++) {
-      fs = Math.max(12.5, Math.floor(fs * minRatio * 0.985 * 10) / 10);
+    if (r < 1) {
+      fs = Math.max(PAGE_FLOOR, Math.floor(base * r * 0.985 * 10) / 10);
       doc.style.setProperty("--verse-fs", fs + "px");
-      if (fs <= 12.5) break;
-      var have2 = worst.clientWidth - pad;
-      var need2 = worst.scrollWidth - pad;
-      if (need2 <= have2 || have2 <= 0) break;
-      minRatio = have2 / need2;
+    }
+
+    /* the lines still too long, each on its own: a linear scale with a hair
+       of slack, then verified (shaping isn't perfectly linear in the size).
+       Writes and reads are batched so the page lays out once per pass. */
+    var long = cells.filter(function (td) { return room(td) < 1; });
+    for (var pass = 0; pass < 3 && long.length; pass++) {
+      var sizes = long.map(function (td) {
+        var cur = parseFloat(td.style.fontSize) || fs;
+        return Math.max(LINE_FLOOR, Math.floor(cur * room(td) * 0.985 * 10) / 10);
+      });
+      long.forEach(function (td, k) { td.style.fontSize = sizes[k] + "px"; });
+      long = long.filter(function (td) {
+        return room(td) < 1 && parseFloat(td.style.fontSize) > LINE_FLOOR;
+      });
     }
   }
 

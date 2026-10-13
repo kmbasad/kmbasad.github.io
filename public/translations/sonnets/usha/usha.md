@@ -61,19 +61,19 @@ lang: en
 | একাই মরো, তোমার ছবি সেই সাথে যাক চলে। | Die single, and thine image dies with thee. |  |
 | | | |
 | অপরূপ অপচয়ী, কেন তুমি করছ উজাড় | Unthrifty loveliness, why dost thou spend | 4 |
-| তোমার বিউটির মিরাস কেবল নিজের পিছে? | Upon thyself thy beauty’s legacy? |  |
+| তোমার বিউটির লেগেসি কেবল নিজের পিছে? | Upon thyself thy beauty’s legacy? |  |
 | প্রকৃতির উইলে নাই কোনো দান, শুধু ধার, | Nature’s bequest gives nothing, but doth lend, |  |
 | সে উদার বলে শুধু স্বাধীনরা পায় তার কাছে। | And being frank she lends to those are free: |  |
 | | | |
 | তাহলে, সুকুমার কৃপণ, কেন করছ এবিউজ | Then, beauteous niggard, why dost thou abuse |  |
 | দানের জন্য দেওয়া দানের বিশাল ভাণ্ডার? | The bounteous largess given thee to give? |  |
-| লাভহীন বোকা মহাজন, কেন করেও ইউজ | Profitless usurer, why dost thou use |  |
+| লাভহীন বোকা ব্যাংকার, কেন করেও ইউজ | Profitless usurer, why dost thou use |  |
 | যোগের পর যোগ এত পাও না পথ জীবিকার? | So great a sum of sums yet canst not live? |  |
 | | | |
 | কারণ শুধু নিজের সাথে করে গেলে বাণিজ্য | For having traffic with thyself alone |  |
 | মিষ্টি আত্মাকে নিজের থেকে করবে বঞ্চিত। | Thou of thyself thy sweet self dost deceive. |  |
 | তবে তোমাকে যেদিন প্রকৃতি করবে ত্যাজ্য, | Then how, when nature calls thee to be gone, |  |
-| বলো দেখি কেমন হিসাব রেখে যাবে সঞ্চিত? | What acceptable audit canst thou leave? |  |
+| বলো দেখি কেমন অডিট রেখে যাবে সঞ্চিত? | What acceptable audit canst thou leave? |  |
 | | | |
 | তোমার পতিত রূপে ভরে যাবে তোমার কবর, | Thy unused beauty must be tombed with thee, |  |
 | ঠিকমতো খাটালে সে তো রাখত জমির খবর। | Which usèd lives th’ executor to be. |  |
@@ -94,7 +94,7 @@ lang: en
 | থাকত না সে বা সে কী ছিল তার স্মরণ বা স্মৃতি। | Nor it nor no remembrance what it was. |  |
 | | | |
 | তবে যদি পাতন করা ফুল পড়ে শীতের মুখে, | But flowers distilled, though they with winter meet, |  |
-| হারায় কেবল ঠাট; তার সারবস্তু মিষ্টি থাকে। | Lose but their show; their substance still lives sweet. |  |
+| হারায় কেবল ঠাট; তার সাবস্টেন্স মিষ্টি থাকে। | Lose but their show; their substance still lives sweet. |  |
 | | | |
 | তবে শীতের রুক্ষ হাতে না হোক উৎপাটন | Then let not winter’s ragged hand deface | 6 |
 | পাতনের আগেই তোমার অন্তরের সামার। | In thee thy summer ere thou be distilled: |  |
@@ -117,7 +117,7 @@ lang: en
 | দেখো, যখন পূর্ব দিকে ওই সাবলীল আলো | Lo in the orient when the gracious light | 7 |
 | তুলে ধরে তার জ্বলন্ত মাথা, অবনত চোখ | Lifts up his burning head, each under-eye |  |
 | সব সম্মান করে তার নবরূপ জমকালো, | Doth homage to his new-appearing sight, |  |
-| তার পবিত্র মহিমার সেবা করে সব লুক; | Serving with looks his sacred majesty; |  |
+| তার মহান ম্যাজেস্টির সেবা করে সব লুক; | Serving with looks his sacred majesty; |  |
 | | | |
 | আর আকাশের খাড়া পাহাড় বেয়ে ওঠার পরে | And having climbed the steep-up heavenly hill, |  |
 | যখন সে পায় মধ্যবয়সের পাকা যৌবন, | Resembling strong youth in his middle age, |  |
@@ -144,7 +144,7 @@ lang: en
 | | | |
 | দেখো একটা তার, অন্য তারের মিষ্টি স্বামী, | Mark how one string, sweet husband to another, |  |
 | একে দোলায় অন্যকে পারস্পরিক ধারায়, | Strikes each in each by mutual ordering; |  |
-| যেন পিতা সন্তান ও সুখী মায়ের মতো দামি, | Resembling sire, and child, and happy mother, |  |
+| যেন স্বামী সন্তান ও সুখী মায়ের মতো দামি, | Resembling sire, and child, and happy mother, |  |
 | যারা সব একসাথে একটা সুখের সুর গায়; | Who all in one, one pleasing note do sing: |  |
 | | | |
 | যাদের নীরব গান অনেক, এক শোনায় তবে, | Whose speechless song being many, seeming one, |  |
@@ -155,9 +155,9 @@ lang: en
 | হায়, যদি মারা যাও একটা সন্তান না নিয়ে | Ah, if thou issueless shalt hap to die |  |
 | বিশ্ব বিধবার মতো কাঁদবে তোমার কারণে। | The world will wail thee like a makeless wife. |  |
 | | | |
-| জগৎ হবে তোমার বিধবা, আর বিলাপ করবে | The world will be thy widow and still weep |  |
+| ওয়ার্ল্ড হবে তোমার উইডো, আর বিলাপ করবে | The world will be thy widow and still weep |  |
 | যে তুমি গেলে না রেখে নিজের কোনো মূর্তি, | That thou no form of thee hast left behind, |  |
-| যেখানে প্রত্যেক সাধারণ বিধবাই রাখবে | When every private widow well may keep, |  |
+| যেখানে প্রত্যেক প্রাইভেট উইডোই রাখবে | When every private widow well may keep, |  |
 | সন্তানের চোখ দিয়ে মনে স্বামীর আকৃতি। | By children’s eyes, her husband’s shape in mind. |  |
 | | | |
 | উড়নচণ্ডী পৃথিবীতে যা-কিছু করে খরচ | Look what an unthrift in the world doth spend |  |
@@ -199,15 +199,15 @@ lang: en
 | প্রকৃতি যাদেরকে বানায়নি করতে রক্ষা, | Let those whom Nature hath not made for store, |  |
 | সেই রুক্ষ, অরূপ, রূঢ়, বন্ধ্যা হোক বিলীন। | Harsh, featureless, and rude, barrenly perish. |  |
 | যাদের দিয়েছে গুণ তাদেরই দেয় বেশি ভিক্ষা, | Look whom she best endowed she gave the more, |  |
-| এ উদার উপহার উদারভাবে রেখো চিরদিন। | Which bounteous gift thou shouldst in bounty cherish. |  |
+| এই উদার গিফট উদারভাবে রেখো চিরদিন। | Which bounteous gift thou shouldst in bounty cherish. |  |
 | | | |
 | সে বানিয়েছে তোমাকে তার সিলমোহরের লিপি, | She carved thee for her seal, and meant thereby |  |
 | তুমি আরো প্রিন্ট করো, নষ্ট করো না সেই কপি। | Thou shouldst print more, not let that copy die. |  |
 | | | |
 | যখন আমি গুনে দেখি সময়-বলা ওই ঘড়ি, | When I do count the clock that tells the time, | 12 |
-| দেখি ডুবে যায় উজ্জ্বল দিন কুৎসিত রাতে, | And see the brave day sunk in hideous night; |  |
+| দেখি ডুবে যায় নির্ভীক দিন কুৎসিত রাতে, | And see the brave day sunk in hideous night; |  |
 | যখন দেখি ফুরায় ভায়োলেটদের বাহাদুরি, | When I behold the violet past prime, |  |
-| আর কালো অলক ঢাকা রুপালির শাদা পরতে; | And sable curls all silvered o’er with white; |  |
+| আর কালো কেশর ঢাকা রুপালির শাদা পরতে; | And sable curls all silvered o’er with white; |  |
 | | | |
 | যখন দেখি বিরাট বৃক্ষের নাই কোনো পাতা, | When lofty trees I see barren of leaves, |  |
 | যার চাঁদোয়ার তলে শীতল হতো ভেড়ার পাল, | Which erst from heat did canopy the herd, |  |
@@ -279,7 +279,7 @@ lang: en
 | কিন্তু কী জন্য তুমি আরো শক্ত কোনো উপায়ে | But wherefore do not you a mightier way | 16 |
 | রক্তপিপাসু সময়ের সাথে করো না যুদ্ধ, | Make war upon this bloody tyrant Time, |  |
 | অবক্ষয় থেকে নিজেকে বাঁচাও না দুর্গ দিয়ে, | And fortify yourself in your decay |  |
-| যা হবে আমার বন্ধ্যা ছন্দের চেয়ে শুদ্ধ? | With means more blessèd than my barren rhyme? |  |
+| যা হবে আমার বন্ধ্যা রাইমের চেয়ে শুদ্ধ? | With means more blessèd than my barren rhyme? |  |
 | | | |
 | এখন দাঁড়িয়ে তুমি সুখের সময়ের চূড়ায়, | Now stand you on the top of happy hours, |  |
 | এখনো হাত না পড়া অনেক কুমারীর বাগান, | And many maiden gardens, yet unset, |  |
@@ -300,7 +300,7 @@ lang: en
 | যা লুকায় তোমার প্রাণ, অর্ধেকও দেখায় না গুনে। | Which hides your life, and shows not half your parts. |  |
 | | | |
 | যদি পারতাম লিখতে ঐ চোখের লাবণ্য, | If I could write the beauty of your eyes, |  |
-| অভিনব ছন্দে গুনতে তোমার সকল মায়া, | And in fresh numbers number all your graces, |  |
+| অভিনব নাম্বারে গুনতে তোমার সব মায়া, | And in fresh numbers number all your graces, |  |
 | আগামী যুগ বলত, ‘এ শুধু মিথ্যার দৈন্য: | The age to come would say ‘This poet lies: |  |
 | মর্তের মুখে এভাবে পড়ে না স্বর্গের ছায়া।’ | Such heavenly touches ne’er touched earthly faces.’ |  |
 | | | |
@@ -312,10 +312,10 @@ lang: en
 | কিন্তু তখন যদি থাকে তোমার কোনো পুত্র, | But were some child of yours alive that time, |  |
 | তোমাকে দ্বিজত্ব দেবে সে আর আমার ছত্র। | You should live twice, in it, and in my rhyme. |  |
 | | | |
-| গ্রীষ্মের দিনের সাথে করব তোমার তুলনা? | Shall I compare thee to a summer’s day? | 18 |
+| সামারের দিনের সাথে করব তোমার তুলনা? | Shall I compare thee to a summer’s day? | 18 |
 | তুমি আরো সুকুমার সুশীতল, আরো সুন্দর: | Thou art more lovely and more temperate: |  |
 | মে মাসের প্রিয় মুকুল ঝাঁকায় ঝড়ের ঝরনা, | Rough winds do shake the darling buds of May, |  |
-| এবং অচিরে ফুরায় ইজারা গ্রীষ্মের ঘর। | And summer’s lease hath all too short a date; |  |
+| এবং অচিরেই ফুরায় লিজ সামারের ঘর। | And summer’s lease hath all too short a date; |  |
 | | | |
 | স্বর্গের গোল চোখ কখনো অনেক তাপে জ্বলে, | Sometime too hot the eye of heaven shines, |  |
 | কখনো আবার তার সোনালি ত্বক রঙ হারায়, | And often is his gold complexion dimmed, |  |
@@ -351,7 +351,7 @@ lang: en
 | এক নারীর মুখ, প্রকৃতির নিজ হাতে আঁকা, | A woman’s face with nature’s own hand painted, | 20 |
 | তোমার, ও আমার হিয়ার রক্ষক-রক্ষিতা; | Hast thou, the master-mistress of my passion; |  |
 | এক নারীর নরম হৃদয়, কিন্তু নাই বাঁকা | A woman’s gentle heart, but not acquainted |  |
-| মেকি নারীদের ধরনের পরিবর্তী শঠতা; | With shifting change as is false women’s fashion; |  |
+| মেকি নারীদের ফ্যাশনের পরিবর্তী শঠতা; | With shifting change as is false women’s fashion; |  |
 | | | |
 | চোখ ওদের চাইতে উজ্জ্বল, কম কটাক্ষ, | An eye more bright than theirs, less false in rolling, |  |
 | গিল্টি পরিয়ে দেয় যার দিকেই পড়ে দৃষ্টি; | Gilding the object whereupon it gazeth; |  |
@@ -417,12 +417,12 @@ lang: en
 | যে প্রেমের ওকালতি করে নেবে তার প্রতিদান, | Who plead for love, and look for recompense, |  |
 | সে-জবানের চেয়ে বেশি যে বেশি করেছে বকবক। | More than that tongue that more hath more expressed. |  |
 | | | |
-| তাহলে ওগো পড়তে শেখো মৌন প্রেমের চিঠি: | O learn to read what silent love hath writ: |  |
+| তাহলে প্লিজ পড়তে শেখো মৌন প্রেমের চিঠি: | O learn to read what silent love hath writ: |  |
 | প্রেমের সূক্ষ্ম বুদ্ধি পেলে শুনতে পায় দিঠি। | To hear with eyes belongs to love’s fine wit. |  |
 | | | |
 | আমার চোখ চিত্রকর সেজে করে চিত্রিত | Mine eye hath played the painter and hath stelled | 24 |
 | সৌন্দর্যের রূপ আমার হৃদয়ের খাতায়; | Thy beauty’s form in table of my heart; |  |
-| আমার শরীর সেই কাঠামো যেখানে রক্ষিত, | My body is the frame wherein ’tis held, |  |
+| আমার শরীর সেই ফ্রেম যেখানে সে রক্ষিত, | My body is the frame wherein ’tis held, |  |
 | আর পরিপ্রেক্ষিত দক্ষ শিল্পীর পাতায়, | And perspective that is best painter’s art, |  |
 | | | |
 | শিল্পীর মাধ্যমে তার শৈলীর দেখা মেলে | For through the painter must you see his skill |  |
@@ -458,7 +458,7 @@ lang: en
 | | | |
 | আমার প্রেমের প্রভু, সামন্তের অঙ্গীকার | Lord of my love, to whom in vassalage | 26 |
 | যার সাথে যার গুণে বেঁধেছে আমার দায়িত্ব, | Thy merit hath my duty strongly knit, |  |
-| সেই তোমার কাছে পাঠাচ্ছি লিখিত সমাচার | To thee I send this written ambassage |  |
+| সেই তোমার কাছে পাঠাচ্ছি এ লিখিত লেটার | To thee I send this written ambassage |  |
 | দায়িত্ব দেখাতে, দেখাতে না আমার কবিত্ব; | To witness duty, not to show my wit; |  |
 | | | |
 | এত বড় দায়িত্ব এত ছোট বুদ্ধি আমার | Duty so great, which wit so poor as mine |  |
@@ -498,7 +498,7 @@ lang: en
 | বরং দিনকে রাত রাতকে দিন করে পীড়িত? | But day by night and night by day oppressed? |  |
 | | | |
 | এই দুই জন (যদিও তাদের মধ্যে গোলযোগ) | And each (though enemies to either’s reign) |  |
-| শুধু আমাকে যন্ত্রণা দিতেই হাতে হাত রাখে, | Do in consent shake hands to torture me, |  |
+| শুধু আমাকে টর্চার করতে হাতে হাত রাখে, | Do in consent shake hands to torture me, |  |
 | একজন কাজ দিয়ে ও অন্য জন অভিযোগ | The one by toil, the other to complain |  |
 | ক’রে কেন এত কাজ, আরো দূরে তোমার থেকে। | How far I toil, still farther off from thee. |  |
 | | | |
@@ -528,7 +528,7 @@ lang: en
 | তোমার মিঠা প্রেমের স্মৃতি আনে এত সম্পদ | For thy sweet love remembered such wealth brings |  |
 | যে তখন পেলেও নিতাম না কোনো রাজার পদ। | That then I scorn to change my state with kings. |  |
 | | | |
-| যখন মধুর মৌন চিন্তার অধিবেশনে | When to the sessions of sweet silent thought | 30 |
+| যখন মধুর মৌন সব চিন্তার সেশনে | When to the sessions of sweet silent thought | 30 |
 | আমি আহ্বান করি হারানো দিনের সব স্মৃতি, | I summon up remembrance of things past, |  |
 | দীর্ঘশ্বাস ফেলে দেখি কত কী নেই পেছনে, | I sigh the lack of many a thing I sought, |  |
 | সময়ের অপচয়ে পুরনো কষ্টে আবার কাঁদি; | And with old woes new wail my dear time’s waste; |  |
@@ -557,7 +557,7 @@ lang: en
 | মনে হয় সংগোপনে লুকিয়ে ছিল তোমার বুকে। | But things removed that hidden in there lie? |  |
 | | | |
 | তুমি সে-কবর যেখানে সমাহিত প্রেমের প্রাণ, | Thou art the grave where buried love doth live, |  |
-| গত প্রেমিকদের স্মৃতি যাতে ডালপালার সাজ, | Hung with the trophies of my lovers gone, |  |
+| গত প্রেমিকদের ট্রফি যাতে ডালপালার সাজ, | Hung with the trophies of my lovers gone, |  |
 | যারা তাদের আমার ধন তোমায় করেছে দান; | Who all their parts of me to thee did give; |  |
 | অনেকের সেই দেনা একমাত্র তোমার আজ। | That due of many, now is thine alone. |  |
 | | | |
@@ -601,7 +601,7 @@ lang: en
 | স্বর্গের সূর্য ম্লান হলে মর্তের সূর্য হয় কালো। | Suns of the world may stain, when heaven’s sun staineth. |  |
 | | | |
 | কেন তুমি প্রতিজ্ঞা করেছিলে সুন্দর দিন, | Why didst thou promise such a beauteous day, | 34 |
-| আমাকে ঘরছাড়া করেছিলে আলখাল্লা ছাড়া, | And make me travel forth without my cloak, |  |
+| আমাকে ঘরছাড়া করেছিলে রেইনকোট ছাড়া, | And make me travel forth without my cloak, |  |
 | যদি জানতেই নীচ মেঘ পথ করবে কঠিন, | To let base clouds o’ertake me in my way, |  |
 | তার গুমোট ধোঁয়ায় লুকাবে জমকালো চেহারা? | Hiding thy brav’ry in their rotten smoke? |  |
 | | | |
@@ -611,7 +611,7 @@ lang: en
 | যা ক্ষত সারালেও সরায় না ক্ষতের লাঞ্ছনা; | That heals the wound and cures not the disgrace; |  |
 | | | |
 | তোমার লজ্জায় তো সারবে না আমার জখম: | Nor can thy shame give physic to my grief: |  |
-| তুমি তো অনুতপ্ত, আমি এখনো ক্ষতিতে বিবশ। | Though thou repent, yet I have still the loss. |  |
+| তুমি শুধু অনুতপ্ত, আমার এখনো আছে লস। | Though thou repent, yet I have still the loss. |  |
 | অপরাধীর আক্ষেপে তার স্বস্তি খুব কম | Th’ offender’s sorrow lends but weak relief |  |
 | যাকে বহন করতে হয় অপরাধে ভারী ক্রস। | To him that bears the strong offence’s cross. |  |
 | | | |
@@ -647,7 +647,7 @@ lang: en
 | প্রেমের পুলক থেকে সুখের সময় করে শেষ। | Yet doth it steal sweet hours from love’s delight. |  |
 | | | |
 | আমি আর কোনোদিনও চিনতে পারি না তোমাকে, | I may not evermore acknowledge thee, |  |
-| তোমাকে আমার বিলাপিত পাপই দেয় লজ্জা পাছে, | Lest my bewailèd guilt should do thee shame, |  |
+| তোমাকে আমার বিলাপিত গিল্ট দেয় লজ্জা পাছে, | Lest my bewailèd guilt should do thee shame, |  |
 | তুমিও লোকের সামনে সম্মান দিও না আমাকে, | Nor thou with public kindness honour me, |  |
 | যদি না সম্মান তোমার নাম থেকে দিতে চাও মুছে: | Unless thou take that honour from thy name: |  |
 | | | |
@@ -685,7 +685,7 @@ lang: en
 | তুমি হও দশম মিউজ, দশ গুণ বেশি দামি | Be thou the tenth muse, ten times more in worth |  |
 | আগের ন’য়ের তুলনায়, যাদের ডাকে পদ্য, | Than those old nine which rhymers invocate, |  |
 | যে-কেউ তোমায় ডাকবে, তাকে ফোটাতে দিও তুমি | And he that calls on thee, let him bring forth |  |
-| অবিনাশী ছন্দ, যা সময়ের চেয়েও বৃদ্ধ। | Eternal numbers to outlive long date. |  |
+| অবিনাশী নাম্বার, যা সময়ের চেয়ে বৃদ্ধ। | Eternal numbers to outlive long date. |  |
 | | | |
 | আমার ক্ষীণ মিউজে খুশি হলে খুঁতখুঁতে যুগ, | If my slight muse do please these curious days, |  |
 | দুঃখ সব আমার, তোমার হোক খ্যাতির সুখ। | The pain be mine, but thine shall be the praise. |  |

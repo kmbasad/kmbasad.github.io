@@ -131,6 +131,8 @@ const arrowPath = 'M3 10h13.5M11.5 5l5 5-5 5';
     <script is:inline defer src="/js/site.js"></script>
     {/* dev only: Ctrl+click any text to edit it in place (src/dev/edit.js) */}
     {import.meta.env.DEV && <script is:inline defer src="/__edit/edit.js"></script>}
+    {/* dev only: select any text to leave Claude a comment (src/dev/comments.js) */}
+    {import.meta.env.DEV && <script is:inline defer src="/__edit/comments.js"></script>}
 
     <slot name="head" />
   </head>

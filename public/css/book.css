@@ -500,12 +500,13 @@ body.book-has-dict .tt-table td.en .w {
 }
 
 /* on a phone the poem's cells carry their own margins, so the headline takes
-   the site's reading margin itself */
+   the site's reading margin itself (as a margin, so its hairline stops at the
+   text's edges like a story's), at the prose pages' measures */
 @media (max-width: 760px) {
   .book-spine {
-    margin-bottom: 1.8rem;
-    padding: 0.6rem var(--m-read-pad) 1.3rem;
+    margin: 0 var(--m-read-pad) 2rem;
+    padding: 0.6rem 0 1.6rem;
   }
-  .book-spine-title { font-size: 1.75rem; }
+  .book-spine-title { font-size: var(--m-title-fs); }
 }
 body:has(.book-dict.is-open) .rail-key { opacity: 0; pointer-events: none; }

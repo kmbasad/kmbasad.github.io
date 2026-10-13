@@ -93,12 +93,15 @@ html {
      size, same leading. The section stylesheets consume these tokens in
      their own phone blocks — never restate the numbers. The margin is
      kindle-thin: the text fills the window. Prose is ragged right, never justified; verse never
-     breaks a line — the page's verse size (--verse-fs, set by the fitter in
-     translation-table.js) shrinks from --m-read-fs until the longest line
-     fits the screen. */
+     breaks a line — verse reads at --m-read-fs too, unless most of a page's
+     lines are too long for the screen (the fitter in translation-table.js,
+     --verse-fs, never below 16px); the few lines still too long are set a
+     little smaller each, on the page's same leading. Every reading page's
+     headline title is --m-title-fs. */
   --m-read-pad: 16px;
   --m-read-fs: 18px;
   --m-read-lh: 1.85;
+  --m-title-fs: 1.85rem;
 
   /* -- The reading type: one voice for everything on the site that is read --
      Taken from the trellis essays, which read best: Noto Serif Bengali at

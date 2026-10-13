@@ -507,9 +507,11 @@
 /* ── Mobile: the Bangla page ──────────────────────────────────────────────
    The parallel apparatus is desktop scholarship. On a phone the reader
    gets the poem itself: one Bangla column set like a book page. A verse
-   line NEVER breaks — the fitter in translation-table.js sets --verse-fs
-   (down from --m-read-fs) until the page's longest line fits the screen —
-   and the ghazal number is a centred ॥ N ॥ manuscript mark.              */
+   line NEVER breaks. It reads in the prose's voice (--m-read-*): the fitter
+   in translation-table.js keeps --verse-fs at the prose size unless most of
+   the page's lines are too long for it, and sets a lone long line a little
+   smaller on its own; the leading is the page's, in px, so such a line keeps
+   the rhythm. The ghazal number is a centred ॥ N ॥ manuscript mark.       */
 @media (max-width: 760px) {
   .tt-table td.it,
   .tt-table td.fa,
@@ -539,7 +541,9 @@
     white-space: nowrap;
     overflow: hidden;
     font-size: var(--verse-fs, var(--m-read-fs));
-    line-height: var(--m-read-lh);
+    line-height: calc(var(--verse-fs, var(--m-read-fs)) * var(--m-read-lh));
+    letter-spacing: var(--read-ls);
+    color: var(--read-ink);
     border-right: none;
     background: transparent;
     padding: 0.12rem var(--m-read-pad);
@@ -589,14 +593,17 @@
 
   /* Section headings */
   .tt-table tr.tt-section td.bn {
-    font-size: 1.25rem;
-    padding: 2.2rem var(--m-read-pad) 0.8rem;
+    font-size: var(--h2-fs);
+    line-height: 1.45;
+    white-space: normal;
+    padding: 2.6rem var(--m-read-pad) 1rem;
     text-indent: 0;
     border-bottom: none;
   }
 
   /* Margin sections: the ln-col is hidden on phones, so the section name
-     surfaces as a centred marginalia line above its first verse. */
+     rises above its first verse as the prose pages' section heading: an ink
+     heading under a short gold rule, on the text's left edge. */
   .tt-table tr.tt-secstart {
     display: flex;
     flex-direction: column;
@@ -608,18 +615,31 @@
     display: block;
     order: -1;
     font-size: 0;               /* the bare line number stays hidden */
-    text-align: center;
+    text-align: left;
     text-indent: 0;
-    padding: 2rem var(--m-read-pad) 0.55rem;
+    padding: 2.6rem var(--m-read-pad) 1rem;
     opacity: 1;
   }
 
   .tt-table tr.tt-secstart td.ln-col .ln-sec {
-    font-size: 0.95rem;
-    font-weight: 500;
+    display: block;
+    font-family: var(--bn-display);
+    font-size: var(--h2-fs);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0;
+    color: var(--text);
     white-space: normal;
     margin: 0;
-    letter-spacing: 0.06em;
+  }
+
+  .tt-table tr.tt-secstart td.ln-col .ln-sec::before {
+    content: '';
+    display: block;
+    width: 2.6rem;
+    height: 3px;
+    margin-bottom: 0.9rem;
+    background: var(--accent-2);
   }
 
   .tt-table tbody tr:first-child.tt-secstart td.ln-col { padding-top: 0.7rem; }

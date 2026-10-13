@@ -8,7 +8,7 @@ lang: en
 | :-- | :-- | --: |
 | কতবার তোমাকে ডেকেছি হতে আমার মিউজ | So oft have I invoked thee for my Muse | 78 |
 | আর আমার কবিতায় পেয়েছি এমন সহায়তা | And found such fair assistance in my verse |  |
-| যে সব পরদেশি কলম পেয়েছে আমার ইউজ, | As every alien pen hath got my use, |  |
+| যে সব এলিয়েন কলম পেয়েছে আমার ইউজ, | As every alien pen hath got my use, |  |
 | তোমার ছায়ায় ছড়িয়েছে তাদের কাব্যিকতা। | And under thee their poesy disperse. |  |
 | | | |
 | তোমার যে-চোখ শিখিয়েছে বোবাকে গাইতে জোরে, | Thine eyes, that taught the dumb on high to sing, |  |
@@ -89,7 +89,7 @@ lang: en
 | কোনো নবীন ছাপ এই ক্রমোন্নতির দিনের। | Some fresher stamp of the time-bettering days. |  |
 | | | |
 | তা-ই খোঁজো, প্রেম! তারা যতই করুক গুণগান | And do so, love; yet when they have devised, |  |
-| বাক্‌চাতুর্যের টানা টানা আঁচড়ের ভরসায়, | What strained touches rhetoric can lend, |  |
+| বাগীশ্বরের টানা টানা রেটরিকের ভরসায়, | What strained touches rhetoric can lend, |  |
 | সত্যিই সুন্দর তুমি পাও সত্য প্রমাণ | Thou truly fair, wert truly sympathized |  |
 | সত্যবাদী সখার সত্য সাধারণ ভাষায়; | In true plain words, by thy true-telling friend; |  |
 | | | |
@@ -119,12 +119,12 @@ lang: en
 | সেই সব সম্পদ অন্তরিত যার গহিনে | In whose confine immured is the store |  |
 | যেখানে জাগে তোমার সমতুলের জন্মভূমি? | Which should example where your equal grew? |  |
 | | | |
-| সেই লেখনীতে নিদারুণ দারিদ্র্য বাস করে | Lean penury within that pen doth dwell |  |
+| সেই কিবোর্ডে নিদারুণ দারিদ্র্য বাস করে | Lean penury within that pen doth dwell |  |
 | যে বিষয়কে দিতে পারে না গৌরব অল্প, | That to his subject lends not some small glory; |  |
 | তবে যে তোমার কথা লেখে সে যদি বলতে পারে | But he that writes of you, if he can tell |  |
 | তুমি তুমি, সম্মানে ভূষিত হয় তার গল্প। | That you are you, so dignifies his story. |  |
 | | | |
-| তোমার মাঝে যা লেখা, তা সে নকল করুক শত, | Let him but copy what in you is writ, |  |
+| তোমার মাঝে যা লেখা, তার সে বানাক কপি শত, | Let him but copy what in you is writ, |  |
 | প্রকৃতি যা প্রকাশ করে তা না করলে ঝাপসা | Not making worse what nature made so clear, |  |
 | এমন অনুকরণে তার রসবোধ হবে খ্যাত, | And such a counterpart shall fame his wit, |  |
 | তার রচনাশৈলী কুড়াবে অশেষ প্রশংসা। | Making his style admired every where. |  |
@@ -145,7 +145,7 @@ lang: en
 | তোমার শংসা শুনে আমি বলি, ‘সত্যি, সত্যি,’ | Hearing you praised, I say ‘ ’Tis so, ’tis true’, |  |
 | প্রশংসার পাহাড়ে চড়াই আরো কয়েক চূড়া, | And to the most of praise add something more, |  |
 | কিন্তু আমার চিন্তায় যা আছে তোমার প্রতি | But that is in my thought, whose love to you |  |
-| শব্দের আগে আগে সারিবদ্ধ সৈনিক তারা। | (Though words come hindmost) holds his rank before. |  |
+| শব্দের আগে আগে মার্চ করা সৈনিক তারা। | (Though words come hindmost) holds his rank before. |  |
 | | | |
 | তাই ওদের কদর কোরো কথার বাতাস শুনে | Then others for the breath of words respect; |  |
 | আর আমাকে মুখর নির্বাক চিন্তায় জেনে। | Me for my dumb thoughts, speaking in effect. |  |
@@ -327,8 +327,8 @@ lang: en
 | যেখানে প্রত্যেক দাগ ঢেকে দেয় রূপের নেকাব, | Where beauty’s veil doth cover every blot, |  |
 | ও সব সুন্দর হয়ে যায় চোখের দৃষ্টির কাছে! | And all things turns to fair that eyes can see! |  |
 | | | |
-| মনে রেখো (প্রিয় হৃদয়) এই অসামান্য অধিকার: | Take heed (dear heart) of this large privilege: |  |
-| অপপ্রয়োগে সেরা ছুরিও হারায় তার ধার। | The hardest knife ill-used doth lose his edge. |  |
+| মনে রেখো (প্রিয় হার্ট) এই অসামান্য অধিকার: | Take heed (dear heart) of this large privilege: |  |
+| খারাপ ইউজে সেরা ছুরিও হারায় তার ধার। | The hardest knife ill-used doth lose his edge. |  |
 | | | |
 | কেউ বলে যৌবন তোমার দোষ, কেউ খেয়াল, | Some say thy fault is youth, some wantonness, | 96 |
 | কেউ বলে যৌবন তোমার গুণ, লীলার খেলা। | Some say thy grace is youth and gentle sport. |  |
@@ -373,7 +373,7 @@ lang: en
 | | | |
 | অথচ পাখির গান অথবা অথৈ সুগন্ধ | Yet nor the lays of birds, nor the sweet smell |  |
 | নানা গন্ধের নানা বর্ণের বাহারি ফুলের, | Of different flowers in odour and in hue, |  |
-| কেউ লেখাতে পারেনি আমায় গ্রীষ্মের ছন্দ, | Could make me any summer’s story tell, |  |
+| কেউ আমাকে লেখাতে পারেনি সামারের ছন্দ, | Could make me any summer’s story tell, |  |
 | পারেনি ছেঁড়াতে ফুল, ছিঁড়ে মায়া গর্বী কোলের। | Or from their proud lap pluck them where they grew. |  |
 | | | |
 | তাছাড়া অবাক হইনি দেখেও পদ্মের সাদা, | Nor did I wonder at the lily’s white, |  |
@@ -465,7 +465,7 @@ lang: en
 | আমাকে আর দোষ দিও না যদি লিখতে না পারি! | O blame me not if I no more can write! |  |
 | তোমার আয়নায় তাকালে দেখবে এমন জ্যোতি | Look in your glass and there appears a face |  |
 | যা আমার সব সৃষ্টিকে অনায়াসে দেয় পাড়ি, | That overgoes my blunt invention quite, |  |
-| আমার চরণ ভোঁতা করে আমাকে দেয় কুখ্যাতি। | Dulling my lines and doing me disgrace. |  |
+| আমার লাইন ভোঁতা করে আমাকে দেয় কুখ্যাতি। | Dulling my lines and doing me disgrace. |  |
 | | | |
 | তবে কি এটা পাপ ছিল না, করতে গিয়ে সূক্ষ্ম | Were it not sinful then, striving to mend, |  |
 | সেই বিষয় নষ্ট করা, যা ছিল নিখুঁত ঢালা?--- | To mar the subject that before was well?--- |  |
@@ -506,7 +506,7 @@ lang: en
 | সুরূপ সদয় সত্য, এরাই আমার বিষয়, | “Fair, kind and true,” is all my argument, |  |
 | সুরূপ সদয় সত্য, যে-শব্দেই ডাকা হোক; | “Fair, kind, and true,” varying to other words; |  |
 | এই পরিবর্তনে আমার সব মেধার ক্ষয়, | And in this change is my invention spent, |  |
-| একে তিন ভাব দেয় বিস্ময়কর সুযোগ। | Three themes in one, which wondrous scope affords. |  |
+| একে তিন থিম দেয় বিস্ময়কর সুযোগ। | Three themes in one, which wondrous scope affords. |  |
 | | | |
 | সুরূপ সদয় সত্য, প্রায়শই থেকেছে একা, | “Fair, kind, and true,” have often liv’d alone, |  |
 | তবে একের মধ্যে তিনকে আগে যায়নি দেখা। | Which three till now never kept seat in one. |  |
@@ -604,15 +604,15 @@ lang: en
 | হায়, আমার হয়ে তুমি বিবাদ করো ভাগ্যের সাথে | O, for my sake do you with Fortune chide, | 111 |
 | আমার খারাপ সব কাজের অপরাধী দেবীকে | The guilty goddess of my harmful deeds, |  |
 | যে দেয়নি আর ভালো কিছু এই জীবনের পাতে, | That did not better for my life provide |  |
-| কেবল জনতার জীবিকা, যা আচার শেখায় জনতাকে। | Than public means which public manners breeds. |  |
+| কেবল পাব্লিক জীবিকা, যা আচার শেখায় পাব্লিকে। | Than public means which public manners breeds. |  |
 | | | |
-| আর এ-কারণেই আমার নামে কালো দাগ লেগেছে, | Thence comes it that my name receives a brand, |  |
+| আর এই উপায়েই আমার নাম ব্র্যান্ড পেয়েছে, | Thence comes it that my name receives a brand, |  |
 | অনেকটা যে-কারণেই বশ মানে আমার প্রকৃতি | And almost thence my nature is subdued |  |
-| রংরেজের হাতের মতো তার পেশারই কাছে: | To what it works in, like the dyer's hand: |  |
+| ডায়ারদের হাতের মতো তার পেশারই কাছে: | To what it works in, like the dyer's hand: |  |
 | তাই দয়া করে করো আমার নবায়নের আকুতি; | Pity me then and wish I were renew'd; |  |
 | | | |
 | আর আমি পান করব ইচ্ছুক রোগীর মতো | Whilst, like a willing patient, I will drink |  |
-| আমার এ সংক্রমণ সারাতে ওষধি ভিনেগার, | Potions of eisel 'gainst my strong infection |  |
+| আমার ইনফেকশন সারাতে ওষধি ভিনেগার, | Potions of eisel 'gainst my strong infection |  |
 | কোনো তিক্ততাই আমার কাছে লাগবে না তেতো, | No bitterness that I will bitter think, |  |
 | না দ্বিগুণ প্রায়শ্চিত্ত, সংশোধন শোধাতে আবার। | Nor double penance, to correct correction. |  |
 | | | |
@@ -630,7 +630,7 @@ lang: en
 | যে ভুল বা ঠিক পাল্টাবে আমার পাষাণ অনুভূতি। | That my steel'd sense or changes right or wrong. |  |
 | | | |
 | এত গভীর অতলে আমি ছুঁড়েছি সব সম্বন্ধ | In so profound abyss I throw all care |  |
-| অন্য সবার গলার, যাতে আমার সাপের কান | Of others' voices, that my adder's sense |  |
+| অন্য সবার গলার, যে আমার এডারের কান | Of others' voices, that my adder's sense |  |
 | নিন্দুক বা চাটুকার সবার কাছে সমান বন্ধ। | To critic and to flatterer stopped are. |  |
 | দেখো আমি কীভাবে দেব এই অবজ্ঞার বিধান: | Mark how with my neglect I do dispense: |  |
 | | | |

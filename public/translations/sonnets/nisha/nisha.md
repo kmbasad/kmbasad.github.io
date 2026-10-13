@@ -114,18 +114,18 @@ lang: en
 | যদি না তারা এই সাধারণ কুৎসিত কথা মানে: | Unless this general evil they maintain: |  |
 | সব মানুষ খারাপ, তাদের খারাপের শাসনে। | All men are bad and in their badness reign. |  |
 | | | |
-| তোমার দান, তোমার খাতা, আমার মগজেই পাবে | Thy gift, thy tables, are within my brain | 122 |
+| তোমার গিফট, তোমার খাতা, আমার মাথায় পাবে | Thy gift, thy tables, are within my brain | 122 |
 | বহু দিন টিকে থাকা স্মৃতির অক্ষরে লিখিত, | Full character'd with lasting memory, |  |
-| যা সেই সব অলস তালিকার উপরে থেকে যাবে | Which shall above that idle rank remain |  |
+| যা সেই সব অলস লিস্টের উপরে থেকে যাবে | Which shall above that idle rank remain |  |
 | সব সময় ছাড়িয়ে, এমনকি চিরকাল পর্যন্ত, | Beyond all date, even to eternity; |  |
 | | | |
-| অথবা অন্তত যত দিন এই মগজ আর হার্ট | Or at the least, so long as brain and heart |  |
+| অথবা অন্তত যত দিন এই ব্রেইন আর হার্ট | Or at the least, so long as brain and heart |  |
 | প্রকৃতির স্বভাবে ক্ষমতা পাবে বেঁচে থাকার; | Have faculty by nature to subsist; |  |
 | যতদিন না তারা বিস্মৃতির ধ্বংসে তোমার পার্ট | Till each to razed oblivion yield his part |  |
-| তাদের মুছে, হারাতে পারবে না স্মৃতিলিপি তোমার। | Of thee, thy record never can be miss'd. |  |
+| তাদের মুছে, হারাতে পারবে না রেকর্ড তোমার। | Of thee, thy record never can be miss'd. |  |
 | | | |
 | ঐ করুণ স্মারক পারত না এত কিছু নিতে, | That poor retention could not so much hold, |  |
-| আর হিসাব লাগে না তোমার প্রিয় প্রেম মাপায়, | Nor need I tallies thy dear love to score; |  |
+| আর ট্যালিও লাগে না তোমার প্রিয় প্রেম মাপায়, | Nor need I tallies thy dear love to score; |  |
 | তাই আমার সাহস হয়েছিল খাতা দিয়ে দিতে, | Therefore to give them from me was I bold, |  |
 | বিশ্বাস করতে সেই খাতা যে তোমাকে বেশি পায়: | To trust those tables that receive thee more: |  |
 | | | |
@@ -144,7 +144,7 @@ lang: en
 | | | |
 | তোমার খতিয়ান বা তুমি কাউকেই আমি মানি না, | Thy registers and thee I both defy, |  |
 | অতীত বর্তমান কিছুতেই নেই বিস্ময়; | Not wondering at the present nor the past; |  |
-| আমরা যা দেখি ও তোমার সব নথি করে ছলনা, | For thy records and what we see doth lie, |  |
+| আমরা যা দেখি ও তোমার রেকর্ড করে ছলনা, | For thy records and what we see doth lie, |  |
 | তোমার নিরন্তর তাড়ায় সব ছোট বড় হয়। | Made more or less by thy continual haste. |  |
 | | | |
 | এই শপথ করছি, এবং এই হবে সব ক্ষণে: | This I do vow, and this shall ever be: |  |
@@ -158,7 +158,7 @@ lang: en
 | না, তার নির্মাণ হয়নি কোনো দৈবের দানে; | No, it was builded far from accident; |  |
 | সে হাসিমুখ ঠাটের শিকার হয় না, বা আঘাত | It suffers not in smiling pomp, nor falls |  |
 | পায় না বন্দি অসন্তুষ্টির আক্রমণে | Under the blow of thralled discontent |  |
-| যেখানে আমাদের চলন পায় কালের দাওয়াত। | Whereto th’inviting time our fashion calls. |  |
+| যেখানে আমাদের ফ্যাশন পায় কালের দাওয়াত। | Whereto th’inviting time our fashion calls. |  |
 | | | |
 | সে ভয় করে না কূটনীতির, সেই ধর্মত্যাগী | It fears not policy, that heretic |  |
 | যে কাজ করে মাত্র কয়েক ঘণ্টার ভাড়ায়, | Which works on leases of short-numbered hours, |  |
@@ -180,14 +180,14 @@ lang: en
 | | | |
 | না, আমার সব নিষ্ঠা পাক শুধু তোমার হার্ট, | No, let me be obsequious in thy heart, |  |
 | আর তোমার হোক আমার অর্ঘ্য, গরিব কিন্তু ফ্রি, | And take thou my oblation, poor but free, |  |
-| কোনো ভেজাল মেশানো নেই, জানে শুধু এক আর্ট: | Which is not mixed with seconds, knows no art |  |
+| কোনো দুই নাম্বারি নেই, জানে শুধু এক আর্ট: | Which is not mixed with seconds, knows no art |  |
 | পারস্পরিক বিনিময়, শুধু তোমার জন্য আমি। | But mutual render, only me for thee. |  |
 | | | |
 | তাই, বেতনভুক গুপ্তচর! কোনো সত্য আত্মায় | Hence, thou suborned informer! a true soul |  |
 | যত দোষ পড়ে তত কম সে তোমার ক্ষমতায়। | When most impeached stands least in thy control. |  |
 | | | |
 | আমার অপূর্ব ছেলে, যে-তোমার নিজের বল | O thou, my lovely boy, who in thy power | 126 |
-| ধরে রাখে সময়ের অস্থির ঘড়ি, কাস্তের কাল; | Dost hold Time's fickle glass, his sickle-hour; |  |
+| ধরে রাখে সময়ের অস্থির গ্লাস, কাস্তের কাল; | Dost hold Time's fickle glass, his sickle-hour; |  |
 | যে ক্ষয়ের মাধ্যমে বেড়েছে, আর তাতে দেখায় | Who hast by waning grown, and therein show’st |  |
 | মিষ্টি আত্মার বৃদ্ধিতে তোমার প্রেমিকরা শুকায়— | Thy lovers withering as thy sweet self grow'st— |  |
 | | | |
@@ -230,7 +230,7 @@ lang: en
 | যেখানে আমার ঠোঁট, যে সেই সব ফসল পায়, | Whilst my poor lips which should that harvest reap, |  |
 | কাঠের সাহস দেখে লজ্জায় হয়ে যায় হাভাতে! | At the wood's boldness by thee blushing stand! |  |
 | | | |
-| সুড়সুড়ি পেতে তারা বদল আনে তাদের স্বভাবে | To be so tickled, they would change their state |  |
+| সুড়সুড়ি পেতে তারা চেঞ্জ আনে তাদের স্বভাবে | To be so tickled, they would change their state |  |
 | ও অবস্থায় নাচতে থাকা সব ফালির সাথে, | And situation with those dancing chips, |  |
 | যাদের উপর তোমার আঙুল হাঁটে কোমলভাবে, | O'er whom thy fingers walk with gentle gait, |  |
 | মরা কাঠ বেশি ধন্য করে জ্যান্ত ঠোঁটের চাইতে। | Making dead wood more bless'd than living lips. |  |
@@ -263,7 +263,7 @@ lang: en
 | | | |
 | আমি গোলাপ রাঙাতে দেখেছি, লাল আর শুভ্র, | I have seen roses damasked, red and white, |  |
 | কিন্তু তেমন কোনো গোলাপ দেখিনি তার গালে; | But no such roses see I in her cheeks; |  |
-| আর কিছু সুগন্ধিতে আছে অনেক আনন্দ, তীব্র | And in some perfumes is there more delight |  |
+| আর কিছু পার্ফিউমে আছে অনেক আনন্দ, তীব্র | And in some perfumes is there more delight |  |
 | দুর্গন্ধ শুধু আমার মিস্ট্রেস যদি নিশ্বাস ফেলে। | Than in the breath that from my mistress reeks. |  |
 | | | |
 | তার কথা বলা ভালোবাসি, যদিও ভালোই জানি | I love to hear her speak, yet well I know |  |
@@ -320,7 +320,7 @@ lang: en
 | সে, আমি নিজে, আর তুমি সবাই ছেড়েছে আমাকে— | Of him, myself, and thee I am forsaken— |  |
 | তিন বার তিন গুণ এ যন্ত্রণায় আমি ফাঁসি। | A torment thrice threefold thus to be crossed. |  |
 | | | |
-| বন্দি করো আমার দিল তোমার লোহার জেলে, | Prison my heart in thy steel bosom’s ward, |  |
+| বন্দি করো আমার দিল তোমার স্টিলের জেলে, | Prison my heart in thy steel bosom’s ward, |  |
 | আমার দুস্থ দিল হোক বন্ধুর দিলের জামিন; | But then my friend’s heart let my poor heart bail; |  |
 | যে আমায় রাখে সে দারোয়ান পাক আমার দিলে; | Whoe’er keeps me, let my heart be his guard; |  |
 | তবে আমার জেলে তুমি হতে পারবে না কঠিন। | Thou canst not then use rigour in my jail. |  |
@@ -372,9 +372,9 @@ lang: en
 | উইল ভর্তি করে দেবে তোমার প্রেমের দেরাজে, | Will will fulfil the treasure of thy love, |  |
 | হ্যাঁ, তা ইচ্ছায় পূর্ণ করো, আমারো এক ইচ্ছা তাতে। | Ay, fill it full with wills, and my will one. |  |
 | বিশাল সব ব্যাপারে প্রমাণ পাওয়া যায় সহজে | In things of great receipt with ease we prove |  |
-| বড় সংখ্যার ভিড়ে একজন পারে না গণ্য হতে। | Among a number one is reckoned none. |  |
+| বড় নাম্বারের মধ্যে কেউ পারে না গণ্য হতে। | Among a number one is reckoned none. |  |
 | | | |
-| তবে আমাকে অগণিত সংখ্যায় বিলীন হতে দাও, | Then in the number let me pass untold, |  |
+| তবে আমাকে অগণিত নাম্বারে বিলীন হতে দাও, | Then in the number let me pass untold, |  |
 | যদিও নেব তোমার সঞ্চয়ী হিসাবের পিছু; | Though in thy store’s account I one must be; |  |
 | কিছু-না আমাকে ধরো, যদি এই ধরে সুখ পাও | For nothing hold me, so it please thee hold |  |
 | যে কিছু-না আমিই তোমার কাছে, মিষ্টি, কিছু। | That nothing me a something, sweet, to thee. |  |
@@ -392,7 +392,7 @@ lang: en
 | চোখের মিথ্যা হাপরে পিটিয়ে কেন বানাও হুক | Why of eyes’ falsehood hast thou forged hooks |  |
 | যার সাথে আমার হৃদয়ের বিচার বাঁধা পড়ে? | Whereto the judgment of my heart is tied? |  |
 | | | |
-| আমার হার্ট কেন তাকে নিজস্ব জমি ভাববে | Why should my heart think that a several plot |  |
+| আমার হার্ট কেন তাকে প্রাইভেট প্লট ভাববে | Why should my heart think that a several plot |  |
 | যা দিল জানে আসলে সারা দুনিয়ার খেলাঘর?— | Which my heart knows the wide world’s common place?— |  |
 | বা কেন আমার চোখ তাকে দেখে তা নয় বলবে, | Or mine eyes, seeing this, say this is not, |  |
 | সুন্দর সত্য বসাতে এত বিশ্রী মুখের উপর? | To put fair truth upon so foul a face? |  |
@@ -568,7 +568,7 @@ lang: en
 | অনিশ্চিত আর অসুস্থ ক্ষুধাকে দিতে আরো সুখ। | Th’uncertain sickly appetite to please. |  |
 | | | |
 | আর আমার বুদ্ধি, আমার প্রেমের ডাক্তার, | My reason, the physician to my love, |  |
-| তার দেয়া পথ্যবিধান না মানায় রাগ করে | Angry that his prescriptions are not kept, |  |
+| তার দেয়া প্রেস্ক্রিপশন না মানায় রাগ করে | Angry that his prescriptions are not kept, |  |
 | আমায় ছেড়ে গেছে, বেপরোয়া হয়ে করি স্বীকার | Hath left me, and I desperate now approve |  |
 | কামনা মানে মৃত্যু, যে ওষুধ দিয়েছিল ছুঁড়ে। | Desire is death, which physic did except. |  |
 | | | |
@@ -677,7 +677,7 @@ lang: en
 | | | |
 | যা প্রেমের এ পবিত্র আগুনের থেকে ধারে আনে | Which borrowed from this holy fire of Love |  |
 | এক শাশ্বত সজীব তাপ, যাতে না হয় বিলয়, | A dateless lively heat, still to endure, |  |
-| আর বানায় ফুটন্ত স্নান যা, পুরুষরা জানে, | And grew a seething bath which yet men prove |  |
+| আর বানায় ফুটন্ত বাথ যা, পুরুষরা জানে, | And grew a seething bath which yet men prove |  |
 | অপরিচিত সব রোগের চূড়ান্ত নিরাময়। | Against strange maladies a sovereign cure. |  |
 | | | |
 | আমার মিস্ট্রেসের চোখে নতুন প্রেমের শিখা | But at my mistress’ eye love’s brand new fired, |  |
@@ -696,11 +696,11 @@ lang: en
 | সে আগুন নেয় তাদের মধ্যে যে সবচে’ রূপবতী, | The fairest votary took up that fire |  |
 | যা সত্য হৃদয়ের বহু বাহিনী জানত তাতাতে, | Which many legions of true hearts had warmed, |  |
 | সুতরাং সেইখানে তপ্ত তৃষ্ণার সেনাপতি | And so the general of hot desire |  |
-| ঘুমাচ্ছিল নিরস্ত্র হয়ে এক কুমারীর হাতে। | Was sleeping by a virgin hand disarmed. |  |
+| ঘুমাচ্ছিল হাতিয়ার হারিয়ে ভার্জিনের হাতে। | Was sleeping by a virgin hand disarmed. |  |
 | | | |
 | এ মশাল সে নেভায় পাশের এক ঠাণ্ডা কুয়ায়, | This brand she quenched in a cool well by, |  |
 | যা প্রেমের আগুন থেকে নিত চিরতপ্ত উচ্ছ্বাস, | Which from love’s fire took heat perpetual, |  |
-| আর সুস্বাস্থ্যের সহযোগী একটি স্নান বানায় | Growing a bath and healthful remedy |  |
+| আর সুস্বাস্থ্যের সহযোগী একটি বাথ বানায় | Growing a bath and healthful remedy |  |
 | রোগী পুরুষের জন্য; কিন্তু আমি, মিস্ট্রেসের দাস, | For men diseased; but I, my mistress’ thrall, |  |
 | | | |
 | সেখানে যাই ওষুধ পেতে; যা এই প্রমাণ করে: | Came there for cure; and this by that I prove: |  |

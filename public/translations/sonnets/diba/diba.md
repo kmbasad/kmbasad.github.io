@@ -45,7 +45,7 @@ lang: en
 | সেই ছোট ছোট অপরাধ স্বাধীনতা যা ঘটায় | Those pretty wrongs that liberty commits | 41 |
 | যখন থাকি না মাঝে-মাঝে তোমার হৃদয়ে আমি | When I am sometime absent from thy heart |  |
 | তোমার বয়স আর রূপের সাথে খুব মানায়, | Thy beauty and thy years full well befits, |  |
-| সদা প্রলোভন ঘোরে পিছে যেখানেই থাকো তুমি। | For still temptation follows where thou art. |  |
+| সদা প্রলোভন ফলো করে যেখানেই থাকো তুমি। | For still temptation follows where thou art. |  |
 | | | |
 | ভদ্র তুমি, তোমাকে জয় করতে হয় তাই বলে, | Gentle thou art, and therefore to be won, |  |
 | সুন্দর তুমি, তাই করতে হয় আক্রমণ; | Beauteous thou art, therefore to be assailed; |  |
@@ -63,14 +63,14 @@ lang: en
 | তাকে যে পেয়েছ তা নয় আমার সবটুক কষ্ট, | That thou hast her, it is not all my grief, | 42 |
 | যদিও বলা যায় খুব ভালোবেসেছিলাম তাকে; | And yet it may be said I loved her dearly; |  |
 | সে যে তোমাকে পেয়েছে সেটাই বেশি করে ক্লিষ্ট, | That she has thee is of my wailing chief, |  |
-| প্রেমের এই ক্ষতি আমাকে ছোঁয় আরো কাছ থেকে। | A loss in love that touches me more nearly. |  |
+| প্রেমের এই লস আমাকে ছোঁয় আরো কাছ থেকে। | A loss in love that touches me more nearly. |  |
 | | | |
 | প্রেমের দোষী, এভাবে তোমাদেরকে করছি মাফ: | Loving offenders, thus I will excuse ye: |  |
 | তাকে ভালোবাস কারণ জানো তাকে আমিও বাসি, | Thou dost love her because thou know’st I love her, |  |
 | সেও আমার কারণে আমাকে এবিউজ করে সাফ, | And for my sake even so doth she abuse me, |  |
 | আমার জন্য আমার বন্ধুর পরখে সেও খুশি। | Suff’ring my friend for my sake to approve her. |  |
 | | | |
-| তোমাকে হারালে, আমার ক্ষতি লাভ প্রিয়তমার, | If I loose thee, my loss is my love’s gain, |  |
+| তোমাকে হারালে, আমার লস লাভ প্রিয়তমার, | If I loose thee, my loss is my love’s gain, |  |
 | আর তাকে হারালে আমার বন্ধু পায় সে লস: | And loosing her, my friend hath found that loss: |  |
 | দুজনে পায় দুজনকে, আমি হারাই দুই বার, | Both find each other, and I lose both twain, |  |
 | দুজনে আমার জন্য আমার উপর চাপায় ক্রস। | And both for my sake lay on me this cross. |  |
@@ -138,14 +138,14 @@ lang: en
 | হৃদয় ঠেকাতে চায় চোখের তা করার অধিকার। | My heart, mine eye the freedom of that right. |  |
 | | | |
 | হৃদয় আরজি করে তুমি তার মাঝেই শায়িত | My heart doth plead that thou in him dost lie, |  |
-| স্ফটিক চোখেরও ধরাছোঁয়ার বাইরে এক ঘরে, | A closet never pierced with crystal eyes; |  |
+| ক্রিস্টাল চোখের ধরাছোঁয়ার বাইরে এক ঘরে, | A closet never pierced with crystal eyes; |  |
 | কিন্তু বিবাদী সে-আরজিতে হয় না প্রশমিত, | But the defendant doth that plea deny, |  |
 | বলে, তার মধ্যেই তোমার সুরূপ বাস করে। | And says in him thy fair appearance lies. |  |
 | | | |
 | মামলা মিটমাটের জন্য করা হয় হাজির | To ’cide this title is empanellèd |  |
 | কত হাজার চিন্তা, যাদের বাড়িওয়ালা হার্ট, | A quest of thoughts, all tenants to the heart, |  |
 | তারা নির্ধারণ করে, বিবেচনা করে সব নজির, | And by their verdict is determinèd |  |
-| স্বচ্ছ চোখের ভাগ আর প্রিয় হৃদয়ের পার্ট: | The clear eye’s moiety and the dear heart’s part, |  |
+| ক্লিয়ার চোখের ভাগ ও ডিয়ার হৃদয়ের পার্ট: | The clear eye’s moiety and the dear heart’s part, |  |
 | | | |
 | আমার চোখের পাওনা তোমার বাইরের পার্ট, | As thus: mine eye’s due is thy outward part, |  |
 | দিলের হক তোমার ভিতরের যে-প্রেমিক হার্ট। | And my heart’s right thy inward love of heart. |  |
@@ -155,10 +155,10 @@ lang: en
 | যখন আমার চোখে আসে দেখার ক্ষুধা ভীষণ, | When that mine eye is famished for a look, |  |
 | দিলের দম বন্ধ করে তার প্রেমের দীর্ঘশ্বাস, | Or heart in love with sighs himself doth smother, |  |
 | | | |
-| চোখ প্রেমের ছবি দিয়েই ঠিক করে ভোজের তিথি, | With my love’s picture then my eye doth feast, |  |
+| চোখ প্রেমের ছবি দিয়ে ঠিক করে পার্টির তিথি, | With my love’s picture then my eye doth feast, |  |
 | আর তার চিত্রিত ভোজে দাওয়াত পায় হার্ট। | And to the painted banquet bids my heart. |  |
 | কখনো আমার চোখ আমার হৃদয়ের অতিথি | Another time mine eye is my heart’s guest |  |
-| যে ভাগ করে নেয় তার প্রেমের ভাবনার পার্ট। | And in his thoughts of love doth share a part. |  |
+| যে শেয়ার করে তার প্রেমের ভাবনা এক পার্ট। | And in his thoughts of love doth share a part. |  |
 | | | |
 | সুতরাং হয় আমার প্রেম নয় ছবি তোমার, | So either by thy picture or my love, |  |
 | তুমি দূরে থাকলেও তোমাকে রাখে আমার কাছে; | Thyself away art present still with me; |  |
@@ -170,7 +170,7 @@ lang: en
 | | | |
 | পথে নামার সময় আমি কি সতর্ক ছিলাম | How careful was I when I took my way | 48 |
 | সত্যের শিক দিয়ে সব তুচ্ছতা আটকাতে, | Each trifle under truest bars to thrust, |  |
-| যাতে আমার প্রয়োজনে কখনো হয় না সে নিলাম | That to my use it might unusèd stay |  |
+| যাতে আমার ইউজের জন্য হয় না সে নিলাম | That to my use it might unusèd stay |  |
 | মিথ্যার হাতে, থাকে আস্থার নিরাপদ হাজতে। | From hands of falsehood, in sure wards of trust. |  |
 | | | |
 | কিন্তু তুমি, যার কাছে তুচ্ছ আমার মুক্তা, | But thou, to whom my jewels trifles are, |  |
@@ -184,17 +184,17 @@ lang: en
 | যেখান থেকে মনের খুশিতে যাও আবার আসো; | From whence at pleasure thou mayst come and part; |  |
 | | | |
 | তবে সেখান থেকেও তুমি চুরি হবে এই ভয়, | And even thence thou wilt be stol’n, I fear, |  |
-| কারণ এত দামি রতন দেখে সত্য চোর হয়। | For truth proves thievish for a prize so dear. |  |
+| কারণ এত দামি প্রাইজ দেখে সত্য চোর হয়। | For truth proves thievish for a prize so dear. |  |
 | | | |
 | সেই সময়ের বিরুদ্ধে—যদি তা কখনো আসে— | Against that time—if ever that time come— | 49 |
 | যখন তুমি আমার খুঁত দেখে কুঁচকাবে ভুরু, | When I shall see thee frown on my defects, |  |
 | যখন তোমার প্রেম চলে গেছে সীমানার শেষে, | Whenas thy love hath cast his utmost sum, |  |
-| বিবেচক যুক্তির কথা শুনতে করেছ শুরু; | Called to that audit by advised respects; |  |
+| অডিটর যুক্তির কথা শুনতে করেছ শুরু; | Called to that audit by advised respects; |  |
 | | | |
 | সেই সময়ের বিরুদ্ধে, যখন যাবে পাশ কেটে, | Against that time when thou shalt strangely pass, |  |
-| আর কুশলও শুধাবে না সূর্য, তোমার চোখ, | And scarcely greet me with that sun, thine eye, |  |
+| আর হ্যালো বলে তাকাবে না সূর্য, তোমার চোখ, | And scarcely greet me with that sun, thine eye, |  |
 | যখন এই প্রেম, যা ছিল তা থেকে যাবে পাল্টে, | When love, converted from the things it was, |  |
-| যুক্তি পাবে সুস্থির গাম্ভীর্যের সুযোগ; | Shall reasons find of settled gravity; |  |
+| যুক্তি পাবে নিতে সুস্থির গ্র্যাভিটির সুযোগ; | Shall reasons find of settled gravity; |  |
 | | | |
 | সেই সময়ের বিরুদ্ধে এখানে নিলাম আশ্রয়, | Against that time do I ensconce me here, |  |
 | যেখানে আমি জানি আমার সাধ্যের সীমারেখা, | Within the knowledge of mine own desert, |  |
@@ -233,7 +233,7 @@ lang: en
 | ডানার বেগে উড়েও মনে হবে নেই কোনো গতি। | In wingèd speed no motion shall I know. |  |
 | | | |
 | আমার কামনা ধরতে পারবে না কোনো ঘোড়া; | Then can no horse with my desire keep pace; |  |
-| তাই ডিজায়ার, পরিপূর্ণ প্রেম দিয়ে যা বানানো, | Therefore desire, of perfect’st love being made, |  |
+| তাই ডিজায়ার, পারফেক্ট প্রেম দিয়ে যা বানানো, | Therefore desire, of perfect’st love being made, |  |
 | তার আগুনের দৌড়ে জড়াবে না দেহের জরা; | Shall weigh no dull flesh in his fiery race; |  |
 | প্রেম ক্লান্ত ঘোড়াকে ছাড় দেবে প্রেমের জন্য: | But love, for love, thus shall excuse my jade: |  |
 | | | |
@@ -247,11 +247,11 @@ lang: en
 | | | |
 | অনেক উৎসব আছে গম্ভীর ও বিরল এত | There are feasts so solemn and so rare, |  |
 | যে তারা সুদীর্ঘ বছরে মাঝে মধ্যে আসায় | Since, seldom coming, in the long year set |  |
-| কণ্ঠে দূরে দূরে সাজানো দামি পাথরের মতো, | Like stones of worth they thinly placèd are, |  |
+| চেইনে দূরে দূরে সাজানো দামি পাথরের মতো, | Like stones of worth they thinly placèd are, |  |
 | বা রত্নের অধিনায়ক কারো গলার মালায়। | Or captain jewels in the carcanet. |  |
 | | | |
 | তেমনি সে-ক্ষণ যে করে তোমায় আমার সিন্দুক, | So is the time that keeps you as my chest, |  |
-| অথবা সেই আলমারি যা দামি পোশাক লুকায় | Or as the wardrobe which the robe doth hide |  |
+| অথবা ওয়ার্ড্রোব যারা দামি দামি রোব লুকায় | Or as the wardrobe which the robe doth hide |  |
 | যাতে বড় হয় বিশেষ কিছু মুহূর্তের সুখ, | To make some special instant special blest, |  |
 | কারাবন্দি গৌরব আরো নতুন ভাবে ছড়ায়। | By new unfolding his imprisoned pride. |  |
 | | | |
@@ -392,7 +392,7 @@ lang: en
 | নবজাতক আলোর তেপান্তরে আসে যখন, | Nativity, once in the main of light, |  |
 | হামাগুড়ি দেয় তারুণ্যে, যেখানে মুকুট প’রে | Crawls to maturity, wherewith being crowned |  |
 | তার গৌরবের সাথে যুদ্ধ করে জটিল গ্রহণ, | Crookèd eclipses ’gainst his glory fight, |  |
-| আর সময় যে-তোহফা দিয়েছিল তা জব্দ করে। | And Time that gave doth now his gift confound. |  |
+| আর সময় যে-গিফট দিয়েছিল তা জব্দ করে। | And Time that gave doth now his gift confound. |  |
 | | | |
 | সময় অবশ করে যৌবনের আন্দোলন, | Time doth transfix the flourish set on youth, |  |
 | খুঁড়ে সমান্তরাল রেখা লাবণ্যের কপালে, | And delves the parallels in beauty’s brow, |  |
@@ -489,7 +489,7 @@ lang: en
 | কার শক্ত হাত থামাবে তার চপল চরণ, | Or what strong hand can hold his swift foot back, |  |
 | এ-লাবণ্যের লুণ্ঠন তার কে-ই বা ঠেকাবে? | Or who his spoil of beauty can forbid? |  |
 | | | |
-| কেউ না, যদি না এ-অলৌকিকের হয় শক্তি— | O none, unless this miracle have might, |  |
+| কেউ না, যদি না এই মিরাকলের হয় শক্তি— | O none, unless this miracle have might, |  |
 | কালো কালিতে আমার প্রেম পায় শুভ্র দীপ্তি। | That in black ink my love may still shine bright. |  |
 | | | |
 | এ-সবের ভারে কামনা করি শান্তির মৃত্যু: | Tired with all these, for restful death I cry: | 66 |
