@@ -857,12 +857,16 @@ body[data-src-lang="grc"] .tt-table td.it {
   }
   .vh-tools button:active { background: rgba(17, 19, 23, 0.07); }
 
+  /* one line of the original, one line here (verse-hold.js sizes it) */
   .vh-src {
     margin: 0.2rem 0 0.5rem;
     color: var(--text);
     font-size: 1.22rem;
     line-height: 1.55;
+    white-space: nowrap;
+    overflow-x: clip;
   }
+  .vh-src.vh-wrap { white-space: normal; }
   .vh-src .w { padding: 0; }
   .vh-it {
     font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
@@ -885,7 +889,7 @@ body[data-src-lang="grc"] .tt-table td.it {
     font-size: 1.3rem;
   }
   /* beside an original, a crib or a transliteration reads as a gloss */
-  .vh-src + .vh-en, .vh-src + .vh-tl { font-size: 1.12rem; color: var(--text-3); }
+  .vh-src + .vh-en, .vh-src + .vh-tl { color: var(--text-3); }
   /* where a word can be looked up, it says so, quietly */
   body.book-has-dict .vh-src:not(.vh-en):not(.vh-tl) .w {
     text-decoration: underline dotted rgba(169, 124, 24, 0.4);

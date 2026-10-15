@@ -73,6 +73,48 @@
 
   /* ── the sheet ─────────────────────────────────────────────────────── */
 
+  /* The original keeps its own lines in the sheet, as the Bangla does on
+     the page: one size per column for the whole poem, the largest at which
+     its longest line fits the sheet (at most SHEET_MAX), so stepping line
+     by line never changes the size. All lines are measured in one layout
+     pass, at a reference size, then scaled. A line the original itself
+     breaks (a ghazal's two misras) keeps its break. Below SHEET_MIN a line
+     too long wraps rather than shrink further. */
+  var SHEET_MAX = 20, SHEET_MIN = 12, REF = 20;
+  var sheetFs = {}, sheetW = 0;
+
+  function fitSheet() {
+    sheetW = window.innerWidth;
+    sheetFs = {};
+    var have = body.clientWidth;
+    if (!have) return;
+    var rows = verseRows(), box = document.createElement('div');
+    box.style.cssText = 'position:absolute;left:0;top:0;visibility:hidden;width:max-content;';
+    var probes = [];
+    rows.forEach(function (tr) {
+      srcCells(tr).forEach(function (td) {
+        var col = td.classList[0];
+        var p = document.createElement('p');
+        p.className = 'vh-src vh-' + col;
+        p.style.cssText = 'display:block;width:max-content;white-space:nowrap;margin:0;font-size:' + REF + 'px;';
+        p.innerHTML = td.innerHTML;
+        box.appendChild(p);
+        probes.push([col, p]);
+      });
+    });
+    body.appendChild(box);
+    var widest = {};
+    probes.forEach(function (cp) {
+      var w = cp[1].getBoundingClientRect().width;
+      if (!widest[cp[0]] || w > widest[cp[0]]) widest[cp[0]] = w;
+    });
+    box.remove();
+    Object.keys(widest).forEach(function (col) {
+      var fs = Math.floor(REF * have / widest[col] * 0.98 * 10) / 10;
+      sheetFs[col] = Math.max(SHEET_MIN, Math.min(SHEET_MAX, fs));
+    });
+  }
+
   function build() {
     sheet = document.createElement('div');
     sheet.className = 'vh-sheet';
@@ -136,6 +178,26 @@
     }, { passive: true });
   }
 
+  /* On a phone the original's column is hidden, so its face (GFS Didot,
+     Cormorant, Naskh) is never fetched until the sheet first needs it,
+     and a sheet measured before it lands is measured in the fallback.
+     Ask for each face up front; when they are in, measure again. */
+  function preloadFaces() {
+    if (!document.fonts || !document.fonts.load) return;
+    var jobs = [];
+    SRC.forEach(function (col) {
+      var td = table.querySelector('tbody td.' + col);
+      if (!td) return;
+      var cs = getComputedStyle(td);
+      jobs.push(document.fonts.load(cs.fontStyle + ' 20px ' + cs.fontFamily, td.textContent || 'a'));
+    });
+    if (!jobs.length) return;
+    Promise.all(jobs).then(function () {
+      sheetW = 0;
+      if (current) show(current);
+    }, function () {});
+  }
+
   function show(tr) {
     if (!sheet) build();
     if (current) current.classList.remove('vh-held');
@@ -147,13 +209,18 @@
     var n = lineNo(tr);
     num.textContent = n ? 'লাইন ' + toBn(n) : '';
     body.innerHTML = '';
+    if (sheetW !== window.innerWidth) fitSheet();
     cells.forEach(function (td) {
+      var col = td.classList[0];
       var p = document.createElement('p');
-      p.className = 'vh-src vh-' + td.classList[0];
-      p.dataset.col = td.classList[0];
+      p.className = 'vh-src vh-' + col;
+      p.dataset.col = col;
       if (td.classList.contains('fa')) p.dir = 'rtl';
+      if (sheetFs[col]) p.style.fontSize = sheetFs[col] + 'px';
       p.innerHTML = td.innerHTML;
       body.appendChild(p);
+      // at the floor, a line still too long wraps rather than overflow
+      if (p.scrollWidth > p.clientWidth + 1) p.classList.add('vh-wrap');
     });
 
     root.classList.add('vh-open');
@@ -346,6 +413,7 @@
     table.dataset.vhReady = '1';
     root.classList.add('vh-ready');
     setupHold();
+    if (MQ.matches) preloadFaces();
     if (MQ.matches) maybeHint();
   }
 
