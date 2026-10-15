@@ -312,7 +312,7 @@
 
   for (var ti = 0; ti < tables.length; ti++) {
     tables[ti].addEventListener("mouseover", function (e) {
-      if (pinned) return;
+      if (pinned || window.innerWidth <= 760) return;
       var span = e.target.closest(".w");
       if (span) { if (last !== span) { last = span; highlight(span); } return; }
       if (last) { last = null; clearAll(); }
@@ -321,6 +321,8 @@
       if (!pinned) { last = null; clearAll(); }
     });
     tables[ti].addEventListener("click", function (e) {
+      // on a phone the other columns are hidden: nothing to cross-highlight
+      if (window.innerWidth <= 760) return;
       var span = e.target.closest(".w");
       if (!span) { pinned = false; last = null; clearAll(); return; }
       if (pinned && span.classList.contains(CLS_SRC)) { pinned = false; last = null; clearAll(); return; }
@@ -340,18 +342,20 @@
   /* ═══════════════════════════════════════════════════════════════════
    * Verse fit — phones only
    *
-   * A verse line must never break, and verse reads in the prose's voice.
-   * On the collapsed one-column page the bn cells are nowrap at the prose
-   * size (--m-read-fs). The page's size (--verse-fs) comes down only when
-   * more than one line in twenty is too long for the screen, to where
-   * nineteen in twenty fit, and never below 16px; a line still too long is
-   * then set a little smaller on its own (floored at 12.5px), on the page's
-   * leading, so the poem keeps one size and one rhythm and no outlier drags
-   * the whole page down. Runs after md-loader has built and word-wrapped
-   * the table, again when the webfonts land (they change every width), and
-   * on resize.
+   * A verse line never breaks, and the whole poem is set in one size: the
+   * largest at which the page's longest line still fits the screen, up to
+   * a comfortable ceiling (FIT_MAX). No line is set smaller on its own.
+   * Measured once at the ceiling (a Range gives each line's natural width,
+   * clipped or not), scaled, then verified, since shaping is not perfectly
+   * linear in the size. Two guards: a row many times wider than the page's
+   * verse is prose that strayed into the table (a notice, a colophon) and
+   * simply wraps; and below FIT_MIN no text is comfortable to read, so a
+   * line that would need less turns over with a hanging indent, as a
+   * printed book does, and the rest of the poem is sized without it. Runs after md-loader has built and word-wrapped the table, again
+   * when the webfonts land (they change every width), and when the width
+   * changes (not on a phone's toolbar sliding, which only changes height).
    * ═══════════════════════════════════════════════════════════════════ */
-  var fitRaf = null;
+  var fitRaf = null, fitWidth = 0;
 
   function isVerseRow(tr) {
     return !/(?:^|\s)(?:tt-section|tt-title|tt-marker)(?:\s|$)/.test(tr.className);
@@ -386,14 +390,15 @@
     if (table.scrollWidth > have) doc.classList.add("tt-src-wrap");
   }
 
-  var PAGE_FLOOR = 16, LINE_FLOOR = 12.5, FIT_SHARE = 0.05;
+  var FIT_MAX = 20, FIT_MIN = 13, PROSE_X = 2;
 
   function fitVerse() {
     var doc = document.documentElement;
     doc.style.removeProperty("--verse-fs");
     doc.style.removeProperty("--par-fit");
     var all = document.querySelectorAll(".tt-table td.bn");
-    for (var c = 0; c < all.length; c++) all[c].style.removeProperty("font-size");
+    for (var c = 0; c < all.length; c++) all[c].classList.remove("tt-turn", "tt-prose-line");
+    fitWidth = window.innerWidth;
     if (window.innerWidth > 760) return fitParallel();
 
     var cells = [];
@@ -401,36 +406,58 @@
       if (isVerseRow(all[i].parentNode) && /\S/.test(all[i].textContent)) cells.push(all[i]);
     }
     if (!cells.length) return;
-    var cs = getComputedStyle(cells[0]);
-    var pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
-    var base = parseFloat(cs.fontSize) || 18;
-    var room = function (td) {
-      var have = td.clientWidth - pad, need = td.scrollWidth - pad;
-      return have > 0 && need > have ? have / need : 1;
-    };
+    doc.style.setProperty("--verse-fs", FIT_MAX + "px");
 
-    /* the page's size: where all but one line in twenty fit */
-    var ratios = cells.map(room).sort(function (a, b) { return a - b; });
-    var r = ratios[Math.floor(cells.length * FIT_SHARE)];
-    var fs = base;
-    if (r < 1) {
-      fs = Math.max(PAGE_FLOOR, Math.floor(base * r * 0.985 * 10) / 10);
+    /* each line's width over the room it has (its cell's content box; a
+       couplet's indent narrows it), read in one pass */
+    var range = document.createRange(), padBy = {};
+    function have(td) {
+      var k = td.parentNode.className;
+      if (padBy[k] == null) {
+        var cs = getComputedStyle(td);
+        padBy[k] = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+      }
+      return td.clientWidth - padBy[k];
+    }
+    function over(td) {
+      range.selectNodeContents(td);
+      return range.getBoundingClientRect().width / Math.max(1, have(td));
+    }
+    var x = cells.map(over);
+
+    /* prose that strayed in: far wider than the page's own long lines */
+    var sorted = x.slice().sort(function (a, b) { return a - b; });
+    var p99 = sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * 0.99))];
+    /* a line that would need less than the floor turns over as it is
+       (hanging indent), and does not drag the poem down with it */
+    var verse = [], vx = [], worst = 0, limit = FIT_MAX / FIT_MIN;
+    cells.forEach(function (td, k) {
+      if (x[k] > p99 * PROSE_X) { td.classList.add("tt-prose-line"); return; }
+      if (x[k] > limit) { td.classList.add("tt-turn"); return; }
+      verse.push(td);
+      vx.push(x[k]);
+      if (x[k] > worst) worst = x[k];
+    });
+    if (!verse.length) return;
+
+    var fs = FIT_MAX;
+    if (worst > 1) fs = Math.max(FIT_MIN, Math.floor(FIT_MAX / worst * 0.99 * 10) / 10);
+    doc.style.setProperty("--verse-fs", fs + "px");
+
+    /* verify on the longest lines; step down by what is still missing */
+    var widest = verse.map(function (td, k) { return k; })
+      .sort(function (a, b) { return vx[b] - vx[a]; })
+      .slice(0, 12).map(function (k) { return verse[k]; });
+    for (var pass = 0; pass < 3 && fs > FIT_MIN; pass++) {
+      var w = Math.max.apply(null, widest.map(over));
+      if (w <= 1) break;
+      fs = Math.max(FIT_MIN, Math.floor(fs / w * 0.99 * 10) / 10);
       doc.style.setProperty("--verse-fs", fs + "px");
     }
 
-    /* the lines still too long, each on its own: a linear scale with a hair
-       of slack, then verified (shaping isn't perfectly linear in the size).
-       Writes and reads are batched so the page lays out once per pass. */
-    var long = cells.filter(function (td) { return room(td) < 1; });
-    for (var pass = 0; pass < 3 && long.length; pass++) {
-      var sizes = long.map(function (td) {
-        var cur = parseFloat(td.style.fontSize) || fs;
-        return Math.max(LINE_FLOOR, Math.floor(cur * room(td) * 0.985 * 10) / 10);
-      });
-      long.forEach(function (td, k) { td.style.fontSize = sizes[k] + "px"; });
-      long = long.filter(function (td) {
-        return room(td) < 1 && parseFloat(td.style.fontSize) > LINE_FLOOR;
-      });
+    /* at the floor, a line still too long turns over (hanging indent) */
+    if (fs <= FIT_MIN) {
+      verse.forEach(function (td) { if (over(td) > 1) td.classList.add("tt-turn"); });
     }
   }
 
@@ -440,7 +467,9 @@
   }
 
   document.addEventListener("md-loader-done", queueFit);
-  window.addEventListener("resize", queueFit, { passive: true });
+  window.addEventListener("resize", function () {
+    if (window.innerWidth !== fitWidth) queueFit();
+  }, { passive: true });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(queueFit);
 
 })();

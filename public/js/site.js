@@ -96,8 +96,12 @@
 
     if (!document.body.classList.contains('has-rail')) return;
 
+    /* reading down, the contents key steps out of the text's way, as a
+       reader's toolbar does; a scroll back up, or the page's end, brings
+       it back (chrome.css, phones and tablets) */
     var src = null;
     var queued = false;
+    var lastY = 0;
     function read() {
       queued = false;
       var y = src ? src.scrollTop : window.scrollY;
@@ -105,6 +109,11 @@
                      : root.scrollHeight - window.innerHeight;
       var p = span > 40 ? Math.max(0, Math.min(1, y / span)) : 0;
       root.style.setProperty('--p', p.toFixed(4));
+      var dy = y - lastY;
+      if (Math.abs(dy) > 6) {
+        root.classList.toggle('reading-down', dy > 0 && y > 160 && p < 0.985);
+        lastY = y;
+      }
     }
     function onScroll(e) {
       var t = e && e.target;

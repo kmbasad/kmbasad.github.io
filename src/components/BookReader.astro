@@ -14,7 +14,8 @@
  *     the right edge opens it; while it is open the rail may step aside.
  *
  * Word-hover cross-highlighting between the Bangla and the source is
- * translation-table.js. No image panel; the plates will return in another
+ * translation-table.js. On a phone, where the page is the Bangla alone, a
+ * held line shows its original in a sheet (verse-hold.js). No image panel; the plates will return in another
  * form later.
  *
  * Props: `title`, `work`, and `config`, which becomes window.TRANS_CONFIG (src, dict?,
@@ -97,5 +98,6 @@ const { config, title, work } = Astro.props;
 <script is:inline src="/js/md-loader.js"></script>
 <script is:inline src="/js/translation-table.js"></script>
 <script is:inline src="/js/book.js"></script>
+<script is:inline src="/js/verse-hold.js"></script>
 {/* dev-server only: Ctrl+double-click a বাংলা line to edit it in place —
     the endpoint and script exist solely inside `npm run dev` */}

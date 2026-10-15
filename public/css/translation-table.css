@@ -524,12 +524,13 @@ body[data-src-lang="grc"] .tt-table td.it {
 
 /* ── Mobile: the Bangla page ──────────────────────────────────────────────
    The parallel apparatus is desktop scholarship. On a phone the reader
-   gets the poem itself: one Bangla column set like a book page. A verse
-   line NEVER breaks. It reads in the prose's voice (--m-read-*): the fitter
-   in translation-table.js keeps --verse-fs at the prose size unless most of
-   the page's lines are too long for it, and sets a lone long line a little
-   smaller on its own; the leading is the page's, in px, so such a line keeps
-   the rhythm. The ghazal number is a centred ॥ N ॥ manuscript mark.       */
+   gets the poem itself, set like a book page in a reader's view: one Bangla
+   column, one size for the whole poem, no chrome in the way. A verse line
+   NEVER breaks: the fitter in translation-table.js sets the page's size
+   (--verse-fs) to the largest at which its longest line still fits, up to a
+   comfortable ceiling, and every line takes that one size. Hold a line to
+   see its original (verse-hold.js). The ghazal number is a centred ॥ N ॥
+   manuscript mark.                                                       */
 @media (max-width: 760px) {
   .tt-table td.it,
   .tt-table td.fa,
@@ -559,16 +560,32 @@ body[data-src-lang="grc"] .tt-table td.it {
     white-space: nowrap;
     overflow: hidden;
     font-size: var(--verse-fs, var(--m-read-fs));
-    line-height: calc(var(--verse-fs, var(--m-read-fs)) * var(--m-read-lh));
-    letter-spacing: var(--read-ls);
+    line-height: calc(var(--verse-fs, var(--m-read-fs)) * var(--m-verse-lh));
+    letter-spacing: 0;
     color: var(--read-ink);
     border-right: none;
     background: transparent;
-    padding: 0.12rem var(--m-read-pad);
+    padding: 0 var(--m-read-pad);
+    /* an opening quote hangs in the margin, so the verse keeps its edge */
+    hanging-punctuation: first;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Verse spacing between tercets */
-  .tt-table tr.tercet-start td.bn { padding-top: var(--tt-unit-gap); }
+  /* a word is just a word on a phone: the desktop's highlight padding
+     would open every gap by a quarter of a space */
+  .tt-table td.bn .w { padding: 0; border-radius: 0; transition: none; }
+
+  /* prose that strayed into the table wraps as prose; a line too long even
+     at the smallest readable size turns over with a hanging indent */
+  .tt-table td.bn.tt-prose-line { white-space: normal; }
+  .tt-table td.bn.tt-turn {
+    white-space: normal;
+    padding-left: calc(var(--m-read-pad) + 1.6em);
+    text-indent: -1.6em;
+  }
+
+  /* Verse spacing between stanzas: a little less than a blank line */
+  .tt-table tr.tercet-start td.bn { padding-top: calc(var(--verse-fs, var(--m-read-fs)) * 1.3); }
   .tt-table tbody tr:first-child.tercet-start td.bn { padding-top: 0.4rem; }
 
   /* Line numbers vanish; ghazal numbers become marginalia marks */
@@ -753,3 +770,150 @@ body[data-src-lang="grc"] .tt-table td.it {
 .tt-src-wrap .tt-table td.it,
 .tt-src-wrap .tt-table td.en,
 .tt-src-wrap .tt-table td.fa { white-space: normal; }
+
+/* -- The original, a line at a time, on a phone (verse-hold.js) --
+   Hold a line: it warms under the finger, takes a gold rule in the margin,
+   and a sheet rises with its original — the dictionary's own sheet in
+   miniature (book.css): fresh paper, a charcoal line along its head. The
+   page scrolls exactly as before; only the browser's long-press menu and
+   text selection over the verse give way to the hold. */
+@media (max-width: 760px) {
+  /* a tapped line keeps no sticky desktop hover */
+  .tt-table tbody tr:hover td,
+  .tt-table tbody tr:hover td[class] { background-color: transparent; }
+
+  html.vh-ready .tt-table td.bn {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: box-shadow 0.3s ease;
+  }
+  /* box-shadow, not background: the chapter pages pin cells transparent */
+  .tt-table tr.vh-pressing td.bn {
+    box-shadow: inset 0 0 0 100vmax rgba(169, 124, 24, 0.07);
+    transition-duration: 0.28s;
+  }
+  .tt-table tr.vh-held td.bn {
+    box-shadow: inset 3px 0 0 var(--accent-2), inset 0 0 0 100vmax rgba(169, 124, 24, 0.1);
+  }
+
+  .vh-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 300;               /* under the অভিধান's sheet (book.css) */
+    max-height: 46vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.55rem var(--m-read-pad) calc(1.1rem + env(safe-area-inset-bottom));
+    background: var(--surface);
+    border-top: 3px solid var(--t-line);
+    box-shadow: 0 -10px 40px rgba(14, 26, 43, 0.18);
+    transform: translateY(105%);
+    transition: transform var(--dur-slow, 0.4s) var(--ease-out);
+    visibility: hidden;
+  }
+  .vh-sheet.is-open { transform: none; visibility: visible; }
+  .vh-sheet:not(.is-open) { transition: transform var(--dur-slow, 0.4s) var(--ease-out), visibility 0s linear var(--dur-slow, 0.4s); }
+
+  .vh-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 40px;
+  }
+  .vh-kicker {
+    font-family: var(--bn-font);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--tint-ink, #8a6a12);
+  }
+  .vh-num {
+    font-family: var(--bn-font);
+    font-size: 0.82rem;
+    color: var(--text-3);
+  }
+  .vh-tools { margin-left: auto; display: flex; gap: 0.15rem; margin-right: -8px; }
+  .vh-tools button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-3);
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .vh-tools button:active { background: rgba(17, 19, 23, 0.07); }
+
+  .vh-src {
+    margin: 0.2rem 0 0.5rem;
+    color: var(--text);
+    font-size: 1.22rem;
+    line-height: 1.55;
+  }
+  .vh-src .w { padding: 0; }
+  .vh-it {
+    font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 1.32rem;
+  }
+  body[data-src-lang="grc"] .vh-it {
+    font-family: "GFS Didot", "Noto Serif", Georgia, serif;
+    font-style: normal;
+    font-size: 1.24rem;
+  }
+  .vh-fa {
+    font-family: "Noto Naskh Arabic", "Scheherazade New", "Traditional Arabic", serif;
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 1.9;
+  }
+  .vh-en, .vh-tl {
+    font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+    font-size: 1.3rem;
+  }
+  /* beside an original, a crib or a transliteration reads as a gloss */
+  .vh-src + .vh-en, .vh-src + .vh-tl { font-size: 1.12rem; color: var(--text-3); }
+  /* where a word can be looked up, it says so, quietly */
+  body.book-has-dict .vh-src:not(.vh-en):not(.vh-tl) .w {
+    text-decoration: underline dotted rgba(169, 124, 24, 0.4);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.28em;
+    cursor: pointer;
+  }
+
+  /* the sheet takes the corner the contents key sits in */
+  html.vh-open .rail-key { opacity: 0; pointer-events: none; }
+
+  .vh-hint {
+    position: fixed;
+    left: 50%;
+    bottom: calc(78px + env(safe-area-inset-bottom));
+    z-index: 390;
+    width: max-content;
+    max-width: calc(100% - 2 * var(--m-read-pad));
+    padding: 0.62rem 1.05rem;
+    border-radius: 22px;
+    background: var(--t-slate);
+    color: #f3f4f6;
+    font-family: var(--bn-font);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(14, 26, 43, 0.28);
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease-out);
+    pointer-events: none;
+  }
+  .vh-hint.is-on { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+}
+@media (min-width: 761px) {
+  .vh-sheet, .vh-hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vh-sheet, .vh-hint { transition: none; }
+}

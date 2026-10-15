@@ -612,6 +612,12 @@ html.sheet-open .mast { position: fixed; top: 0; left: 0; right: 0; z-index: 700
   }
 
   html.rail-open .rail-key { opacity: 0; pointer-events: none; }
+  /* reading down, the key steps out of the text's way (site.js) */
+  html.reading-down:not(.rail-open) .rail-key {
+    transform: translateY(calc(100% + 24px + env(safe-area-inset-bottom)));
+    opacity: 0;
+    pointer-events: none;
+  }
 
   /* in the sheet the rail reads from the left, its axis on the left edge */
   .rail { text-align: left; }

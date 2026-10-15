@@ -568,6 +568,15 @@
       if (word) lookup(word, span);
     });
 
+    /* the phone's line sheet (verse-hold.js) shows the original out of
+       the table; a word tapped there is looked up through its own span */
+    window.BookDict = {
+      lookupSpan: function (span) {
+        var word = spanWord(span);
+        if (word) lookup(word, span);
+      }
+    };
+
     var closeBtn = $('dict-close');
     if (closeBtn) closeBtn.addEventListener('click', closeSheet);
     document.addEventListener('keydown', function (ev) {
