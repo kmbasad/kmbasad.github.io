@@ -1,0 +1,55 @@
+---
+/**
+ * One reading page per book of Homer's Odyssey: the Bangla on the left, the
+ * Greek (Murray's Loeb text, Perseus) on the right. The data file sits at
+ * public/translations/odyssey/<part>/<part>.md, so the page's own URL
+ * resolves the relative `src`. The rail's prev/next walk the books in order.
+ */
+import Base from '../../../layouts/Base.astro';
+import BookReader from '../../../components/BookReader.astro';
+import { translationWorks } from '../../../data/translation-works.js';
+
+export function getStaticPaths() {
+  const work = translationWorks.find((w) => w.slug === 'odyssey')!;
+  return work.parts!.map((p, i) => ({
+    params: { part: p.slug },
+    props: {
+      work,
+      part: p,
+      prev: i > 0 ? work.parts![i - 1] : null,
+      next: i < work.parts!.length - 1 ? work.parts![i + 1] : null,
+    },
+  }));
+}
+
+const { work, part, prev, next } = Astro.props;
+const href = (p: { slug: string } | null) => (p ? `/translations/odyssey/${p.slug}/` : '');
+---
+
+<Base
+  rail
+  section="translations"
+  bodyClass="book-page"
+  styles={['/css/translation-table.css', '/css/book.css']}
+  navTitle={part.title} navParentHref="/translations/odyssey/" navParentLabel={work.title}
+  footPrev={href(prev) || null}
+  footNext={href(next) || null}
+  prevLabel={prev?.title}
+  nextLabel={next?.title}
+>
+  <Fragment slot="head">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <BookReader title={part.title} work={work.title}
+    config={{
+      src: `${part.slug}.md`,
+      dictLang: 'grc',
+      meters: { matra: [8, 16] },
+      marginSections: true,
+      toc: '/translations/odyssey/',
+      prev: href(prev),
+      next: href(next),
+    }}
+  />
+</Base>

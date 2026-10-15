@@ -225,6 +225,24 @@
   white-space: nowrap;
 }
 
+/* ── Greek column ─────────────────────────────────────── */
+/* Homer in the Latin column's place, set upright in a face that carries
+   polytonic Greek (Cormorant has none); md-loader marks the page's lang. */
+body[data-src-lang="grc"] .tt-table td.it {
+  font-family: "GFS Didot", "Noto Serif", Georgia, serif;
+  font-style: normal;
+  word-spacing: -0.04em;
+}
+/* Didot draws Greek broad: a hexameter runs some 45 letters, so the Greek
+   sits a step smaller than Cormorant's Latin, level in weight with the
+   Bangla, and the pair fits beside the rail without the Greek wrapping */
+@media (min-width: 761px) {
+  body[data-src-lang="grc"] .tt-table td.it {
+    font-size: calc(var(--par-fit, var(--par-fs)) * 0.86);
+    line-height: calc(var(--verse-lh) / 0.86);
+  }
+}
+
 /* ── Persian column ───────────────────────────────────── */
 .tt-table td.fa {
   color: var(--tt-ink-source);

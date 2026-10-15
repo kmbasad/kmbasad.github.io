@@ -19,7 +19,7 @@
  *   ---
  *   title: Inferno · Canto I
  *   type:  tercet | ghazal     # tercet = one row per line; ghazal = misras paired
- *   lang:  it | la | fa        # source-column class + script styling
+ *   lang:  it | la | grc | fa  # source-column class + script styling
  *   ---
  *
  *   [N] bangla :: original     # [N] (optional) = line/ghazal number, on stanza starts
@@ -42,10 +42,10 @@
   }
 
   var DELIM = '::';
-  var LANG_LABEL = { it: 'Italian', la: 'Latin', fa: 'Persian', en: 'English' };
+  var LANG_LABEL = { it: 'Italian', la: 'Latin', grc: 'Greek', fa: 'Persian', en: 'English' };
   // Latin-script sources share the Italian column styling (Cormorant italic);
   // map the frontmatter lang → the CSS column class actually rendered.
-  var COL_CLASS = { it: 'it', la: 'it', fa: 'fa', en: 'en' };
+  var COL_CLASS = { it: 'it', la: 'it', grc: 'it', fa: 'fa', en: 'en' };
 
   // Normalise a word the same way translation-table.js does, so dictionary
   // keys line up with the tokens it looks up at hover time. NFC first:
@@ -88,6 +88,7 @@
   var type = (cfg.type || meta.type || 'tercet').toLowerCase();
   var lang = (cfg.lang || meta.lang || 'it').toLowerCase();
   var colCls = COL_CLASS[lang] || lang;
+  document.body.dataset.srcLang = lang;   // per-script styling of the original (css: Greek)
   var srcLabel = meta.source_label || LANG_LABEL[lang] || lang;
   var noSource = !!(cfg.noSource);
 

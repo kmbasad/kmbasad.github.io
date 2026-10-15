@@ -9,6 +9,36 @@
  */
 export const translationWorks = [
   {
+    slug: 'odyssey',
+    title: 'হোমারের ওডিসি',
+    parts: [
+      { slug: 'book-i', title: 'প্রথম বই' },
+      { slug: 'book-ii', title: 'দ্বিতীয় বই' },
+      { slug: 'book-iii', title: 'তৃতীয় বই' },
+      { slug: 'book-iv', title: 'চতুর্থ বই' },
+      { slug: 'book-v', title: 'পঞ্চম বই' },
+      { slug: 'book-vi', title: 'ষষ্ঠ বই' },
+      { slug: 'book-vii', title: 'সপ্তম বই' },
+      { slug: 'book-viii', title: 'অষ্টম বই' },
+      { slug: 'book-ix', title: 'নবম বই' },
+      { slug: 'book-x', title: 'দশম বই' },
+      { slug: 'book-xi', title: 'একাদশ বই' },
+      { slug: 'book-xii', title: 'দ্বাদশ বই' },
+      { slug: 'book-xiii', title: 'ত্রয়োদশ বই' },
+      { slug: 'book-xiv', title: 'চতুর্দশ বই' },
+      { slug: 'book-xv', title: 'পঞ্চদশ বই' },
+      { slug: 'book-xvi', title: 'ষোড়শ বই' },
+      { slug: 'book-xvii', title: 'সপ্তদশ বই' },
+      { slug: 'book-xviii', title: 'অষ্টাদশ বই' },
+      { slug: 'book-xix', title: 'ঊনবিংশ বই' },
+      { slug: 'book-xx', title: 'বিংশ বই' },
+      { slug: 'book-xxi', title: 'একবিংশ বই' },
+      { slug: 'book-xxii', title: 'দ্বাবিংশ বই' },
+      { slug: 'book-xxiii', title: 'ত্রয়োবিংশ বই' },
+      { slug: 'book-xxiv', title: 'চতুর্বিংশ বই' },
+    ],
+  },
+  {
     slug: 'metamorphoses',
     title: 'অভিডের মেটামর্ফোসিজ',
     parts: [

@@ -12,6 +12,25 @@ const W = '#f2efe6', W2 = '#ebe7dc', G = '#c9c8c2', G2 = '#d9d8d2';
 const UNDER = [0, 0, 40, 40];
 
 export const compositions = {
+  // Homer ~ after Mondrian: the sea a tall blue plane down the left, a second
+  // blue at the far shore, one small yellow sun and a red sail between them
+  odyssey: {
+    label: 'After Mondrian: a sea of blue planes for the Odyssey',
+    sheet: { d: [22, 40], p: [0, 86] },
+    marks: [B, Y, R, K],
+    planes: [
+      { bg: W, d: [0, 0, 22, 30], p: UNDER },
+      { bg: B, d: [0, 30, 22, 70], p: [86, 12, 14, 48] },
+      { bg: W, d: [22, 0, 40, 100], p: UNDER },
+      { bg: Y, d: [62, 0, 14, 18], p: [86, 0, 14, 12] },
+      { bg: W2, d: [76, 0, 24, 18], p: UNDER },
+      { bg: G, d: [62, 18, 38, 22], p: UNDER },
+      { bg: W, d: [62, 40, 24, 35], p: UNDER },
+      { bg: B, d: [62, 75, 24, 25], p: [86, 70, 14, 30] },
+      { bg: R, d: [86, 40, 14, 12], p: [86, 60, 14, 10] },
+      { bg: W2, d: [86, 52, 14, 48], p: UNDER },
+    ],
+  },
   // Ovid — "Composition with Large Blue Plane, Red, Black, Yellow and Gray"
   // (1921): a great blue for the sea-changes, the list beside it
   metamorphoses: {

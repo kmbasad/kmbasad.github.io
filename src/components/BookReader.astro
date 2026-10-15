@@ -32,6 +32,10 @@ const { config, title, work } = Astro.props;
      paint so it never flashes open (book.js keeps it so until a lookup) -->
 <script is:inline>document.body.classList.add('dict-collapsed');</script>
 
+{/* dev only: a literal English line on hover beside each line of the
+    original, where docs/cribs/ holds one for this page (src/dev/crib.js) */}
+{import.meta.env.DEV && <script is:inline defer src="/__edit/crib.js"></script>}
+
 <div class="book-layout">
   <div class="book-text-panel">
     <div class="book-text-body">

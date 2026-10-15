@@ -18,7 +18,7 @@
  *   - Ctrl+Left/Right: the previous / next part (the way on is shown in the rail).
  *
  * Config (window.TRANS_CONFIG, shared with md-loader.js):
- *   dictLang: 'la' | 'it' | 'fa' | 'en'   — the source language of this page
+ *   dictLang: 'la' | 'grc' | 'it' | 'fa' | 'en'   — the source language of this page
  *   meters:   { matra: [8,16], feet: true }   — which toggles to offer
  *   prev, next                     — ctrl+arrow keys (shown in the reading rail)
  */
@@ -39,6 +39,15 @@
    * ═════════════════════════════════════════════════════════════════════ */
 
   var LANGS = {
+    grc: {
+      wikt: 'Ancient Greek',
+      hint: 'গ্রিক যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
+      links: [
+        ['Logeion',    function (w) { return 'https://logeion.uchicago.edu/' + eu(w); }],
+        ['Perseus',    function (w) { return 'https://www.perseus.tufts.edu/hopper/morph?l=' + eu(w) + '&la=greek'; }],
+        ['Wiktionary', function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#Ancient_Greek'; }]
+      ]
+    },
     la: {
       wikt: 'Latin',
       hint: 'লাতিন যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
@@ -109,6 +118,7 @@
     others: 'অন্যান্য অভিধান',
     lang: {
       la: 'লাতিন',
+      grc: 'গ্রিক',
       it: 'ইতালীয়',
       en: 'ইংরেজি',
       fa: 'ফারসি'
@@ -162,7 +172,24 @@
     var out = [];
     function add(w) { if (w && w.length > 0 && out.indexOf(w) === -1) out.push(w); }
 
-    if (cfg.dictLang === 'la') {
+    if (cfg.dictLang === 'grc') {
+      // Homer's words as Wiktionary titles them: NFC, the grave turned
+      // acute, an enclitic's second accent dropped, an elided vowel restored
+      var g = word.normalize('NFC').replace(/[\u1FBD\u1FBF\u2019\u02BC']+$/, function (m) { return m ? "'" : ''; });
+      var elided = /'$/.test(g);
+      g = g.replace(/'$/, '');
+      var acute = function (x) { return x.normalize('NFD').replace(/\u0300/g, '\u0301').normalize('NFC'); };
+      var oneAccent = function (x) {
+        var d = x.normalize('NFD'), seen = 0;
+        return d.replace(/[\u0301\u0342]/g, function (m) { return seen++ ? '' : m; }).normalize('NFC');
+      };
+      [g, acute(g), oneAccent(acute(g))].forEach(function (x) { add(x); add(x.toLowerCase()); });
+      if (elided) ['\u03b5', '\u03b1', '\u03bf', '\u03b9'].forEach(function (v) {
+        add(acute(g) + v); add(acute(g).toLowerCase() + v);
+        var d = acute(g).toLowerCase().normalize('NFD');
+        if (!/[\u0301\u0342]/.test(d)) add((d + v + '\u0301').normalize('NFC'));   // \u03b4' -> \u03b4\u03ad
+      });
+    } else if (cfg.dictLang === 'la') {
       var w = stripMacrons(word), lw = w.toLowerCase();
       add(lw);
       if (w !== lw) add(w);                                   // Iuppiter, Phoebe

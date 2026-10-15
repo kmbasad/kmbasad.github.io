@@ -30,6 +30,9 @@ const EDIT_JS = fileURLToPath(new URL('./src/dev/edit.js', import.meta.url));
 const SONNET_DIFF_JS = fileURLToPath(new URL('./src/dev/sonnet-diff.js', import.meta.url));
 const SONNETS_ORIG = fileURLToPath(new URL('./docs/sonnets-original.json', import.meta.url));
 // the author's comments to Claude, pinned to words on any page (src/dev/comments.js)
+// literal English cribs beside the originals, line by line (src/dev/crib.js)
+const CRIB_JS = fileURLToPath(new URL('./src/dev/crib.js', import.meta.url));
+const CRIBS = fileURLToPath(new URL('./docs/cribs/', import.meta.url));
 const COMMENTS_JS = fileURLToPath(new URL('./src/dev/comments.js', import.meta.url));
 const COMMENTS = fileURLToPath(new URL('./docs/comments.json', import.meta.url));
 const EDIT_ROOTS = [
@@ -179,6 +182,27 @@ function inPlaceEditor() {
             }
           }
 
+          if (req.method === 'GET' && url.pathname === '/crib.js') {
+            res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+            res.end(fs.readFileSync(CRIB_JS));
+            return;
+          }
+          if (req.method === 'GET' && url.pathname === '/crib') {
+            // /translations/<work>/<part>/<part>.md -> docs/cribs/<work>/<part>.tsv
+            const m = (url.searchParams.get('src') || '').match(/^\/translations\/([\w-]+)\/([\w-]+)\/[\w-]+\.md$/);
+            const f = m && path.join(CRIBS, m[1], m[2] + '.tsv');
+            /** @type {Record<string, string>} */
+            const d = {};
+            if (f && fs.existsSync(f)) {
+              for (const l of fs.readFileSync(f, 'utf8').split('\n')) {
+                const t = l.indexOf('\t');
+                if (t > 0 && /^\d+$/.test(l.slice(0, t))) d[l.slice(0, t)] = l.slice(t + 1).trim();
+              }
+            }
+            res.setHeader('Content-Type', 'application/json; charset=utf-8');
+            res.end(JSON.stringify(d));
+            return;
+          }
           if (req.method === 'GET' && url.pathname === '/sonnet-diff.js') {
             res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
             res.end(fs.readFileSync(SONNET_DIFF_JS));
