@@ -556,9 +556,11 @@ body[data-src-lang="grc"] .tt-table td.it {
   .tt-table { width: 100%; }
 
   .tt-table td.bn {
-    /* a verse line never wraps — the fitter sizes the page so it fits */
+    /* a verse line never wraps — the fitter sizes the page so it fits;
+       clipped sideways only, so a deep conjunct below the line is never cut */
     white-space: nowrap;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     font-size: var(--verse-fs, var(--m-read-fs));
     line-height: calc(var(--verse-fs, var(--m-read-fs)) * var(--m-verse-lh));
     letter-spacing: 0;
