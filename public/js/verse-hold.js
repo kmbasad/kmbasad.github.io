@@ -9,6 +9,11 @@
  * poem line by line; a tap on a word of the original opens the অভিধান
  * (book.js), where the page has one. × or a swipe down puts it away.
  *
+ * The hold takes the place of the browser's own long-press, which is how a
+ * phone selects text; so the sheet gives copying back two ways: কপি puts
+ * the held line on the clipboard, and বাছাই returns the phone's own
+ * selection to the whole poem (the hold rests meanwhile) until শেষ.
+ *
  * Scrolling is never touched: every listener is passive, a hold that moves
  * more than a few pixels is a scroll and is dropped, and the sheet itself is
  * the only thing that ever calls preventDefault (on the browser's own
@@ -83,13 +88,21 @@
           '<button type="button" class="vh-close" aria-label="বন্ধ করুন">×</button>' +
         '</span>' +
       '</div>' +
-      '<div class="vh-body"></div>';
+      '<div class="vh-body"></div>' +
+      '<div class="vh-acts">' +
+        '<button type="button" class="vh-act vh-copy">কপি</button>' +
+        '<button type="button" class="vh-act vh-pick">বাছাই করে কপি</button>' +
+      '</div>';
     document.body.appendChild(sheet);
     body = sheet.querySelector('.vh-body');
     kicker = sheet.querySelector('.vh-kicker');
     num = sheet.querySelector('.vh-num');
 
     sheet.querySelector('.vh-close').addEventListener('click', close);
+    sheet.querySelector('.vh-copy').addEventListener('click', function () {
+      if (current) copy(lineText(current.querySelector('td.bn')));
+    });
+    sheet.querySelector('.vh-pick').addEventListener('click', startPick);
     sheet.querySelectorAll('.vh-step').forEach(function (b) {
       b.addEventListener('click', function () { step(+b.dataset.step); });
     });
@@ -156,6 +169,73 @@
     });
   }
 
+  /* ── copying ───────────────────────────────────────────────────────── */
+
+  /* a line as read: prosody marks (book.js) left out */
+  function lineText(td) {
+    var c = td.cloneNode(true);
+    c.querySelectorAll('.m-sep, .f-sep').forEach(function (el) { el.remove(); });
+    c.querySelectorAll('br').forEach(function (br) { br.replaceWith('\n'); });
+    return c.textContent.replace(/[ \t]+/g, ' ').trim();
+  }
+
+  function copy(text) {
+    function done() { toast('কপি হয়েছে'); }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      ta.remove();
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else fallback();
+  }
+
+  /* বাছাই: the phone's own selection, back on the whole poem until শেষ */
+  var pickBar = null;
+  function startPick() {
+    close();
+    root.classList.add('vh-picking');
+    if (!pickBar) {
+      pickBar = document.createElement('div');
+      pickBar.className = 'vh-pickbar';
+      pickBar.innerHTML = '<span>লাইন চেপে ধরে বাছাই করুন, তারপর কপি</span>' +
+        '<button type="button">শেষ</button>';
+      pickBar.querySelector('button').addEventListener('click', endPick);
+      document.body.appendChild(pickBar);
+    }
+    requestAnimationFrame(function () { pickBar.classList.add('is-on'); });
+  }
+  function endPick() {
+    root.classList.remove('vh-picking');
+    if (pickBar) pickBar.classList.remove('is-on');
+    var sel = window.getSelection && window.getSelection();
+    if (sel) sel.removeAllRanges();
+  }
+  function picking() { return root.classList.contains('vh-picking'); }
+
+  var toastEl = null, toastT = null;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'vh-hint vh-toast';
+      toastEl.setAttribute('role', 'status');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    // above the sheet when it is up, never over the line it shows
+    toastEl.style.bottom = sheet && sheet.classList.contains('is-open') ? (sheet.offsetHeight + 14) + 'px' : '';
+    toastEl.classList.add('is-on');
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 1600);
+  }
+
   function close() {
     if (!sheet) return;
     sheet.classList.remove('is-open');
@@ -185,7 +265,7 @@
 
     table.addEventListener('touchstart', function (e) {
       cancel();
-      if (!MQ.matches || e.touches.length > 1) return;
+      if (!MQ.matches || picking() || e.touches.length > 1) return;
       var row = e.target.closest && e.target.closest('tr');
       var td = e.target.closest && e.target.closest('td.bn');
       if (!td || !holdable(row)) return;
@@ -214,13 +294,13 @@
 
     /* the browser's own long-press menu (Android) gives way to the hold */
     table.addEventListener('contextmenu', function (e) {
-      if (MQ.matches && e.target.closest && e.target.closest('td.bn')) e.preventDefault();
+      if (MQ.matches && !picking() && e.target.closest && e.target.closest('td.bn')) e.preventDefault();
     });
 
     /* the tap that ends a hold is not a tap; with the sheet up, a tap on
        another line shows that one */
     table.addEventListener('click', function (e) {
-      if (!MQ.matches) return;
+      if (!MQ.matches || picking()) return;
       if (Date.now() - fired < 600) { e.stopPropagation(); e.preventDefault(); return; }
       if (!current) return;
       var row = e.target.closest && e.target.closest('tr');
@@ -230,7 +310,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && current) close();
     });
-    MQ.addEventListener('change', function (m) { if (!m.matches) close(); });
+    MQ.addEventListener('change', function (m) { if (!m.matches) { close(); endPick(); } });
   }
 
   /* ── one quiet hint, once ──────────────────────────────────────────── */
