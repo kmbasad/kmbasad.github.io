@@ -196,6 +196,9 @@
   /* ── optional word-alignment dictionary (drives hover highlights) ─ */
   if (cfg.dict) await loadDict(cfg.dict, colCls);
 
+  /* ── optional টীকা: notes on a phrase of a line (tika.js shows them) ─ */
+  var notes = cfg.notes ? await loadNotes(cfg.notes) : null;
+
   /* ── render ────────────────────────────────────────────────────── */
   if (type === 'ghazal') buildGhazal(records, colCls);
   else if (type === 'sonnet') buildSonnet(records, colCls);
@@ -222,6 +225,7 @@
       // Line-scoped pairs: a three-column row `| sonnet.line | bn | src |`
       // aligns words within that one line only (rows carry data-key).
       var lineGroups = {}, hasLines = false, hasGlobal = false;
+      var edges = [];   // line-addressed pairs, grouped after the read
       var counter = 0;
       var dlines = t.split('\n');
       var dictTable = isTableBody(dlines);
@@ -234,6 +238,14 @@
           // Skip a (legacy) GFM separator row if one is still present.
           if (s.indexOf('-') !== -1 && /^\|[-:\s|]+\|$/.test(s)) return;
           var cells = s.slice(1, -1).split('|').map(function (c) { return unescPipe(c.trim()); });
+          // `| N | bn | src |` or `| N>M | bn | src |`: a Bangla word of line N
+          // with a source word of line M (the same line when M is absent)
+          var lm = cells.length >= 3 && cells[0].match(/^(\d+)(?:>(\d+))?$/);
+          if (lm) {
+            var eb = normWord(cells[1]), es = normWord(cells[2]);
+            if (eb && es) edges.push([lm[1], eb, lm[2] || lm[1], es]);
+            return;
+          }
           if (cells.length >= 3 && /^[0-9]+\.[0-9]+$/.test(cells[0])) {
             key = cells[0]; bnRaw = cells[1] || ''; swRaw = cells[2] || '';
           } else {
@@ -258,11 +270,88 @@
         tgt.bn[bn] = g;
         tgt[srcCls][sw] = g;
       });
+      // Line-addressed pairs: a word paired with several, across a line
+      // break or not, lights all of them, so the pairs are joined into
+      // groups (union-find over column|line|word) and each line gets the
+      // word→group map of its own words (rows carry data-key = line number).
+      if (edges.length) {
+        var parent = {};
+        var find = function (x) {
+          while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; }
+          return x;
+        };
+        var node = function (x) { if (!(x in parent)) parent[x] = x; return x; };
+        edges.forEach(function (e) {
+          var a = find(node('bn|' + e[0] + '|' + e[1]));
+          var b = find(node(srcCls + '|' + e[2] + '|' + e[3]));
+          if (a !== b) parent[a] = b;
+        });
+        var gid = {};
+        Object.keys(parent).forEach(function (x) {
+          var p = x.split('|'), root = find(x);
+          if (!gid[root]) gid[root] = 'DICT_' + (++counter);
+          if (!lineGroups[p[1]]) { lineGroups[p[1]] = { bn: {} }; lineGroups[p[1]][srcCls] = {}; }
+          lineGroups[p[1]][p[0]][p.slice(2).join('|')] = gid[root];
+        });
+        hasLines = true;
+      }
       if (hasGlobal) window.TT_DICT = groups;
       if (hasLines) window.TT_DICT_LINES = lineGroups;
     } catch (e) {
       console.warn('md-loader: could not load dictionary', src, e);
     }
+  }
+
+  /* ── টীকা ───────────────────────────────────────────────────────────
+   * A notes file holds one note per row, `| line | phrase | note |`: the
+   * phrase is words of that line's Bangla, which the page marks; the note is
+   * Bangla prose (*…* for italics, a blank-free paragraph per note). The
+   * notes go to window.TT_NOTES by id; tika.js shows them. */
+  async function loadNotes(src) {
+    var byLine = {};
+    try {
+      var r = await fetch(src);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      var t = (await r.text()).replace(/\r\n?/g, '\n');
+      var nm = t.match(/^---\n[\s\S]*?\n---\n?/);
+      if (nm) t = t.slice(nm[0].length);
+      var all = [];
+      t.split('\n').forEach(function (line) {
+        var s = line.trim();
+        if (s.charAt(0) !== '|') return;
+        var cells = s.slice(1, -1).split('|').map(function (c) { return unescPipe(c.trim()); });
+        if (!/^\d+$/.test(cells[0]) || !cells[2]) return;
+        var id = 'tika-' + (all.length + 1);
+        var note = { id: id, line: +cells[0], phrase: cells[1], text: cells[2] };
+        all.push(note);
+        (byLine[note.line] = byLine[note.line] || []).push(note);
+      });
+      window.TT_NOTES = {};
+      all.forEach(function (n) {
+        window.TT_NOTES[n.id] = esc(n.text).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      });
+    } catch (e) {
+      console.warn('md-loader: could not load notes', src, e);
+    }
+    return byLine;
+  }
+
+  /* a line's Bangla with its noted phrases marked */
+  function noteMarks(bnHtml, list) {
+    // NFC both: য়/ড়/ঢ় may be written composed in one file, decomposed in the other
+    bnHtml = bnHtml.normalize('NFC');
+    list.forEach(function (n) {
+      var ph = esc(n.phrase).normalize('NFC'), at = ph ? bnHtml.indexOf(ph) : -1;
+      if (at === -1) return;
+      // the mark takes in the punctuation that clings to the phrase, so the
+      // word-wrapping (translation-table.js) still sees one token there
+      var end = at + ph.length;
+      while (end < bnHtml.length && !/[\s<]/.test(bnHtml.charAt(end))) end++;
+      bnHtml = bnHtml.slice(0, at) +
+        '<span class="tika" data-tika="' + n.id + '" tabindex="0">' + bnHtml.slice(at, end) + '</span>' +
+        bnHtml.slice(end);
+    });
+    return bnHtml;
   }
 
   function esc(s) {
@@ -296,7 +385,7 @@
   function buildTercet(records, langCls) {
     var tbody = document.querySelector('.tt-table tbody');
     if (!tbody) return;
-    var html = '', nextStart = true, tercet = 0, sectionIdx = 0;
+    var html = '', nextStart = true, tercet = 0, sectionIdx = 0, verseN = 0;
     var pendingSection = null;   // marginSections: heading waiting for its first verse
 
     var nCols = noSource ? 2 : 3;
@@ -348,7 +437,17 @@
         pendingSection = null;
       }
       if (r.srcLine != null) attrs += ' data-mdline="' + r.srcLine + '"';
-      html += row(cls, esc(r.bn), esc(r.src), r.num, langCls, attrs, lnExtra);
+      // lineKeys: each line keys its own word pairs (see loadDict)
+      verseN++;
+      if (cfg.lineKeys) attrs += ' data-key="' + verseN + '"';
+      var bnHtml = esc(r.bn), lineNotes = notes && notes[verseN];
+      if (lineNotes) {
+        cls += ' has-tika';
+        bnHtml = noteMarks(bnHtml, lineNotes);
+        lnExtra += '<button type="button" class="tika-mark" data-tika="' + lineNotes[0].id +
+          '" aria-label="টীকা"></button>';
+      }
+      html += row(cls, bnHtml, esc(r.src), r.num, langCls, attrs, lnExtra);
     }
     tbody.innerHTML = html;
   }
