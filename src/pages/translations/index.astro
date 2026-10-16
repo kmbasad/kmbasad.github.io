@@ -22,6 +22,9 @@ const planes = [
   { bg: B, d: [0, 60, 8, 40], p: [86, 50, 14, 30] },
 ];
 const MARKS = [R, B, Y];
+// the works stand in Bengali alphabetical order of their titles, so a new
+// work finds its own place however the catalogue happens to list it
+const works = [...translationWorks].sort((a, b) => a.title.localeCompare(b.title, 'bn'));
 ---
 
 <Base title={TITLE} section="translations" bodyClass="painting-page" styles={['/css/painting.css']}>
@@ -29,7 +32,7 @@ const MARKS = [R, B, Y];
             label="Mondrian, Composition with Red, Blue and Yellow (1930)">
     <h1>{TITLE}</h1>
     <ul class="pt-list">
-      {translationWorks.map((w, i) => (
+      {works.map((w, i) => (
         <li>
           <a href={`/translations/${w.slug}/`} style={`--m:${MARKS[i % MARKS.length]}`}>
             <span class="pt-mark" aria-hidden="true"></span>
