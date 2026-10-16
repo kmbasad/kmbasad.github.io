@@ -10,7 +10,7 @@
 export const translationWorks = [
   {
     slug: 'odyssey',
-    title: 'হোমারের ওডিসি',
+    title: 'হোমারের অডিসি',
     parts: [
       { slug: 'book-i', title: 'প্রথম বই' },
       { slug: 'book-ii', title: 'দ্বিতীয় বই' },
