@@ -12,6 +12,7 @@ const fm = about?.frontmatter ?? {};
 const About = about?.Content ?? null;
 
 import Painting from '../../components/Painting.astro';
+import { trellisList } from '../../data/trellis-order.js';
 
 /* After Paul Klee, "Castle and Sun" (1928): a mosaic of small warm planes,
    oranges, reds, ochres and plums on a paper ground, laid by the hand; the
@@ -57,43 +58,15 @@ const planes = [
       </p>
     )}
     <ul class="pt-list">
-      <!-- ARTICLES_START -->
+      {trellisList.map((t) => (
         <li>
-          <a href="/trellises/kiarostami/" style="--m:#c03a2b">
+          <a href={`/trellises/${t.slug}/`} style={`--m:${t.mark}`}>
             <span class="pt-mark" aria-hidden="true"></span>
-            <span class="pt-name">আব্বাস কিয়ারোস্তামি</span>
+            <span class="pt-name">{t.title}</span>
             <span class="pt-go" aria-hidden="true">→</span>
           </a>
         </li>
-        <li>
-          <a href="/trellises/god/" style="--m:#e8a04a">
-            <span class="pt-mark" aria-hidden="true"></span>
-            <span class="pt-name">খোদা</span>
-            <span class="pt-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="/trellises/consciousness/" style="--m:#5a2f4a">
-            <span class="pt-mark" aria-hidden="true"></span>
-            <span class="pt-name">চেতনা</span>
-            <span class="pt-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="/trellises/chan-wook/" style="--m:#f0c75a">
-            <span class="pt-mark" aria-hidden="true"></span>
-            <span class="pt-name">পাক চান-উক</span>
-            <span class="pt-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li>
-          <a href="/trellises/ray/" style="--m:#8a3b5a">
-            <span class="pt-mark" aria-hidden="true"></span>
-            <span class="pt-name">সত্যজিৎ রায়</span>
-            <span class="pt-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-      <!-- ARTICLES_END -->
+      ))}
     </ul>
   </Painting>
 
