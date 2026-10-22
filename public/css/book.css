@@ -512,15 +512,14 @@ body.book-has-dict .tt-table td.en .w {
 body:has(.book-dict.is-open) .rail-key { opacity: 0; pointer-events: none; }
 
 /* ── the English crib (crib.js) ─────────────────────────────────────────
-   A line's literal English, overlaid under the line it glosses (nothing on
-   the page moves), the lines either side faint; on a touch screen it
-   stands at the screen's foot. */
+   Hover the original's line and its literal English opens under it,
+   overlaid (nothing on the page moves). */
 .crib-card {
   position: absolute;
   z-index: 40;
   max-width: 34rem;
   min-width: 18rem;
-  padding: 0.55rem 0.9rem 0.6rem;
+  padding: 0.5rem 0.9rem 0.55rem;
   background: var(--paper, #fcfcfb);
   border-left: 3px solid var(--tint-d, #a97c18);
   box-shadow: 0 6px 24px rgba(17, 19, 23, 0.14);
@@ -531,26 +530,7 @@ body:has(.book-dict.is-open) .rail-key { opacity: 0; pointer-events: none; }
   pointer-events: none;
 }
 .crib-card[hidden] { display: none; }
-.crib-card p { margin: 0; }
-.crib-card .crib-here { margin: 0.15rem 0; }
-.crib-card .crib-side { color: var(--text-3, #8b8f97); font-size: 0.92em; }
-.crib-card .crib-n {
-  margin-right: 0.5rem;
-  font: 600 0.7rem/1 var(--ui-font);
-  letter-spacing: 0.04em;
-  color: var(--accent-2, #a97c18);
-}
-.crib-card.crib-foot {
-  position: fixed;
-  z-index: 3000;
-  left: 0; right: 0; bottom: 0;
-  max-width: none;
-  border-left: none;
-  border-top: 3px solid var(--tint-d, #a97c18);
-  padding: 0.7rem 16px calc(0.8rem + env(safe-area-inset-bottom));
-  pointer-events: auto;
-}
-.tt-table tr.crib-row td { background-color: var(--tt-hover, rgba(29, 79, 155, 0.05)); }
+.tt-table tr.crib-row td:is(.it, .fa) { background-color: var(--tt-hover, rgba(29, 79, 155, 0.05)); }
 @media (max-width: 760px) { .crib-card { display: none; } }
 
 /* in the phone's line sheet (verse-hold.js) the English reads as a gloss

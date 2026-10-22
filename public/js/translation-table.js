@@ -115,10 +115,11 @@
       if (node.nodeType === Node.TEXT_NODE) {
         var t = node.nodeValue || "";
         if (!t || !/\S/u.test(t)) return;
-        var parts = t.split(/(\s+)/u), frag = document.createDocumentFragment();
+        // a dash parts two words even with no space round it (করি—কারণ)
+        var parts = t.split(/(\s+|[\u2014\u2013])/u), frag = document.createDocumentFragment();
         for (var p = 0; p < parts.length; p++) {
           if (!parts[p]) continue;
-          if (/^\s+$/u.test(parts[p])) { frag.appendChild(document.createTextNode(parts[p])); continue; }
+          if (/^(?:\s+|[\u2014\u2013])$/u.test(parts[p])) { frag.appendChild(document.createTextNode(parts[p])); continue; }
           var g = (gids[seg] || [])[tok];
           var span = document.createElement("span");
           span.className = "w";
@@ -310,10 +311,18 @@
 
   var pinned = false, last = null;
 
+  // The mapping is the Bangla's: a Bangla word lights the words it renders.
+  // An original is hovered for its literal English instead (crib.js), unless
+  // it is English itself (the Sonnets), which maps both ways like the Bangla.
+  function mapWord(t) {
+    var span = t.closest(".w");
+    return span && span.closest("td.bn, td.en") ? span : null;
+  }
+
   for (var ti = 0; ti < tables.length; ti++) {
     tables[ti].addEventListener("mouseover", function (e) {
       if (pinned || window.innerWidth <= 760) return;
-      var span = e.target.closest(".w");
+      var span = mapWord(e.target);
       if (span) { if (last !== span) { last = span; highlight(span); } return; }
       if (last) { last = null; clearAll(); }
     });
@@ -323,7 +332,7 @@
     tables[ti].addEventListener("click", function (e) {
       // on a phone the other columns are hidden: nothing to cross-highlight
       if (window.innerWidth <= 760) return;
-      var span = e.target.closest(".w");
+      var span = mapWord(e.target);
       if (!span) { pinned = false; last = null; clearAll(); return; }
       if (pinned && span.classList.contains(CLS_SRC)) { pinned = false; last = null; clearAll(); return; }
       highlight(span);

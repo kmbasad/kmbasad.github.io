@@ -7,11 +7,10 @@
  * line number, as md-loader.js stamps it on each verse row's data-key).
  * BookReader sets `TRANS_CONFIG.crib` only where such a file exists.
  *
- *   a mouse: rest on a line and a card opens under it, overlaid on the page
- *     (nothing moves), the line's English with the lines either side faint,
- *     since a sentence runs on;
- *   a finger, from 761px: tap a Bangla line and the same card stands at the
- *     screen's foot; tap it or elsewhere to put it away;
+ *   a mouse resting on the original's line (never the Bangla, which maps
+ *     its words instead, translation-table.js): a card under that line with
+ *     its English, overlaid, so nothing moves;
+ *   a finger, from 761px: a tap on the original's line, the same card;
  *   a phone: the held line's sheet (verse-hold.js) carries the English under
  *     the original, through window.TransCrib.
  */
@@ -23,6 +22,7 @@
 
   var crib = null, card = null, lit = null, touch = false;
   var PHONE = window.matchMedia('(max-width: 760px)');
+  var ORIG = 'td.it, td.fa';   // the original's column (an English one needs no crib)
 
   function esc(s) {
     return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; });
@@ -56,37 +56,33 @@
     document.body.appendChild(card);
   }
 
-  function show(tr, foot) {
+  function show(tr) {
     var n = lineOf(tr);
     if (!n) return hide();
     if (!card) build();
-    function side(k) {
-      return crib[k] ? '<p class="crib-side"><span class="crib-n">' + k + '</span>' + esc(crib[k]) + '</p>' : '';
-    }
-    card.innerHTML = side(n - 1) +
-      '<p class="crib-here"><span class="crib-n">' + n + '</span>' + esc(crib[n]) + '</p>' + side(n + 1);
-    card.classList.toggle('crib-foot', !!foot);
+    card.textContent = crib[n];
     if (lit) lit.classList.remove('crib-row');
     lit = tr;
     tr.classList.add('crib-row');
     card.hidden = false;
-    if (!foot) {
-      // under the row, at the original's column (the Bangla's if it is hidden)
-      var cell = tr.querySelector('td.it, td.en, td.fa');
-      var anchor = cell && cell.offsetParent ? cell : tr.querySelector('td.bn') || tr;
-      var r = tr.getBoundingClientRect(), a = anchor.getBoundingClientRect();
-      var w = Math.min(Math.max(a.width, 288), window.innerWidth - 32);
-      card.style.width = w + 'px';
-      card.style.left = Math.max(16, Math.min(a.left, window.innerWidth - w - 16)) + window.scrollX + 'px';
-      card.style.top = r.bottom + window.scrollY + 6 + 'px';
-    } else {
-      card.style.width = card.style.left = card.style.top = '';
-    }
+    // under the row, at the original's column
+    var cell = tr.querySelector(ORIG) || tr;
+    var r = tr.getBoundingClientRect(), a = cell.getBoundingClientRect();
+    var w = Math.min(Math.max(a.width, 288), window.innerWidth - 32);
+    card.style.width = w + 'px';
+    card.style.left = Math.max(16, Math.min(a.left, window.innerWidth - w - 16)) + window.scrollX + 'px';
+    card.style.top = r.bottom + window.scrollY + 6 + 'px';
   }
 
   function hide() {
     if (card) card.hidden = true;
     if (lit) { lit.classList.remove('crib-row'); lit = null; }
+  }
+
+  function origRow(t) {
+    var td = t.closest && t.closest(ORIG);
+    var tr = td && td.closest('.tt-table tr[data-key]');
+    return tr && lineOf(tr) ? tr : null;
   }
 
   // a mouse hovers; a finger taps (pointerType tells them apart, whatever
@@ -95,16 +91,14 @@
   document.addEventListener('pointerover', function (e) {
     if (e.pointerType !== 'mouse' || !crib) return;
     touch = false;
-    var tr = e.target.closest && e.target.closest('.tt-table tr[data-key]');
-    if (tr && lineOf(tr)) { if (tr !== lit) show(tr, false); } else if (lit) hide();
+    var tr = origRow(e.target);
+    if (tr) { if (tr !== lit) show(tr); } else if (lit) hide();
   });
   document.addEventListener('click', function (e) {
     if (!touch || !crib || PHONE.matches) return;
-    if (card && card.contains(e.target)) return hide();
-    if (window.getSelection && String(window.getSelection()).length) return;
-    var tr = e.target.closest && e.target.closest('.tt-table tr[data-key]');
-    if (tr && tr !== lit && e.target.closest('td.bn')) show(tr, true); else hide();
+    var tr = origRow(e.target);
+    if (tr && tr !== lit) show(tr); else hide();
   });
-  window.addEventListener('scroll', function () { if (lit && !touch) hide(); }, { passive: true });
+  window.addEventListener('scroll', function () { if (lit) hide(); }, { passive: true });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lit) hide(); });
 })();

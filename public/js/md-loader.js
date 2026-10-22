@@ -221,15 +221,27 @@
       groups[srcCls] = {};
       // Line-scoped pairs: a three-column row `| sonnet.line | bn | src |`
       // (or `| line | bn | src |`, the Odyssey's) aligns words within that
-      // one line only (rows carry data-key).
+      // one line only (rows carry data-key). A fourth cell names the line
+      // the original's word stands in when the Bangla carried it across a
+      // line break: `| 12 | bn | src | 13 |`.
+      //
+      // The pairs are one-to-many both ways: every word joined to another,
+      // directly or through a third, shares one group (union-find), so a
+      // word lights all it renders and all that render it.
       var lineGroups = {}, hasLines = false, hasGlobal = false;
-      var counter = 0;
+      var parent = {};
+      function find(x) {
+        while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; }
+        return x;
+      }
+      function node(x) { if (!(x in parent)) parent[x] = x; return x; }
+      var pairs = [];
       var dlines = t.split('\n');
       var dictTable = isTableBody(dlines);
       dlines.forEach(function (line) {
         var s = line.trim();
         if (!s) return;
-        var bnRaw, swRaw, key = null;
+        var bnRaw, swRaw, key = null, srcKey = null;
         if (dictTable) {
           if (s.charAt(0) !== '|') return;
           // Skip a (legacy) GFM separator row if one is still present.
@@ -237,6 +249,7 @@
           var cells = s.slice(1, -1).split('|').map(function (c) { return unescPipe(c.trim()); });
           if (cells.length >= 3 && /^[0-9]+(\.[0-9]+)?$/.test(cells[0])) {
             key = cells[0]; bnRaw = cells[1] || ''; swRaw = cells[2] || '';
+            srcKey = cells[3] && /^[0-9]+(\.[0-9]+)?$/.test(cells[3]) ? cells[3] : key;
           } else {
             bnRaw = cells[0] || ''; swRaw = cells[1] || '';
           }
@@ -247,17 +260,23 @@
         }
         var bn = normWord(bnRaw), sw = normWord(swRaw);
         if (!bn || !sw) return;
+        if (key) hasLines = true; else hasGlobal = true;
+        // a word is known by its line (or '' page-wide), column and form
+        var a = node((key || '') + '\u0001bn\u0001' + bn);
+        var b = node((srcKey || '') + '\u0001' + srcCls + '\u0001' + sw);
+        parent[find(a)] = find(b);
+        pairs.push(a, b);
+      });
+      var ids = {}, counter = 0;
+      pairs.forEach(function (x) {
+        var r = find(x), g = ids[r] || (ids[r] = 'DICT_' + (++counter));
+        var f = x.split('\u0001'), k = f[0], col = f[1], w = f[2];
         var tgt = groups;
-        if (key) {
-          hasLines = true;
-          if (!lineGroups[key]) { lineGroups[key] = { bn: {} }; lineGroups[key][srcCls] = {}; }
-          tgt = lineGroups[key];
-        } else {
-          hasGlobal = true;
+        if (k) {
+          if (!lineGroups[k]) { lineGroups[k] = { bn: {} }; lineGroups[k][srcCls] = {}; }
+          tgt = lineGroups[k];
         }
-        var g = tgt.bn[bn] || tgt[srcCls][sw] || ('DICT_' + (++counter));
-        tgt.bn[bn] = g;
-        tgt[srcCls][sw] = g;
+        tgt[col][w] = g;
       });
       if (hasGlobal) window.TT_DICT = groups;
       if (hasLines) window.TT_DICT_LINES = lineGroups;
