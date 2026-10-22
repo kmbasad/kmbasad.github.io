@@ -3,10 +3,13 @@
  * One reading page per book of Homer's Odyssey: the Bangla on the left, the
  * Greek (Murray's Loeb text, Perseus) on the right. The data file sits at
  * public/translations/odyssey/<part>/<part>.md, so the page's own URL
- * resolves the relative `src`. The rail's prev/next walk the books in order.
+ * resolves the relative `src`; beside it, `<part>-words.md` (the line-scoped
+ * word-list for the hover highlights) and `<part>-crib.tsv` (the literal
+ * English, BookReader). The rail's prev/next walk the books in order.
  */
 import Base from '../../../layouts/Base.astro';
 import BookReader from '../../../components/BookReader.astro';
+import fs from 'node:fs';
 import { translationWorks } from '../../../data/translation-works.js';
 
 export function getStaticPaths() {
@@ -24,6 +27,9 @@ export function getStaticPaths() {
 
 const { work, part, prev, next } = Astro.props;
 const href = (p: { slug: string } | null) => (p ? `/translations/odyssey/${p.slug}/` : '');
+// the line-scoped Bangla–Greek word-list, where one has been made
+const words = `${part.slug}-words.md`;
+const hasWords = fs.existsSync(`public/translations/odyssey/${part.slug}/${words}`);
 ---
 
 <Base
@@ -38,12 +44,13 @@ const href = (p: { slug: string } | null) => (p ? `/translations/odyssey/${p.slu
   nextLabel={next?.title}
 >
   <Fragment slot="head">
-    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
   </Fragment>
 
   <BookReader title={part.title} work={work.title}
     config={{
       src: `${part.slug}.md`,
+      ...(hasWords ? { dict: words } : {}),
       dictLang: 'grc',
       meters: { matra: [8, 16] },
       marginSections: true,

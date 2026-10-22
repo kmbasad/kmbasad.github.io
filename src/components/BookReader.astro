@@ -15,27 +15,35 @@
  *
  * Word-hover cross-highlighting between the Bangla and the source is
  * translation-table.js. On a phone, where the page is the Bangla alone, a
- * held line shows its original in a sheet (verse-hold.js). No image panel; the plates will return in another
+ * held line shows its original in a sheet (verse-hold.js). Where a
+ * `<part>-crib.tsv` sits beside the page's .md, each line of the original
+ * also shows its literal English (crib.js: a card on hover, a line in the
+ * phone's sheet). No image panel; the plates will return in another
  * form later.
  *
  * Props: `title`, `work`, and `config`, which becomes window.TRANS_CONFIG (src, dict?,
  * dictLang, meters?, marginSections?, tocStyle?, toc/prev/next…).
  */
+import fs from 'node:fs';
+import path from 'node:path';
+
 interface Props {
   config: Record<string, unknown>;
   title?: string;     // this part's name (the same the rail carries)
   work?: string;      // the work it belongs to
 }
 const { config, title, work } = Astro.props;
+
+// the English crib, `<part>-crib.tsv` beside the page's .md, where one exists
+const cribName = String(config.src || '').replace(/\.md$/, '-crib.tsv');
+const hasCrib = cribName.endsWith('-crib.tsv') &&
+  fs.existsSync(path.join(process.cwd(), 'public', Astro.url.pathname, cribName));
+const cfg = hasCrib ? { ...config, crib: cribName } : config;
 ---
 
 <!-- the dictionary starts folded on every visit: fold it before first
      paint so it never flashes open (book.js keeps it so until a lookup) -->
 <script is:inline>document.body.classList.add('dict-collapsed');</script>
-
-{/* dev only: a literal English line on hover beside each line of the
-    original, where docs/cribs/ holds one for this page (src/dev/crib.js) */}
-{import.meta.env.DEV && <script is:inline defer src="/__edit/crib.js"></script>}
 
 <div class="book-layout">
   <div class="book-text-panel">
@@ -92,12 +100,13 @@ const { config, title, work } = Astro.props;
 
 
 
-<script is:inline define:vars={{ config }}>
-  window.TRANS_CONFIG = config;
+<script is:inline define:vars={{ cfg }}>
+  window.TRANS_CONFIG = cfg;
 </script>
 <script is:inline src="/js/md-loader.js"></script>
 <script is:inline src="/js/translation-table.js"></script>
 <script is:inline src="/js/book.js"></script>
 <script is:inline src="/js/verse-hold.js"></script>
+{hasCrib && <script is:inline src="/js/crib.js"></script>}
 {/* dev-server only: Ctrl+double-click a বাংলা line to edit it in place —
     the endpoint and script exist solely inside `npm run dev` */}

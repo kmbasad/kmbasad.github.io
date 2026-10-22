@@ -4,7 +4,8 @@
  * On a phone the reading page is the Bangla alone (translation-table.css);
  * the original stays a gesture away. Hold any line for a moment and a sheet
  * rises from the bottom with that line's original (and any other column the
- * page carries: an English crib, a transliteration). While the sheet is up,
+ * page carries: an English column, a transliteration; and the line's literal
+ * English where the page has a crib, crib.js). While the sheet is up,
  * a tap on another line shows that one instead, and ‹ › step through the
  * poem line by line; a tap on a word of the original opens the অভিধান
  * (book.js), where the page has one. × or a swipe down puts it away.
@@ -222,6 +223,15 @@
       // at the floor, a line still too long wraps rather than overflow
       if (p.scrollWidth > p.clientWidth + 1) p.classList.add('vh-wrap');
     });
+    /* the line's literal English, where the page has a crib (crib.js) */
+    var en = window.TransCrib ? window.TransCrib.text(tr) : '';
+    if (en) {
+      var c = document.createElement('p');
+      c.className = 'vh-src vh-en vh-crib';
+      c.textContent = en;
+      body.appendChild(c);
+      kicker.textContent += ' \u00b7 ' + COL.en;
+    }
 
     root.classList.add('vh-open');
     sheet.classList.add('is-open');

@@ -220,7 +220,8 @@
       var groups = { bn: {} };
       groups[srcCls] = {};
       // Line-scoped pairs: a three-column row `| sonnet.line | bn | src |`
-      // aligns words within that one line only (rows carry data-key).
+      // (or `| line | bn | src |`, the Odyssey's) aligns words within that
+      // one line only (rows carry data-key).
       var lineGroups = {}, hasLines = false, hasGlobal = false;
       var counter = 0;
       var dlines = t.split('\n');
@@ -234,7 +235,7 @@
           // Skip a (legacy) GFM separator row if one is still present.
           if (s.indexOf('-') !== -1 && /^\|[-:\s|]+\|$/.test(s)) return;
           var cells = s.slice(1, -1).split('|').map(function (c) { return unescPipe(c.trim()); });
-          if (cells.length >= 3 && /^[0-9]+\.[0-9]+$/.test(cells[0])) {
+          if (cells.length >= 3 && /^[0-9]+(\.[0-9]+)?$/.test(cells[0])) {
             key = cells[0]; bnRaw = cells[1] || ''; swRaw = cells[2] || '';
           } else {
             bnRaw = cells[0] || ''; swRaw = cells[1] || '';
@@ -298,6 +299,7 @@
     if (!tbody) return;
     var html = '', nextStart = true, tercet = 0, sectionIdx = 0;
     var pendingSection = null;   // marginSections: heading waiting for its first verse
+    var lineNo = null;           // the original's line: the margin's number, else the last + 1
 
     var nCols = noSource ? 2 : 3;
 
@@ -348,6 +350,11 @@
         pendingSection = null;
       }
       if (r.srcLine != null) attrs += ' data-mdline="' + r.srcLine + '"';
+      // data-key = the original's line number: the key of a line-scoped
+      // word-list (the Odyssey) and of the English crib (crib.js)
+      var own = r.num != null && /^\d+$/.test(String(r.num).trim()) ? +r.num : null;
+      lineNo = own != null ? own : lineNo != null ? lineNo + 1 : null;
+      if (lineNo != null) attrs += ' data-key="' + lineNo + '"';
       html += row(cls, esc(r.bn), esc(r.src), r.num, langCls, attrs, lnExtra);
     }
     tbody.innerHTML = html;
