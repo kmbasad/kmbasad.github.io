@@ -35,7 +35,7 @@ lang: la
 | 4 | অবধি | ad |
 | 5 | সমুদ্র | mare |
 | 5 | মাটি | terras |
-| 5 | আর | et |
+| 5 | আর | et#2 |
 | 5 | সব-ঘেরা | omnia |
 | 5 | সব-ঘেরা | tegit |
 | 5 | সব-ঘেরা | quod |
@@ -109,7 +109,7 @@ lang: la
 | 14 | দুই | bracchia | 13 |
 | 15 | জল | pontus |
 | 15 | স্থল | tellus |
-| 15 | আর | et |
+| 15 | আর | et#2 |
 | 15 | অন্তরীক্ষ | aer |
 | 15 | অন্তরীক্ষ | aether |
 | 15 | তখন | illic |
@@ -146,7 +146,7 @@ lang: la
 | 19 | সাথে#2 | siccis |
 | 20 | সিক্ত | umentia | 19 |
 | 20 | কঠিনের | duris |
-| 20 | সাথে | cum |
+| 20 | সাথে#1 | cum |
 | 20 | কোমল | mollia |
 | 20 | হালকার | sine |
 | 20 | হালকার | pondere |
@@ -413,7 +413,7 @@ lang: la
 | 53 | ভারী#1 | onerosior |
 | 53 | ভারী#2 | pondere |
 | 53 | ভারী#2 | pondere | 52 |
-| 54 | সেখানেই | Illic |
+| 54 | সেখানেই | Illic#1 |
 | 54 | তিনি | iussit | 55 |
 | 54 | জড়ো | consistere |
 | 54 | করেন | consistere |
@@ -691,7 +691,7 @@ lang: la
 | 91 | শাস্তির | Poena |
 | 91 | ভয় | metusque |
 | 91 | ছিল | aberant |
-| 91 | না | nec |
+| 91 | না#2 | nec |
 | 91 | পড়ত | legebantur | 92 |
 | 91 | ব্রঞ্জে | aere | 92 |
 | 91 | খোদাই | fixo |
@@ -756,7 +756,7 @@ lang: la
 | 99 | না#3 | sine |
 | 100 | সব | gentes |
 | 100 | দেশ | gentes |
-| 100 | ছিল | peragebant |
+| 100 | ছিল#2 | peragebant |
 | 100 | নিরাপদ | securae |
 | 100 | অবসরে | otia |
 | 101 | মাটিতে | ipsa |
@@ -865,7 +865,8 @@ lang: la
 | 114 | রুপার | argentea |
 | 114 | প্রজন্ম | proles |
 | 115 | সোনার | auro |
-| 115 | চেয়ে | deterior |
+| 115 | চেয়ে#1 | deterior |
+| 115 | চেয়ে#2 | pretiosior |
 | 115 | অনেক | deterior |
 | 115 | খারাপ | deterior |
 | 115 | ব্রঞ্জের | fulvo |
@@ -914,7 +915,7 @@ lang: la
 | 121 | বাড়ি#1 | subiere |
 | 121 | বাড়ি#1 | domus#1 |
 | 121 | বাড়ি#2 | domus#2 |
-| 122 | বা | et |
+| 122 | বা | et#1 |
 | 122 | ঘন | densi |
 | 122 | ঝোপঝাড়ে | frutices |
 | 122 | বাকল | cortice |
@@ -1059,7 +1060,8 @@ lang: la
 | 141 | তখন | Iamque |
 | 142 | খনন | prodierat |
 | 142 | করা | prodierat |
-| 142 | হয় | prodierat |
+| 142 | হয়#1 | prodierat |
+| 142 | হয়#2 | prodit |
 | 142 | শুরু | prodit |
 | 142 | যুদ্ধ | bellum |
 | 142 | যাতে | quod |
@@ -1092,8 +1094,8 @@ lang: la
 | 146 | বরের | vir |
 | 146 | মরণ | exitio |
 | 146 | চায় | Inminet |
-| 146 | বউ | coniugis |
-| 146 | বউ | illa |
+| 146 | বউ#1 | coniugis |
+| 146 | বউ#2 | illa |
 | 146 | জামাই | mariti |
 | 147 | সৎ | novercae |
 | 147 | মা | novercae |
@@ -1421,7 +1423,7 @@ lang: la
 | 192 | গ্রামদেবতা | rustica |
 | 192 | গ্রামদেবতা | numina |
 | 192 | পরীদের | nymphae |
-| 192 | ভাবতে | Sunt |
+| 192 | ভাবতে | Sunt#1 |
 | 193 | ফন | faunique |
 | 193 | স্যাটার | satyrique |
 | 193 | আর | et |
@@ -1452,8 +1454,9 @@ lang: la
 | 197 | থাকবে | fore | 196 |
 | 197 | যেখানে | cum |
 | 197 | বিদ্যুতের | fulmen |
-| 197 | বিধাতা | qui |
+| 197 | বিধাতা | qui#1 |
 | 197 | মালিক | habeoque |
+| 197 | মালিক | qui#2 |
 | 197 | মালিক | regoque |
 | 197 | দোজাহানের | vos |
 | 198 | আমাকে | mihi | 197 |
@@ -1870,7 +1873,7 @@ lang: la
 | 256 | নিয়তির | fatis |
 | 256 | আসবে | adfore |
 | 256 | দিন | tempus |
-| 257 | যখন | quo |
+| 257 | যখন | quo#1 |
 | 257 | সাগর | mare |
 | 257 | ভূমি | tellus |
 | 257 | আকাশের | caeli |
@@ -2012,7 +2015,8 @@ lang: la
 | 278 | এই | sic | 279 |
 | 278 | দরকার | opus | 279 |
 | 279 | খুলে | aperite |
-| 279 | দাও | aperite |
+| 279 | দাও#1 | aperite |
+| 279 | দাও#2 | remota |
 | 279 | দ্বার | domos |
 | 279 | বাঁধ | mole |
 | 279 | ভেঙে | remota |
@@ -2103,9 +2107,9 @@ lang: la
 | 292 | সৈকতহীন | litora |
 | 292 | সমুদ্র | ponto |
 | 293 | পাহাড়ে | collem |
-| 293 | উঠে | Occupat |
+| 293 | উঠে#1 | Occupat |
 | 293 | নৌকায় | cumba |
-| 293 | উঠে | sedet |
+| 293 | উঠে#2 | sedet |
 | 294 | চালায় | ducit |
 | 294 | বৈঠা | remos |
 | 294 | সেখানে | illic |
@@ -2113,7 +2117,7 @@ lang: la
 | 294 | একদিন | nuper |
 | 294 | চালাত | ararat |
 | 294 | লাঙল | ararat |
-| 295 | কেউ | ille |
+| 295 | কেউ#1 | ille |
 | 295 | ক্ষেতের | segetes |
 | 295 | বাড়ির | villae |
 | 296 | পাল | navigat |
@@ -2217,7 +2221,7 @@ lang: la
 | 310 | ঢেউ | fluctus |
 | 311 | অধিকাংশ | Maxima |
 | 311 | অধিকাংশ | pars |
-| 311 | জলে | unda |
+| 311 | জলে | unda#1 |
 | 311 | ডুবে | rapitur |
 | 311 | মরেছিল | rapitur |
 | 311 | যারা | quibus |
@@ -2321,7 +2325,8 @@ lang: la
 | 326 | আছে | superesse |
 | 326 | হাজার | milibus |
 | 326 | মাঝে | de |
-| 327 | দুজনেই | ambo |
+| 327 | দুজনেই#1 | ambo#1 |
+| 327 | দুজনেই#2 | ambo#2 |
 | 327 | নিষ্পাপ | innocuos |
 | 327 | দেবতার | numinis |
 | 327 | ভীরু | cultores |
@@ -2575,7 +2580,7 @@ lang: la
 | 366 | আমরা | manemus |
 | 367 | সে | Dixerat |
 | 367 | বলে | Dixerat |
-| 367 | তারা | flebant |
+| 367 | তারা#1 | flebant |
 | 367 | কান্দে | flebant |
 | 367 | ঠিক | Placuit |
 | 367 | করে | Placuit |
@@ -2843,7 +2848,7 @@ lang: la
 | 410 | শিরা | vena |
 | 410 | একই | eodem |
 | 410 | থাকে | mansit |
-| 410 | নাম | nomine |
+| 410 | নাম#2 | nomine |
 | 411 | এবং | inque |
 | 411 | অল্প | brevi |
 | 411 | সময়ের | spatio |
@@ -2860,7 +2865,7 @@ lang: la
 | 413 | ছোঁড়া | iactu |
 | 413 | পূরণ | reparata |
 | 414 | আমরা | sumus |
-| 414 | অনেক | durum |
+| 414 | অনেক#1 | durum |
 | 414 | কঠিন | durum |
 | 414 | জাতি | genus |
 | 414 | শ্রম | laborum |
@@ -2957,7 +2962,8 @@ lang: la
 | 428 | পায় | vident |
 | 428 | একই | eodem |
 | 428 | দেহের | corpore |
-| 429 | অংশ | pars |
+| 429 | অংশ#1 | pars#1 |
+| 429 | অংশ#2 | pars#2 |
 | 429 | জীবিত | vivit |
 | 429 | কাঁচা | rudis |
 | 429 | কাদামাটি | tellus |
@@ -3261,11 +3267,11 @@ lang: la
 | 479 | অরণ্যে | nemora |
 | 480 | হাইমেন | Hymen |
 | 480 | প্রেম | Amor |
-| 480 | বা | quid |
+| 480 | বা | quid#2 |
 | 480 | বিয়ে | conubia |
 | 480 | কাকে | quid |
 | 480 | জানে | curat |
-| 480 | না | nec |
+| 480 | না#1 | nec |
 | 480 | জানতে | curat |
 | 480 | চায় | curat |
 | 481 | বাবা | pater |
@@ -3316,7 +3322,8 @@ lang: la
 | 488 | শুনেছিলেন | obsequitur |
 | 488 | আর্জি | optas |
 | 488 | কিন্তু | sed |
-| 488 | তোমার | te |
+| 488 | তোমার#2 | te |
+| 488 | তোমার#1 | optas |
 | 489 | চেহারা | decor | 488 |
 | 489 | শোনেনি | vetat |
 | 489 | রূপই | forma |
@@ -3350,13 +3357,13 @@ lang: la
 | 493 | পথিক | viator |
 | 494 | কাছে | nimis |
 | 494 | জ্বালায় | admovit |
-| 494 | বা | vel |
+| 494 | বা | vel#2 |
 | 494 | সকালে | luce |
 | 494 | কাঠ | facibus | 493 |
 | 494 | ফেলে | reliquit |
 | 494 | যায় | reliquit |
 | 495 | দেব | deus |
-| 495 | সেভাবেই | sic |
+| 495 | সেভাবেই | sic#1 |
 | 495 | জ্বলে | flammas |
 | 495 | উঠেছিলেন | abiit |
 | 495 | হৃদয় | pectore |
@@ -3417,7 +3424,7 @@ lang: la
 | 504 | না | Non |
 | 505 | দাঁড়াও | mane |
 | 505 | পরী | nympha |
-| 505 | এভাবে | sic |
+| 505 | এভাবে | sic#1 |
 | 505 | পালায় | fugiunt | 506 |
 | 505 | নেকড়ে | lupum |
 | 505 | ভেড়া | agna |
@@ -3467,7 +3474,7 @@ lang: la
 | 513 | রাখাল | pastor |
 | 513 | আমি | ego |
 | 513 | নই | sum |
-| 513 | নই | non |
+| 513 | নই | non#1 |
 | 513 | ভেড়া | gregesque |
 | 513 | পাল | gregesque |
 | 513 | গরুর | armenta |
@@ -3487,7 +3494,7 @@ lang: la
 | 516 | পাটারা | Patareaque |
 | 516 | পূজা | servit |
 | 516 | পাই | servit |
-| 516 | ও | et |
+| 516 | ও | et#2 |
 | 517 | জিউস | Iuppiter |
 | 517 | বাবা | genitor |
 | 517 | ভবিষ্যৎ | eritque |
@@ -3500,7 +3507,7 @@ lang: la
 | 518 | তান | carmina |
 | 518 | আসে | concordant |
 | 519 | অব্যর্থ | Certa |
-| 519 | আমার | nostra |
+| 519 | আমার | nostra#1 |
 | 519 | কিন্তু | tamen |
 | 519 | আরো | certior | 520 |
 | 519 | নিশ্চিত | certior | 520 |
@@ -3761,7 +3768,7 @@ lang: la
 | 537 | শঙ্কিত | ambiguo |
 | 537 | বুঝতে | ambiguo |
 | 537 | পারে | ambiguo |
-| 537 | না | ambiguo |
+| 537 | না#1 | ambiguo |
 | 537 | ধরা | conprensus |
 | 537 | পড়ে | conprensus |
 | 537 | গেল | sit |
@@ -3911,7 +3918,7 @@ lang: la
 | 557 | লরেল | laure | 558 |
 | 557 | তোমাকে | te | 558 |
 | 558 | পরবে | habebunt | 557 |
-| 558 | আমার | nostrae |
+| 558 | আমার#3 | nostrae |
 | 558 | চুল | coma |
 | 558 | বীণা | citharae |
 | 558 | তূণীর | pharetrae |
@@ -4136,11 +4143,11 @@ lang: la
 | 589 | বেডে | toro |
 | 589 | ধন্য | beatum | 588 |
 | 589 | হয়ে | factura |
-| 589 | যাবে | factura |
+| 589 | যাবে#2 | factura |
 | 589 | ছায়া | umbras |
 | 590 | পেতে | pete | 589 |
 | 590 | যাও | pete | 589 |
-| 590 | বনের | nemorum |
+| 590 | বনের | nemorum#1 |
 | 590 | গহীনে | altorum |
 | 590 | ছায়া | umbras |
 | 590 | দেখিয়ে | monstraverat |
@@ -4377,7 +4384,8 @@ lang: la
 | 625 | দুইটা | bina |
 | 625 | চোখ | luminibus | 624 |
 | 625 | পালা | vicibus |
-| 625 | করে | vicibus |
+| 625 | করে#1 | bina |
+| 625 | করে#2 | vicibus |
 | 625 | বিশ্রাম | quietem |
 | 625 | নেয় | capiebant |
 | 626 | ঘুমায় | quietem | 625 |
@@ -4600,10 +4608,10 @@ lang: la
 | 658 | জামাইয়ের | generi |
 | 658 | আমার | mihi |
 | 658 | নাতিপুতির | nepotum |
-| 659 | এখন | nunc |
+| 659 | এখন | nunc#1 |
 | 659 | বলদ | grege#1 |
 | 659 | বাছুর | grege#2 |
-| 659 | হবে | habendus |
+| 659 | হবে#2 | habendus |
 | 659 | তোর | tibi |
 | 659 | জামাই | vir |
 | 659 | বাচ্চাকাচ্চা | natus |
@@ -4880,7 +4888,7 @@ lang: la
 | 699 | প্যান | Pan | 698 |
 | 699 | বলে | refert |
 | 699 | বলা | referre |
-| 699 | বলা | verba |
+| 699 | বলা | verba#2 |
 | 699 | বাকি | restabat |
 | 699 | ছিল | restabat |
 | 700 | পালিয়ে | fugisse |
@@ -5088,7 +5096,7 @@ lang: la
 | 731 | গোঙানি | gemitu |
 | 731 | চোখের | lacrimis |
 | 731 | পানি | lacrimis |
-| 731 | আর | et |
+| 731 | আর | et#3 |
 | 731 | শোকাতুর | luctisono |
 | 731 | গম্ভীর | luctisono |
 | 731 | ডাকে | mugitu |
@@ -5205,7 +5213,7 @@ lang: la
 | 748 | হতো | tenet | 749 |
 | 749 | শহরে | urbes | 748 |
 | 749 | ছিল | Fuit |
-| 749 | তার | huic |
+| 749 | তার#1 | huic |
 | 749 | সমান | aequalis |
 | 749 | বয়সে | annis |
 | 750 | ও | et | 749 |
@@ -5261,7 +5269,7 @@ lang: la
 | 758 | জবাব | refelli |
 | 758 | দিতে | refelli |
 | 758 | না | non |
-| 758 | পারার | potuisse |
+| 758 | পারার | potuisse#2 |
 | 758 | লজ্জার | Pudet | 757 |
 | 759 | যদি | si |
 | 759 | বাবা | stirpe |
