@@ -3,384 +3,657 @@ type: words
 lang: it
 ---
 
-| আমাদের | nostra |
-| জীবনের | vita |
-| মাঝপথে | mezzo |
-| মাঝপথে | cammin |
-| আমি | mi |
-| নিজেকে | mi |
-| পাইছিলাম | ritrovai |
-| গহিন | oscura |
-| অরণ্যে | selva |
-| কারণ | ché |
-| হারায়ে | smarrita |
-| গেছিল | smarrita |
-| সরল | diritta |
-| পথ | via |
-| হায় | ahi |
-| কথা | cosa |
-| বলা | dir |
-| কঠিন | dura |
-| বন | selva |
-| ঘন | forte |
-| বন্ধুর | aspra |
-| বর্বর | selvaggia |
-| ভাবলেও | pensier |
-| আবার | rinova |
-| ফিরে | rinova |
-| আসে | rinova |
-| ভয় | paura |
-| যে | che |
-| যা | che |
-| ও | e |
-| আর | e |
-| মৃত্যুও | morte |
-| তিক্ত | amara |
-| বেশি | più |
-| চেয়ে | più |
-| তবুও | ma |
-| তবে | ma |
-| কিন্তু | ma |
-| সেখানে | vi |
-| ভালো | ben |
-| জন্য | per |
-| পাইছি | trovai |
-| বলব | dirò |
-| অন্য | l’altre |
-| দেখছি | scorte |
-| গেছিলাম | v’intrai |
-| জানি | so |
-| না | non |
-| নাই | non |
-| নেই | non |
-| গভীর | pien |
-| ঘুমে | sonno |
-| বিভোর | pien |
-| ছিলাম | era |
-| ছিল | era |
-| যখন | quando |
-| হারায়ে | abbandonai |
-| ফেলি | abbandonai |
-| সত্য | verace |
-| এক | una |
-| পাহাড়ের | colle |
-| গোড়ায় | piè |
-| পৌঁছাই | giunto |
-| যেখানে | dove |
-| সেই | quella |
-| উপত্যকা | valle |
-| শেষ | terminava |
-| হৃদয় | cor |
-| বিদ্ধ | compunto |
-| ভয়ে | paura |
-| উপরে | alto |
-| তাকায়ে | guardai |
-| দেখলাম | vidi |
-| কাঁধ | spalle |
-| পরে | vestite |
-| পরে | poi |
-| গ্রহের | pianeta |
-| আলো | raggi |
-| মানুষকে | altrui |
-| সোজা | dritto |
-| পথে | calle |
-| তখন | allor |
-| কিছুটা | poco |
-| শান্ত | queta |
-| হৃদয়ের | cor |
-| হ্রদে | lago |
-| রাত | notte |
-| কাটাইছিলাম | passai |
-| করুণভাবে | pieta |
-| সামুদ্রিক | pelago |
-| সৈকতে | riva |
-| উঠার | uscito |
-| নাভিশ্বাসে | affannata |
-| পিছে | volge |
-| ফিরে | volge |
-| ভয়াল | perigliosa |
-| জলের | l’acqua |
-| তাকায় | guata |
-| পলাতক | fuggiva |
-| চিত্ত | l’animo |
-| আমার | mio |
-| উল্টা | retro |
-| ঘুরে | volse |
-| দেখে | rimirar |
-| পথ | passo |
-| নশ্বরকেই | persona |
-| জ্যান্ত | viva |
-| ছাড়ে | lasciò |
-| শ্রান্ত | lasso |
-| শ্রান্তি | lasso |
-| শরীরটাকে | corpo |
-| শূন্য | diserta |
-| গিরিপথ | piaggia |
-| শক্ত | fermo |
-| পা-টা | piè |
-| নিচে | basso |
-| খাড়া | l’erta |
-| কৃশ | leggera |
-| ক্ষিপ্র | presta |
-| চিতাবাঘ | lonza |
-| চামড়ায় | pel |
-| দাগ | macolato |
-| আগলে | ’mpediva |
-| সামনে | volto |
-| পথ | cammino |
-| বহুবার | volte |
-| পিছু | dietro |
-| হটতে | ritornar |
-| সময়টা | temp’ |
-| সকাল | mattino |
-| সূর্য | sol |
-| উঠে | montava |
-| সাথে | con |
-| তারা | stelle |
-| খোদার | divino |
-| প্রেম | l’amor |
-| সচল | mosse |
-| শুভ | bene |
-| আশা | sperar |
-| কারণ | cagione |
-| জন্তুর | fiera |
-| অদ্ভুত | gaetta |
-| রোমের | pelle |
-| মিষ্টি | dolce |
-| ঋতু | stagione |
-| প্রহরে | l’ora |
-| ভয়ের | paura |
-| দেখি | vista |
-| সিংহ | leone |
-| হচ্ছিল | parea |
-| হামলায়ে | venisse |
-| মাথা | test’ |
-| উঁচু | alta |
-| খিদার | fame |
-| ক্ষিপ্ত | rabbiosa |
-| বাতাস | l’aere |
-| কাঁপতেছিল | tremesse |
-| মাদি | lupa |
-| নেকড়ে | lupa |
-| তৃষ্ণার | brame |
-| অস্থিচর্মসার | magrezza |
-| ইতিমধ্যে | già |
-| অনেককে | molte |
-| বিপন্ন | grame |
-| আতঙ্কে | paura |
-| এত | tanto |
-| উথলে | ch’uscia |
-| আশা | speranza |
-| ছেড়ে | perdei |
-| দেই | perdei |
-| উঠার | l’altezza |
-| অর্জনের | acquista |
-| ক্ষতির | perder |
-| ক্ষণ | tempo |
-| বিষাদবিলাপ | piange |
-| বিষাদবিলাপ | s’attrista |
-| আমাকে | me |
-| অশান্ত | pace |
-| জন্তু | bestia |
-| তাড়াতে | ripigneva |
-| সূর্যও | sol |
-| নির্বাক | tace |
-| পালাচ্ছিলাম | rovinava |
-| চোখের | occhi |
-| সামনে | dinanzi |
-| বিস্তীর্ণ | lungo |
-| নীরবতার | silenzio |
-| ক্ষীণ | fioco |
-| বিশাল | gran |
-| বিরানে | diserto |
-| দেখামাত্র | vidi |
-| করুণা | miserere |
-| চিৎকার | gridai |
-| তুমি | tu |
-| মায়া | ombra |
-| মানুষ | omo |
-| বলে | rispuosemi |
-| ছিলাম | fui |
-| বাবা | parenti |
-| মা | parenti |
-| লোম্বার্দির | lombardi |
-| দেশের | patrïa |
-| মান্তুয়াতে | mantoani |
-| জুলিয়াসের | iulio |
-| জন্মাই | nacqui |
-| দেরিতে | tardi |
-| রোমে | roma |
-| থাকতাম | vissi |
-| অগাস্টাসের | augusto |
-| সময় | tempo |
-| মিথ্যা | falsi |
-| মিথ্যুক | bugiardi |
-| দেবতাদের | dèi |
-| কবি | poeta |
-| গেয়েছিলাম | cantai |
-| আন্‌খিসেসের | d’anchise |
-| সুপুত্রের | figliuol |
-| ট্রয় | troia |
-| এসেছিল | venne |
-| দর্পী | superbo |
-| ইলিয়ন | ilión |
-| পোড়ার | combusto |
-| কেন | perché |
-| ফিরে | ritorni |
-| দুঃখে | noia |
-| উঠছ | sali |
-| সুখের | dilettoso |
-| শিখরে | monte |
-| আনন্দের | gioia |
-| উৎস | principio |
-| কারণ | cagion |
-| ভার্জিল | virgilio |
-| উৎসমুখ | fonte |
-| যার | cui |
-| নদে | fiume |
-| বাক্যবান | parlar |
-| বলছিলাম | rispuos’ |
-| লজ্জায় | vergognosa |
-| মাথা | fronte |
-| কবির | poeti |
-| আলো | lume |
-| গর্ব | onore |
-| পাঠ | studio |
-| প্রেম | amore |
-| তা | lo |
-| আপনি | tu |
-| আপনার | tuo |
-| গুরু | maestro |
-| লেখক | autore |
-| নিছি | tolsi |
-| শৈলী | stilo |
-| সম্মান | onore |
-| বাঁচান | aiutami |
-| থেকে | da |
-| নামী | famoso |
-| ঋষি | saggio |
-| এ-জন্তুর | bestia |
-| হটছি | volsi |
-| ধমনি | vene |
-| শিরা | vene |
-| শিরা | polsi |
-| বিকম্পিত | tremar |
-| তোমাকে | te |
-| আরেক | altro |
-| পথ | vïaggio |
-| অশ্রু | lagrimar |
-| দেখে | vide |
-| উত্তর | rispuose |
-| যদি | se |
-| নিতে | tenere |
-| বর্বরতা | selvaggio |
-| মুক্তি | campar |
-| চাও | vuo’ |
-| যে-জানোয়ার | bestia |
-| কান্নার | gride |
-| কাউকে | altrui |
-| তার | sua |
-| তাঁর | sua |
-| মাড়াতে | passar |
-| দেয় | lascia |
-| বাধ | ’mpedisce |
-| আমরণ | l’uccide |
-| প্রকৃতি | natura |
-| জঘন্য | malvagia |
-| অশুভ | ria |
-| কখনো | mai |
-| ক্ষুধা | bramosa |
-| তৃষ্ণা | voglia |
-| নিবৃত্ত | empie |
-| পিপাসা | fame |
-| পানের | pasto |
-| আরো | più |
-| অনেক | molti |
-| প্রাণীর | animali |
-| মিলিত | s’ammoglia |
-| হবে | saranno |
-| হবে | sarà |
-| হবে | fia |
-| শিকারী | veltro |
-| কুকুর | veltro |
-| কষ্টমৃত্যু | morir |
-| কষ্টমৃত্যু | doglia |
-| জমিজমা | terra |
-| সোনারুপা | peltro |
-| প্রজ্ঞা | sapïenza |
-| প্রভাব | virtute |
-| জন্ম | nazion |
-| ফেল্টের | feltro |
-| উদ্ধার | salute |
-| নিম্নশায়ী | umile |
-| ইতালি | italia |
-| দিয়েছেন | morì |
-| সুকুমারী | vergine |
-| কামিল্লা | cammilla |
-| তুর্নুস | turno |
-| ইউরিয়ালুস | eurialo |
-| নিসুস | niso |
-| প্রত্যেক | ogne |
-| নগর | villa |
-| তাড়িয়ে | caccerà |
-| নরকে | ’nferno |
-| পাঠাবে | rimessa |
-| আদিহিংসা | ’nvidia |
-| ছেড়েছিল | dipartilla |
-| আগে | prima |
-| ভালোর | me’ |
-| নাও | segui |
-| হব | sarò |
-| তোমার | tuo |
-| তোমার | tua |
-| পাঞ্জেরি | guida |
-| যাব | trarrotti |
-| চিরস্থানে | etterno |
-| শুনবে | udirai |
-| নিরাশার | disperate |
-| কান্না | strida |
-| দেখবে | vedrai |
-| আদিম | antichi |
-| আত্মার | spiriti |
-| বেদনা | dolenti |
-| দ্বিতীয় | seconda |
-| মৃত্যুর | morte |
-| বিলাপ | grida |
-| দেখবে | vederai |
-| অগ্নিকুণ্ডে | foco |
-| তুষ্ট | contenti |
-| আশা | speran |
-| সুভগের | beate |
-| দলে | genti |
-| উপরে | sù |
-| উঠতে | salire |
-| চাইলে | vorrai |
-| আত্মা | anima |
-| যোগ্য | degna |
-| তোমাকে | ti |
-| সঁপে | lascerò |
-| বিদায় | partire |
-| মহারাজ | imperador |
-| থাকেন | regna |
-| বিধান | legge |
-| বিরোধী | ribellante |
-| নগরে | città |
-| রাজত্ব | impera |
-| সবখানে | tutte |
-| রাজধানী | città |
-| সুউচ্চ | l’alto |
-| আরশ | seggio |
-| সৌভাগ্য | felice |
-| অনুরোধ | richeggio |
-| খোদার | dio |
-| অদেখা | conoscesti |
-| ক্ষতি | male |
-| সম্পাত | peggio |
-| মুক্ত | fugga |
-| চলেন | meni |
-| বলা | dicesti |
-| দেখা | veggia |
-| পিটারের | pietro |
-| ফটকের | porta |
-| বেদনার্তদের | mesti |
-| আগান | mosse |
+| 1 | আমাদের | nostra |
+| 1 | জীবনের | vita |
+| 1 | মাঝপথে | mezzo |
+| 1 | মাঝপথে | cammin |
+| 2 | নিজেকে | mi |
+| 2 | পাইছিলাম | ritrovai |
+| 2 | গহিন | oscura |
+| 2 | অরণ্যে | selva |
+| 3 | কারণ | ché |
+| 3 | হারায়ে | smarrita |
+| 3 | গেছিল | era |
+| 3 | সরল | diritta |
+| 3 | পথ | via |
+| 4 | হায় | Ahi |
+| 4 | কথা | cosa |
+| 4 | বলা | dir |
+| 4 | কঠিন | dura |
+| 4 | কি | quanto |
+| 5 | বন | selva |
+| 5 | বন্ধুর | aspra |
+| 5 | বর্বর | selvaggia |
+| 5 | ঘন | forte |
+| 5 | সেই | esta |
+| 6 | ভাবলেও | pensier |
+| 6 | আবার | rinova |
+| 6 | ফিরে | rinova |
+| 6 | আসে | rinova |
+| 6 | ভয় | paura |
+| 6 | যে | che |
+| 7 | মৃত্যুও | morte |
+| 7 | তিক্ত | amara |
+| 7 | বেশি | più |
+| 7 | না | poco |
+| 8 | ভালো | ben |
+| 8 | পাইছি | trovai |
+| 8 | সেখানে | vi |
+| 8 | তবুও | ma |
+| 9 | জন্য | per | 8 |
+| 9 | বলার | trattar | 8 |
+| 9 | বলব | dirò |
+| 9 | অন্য | l’altre |
+| 9 | যা | ch’i’ |
+| 9 | দেখছি | scorte |
+| 10 | সেইখানে | v’intrai |
+| 10 | গেছিলাম | v’intrai |
+| 10 | কিভাবে | com’ |
+| 10 | না | non |
+| 10 | জানি | so |
+| 11 | এমনই | tant’ |
+| 11 | বিভোর | pien |
+| 11 | গভীর | pien |
+| 11 | ঘুমে | sonno |
+| 11 | ছিলাম | era |
+| 12 | যখন | punto | 11 |
+| 12 | যখন | che |
+| 12 | হারায়ে | abbandonai |
+| 12 | ফেলি | abbandonai |
+| 12 | সত্য | verace |
+| 12 | পথ | via |
+| 12 | সেই | la |
+| 13 | তবে | Ma |
+| 13 | যখন | poi |
+| 13 | এক | d’un |
+| 13 | পাহাড়ের | colle |
+| 13 | গোড়ায় | piè |
+| 14 | পৌঁছাই | giunto, | 13 |
+| 14 | পৌঁছাই | fui | 13 |
+| 14 | যেখানে | là |
+| 14 | যেখানে | dove |
+| 14 | উপত্যকা | valle |
+| 14 | শেষ | terminava |
+| 14 | সেই | quella |
+| 15 | যা | che |
+| 15 | আমার | m’avea |
+| 15 | হৃদয় | cor |
+| 15 | বিদ্ধ | compunto, |
+| 15 | করছিল | m’avea |
+| 15 | ভয়ে | paura |
+| 16 | উপরে | alto |
+| 16 | উপরে | in |
+| 16 | তাকায়ে | guardai |
+| 16 | দেখলাম | vidi |
+| 16 | কাঁধ | spalle |
+| 16 | তার | sue |
+| 17 | এখনি | già |
+| 17 | পরে | vestite |
+| 17 | আছে | vestite |
+| 17 | আলো | raggi |
+| 17 | গ্রহের | pianeta |
+| 18 | যে | che |
+| 18 | মানুষকে | altrui |
+| 18 | সোজা | dritto |
+| 18 | রাখে | mena |
+| 18 | সব | ogne |
+| 18 | পথে | calle |
+| 19 | তখন | Allor |
+| 19 | শান্ত | queta |
+| 19 | ভয় | paura |
+| 19 | কিছুটা | un |
+| 19 | কিছুটা | poco |
+| 19 | হয় | fu |
+| 20 | যা | che |
+| 20 | আমার | m’era |
+| 20 | হৃদয়ের | cor |
+| 20 | হ্রদে | lago |
+| 20 | ছিল | m’era |
+| 20 | সারা | durata |
+| 21 | রাত | notte |
+| 21 | যা | ch’i’ |
+| 21 | কাটাইছিলাম | passai |
+| 21 | করুণভাবে | pieta. |
+| 22 | সামুদ্রিক | pelago | 23 |
+| 22 | ঝড় | pelago | 23 |
+| 22 | উঠার | uscito | 23 |
+| 22 | সৈকতে | riva | 23 |
+| 23 | যে-আর্ত | quei | 22 |
+| 23 | যে-আর্ত | che | 22 |
+| 23 | যে-আর্ত | affannata | 22 |
+| 23 | নাভিশ্বাসে | lena | 22 |
+| 23 | ফিরে | volge | 24 |
+| 24 | ভয়াল | perigliosa |
+| 24 | জলের | l’acqua |
+| 24 | দিকে | a |
+| 24 | তাকায় | guata, |
+| 25 | মতোই | come | 22 |
+| 25 | মতোই | così |
+| 25 | তার | quei | 22 |
+| 25 | আমার | mio |
+| 25 | চিত্ত | l’animo |
+| 25 | পলাতক | fuggiva, |
+| 26 | উল্টা | volse |
+| 26 | উল্টা | retro |
+| 26 | ঘুরে | volse |
+| 26 | দেখে | rimirar |
+| 26 | সেই | lo |
+| 26 | পথ | passo |
+| 27 | যা | che |
+| 27 | নশ্বরকেই | persona |
+| 27 | জ্যান্ত | viva. |
+| 27 | ছাড়ে | lasciò |
+| 27 | নাই | non |
+| 27 | নাই | mai |
+| 28 | শ্রান্ত | lasso, |
+| 28 | শরীরটাকে | corpo |
+| 28 | কিছুটা | un |
+| 28 | কিছুটা | poco |
+| 28 | শ্রান্তি | posato |
+| 28 | দিয়ে | posato |
+| 29 | শূন্য | diserta, |
+| 29 | গিরিপথ | piaggia |
+| 29 | বেয়ে | per |
+| 29 | শুরু | ripresi |
+| 29 | করি | ripresi |
+| 30 | শক্ত | fermo |
+| 30 | পা-টা | piè |
+| 30 | প্রতি | sempre |
+| 30 | পদক্ষেপে | sempre |
+| 30 | নিচে | basso. |
+| 31 | কিন্তু | Ed |
+| 31 | যেখান | cominciar |
+| 31 | থেকে | cominciar |
+| 31 | পাহাড় | l’erta, |
+| 31 | খাড়া | l’erta, |
+| 32 | সেখানেই | ecco | 31 |
+| 32 | এক | una |
+| 32 | কৃশ | leggera |
+| 32 | ক্ষিপ্র | presta |
+| 32 | চিতাবাঘ | lonza |
+| 33 | সারা | coverta; |
+| 33 | চামড়ায় | pel |
+| 33 | ছোপ | macolato |
+| 33 | দাগ | macolato |
+| 34 | আমার | mi |
+| 34 | আমার | mio | 35 |
+| 34 | পথ | cammino | 35 |
+| 34 | আগলে | ’mpediva | 35 |
+| 34 | সামনে | dinanzi |
+| 35 | নড়ে | partia | 34 |
+| 35 | না | non | 34 |
+| 36 | আমি | ch’i’ |
+| 36 | বহুবার | più |
+| 36 | বহুবার | volte |
+| 36 | পিছু | ritornar |
+| 36 | হটতে | vòlto. |
+| 36 | হই | fui |
+| 37 | সময়টা | Temp’ |
+| 37 | ছিল | era |
+| 37 | সকাল | mattino, |
+| 38 | সূর্য | sol |
+| 38 | উঠে | montava |
+| 38 | উঠে | sù |
+| 38 | সাথে | con |
+| 38 | সব | quelle |
+| 38 | তারা | stelle |
+| 38 | ফর্সা | belle; | 40 |
+| 39 | যারা | ch’eran |
+| 39 | সাথে | con |
+| 39 | তার | lui |
+| 39 | সে-দিনেও | quando |
+| 39 | জ্বলছিল | ch’eran |
+| 40 | যে-দিন | quando | 39 |
+| 40 | খোদার | divino | 39 |
+| 40 | প্রেম | l’amor | 39 |
+| 40 | তাদের | quelle |
+| 40 | তাদের | cose |
+| 40 | সচল | mosse |
+| 41 | করে | mosse | 40 |
+| 41 | এদের | cagione |
+| 41 | অদ্ভুত | gaetta | 42 |
+| 41 | রোমের | pelle | 42 |
+| 42 | জন্তুর | fiera |
+| 42 | আমি | m’era | 41 |
+| 42 | শুভ | bene | 41 |
+| 42 | আশা | sperar | 41 |
+| 42 | করি | sperar | 41 |
+| 43 | মিষ্টি | dolce |
+| 43 | ঋতু | stagione; |
+| 43 | প্রহরে | l’ora |
+| 44 | কিন্তু | ma |
+| 44 | ভয়ের | paura |
+| 44 | বিদ্ধ | desse |
+| 44 | করে | desse |
+| 45 | দেখি | vista |
+| 45 | দেখি | m’apparve |
+| 45 | এক | d’un |
+| 45 | সিংহ | leone. |
+| 46 | এই | Questi |
+| 46 | হামলায়ে | venisse |
+| 46 | পড়বে | venisse |
+| 47 | মাথা | test’ |
+| 47 | উঁচু | alta |
+| 47 | খিদার | fame, |
+| 47 | ক্ষিপ্ত | rabbiosa |
+| 48 | বাতাস | l’aere |
+| 48 | তাতে | ne |
+| 48 | কাঁপতেছিল | tremesse. |
+| 49 | পর | Ed |
+| 49 | এক | una |
+| 49 | অস্থিচর্মসার | magrezza | 50 |
+| 50 | মাদি | lupa | 49 |
+| 50 | নেকড়ে | lupa | 49 |
+| 50 | তাবৎ | tutte | 49 |
+| 50 | তৃষ্ণার | brame | 49 |
+| 50 | ভাণ্ডার | carca |
+| 51 | ইতিমধ্যে | già |
+| 51 | অনেককে | molte |
+| 51 | অনেককে | genti |
+| 51 | বিপন্ন | grame; |
+| 51 | করছে | fé |
+| 52 | আমার | mi |
+| 52 | এত | tanto |
+| 52 | আতঙ্কে | paura | 53 |
+| 52 | ভেঙে | gravezza |
+| 52 | পড়ে | gravezza |
+| 53 | উথলে | ch’uscia |
+| 53 | উঠে | ch’uscia |
+| 54 | ছেড়ে | perdei |
+| 54 | দেই | perdei |
+| 54 | আশা | speranza |
+| 54 | উঠার | l’altezza. |
+| 54 | যে | ch’io |
+| 55 | যে | quei |
+| 55 | যে | che |
+| 55 | আনন্দে | volontieri |
+| 55 | অর্জনের | acquista, |
+| 56 | ক্ষতির | perder |
+| 56 | ক্ষণ | ’l |
+| 56 | ক্ষণ | tempo |
+| 56 | উপস্থিত | giugne |
+| 56 | হলে | giugne |
+| 57 | জান | tutti |
+| 57 | প্রাণ | pensier |
+| 57 | বিষাদবিলাপ | piange |
+| 57 | বিষাদবিলাপ | s’attrista; |
+| 58 | আমাকে | mi |
+| 58 | অশান্ত | sanza |
+| 58 | অশান্ত | pace, |
+| 58 | জন্তু | bestia |
+| 58 | তার | tal |
+| 58 | মতো | tal |
+| 58 | করে | fece |
+| 59 | এক | poco#1 |
+| 59 | দুই | poco#2 |
+| 59 | তাড়াতে | ripigneva | 60 |
+| 60 | নামায়ে | ripigneva |
+| 60 | আনে | ripigneva |
+| 60 | যেখানে | là |
+| 60 | যেখানে | dove |
+| 60 | সূর্যও | sol |
+| 60 | নির্বাক | tace. |
+| 61 | যখন | Mentre |
+| 61 | পালাচ্ছিলাম | rovinava |
+| 61 | পায়ে | basso |
+| 61 | পায়ে | loco, |
+| 62 | চোখের | occhi |
+| 62 | সামনে | dinanzi |
+| 62 | ভেসে | offerto |
+| 62 | উঠে | offerto |
+| 62 | মূর্তি | chi | 63 |
+| 63 | বিস্তীর্ণ | lungo |
+| 63 | মধ্যে | per |
+| 63 | নীরবতার | silenzio |
+| 63 | ক্ষীণ | fioco. |
+| 64 | বিশাল | gran |
+| 64 | বিরানে | diserto, |
+| 64 | তাকে | costui |
+| 64 | দেখামাত্র | vidi |
+| 64 | দেখামাত্র | Quando |
+| 65 | আমাকে | me», |
+| 65 | করুণা | Miserere |
+| 65 | করো | Miserere |
+| 65 | তুমি | tu | 66 |
+| 65 | যাই | qual | 66 |
+| 65 | যাই | che | 66 |
+| 65 | হও | sii | 66 |
+| 66 | মায়া | ombra |
+| 66 | বা | od |
+| 66 | মানুষ | omo |
+| 66 | চিৎকার | gridai | 65 |
+| 66 | করি | gridai | 65 |
+| 67 | সে | Rispuosemi: |
+| 67 | বলে | Rispuosemi: |
+| 67 | মানুষ | omo |
+| 67 | না | Non |
+| 67 | ছিলাম | fui |
+| 67 | এককালে | già |
+| 68 | আমার | miei |
+| 68 | বাবা | parenti |
+| 68 | মা | parenti |
+| 68 | লোম্বার্দির | lombardi, |
+| 69 | মান্তুয়াতে | mantoani |
+| 69 | দেশের | patrïa |
+| 69 | বাড়ি | patrïa |
+| 69 | তাদের | ambedui. |
+| 70 | জুলিয়াসের | Iulio |
+| 70 | আমলে | sub |
+| 70 | জন্মাই | Nacqui |
+| 70 | দেরিতে | tardi, |
+| 71 | রোমে | Roma |
+| 71 | থাকতাম | vissi |
+| 71 | অগাস্টাসের | Augusto |
+| 71 | সময় | sotto |
+| 71 | সময় | tempo | 72 |
+| 72 | মিথ্যা | falsi |
+| 72 | মিথ্যুক | bugiardi. |
+| 72 | দেবতাদের | dèi |
+| 73 | কবি | Poeta |
+| 73 | গেয়েছিলাম | cantai |
+| 73 | আন্‌খিসেসের | d’Anchise | 74 |
+| 74 | সুপুত্রের | giusto | 73 |
+| 74 | সুপুত্রের | figliuol |
+| 74 | গান | cantai | 73 |
+| 74 | যে | che |
+| 74 | ট্রয় | Troia |
+| 75 | এসেছিল | venne | 74 |
+| 75 | দর্পী | superbo |
+| 75 | ইলিয়ন | Ilión |
+| 75 | পোড়ার | combusto. |
+| 75 | পরে | poi |
+| 76 | কিন্তু | Ma |
+| 76 | তুমি | tu |
+| 76 | কেন | perché |
+| 76 | ফিরে | ritorni |
+| 76 | যাচ্ছ | ritorni |
+| 76 | দুঃখে | noia? |
+| 77 | কেন | perché |
+| 77 | উঠছ | sali |
+| 77 | না | non |
+| 77 | সুখের | dilettoso |
+| 77 | শিখরে | monte |
+| 78 | যা | ch’è |
+| 78 | সকল | tutta |
+| 78 | আনন্দের | gioia?». |
+| 78 | উৎস | principio |
+| 78 | কারণ | cagion |
+| 78 | ও | e |
+| 79 | তবে | Or |
+| 79 | আপনি | tu |
+| 79 | আপনি | se’ |
+| 79 | ভার্জিল | Virgilio |
+| 79 | সেই | quel |
+| 79 | সেই | quella |
+| 79 | উৎসমুখ | fonte |
+| 80 | যার | che |
+| 80 | নদে | fiume |
+| 80 | আনে | spandi |
+| 80 | বাক্যবান | parlar |
+| 81 | বলছিলাম | rispuos’ |
+| 81 | লজ্জায় | vergognosa |
+| 81 | মাথা | fronte. |
+| 82 | সব | altri |
+| 82 | কবির | poeti |
+| 82 | আলো | lume |
+| 82 | গর্ব | onore |
+| 82 | আর | e |
+| 83 | যে-সময় | lungo |
+| 83 | আর | e |
+| 83 | প্রেম | amore |
+| 83 | আপনাকে | tuo | 84 |
+| 83 | আপনাকে | volume | 84 |
+| 84 | পাঠ | studio | 83 |
+| 84 | কাজে | vagliami | 83 |
+| 84 | লাগুক | vagliami | 83 |
+| 84 | করছি | cercar |
+| 85 | আপনি | tu |
+| 85 | আপনি | se’ |
+| 85 | আমার | mio |
+| 85 | গুরু | maestro; |
+| 85 | লেখক | autore; |
+| 86 | আপনার | tu |
+| 86 | থেকে | da |
+| 86 | কাছ | cu’ |
+| 86 | নিছি | tolsi |
+| 86 | সেই | lo | 87 |
+| 86 | শৈলী | stilo | 87 |
+| 87 | যার | che |
+| 87 | কারণে | fatto |
+| 87 | আমার | m’ha |
+| 87 | সম্মান | onore. |
+| 88 | আমাকে | aiutami | 89 |
+| 88 | বাঁচান | aiutami | 89 |
+| 88 | এর | lei, | 89 |
+| 88 | থেকে | da | 89 |
+| 88 | নামী | famoso | 89 |
+| 88 | ঋষি | saggio | 89 |
+| 89 | এ-জন্তুর | bestia | 88 |
+| 89 | পিছু | volsi: | 88 |
+| 89 | হটছি | volsi: | 88 |
+| 89 | দেখেন | Vedi | 88 |
+| 90 | ধমনি | polsi |
+| 90 | শিরা | vene |
+| 90 | বিকম্পিত | tremar |
+| 91 | তোমাকে | te |
+| 91 | অন্য | altro |
+| 91 | আরেক | altro |
+| 91 | পথ | vïaggio |
+| 91 | নিতে | tenere |
+| 91 | হবে | convien |
+| 92 | আমার | mi |
+| 92 | অশ্রু | lagrimar |
+| 92 | দেখে | vide, |
+| 92 | উত্তর | rispuose |
+| 92 | দেন | rispuose |
+| 93 | যদি | se |
+| 93 | বন্য | selvaggio; |
+| 93 | বর্বরতা | selvaggio; |
+| 93 | মুক্তি | campar |
+| 93 | চাও | vuo’ |
+| 94 | যে-জানোয়ার | bestia, |
+| 94 | তোমার | tu |
+| 94 | কান্নার | gride |
+| 94 | কারণ | per |
+| 95 | কাউকে | altrui |
+| 95 | তার | sua |
+| 95 | মাটি | via |
+| 95 | মাড়াতে | passar |
+| 95 | না | non |
+| 95 | দেয় | lascia |
+| 96 | বাধ | ’mpedisce |
+| 96 | দিয়ে | ’mpedisce |
+| 96 | আমরণ | l’uccide; |
+| 97 | প্রকৃতি | natura |
+| 97 | এমন | sì |
+| 97 | জঘন্য | malvagia |
+| 97 | অশুভ | ria; |
+| 97 | তার | ha |
+| 98 | যে | che |
+| 98 | কখনো | mai |
+| 98 | ক্ষুধা | bramosa |
+| 98 | তৃষ্ণা | voglia, |
+| 98 | নিবৃত্ত | empie |
+| 98 | না | non |
+| 99 | পিপাসা | fame |
+| 99 | পানের | pasto |
+| 99 | পর | dopo |
+| 99 | আরো | più |
+| 100 | অনেক | Molti |
+| 100 | প্রাণীর | animali |
+| 100 | সাথে | cui |
+| 100 | মিলিত | s’ammoglia, |
+| 101 | অনেকের | più |
+| 101 | হবে | saranno |
+| 101 | যদ্দিন | infin |
+| 101 | না | che |
+| 102 | শিকারী | veltro | 101 |
+| 102 | কুকুর | veltro | 101 |
+| 102 | তাকে | la |
+| 102 | দেয় | farà |
+| 102 | কষ্টমৃত্যু | morir |
+| 102 | কষ্টমৃত্যু | doglia. |
+| 103 | জমিজমা | terra |
+| 103 | সোনারুপা | peltro |
+| 103 | না | non |
+| 103 | বরং | ma | 104 |
+| 104 | প্রজ্ঞা | sapïenza, |
+| 104 | প্রেম | amore |
+| 104 | প্রভাব | virtute, |
+| 104 | ও | e |
+| 104 | হব্য | ciberà | 103 |
+| 104 | তার | Questi | 103 |
+| 105 | দুই | feltro |
+| 105 | ফেল্টের | feltro. |
+| 105 | মাঝে | tra |
+| 105 | জন্ম | nazion |
+| 106 | উদ্ধার | salute |
+| 106 | করবে | fia |
+| 106 | নিম্নশায়ী | umile |
+| 106 | ইতালি | Italia |
+| 107 | যার | cui |
+| 107 | প্রাণ | morì |
+| 107 | দিয়েছেন | morì |
+| 107 | সুকুমারী | vergine |
+| 108 | কামিল্লা | Cammilla, | 107 |
+| 108 | তুর্নুস | Turno |
+| 108 | ইউরিয়ালুস-নিসুস | Eurialo |
+| 108 | ইউরিয়ালুস-নিসুস | Niso |
+| 109 | প্রত্যেক | ogne |
+| 109 | নগর | villa |
+| 109 | নেকড়ে | la |
+| 109 | তাড়িয়ে | caccerà |
+| 110 | সে | Questi | 109 |
+| 110 | ফের | rimessa |
+| 110 | পাঠাবে | rimessa |
+| 110 | নরকে | ’nferno, |
+| 110 | যেখান | là | 111 |
+| 111 | থেকে | onde |
+| 111 | আদিহিংসা | ’nvidia |
+| 111 | আদিহিংসা | prima |
+| 111 | আগে | prima |
+| 111 | ছেড়েছিল | dipartilla. |
+| 112 | তাই | Ond’ |
+| 112 | তোমার | tuo |
+| 112 | ভালোর | me’ |
+| 112 | জন্যই | per |
+| 112 | আমার | mi | 113 |
+| 113 | পিছু | segui, |
+| 113 | নাও | segui, |
+| 113 | আমি | io |
+| 113 | হব | sarò |
+| 113 | তোমার | tua |
+| 113 | পাঞ্জেরি | guida, |
+| 114 | এখান | qui, |
+| 114 | থেকে | di |
+| 114 | নিয়ে | trarrotti |
+| 114 | যাব | trarrotti |
+| 114 | চিরস্থানে | loco |
+| 114 | চিরস্থানে | etterno, |
+| 115 | যেখানে | ove |
+| 115 | শুনবে | udirai |
+| 115 | নিরাশার | disperate |
+| 115 | কান্না | strida. |
+| 116 | দেখবে | vedrai |
+| 116 | আদিম | antichi |
+| 116 | আত্মার | spiriti |
+| 116 | বেদনা | dolenti, |
+| 117 | দ্বিতীয় | seconda |
+| 117 | মৃত্যুর | morte |
+| 117 | বিলাপ | grida; |
+| 118 | দেখবে | vederai |
+| 118 | তাদের | color |
+| 118 | যারা | che |
+| 118 | অগ্নিকুণ্ডে | foco, | 119 |
+| 118 | অগ্নিকুণ্ডে | nel | 119 |
+| 119 | তুষ্ট | contenti | 118 |
+| 119 | পুড়েও | foco, |
+| 119 | কারণ | perché |
+| 119 | আশা | speran |
+| 119 | করে | speran |
+| 120 | একদিন | quando |
+| 119 | কোনো | sia. | 120 |
+| 120 | সুভগের | beate |
+| 120 | দলে | genti. |
+| 120 | ভাগ | venire | 119 |
+| 120 | পাবে | venire | 119 |
+| 121 | উঠতে | salire |
+| 121 | চাইলে | vorrai |
+| 121 | চাইলে | se |
+| 121 | তোমার | tu |
+| 122 | আত্মা | anima |
+| 122 | যোগ্য | degna: |
+| 122 | আমার | me |
+| 122 | চেয়ে | più |
+| 122 | হবে | fia |
+| 123 | তোমাকে | ti |
+| 123 | তার | lei |
+| 123 | সঁপে | lascerò |
+| 123 | হাতে | con |
+| 123 | বিদায় | partire; |
+| 124 | কারণ | ché |
+| 124 | যে | quello |
+| 124 | মহারাজ | imperador |
+| 124 | উপরে | sù |
+| 124 | উপরে | là |
+| 124 | থাকেন | regna. |
+| 125 | তার | sua |
+| 125 | বিধান | legge, |
+| 125 | বিরোধী | ribellante |
+| 125 | ছিলাম | fu’ |
+| 125 | বলেই | perch’ |
+| 126 | তার | sua |
+| 126 | নগরে | città |
+| 126 | আমার | me |
+| 126 | নেই | non |
+| 127 | রাজত্ব | impera |
+| 127 | রাজত্ব | regge; |
+| 127 | সবখানে | tutte |
+| 127 | সবখানে | parti |
+| 127 | সেখান | quivi |
+| 128 | সেটা | quivi |
+| 128 | তাঁর | sua |
+| 128 | রাজধানী | città |
+| 128 | সুউচ্চ | l’alto |
+| 128 | আরশ | seggio: |
+| 129 | যাদের | colui |
+| 129 | যাদের | cu’ |
+| 129 | তাদের | colui |
+| 129 | সৌভাগ্য | felice |
+| 129 | তা | ivi |
+| 129 | দেন | elegge!». |
+| 130 | কবি | Poeta, |
+| 130 | অনুরোধ | richeggio |
+| 131 | করি | richeggio | 130 |
+| 131 | আপনার | ti | 130 |
+| 131 | আপনার | tu |
+| 131 | অদেখা | non |
+| 131 | অদেখা | conoscesti, |
+| 131 | খোদার | Dio |
+| 131 | নামে | per |
+| 132 | এই | questo |
+| 132 | ক্ষতি | male |
+| 132 | সম্পাত | peggio |
+| 132 | মুক্ত | fugga |
+| 132 | হতে | fugga |
+| 132 | ও | e |
+| 133 | নিয়ে | meni |
+| 133 | চলেন | meni |
+| 133 | আমাকে | mi |
+| 133 | সবখানে | là |
+| 133 | সবখানে | dov’or |
+| 134 | যাতে | sì |
+| 134 | দেখা | veggia |
+| 134 | পাই | veggia |
+| 134 | পিটারের | Pietro |
+| 134 | ফটকের | porta |
+| 135 | আর | e |
+| 135 | আপনার | tu |
+| 135 | বেদনার্তদের | color |
+| 135 | বেদনার্তদের | mesti». |
+| 136 | তখন | Allor |
+| 136 | আগান | mosse, |
+| 136 | তিনি | si |
+| 136 | আমি | io |
+| 136 | পিছু | dietro. |
+| 136 | নেই | tenni |

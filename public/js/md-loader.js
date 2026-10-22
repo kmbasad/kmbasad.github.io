@@ -258,7 +258,12 @@
           if (di === -1) return;
           bnRaw = s.slice(0, di); swRaw = s.slice(di + DELIM.length);
         }
-        var bn = normWord(bnRaw), sw = normWord(swRaw);
+        // `word#2`: the word's second occurrence in its row (a homograph:
+        // দিল "heart" and দিল "gave" in one couplet), the others untouched
+        var ob = bnRaw.match(/#(\d+)\s*$/), os = swRaw.match(/#(\d+)\s*$/);
+        var bn = normWord(bnRaw.replace(/#\d+\s*$/, '')), sw = normWord(swRaw.replace(/#\d+\s*$/, ''));
+        if (bn && ob) bn += '#' + ob[1];
+        if (sw && os) sw += '#' + os[1];
         if (!bn || !sw) return;
         if (key) hasLines = true; else hasGlobal = true;
         // a word is known by its line (or '' page-wide), column and form
@@ -409,7 +414,9 @@
         var src = b ? esc(a.src) + '<br>' + esc(b.src) : esc(a.src);
         var first = (ri === 0);
         var cls = first ? 'ghazal-start poem-start' : '';
-        var attrs = ' data-ghazal="' + esc(gnum) + '"' +
+        // data-key = "ghazal.couplet": the line-scoped word-list's and the
+        // crib's key for this row of two misras
+        var attrs = ' data-ghazal="' + esc(gnum) + '" data-key="' + esc(gnum) + '.' + (ri / 2 + 1) + '"' +
                     (first ? ' id="g' + esc(gnum) + '"' + tocAttr : '');
         var ml = (a.srcLine != null ? String(a.srcLine) : '') +
                  (b && b.srcLine != null ? ',' + b.srcLine : '');

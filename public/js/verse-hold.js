@@ -228,7 +228,10 @@
     if (en) {
       var c = document.createElement('p');
       c.className = 'vh-src vh-en vh-crib';
-      c.textContent = en;
+      en.split(' / ').forEach(function (part, i) {
+        if (i) c.appendChild(document.createElement('br'));
+        c.appendChild(document.createTextNode(part));
+      });
       body.appendChild(c);
       kicker.textContent += ' \u00b7 ' + COL.en;
     }

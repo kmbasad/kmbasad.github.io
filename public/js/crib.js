@@ -3,8 +3,9 @@
  *
  * For readers (and the translator) who read the Greek poorly and English
  * well: each line of the original has its plain sense in English, kept
- * beside the poem as `<part>-crib.tsv` (`N<TAB>english`, N = the original's
- * line number, as md-loader.js stamps it on each verse row's data-key).
+ * beside the poem as `<part>-crib.tsv` (`K<TAB>english`, K = the row's
+ * data-key as md-loader.js stamps it: the line number, ghazal.couplet or
+ * sonnet.line).
  * BookReader sets `TRANS_CONFIG.crib` only where such a file exists.
  *
  *   a mouse resting on the original's line (never the Bangla, which maps
@@ -34,7 +35,7 @@
       var d = {}, any = false;
       t.split('\n').forEach(function (l) {
         var i = l.indexOf('\t');
-        if (i > 0 && /^\d+$/.test(l.slice(0, i))) { d[l.slice(0, i)] = l.slice(i + 1).trim(); any = true; }
+        if (i > 0 && /^\d+(\.\d+)?$/.test(l.slice(0, i))) { d[l.slice(0, i)] = l.slice(i + 1).trim(); any = true; }
       });
       if (any) { crib = d; document.documentElement.classList.add('has-crib'); }
     })
@@ -42,7 +43,7 @@
 
   function lineOf(tr) {
     var n = tr && tr.dataset && tr.dataset.key;
-    return n && /^\d+$/.test(n) && crib && crib[n] ? +n : 0;
+    return n && crib && crib[n] ? n : '';
   }
 
   /* for verse-hold.js: the English of a row, or '' */
@@ -60,7 +61,12 @@
     var n = lineOf(tr);
     if (!n) return hide();
     if (!card) build();
-    card.textContent = crib[n];
+    // a couplet's two misras (`one / two`) stand on two lines
+    card.textContent = '';
+    crib[n].split(' / ').forEach(function (part, i) {
+      if (i) card.appendChild(document.createElement('br'));
+      card.appendChild(document.createTextNode(part));
+    });
     if (lit) lit.classList.remove('crib-row');
     lit = tr;
     tr.classList.add('crib-row');

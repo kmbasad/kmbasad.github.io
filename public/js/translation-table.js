@@ -111,6 +111,7 @@
     // row carries data-key and the page's word-list has that line, else
     // the page-wide TT_DICT, else none (positional groups).
     dict = dict || window.TT_DICT;
+    var seen = {};   // occurrences so far in this cell, for `word#2` pairs
     (function walk(node) {
       if (node.nodeType === Node.TEXT_NODE) {
         var t = node.nodeValue || "";
@@ -134,7 +135,8 @@
                                .toLowerCase();
             var wNoHyphens = wStripped.replace(/-/g, '');
             var dictCol = dict[colName];
-            var matched = dictCol[wNoHyphens];
+            var nth = seen[wNoHyphens] = (seen[wNoHyphens] || 0) + 1;
+            var matched = dictCol[wNoHyphens + '#' + nth] || dictCol[wNoHyphens];
 
             // Try without Arabic definite article ال
             if (!matched) {
