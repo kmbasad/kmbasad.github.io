@@ -13,6 +13,8 @@ const About = about?.Content ?? null;
 
 import Painting from '../../components/Painting.astro';
 import { trellisList } from '../../data/trellis-order.js';
+import { ESSAYS_PLACE } from '../../data/rooms.js';
+import { ESSAY_W, mornings } from '../../data/mornings.js';
 
 /* After Paul Klee, "Castle and Sun" (1928): a mosaic of small warm planes,
    oranges, reds, ochres and plums on a paper ground, laid by the hand; the
@@ -68,6 +70,19 @@ const planes = [
         </li>
       ))}
     </ul>
+    {/* the morning essays, when they live here: one shelf under the trellises */}
+    {ESSAYS_PLACE === 'macha' && mornings.length > 0 && (
+      <ul class="pt-list macha-shelf">
+        <li>
+          <a href="/trellises/mornings/" style="--m:#b8b1d3">
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{ESSAY_W.name}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+            <span class="pt-desc">প্রতি ভোরে একটি বইয়ের পাঠ, ক্লডের ইংরেজি থেকে বাংলায়</span>
+          </a>
+        </li>
+      </ul>
+    )}
   </Painting>
 
   <!-- the fuller account: a reading panel that slides in from the right
@@ -125,6 +140,8 @@ const planes = [
       line-height: 1.6;
       color: var(--text-2);
     }
+
+    .macha-shelf { margin-top: 2.6rem; }
 
     .macha-more-line {
       margin: 0 0 2rem;

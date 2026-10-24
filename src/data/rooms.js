@@ -2,7 +2,7 @@
 // One source for the masthead, the phone sheet, the home page and the footer.
 export const SITE_NAME = 'যৌথ অচেতন';
 export const SITE_ABOUT = 'যৌথ অচেতন একজন মানুষের বাড়ি, যার এক ঘরে গল্প লেখা হয়, এক ঘরে পুরোনো পুঁথি যত্নে তোলা থাকে, এক ঘরে বিশ্বের কবিতা বাংলায় আসে, আর আরেক ঘরে ভাবনা চলে বড় প্রশ্ন নিয়ে। ঘরগুলোর মাঝে কোনো দেয়াল নেই, তাই এক ঘরে অনুবাদ করা সনেট পাশের ঘরের গল্পেও শোনা যায়।';
-export const ROOMS = [
+const FOUR = [
   {
     key: 'panthea', href: '/panthea/', tint: 'blue',
     label: 'প্যান্থিয়া', gloss: 'গদ্যকবিতায় লেখা গল্পের ধারা',
@@ -24,3 +24,14 @@ export const ROOMS = [
     about: 'মাচায় ভাবনা ওঠে ঊনপঞ্চাশটি খোপের এক জালে ভর দিয়ে, যেখানে সাতজন চিন্তক বা একজন নির্মাতার সাতটি ছবিকে সাতটি প্রশ্নের আলোয় পড়া হয়। চেতনা আর খোদার প্রশ্নের পাশে এখানে আছে সত্যজিৎ রায়, কিয়ারোস্তামি আর পাক চান-উকের সিনেমা। প্রতিটি মাচার নিচের প্রবন্ধ সেই কথা খোঁজে যা কোনো একটি খোপ একা বলে না।',
   },
 ];
+
+// The morning essays (src/stories/mornings/) stand in one of two places while
+// the author chooses: a fifth room of their own, ভোর (ESSAYS_PLACE=room), or
+// inside মাচা, the room of essays (the default). Read at build time only.
+export const ESSAYS_PLACE = (typeof process !== 'undefined' && process.env.ESSAYS_PLACE) === 'room' ? 'room' : 'macha';
+export const MORNING_ROOM = {
+  key: 'mornings', href: '/mornings/', tint: 'lav',
+  label: 'ভোর', gloss: 'প্রতি ভোরে একটি বইয়ের পাঠ',
+  about: 'প্রতি ভোরে ক্লড একটি বইয়ের একটি অংশ পড়ে ইংরেজিতে একটি প্রবন্ধ লেখে, আর সেই প্রবন্ধ এখানে বাংলায় আসে। কোনোদিন মার্কাস অরেলিয়াস তাঁর শিক্ষকদের কাছে নিজের ঋণ গোনেন, আর কোনোদিন পোয়াঁকারে দেখান যে এক থেকে অসীমে পৌঁছাতে যুক্তির চেয়ে বেশি কিছু লাগে।',
+};
+export const ROOMS = ESSAYS_PLACE === 'room' ? [...FOUR, MORNING_ROOM] : FOUR;

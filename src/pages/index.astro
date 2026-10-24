@@ -67,7 +67,14 @@ const area = (r) => `grid-area:${r.y + 1} / ${r.x + 1} / span ${r.h} / span ${r.
 // the wide screen: 24 by 12
 const D = { cols: 24, rows: 12 };
 const dName = { x: 1, y: 2, w: 10, h: 4 };
-const dRooms = [
+const FIVE = ROOMS.length > 4;   // the morning essays as a room of their own
+const dRooms = FIVE ? [
+  { x: 12, y: 1, w: 7, h: 5 },
+  { x: 19, y: 2, w: 5, h: 4 },
+  { x: 1, y: 7, w: 5, h: 4 },
+  { x: 7, y: 7, w: 5, h: 4 },
+  { x: 13, y: 7, w: 5, h: 4 },
+] : [
   { x: 12, y: 1, w: 7, h: 5 },
   { x: 19, y: 2, w: 5, h: 4 },
   { x: 4, y: 7, w: 7, h: 4 },
@@ -79,7 +86,13 @@ const desktop = compose({ ...D, reserved: [dName, ...dRooms, dMeta], maxW: 3, ma
 // phones: 8 by 16, the same planes stacked two by two
 const P = { cols: 8, rows: 16 };
 const pName = { x: 0, y: 1, w: 7, h: 4 };
-const pRooms = [
+const pRooms = FIVE ? [
+  { x: 0, y: 5, w: 4, h: 3 },
+  { x: 4, y: 5, w: 4, h: 3 },
+  { x: 0, y: 8, w: 4, h: 3 },
+  { x: 4, y: 8, w: 4, h: 3 },
+  { x: 0, y: 11, w: 6, h: 2 },
+] : [
   { x: 0, y: 5, w: 4, h: 4 },
   { x: 4, y: 5, w: 4, h: 4 },
   { x: 0, y: 9, w: 4, h: 4 },

@@ -1,0 +1,115 @@
+/* ── The morning essays (src/components/MorningEssay.astro) ──
+   One column in the reading voice, the site's one headline pattern above it:
+   the date as the kicker, the title, the passage read as the standfirst, and
+   the credit, small, under them before the hairline. */
+
+.es-page {
+  max-width: var(--read-measure);
+  padding: var(--page-top) 0 4rem;
+}
+
+.es-head {
+  margin-bottom: 2.6rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.es-kicker {
+  margin: 0 0 0.6rem;
+  font-family: var(--bn-font);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--tint-ink);
+}
+
+.es-title {
+  margin: 0;
+  font-family: var(--bn-display);
+  font-size: var(--title-fs);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  text-align: left;
+}
+
+.es-standfirst {
+  margin: 1.1rem 0 0;
+  font-family: var(--bn-font);
+  font-size: var(--stand-fs);
+  line-height: 1.8;
+  color: var(--text-3);
+}
+
+/* the word before the passage, in the room's ink */
+.es-reads {
+  font-weight: 600;
+  color: var(--tint-ink);
+}
+
+.es-credit {
+  margin: 0.9rem 0 0;
+  font-family: var(--bn-font);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-4, var(--text-3));
+}
+
+.es-prose {
+  font-family: var(--bn-font);
+  font-size: var(--read-fs);
+  line-height: var(--read-lh);
+  letter-spacing: var(--read-ls);
+  color: var(--read-ink);
+}
+
+.es-prose p {
+  margin: 0 0 var(--read-gap);
+  text-align: left;
+}
+
+/* the opening paragraph is the lede, in the full ink */
+.es-prose > p:first-of-type { color: var(--text); }
+
+.es-prose h2 {
+  margin: 2.8em 0 1em;
+  font-family: var(--bn-display);
+  font-size: var(--h2-fs);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+  text-align: left;
+  scroll-margin-top: 2rem;
+}
+
+/* a short gold rule stands over each part */
+.es-prose h2::before {
+  content: '';
+  display: block;
+  width: 2.6rem;
+  height: 3px;
+  margin-bottom: 1.1rem;
+  background: var(--accent-2);
+}
+
+/* a quoted passage of the book read */
+.es-prose blockquote {
+  margin: 0 0 var(--read-gap);
+  padding: 0.1rem 0 0.1rem 1.4rem;
+  border-left: 3px solid var(--tint-d);
+  color: var(--text-2);
+}
+.es-prose blockquote p { margin-bottom: 0.6em; }
+.es-prose blockquote p:last-child { margin-bottom: 0; }
+
+@media (max-width: 760px) {
+  .es-page { padding: 24px var(--m-read-pad) 2rem; }
+  .es-head { margin-bottom: 2rem; padding-bottom: 1.6rem; }
+  .es-title { font-size: var(--m-title-fs); }
+  .es-standfirst { font-size: 1.04rem; }
+  .es-prose {
+    font-size: var(--m-read-fs);
+    line-height: var(--m-read-lh);
+  }
+  .es-prose blockquote { padding-left: 0.9rem; }
+}

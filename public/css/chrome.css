@@ -15,6 +15,7 @@
 .room-pink  { --tint: var(--t-pink);  --tint-d: var(--t-pink-d);  --tint-ink: #8a5468; }
 .room-ochre { --tint: var(--t-ochre); --tint-d: var(--t-ochre-d); --tint-ink: #8a6a12; }
 .room-sage  { --tint: var(--t-sage);  --tint-d: var(--t-sage-d);  --tint-ink: #626734; }
+.room-lav   { --tint: var(--t-lav);   --tint-d: var(--t-lav-d);   --tint-ink: #5b5486; }
 
 body {
   background: var(--paper);

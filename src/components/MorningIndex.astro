@@ -1,0 +1,55 @@
+---
+/* The morning essays' index, a painting like every index: after Mondrian's
+   "Composition with Grid 9: Checkerboard with Light Colors" (1919), a
+   checkerboard of pale roses, lavenders, creams and blue-greys parted by thin
+   grey lines, the colours of the sky before sunrise. The list of mornings,
+   newest first, sits in the long white sheet the board leaves for it; each
+   entry is the essay's title over its date and the passage it reads. */
+import Base from '../layouts/Base.astro';
+import Painting from './Painting.astro';
+import { mornings, bnDate, ESSAY_W, PLACES } from '../data/mornings.js';
+
+const { place } = Astro.props;
+const P = PLACES[place];
+
+const LIGHT = ['#ead9d5', '#d9d4e7', '#efe3c6', '#cad4e1', '#f2ede3', '#e3c8cb', '#cbc5dd', '#b8b1d3', '#e8d0a8', '#d7dcc9'];
+const MARKS = ['#b8b1d3', '#e3c8cb', '#e8d0a8', '#cad4e1'];
+let h = 1919;
+const rnd = () => ((h = (h * 1103515245 + 12345) % 2147483648) / 2147483648);
+// a plane with no place on one screen is parked under that screen's sheet
+const UNDER = [0, 0, 40, 40], UNDER_D = [25, 10, 30, 30];
+const planes = [];
+// the board on a wide screen: 16 by 16 equal squares
+for (let y = 0; y < 16; y++)
+  for (let x = 0; x < 16; x++)
+    planes.push({ bg: LIGHT[Math.floor(rnd() * LIGHT.length)], d: [x * 6.25, y * 6.25, 6.25, 6.25], p: UNDER });
+// on a phone, a strip of it down the right edge
+for (let y = 0; y < 20; y++)
+  for (let x = 0; x < 2; x++)
+    planes.push({ bg: LIGHT[Math.floor(rnd() * LIGHT.length)], d: UNDER_D, p: [86 + x * 7, y * 5, 7, 5] });
+
+const inMacha = place === 'macha';
+---
+
+<Base section={P.section} bodyClass="painting-page" styles={['/css/painting.css']}
+  {...(inMacha ? { navTitle: ESSAY_W.name, navParentHref: '/trellises/', navParentLabel: 'মাচা' } : { title: P.label })}
+>
+  <Painting planes={planes} sheet={{ d: [18.75, 43.75], p: [0, 86] }} gap={3} ground="#a7a3b4" paper="#fbf9f5" rule="#34314a"
+            label="After Mondrian, Composition with Grid 9: Checkerboard with Light Colors (1919)"
+            parentHref={inMacha ? '/trellises/' : ''} parentLabel={inMacha ? 'মাচা' : ''}>
+    <h1>{P.label}</h1>
+    <p class="pt-lede">প্রতি ভোরে ক্লড একটি বইয়ের একটি অংশ পড়ে ইংরেজিতে একটি প্রবন্ধ লেখে, আর এখানে সেই প্রবন্ধ বাংলায় আসে।</p>
+    <ul class="pt-list">
+      {mornings.map((m, i) => (
+        <li>
+          <a href={`${P.base}${m.slug}/`} style={`--m:${MARKS[i % MARKS.length]}`}>
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{m.fm.title}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+            <span class="pt-desc">{bnDate(m.slug)}{m.fm.reads && <> · {m.fm.reads}</>}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Painting>
+</Base>

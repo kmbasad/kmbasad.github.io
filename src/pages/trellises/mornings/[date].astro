@@ -1,0 +1,11 @@
+---
+// One morning essay, in মাচা: /trellises/mornings/<yyyy-mm-dd>/
+import MorningEssay from '../../../components/MorningEssay.astro';
+import { mornings } from '../../../data/mornings.js';
+
+export function getStaticPaths() {
+  return mornings.map((m) => ({ params: { date: m.slug } }));
+}
+---
+
+<MorningEssay slug={Astro.params.date} place="macha" />

@@ -1,0 +1,42 @@
+---
+/* One morning essay, in the reading voice. The headline is the site's one
+   pattern: the morning's date as the kicker, the essay's title, and as the
+   standfirst the book and the passage it reads; under them the credit, that
+   this is Claude's English essay in Bangla. The rail carries the way to the
+   mornings before and after. The same page stands in either place the essays
+   may live (`place`: their own room, or a shelf in মাচা). */
+import Base from '../layouts/Base.astro';
+import { mornings, bnDate, ESSAY_W, PLACES } from '../data/mornings.js';
+
+const { slug, place } = Astro.props;
+const P = PLACES[place];
+const at = mornings.findIndex((m) => m.slug === slug);
+const m = mornings[at];
+const fm = m.fm;
+const Content = m.Content;
+// newest first: the previous reading is the older morning
+const older = mornings[at + 1];
+const newer = mornings[at - 1];
+const editSrc = import.meta.env.DEV ? `${slug}.md` : null;
+---
+
+<Base rail section={P.section} bodyClass="essay-page" styles={['/css/essay.css']}
+  description={`${ESSAY_W.name}, ${bnDate(slug)}: ${fm.title}`}
+  navTitle={fm.title} navParentHref={P.base} navParentLabel={P.label}
+  navGrandParentHref={place === 'macha' ? '/trellises/' : ''} navGrandParentLabel={place === 'macha' ? 'মাচা' : ''}
+  footPrev={older ? `${P.base}${older.slug}/` : null} prevLabel={older?.fm.title}
+  footNext={newer ? `${P.base}${newer.slug}/` : null} nextLabel={newer?.fm.title}
+>
+  <div class="es-page">
+    <header class="es-head">
+      <p class="es-kicker"><time datetime={slug}>{bnDate(slug)}</time></p>
+      <h1 class="es-title">{fm.title}</h1>
+      {fm.reads && <p class="es-standfirst"><span class="es-reads">{ESSAY_W.reads}</span> {fm.reads}</p>}
+      <p class="es-credit">{ESSAY_W.credit}</p>
+    </header>
+
+    <article class="es-prose" data-md={editSrc} data-toc-scan="h2, h3">
+      <Content />
+    </article>
+  </div>
+</Base>
