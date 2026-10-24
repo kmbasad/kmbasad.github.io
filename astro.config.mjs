@@ -304,7 +304,4 @@ function noNotes() {
 export default defineConfig({
   site: 'https://kmbasad.github.io',
   integrations: [inPlaceEditor(), noNotes()],
-  // a second dev server (a preview from a worktree) keeps its own Vite cache,
-  // so it never re-optimizes the deps under the running kmba-dev
-  vite: process.env.KMBA_VITE_CACHE ? { cacheDir: process.env.KMBA_VITE_CACHE } : {},
 });
