@@ -53,7 +53,7 @@ html {
   --t-pink: #dcc8d0;   --t-pink-d: #c8a5b3;
   --t-ochre: #e0c987;  --t-ochre-d: #cfae5a;
   --t-sage: #c2c597;   --t-sage-d: #a4a872;
-  --t-lav: #c9c5da;    --t-lav-d: #9d97c0;   /* chalk ground; the deeper one is the room ভোর */
+  --t-lav: #c9c5da;                /* chalk ground */
   --r: 8px;
   --r-sm: 4px;
   --sh-sm: 0 1px 2px rgba(14, 26, 43, .06), 0 1px 1px rgba(14, 26, 43, .04);

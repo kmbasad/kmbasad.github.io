@@ -1,15 +1,13 @@
 ---
-/* One morning essay, in the reading voice. The headline is the site's one
-   pattern: the morning's date as the kicker, the essay's title, and as the
-   standfirst the book and the passage it reads; under them the credit, that
-   this is Claude's English essay in Bangla. The rail carries the way to the
-   mornings before and after. The same page stands in either place the essays
-   may live (`place`: their own room, or a shelf in মাচা). */
+/* One morning essay, in the reading voice, on its shelf in মাচা. The
+   headline is the site's one pattern: the morning's date as the kicker, the
+   essay's title, and as the standfirst the book and the passage it reads;
+   under them the credit, that this is Claude's English essay in Bangla. The
+   rail carries the way to the mornings before and after. */
 import Base from '../layouts/Base.astro';
-import { mornings, bnDate, ESSAY_W, PLACES } from '../data/mornings.js';
+import { mornings, bnDate, ESSAY_W, ESSAYS_BASE } from '../data/mornings.js';
 
-const { slug, place } = Astro.props;
-const P = PLACES[place];
+const { slug } = Astro.props;
 const at = mornings.findIndex((m) => m.slug === slug);
 const m = mornings[at];
 const fm = m.fm;
@@ -20,12 +18,12 @@ const newer = mornings[at - 1];
 const editSrc = import.meta.env.DEV ? `${slug}.md` : null;
 ---
 
-<Base rail section={P.section} bodyClass="essay-page" styles={['/css/essay.css']}
+<Base rail section="trellises" bodyClass="essay-page" styles={['/css/essay.css']}
   description={`${ESSAY_W.name}, ${bnDate(slug)}: ${fm.title}`}
-  navTitle={fm.title} navParentHref={P.base} navParentLabel={P.label}
-  navGrandParentHref={place === 'macha' ? '/trellises/' : ''} navGrandParentLabel={place === 'macha' ? 'মাচা' : ''}
-  footPrev={older ? `${P.base}${older.slug}/` : null} prevLabel={older?.fm.title}
-  footNext={newer ? `${P.base}${newer.slug}/` : null} nextLabel={newer?.fm.title}
+  navTitle={fm.title} navParentHref={ESSAYS_BASE} navParentLabel={ESSAY_W.name}
+  navGrandParentHref="/trellises/" navGrandParentLabel="মাচা"
+  footPrev={older ? `${ESSAYS_BASE}${older.slug}/` : null} prevLabel={older?.fm.title}
+  footNext={newer ? `${ESSAYS_BASE}${newer.slug}/` : null} nextLabel={newer?.fm.title}
 >
   <div class="es-page">
     <header class="es-head">

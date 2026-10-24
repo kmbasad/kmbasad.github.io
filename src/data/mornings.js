@@ -1,11 +1,11 @@
 // The morning essays: every morning Claude reads a passage of a book and
-// writes an essay on it in English; here it is in Bangla. One file a morning,
+// writes an essay on it in English; here it is in Bangla, on a shelf of মাচা
+// (/trellises/mornings/). One file a morning,
 // src/stories/mornings/<yyyy-mm-dd>.md, its frontmatter `title` (the Bangla
 // title) and `reads` (the book and the passage it reads); the body is plain
 // paragraphs, with `##` headings if the essay has parts. An essay with `held:`
 // in its frontmatter (the reason, e.g. a book still in copyright) is kept in
 // the repo but not published: no page, no entry, no neighbour link.
-import { ESSAYS_PLACE } from './rooms.js';
 
 const mods = import.meta.glob('../stories/mornings/*.md', { eager: true });
 
@@ -26,16 +26,12 @@ export const bnDate = (iso) => {
   return `${bn(d)} ${MONTHS[m - 1]} ${bn(y)}`;
 };
 
-// the words the essays' pages say of themselves
+// the words the essays' pages say of themselves, and where they stand
 export const ESSAY_W = {
   name: 'ভোরের প্রবন্ধ',
+  gloss: 'প্রতি ভোরে একটি বইয়ের পাঠ, ক্লডের ইংরেজি থেকে বাংলায়',
+  lede: 'প্রতি ভোরে ক্লড একটি বইয়ের একটি অংশ পড়ে ইংরেজিতে একটি প্রবন্ধ লেখে, আর এখানে সেই প্রবন্ধ বাংলায় আসে।',
   credit: 'ক্লডের লেখা ইংরেজি প্রবন্ধের বাংলা অনুবাদ',
   reads: 'পাঠ',
 };
-
-// where they stand: a room of their own, or a shelf in মাচা
-export const PLACES = {
-  room:  { base: '/mornings/',           section: 'mornings',  label: 'ভোর' },
-  macha: { base: '/trellises/mornings/', section: 'trellises', label: ESSAY_W.name },
-};
-export { ESSAYS_PLACE };
+export const ESSAYS_BASE = '/trellises/mornings/';
