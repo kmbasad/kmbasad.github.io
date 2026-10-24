@@ -2,7 +2,9 @@
 // writes an essay on it in English; here it is in Bangla. One file a morning,
 // src/stories/mornings/<yyyy-mm-dd>.md, its frontmatter `title` (the Bangla
 // title) and `reads` (the book and the passage it reads); the body is plain
-// paragraphs, with `##` headings if the essay has parts.
+// paragraphs, with `##` headings if the essay has parts. An essay with `held:`
+// in its frontmatter (the reason, e.g. a book still in copyright) is kept in
+// the repo but not published: no page, no entry, no neighbour link.
 import { ESSAYS_PLACE } from './rooms.js';
 
 const mods = import.meta.glob('../stories/mornings/*.md', { eager: true });
@@ -13,6 +15,7 @@ export const mornings = Object.entries(mods)
     const slug = path.match(/([^/]+)\.md$/)[1];
     return { slug, fm: m.frontmatter ?? {}, Content: m.Content };
   })
+  .filter((m) => !m.fm.held)
   .sort((a, b) => (a.slug < b.slug ? 1 : -1));
 
 const MONTHS = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
