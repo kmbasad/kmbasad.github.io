@@ -630,7 +630,7 @@ lang: la
 | পরীর সব শক্তি শেষ হয়ে যায়, ছুটে চলার ধকলে | Viribus absumptis expalluit illa citaeque |  |
 | শরীর অবশ, মুখটা মলিন, তখন পেনিয়াসের নদী | victa labore fugae spectans Peneidas undas |  |
 | দেখে বলে, ‘বাঁচাও বাবা, তোমার পানি যদি ঐশিক হয় | “fer pater” inquit “opem si flumina numen habetis. |  |
-| তাহলে বদলে দাও এত মন-মাতানো আমার এই রূপ!’ | Qua nimium placui, mutando perde figuram!” |  |
+| তাহলে বদলে দাও এত মন-মাতানো আমার এই রূপ!’ | Qua nimium placui, mutando perde figuram!” | 547 |
 | প্রার্থনা শেষ হতেই নিম্ফের সর্বাঙ্গে আসে এক আড়ষ্টতা; | Vix prece finita torpor gravis occupat artus: |  |
 | বুকের কোমল ত্বক ঢেকে দেয় বাকলের পাতলা লেয়ার, | mollia cinguntur tenui praecordia libro, |  |
 | চুল হয় গাছের পাতা, ডালপালা গজায় দুই বাহু থেকে, | in frondem crines, in ramos bracchia crescunt, |  |
@@ -641,7 +641,7 @@ lang: la
 | হাত ভেবে ডালপালা আদরে জড়িয়ে ধরে, বাকলে দুঠোঁট | conplexusque suis ramos, ut membra, lacertis |  |
 | চেপে চুমু খায়, এখনো কুঁকড়ে উঠে গাছ ঘৃণা করে চুমু। | oscula dat ligno: refugit tamen oscula lignum. |  |
 | | | |
-| দেবতা বলেন, ‘তুমি যেহেতু আমার বউ হতে পারবে না, | Cui deus “at quoniam coniunx mea non potes esse, | 556 |
+| দেবতা বলেন, ‘তুমি যেহেতু আমার বউ হতে পারবে না, | Cui deus “at quoniam coniunx mea non potes esse, | 557 |
 | অন্তত গাছ হও আমার, ওগো আমার লরেল, তোমাকে | arbor eris certe” dixit “mea. Semper habebunt |  |
 | পরবে আমার চুল, বাঁধবে আমার বীণা, আমার তূণীর; | te coma, te citharae, te nostrae, laure, pharetrae: |  |
 | তুমি থাকবে রোমান জেনারেলদের সাথে, যখন যাবেন | tu ducibus Latiis aderis, cum laeta triumphum |  |
@@ -653,7 +653,7 @@ lang: la
 | দেবতার বন্দনা শেষ হলে লরেল গাছ তার নতুন | Finierat Paean: factis modo laurea ramis |  |
 | শাখা নেড়ে শিখর নত করে যেন জানিয়েছিল সম্মতি। | adnuit utque caput visa est agitasse cacumen. |  |
 | | | |
-| এক বন ছিল হিমনিয়াতে, চারদিকে ঘন গাছপালায় | Est nemus Haemoniae, praerupta quod undique claudit | 567 |
+| এক বন ছিল হিমনিয়াতে, চারদিকে ঘন গাছপালায় | Est nemus Haemoniae, praerupta quod undique claudit | 568 |
 | ঢাকা চড়াই, টেম্পি তার নাম। সেখানে পেনিয়াস নদীর | silva: vocant Tempe. Per quae Peneus ab imo |  |
 | সফেন ঝরনা পিন্ডাস পর্বতমালা থেকে নেমে আসে, | effusus Pindo spumosis volvitur undis, |  |
 | ঢালু গিরিখাতে পড়া জলপ্রপাত থেকে বাষ্পের ধোঁয়া | deiectuque gravi tenues agitantia fumos |  |
@@ -673,7 +673,7 @@ lang: la
 
 | বাংলা | লাতিন | # |
 | :-- | :-- | --: |
-| ছিলেন না শুধু ইনাকাস, গুহার গহীনে বসে তার নদী | Inachus unus abest imoque reconditus antro | 582 |
+| ছিলেন না শুধু ইনাকাস, গুহার গহীনে বসে তার নদী | Inachus unus abest imoque reconditus antro | 583 |
 | আরো ভরছিলেন চোখের পানি দিয়ে, কারণ তার কন্যা | fletibus auget aquas natamque miserrimus Io |  |
 | আয়ো হারিয়ে গেছে। সে তখনো জীবিত আছে না ছায়ার দেশে | luget ut amissam. Nescit, vitane fruatur, |  |
 | মিলিয়ে গেছে তা জানতেন না; কোথাও তাকে খুঁজে না পাওয়ায় | an sit apud manes; sed quam non invenit usquam. |  |
@@ -692,7 +692,7 @@ lang: la
 | তখন দেবতা সারা দেশ ঘনান্ধকার কুয়াশায় ঢেকে | cum deus inducta latas caligine terras |  |
 | কিশোরীকে থামান এবং তার সম্মান হরণ করেন। | occuluit tenuitque fugam rapuitque pudorem. |  |
 | | | |
-| তখন জোভের বউ জুনো আর্গসের দিকে আকাশ থেকে | Interea medios Iuno despexit in agros | 600 |
+| তখন জোভের বউ জুনো আর্গসের দিকে আকাশ থেকে | Interea medios Iuno despexit in agros | 601 |
 | তাকিয়ে দেখেন রাত নামার অনেক আগে ভাসমান মেঘ | et noctis faciem nebulas fecisse volucres |  |
 | দিবাকে করেছে নিশা, দেখে বুঝতে পারেন উতলা নদীর | sub nitido mirata die, non fluminis illas |  |
 | বাষ্প বা সেঁতসেঁতে মাটির নিশ্বাসে এটা হতে পারে না, | esse, nec umenti sensit tellure remitti; |  |
@@ -718,7 +718,7 @@ lang: la
 
 | বাংলা | লাতিন | # |
 | :-- | :-- | --: |
-| সতিন হাতিয়ে নেন জুনো, তাও নিশ্চিত হতে পারেন না, | Paelice donata non protinus exuit omnem | 621 |
+| সতিন হাতিয়ে নেন জুনো, তাও নিশ্চিত হতে পারেন না, | Paelice donata non protinus exuit omnem | 622 |
 | চালাক জোভের ছলচাতুরিকে তখনো এমন ভয় তার, | diva metum timuitque Iovem et fuit anxia furti, |  |
 | তাই এরেস্টরের ছেলে আর্গাসকে পাহারায় লাগান। | donec Arestoridae servandam tradidit Argo. |  |
 | আজব আর্গাসের মাথায় সাজানো ছিল একশটা চোখ, | Centum luminibus cinctum caput Argus habebat: |  |
@@ -739,7 +739,7 @@ lang: la
 | একবার আসে, কিন্তু পানিতে তার অলস চোয়াল আর | Inachidas ripas; novaque ut conspexit in unda |  |
 | নতুন শিঙের প্রতিফলন দেখে আতঙ্কে কুঁচকে উঠে। | cornua, pertimuit seque exsternata refugit. |  |
 | | | |
-| নায়াদ বোনরা আর বাবা ইনাকাস তাকে চিনতে পারেনি, | Naides ignorant, ignorat et Inachus ipse, | 641 |
+| নায়াদ বোনরা আর বাবা ইনাকাস তাকে চিনতে পারেনি, | Naides ignorant, ignorat et Inachus ipse, | 642 |
 | তাই অবাক হয় যখন একটা বাছুর গায়ে-গায়ে ঘেঁষে | quae sit; at illa patrem sequitur sequiturque sorores |  |
 | তাদের কাছ থেকে আদর আশা করে আর মনোযোগ চায়। | et patitur tangi seque admirantibus offert. |  |
 | বৃদ্ধ ইনাকাস কিছু ঘাস ছিঁড়ে তার মুখে তুলে ধরেন, | Decerptas senior porrexerat Inachus herbas: |  |
@@ -749,7 +749,7 @@ lang: la
 | কথা বলতে না পেরে সে খুর দিয়ে ধুলায় অক্ষর এঁকে | Littera pro verbis, quam pes in pulvere duxit, |  |
 | তার রূপান্তরের করুণ কাহিনি জানিয়েছিল তখন। | corporis indicium mutati triste peregit. |  |
 | | | |
-| ‘হায় রে কপাল!’ বলে উঠলেন ইনাকাস গুমরিয়ে উঠা | “Me miserum!” exclamat pater Inachus inque gementis | 650 |
+| ‘হায় রে কপাল!’ বলে উঠলেন ইনাকাস গুমরিয়ে উঠা | “Me miserum!” exclamat pater Inachus inque gementis | 651 |
 | বাছুরের শিং আর তুষারশীতল গলা দুই হাতে ধরে; | cornibus et niveae pendens cervice iuvencae |  |
 | গুঙিয়ে বলেছিলেন, ‘হায় রে কপাল! তুই আমার সে মেয়ে | “me miserum!” ingeminat, “tune es quaesita per omnes |  |
 | যাকে সারা দুনিয়ায় খুঁজেছি? তোকে পাওয়ার দুঃখটা কেন | nata, mihi terras? tu non inventa reperta |  |
@@ -763,7 +763,7 @@ lang: la
 | দেবতাজীবন খুব দুঃখের, মৃত্যুর দরজা বন্ধ, | sed nocet esse deum, praeclusaque ianua leti |  |
 | আমাদের যন্ত্রণা যে চলতেই থাকবে অনন্ত কাল!’ | aeternum nostros luctus extendit in aevum?” |  |
 | | | |
-| বাপ-মেয়ের শোকের বিলাপ চলতে থাকে যতক্ষণ না | Talia maerentem stellatus submovet Argus | 663 |
+| বাপ-মেয়ের শোকের বিলাপ চলতে থাকে যতক্ষণ না | Talia maerentem stellatus submovet Argus | 664 |
 | তারাচোখা আর্গাস আয়োকে ছিনিয়ে নিয়ে যায় বহুদূরে | ereptamque patri diversa in pascua natam |  |
 | আরেক ঘাসের মাঠে। সেখানে অনেক উঁচু এক পাহাড়ের | abstrahit. Ipse procul montis sublime cacumen |  |
 | চূড়ায় বসে একশ চোখে গার্ড দেয় চারপাশ সব দিকে। | occupat, unde sedens partes speculatur in omnes. |  |
@@ -778,7 +778,7 @@ lang: la
 | এইভাবে রাখালের বেশে ঘুরে বেড়ায় বিরান মাঠে, পথে | Hac agit, ut pastor, per devia rura capellas, |  |
 | পাওয়া এক পাল ছাগল চড়ায় আর বাজায় নলের বাঁশি। | dum venit, adductas et structis cantat avenis. |  |
 | | | |
-| এই নতুন শব্দ জুনোর পাহারাদার শুনে বলে, ‘ওহে, | Voce nova captus custos Iunonius “at tu, | 677 |
+| এই নতুন শব্দ জুনোর পাহারাদার শুনে বলে, ‘ওহে, | Voce nova captus custos Iunonius “at tu, | 678 |
 | তুমি যে-ই হও না কেন, এই পাথরে বসো না আমার পাশে, | quisquis es, hoc poteras mecum considere saxo,” |  |
 | তোমার ছাগলদের জন্য পাবে না এর চেয়ে ভালো ঘাস, | Argus ait, “neque enim pecori fecundior ullo |  |
 | আর রাখালের জন্যও এখানে আছে মনের মতো ছায়া।’ | herba loco est, aptamque vides pastoribus umbram.” |  |
@@ -794,7 +794,7 @@ lang: la
 
 | বাংলা | লাতিন | # |
 | :-- | :-- | --: |
-| দেবতা তখন বলেছিল, ‘আর্কেডিয়ার শীতল পাহাড়ে | Tum deus “Arcadiae gelidis in montibus” inquit | 688 |
+| দেবতা তখন বলেছিল, ‘আর্কেডিয়ার শীতল পাহাড়ে | Tum deus “Arcadiae gelidis in montibus” inquit | 689 |
 | এক নায়াদ থাকত—ননাক্রিসের সবচেয়ে বিখ্যাত | “inter hamadryadas celeberrima Nonacrinas |  |
 | হামাড্রায়াড। তার পরী বোনরা তাকে সিরিংক্স ডাকত। | naias una fuit; nymphae Syringa vocabant. |  |
 | একাধিক বার তাকে পালাতে হয়েছিল স্যাটারদের থেকে, | Non semel et satyros eluserat illa sequentes |  |
@@ -819,7 +819,7 @@ lang: la
 | তখন সে ছোট বড় বিভিন্ন দৈর্ঘ্যের নল মোম দিয়ে | atque ita disparibus calamis conpagine cerae |  |
 | জোড়া লাগিয়ে বানায় বাঁশি যার নাম রাখে মেয়েটির নামে। | inter se iunctis nomen tenuisse puellae. |  |
 | | | |
-| সিলিনের ছেলে এই গল্প পুরাটাই শোনাতে চেয়েছিল, | Talia dicturus vidit Cyllenius omnes | 712 |
+| সিলিনের ছেলে এই গল্প পুরাটাই শোনাতে চেয়েছিল, | Talia dicturus vidit Cyllenius omnes | 713 |
 | কিন্তু আগেই দেখে বন্ধ দারোয়ানের সবগুলা চোখ। | succubuisse oculos adopertaque lumina somno. |  |
 | কাহিনি বন্ধ করে তখনি সে তার ঘুম আরো গাঢ় করে | Supprimit extemplo vocem firmatque soporem |  |
 | তন্দ্রাবিষ্ট চোখের উপর নাড়িয়ে সেই জাদুর লাঠি। | languida permulcens medicata lumina virga. |  |
@@ -833,7 +833,7 @@ lang: la
 
 | বাংলা | লাতিন | # |
 | :-- | :-- | --: |
-| ক্রোনাসের মেয়ে জুনো এই চোখগুলো তুলে তার ময়ূরের | Excipit hos volucrisque suae Saturnia pennis | 721 |
+| ক্রোনাসের মেয়ে জুনো এই চোখগুলো তুলে তার ময়ূরের | Excipit hos volucrisque suae Saturnia pennis | 722 |
 | লেজে লাগিয়ে তা সাজিয়েছিলেন তারার মতন জহরতে। | collocat et gemmis caudam stellantibus inplet. |  |
 | এবং তখনি তার ক্রোধ দপ করে জ্বলে উঠে যা নিভাতে | Protinus exarsit nec tempora distulit irae |  |
 | তার গ্রিক সতিনের মন ও চোখের পিছনে লেলিয়ে দেন | horriferamque oculis animoque obiecit Erinyn |  |
@@ -850,7 +850,7 @@ lang: la
 | সব সরিয়ে রাখো, ভবিষ্যতে ও কখনো তোমার দুখের | pone metus” inquit; “numquam tibi causa doloris |  |
 | কারণ হবে না।’ স্টিক্সের জল সাক্ষী রেখে বলেছিলেন। | haec erit:” et Stygias iubet hoc audire paludes. |  |
 | | | |
-| দেবী শান্ত হওয়ায় আয়ো ফিরে পেয়েছিল পূর্বের রূপ; | Ut lenita dea est, vultus capit illa priores | 737 |
+| দেবী শান্ত হওয়ায় আয়ো ফিরে পেয়েছিল পূর্বের রূপ; | Ut lenita dea est, vultus capit illa priores | 738 |
 | আগে যা ছিল আবার তা হয়: শরীর থেকে ঝরে পড়ে লোম, | fitque quod ante fuit: fugiunt e corpore saetae, |  |
 | থাকে না লম্বা শিং, বিশাল দুইটা চোখ ছোট হয়ে আসে, | cornua decrescunt, fit luminis artior orbis, |  |
 | চোয়াল সংকুচিত হয়, ফিরে আসে হাত আর আগের পা, | contrahitur rictus, redeunt umerique manusque, |  |
@@ -864,7 +864,7 @@ lang: la
 
 | বাংলা | লাতিন | # |
 | :-- | :-- | --: |
-| দেবী হিসেবে এখন তার পূজা করে লিনেনপরা সাধুরা। | Nunc dea linigera colitur celeberrima turba, | 746 |
+| দেবী হিসেবে এখন তার পূজা করে লিনেনপরা সাধুরা। | Nunc dea linigera colitur celeberrima turba, | 747 |
 | এপাফাস নামে তার এক ছেলে হয় যাকে লোকে জিউসের | nunc Epaphus magni genitus de semine tandem |  |
 | ছেলে ভাবত, মায়ের পাশে তার মন্দির হতো মিশরের | creditur esse Iovis, perque urbes iuncta parenti |  |
 | সব শহরে। তার ছিল এক বন্ধু তার সমান বয়সে | templa tenet. Fuit huic animis aequalis et annis |  |
@@ -883,7 +883,7 @@ lang: la
 | নিজের ও সৎ বাবা মেরপ্সের জীবনের নামে, মাসিদের | perque suum Meropisque caput taedasque sororum |  |
 | বিয়ের নামে দিব্যি কেটে সত্য বাবার সংকেত চায়। | traderet oravit veri sibi signa parentis. |  |
 | | | |
-| ক্লিমিনি ক্লিষ্ট হন, তবে ছেলের অপমানে না কি নিজের | Ambiguum, Clymene, precibus Phaethontis an ira | 764 |
+| ক্লিমিনি ক্লিষ্ট হন, তবে ছেলের অপমানে না কি নিজের | Ambiguum, Clymene, precibus Phaethontis an ira | 765 |
 | তা ঠিক বুঝা যায় না, তারপর দুই হাত আসমানে তুলে | mota magis dicti sibi criminis utraque caelo |  |
 | সূর্যের উজ্জ্বল আলোর দিকে সরাসরি চেয়ে বলেন, | bracchia porrexit spectansque ad lumina solis |  |
 | ‘আলোর কিরণ পরা ঐ দীপ্ত বৃত্ত, যে আমাদেরকে | “per iubar hoc” inquit “radiis insigne coruscis, |  |

@@ -3831,1578 +3831,1578 @@ lang: la
 | 545 | যদি | si |
 | 545 | ঐশিক | numen |
 | 545 | হয় | habetis |
-| 546 | বদলে | mutando |
-| 546 | দাও | perde |
-| 546 | এত | nimium |
-| 546 | মন-মাতানো | placui |
-| 546 | এই | Qua |
-| 546 | রূপ | figuram |
-| 547 | প্রার্থনা | prece |
-| 547 | শেষ | finita |
-| 547 | হতেই | Vix |
-| 547 | সর্বাঙ্গে | artus |
-| 547 | আসে | occupat |
-| 547 | আড়ষ্টতা | torpor |
-| 548 | বুকের | praecordia |
-| 548 | কোমল | mollia |
-| 548 | ঢেকে | cinguntur |
-| 548 | দেয় | cinguntur |
-| 548 | বাকলের | libro |
-| 548 | পাতলা | tenui |
-| 548 | লেয়ার | libro |
-| 548 | ত্বক | praecordia |
-| 549 | চুল | crines |
-| 549 | পাতা | frondem |
-| 549 | ডালপালা | ramos |
-| 549 | গজায় | crescunt |
-| 549 | বাহু | bracchia |
-| 550 | ক্ষিপ্র | velox |
-| 550 | পা | pes |
-| 550 | থামে | haeret |
-| 550 | মন্থর | pigris |
-| 550 | শিকড়ের | radicibus |
-| 550 | মাথা | ora | 551 |
-| 550 | হয় | habet | 551 |
-| 551 | শিখর | cacumen |
-| 551 | থাকে | remanet |
-| 551 | আভাটা | nitor |
-| 551 | ছাড়া | unus |
-| 551 | না | unus |
-| 551 | তার | illa |
-| 552 | দেবতা | Phoebus |
-| 552 | এখনো | quoque |
-| 552 | ভালোবেসে | amat |
-| 552 | ডান | dextra |
-| 552 | হাত | dextra |
-| 552 | রাখে | positaque |
-| 552 | গুঁড়িতে | stipite |
-| 552 | গাছের | Hanc |
-| 553 | নতুন | novo |
-| 553 | চামড়ার | cortice |
-| 553 | নিচে | sub |
-| 553 | হার্টের | pectus |
-| 553 | বিট | trepidare |
-| 553 | এখনো | adhuc |
-| 553 | টের | sentit |
-| 553 | পায় | sentit |
-| 554 | হাত | membra |
-| 554 | হাত | lacertis |
-| 554 | ভেবে | ut |
-| 554 | ডালপালা | ramos |
-| 554 | জড়িয়ে | conplexusque |
-| 554 | ধরে | conplexusque |
-| 554 | বাকলে | ligno | 555 |
-| 554 | দুঠোঁট | oscula#1 | 555 |
-| 555 | চুমু#1 | oscula#1 |
-| 555 | খায় | dat |
-| 555 | এখনো | tamen |
-| 555 | কুঁকড়ে | refugit |
-| 555 | উঠে | refugit |
-| 555 | গাছ | lignum |
-| 555 | ঘৃণা | refugit |
-| 555 | করে | refugit |
-| 555 | চুমু#2 | oscula#2 |
-| 556 | দেবতা | deus |
-| 556 | বলেন | dixit | 557 |
-| 556 | তুমি | Cui |
-| 556 | যেহেতু | quoniam |
-| 556 | আমার | mea |
-| 556 | বউ | coniunx |
-| 556 | হতে | esse |
-| 556 | পারবে | potes |
-| 556 | না | non |
-| 557 | অন্তত | certe |
-| 557 | গাছ | arbor |
-| 557 | হও | eris |
-| 557 | আমার#1 | mea |
-| 557 | লরেল | laure | 558 |
-| 557 | তোমাকে | te | 558 |
-| 558 | পরবে | habebunt | 557 |
-| 558 | আমার#3 | nostrae |
-| 558 | চুল | coma |
-| 558 | বীণা | citharae |
-| 558 | তূণীর | pharetrae |
-| 559 | তুমি | tu |
-| 559 | থাকবে | aderis |
-| 559 | রোমান | Latiis |
-| 559 | জেনারেলদের | ducibus |
-| 559 | যখন | cum |
-| 559 | যাবেন | visent | 560 |
-| 559 | সাথে | ducibus |
-| 560 | জনতার | vox |
-| 560 | জনতার | laeta | 559 |
-| 560 | মুখরিত | laeta | 559 |
-| 560 | মুখরিত | canet |
-| 560 | জয়গানে | triumphum | 559 |
-| 560 | জয়গানে | canet |
-| 560 | পথ | pompas |
-| 560 | ক্যাপিটলে | Capitolia |
-| 561 | তুমি | eadem |
-| 561 | রক্ষা | custos |
-| 561 | করবে | custos |
-| 561 | নিষ্ঠার | fidissima |
-| 561 | অগাস্টাসের | Augustis |
-| 561 | দ্বার | postibus |
-| 562 | মধ্যে | mediamque |
-| 562 | ওকের | quercum |
-| 562 | পাহারা | tuebere |
-| 562 | দেবে | tuebere |
-| 562 | পাশ | ante |
-| 562 | পাশ | fores |
-| 563 | যেমন | utque |
-| 563 | আমার | meum |
-| 563 | চিরতরুণ | iuvenale |
-| 563 | চুলে | capillis |
-| 563 | পড়ে | intonsis |
-| 563 | না | intonsis |
-| 563 | নাপিতের | intonsis |
-| 563 | হাত | intonsis |
-| 564 | তেমন | quoque |
-| 564 | তোমার | tu |
-| 564 | চিরসবুজ | perpetuos |
-| 564 | চিরসবুজ | semper |
-| 564 | পাতায় | frondis |
-| 564 | থাকবে | gere |
-| 564 | খ্যাতির | honores |
-| 564 | দ্যুতি | honores |
-| 565 | দেবতার | Paean |
-| 565 | বন্দনা | Paean |
-| 565 | শেষ | Finierat |
-| 565 | হলে | Finierat |
-| 565 | লরেল | laurea |
-| 565 | গাছ | laurea |
-| 565 | নতুন | modo |
-| 565 | নতুন | factis |
-| 566 | শাখা | ramis | 565 |
-| 566 | নেড়ে | agitasse |
-| 566 | শিখর | cacumen |
-| 566 | শিখর | caput |
-| 566 | নত | adnuit |
-| 566 | করে | adnuit |
-| 566 | যেন | utque |
-| 566 | যেন | visa |
-| 566 | যেন | est |
-| 566 | জানিয়েছিল | adnuit |
-| 566 | সম্মতি | adnuit |
-| 567 | বন | nemus |
-| 567 | ছিল | Est |
-| 567 | হিমনিয়াতে | Haemoniae |
-| 567 | চারদিকে | undique |
-| 567 | গাছপালায় | silva | 568 |
-| 567 | ঘন | silva | 568 |
-| 568 | ঢাকা | claudit | 567 |
-| 568 | চড়াই | praerupta | 567 |
-| 568 | টেম্পি | Tempe |
-| 568 | নাম | vocant |
-| 568 | সেখানে | Per |
-| 568 | সেখানে | quae |
-| 568 | পেনিয়াস | Peneus |
-| 569 | সফেন | spumosis |
-| 569 | ঝরনা | undis |
-| 569 | পিন্ডাস | Pindo |
-| 569 | পর্বতমালা | Pindo |
-| 569 | থেকে | ab | 568 |
-| 569 | নেমে | effusus |
-| 569 | নেমে | volvitur |
-| 569 | আসে | volvitur |
-| 570 | পড়া | deiectuque |
-| 570 | জলপ্রপাত | deiectuque |
-| 570 | বাষ্পের | fumos |
-| 570 | ধোঁয়া | fumos |
-| 571 | উঠে | agitantia | 570 |
-| 571 | উঠে | conducit |
-| 571 | মেঘের | nubila |
-| 571 | পানির | adspergine |
-| 571 | ছিটায় | adspergine |
-| 571 | ভিজে | inpluit | 572 |
-| 571 | বনের | silvis |
-| 571 | বিতান | silvis |
-| 571 | বিতান | summisque |
-| 572 | শব্দে | sonitu |
-| 572 | ফাটে | fatigat |
-| 572 | পড়শির | vicina |
-| 572 | কাছে | vicina |
-| 572 | দূরে | plus |
-| 572 | দূরে | quam |
-| 572 | সব | plus |
-| 573 | এখানেই | Haec |
-| 573 | অন্দরমহল | penetralia |
-| 573 | বসতি | domus |
-| 573 | রাজদরবার | sedes |
-| 574 | মহানদীর | amnis |
-| 574 | মহানদীর | magni | 573 |
-| 574 | এখানে | in |
-| 574 | এখানে | his |
-| 574 | পাহাড়ের | cautibus |
-| 574 | কোটরে | antro |
-| 574 | কাটা | facto |
-| 574 | গুহায় | antro |
-| 575 | বিচার | iura |
-| 575 | করছিলেন | dabat |
-| 575 | পানি | undis |
-| 575 | পানি | undas |
-| 575 | আর | nymphisque |
-| 575 | পরীদের | nymphisque |
-| 576 | প্রথমে | primum |
-| 576 | নিজের | popularia |
-| 576 | দেশের | popularia |
-| 576 | নদী | flumina |
-| 576 | এসেছিল | Conveniunt |
-| 576 | এসেছিল | illuc |
-| 577 | বুঝতে | nescia |
-| 577 | পারছিল | nescia |
-| 577 | না#1 | nescia |
-| 577 | তাকে | parentem |
-| 577 | সান্ত্বনা | consolenturne |
-| 577 | দিবে | consolenturne |
-| 577 | না#2 | consolenturne |
-| 577 | অভিনন্দন | gratentur |
-| 578 | পপলার-ঘেরা | populifer |
-| 578 | স্পার্চিয়াস | Sperchios |
-| 578 | অস্থির | inrequietus |
-| 578 | এনিপিয়াস | Enipeus |
-| 579 | প্রাচীন | senex |
-| 579 | এপিডেনাস | Apidanusque |
-| 579 | নরম | lenisque |
-| 579 | এমফ্রিসাস | Amphrysos |
-| 579 | এবং | et |
-| 579 | এয়াস | Aeas |
-| 580 | পরে | moxque |
-| 580 | আর | alii |
-| 580 | নদী | amnes |
-| 580 | যারা | qui |
-| 580 | বিভিন্ন | qua |
-| 580 | আঁকাবাঁকা | erroribus | 581 |
-| 581 | পথে | qua | 580 |
-| 581 | ঘুরে | erroribus |
-| 581 | তাদের | illos | 580 |
-| 581 | ক্লান্ত | fessas |
-| 581 | পানি | undas |
-| 581 | নিয়ে | deducunt |
-| 581 | যায় | deducunt |
-| 581 | সাগরে | mare |
-| 581 | সাগরে | in |
-| 582 | ছিলেন | abest |
-| 582 | না | abest |
-| 582 | শুধু | unus |
-| 582 | ইনাকাস | Inachus |
-| 582 | গুহার | antro |
-| 582 | গহীনে | imoque |
-| 582 | বসে | reconditus |
-| 582 | নদী | aquas | 583 |
-| 583 | ভরছিলেন | auget |
-| 583 | আরো | auget |
-| 583 | চোখের | fletibus |
-| 583 | পানি | fletibus |
-| 583 | কন্যা | natamque |
-| 583 | কারণ | ut | 584 |
-| 584 | আয়ো | Io | 583 |
-| 584 | হারিয়ে | amissam |
-| 584 | গেছে | amissam |
-| 584 | জীবিত | vitane |
-| 584 | আছে | fruatur |
-| 584 | না | vitane |
-| 584 | ছায়ার | manes | 585 |
-| 584 | দেশে | apud | 585 |
-| 585 | মিলিয়ে | sit |
-| 585 | মিলিয়ে | apud |
-| 585 | গেছে | sit |
-| 585 | জানতেন | Nescit | 584 |
-| 585 | না#1 | Nescit | 584 |
-| 585 | কোথাও | usquam |
-| 585 | তাকে | quam |
-| 585 | খুঁজে | invenit |
-| 585 | না#2 | non |
-| 585 | পাওয়ায় | invenit |
-| 586 | ভাবেন | putat |
-| 586 | কোথাও | nusquam |
-| 586 | নেই | esse |
-| 586 | নেই | nusquam |
-| 586 | তবে | atque |
-| 586 | মনে | animo |
-| 586 | আরো | peiora |
-| 586 | বড় | peiora |
-| 586 | ভয় | veretur |
-| 586 | করে | veretur |
-| 587 | বাবার | patrio |
-| 587 | নদী | flumine | 588 |
-| 587 | থেকে | a |
-| 587 | ফেরার | redeuntem |
-| 587 | সে | illam |
-| 587 | জিউসের | Iuppiter |
-| 587 | চোখে | Viderat |
-| 588 | পড়েছিল | Viderat | 587 |
-| 588 | দেখে | Viderat | 587 |
-| 588 | দেবতা | Iuppiter | 587 |
-| 588 | বলেন | dixerat | 589 |
-| 588 | কুমারী | virgo |
-| 588 | তুমি | tuoque |
-| 588 | জোভের | Iove |
-| 589 | যোগ্য | digna | 588 |
-| 589 | যার | quem |
-| 589 | বেডে | toro |
-| 589 | ধন্য | beatum | 588 |
-| 589 | হয়ে | factura |
-| 589 | যাবে#2 | factura |
-| 589 | ছায়া | umbras |
-| 590 | পেতে | pete | 589 |
-| 590 | যাও | pete | 589 |
-| 590 | বনের | nemorum#1 |
-| 590 | গহীনে | altorum |
+| 547 | বদলে | mutando |
+| 547 | দাও | perde |
+| 547 | এত | nimium |
+| 547 | মন-মাতানো | placui |
+| 547 | এই | Qua |
+| 547 | রূপ | figuram |
+| 548 | প্রার্থনা | prece |
+| 548 | শেষ | finita |
+| 548 | হতেই | Vix |
+| 548 | সর্বাঙ্গে | artus |
+| 548 | আসে | occupat |
+| 548 | আড়ষ্টতা | torpor |
+| 549 | বুকের | praecordia |
+| 549 | কোমল | mollia |
+| 549 | ঢেকে | cinguntur |
+| 549 | দেয় | cinguntur |
+| 549 | বাকলের | libro |
+| 549 | পাতলা | tenui |
+| 549 | লেয়ার | libro |
+| 549 | ত্বক | praecordia |
+| 550 | চুল | crines |
+| 550 | পাতা | frondem |
+| 550 | ডালপালা | ramos |
+| 550 | গজায় | crescunt |
+| 550 | বাহু | bracchia |
+| 551 | ক্ষিপ্র | velox |
+| 551 | পা | pes |
+| 551 | থামে | haeret |
+| 551 | মন্থর | pigris |
+| 551 | শিকড়ের | radicibus |
+| 551 | মাথা | ora | 552 |
+| 551 | হয় | habet | 552 |
+| 552 | শিখর | cacumen |
+| 552 | থাকে | remanet |
+| 552 | আভাটা | nitor |
+| 552 | ছাড়া | unus |
+| 552 | না | unus |
+| 552 | তার | illa |
+| 553 | দেবতা | Phoebus |
+| 553 | এখনো | quoque |
+| 553 | ভালোবেসে | amat |
+| 553 | ডান | dextra |
+| 553 | হাত | dextra |
+| 553 | রাখে | positaque |
+| 553 | গুঁড়িতে | stipite |
+| 553 | গাছের | Hanc |
+| 554 | নতুন | novo |
+| 554 | চামড়ার | cortice |
+| 554 | নিচে | sub |
+| 554 | হার্টের | pectus |
+| 554 | বিট | trepidare |
+| 554 | এখনো | adhuc |
+| 554 | টের | sentit |
+| 554 | পায় | sentit |
+| 555 | হাত | membra |
+| 555 | হাত | lacertis |
+| 555 | ভেবে | ut |
+| 555 | ডালপালা | ramos |
+| 555 | জড়িয়ে | conplexusque |
+| 555 | ধরে | conplexusque |
+| 555 | বাকলে | ligno | 556 |
+| 555 | দুঠোঁট | oscula#1 | 556 |
+| 556 | চুমু#1 | oscula#1 |
+| 556 | খায় | dat |
+| 556 | এখনো | tamen |
+| 556 | কুঁকড়ে | refugit |
+| 556 | উঠে | refugit |
+| 556 | গাছ | lignum |
+| 556 | ঘৃণা | refugit |
+| 556 | করে | refugit |
+| 556 | চুমু#2 | oscula#2 |
+| 557 | দেবতা | deus |
+| 557 | বলেন | dixit | 558 |
+| 557 | তুমি | Cui |
+| 557 | যেহেতু | quoniam |
+| 557 | আমার | mea |
+| 557 | বউ | coniunx |
+| 557 | হতে | esse |
+| 557 | পারবে | potes |
+| 557 | না | non |
+| 558 | অন্তত | certe |
+| 558 | গাছ | arbor |
+| 558 | হও | eris |
+| 558 | আমার#1 | mea |
+| 558 | লরেল | laure | 559 |
+| 558 | তোমাকে | te | 559 |
+| 559 | পরবে | habebunt | 558 |
+| 559 | আমার#3 | nostrae |
+| 559 | চুল | coma |
+| 559 | বীণা | citharae |
+| 559 | তূণীর | pharetrae |
+| 560 | তুমি | tu |
+| 560 | থাকবে | aderis |
+| 560 | রোমান | Latiis |
+| 560 | জেনারেলদের | ducibus |
+| 560 | যখন | cum |
+| 560 | যাবেন | visent | 561 |
+| 560 | সাথে | ducibus |
+| 561 | জনতার | vox |
+| 561 | জনতার | laeta | 560 |
+| 561 | মুখরিত | laeta | 560 |
+| 561 | মুখরিত | canet |
+| 561 | জয়গানে | triumphum | 560 |
+| 561 | জয়গানে | canet |
+| 561 | পথ | pompas |
+| 561 | ক্যাপিটলে | Capitolia |
+| 562 | তুমি | eadem |
+| 562 | রক্ষা | custos |
+| 562 | করবে | custos |
+| 562 | নিষ্ঠার | fidissima |
+| 562 | অগাস্টাসের | Augustis |
+| 562 | দ্বার | postibus |
+| 563 | মধ্যে | mediamque |
+| 563 | ওকের | quercum |
+| 563 | পাহারা | tuebere |
+| 563 | দেবে | tuebere |
+| 563 | পাশ | ante |
+| 563 | পাশ | fores |
+| 564 | যেমন | utque |
+| 564 | আমার | meum |
+| 564 | চিরতরুণ | iuvenale |
+| 564 | চুলে | capillis |
+| 564 | পড়ে | intonsis |
+| 564 | না | intonsis |
+| 564 | নাপিতের | intonsis |
+| 564 | হাত | intonsis |
+| 565 | তেমন | quoque |
+| 565 | তোমার | tu |
+| 565 | চিরসবুজ | perpetuos |
+| 565 | চিরসবুজ | semper |
+| 565 | পাতায় | frondis |
+| 565 | থাকবে | gere |
+| 565 | খ্যাতির | honores |
+| 565 | দ্যুতি | honores |
+| 566 | দেবতার | Paean |
+| 566 | বন্দনা | Paean |
+| 566 | শেষ | Finierat |
+| 566 | হলে | Finierat |
+| 566 | লরেল | laurea |
+| 566 | গাছ | laurea |
+| 566 | নতুন | modo |
+| 566 | নতুন | factis |
+| 567 | শাখা | ramis | 566 |
+| 567 | নেড়ে | agitasse |
+| 567 | শিখর | cacumen |
+| 567 | শিখর | caput |
+| 567 | নত | adnuit |
+| 567 | করে | adnuit |
+| 567 | যেন | utque |
+| 567 | যেন | visa |
+| 567 | যেন | est |
+| 567 | জানিয়েছিল | adnuit |
+| 567 | সম্মতি | adnuit |
+| 568 | বন | nemus |
+| 568 | ছিল | Est |
+| 568 | হিমনিয়াতে | Haemoniae |
+| 568 | চারদিকে | undique |
+| 568 | গাছপালায় | silva | 569 |
+| 568 | ঘন | silva | 569 |
+| 569 | ঢাকা | claudit | 568 |
+| 569 | চড়াই | praerupta | 568 |
+| 569 | টেম্পি | Tempe |
+| 569 | নাম | vocant |
+| 569 | সেখানে | Per |
+| 569 | সেখানে | quae |
+| 569 | পেনিয়াস | Peneus |
+| 570 | সফেন | spumosis |
+| 570 | ঝরনা | undis |
+| 570 | পিন্ডাস | Pindo |
+| 570 | পর্বতমালা | Pindo |
+| 570 | থেকে | ab | 569 |
+| 570 | নেমে | effusus |
+| 570 | নেমে | volvitur |
+| 570 | আসে | volvitur |
+| 571 | পড়া | deiectuque |
+| 571 | জলপ্রপাত | deiectuque |
+| 571 | বাষ্পের | fumos |
+| 571 | ধোঁয়া | fumos |
+| 572 | উঠে | agitantia | 571 |
+| 572 | উঠে | conducit |
+| 572 | মেঘের | nubila |
+| 572 | পানির | adspergine |
+| 572 | ছিটায় | adspergine |
+| 572 | ভিজে | inpluit | 573 |
+| 572 | বনের | silvis |
+| 572 | বিতান | silvis |
+| 572 | বিতান | summisque |
+| 573 | শব্দে | sonitu |
+| 573 | ফাটে | fatigat |
+| 573 | পড়শির | vicina |
+| 573 | কাছে | vicina |
+| 573 | দূরে | plus |
+| 573 | দূরে | quam |
+| 573 | সব | plus |
+| 574 | এখানেই | Haec |
+| 574 | অন্দরমহল | penetralia |
+| 574 | বসতি | domus |
+| 574 | রাজদরবার | sedes |
+| 575 | মহানদীর | amnis |
+| 575 | মহানদীর | magni | 574 |
+| 575 | এখানে | in |
+| 575 | এখানে | his |
+| 575 | পাহাড়ের | cautibus |
+| 575 | কোটরে | antro |
+| 575 | কাটা | facto |
+| 575 | গুহায় | antro |
+| 576 | বিচার | iura |
+| 576 | করছিলেন | dabat |
+| 576 | পানি | undis |
+| 576 | পানি | undas |
+| 576 | আর | nymphisque |
+| 576 | পরীদের | nymphisque |
+| 577 | প্রথমে | primum |
+| 577 | নিজের | popularia |
+| 577 | দেশের | popularia |
+| 577 | নদী | flumina |
+| 577 | এসেছিল | Conveniunt |
+| 577 | এসেছিল | illuc |
+| 578 | বুঝতে | nescia |
+| 578 | পারছিল | nescia |
+| 578 | না#1 | nescia |
+| 578 | তাকে | parentem |
+| 578 | সান্ত্বনা | consolenturne |
+| 578 | দিবে | consolenturne |
+| 578 | না#2 | consolenturne |
+| 578 | অভিনন্দন | gratentur |
+| 579 | পপলার-ঘেরা | populifer |
+| 579 | স্পার্চিয়াস | Sperchios |
+| 579 | অস্থির | inrequietus |
+| 579 | এনিপিয়াস | Enipeus |
+| 580 | প্রাচীন | senex |
+| 580 | এপিডেনাস | Apidanusque |
+| 580 | নরম | lenisque |
+| 580 | এমফ্রিসাস | Amphrysos |
+| 580 | এবং | et |
+| 580 | এয়াস | Aeas |
+| 581 | পরে | moxque |
+| 581 | আর | alii |
+| 581 | নদী | amnes |
+| 581 | যারা | qui |
+| 581 | বিভিন্ন | qua |
+| 581 | আঁকাবাঁকা | erroribus | 582 |
+| 582 | পথে | qua | 581 |
+| 582 | ঘুরে | erroribus |
+| 582 | তাদের | illos | 581 |
+| 582 | ক্লান্ত | fessas |
+| 582 | পানি | undas |
+| 582 | নিয়ে | deducunt |
+| 582 | যায় | deducunt |
+| 582 | সাগরে | mare |
+| 582 | সাগরে | in |
+| 583 | ছিলেন | abest |
+| 583 | না | abest |
+| 583 | শুধু | unus |
+| 583 | ইনাকাস | Inachus |
+| 583 | গুহার | antro |
+| 583 | গহীনে | imoque |
+| 583 | বসে | reconditus |
+| 583 | নদী | aquas | 584 |
+| 584 | ভরছিলেন | auget |
+| 584 | আরো | auget |
+| 584 | চোখের | fletibus |
+| 584 | পানি | fletibus |
+| 584 | কন্যা | natamque |
+| 584 | কারণ | ut | 585 |
+| 585 | আয়ো | Io | 584 |
+| 585 | হারিয়ে | amissam |
+| 585 | গেছে | amissam |
+| 585 | জীবিত | vitane |
+| 585 | আছে | fruatur |
+| 585 | না | vitane |
+| 585 | ছায়ার | manes | 586 |
+| 585 | দেশে | apud | 586 |
+| 586 | মিলিয়ে | sit |
+| 586 | মিলিয়ে | apud |
+| 586 | গেছে | sit |
+| 586 | জানতেন | Nescit | 585 |
+| 586 | না#1 | Nescit | 585 |
+| 586 | কোথাও | usquam |
+| 586 | তাকে | quam |
+| 586 | খুঁজে | invenit |
+| 586 | না#2 | non |
+| 586 | পাওয়ায় | invenit |
+| 587 | ভাবেন | putat |
+| 587 | কোথাও | nusquam |
+| 587 | নেই | esse |
+| 587 | নেই | nusquam |
+| 587 | তবে | atque |
+| 587 | মনে | animo |
+| 587 | আরো | peiora |
+| 587 | বড় | peiora |
+| 587 | ভয় | veretur |
+| 587 | করে | veretur |
+| 588 | বাবার | patrio |
+| 588 | নদী | flumine | 589 |
+| 588 | থেকে | a |
+| 588 | ফেরার | redeuntem |
+| 588 | সে | illam |
+| 588 | জিউসের | Iuppiter |
+| 588 | চোখে | Viderat |
+| 589 | পড়েছিল | Viderat | 588 |
+| 589 | দেখে | Viderat | 588 |
+| 589 | দেবতা | Iuppiter | 588 |
+| 589 | বলেন | dixerat | 590 |
+| 589 | কুমারী | virgo |
+| 589 | তুমি | tuoque |
+| 589 | জোভের | Iove |
+| 590 | যোগ্য | digna | 589 |
+| 590 | যার | quem |
+| 590 | বেডে | toro |
+| 590 | ধন্য | beatum | 589 |
+| 590 | হয়ে | factura |
+| 590 | যাবে#2 | factura |
 | 590 | ছায়া | umbras |
-| 590 | দেখিয়ে | monstraverat |
-| 591 | দুপুরে | medio |
-| 591 | সূর্য | sol |
-| 591 | মাথার | altissimus |
-| 591 | উপরে | altissimus |
-| 591 | জ্বলছে | calet |
-| 592 | হিংস্র | ferarum |
-| 592 | জন্তুদের | ferarum |
-| 592 | জায়গায় | latebras |
-| 592 | যদি | Quodsi |
-| 592 | একা | sola |
-| 592 | যেতে | intrare |
-| 592 | ভয় | times |
-| 592 | লাগে | times |
-| 593 | দেবতার | deo |
-| 593 | প্রহরায় | praeside |
-| 593 | নিরাপদ | tuta |
-| 593 | তুমি | subibis |
-| 594 | আর | sed |
-| 594 | আমি | qui |
-| 594 | যেনতেন | plebe |
-| 594 | যেনতেন | de |
-| 594 | দেবতা | deo |
-| 594 | না | nec |
-| 594 | হাতের | manu | 595 |
-| 594 | মুষ্টিতে | manu | 595 |
-| 595 | ঘুরে | teneo |
-| 595 | আকাশের | caelestia | 594 |
-| 595 | মেরুদণ্ড | sceptra |
+| 591 | পেতে | pete | 590 |
+| 591 | যাও | pete | 590 |
+| 591 | বনের | nemorum#1 |
+| 591 | গহীনে | altorum |
+| 591 | ছায়া | umbras |
+| 591 | দেখিয়ে | monstraverat |
+| 592 | দুপুরে | medio |
+| 592 | সূর্য | sol |
+| 592 | মাথার | altissimus |
+| 592 | উপরে | altissimus |
+| 592 | জ্বলছে | calet |
+| 593 | হিংস্র | ferarum |
+| 593 | জন্তুদের | ferarum |
+| 593 | জায়গায় | latebras |
+| 593 | যদি | Quodsi |
+| 593 | একা | sola |
+| 593 | যেতে | intrare |
+| 593 | ভয় | times |
+| 593 | লাগে | times |
+| 594 | দেবতার | deo |
+| 594 | প্রহরায় | praeside |
+| 594 | নিরাপদ | tuta |
+| 594 | তুমি | subibis |
+| 595 | আর | sed |
 | 595 | আমি | qui |
-| 595 | হানি | mitto |
-| 595 | ভবঘুরে | vaga |
-| 595 | বজ্র | fulmina |
-| 596 | আমার | me |
-| 596 | পালিয়ো | fuge |
-| 596 | না | Ne |
-| 596 | কারণ | enim |
-| 596 | দৌড় | fugiebat |
-| 596 | দিয়েছিল | fugiebat |
-| 597 | লার্নার | Lernae | 596 |
-| 597 | ঘাসী | pascua | 596 |
-| 597 | মাঠ | pascua | 596 |
-| 597 | ছেড়ে | reliquerat |
-| 597 | গাছে | arboribus |
-| 597 | ঢাকা | consitaque |
-| 597 | লির্সিয়াতে | Lyrcea |
-| 597 | লির্সিয়াতে | arva |
-| 598 | তখন | cum |
-| 598 | দেবতা | deus |
-| 598 | সারা | latas |
-| 598 | দেশ | terras |
-| 598 | ঘনান্ধকার | caligine |
-| 598 | কুয়াশায় | caligine |
-| 598 | কুয়াশায় | inducta |
-| 598 | ঢেকে | inducta |
-| 598 | ঢেকে | occuluit | 599 |
-| 599 | থামান | tenuitque |
-| 599 | সম্মান | pudorem |
-| 599 | হরণ | rapuitque |
-| 599 | করেন | rapuitque |
-| 599 | কিশোরীকে | fugam |
-| 600 | তখন | Interea |
-| 600 | জুনো | Iuno |
-| 600 | আর্গসের | agros |
-| 600 | আর্গসের | medios |
-| 600 | দিকে | in |
-| 601 | তাকিয়ে | despexit | 600 |
-| 601 | দেখেন | despexit | 600 |
-| 601 | রাত | noctis |
-| 601 | ভাসমান | volucres |
-| 601 | মেঘ | nebulas |
-| 602 | দিবাকে | die |
-| 602 | দিবাকে | nitido |
-| 602 | করেছে | fecisse | 601 |
-| 602 | নিশা | noctis | 601 |
-| 602 | নিশা | faciem | 601 |
-| 602 | দেখে | mirata |
-| 602 | বুঝতে | sensit | 603 |
-| 602 | পারেন | sensit | 603 |
-| 602 | নদীর | fluminis |
-| 603 | বা | nec |
-| 603 | সেঁতসেঁতে | umenti |
-| 603 | মাটির | tellure |
-| 603 | নিশ্বাসে | remitti |
-| 603 | এটা | illas | 602 |
-| 603 | হতে | esse |
-| 603 | পারে | esse |
-| 603 | না | non | 602 |
-| 603 | না | nec |
-| 604 | এবং | atque |
-| 604 | তার | suus |
-| 604 | জামাইয়ের | coniunx |
-| 604 | খোঁজ | circumspicit |
-| 604 | করেন | circumspicit |
-| 604 | কারণ | ut |
-| 605 | বহু | totiens |
-| 605 | বার | totiens |
-| 605 | ধরা | deprensi |
-| 605 | খাওয়া | deprensi |
-| 605 | বরের | mariti |
-| 605 | কুমতলব | furta |
-| 605 | বউ | quae | 604 |
-| 605 | বুঝে | nosset |
-| 606 | দেবকে | Quem |
-| 606 | স্বর্গে | caelo |
-| 606 | না | non |
-| 606 | পেয়ে | repperit |
-| 606 | বলেছিলেন | ait | 607 |
-| 606 | হয় | aut |
-| 606 | আমি | ego |
-| 606 | আমি | ego | 607 |
-| 606 | ভুল | fallor |
-| 607 | নয় | aut |
-| 607 | হইতেছি | laedor |
-| 607 | ফুল | laedor |
-| 607 | এবং | delapsaque |
-| 607 | আকাশের | aethere |
-| 607 | চূড়া | summo |
-| 607 | থেকে | ab |
-| 608 | উড়ালে | delapsaque | 607 |
-| 608 | নেমে | delapsaque | 607 |
-| 608 | মাটিতে | terris |
-| 608 | মাটিতে | in |
-| 608 | নেমে | constitit |
-| 608 | মেঘকে | nebulasque |
-| 608 | সরে | recedere |
-| 608 | যেতে | recedere |
-| 608 | বলেন | iussit |
-| 609 | বউ | Coniugis |
-| 609 | আসার | adventum |
-| 609 | আগেই | praesenserat |
-| 609 | বুঝতে | praesenserat |
-| 609 | পেরে | praesenserat |
-| 609 | জিউস | ille | 610 |
-| 609 | আয়োকে | Inachidos | 610 |
-| 610 | কচি | iuvencam |
-| 610 | বাছুরে | iuvencam |
-| 610 | চকচকে | nitentem | 609 |
-| 610 | রূপান্তরিত | mutaverat |
-| 610 | করে | mutaverat |
-| 610 | ফেলেন | mutaverat |
-| 611 | গাভী | Bos |
-| 611 | হয়েও | quoque |
-| 611 | ছিল | Est |
-| 611 | সুন্দর | formosa |
-| 611 | স্যাটার্নিয়া | Saturnia |
-| 611 | অনিচ্ছায় | invita | 612 |
-| 612 | বাছুরের | vaccae | 611 |
-| 612 | প্রশংসা | probat |
-| 612 | করে | probat |
-| 612 | জানতেও | quaerit | 613 |
-| 612 | চান | quaerit | 613 |
-| 612 | কোন | cuius |
-| 612 | দেশের | unde |
-| 613 | কোন | quove |
-| 613 | গোয়ালের | armento |
-| 613 | এসেছে | sit |
-| 613 | যেন | quasi |
-| 613 | সত্য | veri |
-| 613 | অজ্ঞাত | nescia |
-| 614 | প্রশ্ন | inquiri | 615 |
-| 614 | থামিয়ে | desinat | 615 |
-| 614 | দিতে | ut |
-| 614 | জিউস | Iuppiter |
-| 614 | বলেছিলেন | mentitur |
-| 614 | মাটি | terra |
-| 614 | থেকে | e |
-| 615 | জন্ম | genitam | 614 |
-| 615 | হয়েছে | genitam | 614 |
-| 615 | জুনো | Saturnia |
-| 615 | গাভীটা | hanc |
-| 615 | উপহার | munus |
-| 615 | চান | Petit |
-| 616 | কি | Quid |
-| 616 | করবেন | faciat |
-| 616 | প্রেমিকা | amores |
-| 616 | দিয়ে | addicere |
-| 616 | দেয়াটা | addicere |
-| 616 | নির্দয় | crudele |
-| 617 | না | non |
-| 617 | দেয়াটা | dare |
-| 617 | সন্দেহজনক | suspectum |
-| 617 | শরম | Pudor |
-| 617 | সাধে | suadeat |
-| 618 | প্রেম#1 | amor |
-| 618 | তাতে | hinc |
-| 618 | বাদ | dissuadet |
-| 618 | সাধে | dissuadet |
-| 618 | লজ্জা | pudor |
-| 618 | প্রেমের | amore |
-| 618 | হার | Victus |
-| 618 | মানতই | Victus |
-| 618 | মানতই | esset |
-| 619 | কিন্তু | sed |
-| 619 | যে | si |
-| 619 | বোন | generisque |
-| 619 | বউ | torique |
-| 619 | তাকে | sociae |
-| 619 | গরুর | vacca#1 | 620 |
-| 620 | সামান্য | leve | 619 |
-| 620 | উপহার | munus | 619 |
-| 620 | না#1 | negaretur |
-| 620 | দেয়ার | negaretur |
-| 620 | না#2 | non |
-| 620 | গরু | vacca#2 |
-| 621 | সতিন | Paelice |
-| 621 | হাতিয়ে | donata |
-| 621 | নেন | donata |
-| 621 | জুনো | diva | 622 |
-| 621 | নিশ্চিত | exuit |
-| 621 | পারেন | exuit |
-| 621 | না | non |
-| 622 | জোভের | Iovem |
-| 622 | ছলচাতুরিকে | furti |
-| 622 | ভয় | metum |
-| 622 | ভয় | timuitque |
-| 622 | ভয় | anxia |
-| 623 | তাই | donec |
-| 623 | এরেস্টরের | Arestoridae |
-| 623 | ছেলে | Arestoridae |
-| 623 | আর্গাসকে | Argo |
-| 623 | পাহারায় | servandam |
-| 623 | লাগান | tradidit |
-| 624 | আর্গাসের | Argus |
-| 624 | মাথায় | caput |
-| 624 | সাজানো | cinctum |
-| 624 | ছিল | habebat |
-| 624 | একশটা | Centum |
-| 624 | চোখ | luminibus |
-| 625 | তার | inde |
-| 625 | মধ্যে | inde |
-| 625 | দুইটা | bina |
-| 625 | চোখ | luminibus | 624 |
-| 625 | পালা | vicibus |
-| 625 | করে#1 | bina |
-| 625 | করে#2 | vicibus |
-| 625 | বিশ্রাম | quietem |
-| 625 | নেয় | capiebant |
-| 626 | ঘুমায় | quietem | 625 |
-| 626 | দুই | bina | 625 |
-| 626 | বাকিরা | cetera |
-| 626 | সজাগ | servabant |
-| 626 | থাকে | manebant |
-| 626 | প্রহরায় | statione |
-| 627 | যেদিকে | quocumque |
-| 627 | যেদিকে | modo |
-| 627 | দাঁড়াত | Constiterat |
-| 627 | চোখ | spectabat |
-| 627 | থাকত | spectabat |
-| 627 | আয়োর | Io |
-| 627 | দিকে | ad |
-| 628 | পিছনের | aversus |
-| 628 | ফিরে | aversus |
-| 628 | থাকলেও | quamvis |
-| 628 | আয়ো | Io |
-| 628 | চোখের | oculos |
-| 628 | সামনে | ante |
-| 629 | দিনের | Luce |
-| 629 | বেলায় | Luce |
-| 629 | ঘাস | pasci |
-| 629 | খেতে | pasci |
-| 629 | দিত | sinit |
-| 629 | সূর্য | sol |
-| 629 | পৃথিবীর | tellure |
-| 629 | তলায় | sub |
-| 630 | ডুবলে | cum | 629 |
-| 630 | ডুবলে | est | 629 |
-| 630 | বন্দী | claudit |
-| 630 | করে | claudit |
-| 630 | নিরীহ | indigno |
-| 630 | গলায় | collo |
-| 630 | পরাত | circumdat |
-| 630 | শিকল | vincula |
-| 631 | গাছের | arboreis |
-| 631 | পাতা | frondibus |
-| 631 | ও | et |
-| 631 | তিক্ত | amara |
-| 631 | ঘাস | herba |
-| 631 | খেয়ে | pascitur |
-| 632 | বিছানার | toro |
-| 632 | বদলে | proque |
-| 632 | ঘুমাত | incubat | 633 |
-| 632 | মাটিতে | terrae |
-| 632 | ঘাসও | gramen |
-| 632 | থাকত | habenti |
-| 632 | না | non |
-| 633 | পিপাসা | potat |
-| 633 | মিটাত | potat |
-| 633 | নদীর | flumina |
-| 633 | কাদাটে | limosaque |
-| 633 | পানিতে | flumina |
-| 634 | কখনো | cum |
-| 634 | আর্গাসের | Argo |
-| 634 | দুহাত | bracchia |
-| 634 | তুলে | tendere | 635 |
-| 634 | মোনাজাত | supplex |
-| 635 | ভাবে | vellet | 634 |
-| 635 | কোনো | non |
-| 635 | হাত | bracchia |
-| 635 | নাই | non |
-| 635 | নাই | habuit |
-| 635 | যে | quae |
-| 635 | দেখাবে | tenderet |
-| 635 | আর্গাসকে | Argo |
-| 636 | অভিযোগের | queri |
-| 636 | মুখ | ore |
-| 636 | বের | edidit |
-| 636 | হয় | edidit |
-| 637 | হাম্বা | mugitus | 636 |
-| 637 | ডাক | sonos |
-| 637 | শিউরে | pertimuitque |
-| 637 | শিউরে | exterrita |
-| 637 | উঠে | pertimuitque |
-| 637 | উঠে | exterrita |
-| 637 | নিজের | propriaque |
-| 637 | গলার | voce |
-| 637 | আওয়াজে | voce |
-| 637 | আওয়াজে | sonos |
-| 638 | ইনাকাসের | Inachidas | 639 |
-| 638 | তীরে | ripas |
-| 638 | তীরে | ripas | 639 |
-| 638 | আগে | solebat |
-| 638 | খেলত | ludere |
-| 638 | সেখানে | ubi |
-| 638 | যে | ubi |
-| 639 | আসে | Venit | 638 |
-| 639 | পানিতে | unda |
-| 639 | পানিতে | in |
-| 640 | নতুন | novaque | 639 |
-| 640 | শিঙের | cornua |
-| 640 | দেখে | conspexit | 639 |
-| 640 | আতঙ্কে | exsternata |
-| 640 | আতঙ্কে | pertimuit |
-| 640 | কুঁচকে | refugit |
-| 640 | উঠে | refugit |
-| 641 | নায়াদ | Naides |
-| 641 | বোনরা | Naides |
-| 641 | আর | et |
-| 641 | ইনাকাস | Inachus |
-| 641 | চিনতে | ignorant |
-| 641 | চিনতে | ignorat |
-| 641 | পারেনি | ignorant |
-| 641 | পারেনি | ignorat |
-| 642 | অবাক | admirantibus | 643 |
-| 642 | হয় | admirantibus | 643 |
-| 642 | বাছুর | illa |
-| 642 | গায়ে-গায়ে | sequitur |
-| 642 | গায়ে-গায়ে | sequiturque |
-| 642 | ঘেঁষে | sequitur |
-| 642 | ঘেঁষে | sequiturque |
-| 643 | তাদের | patrem | 642 |
-| 643 | তাদের | sorores | 642 |
-| 643 | তাদের | admirantibus |
-| 643 | আদর | tangi |
-| 643 | আশা | patitur |
-| 643 | করে | patitur |
-| 643 | আর | et |
-| 643 | মনোযোগ | offert |
-| 643 | চায় | offert |
-| 644 | বৃদ্ধ | senior |
-| 644 | ইনাকাস | Inachus |
-| 644 | ঘাস | herbas |
-| 644 | ছিঁড়ে | Decerptas |
-| 644 | তুলে | porrexerat |
-| 644 | ধরেন | porrexerat |
-| 645 | আয়ো | illa |
-| 645 | বাবার | patriisque |
-| 645 | হাতের | manus |
-| 645 | তালুতে | palmis |
-| 645 | চুমু | oscula |
-| 645 | দেয় | dat |
-| 646 | চোখের | lacrimas |
-| 646 | পানিও | lacrimas |
-| 646 | আটকে | retinet |
-| 646 | রাখে | retinet |
-| 646 | না | nec |
-| 646 | যদি | si |
-| 646 | শুধু | modo |
-| 646 | শব্দ | verba |
-| 646 | থাকত | sequantur |
-| 647 | নাম | nomenque |
-| 647 | নিয়তি | casusque |
-| 647 | বলে | loquatur |
-| 647 | সাহায্য | opem |
-| 647 | চাইত | oret |
-| 648 | কথা | verbis |
-| 648 | না | pro |
-| 648 | খুর | pes |
-| 648 | ধুলায় | pulvere |
-| 648 | ধুলায় | in |
-| 648 | অক্ষর | Littera |
-| 648 | এঁকে | duxit |
-| 649 | রূপান্তরের | mutati |
-| 649 | রূপান্তরের | corporis |
-| 649 | করুণ | triste |
-| 649 | কাহিনি | indicium |
-| 649 | জানিয়েছিল | indicium |
-| 649 | জানিয়েছিল | peregit |
-| 650 | হায় | Me |
-| 650 | কপাল | miserum |
-| 650 | বলে | exclamat |
-| 650 | উঠলেন | exclamat |
-| 650 | ইনাকাস | Inachus |
-| 650 | গুমরিয়ে | gementis |
-| 650 | উঠা | gementis |
-| 651 | বাছুরের | iuvencae |
-| 651 | শিং | cornibus |
-| 651 | আর | et |
-| 651 | তুষারশীতল | niveae |
-| 651 | গলা | cervice |
-| 651 | ধরে | pendens |
-| 652 | গুঙিয়ে | ingeminat |
-| 652 | বলেছিলেন | ingeminat |
-| 652 | হায় | me |
-| 652 | কপাল | miserum |
-| 652 | তুই | tune |
-| 652 | মেয়ে | nata | 653 |
-| 653 | সারা | omnes | 652 |
-| 653 | দুনিয়ায় | terras |
-| 653 | খুঁজেছি | quaesita | 652 |
-| 653 | তোকে | tu |
-| 653 | পাওয়ার | reperta |
-| 653 | দুঃখটা | luctus | 654 |
-| 654 | না#1 | non | 653 |
-| 654 | পাওয়ার | inventa | 653 |
-| 654 | চেয়ে | levior |
-| 654 | বড় | levior |
-| 654 | তুই | Retices |
-| 654 | কোনো | nec |
-| 654 | কথা | dicta | 655 |
-| 654 | বলিস | Retices |
-| 654 | না#2 | Retices |
-| 654 | আমাদের | nostris |
-| 655 | জবাব | mutua | 654 |
-| 655 | দেয়ার | refers |
-| 655 | ভাষা | dicta |
-| 655 | শুধু | tantum |
-| 655 | বুকের | pectore | 656 |
-| 655 | গভীর | alto |
-| 656 | উঠা | ducis | 655 |
-| 656 | দীর্ঘশ্বাস | suspiria | 655 |
-| 656 | আব্বা | mea |
-| 656 | বলে | verba |
-| 656 | ডাকিস | remugis |
-| 656 | হাম্বা | remugis |
-| 657 | না | ignarus |
-| 657 | জেনে | ignarus |
-| 657 | আমি | ego |
-| 657 | বিয়ের | thalamos |
-| 657 | বিয়ের | taedasque |
-| 657 | ব্যবস্থা | parabam |
-| 657 | করছিলাম | parabam |
-| 658 | স্বপ্ন | spesque |
-| 658 | দেখছিলাম | fuit |
-| 658 | তোর | tibi | 657 |
-| 658 | জামাইয়ের | generi |
-| 658 | আমার | mihi |
-| 658 | নাতিপুতির | nepotum |
-| 659 | এখন | nunc#1 |
-| 659 | বলদ | grege#1 |
-| 659 | বাছুর | grege#2 |
-| 659 | হবে#2 | habendus |
-| 659 | তোর | tibi |
-| 659 | জামাই | vir |
-| 659 | বাচ্চাকাচ্চা | natus |
-| 660 | মৃত্যু | morte |
-| 660 | দুঃখ | dolores |
-| 660 | মুছে | finire |
-| 660 | ফেলব | finire |
-| 660 | উপায়ও | licet |
-| 660 | নাই | Nec |
-| 661 | দেবতাজীবন | deum |
-| 661 | দেবতাজীবন | esse |
-| 661 | খুব | nocet |
-| 661 | দুঃখের | nocet |
-| 661 | মৃত্যুর | leti |
-| 661 | দরজা | ianua |
-| 661 | বন্ধ | praeclusaque |
-| 662 | আমাদের | nostros |
-| 662 | যন্ত্রণা | luctus |
-| 662 | চলতেই | extendit |
-| 662 | থাকবে | extendit |
-| 662 | অনন্ত | aeternum |
-| 662 | কাল | aevum |
-| 663 | বাপ-মেয়ের | maerentem |
-| 663 | শোকের | maerentem |
-| 663 | বিলাপ | Talia |
-| 664 | তারাচোখা | stellatus | 663 |
-| 664 | আর্গাস | Argus | 663 |
-| 664 | আয়োকে | natam |
-| 664 | ছিনিয়ে | ereptamque |
-| 664 | নিয়ে | abstrahit | 665 |
-| 664 | যায় | abstrahit | 665 |
-| 664 | বহুদূরে | procul | 665 |
-| 665 | আরেক | diversa | 664 |
-| 665 | ঘাসের | pascua | 664 |
-| 665 | মাঠে | pascua | 664 |
-| 665 | মাঠে | in | 664 |
-| 665 | উঁচু | sublime |
-| 665 | পাহাড়ের | montis |
-| 666 | চূড়ায় | cacumen | 665 |
-| 666 | বসে | sedens |
-| 666 | বসে | occupat |
-| 666 | গার্ড | speculatur |
-| 666 | দেয় | speculatur |
-| 666 | চারপাশ | partes |
-| 666 | দিকে | partes |
-| 666 | সব | omnes |
-| 667 | দেবতাদের | superum |
-| 667 | শাসক | rector |
-| 667 | আর | ultra |
-| 667 | সইতে | ferre | 668 |
-| 667 | পারেন | potest | 668 |
-| 667 | না | Nec |
-| 667 | আয়োর | Phoronidos |
-| 667 | এত | tanta |
-| 668 | কষ্ট | mala | 667 |
-| 668 | কৃত্তিকাদের | Pleias | 669 |
-| 668 | কৃত্তিকাদের | enixa | 669 |
-| 668 | জন্মানো | partu |
-| 668 | জন্মানো | enixa | 669 |
-| 668 | ছেলে | natumque |
-| 668 | ছেলে | quem |
-| 669 | ডাকেন | vocat | 668 |
-| 669 | মার্কারিকে | quem | 668 |
-| 669 | আর্গাসকে | Argum |
-| 669 | মারার | letoque |
-| 669 | মারার | det |
-| 669 | নির্দেশ | imperat |
-| 669 | দেন | imperat |
-| 669 | দেন | det |
-| 670 | টাইম | mora |
-| 670 | লাগে | est |
-| 670 | শুধু | Parva |
-| 670 | পরতে | sumpsisse | 671 |
-| 670 | পাখাওয়ালা | alas |
-| 670 | স্যান্ডেল | pedibus |
-| 671 | হাতে | manu |
-| 671 | নিতে | sumpsisse |
-| 671 | ঘুমপাড়ানি | somniferam |
-| 671 | জাদুর | potenti | 670 |
-| 671 | লাঠি | virgamque | 670 |
-| 671 | মাথায় | capillis |
-| 671 | পরতে | sumpsisse |
-| 671 | ক্যাপ | tegimenque |
-| 672 | এই | Haec |
-| 672 | সব | Haec |
-| 672 | সাথে | disposuit |
-| 672 | নিয়ে | disposuit |
-| 672 | জিউসের | Iove |
-| 672 | ছেলে | natus |
-| 672 | বাবার | patria |
-| 672 | দুর্গ | arce |
-| 672 | থেকে | ab |
-| 673 | উড়ালে | desilit |
-| 673 | নামে | desilit |
-| 673 | মাটিতে | terras |
-| 673 | মাটিতে | in |
-| 673 | নেমে | Illic |
-| 673 | সরিয়ে | removit |
-| 673 | রাখে | removit |
-| 673 | রাখে | posuit | 674 |
-| 673 | টুপি | tegimenque |
-| 674 | আর | et |
-| 674 | পাখাওয়ালা | pennas |
-| 674 | চপ্পল | pennas |
-| 674 | কেবল | tantummodo |
-| 674 | থাকে | retenta |
-| 674 | জাদুর | virga |
-| 674 | লাঠি | virga |
-| 675 | এইভাবে | Hac |
-| 675 | রাখালের | pastor |
-| 675 | বেশে | ut |
-| 675 | ঘুরে | agit |
-| 675 | বেড়ায় | agit |
-| 675 | বিরান | devia |
-| 675 | মাঠে | rura |
-| 675 | পথে | venit | 676 |
-| 676 | পাওয়া | adductas |
-| 676 | ছাগল | capellas | 675 |
-| 676 | ছাগল | adductas |
-| 676 | চড়ায় | agit | 675 |
-| 676 | আর | et |
-| 676 | বাজায় | cantat |
-| 676 | নলের | avenis |
-| 676 | বাঁশি | avenis |
-| 677 | নতুন | nova |
-| 677 | শব্দ | Voce |
-| 677 | জুনোর | Iunonius |
-| 677 | পাহারাদার | custos |
-| 677 | শুনে | captus |
-| 677 | বলে | ait | 679 |
-| 677 | ওহে | at |
-| 678 | তুমি | tu | 677 |
-| 678 | যে-ই | quisquis |
-| 678 | হও | es |
-| 678 | এই | hoc |
-| 678 | পাথরে | saxo |
-| 678 | বসো | considere |
-| 678 | আমার | mecum |
-| 678 | পাশে | mecum |
-| 679 | ছাগলদের | pecori |
-| 679 | পাবে | neque |
-| 679 | না | neque |
-| 679 | ভালো | fecundior |
-| 679 | চেয়ে | fecundior |
-| 679 | ঘাস | herba | 680 |
-| 679 | এর | ullo |
-| 680 | আর | aptamque |
-| 680 | রাখালের | pastoribus |
-| 680 | এখানে | loco |
-| 680 | আছে | est |
-| 680 | মনের | aptamque |
-| 680 | মতো | aptamque |
-| 680 | ছায়া | umbram |
-| 681 | এটলাসের | Atlantiades |
-| 681 | মেয়ের | Atlantiades |
-| 681 | ছেলে | Atlantiades |
-| 681 | বসে | Sedit |
-| 681 | এটা | multa |
-| 681 | ওটা | multa |
-| 682 | দিন | diem |
-| 682 | দিন | euntem | 681 |
-| 682 | আড্ডা | sermone |
-| 682 | কথা | sermone |
-| 682 | বলে | loquendo | 681 |
-| 682 | জমায় | detinuit |
-| 682 | কাটায় | detinuit |
-| 682 | বাঁশি | iunctisque |
-| 682 | বাঁশি | harundinibus | 683 |
-| 682 | বাজিয়ে | canendo |
-| 683 | নিভাতে | vincere |
-| 683 | চেষ্টা | temptat |
-| 683 | করে | temptat |
-| 683 | দীপ্ত | lumina |
-| 683 | সজাগ | servantia |
-| 683 | চোখ | lumina |
-| 684 | তবে | tamen |
-| 684 | নিদ্রার | somnos |
-| 684 | যুদ্ধ | pugnat |
-| 684 | করেই | pugnat |
-| 684 | দারোয়ান | Ille |
-| 685 | কয়েকটা | parte |
-| 685 | চোখকে | oculorum |
-| 685 | ঠিকই | quamvis |
-| 685 | ঘুমাতে | sopor |
-| 685 | দেয় | receptus |
-| 685 | কিন্তু | tamen | 686 |
-| 686 | অন্য | parte |
-| 686 | জাগিয়ে | vigilat |
-| 686 | রাখে | vigilat |
-| 686 | এবং | quoque |
-| 686 | নলের | fistula | 687 |
-| 686 | বাঁশির | fistula | 687 |
-| 687 | জন্মকথা | ratione |
-| 687 | জন্মকথা | reperta |
-| 687 | জানতে | Quaerit | 686 |
-| 687 | চায় | Quaerit | 686 |
-| 687 | কারণ | namque | 686 |
-| 687 | তা | fistula |
-| 687 | তখনো | nuper |
-| 687 | বেশ | nuper |
-| 687 | নূতন | nuper |
-| 687 | নূতন | reperta#1 | 686 |
-| 688 | দেবতা | deus |
-| 688 | তখন | Tum |
-| 688 | বলেছিল | inquit |
-| 688 | আর্কেডিয়ার | Arcadiae |
-| 688 | শীতল | gelidis |
-| 688 | পাহাড়ে | montibus |
-| 688 | পাহাড়ে | in |
-| 689 | নায়াদ | naias | 690 |
-| 689 | থাকত | fuit | 690 |
-| 689 | এক | una | 690 |
-| 689 | ননাক্রিসের | Nonacrinas |
-| 689 | সবচেয়ে | celeberrima |
-| 689 | বিখ্যাত | celeberrima |
-| 690 | হামাড্রায়াড | hamadryadas | 689 |
-| 690 | পরী | nymphae |
-| 690 | বোনরা | nymphae |
-| 690 | সিরিংক্স | Syringa |
-| 690 | ডাকত | vocabant |
-| 691 | একাধিক | Non |
-| 691 | একাধিক | semel |
-| 691 | বার | semel |
-| 691 | তাকে | illa |
-| 691 | পালাতে | eluserat |
-| 691 | হয়েছিল | eluserat |
-| 691 | স্যাটারদের | satyros |
-| 692 | ছায়াঘেরা | umbrosaque |
-| 692 | অরণ্য | silva |
-| 692 | আর | feraxque |
-| 692 | বন্য | feraxque |
-| 692 | গ্রামের | rus | 693 |
-| 692 | বহু | quoscumque |
-| 692 | দেবতার | deos |
-| 693 | সে | ipsaque |
-| 693 | ভার্জিন | virginitate | 694 |
-| 693 | অর্টিজিয়ার | Ortygiam |
-| 693 | দেবীর | deam | 694 |
-| 694 | ইবাদত | colebat | 693 |
-| 694 | করত | colebat | 693 |
-| 694 | ডায়ানার | Dianae |
-| 694 | জামা | Ritu |
-| 694 | জামা | cincta |
-| 694 | পরিয়ে | cincta |
-| 694 | অনায়াসে | falleret | 695 |
-| 695 | লিটোর | Latonia |
-| 695 | কন্যা | Latonia |
-| 695 | চালিয়ে | falleret |
-| 695 | চালিয়ে | credi |
-| 695 | দেয়া | credi |
-| 695 | যেতো | posset |
-| 695 | শুধুমাত্র | non |
-| 695 | যদি | si |
-| 696 | তার | huic |
-| 696 | ধনুক | arcus |
-| 696 | শিঙের | corneus |
-| 696 | না | non |
-| 696 | ডায়ানার | illi |
-| 696 | সোনার | aureus |
-| 696 | হতো | foret |
-| 697 | তবু | Sic |
-| 697 | তবু | quoque |
-| 697 | ভুল | fallebat |
-| 697 | হতো | fallebat |
-| 697 | লাইসিয়াম | Lycaeo |
-| 697 | পাহাড় | colle |
-| 698 | ফেরার | Redeuntem | 697 |
-| 698 | তাকে | hanc |
-| 698 | দেখে | videt |
-| 698 | মাথায় | caput |
-| 698 | পাইনের | pinuque |
-| 698 | কাঁটা | acuta |
-| 699 | পরা | praecinctus | 698 |
-| 699 | প্যান | Pan | 698 |
-| 699 | বলে | refert |
-| 699 | বলা | referre |
-| 699 | বলা | verba#2 |
-| 699 | বাকি | restabat |
-| 699 | ছিল | restabat |
-| 700 | পালিয়ে | fugisse |
-| 700 | পরীটা | nympham |
-| 700 | পথহীন | avia |
-| 700 | ছুটে | fugisse |
-| 701 | যতক্ষণ | donec |
-| 701 | না | donec |
-| 701 | সামনে | ad |
-| 701 | পড়ে | venerit | 702 |
-| 701 | লেডন | Ladonis |
-| 701 | নদীর | amnem |
-| 701 | শান্ত | placidum |
-| 702 | বালুময় | harenosi | 701 |
-| 702 | স্রোত | amnem | 701 |
-| 702 | পানি | undis |
-| 702 | দেখে | Hic |
-| 702 | সে | illam |
-| 702 | পরী | sorores | 703 |
-| 702 | বোনদের | sorores | 703 |
-| 703 | দোয়া | orasse |
-| 703 | করে#1 | orasse |
-| 703 | যাতে | ut |
-| 703 | তাকে | se |
-| 703 | রূপান্তরিত | mutarent |
-| 703 | করে#2 | mutarent |
-| 703 | দেয় | mutarent |
-| 704 | যখন | cum |
-| 704 | প্যান | Panaque |
-| 704 | ভাবে | putaret |
-| 704 | অবশেষে | iam |
-| 704 | সিরিংক্সকে | Syringa |
-| 704 | পেয়ে | prensam |
-| 704 | গেছে | prensam |
-| 705 | হাতে | tenuisse |
-| 705 | পরীর | nymphae |
-| 705 | শরীরের | corpore |
-| 705 | বদলে | pro |
-| 705 | জলার | palustres |
-| 705 | নল | calamos |
-| 706 | সেখানে | ibi |
-| 706 | যখন | Dumque |
-| 706 | দীর্ঘশ্বাস | suspirat |
-| 706 | ফেলেছিল | suspirat |
-| 707 | বাতাসের | ventos | 706 |
-| 707 | আদরে | motos | 706 |
-| 707 | খাগড়ায় | harundine | 706 |
-| 707 | খাগড়ায় | in | 706 |
-| 707 | বিষাদের | querenti |
-| 707 | বিষাদের | similemque |
-| 707 | সুর | sonum |
-| 707 | বাজে | effecisse |
-| 708 | অদ্ভুত | Arte |
-| 708 | অদ্ভুত | nova |
-| 708 | মিষ্টি | dulcedine |
-| 708 | শব্দে | vocisque |
-| 708 | মুগ্ধ | captum |
-| 708 | হয়ে | captum |
-| 708 | প্যান | deum |
-| 708 | বলেছিল | dixisse | 709 |
-| 709 | তোমার | tecum |
-| 709 | সাথে | tecum |
-| 709 | আমার | mihi |
-| 709 | এই | hoc |
-| 709 | সংগীত | concilium |
-| 709 | থেকে | manebit |
-| 709 | যাবে | manebit |
-| 710 | তখন | ita |
-| 710 | ছোট | disparibus |
-| 710 | বড় | disparibus |
-| 710 | বিভিন্ন | disparibus |
-| 710 | দৈর্ঘ্যের | disparibus |
-| 710 | নল | calamis |
-| 710 | মোম | cerae |
-| 711 | জোড়া | conpagine | 710 |
-| 711 | জোড়া | iunctis |
-| 711 | লাগিয়ে | iunctis |
-| 711 | নাম | nomen |
-| 711 | রাখে | tenuisse |
-| 711 | মেয়েটির | puellae |
-| 711 | নামে | nomen |
-| 712 | সিলিনের | Cyllenius |
-| 712 | ছেলে | Cyllenius |
-| 712 | এই | Talia |
-| 712 | গল্প | Talia |
-| 712 | শোনাতে | dicturus |
-| 712 | চেয়েছিল | dicturus |
-| 713 | দেখে | vidit | 712 |
-| 713 | বন্ধ | succubuisse |
-| 713 | বন্ধ | adopertaque |
-| 713 | সবগুলা | omnes | 712 |
-| 713 | চোখ | oculos |
-| 713 | চোখ | lumina |
-| 714 | কাহিনি | vocem |
-| 714 | বন্ধ | Supprimit |
-| 714 | করে#1 | Supprimit |
-| 714 | তখনি | extemplo |
-| 714 | ঘুম | soporem |
-| 714 | ঘুম | somno | 713 |
-| 714 | গাঢ় | firmatque |
-| 714 | করে#2 | firmatque |
-| 715 | তন্দ্রাবিষ্ট | languida |
-| 715 | চোখের | lumina |
-| 715 | নাড়িয়ে | permulcens |
-| 715 | জাদুর | medicata |
-| 715 | লাঠি | virga |
-| 716 | দেরি | mora |
-| 716 | না | Nec |
-| 716 | বাঁকা | falcato |
-| 716 | তলোয়ারটা | ense |
-| 716 | চালায় | vulnerat |
-| 717 | যেখানে | qua |
-| 717 | ঢুলুঢুলু | nutantem | 716 |
-| 717 | মাথাটা | caput |
-| 717 | লেগেছে | confine |
-| 717 | ঘাড়ে | collo |
-| 717 | মুণ্ডুটা | cruentum |
-| 718 | পাহাড় | saxoque | 717 |
-| 718 | গড়িয়ে | deicit |
-| 718 | পড়ে | deicit |
-| 718 | রক্তে | sanguine |
-| 718 | ভিজে | maculat |
-| 718 | যায় | maculat |
-| 718 | পাথর | rupem |
-| 719 | আর্গাস | Arge |
-| 719 | লাশ | iaces |
-| 719 | সব | tot |
-| 719 | বাতি | lumina |
-| 719 | বাতি | lumen |
-| 719 | নিভে | exstinctum | 720 |
-| 719 | গেছে | exstinctum | 720 |
-| 720 | এক | una |
-| 720 | আঁধার | nox |
-| 720 | রাত্রি | nox |
-| 720 | অধিকার | occupat |
-| 720 | করে | occupat |
-| 720 | নিয়েছে | occupat |
-| 720 | একশ | centumque |
-| 720 | চোখ | oculos |
-| 721 | ক্রোনাসের | Saturnia |
-| 721 | মেয়ে | Saturnia |
-| 721 | জুনো | Saturnia |
-| 721 | এই | hos |
-| 721 | চোখগুলো | hos |
-| 721 | তুলে | Excipit |
-| 721 | তার | suae |
-| 721 | ময়ূরের | volucrisque |
-| 722 | লেজে | pennis | 721 |
-| 722 | লেজে | caudam |
-| 722 | লাগিয়ে | collocat |
-| 722 | সাজিয়েছিলেন | inplet |
-| 722 | তারার | stellantibus |
-| 722 | মতন | stellantibus |
-| 722 | জহরতে | gemmis |
-| 723 | তখনি | Protinus |
-| 723 | ক্রোধ | irae |
-| 723 | দপ | exarsit |
-| 723 | জ্বলে | exarsit |
-| 723 | উঠে | exarsit |
-| 724 | গ্রিক | Argolicae | 725 |
-| 724 | সতিনের | paelicis | 725 |
-| 724 | মন | animoque |
-| 724 | ও | animoque |
-| 724 | চোখের | oculis |
-| 724 | লেলিয়ে | obiecit |
-| 724 | দেন | obiecit |
-| 725 | ভয়ানক | horriferamque | 724 |
-| 725 | ফিউরি | Erinyn | 724 |
-| 725 | হৃদয়ে | pectore |
-| 725 | হৃদয়ে | in |
-| 725 | পুঁতে | condidit | 726 |
-| 725 | দেন | condidit | 726 |
-| 725 | উন্মাদ | caecos |
-| 725 | ভয় | stimulosque |
-| 726 | শঙ্কিত | terruit |
-| 726 | রেফুজির | profugam |
-| 726 | সারা | totum |
-| 726 | পৃথিবী | orbem |
-| 726 | চড়ে | per |
-| 727 | অবশেষে | Ultimus |
-| 727 | দুর্দশা | labori |
-| 727 | দুর্দশা | inmenso |
-| 727 | নীল | Nile |
-| 727 | নদ | Nile |
-| 728 | তোমার | Quem |
-| 728 | এসে | simul |
-| 728 | এসে | tetigit |
-| 728 | তীরের | ripae |
-| 728 | তীরের | margine |
-| 728 | দিকে | in |
-| 728 | হাঁটু | genibus | 729 |
-| 729 | ঢলে | procubuit |
-| 729 | পড়েছিল | procubuit |
-| 729 | ঘাড় | collo |
-| 729 | বাঁকিয়ে | resupinoque |
-| 729 | মুখটা | vultus | 730 |
-| 729 | তুলেছিল | tollens | 730 |
-| 729 | আকাশের | ardua |
-| 730 | তারাদের | sidera |
-| 730 | দিকে | ad |
-| 730 | এছাড়া | solos |
-| 730 | তোলার | tollens |
-| 730 | কিছু | quos |
-| 730 | ছিল | potuit |
-| 731 | গোঙানি | gemitu |
-| 731 | চোখের | lacrimis |
-| 731 | পানি | lacrimis |
-| 731 | আর | et#3 |
-| 731 | শোকাতুর | luctisono |
-| 731 | গম্ভীর | luctisono |
-| 731 | ডাকে | mugitu |
-| 731 | যেন | visa | 732 |
-| 732 | জোভকে | Iove |
-| 732 | নিন্দা | queri |
-| 732 | করে | queri |
-| 732 | কাছেই | cum |
-| 732 | চায় | orare |
-| 732 | দুখের | malorum |
-| 732 | ক্ষান্তি | finemque |
-| 733 | জুপিটার | ille |
-| 733 | তার | suae |
-| 733 | বউয়ের | Coniugis |
-| 733 | গলা | colla |
-| 733 | হাতে | lacertis |
-| 733 | জাপটিয়ে | conplexus |
-| 733 | ধরে | conplexus |
-| 734 | শাস্তির | poenas |
-| 734 | অবসান | finiat |
-| 734 | চেয়ে | rogat |
-| 734 | বলেন | inquit | 735 |
-| 734 | ভয় | metus | 735 |
-| 735 | সরিয়ে | pone |
-| 735 | রাখো | pone |
-| 735 | ভবিষ্যতে | futurum | 734 |
-| 735 | কখনো | numquam |
-| 735 | তোমার | tibi |
-| 735 | দুখের | doloris |
-| 736 | কারণ | causa | 735 |
-| 736 | হবে | erit |
-| 736 | না | numquam | 735 |
-| 736 | স্টিক্সের | Stygias |
-| 736 | জল | paludes |
-| 736 | সাক্ষী | audire |
-| 736 | রেখে | iubet |
-| 736 | বলেছিলেন | iubet |
-| 737 | দেবী | dea |
-| 737 | শান্ত | lenita |
-| 737 | হওয়ায় | Ut |
-| 737 | হওয়ায় | est |
-| 737 | আয়ো | illa |
-| 737 | পেয়েছিল | capit |
-| 737 | পূর্বের | priores |
-| 737 | রূপ | vultus |
-| 738 | আগে | ante |
-| 738 | যা | quod |
-| 738 | ছিল | fuit |
-| 738 | হয় | fitque |
-| 738 | শরীর | corpore |
-| 738 | থেকে | e |
-| 738 | ঝরে | fugiunt |
-| 738 | পড়ে | fugiunt |
-| 738 | লোম | saetae |
-| 739 | থাকে | decrescunt |
-| 739 | না | decrescunt |
-| 739 | শিং | cornua |
-| 739 | চোখ | luminis |
-| 739 | চোখ | orbis |
-| 739 | ছোট | artior |
-| 739 | হয়ে | fit |
-| 739 | আসে | fit |
-| 740 | চোয়াল | rictus |
-| 740 | সংকুচিত | contrahitur |
-| 740 | হয় | contrahitur |
-| 740 | ফিরে | redeunt |
-| 740 | আসে | redeunt |
-| 740 | হাত | manusque |
-| 741 | খুর | ungulaque |
-| 741 | বিভক্ত | dilapsa |
-| 741 | হয়ে | absumitur |
-| 741 | পাঁচ | quinos |
-| 741 | আঙ্গুল | ungues |
-| 742 | গাভী | bove |
-| 742 | রূপের | formae |
-| 742 | কিছুই | nil |
-| 742 | থাকে | superest |
-| 742 | শুভ্রতা | candor |
-| 742 | ছাড়া | nisi |
-| 743 | দুই | duorum |
-| 743 | পা | pedum |
-| 743 | দুপায়ে | pedum |
-| 743 | পরী | nymphe |
-| 743 | খুশি | contenta |
-| 743 | হয় | contenta |
-| 743 | দাঁড়ায় | erigitur | 744 |
-| 744 | গরুর | iuvencae |
-| 744 | ডাক | mugiat | 745 |
-| 744 | কথা | loqui |
-| 744 | বলার | loqui |
-| 744 | সাহস | metuitque |
-| 745 | পায়নি | metuitque | 744 |
-| 745 | ভুলে | intermissa |
-| 745 | থাকা | intermissa |
-| 745 | শব্দ | verba |
-| 745 | ভয়ে | timide |
-| 745 | আনে | retemptat |
-| 746 | দেবী | dea |
-| 746 | এখন | Nunc |
-| 746 | পূজা | colitur |
-| 746 | করে | colitur |
-| 746 | লিনেনপরা | linigera |
-| 746 | সাধুরা | turba |
-| 747 | এপাফাস | Epaphus |
-| 747 | ছেলে | genitus |
-| 747 | হয় | genitus |
-| 747 | জিউসের | magni |
-| 747 | জিউসের | Iovis | 748 |
-| 748 | ছেলে | semine | 747 |
-| 748 | ভাবত | creditur |
-| 748 | মায়ের | parenti |
-| 748 | পাশে | iuncta |
-| 748 | মন্দির | templa | 749 |
-| 748 | হতো | tenet | 749 |
-| 749 | শহরে | urbes | 748 |
-| 749 | ছিল | Fuit |
-| 749 | তার#1 | huic |
-| 749 | সমান | aequalis |
-| 749 | বয়সে | annis |
-| 750 | ও | et | 749 |
-| 750 | মেজাজে | animis | 749 |
-| 750 | সূর্যের | Sole |
-| 750 | ছেলে | satus |
-| 750 | ফাইথন | Phaethon |
-| 750 | একবার | quondam |
-| 750 | সে | Quem |
-| 750 | গর্ব | magna |
-| 750 | গর্ব | superbum | 751 |
-| 751 | করে | loquentem | 750 |
-| 751 | বলছিল | loquentem | 750 |
-| 751 | বাবা | parente |
-| 751 | ফিবাস | Phoeboque |
-| 751 | কোনভাবেই | nec |
-| 752 | ইনাকাসের | Inachides |
-| 752 | নাতি | Inachides |
-| 752 | বলে#1 | ait |
-| 752 | মা | matri |
-| 752 | যা | omnia |
-| 753 | বিশ্বাস | credis |
-| 753 | করিস | credis |
-| 753 | হাবা | demens | 752 |
-| 753 | মিথ্যা | falsi |
-| 753 | বাবা | genitoris |
-| 753 | বড়াই | tumidus |
-| 753 | নিয়ে | imagine |
-| 754 | ফাইথন | Phaethon |
-| 754 | লাল | Erubuit |
-| 754 | হয় | Erubuit |
-| 754 | লজ্জা | pudore |
-| 754 | লুকিয়ে | repressit |
-| 754 | রাখে | repressit |
-| 754 | রাগ | iramque |
-| 755 | এপাফাসের | Epaphi |
-| 755 | অপমান | convicia |
-| 755 | নিয়ে | tulit |
-| 755 | মা | matrem |
-| 755 | ক্লিমিনির | Clymenen |
-| 755 | কাছে | ad |
-| 756 | আরো | magis |
-| 756 | খারাপ | doleas |
-| 756 | মা | genetrix |
-| 756 | বলেছিল | ait |
-| 756 | স্বাধীন | liber |
-| 756 | শক্ত | ferox | 757 |
-| 757 | আমি | ego | 756 |
-| 757 | বলিনি | tacui |
-| 757 | এমন | haec |
-| 757 | জঘন্য | opprobria |
-| 757 | গালি | opprobria |
-| 758 | জবাব | refelli |
-| 758 | দিতে | refelli |
-| 758 | না | non |
-| 758 | পারার | potuisse#2 |
-| 758 | লজ্জার | Pudet | 757 |
-| 759 | যদি | si |
-| 759 | বাবা | stirpe |
-| 759 | আসলেই | modo |
-| 759 | দেবতা | caelesti |
-| 759 | হয়ে | sum |
-| 759 | থাকে | creatus |
-| 759 | তবে | At |
-| 759 | তুমি | tu |
-| 760 | প্রমাণ | notam |
-| 760 | দাও | ede |
-| 760 | পাই | adsere |
-| 760 | স্বর্গে | caelo |
-| 760 | আমার | meque |
-| 760 | দাবি | adsere |
-| 761 | বলে | Dixit |
-| 761 | হাত | bracchia |
-| 761 | ছুঁড়ে | inplicuit |
-| 761 | আঁকড়িয়ে | inplicuit |
-| 761 | ধরে | inplicuit |
-| 761 | মায়ের | materno |
-| 761 | গলা | collo |
-| 762 | নিজের | suum |
-| 762 | ও | Meropisque |
-| 762 | মেরপ্সের | Meropisque |
-| 762 | জীবনের | caput |
-| 762 | মাসিদের | sororum |
-| 763 | বিয়ের | taedasque | 762 |
-| 763 | চায় | oravit |
-| 763 | সত্য | veri |
-| 763 | বাবার | parentis |
-| 763 | সংকেত | signa |
-| 764 | ক্লিমিনি | Clymene |
-| 764 | ক্লিষ্ট | mota | 765 |
-| 764 | ছেলের | Phaethontis |
-| 764 | অপমানে | criminis | 765 |
-| 764 | না | an |
-| 764 | কি | an |
-| 764 | নিজের | sibi | 765 |
-| 765 | বুঝা | Ambiguum | 764 |
-| 765 | যায় | Ambiguum | 764 |
-| 765 | না | Ambiguum | 764 |
-| 765 | ঠিক | Ambiguum | 764 |
-| 765 | দুই | utraque |
-| 765 | হাত | bracchia | 766 |
-| 765 | আসমানে | caelo |
-| 765 | তুলে | porrexit | 766 |
-| 766 | সূর্যের | solis |
-| 766 | আলোর | lumina |
-| 766 | দিকে | ad |
-| 766 | চেয়ে | spectansque |
-| 766 | বলেন | inquit | 767 |
-| 767 | আলোর | iubar |
-| 767 | বৃত্ত | iubar |
-| 767 | কিরণ | radiis |
-| 767 | পরা | insigne |
-| 767 | ঐ | hoc |
-| 767 | দীপ্ত | coruscis |
-| 767 | আমাদেরকে | nos | 768 |
-| 768 | দেখতেছে | videtque |
-| 768 | আমাদের | nos |
-| 768 | শুনতেছে | auditque |
-| 768 | শপথ | iuro |
-| 768 | আব্বু | nate |
-| 769 | যাকে | quem |
-| 769 | দেখতেছিস | spectas |
-| 769 | সে | hoc#1 |
-| 769 | বিশ্ব | orbem |
-| 769 | শাসন | temperat |
-| 769 | করা | temperat |
-| 770 | আলো | Sole |
-| 770 | তোর | te | 769 |
-| 770 | জন্ম | satum |
-| 770 | যদি | Si |
-| 770 | মিথ্যা | ficta |
-| 770 | বলি | loquor |
-| 770 | সে | ipse |
-| 770 | সে | se | 771 |
-| 770 | আমাকে | mihi | 771 |
-| 771 | দেখা | videndum | 770 |
-| 771 | না#1 | neget | 770 |
-| 771 | আমার | nostris |
-| 771 | চোখ | oculis |
-| 771 | কাল | novissima |
-| 771 | আর | novissima |
-| 771 | আলো | lux |
-| 771 | না#2 | novissima |
-| 772 | বাবার | patrios |
-| 772 | বাড়ি | penates |
-| 772 | খুঁজে | nosse |
-| 772 | পেতে | nosse |
-| 772 | তোর | tibi |
-| 772 | দেরিও | longus |
-| 772 | হবে | est |
-| 772 | না | Nec |
-| 773 | যেই | unde |
-| 773 | দেশ | terrae |
-| 773 | থেকে | unde |
-| 773 | উদয় | oritur |
-| 773 | আমাদের | nostrae |
-| 773 | সীমানার | contermina |
-| 773 | পাশে | contermina |
-| 774 | যদি | Si |
-| 774 | মন | animus |
-| 774 | চায় | fert |
-| 774 | গিয়ে | gradere |
-| 774 | সূর্যকে | ipso |
-| 774 | সরাসরি | ab |
-| 774 | জিজ্ঞাস | scitabere |
-| 774 | কর | scitabere |
-| 775 | মায়ের | matris |
-| 775 | এই | talia |
-| 775 | কথায় | talia |
-| 775 | কথায় | dicta | 776 |
-| 775 | ফাইথনের | Phaethon | 776 |
-| 775 | খুশির | laetus |
-| 775 | তুফান | Emicat |
-| 776 | বয়ে | Emicat | 775 |
-| 776 | যায় | Emicat | 775 |
-| 776 | আর | et |
-| 776 | মন | mente |
-| 776 | ভর | concipit |
-| 776 | করে | concipit |
-| 776 | কল্পনা | concipit |
-| 776 | স্বর্গের | aethera |
-| 777 | তক্ষুনি | extemplo | 775 |
-| 777 | ইথিওপিয়া | Aethiopasque |
-| 777 | ছেড়ে | transit | 778 |
-| 777 | অগ্নির | ignibus |
-| 777 | দেশ | positosque |
-| 777 | ইন্ডিয়া | Indos |
-| 778 | পার | transit |
-| 778 | হয় | transit |
-| 778 | আগায় | adit |
-| 778 | বাবার | patriosque |
-| 778 | উদয়াচল | ortus |
+| 595 | যেনতেন | plebe |
+| 595 | যেনতেন | de |
+| 595 | দেবতা | deo |
+| 595 | না | nec |
+| 595 | হাতের | manu | 596 |
+| 595 | মুষ্টিতে | manu | 596 |
+| 596 | ঘুরে | teneo |
+| 596 | আকাশের | caelestia | 595 |
+| 596 | মেরুদণ্ড | sceptra |
+| 596 | আমি | qui |
+| 596 | হানি | mitto |
+| 596 | ভবঘুরে | vaga |
+| 596 | বজ্র | fulmina |
+| 597 | আমার | me |
+| 597 | পালিয়ো | fuge |
+| 597 | না | Ne |
+| 597 | কারণ | enim |
+| 597 | দৌড় | fugiebat |
+| 597 | দিয়েছিল | fugiebat |
+| 598 | লার্নার | Lernae | 597 |
+| 598 | ঘাসী | pascua | 597 |
+| 598 | মাঠ | pascua | 597 |
+| 598 | ছেড়ে | reliquerat |
+| 598 | গাছে | arboribus |
+| 598 | ঢাকা | consitaque |
+| 598 | লির্সিয়াতে | Lyrcea |
+| 598 | লির্সিয়াতে | arva |
+| 599 | তখন | cum |
+| 599 | দেবতা | deus |
+| 599 | সারা | latas |
+| 599 | দেশ | terras |
+| 599 | ঘনান্ধকার | caligine |
+| 599 | কুয়াশায় | caligine |
+| 599 | কুয়াশায় | inducta |
+| 599 | ঢেকে | inducta |
+| 599 | ঢেকে | occuluit | 600 |
+| 600 | থামান | tenuitque |
+| 600 | সম্মান | pudorem |
+| 600 | হরণ | rapuitque |
+| 600 | করেন | rapuitque |
+| 600 | কিশোরীকে | fugam |
+| 601 | তখন | Interea |
+| 601 | জুনো | Iuno |
+| 601 | আর্গসের | agros |
+| 601 | আর্গসের | medios |
+| 601 | দিকে | in |
+| 602 | তাকিয়ে | despexit | 601 |
+| 602 | দেখেন | despexit | 601 |
+| 602 | রাত | noctis |
+| 602 | ভাসমান | volucres |
+| 602 | মেঘ | nebulas |
+| 603 | দিবাকে | die |
+| 603 | দিবাকে | nitido |
+| 603 | করেছে | fecisse | 602 |
+| 603 | নিশা | noctis | 602 |
+| 603 | নিশা | faciem | 602 |
+| 603 | দেখে | mirata |
+| 603 | বুঝতে | sensit | 604 |
+| 603 | পারেন | sensit | 604 |
+| 603 | নদীর | fluminis |
+| 604 | বা | nec |
+| 604 | সেঁতসেঁতে | umenti |
+| 604 | মাটির | tellure |
+| 604 | নিশ্বাসে | remitti |
+| 604 | এটা | illas | 603 |
+| 604 | হতে | esse |
+| 604 | পারে | esse |
+| 604 | না | non | 603 |
+| 604 | না | nec |
+| 605 | এবং | atque |
+| 605 | তার | suus |
+| 605 | জামাইয়ের | coniunx |
+| 605 | খোঁজ | circumspicit |
+| 605 | করেন | circumspicit |
+| 605 | কারণ | ut |
+| 606 | বহু | totiens |
+| 606 | বার | totiens |
+| 606 | ধরা | deprensi |
+| 606 | খাওয়া | deprensi |
+| 606 | বরের | mariti |
+| 606 | কুমতলব | furta |
+| 606 | বউ | quae | 605 |
+| 606 | বুঝে | nosset |
+| 607 | দেবকে | Quem |
+| 607 | স্বর্গে | caelo |
+| 607 | না | non |
+| 607 | পেয়ে | repperit |
+| 607 | বলেছিলেন | ait | 608 |
+| 607 | হয় | aut |
+| 607 | আমি | ego |
+| 607 | আমি | ego | 608 |
+| 607 | ভুল | fallor |
+| 608 | নয় | aut |
+| 608 | হইতেছি | laedor |
+| 608 | ফুল | laedor |
+| 608 | এবং | delapsaque |
+| 608 | আকাশের | aethere |
+| 608 | চূড়া | summo |
+| 608 | থেকে | ab |
+| 609 | উড়ালে | delapsaque | 608 |
+| 609 | নেমে | delapsaque | 608 |
+| 609 | মাটিতে | terris |
+| 609 | মাটিতে | in |
+| 609 | নেমে | constitit |
+| 609 | মেঘকে | nebulasque |
+| 609 | সরে | recedere |
+| 609 | যেতে | recedere |
+| 609 | বলেন | iussit |
+| 610 | বউ | Coniugis |
+| 610 | আসার | adventum |
+| 610 | আগেই | praesenserat |
+| 610 | বুঝতে | praesenserat |
+| 610 | পেরে | praesenserat |
+| 610 | জিউস | ille | 611 |
+| 610 | আয়োকে | Inachidos | 611 |
+| 611 | কচি | iuvencam |
+| 611 | বাছুরে | iuvencam |
+| 611 | চকচকে | nitentem | 610 |
+| 611 | রূপান্তরিত | mutaverat |
+| 611 | করে | mutaverat |
+| 611 | ফেলেন | mutaverat |
+| 612 | গাভী | Bos |
+| 612 | হয়েও | quoque |
+| 612 | ছিল | Est |
+| 612 | সুন্দর | formosa |
+| 612 | স্যাটার্নিয়া | Saturnia |
+| 612 | অনিচ্ছায় | invita | 613 |
+| 613 | বাছুরের | vaccae | 612 |
+| 613 | প্রশংসা | probat |
+| 613 | করে | probat |
+| 613 | জানতেও | quaerit | 614 |
+| 613 | চান | quaerit | 614 |
+| 613 | কোন | cuius |
+| 613 | দেশের | unde |
+| 614 | কোন | quove |
+| 614 | গোয়ালের | armento |
+| 614 | এসেছে | sit |
+| 614 | যেন | quasi |
+| 614 | সত্য | veri |
+| 614 | অজ্ঞাত | nescia |
+| 615 | প্রশ্ন | inquiri | 616 |
+| 615 | থামিয়ে | desinat | 616 |
+| 615 | দিতে | ut |
+| 615 | জিউস | Iuppiter |
+| 615 | বলেছিলেন | mentitur |
+| 615 | মাটি | terra |
+| 615 | থেকে | e |
+| 616 | জন্ম | genitam | 615 |
+| 616 | হয়েছে | genitam | 615 |
+| 616 | জুনো | Saturnia |
+| 616 | গাভীটা | hanc |
+| 616 | উপহার | munus |
+| 616 | চান | Petit |
+| 617 | কি | Quid |
+| 617 | করবেন | faciat |
+| 617 | প্রেমিকা | amores |
+| 617 | দিয়ে | addicere |
+| 617 | দেয়াটা | addicere |
+| 617 | নির্দয় | crudele |
+| 618 | না | non |
+| 618 | দেয়াটা | dare |
+| 618 | সন্দেহজনক | suspectum |
+| 618 | শরম | Pudor |
+| 618 | সাধে | suadeat |
+| 619 | প্রেম#1 | amor |
+| 619 | তাতে | hinc |
+| 619 | বাদ | dissuadet |
+| 619 | সাধে | dissuadet |
+| 619 | লজ্জা | pudor |
+| 619 | প্রেমের | amore |
+| 619 | হার | Victus |
+| 619 | মানতই | Victus |
+| 619 | মানতই | esset |
+| 620 | কিন্তু | sed |
+| 620 | যে | si |
+| 620 | বোন | generisque |
+| 620 | বউ | torique |
+| 620 | তাকে | sociae |
+| 620 | গরুর | vacca#1 | 621 |
+| 621 | সামান্য | leve | 620 |
+| 621 | উপহার | munus | 620 |
+| 621 | না#1 | negaretur |
+| 621 | দেয়ার | negaretur |
+| 621 | না#2 | non |
+| 621 | গরু | vacca#2 |
+| 622 | সতিন | Paelice |
+| 622 | হাতিয়ে | donata |
+| 622 | নেন | donata |
+| 622 | জুনো | diva | 623 |
+| 622 | নিশ্চিত | exuit |
+| 622 | পারেন | exuit |
+| 622 | না | non |
+| 623 | জোভের | Iovem |
+| 623 | ছলচাতুরিকে | furti |
+| 623 | ভয় | metum |
+| 623 | ভয় | timuitque |
+| 623 | ভয় | anxia |
+| 624 | তাই | donec |
+| 624 | এরেস্টরের | Arestoridae |
+| 624 | ছেলে | Arestoridae |
+| 624 | আর্গাসকে | Argo |
+| 624 | পাহারায় | servandam |
+| 624 | লাগান | tradidit |
+| 625 | আর্গাসের | Argus |
+| 625 | মাথায় | caput |
+| 625 | সাজানো | cinctum |
+| 625 | ছিল | habebat |
+| 625 | একশটা | Centum |
+| 625 | চোখ | luminibus |
+| 626 | তার | inde |
+| 626 | মধ্যে | inde |
+| 626 | দুইটা | bina |
+| 626 | চোখ | luminibus | 625 |
+| 626 | পালা | vicibus |
+| 626 | করে#1 | bina |
+| 626 | করে#2 | vicibus |
+| 626 | বিশ্রাম | quietem |
+| 626 | নেয় | capiebant |
+| 627 | ঘুমায় | quietem | 626 |
+| 627 | দুই | bina | 626 |
+| 627 | বাকিরা | cetera |
+| 627 | সজাগ | servabant |
+| 627 | থাকে | manebant |
+| 627 | প্রহরায় | statione |
+| 628 | যেদিকে | quocumque |
+| 628 | যেদিকে | modo |
+| 628 | দাঁড়াত | Constiterat |
+| 628 | চোখ | spectabat |
+| 628 | থাকত | spectabat |
+| 628 | আয়োর | Io |
+| 628 | দিকে | ad |
+| 629 | পিছনের | aversus |
+| 629 | ফিরে | aversus |
+| 629 | থাকলেও | quamvis |
+| 629 | আয়ো | Io |
+| 629 | চোখের | oculos |
+| 629 | সামনে | ante |
+| 630 | দিনের | Luce |
+| 630 | বেলায় | Luce |
+| 630 | ঘাস | pasci |
+| 630 | খেতে | pasci |
+| 630 | দিত | sinit |
+| 630 | সূর্য | sol |
+| 630 | পৃথিবীর | tellure |
+| 630 | তলায় | sub |
+| 631 | ডুবলে | cum | 630 |
+| 631 | ডুবলে | est | 630 |
+| 631 | বন্দী | claudit |
+| 631 | করে | claudit |
+| 631 | নিরীহ | indigno |
+| 631 | গলায় | collo |
+| 631 | পরাত | circumdat |
+| 631 | শিকল | vincula |
+| 632 | গাছের | arboreis |
+| 632 | পাতা | frondibus |
+| 632 | ও | et |
+| 632 | তিক্ত | amara |
+| 632 | ঘাস | herba |
+| 632 | খেয়ে | pascitur |
+| 633 | বিছানার | toro |
+| 633 | বদলে | proque |
+| 633 | ঘুমাত | incubat | 634 |
+| 633 | মাটিতে | terrae |
+| 633 | ঘাসও | gramen |
+| 633 | থাকত | habenti |
+| 633 | না | non |
+| 634 | পিপাসা | potat |
+| 634 | মিটাত | potat |
+| 634 | নদীর | flumina |
+| 634 | কাদাটে | limosaque |
+| 634 | পানিতে | flumina |
+| 635 | কখনো | cum |
+| 635 | আর্গাসের | Argo |
+| 635 | দুহাত | bracchia |
+| 635 | তুলে | tendere | 636 |
+| 635 | মোনাজাত | supplex |
+| 636 | ভাবে | vellet | 635 |
+| 636 | কোনো | non |
+| 636 | হাত | bracchia |
+| 636 | নাই | non |
+| 636 | নাই | habuit |
+| 636 | যে | quae |
+| 636 | দেখাবে | tenderet |
+| 636 | আর্গাসকে | Argo |
+| 637 | অভিযোগের | queri |
+| 637 | মুখ | ore |
+| 637 | বের | edidit |
+| 637 | হয় | edidit |
+| 638 | হাম্বা | mugitus | 637 |
+| 638 | ডাক | sonos |
+| 638 | শিউরে | pertimuitque |
+| 638 | শিউরে | exterrita |
+| 638 | উঠে | pertimuitque |
+| 638 | উঠে | exterrita |
+| 638 | নিজের | propriaque |
+| 638 | গলার | voce |
+| 638 | আওয়াজে | voce |
+| 638 | আওয়াজে | sonos |
+| 639 | ইনাকাসের | Inachidas | 640 |
+| 639 | তীরে | ripas |
+| 639 | তীরে | ripas | 640 |
+| 639 | আগে | solebat |
+| 639 | খেলত | ludere |
+| 639 | সেখানে | ubi |
+| 639 | যে | ubi |
+| 640 | আসে | Venit | 639 |
+| 640 | পানিতে | unda |
+| 640 | পানিতে | in |
+| 641 | নতুন | novaque | 640 |
+| 641 | শিঙের | cornua |
+| 641 | দেখে | conspexit | 640 |
+| 641 | আতঙ্কে | exsternata |
+| 641 | আতঙ্কে | pertimuit |
+| 641 | কুঁচকে | refugit |
+| 641 | উঠে | refugit |
+| 642 | নায়াদ | Naides |
+| 642 | বোনরা | Naides |
+| 642 | আর | et |
+| 642 | ইনাকাস | Inachus |
+| 642 | চিনতে | ignorant |
+| 642 | চিনতে | ignorat |
+| 642 | পারেনি | ignorant |
+| 642 | পারেনি | ignorat |
+| 643 | অবাক | admirantibus | 644 |
+| 643 | হয় | admirantibus | 644 |
+| 643 | বাছুর | illa |
+| 643 | গায়ে-গায়ে | sequitur |
+| 643 | গায়ে-গায়ে | sequiturque |
+| 643 | ঘেঁষে | sequitur |
+| 643 | ঘেঁষে | sequiturque |
+| 644 | তাদের | patrem | 643 |
+| 644 | তাদের | sorores | 643 |
+| 644 | তাদের | admirantibus |
+| 644 | আদর | tangi |
+| 644 | আশা | patitur |
+| 644 | করে | patitur |
+| 644 | আর | et |
+| 644 | মনোযোগ | offert |
+| 644 | চায় | offert |
+| 645 | বৃদ্ধ | senior |
+| 645 | ইনাকাস | Inachus |
+| 645 | ঘাস | herbas |
+| 645 | ছিঁড়ে | Decerptas |
+| 645 | তুলে | porrexerat |
+| 645 | ধরেন | porrexerat |
+| 646 | আয়ো | illa |
+| 646 | বাবার | patriisque |
+| 646 | হাতের | manus |
+| 646 | তালুতে | palmis |
+| 646 | চুমু | oscula |
+| 646 | দেয় | dat |
+| 647 | চোখের | lacrimas |
+| 647 | পানিও | lacrimas |
+| 647 | আটকে | retinet |
+| 647 | রাখে | retinet |
+| 647 | না | nec |
+| 647 | যদি | si |
+| 647 | শুধু | modo |
+| 647 | শব্দ | verba |
+| 647 | থাকত | sequantur |
+| 648 | নাম | nomenque |
+| 648 | নিয়তি | casusque |
+| 648 | বলে | loquatur |
+| 648 | সাহায্য | opem |
+| 648 | চাইত | oret |
+| 649 | কথা | verbis |
+| 649 | না | pro |
+| 649 | খুর | pes |
+| 649 | ধুলায় | pulvere |
+| 649 | ধুলায় | in |
+| 649 | অক্ষর | Littera |
+| 649 | এঁকে | duxit |
+| 650 | রূপান্তরের | mutati |
+| 650 | রূপান্তরের | corporis |
+| 650 | করুণ | triste |
+| 650 | কাহিনি | indicium |
+| 650 | জানিয়েছিল | indicium |
+| 650 | জানিয়েছিল | peregit |
+| 651 | হায় | Me |
+| 651 | কপাল | miserum |
+| 651 | বলে | exclamat |
+| 651 | উঠলেন | exclamat |
+| 651 | ইনাকাস | Inachus |
+| 651 | গুমরিয়ে | gementis |
+| 651 | উঠা | gementis |
+| 652 | বাছুরের | iuvencae |
+| 652 | শিং | cornibus |
+| 652 | আর | et |
+| 652 | তুষারশীতল | niveae |
+| 652 | গলা | cervice |
+| 652 | ধরে | pendens |
+| 653 | গুঙিয়ে | ingeminat |
+| 653 | বলেছিলেন | ingeminat |
+| 653 | হায় | me |
+| 653 | কপাল | miserum |
+| 653 | তুই | tune |
+| 653 | মেয়ে | nata | 654 |
+| 654 | সারা | omnes | 653 |
+| 654 | দুনিয়ায় | terras |
+| 654 | খুঁজেছি | quaesita | 653 |
+| 654 | তোকে | tu |
+| 654 | পাওয়ার | reperta |
+| 654 | দুঃখটা | luctus | 655 |
+| 655 | না#1 | non | 654 |
+| 655 | পাওয়ার | inventa | 654 |
+| 655 | চেয়ে | levior |
+| 655 | বড় | levior |
+| 655 | তুই | Retices |
+| 655 | কোনো | nec |
+| 655 | কথা | dicta | 656 |
+| 655 | বলিস | Retices |
+| 655 | না#2 | Retices |
+| 655 | আমাদের | nostris |
+| 656 | জবাব | mutua | 655 |
+| 656 | দেয়ার | refers |
+| 656 | ভাষা | dicta |
+| 656 | শুধু | tantum |
+| 656 | বুকের | pectore | 657 |
+| 656 | গভীর | alto |
+| 657 | উঠা | ducis | 656 |
+| 657 | দীর্ঘশ্বাস | suspiria | 656 |
+| 657 | আব্বা | mea |
+| 657 | বলে | verba |
+| 657 | ডাকিস | remugis |
+| 657 | হাম্বা | remugis |
+| 658 | না | ignarus |
+| 658 | জেনে | ignarus |
+| 658 | আমি | ego |
+| 658 | বিয়ের | thalamos |
+| 658 | বিয়ের | taedasque |
+| 658 | ব্যবস্থা | parabam |
+| 658 | করছিলাম | parabam |
+| 659 | স্বপ্ন | spesque |
+| 659 | দেখছিলাম | fuit |
+| 659 | তোর | tibi | 658 |
+| 659 | জামাইয়ের | generi |
+| 659 | আমার | mihi |
+| 659 | নাতিপুতির | nepotum |
+| 660 | এখন | nunc#1 |
+| 660 | বলদ | grege#1 |
+| 660 | বাছুর | grege#2 |
+| 660 | হবে#2 | habendus |
+| 660 | তোর | tibi |
+| 660 | জামাই | vir |
+| 660 | বাচ্চাকাচ্চা | natus |
+| 661 | মৃত্যু | morte |
+| 661 | দুঃখ | dolores |
+| 661 | মুছে | finire |
+| 661 | ফেলব | finire |
+| 661 | উপায়ও | licet |
+| 661 | নাই | Nec |
+| 662 | দেবতাজীবন | deum |
+| 662 | দেবতাজীবন | esse |
+| 662 | খুব | nocet |
+| 662 | দুঃখের | nocet |
+| 662 | মৃত্যুর | leti |
+| 662 | দরজা | ianua |
+| 662 | বন্ধ | praeclusaque |
+| 663 | আমাদের | nostros |
+| 663 | যন্ত্রণা | luctus |
+| 663 | চলতেই | extendit |
+| 663 | থাকবে | extendit |
+| 663 | অনন্ত | aeternum |
+| 663 | কাল | aevum |
+| 664 | বাপ-মেয়ের | maerentem |
+| 664 | শোকের | maerentem |
+| 664 | বিলাপ | Talia |
+| 665 | তারাচোখা | stellatus | 664 |
+| 665 | আর্গাস | Argus | 664 |
+| 665 | আয়োকে | natam |
+| 665 | ছিনিয়ে | ereptamque |
+| 665 | নিয়ে | abstrahit | 666 |
+| 665 | যায় | abstrahit | 666 |
+| 665 | বহুদূরে | procul | 666 |
+| 666 | আরেক | diversa | 665 |
+| 666 | ঘাসের | pascua | 665 |
+| 666 | মাঠে | pascua | 665 |
+| 666 | মাঠে | in | 665 |
+| 666 | উঁচু | sublime |
+| 666 | পাহাড়ের | montis |
+| 667 | চূড়ায় | cacumen | 666 |
+| 667 | বসে | sedens |
+| 667 | বসে | occupat |
+| 667 | গার্ড | speculatur |
+| 667 | দেয় | speculatur |
+| 667 | চারপাশ | partes |
+| 667 | দিকে | partes |
+| 667 | সব | omnes |
+| 668 | দেবতাদের | superum |
+| 668 | শাসক | rector |
+| 668 | আর | ultra |
+| 668 | সইতে | ferre | 669 |
+| 668 | পারেন | potest | 669 |
+| 668 | না | Nec |
+| 668 | আয়োর | Phoronidos |
+| 668 | এত | tanta |
+| 669 | কষ্ট | mala | 668 |
+| 669 | কৃত্তিকাদের | Pleias | 670 |
+| 669 | কৃত্তিকাদের | enixa | 670 |
+| 669 | জন্মানো | partu |
+| 669 | জন্মানো | enixa | 670 |
+| 669 | ছেলে | natumque |
+| 669 | ছেলে | quem |
+| 670 | ডাকেন | vocat | 669 |
+| 670 | মার্কারিকে | quem | 669 |
+| 670 | আর্গাসকে | Argum |
+| 670 | মারার | letoque |
+| 670 | মারার | det |
+| 670 | নির্দেশ | imperat |
+| 670 | দেন | imperat |
+| 670 | দেন | det |
+| 671 | টাইম | mora |
+| 671 | লাগে | est |
+| 671 | শুধু | Parva |
+| 671 | পরতে | sumpsisse | 672 |
+| 671 | পাখাওয়ালা | alas |
+| 671 | স্যান্ডেল | pedibus |
+| 672 | হাতে | manu |
+| 672 | নিতে | sumpsisse |
+| 672 | ঘুমপাড়ানি | somniferam |
+| 672 | জাদুর | potenti | 671 |
+| 672 | লাঠি | virgamque | 671 |
+| 672 | মাথায় | capillis |
+| 672 | পরতে | sumpsisse |
+| 672 | ক্যাপ | tegimenque |
+| 673 | এই | Haec |
+| 673 | সব | Haec |
+| 673 | সাথে | disposuit |
+| 673 | নিয়ে | disposuit |
+| 673 | জিউসের | Iove |
+| 673 | ছেলে | natus |
+| 673 | বাবার | patria |
+| 673 | দুর্গ | arce |
+| 673 | থেকে | ab |
+| 674 | উড়ালে | desilit |
+| 674 | নামে | desilit |
+| 674 | মাটিতে | terras |
+| 674 | মাটিতে | in |
+| 674 | নেমে | Illic |
+| 674 | সরিয়ে | removit |
+| 674 | রাখে | removit |
+| 674 | রাখে | posuit | 675 |
+| 674 | টুপি | tegimenque |
+| 675 | আর | et |
+| 675 | পাখাওয়ালা | pennas |
+| 675 | চপ্পল | pennas |
+| 675 | কেবল | tantummodo |
+| 675 | থাকে | retenta |
+| 675 | জাদুর | virga |
+| 675 | লাঠি | virga |
+| 676 | এইভাবে | Hac |
+| 676 | রাখালের | pastor |
+| 676 | বেশে | ut |
+| 676 | ঘুরে | agit |
+| 676 | বেড়ায় | agit |
+| 676 | বিরান | devia |
+| 676 | মাঠে | rura |
+| 676 | পথে | venit | 677 |
+| 677 | পাওয়া | adductas |
+| 677 | ছাগল | capellas | 676 |
+| 677 | ছাগল | adductas |
+| 677 | চড়ায় | agit | 676 |
+| 677 | আর | et |
+| 677 | বাজায় | cantat |
+| 677 | নলের | avenis |
+| 677 | বাঁশি | avenis |
+| 678 | নতুন | nova |
+| 678 | শব্দ | Voce |
+| 678 | জুনোর | Iunonius |
+| 678 | পাহারাদার | custos |
+| 678 | শুনে | captus |
+| 678 | বলে | ait | 680 |
+| 678 | ওহে | at |
+| 679 | তুমি | tu | 678 |
+| 679 | যে-ই | quisquis |
+| 679 | হও | es |
+| 679 | এই | hoc |
+| 679 | পাথরে | saxo |
+| 679 | বসো | considere |
+| 679 | আমার | mecum |
+| 679 | পাশে | mecum |
+| 680 | ছাগলদের | pecori |
+| 680 | পাবে | neque |
+| 680 | না | neque |
+| 680 | ভালো | fecundior |
+| 680 | চেয়ে | fecundior |
+| 680 | ঘাস | herba | 681 |
+| 680 | এর | ullo |
+| 681 | আর | aptamque |
+| 681 | রাখালের | pastoribus |
+| 681 | এখানে | loco |
+| 681 | আছে | est |
+| 681 | মনের | aptamque |
+| 681 | মতো | aptamque |
+| 681 | ছায়া | umbram |
+| 682 | এটলাসের | Atlantiades |
+| 682 | মেয়ের | Atlantiades |
+| 682 | ছেলে | Atlantiades |
+| 682 | বসে | Sedit |
+| 682 | এটা | multa |
+| 682 | ওটা | multa |
+| 683 | দিন | diem |
+| 683 | দিন | euntem | 682 |
+| 683 | আড্ডা | sermone |
+| 683 | কথা | sermone |
+| 683 | বলে | loquendo | 682 |
+| 683 | জমায় | detinuit |
+| 683 | কাটায় | detinuit |
+| 683 | বাঁশি | iunctisque |
+| 683 | বাঁশি | harundinibus | 684 |
+| 683 | বাজিয়ে | canendo |
+| 684 | নিভাতে | vincere |
+| 684 | চেষ্টা | temptat |
+| 684 | করে | temptat |
+| 684 | দীপ্ত | lumina |
+| 684 | সজাগ | servantia |
+| 684 | চোখ | lumina |
+| 685 | তবে | tamen |
+| 685 | নিদ্রার | somnos |
+| 685 | যুদ্ধ | pugnat |
+| 685 | করেই | pugnat |
+| 685 | দারোয়ান | Ille |
+| 686 | কয়েকটা | parte |
+| 686 | চোখকে | oculorum |
+| 686 | ঠিকই | quamvis |
+| 686 | ঘুমাতে | sopor |
+| 686 | দেয় | receptus |
+| 686 | কিন্তু | tamen | 687 |
+| 687 | অন্য | parte |
+| 687 | জাগিয়ে | vigilat |
+| 687 | রাখে | vigilat |
+| 687 | এবং | quoque |
+| 687 | নলের | fistula | 688 |
+| 687 | বাঁশির | fistula | 688 |
+| 688 | জন্মকথা | ratione |
+| 688 | জন্মকথা | reperta |
+| 688 | জানতে | Quaerit | 687 |
+| 688 | চায় | Quaerit | 687 |
+| 688 | কারণ | namque | 687 |
+| 688 | তা | fistula |
+| 688 | তখনো | nuper |
+| 688 | বেশ | nuper |
+| 688 | নূতন | nuper |
+| 688 | নূতন | reperta#1 | 687 |
+| 689 | দেবতা | deus |
+| 689 | তখন | Tum |
+| 689 | বলেছিল | inquit |
+| 689 | আর্কেডিয়ার | Arcadiae |
+| 689 | শীতল | gelidis |
+| 689 | পাহাড়ে | montibus |
+| 689 | পাহাড়ে | in |
+| 690 | নায়াদ | naias | 691 |
+| 690 | থাকত | fuit | 691 |
+| 690 | এক | una | 691 |
+| 690 | ননাক্রিসের | Nonacrinas |
+| 690 | সবচেয়ে | celeberrima |
+| 690 | বিখ্যাত | celeberrima |
+| 691 | হামাড্রায়াড | hamadryadas | 690 |
+| 691 | পরী | nymphae |
+| 691 | বোনরা | nymphae |
+| 691 | সিরিংক্স | Syringa |
+| 691 | ডাকত | vocabant |
+| 692 | একাধিক | Non |
+| 692 | একাধিক | semel |
+| 692 | বার | semel |
+| 692 | তাকে | illa |
+| 692 | পালাতে | eluserat |
+| 692 | হয়েছিল | eluserat |
+| 692 | স্যাটারদের | satyros |
+| 693 | ছায়াঘেরা | umbrosaque |
+| 693 | অরণ্য | silva |
+| 693 | আর | feraxque |
+| 693 | বন্য | feraxque |
+| 693 | গ্রামের | rus | 694 |
+| 693 | বহু | quoscumque |
+| 693 | দেবতার | deos |
+| 694 | সে | ipsaque |
+| 694 | ভার্জিন | virginitate | 695 |
+| 694 | অর্টিজিয়ার | Ortygiam |
+| 694 | দেবীর | deam | 695 |
+| 695 | ইবাদত | colebat | 694 |
+| 695 | করত | colebat | 694 |
+| 695 | ডায়ানার | Dianae |
+| 695 | জামা | Ritu |
+| 695 | জামা | cincta |
+| 695 | পরিয়ে | cincta |
+| 695 | অনায়াসে | falleret | 696 |
+| 696 | লিটোর | Latonia |
+| 696 | কন্যা | Latonia |
+| 696 | চালিয়ে | falleret |
+| 696 | চালিয়ে | credi |
+| 696 | দেয়া | credi |
+| 696 | যেতো | posset |
+| 696 | শুধুমাত্র | non |
+| 696 | যদি | si |
+| 697 | তার | huic |
+| 697 | ধনুক | arcus |
+| 697 | শিঙের | corneus |
+| 697 | না | non |
+| 697 | ডায়ানার | illi |
+| 697 | সোনার | aureus |
+| 697 | হতো | foret |
+| 698 | তবু | Sic |
+| 698 | তবু | quoque |
+| 698 | ভুল | fallebat |
+| 698 | হতো | fallebat |
+| 698 | লাইসিয়াম | Lycaeo |
+| 698 | পাহাড় | colle |
+| 699 | ফেরার | Redeuntem | 698 |
+| 699 | তাকে | hanc |
+| 699 | দেখে | videt |
+| 699 | মাথায় | caput |
+| 699 | পাইনের | pinuque |
+| 699 | কাঁটা | acuta |
+| 700 | পরা | praecinctus | 699 |
+| 700 | প্যান | Pan | 699 |
+| 700 | বলে | refert |
+| 700 | বলা | referre |
+| 700 | বলা | verba#2 |
+| 700 | বাকি | restabat |
+| 700 | ছিল | restabat |
+| 701 | পালিয়ে | fugisse |
+| 701 | পরীটা | nympham |
+| 701 | পথহীন | avia |
+| 701 | ছুটে | fugisse |
+| 702 | যতক্ষণ | donec |
+| 702 | না | donec |
+| 702 | সামনে | ad |
+| 702 | পড়ে | venerit | 703 |
+| 702 | লেডন | Ladonis |
+| 702 | নদীর | amnem |
+| 702 | শান্ত | placidum |
+| 703 | বালুময় | harenosi | 702 |
+| 703 | স্রোত | amnem | 702 |
+| 703 | পানি | undis |
+| 703 | দেখে | Hic |
+| 703 | সে | illam |
+| 703 | পরী | sorores | 704 |
+| 703 | বোনদের | sorores | 704 |
+| 704 | দোয়া | orasse |
+| 704 | করে#1 | orasse |
+| 704 | যাতে | ut |
+| 704 | তাকে | se |
+| 704 | রূপান্তরিত | mutarent |
+| 704 | করে#2 | mutarent |
+| 704 | দেয় | mutarent |
+| 705 | যখন | cum |
+| 705 | প্যান | Panaque |
+| 705 | ভাবে | putaret |
+| 705 | অবশেষে | iam |
+| 705 | সিরিংক্সকে | Syringa |
+| 705 | পেয়ে | prensam |
+| 705 | গেছে | prensam |
+| 706 | হাতে | tenuisse |
+| 706 | পরীর | nymphae |
+| 706 | শরীরের | corpore |
+| 706 | বদলে | pro |
+| 706 | জলার | palustres |
+| 706 | নল | calamos |
+| 707 | সেখানে | ibi |
+| 707 | যখন | Dumque |
+| 707 | দীর্ঘশ্বাস | suspirat |
+| 707 | ফেলেছিল | suspirat |
+| 708 | বাতাসের | ventos | 707 |
+| 708 | আদরে | motos | 707 |
+| 708 | খাগড়ায় | harundine | 707 |
+| 708 | খাগড়ায় | in | 707 |
+| 708 | বিষাদের | querenti |
+| 708 | বিষাদের | similemque |
+| 708 | সুর | sonum |
+| 708 | বাজে | effecisse |
+| 709 | অদ্ভুত | Arte |
+| 709 | অদ্ভুত | nova |
+| 709 | মিষ্টি | dulcedine |
+| 709 | শব্দে | vocisque |
+| 709 | মুগ্ধ | captum |
+| 709 | হয়ে | captum |
+| 709 | প্যান | deum |
+| 709 | বলেছিল | dixisse | 710 |
+| 710 | তোমার | tecum |
+| 710 | সাথে | tecum |
+| 710 | আমার | mihi |
+| 710 | এই | hoc |
+| 710 | সংগীত | concilium |
+| 710 | থেকে | manebit |
+| 710 | যাবে | manebit |
+| 711 | তখন | ita |
+| 711 | ছোট | disparibus |
+| 711 | বড় | disparibus |
+| 711 | বিভিন্ন | disparibus |
+| 711 | দৈর্ঘ্যের | disparibus |
+| 711 | নল | calamis |
+| 711 | মোম | cerae |
+| 712 | জোড়া | conpagine | 711 |
+| 712 | জোড়া | iunctis |
+| 712 | লাগিয়ে | iunctis |
+| 712 | নাম | nomen |
+| 712 | রাখে | tenuisse |
+| 712 | মেয়েটির | puellae |
+| 712 | নামে | nomen |
+| 713 | সিলিনের | Cyllenius |
+| 713 | ছেলে | Cyllenius |
+| 713 | এই | Talia |
+| 713 | গল্প | Talia |
+| 713 | শোনাতে | dicturus |
+| 713 | চেয়েছিল | dicturus |
+| 714 | দেখে | vidit | 713 |
+| 714 | বন্ধ | succubuisse |
+| 714 | বন্ধ | adopertaque |
+| 714 | সবগুলা | omnes | 713 |
+| 714 | চোখ | oculos |
+| 714 | চোখ | lumina |
+| 715 | কাহিনি | vocem |
+| 715 | বন্ধ | Supprimit |
+| 715 | করে#1 | Supprimit |
+| 715 | তখনি | extemplo |
+| 715 | ঘুম | soporem |
+| 715 | ঘুম | somno | 714 |
+| 715 | গাঢ় | firmatque |
+| 715 | করে#2 | firmatque |
+| 716 | তন্দ্রাবিষ্ট | languida |
+| 716 | চোখের | lumina |
+| 716 | নাড়িয়ে | permulcens |
+| 716 | জাদুর | medicata |
+| 716 | লাঠি | virga |
+| 717 | দেরি | mora |
+| 717 | না | Nec |
+| 717 | বাঁকা | falcato |
+| 717 | তলোয়ারটা | ense |
+| 717 | চালায় | vulnerat |
+| 718 | যেখানে | qua |
+| 718 | ঢুলুঢুলু | nutantem | 717 |
+| 718 | মাথাটা | caput |
+| 718 | লেগেছে | confine |
+| 718 | ঘাড়ে | collo |
+| 718 | মুণ্ডুটা | cruentum |
+| 719 | পাহাড় | saxoque | 718 |
+| 719 | গড়িয়ে | deicit |
+| 719 | পড়ে | deicit |
+| 719 | রক্তে | sanguine |
+| 719 | ভিজে | maculat |
+| 719 | যায় | maculat |
+| 719 | পাথর | rupem |
+| 720 | আর্গাস | Arge |
+| 720 | লাশ | iaces |
+| 720 | সব | tot |
+| 720 | বাতি | lumina |
+| 720 | বাতি | lumen |
+| 720 | নিভে | exstinctum | 721 |
+| 720 | গেছে | exstinctum | 721 |
+| 721 | এক | una |
+| 721 | আঁধার | nox |
+| 721 | রাত্রি | nox |
+| 721 | অধিকার | occupat |
+| 721 | করে | occupat |
+| 721 | নিয়েছে | occupat |
+| 721 | একশ | centumque |
+| 721 | চোখ | oculos |
+| 722 | ক্রোনাসের | Saturnia |
+| 722 | মেয়ে | Saturnia |
+| 722 | জুনো | Saturnia |
+| 722 | এই | hos |
+| 722 | চোখগুলো | hos |
+| 722 | তুলে | Excipit |
+| 722 | তার | suae |
+| 722 | ময়ূরের | volucrisque |
+| 723 | লেজে | pennis | 722 |
+| 723 | লেজে | caudam |
+| 723 | লাগিয়ে | collocat |
+| 723 | সাজিয়েছিলেন | inplet |
+| 723 | তারার | stellantibus |
+| 723 | মতন | stellantibus |
+| 723 | জহরতে | gemmis |
+| 724 | তখনি | Protinus |
+| 724 | ক্রোধ | irae |
+| 724 | দপ | exarsit |
+| 724 | জ্বলে | exarsit |
+| 724 | উঠে | exarsit |
+| 725 | গ্রিক | Argolicae | 726 |
+| 725 | সতিনের | paelicis | 726 |
+| 725 | মন | animoque |
+| 725 | ও | animoque |
+| 725 | চোখের | oculis |
+| 725 | লেলিয়ে | obiecit |
+| 725 | দেন | obiecit |
+| 726 | ভয়ানক | horriferamque | 725 |
+| 726 | ফিউরি | Erinyn | 725 |
+| 726 | হৃদয়ে | pectore |
+| 726 | হৃদয়ে | in |
+| 726 | পুঁতে | condidit | 727 |
+| 726 | দেন | condidit | 727 |
+| 726 | উন্মাদ | caecos |
+| 726 | ভয় | stimulosque |
+| 727 | শঙ্কিত | terruit |
+| 727 | রেফুজির | profugam |
+| 727 | সারা | totum |
+| 727 | পৃথিবী | orbem |
+| 727 | চড়ে | per |
+| 728 | অবশেষে | Ultimus |
+| 728 | দুর্দশা | labori |
+| 728 | দুর্দশা | inmenso |
+| 728 | নীল | Nile |
+| 728 | নদ | Nile |
+| 729 | তোমার | Quem |
+| 729 | এসে | simul |
+| 729 | এসে | tetigit |
+| 729 | তীরের | ripae |
+| 729 | তীরের | margine |
+| 729 | দিকে | in |
+| 729 | হাঁটু | genibus | 730 |
+| 730 | ঢলে | procubuit |
+| 730 | পড়েছিল | procubuit |
+| 730 | ঘাড় | collo |
+| 730 | বাঁকিয়ে | resupinoque |
+| 730 | মুখটা | vultus | 731 |
+| 730 | তুলেছিল | tollens | 731 |
+| 730 | আকাশের | ardua |
+| 731 | তারাদের | sidera |
+| 731 | দিকে | ad |
+| 731 | এছাড়া | solos |
+| 731 | তোলার | tollens |
+| 731 | কিছু | quos |
+| 731 | ছিল | potuit |
+| 732 | গোঙানি | gemitu |
+| 732 | চোখের | lacrimis |
+| 732 | পানি | lacrimis |
+| 732 | আর | et#3 |
+| 732 | শোকাতুর | luctisono |
+| 732 | গম্ভীর | luctisono |
+| 732 | ডাকে | mugitu |
+| 732 | যেন | visa | 733 |
+| 733 | জোভকে | Iove |
+| 733 | নিন্দা | queri |
+| 733 | করে | queri |
+| 733 | কাছেই | cum |
+| 733 | চায় | orare |
+| 733 | দুখের | malorum |
+| 733 | ক্ষান্তি | finemque |
+| 734 | জুপিটার | ille |
+| 734 | তার | suae |
+| 734 | বউয়ের | Coniugis |
+| 734 | গলা | colla |
+| 734 | হাতে | lacertis |
+| 734 | জাপটিয়ে | conplexus |
+| 734 | ধরে | conplexus |
+| 735 | শাস্তির | poenas |
+| 735 | অবসান | finiat |
+| 735 | চেয়ে | rogat |
+| 735 | বলেন | inquit | 736 |
+| 735 | ভয় | metus | 736 |
+| 736 | সরিয়ে | pone |
+| 736 | রাখো | pone |
+| 736 | ভবিষ্যতে | futurum | 735 |
+| 736 | কখনো | numquam |
+| 736 | তোমার | tibi |
+| 736 | দুখের | doloris |
+| 737 | কারণ | causa | 736 |
+| 737 | হবে | erit |
+| 737 | না | numquam | 736 |
+| 737 | স্টিক্সের | Stygias |
+| 737 | জল | paludes |
+| 737 | সাক্ষী | audire |
+| 737 | রেখে | iubet |
+| 737 | বলেছিলেন | iubet |
+| 738 | দেবী | dea |
+| 738 | শান্ত | lenita |
+| 738 | হওয়ায় | Ut |
+| 738 | হওয়ায় | est |
+| 738 | আয়ো | illa |
+| 738 | পেয়েছিল | capit |
+| 738 | পূর্বের | priores |
+| 738 | রূপ | vultus |
+| 739 | আগে | ante |
+| 739 | যা | quod |
+| 739 | ছিল | fuit |
+| 739 | হয় | fitque |
+| 739 | শরীর | corpore |
+| 739 | থেকে | e |
+| 739 | ঝরে | fugiunt |
+| 739 | পড়ে | fugiunt |
+| 739 | লোম | saetae |
+| 740 | থাকে | decrescunt |
+| 740 | না | decrescunt |
+| 740 | শিং | cornua |
+| 740 | চোখ | luminis |
+| 740 | চোখ | orbis |
+| 740 | ছোট | artior |
+| 740 | হয়ে | fit |
+| 740 | আসে | fit |
+| 741 | চোয়াল | rictus |
+| 741 | সংকুচিত | contrahitur |
+| 741 | হয় | contrahitur |
+| 741 | ফিরে | redeunt |
+| 741 | আসে | redeunt |
+| 741 | হাত | manusque |
+| 742 | খুর | ungulaque |
+| 742 | বিভক্ত | dilapsa |
+| 742 | হয়ে | absumitur |
+| 742 | পাঁচ | quinos |
+| 742 | আঙ্গুল | ungues |
+| 743 | গাভী | bove |
+| 743 | রূপের | formae |
+| 743 | কিছুই | nil |
+| 743 | থাকে | superest |
+| 743 | শুভ্রতা | candor |
+| 743 | ছাড়া | nisi |
+| 744 | দুই | duorum |
+| 744 | পা | pedum |
+| 744 | দুপায়ে | pedum |
+| 744 | পরী | nymphe |
+| 744 | খুশি | contenta |
+| 744 | হয় | contenta |
+| 744 | দাঁড়ায় | erigitur | 745 |
+| 745 | গরুর | iuvencae |
+| 745 | ডাক | mugiat | 746 |
+| 745 | কথা | loqui |
+| 745 | বলার | loqui |
+| 745 | সাহস | metuitque |
+| 746 | পায়নি | metuitque | 745 |
+| 746 | ভুলে | intermissa |
+| 746 | থাকা | intermissa |
+| 746 | শব্দ | verba |
+| 746 | ভয়ে | timide |
+| 746 | আনে | retemptat |
+| 747 | দেবী | dea |
+| 747 | এখন | Nunc |
+| 747 | পূজা | colitur |
+| 747 | করে | colitur |
+| 747 | লিনেনপরা | linigera |
+| 747 | সাধুরা | turba |
+| 748 | এপাফাস | Epaphus |
+| 748 | ছেলে | genitus |
+| 748 | হয় | genitus |
+| 748 | জিউসের | magni |
+| 748 | জিউসের | Iovis | 749 |
+| 749 | ছেলে | semine | 748 |
+| 749 | ভাবত | creditur |
+| 749 | মায়ের | parenti |
+| 749 | পাশে | iuncta |
+| 749 | মন্দির | templa | 750 |
+| 749 | হতো | tenet | 750 |
+| 750 | শহরে | urbes | 749 |
+| 750 | ছিল | Fuit |
+| 750 | তার#1 | huic |
+| 750 | সমান | aequalis |
+| 750 | বয়সে | annis |
+| 751 | ও | et | 750 |
+| 751 | মেজাজে | animis | 750 |
+| 751 | সূর্যের | Sole |
+| 751 | ছেলে | satus |
+| 751 | ফাইথন | Phaethon |
+| 751 | একবার | quondam |
+| 751 | সে | Quem |
+| 751 | গর্ব | magna |
+| 751 | গর্ব | superbum | 752 |
+| 752 | করে | loquentem | 751 |
+| 752 | বলছিল | loquentem | 751 |
+| 752 | বাবা | parente |
+| 752 | ফিবাস | Phoeboque |
+| 752 | কোনভাবেই | nec |
+| 753 | ইনাকাসের | Inachides |
+| 753 | নাতি | Inachides |
+| 753 | বলে#1 | ait |
+| 753 | মা | matri |
+| 753 | যা | omnia |
+| 754 | বিশ্বাস | credis |
+| 754 | করিস | credis |
+| 754 | হাবা | demens | 753 |
+| 754 | মিথ্যা | falsi |
+| 754 | বাবা | genitoris |
+| 754 | বড়াই | tumidus |
+| 754 | নিয়ে | imagine |
+| 755 | ফাইথন | Phaethon |
+| 755 | লাল | Erubuit |
+| 755 | হয় | Erubuit |
+| 755 | লজ্জা | pudore |
+| 755 | লুকিয়ে | repressit |
+| 755 | রাখে | repressit |
+| 755 | রাগ | iramque |
+| 756 | এপাফাসের | Epaphi |
+| 756 | অপমান | convicia |
+| 756 | নিয়ে | tulit |
+| 756 | মা | matrem |
+| 756 | ক্লিমিনির | Clymenen |
+| 756 | কাছে | ad |
+| 757 | আরো | magis |
+| 757 | খারাপ | doleas |
+| 757 | মা | genetrix |
+| 757 | বলেছিল | ait |
+| 757 | স্বাধীন | liber |
+| 757 | শক্ত | ferox | 758 |
+| 758 | আমি | ego | 757 |
+| 758 | বলিনি | tacui |
+| 758 | এমন | haec |
+| 758 | জঘন্য | opprobria |
+| 758 | গালি | opprobria |
+| 759 | জবাব | refelli |
+| 759 | দিতে | refelli |
+| 759 | না | non |
+| 759 | পারার | potuisse#2 |
+| 759 | লজ্জার | Pudet | 758 |
+| 760 | যদি | si |
+| 760 | বাবা | stirpe |
+| 760 | আসলেই | modo |
+| 760 | দেবতা | caelesti |
+| 760 | হয়ে | sum |
+| 760 | থাকে | creatus |
+| 760 | তবে | At |
+| 760 | তুমি | tu |
+| 761 | প্রমাণ | notam |
+| 761 | দাও | ede |
+| 761 | পাই | adsere |
+| 761 | স্বর্গে | caelo |
+| 761 | আমার | meque |
+| 761 | দাবি | adsere |
+| 762 | বলে | Dixit |
+| 762 | হাত | bracchia |
+| 762 | ছুঁড়ে | inplicuit |
+| 762 | আঁকড়িয়ে | inplicuit |
+| 762 | ধরে | inplicuit |
+| 762 | মায়ের | materno |
+| 762 | গলা | collo |
+| 763 | নিজের | suum |
+| 763 | ও | Meropisque |
+| 763 | মেরপ্সের | Meropisque |
+| 763 | জীবনের | caput |
+| 763 | মাসিদের | sororum |
+| 764 | বিয়ের | taedasque | 763 |
+| 764 | চায় | oravit |
+| 764 | সত্য | veri |
+| 764 | বাবার | parentis |
+| 764 | সংকেত | signa |
+| 765 | ক্লিমিনি | Clymene |
+| 765 | ক্লিষ্ট | mota | 766 |
+| 765 | ছেলের | Phaethontis |
+| 765 | অপমানে | criminis | 766 |
+| 765 | না | an |
+| 765 | কি | an |
+| 765 | নিজের | sibi | 766 |
+| 766 | বুঝা | Ambiguum | 765 |
+| 766 | যায় | Ambiguum | 765 |
+| 766 | না | Ambiguum | 765 |
+| 766 | ঠিক | Ambiguum | 765 |
+| 766 | দুই | utraque |
+| 766 | হাত | bracchia | 767 |
+| 766 | আসমানে | caelo |
+| 766 | তুলে | porrexit | 767 |
+| 767 | সূর্যের | solis |
+| 767 | আলোর | lumina |
+| 767 | দিকে | ad |
+| 767 | চেয়ে | spectansque |
+| 767 | বলেন | inquit | 768 |
+| 768 | আলোর | iubar |
+| 768 | বৃত্ত | iubar |
+| 768 | কিরণ | radiis |
+| 768 | পরা | insigne |
+| 768 | ঐ | hoc |
+| 768 | দীপ্ত | coruscis |
+| 768 | আমাদেরকে | nos | 769 |
+| 769 | দেখতেছে | videtque |
+| 769 | আমাদের | nos |
+| 769 | শুনতেছে | auditque |
+| 769 | শপথ | iuro |
+| 769 | আব্বু | nate |
+| 770 | যাকে | quem |
+| 770 | দেখতেছিস | spectas |
+| 770 | সে | hoc#1 |
+| 770 | বিশ্ব | orbem |
+| 770 | শাসন | temperat |
+| 770 | করা | temperat |
+| 771 | আলো | Sole |
+| 771 | তোর | te | 770 |
+| 771 | জন্ম | satum |
+| 771 | যদি | Si |
+| 771 | মিথ্যা | ficta |
+| 771 | বলি | loquor |
+| 771 | সে | ipse |
+| 771 | সে | se | 772 |
+| 771 | আমাকে | mihi | 772 |
+| 772 | দেখা | videndum | 771 |
+| 772 | না#1 | neget | 771 |
+| 772 | আমার | nostris |
+| 772 | চোখ | oculis |
+| 772 | কাল | novissima |
+| 772 | আর | novissima |
+| 772 | আলো | lux |
+| 772 | না#2 | novissima |
+| 773 | বাবার | patrios |
+| 773 | বাড়ি | penates |
+| 773 | খুঁজে | nosse |
+| 773 | পেতে | nosse |
+| 773 | তোর | tibi |
+| 773 | দেরিও | longus |
+| 773 | হবে | est |
+| 773 | না | Nec |
+| 774 | যেই | unde |
+| 774 | দেশ | terrae |
+| 774 | থেকে | unde |
+| 774 | উদয় | oritur |
+| 774 | আমাদের | nostrae |
+| 774 | সীমানার | contermina |
+| 774 | পাশে | contermina |
+| 775 | যদি | Si |
+| 775 | মন | animus |
+| 775 | চায় | fert |
+| 775 | গিয়ে | gradere |
+| 775 | সূর্যকে | ipso |
+| 775 | সরাসরি | ab |
+| 775 | জিজ্ঞাস | scitabere |
+| 775 | কর | scitabere |
+| 776 | মায়ের | matris |
+| 776 | এই | talia |
+| 776 | কথায় | talia |
+| 776 | কথায় | dicta | 777 |
+| 776 | ফাইথনের | Phaethon | 777 |
+| 776 | খুশির | laetus |
+| 776 | তুফান | Emicat |
+| 777 | বয়ে | Emicat | 776 |
+| 777 | যায় | Emicat | 776 |
+| 777 | আর | et |
+| 777 | মন | mente |
+| 777 | ভর | concipit |
+| 777 | করে | concipit |
+| 777 | কল্পনা | concipit |
+| 777 | স্বর্গের | aethera |
+| 778 | তক্ষুনি | extemplo | 776 |
+| 778 | ইথিওপিয়া | Aethiopasque |
+| 778 | ছেড়ে | transit | 779 |
+| 778 | অগ্নির | ignibus |
+| 778 | দেশ | positosque |
+| 778 | ইন্ডিয়া | Indos |
+| 779 | পার | transit |
+| 779 | হয় | transit |
+| 779 | আগায় | adit |
+| 779 | বাবার | patriosque |
+| 779 | উদয়াচল | ortus |
