@@ -393,6 +393,8 @@
         if (lineNo != null) attrs += ' data-key="' + lineNo + '"';
       }
       if (r.meter && /^\d+(\+\d+)+$/.test(r.meter)) attrs += ' data-meter="' + r.meter + '"';
+      // a prose passage in a verse text (metre cell গদ্য) runs as prose
+      if (r.meter === 'গদ্য') cls += ' tt-prose-row';
       html += row(cls, esc(r.bn), esc(r.src), r.num, langCls, attrs, lnExtra);
     }
     tbody.innerHTML = html;

@@ -255,7 +255,19 @@ body[data-src-lang="sa"] .tt-table td.it {
 body[data-src-lang="sa"][data-sa-script="deva"] .tt-table td.it {
   font-family: "Noto Serif Devanagari", "Tiro Devanagari Sanskrit", serif;
 }
+/* beside the Bangla, a step smaller, as the Greek is: a long-metre line
+   holds some 24 syllables, and the pair should fit beside the rail */
+@media (min-width: 761px) {
+  body[data-src-lang="sa"] .tt-table td.it {
+    font-size: calc(var(--par-fit, var(--par-fs)) * 0.9);
+    line-height: calc(var(--verse-lh) / 0.9);
+  }
+}
 .sa-script-pending body[data-src-lang="sa"] .tt-table td.it { visibility: hidden; }
+/* a prose passage among the verse (the Mahabharata's openings) wraps,
+   so its length never widens the verse columns */
+.tt-table tr.tt-prose-row td.bn,
+.tt-table tr.tt-prose-row td.it { white-space: normal; }
 
 /* ── Persian column ───────────────────────────────────── */
 .tt-table td.fa {

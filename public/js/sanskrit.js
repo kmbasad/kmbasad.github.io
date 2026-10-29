@@ -221,7 +221,37 @@
     'তপস্বীসহ': 5, 'অরণ্যে': 3, 'কৌরব': 3, 'স্বাগত': 3, 'কোলাহল': 4,
     'থামলে': 2, 'আনন্দে': 3, 'বিনম্রতা': 4, 'বীরত্বে': 3, 'জরাসন্ধ': 4,
     'সুমহান': 4, 'উপহার': 4, 'উপহাস্য': 4, 'বিবর্ণ': 3, 'বিদুরকে': 3,
-    'শারদ্বত': 4, 'কৃপকে': 2, 'পরস্পরে': 4, 'সঞ্জয়কে': 3, 'মৃগয়ায়': 4, 'যুগল': 3
+    'শারদ্বত': 4, 'কৃপকে': 2, 'পরস্পরে': 4, 'সঞ্জয়কে': 3, 'মৃগয়ায়': 4, 'যুগল': 3,
+    'ক্রোধপরায়ণ': 5, 'রাজসূয়ে': 3, 'রাজসূয়ের': 4, 'শরশয্যায়': 4, 'বাণশয্যায়': 3,
+    'লড়ব': 2, 'অবসন্ন': 4, 'বাঁধল': 2, 'ঢুকল': 2, 'বনগামী': 3, 'বনবাসী': 3,
+    'কিরাতরূপী': 4, 'ধনপতি': 3, 'একসাথে': 3, 'ঘোষযাত্রী': 3, 'প্রাণপণে': 3,
+    'অসমর্থ': 4,
+    'বাপকে': 2, 'দীনতায়': 4, 'মোহগ্রস্ত': 4, 'তেজস্বী': 3, 'উপহাস': 4, 'জিততে': 2,
+    'উৎসাহহীন': 5, 'বুদ্ধিসম্মত': 5, 'জানবে': 2, 'দ্বারকাপুরে': 5, 'সুভদ্রাকে': 4,
+    'দ্রৌপদী': 3, 'একবস্ত্রা': 3, 'রজস্বলা': 4, 'পাশুপত': 4, 'ধনঞ্জয়': 4,
+    'সত্যসন্ধ': 4, 'অগম্য': 3, 'কর্ণমন্ত্রে': 4, 'একরথী': 3, 'ধনঞ্জয়ে': 4,
+    'পুত্রবধূ': 4, 'মাধব': 3, 'কেশবকে': 3, 'বাঁধতে': 2, 'কেশব': 3, 'শান্তনব': 4,
+    'লড়লে': 2, 'শিখণ্ডীকে': 4, 'মহারথীরা': 5, 'সংশপ্তকেরা': 5, 'সৌভদ্র': 3,
+    'অভিমন্যুকে': 5,
+    'কৃতবর্মা': 4, 'কৃতবর্মাও': 5, 'মরত': 2, 'একটুও': 3, 'শতরথ': 4,
+    'সূতপুত্র': 4, 'রথহীন': 4, 'নারদের': 4, 'দাশরথি': 4, 'দেবগণ': 4, 'জনগণ': 4,
+    'প্রায়োপবিষ্টকে': 6, 'নিহত': 3, 'সৌবল': 3, 'সহদেবের': 5, 'দর্পভগ্ন': 4,
+    'অসহিষ্ণু': 4, 'ঘুমন্ত': 3, 'দ্রৌপদেয়': 4, 'বীভৎস': 3, 'কলঙ্কের': 4,
+    'পরমাস্ত্র': 4, 'মণিরত্ন': 4, 'পরস্পর': 4, 'চেতনা': 3, 'ছাড়তে': 2,
+    'মহীপতিকে': 5, 'গাবল্গণি': 4, 'মহাবল': 4, 'রাজবংশে': 3, 'বিজয়ীশ্রেষ্ঠ': 5,
+    'শশবিন্দু': 4, 'পুণ্যকর্মা': 4, 'মহারথী': 4, 'বিষ্বগশ্ব': 4, 'যুবনাশ্ব': 4,
+    'বৃহদ্গুরু': 4, 'পরশু': 3, 'বৃহদ্রথ': 4, 'পাণ্ডবদের': 4, 'রাজাদের': 4,
+    'কুরুদের': 4, 'দেবতাদের': 5, 'মুনিদের': 4, 'শিষ্যদের': 4, 'তাঁদের': 3,
+    'কৌরবদের': 4, 'স্বজনদের': 4, 'সোমকদের': 4, 'দেবর্ষি': 3, 'করতে': 2, 'ভরত': 3,
+    'বলবন্ধু': 4, 'আপনার': 3, 'আপনি': 2, 'বেদবিধি': 3, 'শুভকর্মারা': 5,
+    'কর্মকথা': 4, 'একটু': 2, 'দইয়ের': 3,
+    'অনরণ্য': 4, 'কৃতবন্ধু': 4, 'সরলতা': 4, 'ধ্যানযোগের': 4, 'পাপমুক্ত': 3,
+    'ভাবদুষ্ট': 3, 'ব্রাহ্মণগণে': 4,
+    'সুবল': 3, 'জানুজঙ্ঘ': 4, 'নিরামর্দ': 4, 'বৃহদ্বল': 4, 'বৃহৎকেতু': 4,
+    'পরহা': 3, 'মহাবলী': 4, 'মহত্ত্ব': 3, 'মহত্ত্বে': 3, 'কালকে': 2,
+    'রাজর্ষিরা': 4, 'পুনর্ভব': 4, 'অনুক্রমণিকা': 6, 'অনুক্রমণীতে': 6, 'করবে': 2,
+    'ভ্রূণহত্যার': 4, 'স্বর্গগতি': 4, 'দেবর্ষিরা': 4, 'তুলাদণ্ডে': 4,
+    'ভারবত্তায়': 4, 'মহাভারত': 5
   };
   // consonant-led endings that close the syllable before them: কর্‌|লেন,
   // আম্‌|রা, সব্‌|খানে, এক্‌|জন
@@ -233,7 +263,7 @@
     'খানে', 'খানা', 'খানি', 'জন'];
   // …which a stem's last consonant and a bare vowel ending can also spell
   // (ভারত+এ is ভা-র-তে, not ভার্‌-তে): guessed as closing, and marked
-  var AMBIG_END = { 'লে': 1, 'তে': 1, 'কে': 1, 'বে': 1, 'লো': 1, 'তো': 1 };
+  var AMBIG_END = { 'লে': 1, 'তে': 1, 'কে': 1, 'বে': 1, 'লো': 1, 'তো': 1, 'দের': 1 };
   // a stem's last consonant before a vowel ending keeps the vowel before
   // it: ভা-র|তের, ন-গ|রে
   var VOWEL_END = /^[ক-হড়ঢ়য়]়?ে(?:র(?:া|ই|ও)?|ই|ও)?$/;
@@ -275,8 +305,14 @@
     var t = T[i], next = T[i + 1], lastIx = T.length - 1;
     var rest = Array.from(core).slice(next.at).join('');
     var ya = t.n === 1 && BN_YA.test(t.text);
+    // য় after an i-vowel keeps its own (প্রি-য়-জন, ক্ষত্‌-ত্রি-য়-দের)
+    var prev = T[i - 1];
+    if (ya && prev && /[\u09BF\u09C0]/.test(prev.sign || '')) return { c: 1 };
     if (nextSilent || t.coda) return { c: 1 };               // …or carries ং ঃ (অ-তঃ-পর)
-    // before a vowel letter it is that vowel's onset (স-বি, তাঁ-রি, আ-জো)
+    // a cluster keeps its vowel (অল্‌-পো, so অল্‌-পোই)
+    if (t.n > 1) return { c: 1 };
+    // before a vowel letter a single consonant is that vowel's onset
+    // (স-বি, তাঁ-রি, আ-জো)
     if (next.t === 'V') return { c: 0 };
     // before a closing য় the consonant sounds (জ-য়্‌কে)
     if (!ya && next.t === 'B' && next.n === 1 && BN_YA.test(next.text) && i + 1 < lastIx) return { c: 1 };
@@ -381,7 +417,38 @@
   try { if (localStorage.getItem(KEY) === 'deva') script = 'deva'; } catch (e) {}
   document.documentElement.classList.add('sa-script-pending');
 
+  // When the original has to wrap (a narrow screen, a long line), it
+  // wraps only where its quarters meet, as editions print long metres:
+  // the spaces inside a quarter turn non-breaking, the one between them
+  // stays (or, where sandhi runs one word across, a <wbr> opens there).
+  function padaWrap(td) {
+    var meter = td.parentNode.dataset.meter;
+    td.querySelectorAll('wbr.sa-br').forEach(function (e) { e.remove(); });
+    td.normalize();
+    if (!meter) return;
+    var text = td.textContent, br = padaBreaks(text, meter)[0];
+    var tw = document.createTreeWalker(td, NodeFilter.SHOW_TEXT), n, off = 0, at = null;
+    while ((n = tw.nextNode())) {
+      var v = n.nodeValue, out = '';
+      for (var i = 0; i < v.length; i++) {
+        var c = v[i];
+        out += (c === ' ' || c === '\u00A0') ? (off + i === br ? ' ' : '\u00A0') : c;
+      }
+      if (br != null && at == null && br > off && br < off + v.length && !/\s/.test(v[br - off])) {
+        at = { node: n, k: br - off };
+      }
+      n.nodeValue = out;
+      off += v.length;
+    }
+    if (at) {
+      var rest = at.node.splitText(at.k), w = document.createElement('wbr');
+      w.className = 'sa-br';
+      rest.parentNode.insertBefore(w, rest);
+    }
+  }
+
   function render() {
+    document.querySelectorAll('.tt-table td.it .f-sep').forEach(function (el) { el.remove(); });
     document.querySelectorAll('.tt-table td.it .w').forEach(function (span) {
       if (span.dataset.deva == null) {
         var c = span.cloneNode(true);
@@ -390,6 +457,7 @@
       }
       span.textContent = script === 'bn' ? toBn(span.dataset.deva) : span.dataset.deva;
     });
+    document.querySelectorAll('.tt-table tr[data-meter] td.it').forEach(padaWrap);
     document.body.dataset.saScript = script;
     document.documentElement.classList.remove('sa-script-pending');
   }

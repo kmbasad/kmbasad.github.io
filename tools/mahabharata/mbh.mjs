@@ -8,7 +8,8 @@
  *       bombay.indology.info/mahabharata/text/UD/MBhNN.txt) as the page's
  *       table: Bangla empty, the Devanagari, the verse number on a verse's
  *       first line, and each line's quarters ("8+8", "11+12"). Speaker lines
- *       become marker rows, prose stays one row. Never overwrites.
+ *       become marker rows; prose stays one row, its metre cell গদ্য.
+ *       Never overwrites.
  *
  *   node tools/mahabharata/mbh.mjs fill <page.md> <drafts.tsv>
  *       Writes Bangla into the table: each draft line is `verse.line<TAB>bangla`
@@ -106,8 +107,10 @@ function importChapter(file, chapter, out) {
     const first = r.verse !== last;
     last = r.verse;
     const prose = /[A-Z]/.test(r.half);
-    const src = r.text.replace(/\s*;\s*/g, ' ');
-    md.push(`|  | ${src} | ${first ? r.verse : ''} | ${prose ? '' : quarters(r.text)} |`);
+    // `;` parts the quarters: a space where words meet there, nothing
+    // where sandhi joins one word across them (नाथव;त्तदा)
+    const src = r.text.replace(/\s+;\s*|\s*;\s+/g, ' ').replace(/;/g, '');
+    md.push(`|  | ${src} | ${first ? r.verse : ''} | ${prose ? 'গদ্য' : quarters(r.text)} |`);
   }
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, md.join('\n') + '\n');
@@ -140,7 +143,7 @@ function check(page, all) {
   const rows = readRows(fs.readFileSync(page, 'utf8'));
   let ok = 0, faults = 0, empty = 0, prose = 0;
   for (const r of rows) {
-    if (!r.meter) { prose++; continue; }
+    if (!/^\d/.test(r.meter)) { prose++; continue; }      // গদ্য: prose
     const ps = SA.parseMeter(r.meter), want = ps.reduce((a, b) => a + b, 0);
     const problems = [];
     const syl = SA.syllables(r.src);
