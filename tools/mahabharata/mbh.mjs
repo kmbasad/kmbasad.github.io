@@ -17,8 +17,10 @@
  *   node tools/mahabharata/mbh.mjs check <page.md> [--all]
  *       Every line: the Sanskrit's syllables against its quarters, and the
  *       Bangla's অক্ষরবৃত্ত — the same total, each পর্ব ending on a word
- *       where the quarter ends. Lists the faults (--all: every line);
- *       exits 1 when there are any.
+ *       where the quarter ends. Lists the faults, and the lines holding a
+ *       word whose silent vowel the rules guessed (`?`, for the ear; a word
+ *       they get wrong goes in sanskrit.js's BN_LEX). --all: every line.
+ *       Exits 1 when there are faults.
  */
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -65,16 +67,13 @@ const SPEAKER = {
 };
 
 // the quarters of a line: `;` parts a long line's halves in the e-text;
-// an anuṣṭubh line is 8+8, a nine-syllable quarter placed by the word break
+// an anuṣṭubh line is 8+8
 function quarters(src) {
   if (src.includes(';')) return src.split(';').map((p) => SA.syllables(p)).join('+');
   const n = SA.syllables(src);
   if (n === 16) return '8+8';
-  if (n === 17) {
-    let cum = 0;
-    const ends = src.split(/\s+/).map((w) => (cum += SA.syllables(w)));
-    return ends.includes(9) || !ends.includes(8) ? '9+8' : '8+9';
-  }
+  // the extra syllable of a hypermetric line stands in its first quarter
+  if (n === 17) return '9+8';
   return String(n);
 }
 
@@ -158,12 +157,15 @@ function check(page, all) {
       }
     });
     const shape = a.words.map((w) => w.matra).join(' ');
+    // words whose silent vowel the rules had to guess: for the ear
+    const guessed = a.words.filter((w) => w.guess).map((w) => `${w.w}=${w.matra}`);
+    const note = guessed.length ? `\t? ${guessed.join(' ')}` : '';
     if (problems.length) {
       faults++;
-      console.log(`✗ ${r.key}\t${r.meter}\t${r.bn}\n\t[${shape}] ${problems.join('; ')}`);
+      console.log(`✗ ${r.key}\t${r.meter}\t${r.bn}\n\t[${shape}] ${problems.join('; ')}${note}`);
     } else {
       ok++;
-      if (all) console.log(`✓ ${r.key}\t${r.meter}\t${r.bn}`);
+      if (all || note) console.log(`${note ? '?' : '✓'} ${r.key}\t${r.meter}\t${r.bn}${note}`);
     }
   }
   console.log(`\n${page}: ${ok} lines right, ${faults} faults, ${empty} untranslated, ${prose} prose`);
