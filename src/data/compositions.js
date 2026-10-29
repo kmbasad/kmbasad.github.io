@@ -31,6 +31,26 @@ export const compositions = {
       { bg: W2, d: [86, 52, 14, 48], p: UNDER },
     ],
   },
+  // Vyasa ~ after Mondrian: the field of the Kurus a great red plane, two
+  // armies drawn up as black and blue, a small yellow for the charioteer's
+  // counsel between them
+  mahabharata: {
+    label: 'After Mondrian: a red field between two armies for the Mahabharata',
+    sheet: { d: [22, 40], p: [0, 86] },
+    marks: [R, K, Y, B],
+    planes: [
+      { bg: R, d: [0, 0, 22, 64], p: [86, 0, 14, 44] },
+      { bg: W, d: [0, 64, 22, 18], p: UNDER },
+      { bg: K, d: [0, 82, 22, 18], p: [86, 44, 14, 16] },
+      { bg: W, d: [22, 0, 40, 100], p: UNDER },
+      { bg: W2, d: [62, 0, 38, 22], p: UNDER },
+      { bg: Y, d: [62, 22, 12, 14], p: [86, 60, 14, 12] },
+      { bg: G, d: [74, 22, 26, 14], p: UNDER },
+      { bg: W, d: [62, 36, 24, 40], p: UNDER },
+      { bg: B, d: [86, 36, 14, 40], p: [86, 72, 14, 28] },
+      { bg: G2, d: [62, 76, 38, 24], p: UNDER },
+    ],
+  },
   // Ovid — "Composition with Large Blue Plane, Red, Black, Yellow and Gray"
   // (1921): a great blue for the sea-changes, the list beside it
   metamorphoses: {

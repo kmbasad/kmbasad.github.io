@@ -29,7 +29,7 @@
   var MQ = window.matchMedia('(max-width: 760px)');
   var HOLD_MS = 420, SLOP = 10;
   var SRC = ['it', 'en', 'fa', 'tl'];
-  var LANG = { grc: 'গ্রিক', la: 'লাতিন', it: 'ইতালীয়', fa: 'ফারসি', en: 'ইংরেজি' };
+  var LANG = { grc: 'গ্রিক', la: 'লাতিন', it: 'ইতালীয়', fa: 'ফারসি', en: 'ইংরেজি', sa: 'সংস্কৃত' };
   var COL = { en: 'ইংরেজি', tl: 'প্রতিবর্ণ' };
   var BN_DIGITS = '০১২৩৪৫৬৭৮৯';
 

@@ -19,7 +19,8 @@
  *   ---
  *   title: Inferno · Canto I
  *   type:  tercet | ghazal     # tercet = one row per line; ghazal = misras paired
- *   lang:  it | la | grc | fa  # source-column class + script styling
+ *   lang:  it | la | grc | fa | sa  # source-column class + script styling
+ *   keys:  verse               # (Sanskrit) rows keyed verse.line, below
  *   ---
  *
  *   [N] bangla :: original     # [N] (optional) = line/ghazal number, on stanza starts
@@ -42,10 +43,10 @@
   }
 
   var DELIM = '::';
-  var LANG_LABEL = { it: 'Italian', la: 'Latin', grc: 'Greek', fa: 'Persian', en: 'English' };
+  var LANG_LABEL = { it: 'Italian', la: 'Latin', grc: 'Greek', fa: 'Persian', en: 'English', sa: 'Sanskrit' };
   // Latin-script sources share the Italian column styling (Cormorant italic);
   // map the frontmatter lang → the CSS column class actually rendered.
-  var COL_CLASS = { it: 'it', la: 'it', grc: 'it', fa: 'fa', en: 'en' };
+  var COL_CLASS = { it: 'it', la: 'it', grc: 'it', fa: 'fa', en: 'en', sa: 'it' };
 
   // Normalise a word the same way translation-table.js does, so dictionary
   // keys line up with the tokens it looks up at hover time. NFC first:
@@ -91,6 +92,9 @@
   document.body.dataset.srcLang = lang;   // per-script styling of the original (css: Greek)
   var srcLabel = meta.source_label || LANG_LABEL[lang] || lang;
   var noSource = !!(cfg.noSource);
+  // `keys: verse` (the Mahabharata): a number in the # column opens a verse,
+  // the rows after it are its lines, and each row is keyed verse.line
+  var verseKeys = (cfg.keys || meta.keys) === 'verse';
 
   /* ── parse body lines into verse records ───────────────────────── */
   //   record = { num, bn, src, blank, heading }
@@ -154,13 +158,14 @@
         var cells = s.slice(1, -1).split('|').map(function (c) { return unescPipe(c.trim()); });
         if (cells.every(function (c) { return !c; })) { out.push({ blank: true }); continue; }
         var c0 = cells[0] || '';
-        var bn, src, num;
-        if (noSource) { bn = c0; src = ''; num = cells[1] || ''; }
-        else          { bn = c0; src = cells[1] || ''; num = cells[2] || ''; }
+        var bn, src, num, meter;
+        if (noSource) { bn = c0; src = ''; num = cells[1] || ''; meter = cells[2] || ''; }
+        else          { bn = c0; src = cells[1] || ''; num = cells[2] || ''; meter = cells[3] || ''; }
         var mk = markerRecord(bn, src);
         // srcLine: this row's absolute line index in the fetched .md —
         // the dev-only in-browser editor saves an edited verse back here.
-        out.push(mk || { num: num, bn: bn, src: src, srcLine: fmLineCount + i });
+        // meter: an optional fourth cell, the line's quarters ("8+8").
+        out.push(mk || { num: num, bn: bn, src: src, meter: meter, srcLine: fmLineCount + i });
         continue;
       }
 
@@ -324,6 +329,7 @@
     var html = '', nextStart = true, tercet = 0, sectionIdx = 0;
     var pendingSection = null;   // marginSections: heading waiting for its first verse
     var lineNo = null;           // the original's line: the margin's number, else the last + 1
+    var verseLine = 0;           // keys: verse — this row's line within its verse
 
     var nCols = noSource ? 2 : 3;
 
@@ -377,8 +383,16 @@
       // data-key = the original's line number: the key of a line-scoped
       // word-list (the Odyssey) and of the English crib (crib.js)
       var own = r.num != null && /^\d+$/.test(String(r.num).trim()) ? +r.num : null;
-      lineNo = own != null ? own : lineNo != null ? lineNo + 1 : null;
-      if (lineNo != null) attrs += ' data-key="' + lineNo + '"';
+      if (verseKeys) {
+        // a verse's number opens it; its lines are verse.1, verse.2…
+        if (own != null) { lineNo = own; verseLine = 0; }
+        verseLine++;
+        if (lineNo != null) attrs += ' data-key="' + lineNo + '.' + verseLine + '"';
+      } else {
+        lineNo = own != null ? own : lineNo != null ? lineNo + 1 : null;
+        if (lineNo != null) attrs += ' data-key="' + lineNo + '"';
+      }
+      if (r.meter && /^\d+(\+\d+)+$/.test(r.meter)) attrs += ' data-meter="' + r.meter + '"';
       html += row(cls, esc(r.bn), esc(r.src), r.num, langCls, attrs, lnExtra);
     }
     tbody.innerHTML = html;

@@ -19,7 +19,10 @@
  *
  * Config (window.TRANS_CONFIG, shared with md-loader.js):
  *   dictLang: 'la' | 'grc' | 'it' | 'fa' | 'en'   — the source language of this page
- *   meters:   { matra: [8,16], feet: true }   — which toggles to offer
+ *   meters:   { matra: [8,16], feet: true }   — which toggles to offer;
+ *             { akshar: true, pada: true, script: true } on a Sanskrit page
+ *             (sanskrit.js counts: অক্ষরবৃত্ত পর্ব under each পাদ, and
+ *             the Sanskrit in Bangla script or Devanagari)
  *   prev, next                     — ctrl+arrow keys (shown in the reading rail)
  */
 (function () {
@@ -76,6 +79,13 @@
         ['Wiktionary', function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#English'; }]
       ]
     },
+    sa: {
+      wikt: 'Sanskrit',
+      hint: 'সংস্কৃত যেকোনো শব্দে ক্লিক করুন — উইকশনারি থেকে অর্থ আসবে।',
+      links: [
+        ['Wiktionary', function (w) { return 'https://en.wiktionary.org/wiki/' + eu(w) + '#Sanskrit'; }]
+      ]
+    },
     fa: {
       wikt: 'Persian',
       rtl: true,
@@ -121,7 +131,8 @@
       grc: 'গ্রিক',
       it: 'ইতালীয়',
       en: 'ইংরেজি',
-      fa: 'ফারসি'
+      fa: 'ফারসি',
+      sa: 'সংস্কৃত'
     }
   };
   var AVYAY = 'অব্যয়';
@@ -210,6 +221,18 @@
       }
       if (/[lrnm]$/.test(iw)) { add(iw + 'e'); add(iw + 'o'); }  // Dante's apocope: voler, cammin
       if (/[àèéìòù]$/.test(iw)) add(iw.normalize('NFD').replace(/[̀-ͯ]/g, ''));
+    } else if (cfg.dictLang === 'sa') {
+      // the Sanskrit, always in Devanagari (Wiktionary's script): the word
+      // as it stands, then its stem with the commonest endings and the
+      // sandhi'd final -o / -ḥ / -ṃ undone
+      var sk = word.normalize('NFC');
+      add(sk);
+      var V = '\u094D';
+      [[/ं$/, ''], [/ः$/, ''], [/म्$/, ''], [/ो$/, ''], [/ाः$/, ''], [/ान्$/, ''],
+       [/स्य$/, ''], [/ेन$/, ''], [/ाय$/, ''], [/ात्$/, ''], [/े$/, ''], [/ेषु$/, ''],
+       [/ानाम्$/, ''], [/ैः$/, ''], [/ाणाम्$/, ''], [/ेण$/, ''], [/ीं$/, 'ी'], [/ां$/, 'ा']
+      ].forEach(function (r) { if (r[0].test(sk) && sk.length > 2) add(sk.replace(r[0], r[1])); });
+      if (/[ंः]$/.test(sk)) add(sk.slice(0, -1) + V);
     } else if (cfg.dictLang === 'fa') {
       var f = word.replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/ة/g, 'ه');
       add(f);
@@ -534,6 +557,8 @@
 
   /* The visible text of a word span, prosody separators excluded. */
   function spanWord(span) {
+    // a Sanskrit word shown in Bangla script is looked up as written
+    if (span.dataset && span.dataset.deva) return coreWord(span.dataset.deva);
     var clone = span.cloneNode(true);
     clone.querySelectorAll('.m-sep, .f-sep').forEach(function (el) { el.remove(); });
     return coreWord(clone.textContent);
@@ -908,7 +933,8 @@
   /* ── The toggles ────────────────────────────────────────────────────── */
 
   var VERSE_ROW = 'tbody tr:not(.tt-section):not(.tt-marker):not(.tt-title)';
-  var meterOn = { matra: false, feet: false };
+  var meterOn = { matra: false, feet: false, akshar: false, pada: false };
+  var SA = window.Sanskrit;
 
   function applyMatra() {
     var targets = (cfg.meters && cfg.meters.matra) || [8, 16];
@@ -925,6 +951,26 @@
       if (!meterOn.feet) return;
       var breaks = hexBreaks(cleanCellText(cell));
       if (breaks) insertSeps(cell, breaks, 'f-sep', '|');
+    });
+  }
+
+  /* Sanskrit: each row's quarters ride on it as data-meter ("8+8"); the
+     Bangla's অক্ষরবৃত্ত পর্বs are drawn to end where those quarters do. */
+  function applyAkshar() {
+    document.querySelectorAll('.tt-table ' + VERSE_ROW + ' td.bn').forEach(function (cell) {
+      clearSeps(cell, 'm-sep');
+      var meter = cell.parentNode.dataset.meter;
+      if (!meterOn.akshar || !meter || !SA) return;
+      insertSeps(cell, SA.aksharBreaks(cleanCellText(cell), meter), 'm-sep', '/');
+    });
+  }
+
+  function applyPada() {
+    document.querySelectorAll('.tt-table ' + VERSE_ROW + ' td.it').forEach(function (cell) {
+      clearSeps(cell, 'f-sep');
+      var meter = cell.parentNode.dataset.meter;
+      if (!meterOn.pada || !meter || !SA) return;
+      insertSeps(cell, SA.padaBreaks(cleanCellText(cell), meter), 'f-sep', '|');
     });
   }
 
@@ -967,12 +1013,31 @@
       bar.appendChild(chip('লাতিন', 'ড্যাকটিলিক হেক্সামিটার — ৬ পর্ব',
         function (on) { meterOn.feet = on; applyFeet(); }));
     }
+    if (cfg.meters.akshar) {
+      bar.appendChild(chip('বাংলা', 'অক্ষরবৃত্তের পর্ব ভাগ দেখাও — সংস্কৃতের পাদ যেখানে শেষ',
+        function (on) { meterOn.akshar = on; applyAkshar(); }));
+    }
+    if (cfg.meters.pada) {
+      bar.appendChild(chip('সংস্কৃত', 'শ্লোকের পাদ ভাগ দেখাও — অনুষ্টুভে ৮ অক্ষর, ত্রিষ্টুভে ১১',
+        function (on) { meterOn.pada = on; applyPada(); }));
+    }
+    if (cfg.meters.script && SA && SA.setScript) {
+      // the Sanskrit's script: Bangla by default, Devanagari when pressed
+      var sb = chip('দেবনাগরী', 'সংস্কৃত দেবনাগরী লিপিতে দেখাও',
+        function (on) { SA.setScript(on ? 'deva' : 'bn'); });
+      if (SA.getScript() === 'deva') { sb.setAttribute('aria-pressed', 'true'); sb.classList.add('is-on'); }
+      bar.appendChild(sb);
+      // the script redrawn: the quarters drawn again on the new letters
+      document.addEventListener('sa-script', function () { if (meterOn.pada) applyPada(); });
+    }
     if (bar.children.length > 1) inner.insertBefore(bar, inner.firstChild);
 
     /* If the md arrives after a toggle was switched on, redraw. */
     document.addEventListener('md-loader-done', function () {
       if (meterOn.matra) applyMatra();
       if (meterOn.feet) applyFeet();
+      if (meterOn.akshar) applyAkshar();
+      if (meterOn.pada) applyPada();
     });
   }
 

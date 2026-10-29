@@ -1,0 +1,62 @@
+---
+/**
+ * One reading page per chapter of the Mahabharata: the Bangla on the left,
+ * the Sanskrit of the BORI critical edition (Tokunaga–Smith e-text) on the
+ * right, in Bangla script with Devanagari a toggle away (sanskrit.js). One
+ * Sanskrit line is one Bangla line, in অক্ষরবৃত্ত of the same count, its
+ * পর্বs ending where the quarters do; rows are keyed verse.line. Beside the
+ * page's .md: `<part>-crib.tsv` (the literal English) and, where made,
+ * `<part>-words.md` (the word map). The rail's prev/next walk the chapters.
+ */
+import Base from '../../../layouts/Base.astro';
+import BookReader from '../../../components/BookReader.astro';
+import fs from 'node:fs';
+import { translationWorks } from '../../../data/translation-works.js';
+
+export function getStaticPaths() {
+  const work = translationWorks.find((w) => w.slug === 'mahabharata')!;
+  return work.parts!.map((p, i) => ({
+    params: { part: p.slug },
+    props: {
+      work,
+      part: p,
+      prev: i > 0 ? work.parts![i - 1] : null,
+      next: i < work.parts!.length - 1 ? work.parts![i + 1] : null,
+    },
+  }));
+}
+
+const { work, part, prev, next } = Astro.props;
+const href = (p: { slug: string } | null) => (p ? `/translations/mahabharata/${p.slug}/` : '');
+const words = `${part.slug}-words.md`;
+const hasWords = fs.existsSync(`public/translations/mahabharata/${part.slug}/${words}`);
+---
+
+<Base
+  rail
+  section="translations"
+  bodyClass="book-page"
+  styles={['/css/translation-table.css', '/css/book.css']}
+  navTitle={part.title} navParentHref="/translations/mahabharata/" navParentLabel={work.title}
+  footPrev={href(prev) || null}
+  footNext={href(next) || null}
+  prevLabel={prev?.title}
+  nextLabel={next?.title}
+>
+  <Fragment slot="head">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <BookReader title={part.title} work={work.title}
+    config={{
+      src: `${part.slug}.md`,
+      ...(hasWords ? { dict: words } : {}),
+      dictLang: 'sa',
+      meters: { akshar: true, pada: true, script: true },
+      marginSections: true,
+      toc: '/translations/mahabharata/',
+      prev: href(prev),
+      next: href(next),
+    }}
+  />
+</Base>

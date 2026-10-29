@@ -243,6 +243,20 @@ body[data-src-lang="grc"] .tt-table td.it {
   }
 }
 
+/* ── Sanskrit column ──────────────────────────────────── */
+/* The Mahabharata's Sanskrit, upright: in Bangla script by default, in the
+   Bangla's own face a shade lighter; in Devanagari when the reader asks
+   (sanskrit.js sets data-sa-script). Hidden for the instant before the
+   script is set, so the Devanagari never flashes. */
+body[data-src-lang="sa"] .tt-table td.it {
+  font-family: var(--bn-font);
+  font-style: normal;
+}
+body[data-src-lang="sa"][data-sa-script="deva"] .tt-table td.it {
+  font-family: "Noto Serif Devanagari", "Tiro Devanagari Sanskrit", serif;
+}
+.sa-script-pending body[data-src-lang="sa"] .tt-table td.it { visibility: hidden; }
+
 /* ── Persian column ───────────────────────────────────── */
 .tt-table td.fa {
   color: var(--tt-ink-source);
@@ -872,6 +886,14 @@ body[data-src-lang="grc"] .tt-table td.it {
     font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
     font-style: italic;
     font-size: 1.32rem;
+  }
+  body[data-src-lang="sa"] .vh-it {
+    font-family: var(--bn-font);
+    font-style: normal;
+    font-size: 1.2rem;
+  }
+  body[data-src-lang="sa"][data-sa-script="deva"] .vh-it {
+    font-family: "Noto Serif Devanagari", "Tiro Devanagari Sanskrit", serif;
   }
   body[data-src-lang="grc"] .vh-it {
     font-family: "GFS Didot", "Noto Serif", Georgia, serif;

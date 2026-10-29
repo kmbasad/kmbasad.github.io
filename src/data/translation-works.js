@@ -39,6 +39,14 @@ export const translationWorks = [
     ],
   },
   {
+    slug: 'mahabharata',
+    title: 'ব্যাসের মহাভারত',
+    // the critical edition's parvans and chapters, one page a chapter
+    parts: [
+      { slug: 'adi-1', title: 'আদিপর্ব: প্রথম অধ্যায়' },
+    ],
+  },
+  {
     slug: 'metamorphoses',
     title: 'অভিডের মেটামর্ফোসিজ',
     parts: [

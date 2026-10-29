@@ -103,6 +103,8 @@ const cfg = hasCrib ? { ...config, crib: cribName } : config;
 <script is:inline define:vars={{ cfg }}>
   window.TRANS_CONFIG = cfg;
 </script>
+{/* the Sanskrit's scripts and metres, before book.js counts on them */}
+{cfg.dictLang === 'sa' && <script is:inline src="/js/sanskrit.js"></script>}
 <script is:inline src="/js/md-loader.js"></script>
 <script is:inline src="/js/translation-table.js"></script>
 <script is:inline src="/js/book.js"></script>
