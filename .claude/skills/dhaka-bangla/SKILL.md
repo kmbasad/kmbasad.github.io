@@ -173,6 +173,8 @@ standard form with several rows has several readings, and the sentence decides b
   - **Which words:** any word a Dhaka reader today would not know (সানবেনিতো, মাইটার, ডুশ, an old coin, an Ottoman title, the philosophers' Latin).
   - **How, the auto-da-fé way [owner]:** the word in ‘…’, then ", মানে …," with a few words, inside the sentence.
     For example: "একটা সুন্দর ‘অতো-দা-ফে’, মানে ধর্মদ্রোহীদের প্রকাশ্যে পুড়ায়ে মারার উৎসব, উপহার দেয়ার…". Never a footnote.
+    Now and then the meaning goes in brackets: ‘সানবেনিতো’ (ইনকুইজিশনের হলুদ জোব্বা) [owner], "ব্র্যাকেটের মধ্যেও
+    থাকতে পারে মাঝে মাঝে". Use brackets where a মানে-clause would clog the sentence, as in a list or a short line.
   - **Once:** the word goes in ‘…’ that first time; every later use is bare.
   - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ), and names.
 - **A foreign rite, title or thing gets its meaning beside it [owner]:** his own "জয়ের জন্য
