@@ -19,8 +19,9 @@ __pycache__/
 # agents (definitions, notebooks, plans, session transcripts); .claude/agents/*.md are
 # symlinks into agents/<name>/
 agents/
-# Claude Code: skills, agent links, settings
-.claude/
+# Claude Code: agent links and settings stay private; skills are public
+.claude/*
+!.claude/skills/
 CLAUDE.md
 AGENTS.md
 plan.md
