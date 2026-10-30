@@ -33,7 +33,7 @@ The rules he has set most firmly, to check any text against:
 10. **Plurals and articles:** no **-গুলো** (reword; -গুলা rarely). **-টা** only when it is really needed.
 11. **In speech, না** for নও/নই/নয়.
 12. **Words:** words today's Dhaka uses, not old bookish ones (সহিস, সরাইখানা → হোটেল). Everyday English loans are fine (ব্রেড).
-13. **Bangladeshi spelling:** **খিদা, ইচ্ছা, উঠান, পিছন**.
+13. **Bangladeshi spelling, never the Indian:** **খিদা, ইচ্ছা, মুক্তা, পূজা, উল্টা, পুরানো, টুকরা, উঠান, পিছন, পনের, একশ**.
 14. **Long sentences:** a long sentence stays one sentence, unknotted into Bangla word order.
 15. **Punctuation:** **‘curly quotes’**, never italics.
 
@@ -129,7 +129,16 @@ standard form with several rows has several readings, and the sentence decides b
 - **The Kolkata -এ ending gives way to the Bangladeshi -আ:**
   - **খিদা, not খিদে [owner]:** "খিদা বা ক্ষুধা দুটাই হবে, তবে খিদে না". ক্ষুধা is fine where the register is higher.
   - **The same pair elsewhere [claude]:** ইচ্ছা, মিথ্যা, দিশাহারা, ফিতা, নাস্তা, পূজা, ভিখারি.
-- **উঠান, পিছন [owner].** The -ও ending (পুরোনো/পুরানো, টুকরো/টুকরা, মুক্তো/মুক্তা) is [open]; leave it.
+- **The Kolkata -ো ending gives way to -া too [owner]:** "মুক্তো পূজো খিদে টাইপের ইন্ডিয়ানা কখনো করা
+  যাবে না".
+  - **Words:** মুক্তা, উল্টা, পুরানো, পুরা, পুরাপুরি, টুকরা, বুড়া, কৌটা, ধুলা, মুঠা, ঠুনকা.
+  - **Numbers:** পনের, ষোল, সতের, একশ, দুইশ, তিনশ.
+  - **Left as they are:** ভালো, কালো, আলো, কোনো, কখনো, মতো, the -ানো verbal nouns and imperatives like চলো, all standard in Bangladesh too.
+  - **বারো stays [claude]:** বার also means "times".
+- **উঠান, পিছন [owner].**
+- **যুক্তবর্ণ wherever it can be [owner]:** "যথাসম্ভব যুক্তবর্ণ করতে হবে". A foreign word's consonant cluster is
+  written as one: আনাব্যাপ্টিস্ট (not আনাব্যাপটিস্ট), ট্রান্সিলভানিয়া, ইগ্নাশিয়াস, মাস্কারেনেস, পাঁগ্লস.
+  Leave it apart only where Bangla has no usable conjunct (ইনকুইজিটর, ডিকডর্ফ).
 - **চন্দ্রবিন্দু:**
   - **Inside a word, it stays [owner]:** পৌঁছা, কাঁদা, হাঁটা, বাঁচা, চাঁদ, পাঁচ.
   - **The honorific one goes [owner]:** তার, তাকে, তারা, তাদের, যার, যাকে, যারা, for তুমি, আপনি and তুই
@@ -290,6 +299,8 @@ standard form with several rows has several readings, and the sentence decides b
   - idioms read as idioms; ইয়ে.
 - **2026-10-30, names:** characters closer to the French (পাঁগ্লস, কাকাঁবো, ভাঁদেরদাঁদুর); থান্ডার kept;
   real people and known places in their established Bangla form.
+- **2026-10-30, chapter 4:** no Indian -ো spellings (মুক্তা, উল্টা, পুরানো, টুকরা, পনের, একশ); যুক্তবর্ণ
+  wherever it can be; ডুশ kept.
 - **2026-10-30, the conversion:** Candide converted with this skill gave the [claude] rows:
   রয়েছে → আছে, the blessing's করুক, the speech clashes and the homographs.
 
