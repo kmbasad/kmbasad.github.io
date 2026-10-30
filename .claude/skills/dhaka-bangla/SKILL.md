@@ -171,7 +171,8 @@ standard form with several rows has several readings, and the sentence decides b
 - **The first use of an unfamiliar foreign word carries its meaning [owner]:** "সব সময় অল্প পরিচিত বিদেশি শব্দের
   প্রথম ব্যবহারে একটা ছোট অর্থ বাক্যে জুড়ে দিতে হবে".
   - **Which words:** any word a Dhaka reader today would not know (সানবেনিতো, মাইটার, ডুশ, an old coin, an Ottoman title, the philosophers' Latin).
-  - **How:** a few words inside the sentence itself, never a footnote. Either a modifier before the word, or ", মানে …," after it.
+  - **How, the auto-da-fé way [owner]:** the word in ‘…’, then ", মানে …," with a few words, inside the sentence.
+    For example: "একটা সুন্দর ‘অতো-দা-ফে’, মানে ধর্মদ্রোহীদের প্রকাশ্যে পুড়ায়ে মারার উৎসব, উপহার দেয়ার…". Never a footnote.
   - **Once:** the word goes in ‘…’ that first time; every later use is bare.
   - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ), and names.
 - **A foreign rite, title or thing gets its meaning beside it [owner]:** his own "জয়ের জন্য
