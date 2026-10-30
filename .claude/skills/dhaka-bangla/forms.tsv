@@ -733,28 +733,28 @@
 কুড়ছ	কুড়তেছ	কোড়া	prog.2	accepted	0
 কুড়ছে	কুড়তেছে	কোড়া	prog.3	accepted	0
 কুড়ছেন	কুড়তেছেন	কোড়া	prog.h	accepted	0
-খেলে	খাইলে	খাওয়া	cond	accepted	1
+খেলে	খেলে	খাওয়া	cond	owner	1
 খাব	খাব	খাওয়া	fut.1	owner	1
 খাবে	খাবা	খাওয়া	fut.2	accepted	2
 খাবে	খাবে	খাওয়া	fut.3	accepted	2
-খেতাম	খাইতাম	খাওয়া	hab.1	accepted	2
+খেতাম	খেতাম	খাওয়া	hab.1	owner	2
 খেতে	খাইতা	খাওয়া	hab.2	accepted	25
-খেত	খাইত	খাওয়া	hab.3	accepted	0
-খেতো	খাইত	খাওয়া	hab.3	accepted	0
-খেতেন	খাইতেন	খাওয়া	hab.h	accepted	0
-খেতিস	খাইতি	খাওয়া	hab.t	accepted	0
-খেতে	খাইতে	খাওয়া	inf	accepted	25
+খেত	খেত	খাওয়া	hab.3	owner	0
+খেতো	খেত	খাওয়া	hab.3	owner	0
+খেতেন	খেতেন	খাওয়া	hab.h	owner	0
+খেতিস	খেতিস	খাওয়া	hab.t	owner	0
+খেতে	খেতে	খাওয়া	inf	owner	25
 খাইনি	খাই নাই	খাওয়া	neg.1	accepted	0
 খাওনি	খাও নাই	খাওয়া	neg.2	accepted	0
 খায়নি	খায় নাই	খাওয়া	neg.3	accepted	0
 খাননি	খান নাই	খাওয়া	neg.h	accepted	0
 খাসনি	খাস নাই	খাওয়া	neg.t	accepted	0
-খেলাম	খাইলাম	খাওয়া	past.1	accepted	1
+খেলাম	খেলাম	খাওয়া	past.1	owner	1
 খেলে	খাইলা	খাওয়া	past.2	accepted	1
-খেল	খাইল	খাওয়া	past.3	accepted	7
-খেলো	খাইল	খাওয়া	past.3	accepted	0
-খেলেন	খাইলেন	খাওয়া	past.h	accepted	1
-খেলি	খাইলি	খাওয়া	past.t	accepted	0
+খেল	খেল	খাওয়া	past.3	owner	7
+খেলো	খেল	খাওয়া	past.3	owner	0
+খেলেন	খেলেন	খাওয়া	past.h	owner	1
+খেলি	খেলি	খাওয়া	past.t	owner	0
 খেয়েছি	খাইছি	খাওয়া	perf.1	accepted	1
 খেয়েছ	খাইছ	খাওয়া	perf.2	accepted	0
 খেয়েছে	খাইছে	খাওয়া	perf.3	accepted	1
@@ -3580,28 +3580,28 @@
 পরছ	পরতেছ	পরা	prog.2	accepted	0
 পরছে	পরতেছে	পরা	prog.3	accepted	0
 পরছেন	পরতেছেন	পরা	prog.h	accepted	0
-পেলে	পাইলে	পাওয়া	cond	accepted	7
+পেলে	পেলে	পাওয়া	cond	owner	7
 পাব	পাব	পাওয়া	fut.1	owner	4
 পাবে	পাবা	পাওয়া	fut.2	accepted	4
 পাবে	পাবে	পাওয়া	fut.3	accepted	4
-পেতাম	পাইতাম	পাওয়া	hab.1	accepted	1
+পেতাম	পেতাম	পাওয়া	hab.1	owner	1
 পেতে	পাইতা	পাওয়া	hab.2	accepted	7
-পেত	পাইত	পাওয়া	hab.3	accepted	0
-পেতো	পাইত	পাওয়া	hab.3	accepted	0
-পেতেন	পাইতেন	পাওয়া	hab.h	accepted	0
-পেতিস	পাইতি	পাওয়া	hab.t	accepted	0
-পেতে	পাইতে	পাওয়া	inf	accepted	7
+পেত	পেত	পাওয়া	hab.3	owner	0
+পেতো	পেত	পাওয়া	hab.3	owner	0
+পেতেন	পেতেন	পাওয়া	hab.h	owner	0
+পেতিস	পেতিস	পাওয়া	hab.t	owner	0
+পেতে	পেতে	পাওয়া	inf	owner	7
 পাইনি	পাই নাই	পাওয়া	neg.1	accepted	1
 পাওনি	পাও নাই	পাওয়া	neg.2	accepted	0
 পায়নি	পায় নাই	পাওয়া	neg.3	accepted	1
 পাননি	পান নাই	পাওয়া	neg.h	accepted	1
 পাসনি	পাস নাই	পাওয়া	neg.t	accepted	0
-পেলাম	পাইলাম	পাওয়া	past.1	accepted	6
+পেলাম	পেলাম	পাওয়া	past.1	owner	6
 পেলে	পাইলা	পাওয়া	past.2	accepted	7
-পেল	পাইল	পাওয়া	past.3	accepted	16
-পেলো	পাইল	পাওয়া	past.3	accepted	0
-পেলেন	পাইলেন	পাওয়া	past.h	accepted	7
-পেলি	পাইলি	পাওয়া	past.t	accepted	0
+পেল	পেল	পাওয়া	past.3	owner	16
+পেলো	পেল	পাওয়া	past.3	owner	0
+পেলেন	পেলেন	পাওয়া	past.h	owner	7
+পেলি	পেলি	পাওয়া	past.t	owner	0
 পেয়েছি	পাইছি	পাওয়া	perf.1	accepted	5
 পেয়েছ	পাইছ	পাওয়া	perf.2	owner	1
 পেয়েছে	পাইছে	পাওয়া	perf.3	accepted	4
@@ -5603,13 +5603,13 @@
 যাব	যাব	যাওয়া	fut.1	owner	20
 যাবে	যাবা	যাওয়া	fut.2	accepted	11
 যাবে	যাবে	যাওয়া	fut.3	accepted	11
-যেতাম	যাইতাম	যাওয়া	hab.1	accepted	2
+যেতাম	যেতাম	যাওয়া	hab.1	owner	2
 যেতে	যাইতা	যাওয়া	hab.2	accepted	27
-যেত	যাইত	যাওয়া	hab.3	accepted	12
-যেতো	যাইত	যাওয়া	hab.3	accepted	0
-যেতেন	যাইতেন	যাওয়া	hab.h	accepted	1
-যেতিস	যাইতি	যাওয়া	hab.t	accepted	0
-যেতে	যাইতে	যাওয়া	inf	accepted	27
+যেত	যেত	যাওয়া	hab.3	owner	12
+যেতো	যেত	যাওয়া	hab.3	owner	0
+যেতেন	যেতেন	যাওয়া	hab.h	owner	1
+যেতিস	যেতিস	যাওয়া	hab.t	owner	0
+যেতে	যেতে	যাওয়া	inf	owner	27
 যাইনি	যাই নাই	যাওয়া	neg.1	accepted	0
 যাওনি	যাও নাই	যাওয়া	neg.2	accepted	0
 যায়নি	যায় নাই	যাওয়া	neg.3	accepted	3

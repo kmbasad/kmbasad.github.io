@@ -56,7 +56,9 @@ def findings(text, forms, words):
         core, enc = w, ''
         if w not in forms and w[-1:] in ('ই', 'ও') and w[:-1] in forms:
             core, enc = w[:-1], w[-1]
-        if HON.match(w):
+        if 'গুলো' in w:
+            yield 'check', w, 'reword it away (সব …, এসব, -রা), or -গুলা now and then'
+        elif HON.match(w):
             yield 'replace', w, w.replace('ঁ', '', 1) + ' (only sarcastic honour keeps the chandrabindu)'
         elif OE.match(w):
             yield 'replace', w, 'উনা' + w[2:]

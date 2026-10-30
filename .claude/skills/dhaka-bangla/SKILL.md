@@ -61,10 +61,10 @@ would be read as a perfect. Everything else follows from that.
 | simple past | করল, বলল, হলো | **করল, বলল, হল** (no ো) | [owner] |
 | simple past, তুমি | করলে | **করলা** (when তুমি is the subject) | [accepted] |
 | past of আসা | এল, এলেন, এলাম | **আসল, আসলেন, আসলাম** | [accepted] |
-| past of খাওয়া, পাওয়া | খেল, পেল, খেলাম | **খাইল, পাইল, খাইলাম** | [accepted] |
+| past of খাওয়া, পাওয়া | খেল, পেল, খেলাম | **খেল, পেল, খেলাম** as standard; খাইল/পাইল only for a reason (below) | [owner] |
 | habitual past | করত, হতো | **করত, হত** (no ো) | [owner] |
 | habitual past, তুমি | করতে | **করতা** (when তুমি is the subject) | [accepted] |
-| habitual of যাওয়া, খাওয়া, পাওয়া | যেত, খেত, পেত | **যাইত, খাইত, পাইত** | [accepted] |
+| habitual of যাওয়া, খাওয়া, পাওয়া | যেত, খেত, পেত | **যেত, খেত, পেত**; যাইত now and then, where he wants it more spoken | [owner]: "বেশির ভাগ সময় আমি যেতই বলি, মাঝে মাঝে যাইত যেখানে একটু বেশি কলোকুয়াল হতে ইচ্ছা করবে" |
 | future, আমি | করব, বলব | **করব, বলব** (no ো) | [owner] |
 | future of দেওয়া, নেওয়া | দেব, দেবে, নেব | **দিব, দিবে, নিব** | [owner] |
 | future, তুমি | করবে | **করবা** (when তুমি is the subject) | [accepted] |
@@ -73,12 +73,18 @@ would be read as a perfect. Everything else follows from that.
 | নেই | নেই | **নাই** | [accepted] |
 | রয়েছে meaning "is", "there is" | রয়েছে | **আছে** (রইছে only for "stayed") | [claude] |
 | a blessing or wish | খোদা … করুন | **করুক**, not আপনি's করেন | [claude] |
-| infinitive | করতে, হতে, যেতে | করতে, হতে; যেতে → **যাইতে**, খেতে → **খাইতে**, পেতে → **পাইতে** | [accepted]; হতে, not হইতে [owner] |
+| infinitive, conditional | করতে, হতে, যেতে, খেতে, পেলে | unchanged: **যেতে, খেতে, পেতে, পেলে** (not যাইতে, খাইতে) | [owner], following his যেত/পেল/খেল; হতে, not হইতে |
 | verbal noun | দেওয়া, নেওয়া | **দেয়া, নেয়া** | [accepted] |
 | first person present of দেওয়া, নেওয়া | দিই, নিই | **দেই, নেই** | [accepted] |
 | তুমি present | আছ, করো | **আছ, করো** (no ো added to আছ) | [owner] |
 
 - **The owner's spelling [owner]:** no ো-কার added to an ending: করল, করত, করব, করছ, আছ.
+- **The ই-forms are seasoning, not the dish [owner]:** যাইত, খাইল, পাইল and খাইতে are Dhaka, but he
+  uses them only now and then, for a more spoken touch. Write the standard যেত, খেল, পেল and
+  খেতে by default. The perfects খাইছে, পাইছে and দিছে stay, since they are the core Dhaka perfect.
+- **Sound decides too [owner]:** he kept "দেখতে পাইল" right before "পাংলস" for the echo
+  (পাইল/পাংলস, and "piles" under it). Where a form makes a pun or an echo, keep it, even
+  against the default, and don't flatten it on a later pass.
 - **তুই [accepted, use open]:** the paradigm is in `forms.tsv`: করিস, করতেছিস, করছিস, করলি, করতি,
   করবি, কর, করিস নাই; আয়, যা, দে, নে. Where তুই belongs (master to servant, insults, close
   friends) is [open]. Follow the source text's own intimacy, and when unsure keep তুমি.
@@ -110,9 +116,26 @@ Look at the subject.
 - **People:** গিন্নি → বউ; ঝি → কাজের মেয়ে.
 - **Only when the sense fits:** ভারি → খুব (only when it means "very"; ভারী = heavy stays);
   বটে → ঠিকই; বৈকি → অবশ্যই; দিব্যি → বেশ; বাছা → বাবা (as a form of address).
+- **-গুলো, -গুলা [owner]:** "I never say গুলো, I say গুলা; গুলা doesn't sound good either, so
+  mostly I avoid the whole thing." His own fix: দুর্গগুলোর মধ্যে সবচেয়ে সুন্দর → **সব দুর্গের মধ্যে**
+  সবচেয়ে সুন্দর. Reword: use সব + noun; লোকেরা/লোকজন for people; এসব/ওসব/সেসব/যেসব for
+  এগুলো/সেগুলো; or a bare noun where the plural is clear. Where a marker is really needed,
+  write **-গুলা**, "মাঝে মাঝে… তবে অনেক বেশি না". Never write -গুলো.
 - **-টি → -টা:** একটি → একটা, দুটি → দুইটা, তিনটি → তিনটা, প্রতিটি → প্রতিটা, লোকটি → লোকটা. But রুটি, মাটি and
   খাঁটি are words, not -টি.
 - **Left as they are:** কোথায়, এখানে, সেখানে, হ্যাঁ, হুজুর, খোদা.
+- **Titles and names [owner]:**
+  - **ব্যারনেস** is the main word; ব্যারনপত্নী only in mockery, as Pangloss's "সম্ভাব্য সব
+    ব্যারনপত্নীর মধ্যে সেরা ব্যারনপত্নী".
+  - **কুনেগোঁদ**, not কুনেগোন্দ ("সব জায়গায়"). The rule behind it, that French nasal
+    vowels take a চন্দ্রবিন্দু as in কাঁদিদ and মার্তাঁ, is [claude]. পাংলস stays as it is, since
+    he hasn't asked for পাঁগ্লস.
+  - **অধিধর্মবিশ্বগাধাতত্ত্ব** is his own word for métaphysico-théologo-cosmolonigologie. It shows the
+    principle for an author's mock-learned coinage: keep it pompous, one compound, with the
+    plain insult (গাধা) hidden inside, where the original hides it.
+- **পিছন, not পেছন [owner].**
+- **Words coined by an earlier draft may stay [owner]:** he kept আড়ালপর্দা for paravent when
+  offered ভাঁজ-করা পর্দা. Don't replace a working coinage only because it is new.
 - **Added while converting Candide [claude]** (`words.tsv` lists them with status `claude`):
   - **Numbers:** দুটো → দুইটা, তিনটে → তিনটা.
   - **Kolkata words:** ভাইপো → ভাতিজা, মাইনে → বেতন, পণ্ডিতমশাই → মাস্টার সাহেব, পাঠশালা → স্কুল, ছুতোর → কাঠমিস্ত্রি.
@@ -182,6 +205,8 @@ use it inside speech. Otherwise:
 
 - বলতেছি, করতেছি (confirmed above)
 - দাওনাই, written joined
+- এড়ায়ে ("এড়ায়া না বলে এড়ায়ে বলি"): the -আনো conjunctive as -আয়ে in his speech, not the
+  village -আয়া. It is not yet a rule for prose (দেখিয়ে and হারিয়ে stay).
 - পুরাটা (পুরোটা)
 - একখানা: he noted "একখানা শুনতে ভালো" on a sentence, but in his own rewrite of it chose একটা.
   [open]: ask before preferring -খানা.
@@ -196,6 +221,9 @@ use it inside speech. Otherwise:
   it was.
 - 2026-10-30: from his notes on Candide's review page: words must be familiar today (সহিস,
   আস্তাবল out); উঠান; the plain তার for everyone, তাঁর only as sarcasm.
+- 2026-10-30: his review of Candide chapter 1. যেত, পেল and খেল by default, with the ই-forms
+  only for colour; ব্যারনেস; কুনেগোঁদ; পিছন; no -গুলো, and -গুলা only sparingly; অধিধর্মবিশ্বগাধাতত্ত্ব;
+  keep a form for its sound; keep আড়ালপর্দা.
 - 2026-10-30: Candide converted with this skill (first pass by script, then every sentence
   read). That gave the [claude] rows: রয়েছে → আছে, the blessing's করুক, the speech clashes,
   the homographs, and the words and spellings above. They await his reading of the draft.
