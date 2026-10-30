@@ -175,7 +175,11 @@ standard form with several rows has several readings, and the sentence decides b
     original". The word goes in ‘…’ with its meaning in brackets right after: ‘সানবেনিতো’ (ইনকুইজিশনের দণ্ডিতদের
     হলুদ জোব্বা), ‘ডুশ’ (এনিমা).
     - A case ending stays outside the bracket, on the word or its noun: ‘থিয়েটাইন’ সন্ন্যাসীকে (ইতালির এক ক্যাথলিক সংঘের).
-    - Where the meaning has already become part of the sentence as Bangla, it stays there: his own "জয়ের জন্য খোদা-বন্দনার ‘তে দেউম’", "কোশনিইয়ের টকটকে লাল রং".
+    - **Run it into the sentence where it flows [owner]:** "when it can be integrated within the flow you can omit
+      bracket". Coins, officials and ships usually flow: হল্যান্ডের দুইটা রুপার মুদ্রা ‘ফ্লোরিন’, ভেনিসের প্রধান শাসক
+      ‘ডোজের’, একটা দাঁড়টানা জাহাজ ‘গ্যালিতে’, his own "জয়ের জন্য খোদা-বন্দনার ‘তে দেউম’".
+    - **Things and rites keep the bracket [owner]:** "defs of things like sanbenito, mitre must be in brackets".
+      So do ‘অতো-দা-ফে’ (…), ‘ডুশ’ (এনিমা), ‘আ প্রিওরি’ (…), titles (‘আগা’, ‘মার্কিজের’), and any word in a list.
     - Never a footnote.
   - **Once:** the word goes in ‘…’ that first time; every later use is bare.
   - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ, ইনকুইজিশন, ইনকুইজিটর [owner]: "too familiar"), and names.
