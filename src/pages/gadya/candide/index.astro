@@ -47,19 +47,25 @@ for (const line of tsv.split('\n')) {
 }
 ---
 
-<Base rail section="gadya" bodyClass="prose-page" styles={['/css/prose.css']} tocStyle="grid"
+<Base rail section="gadya" bodyClass="prose-page" styles={['/css/prose.css', '/css/prose-book.css']} tocStyle="grid"
   description={`${work.title}: ${FRONT.title}, ${FRONT.year}। পুরো বই এক পাতায়, ফরাসি মূলের প্রতিটি বাক্যের বদলে একটি বাংলা বাক্য।`}
   navTitle={work.title} navParentHref="/gadya/" navParentLabel="গদ্য"
 >
+  {/* the same text, poured into pages and turned like a book (prose-book.js) */}
+  <script slot="head" is:inline defer src="/js/prose-book.js"></script>
   <div class="gd-page">
     <header class="gd-head">
       <p class="gd-kicker">{FRONT.author} · {FRONT.year}</p>
       <h1 class="gd-title">{FRONT.title}</h1>
       <p class="gd-standfirst">{FRONT.imprint}</p>
       <p class="gd-credit">{FRONT.credit}</p>
+      <button class="gd-book-open" type="button" data-book-open>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3 5v13c4-.5 7 0 9 1.5 2-1.5 5-2 9-1.5V5c-4-.5-7 0-9 1.5zM12 6.5V19"/></svg>
+        বই হিসেবে পড়ুন
+      </button>
     </header>
 
-    <article class="gd-prose">
+    <article class="gd-prose" data-book-title="কাঁদিদ">
       {chapters.map((ch) => (
         <section class="gd-ch" id={`ch-${ch.n}`} data-toc={BN(ch.n)}>
           <h2 class="gd-ch-head">
