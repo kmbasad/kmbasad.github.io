@@ -134,6 +134,12 @@ Look at the subject.
     principle for an author's mock-learned coinage: keep it pompous, one compound, with the
     plain insult (গাধা) hidden inside, where the original hides it.
 - **পিছন, not পেছন [owner].**
+- **The Kolkata -এ ending gives way to the Bangladeshi -আ:**
+  - **খিদা, not খিদে [owner]:** "খিদা বা ক্ষুধা দুটাই হবে, তবে খিদে না". ক্ষুধা is fine where the register is higher.
+  - **The same pair elsewhere [claude]:** ইচ্ছা, মিথ্যা, দিশাহারা, ফিতা.
+  - **The -ও ending is [open]:** পুরোনো/পুরানো, টুকরো/টুকরা, মুক্তো/মুক্তা, কৌটো/কৌটা, ধুলো/ধুলা.
+- **Say whose [owner]:** he made "কাছে একটা পয়সাও নাই" into "**তার** কাছে একটা পয়সাও নাই". Where
+  the English or French drops a possessor or subject that Bangla speech would say, put it in.
 - **Old foreign coins: say what they are [owner]:** écu became রুপার মুদ্রা, not এক্যু (and
   দশটা পাতাগোন এক্যু became দশটা রুপার মুদ্রা). Whether পিস্তোল, পিয়াস্তার and ফ্লোরিন go the same way is [open].
 - **Words coined by an earlier draft may stay [owner]:** he kept আড়ালপর্দা for paravent when
@@ -229,6 +235,7 @@ use it inside speech. Otherwise:
 - 2026-10-30: his review of Candide chapter 1. যেত, পেল and খেল by default, with the ই-forms
   only for colour; ব্যারনেস; কুনেগোঁদ; পিছন; no -গুলো, and -গুলা only sparingly; অধিধর্মবিশ্বগাধাতত্ত্ব;
   keep a form for its sound; keep আড়ালপর্দা.
+- 2026-10-30: his review of chapter 2: খিদা, not খিদে; তার কাছে, not a bare কাছে; হোটেল confirmed.
 - 2026-10-30: Candide converted with this skill (first pass by script, then every sentence
   read). That gave the [claude] rows: রয়েছে → আছে, the blessing's করুক, the speech clashes,
   the homographs, and the words and spellings above. They await his reading of the draft.
