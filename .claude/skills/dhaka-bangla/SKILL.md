@@ -158,7 +158,7 @@ standard form with several rows has several readings, and the sentence decides b
 - **Old foreign coins: say what they are [owner]:** écu became রুপার মুদ্রা, not এক্যু. Whether
   পিস্তোল, পিয়াস্তার and ফ্লোরিন go the same way is [open].
 - **A foreign rite, title or thing gets its meaning beside it [owner]:** his own "জয়ের জন্য
-  খোদা-বন্দনার ‘তে দেউম’" keeps the name and says what it is; so does "কোচিনিলের টকটকে লাল রং"
+  খোদা-বন্দনার ‘তে দেউম’" keeps the name and says what it is; so does "কোশনিইয়ের টকটকে লাল রং"
   (cochenille). Keep the name where it matters to the joke or the period; say what it is in
   a word or two.
 - **Kolkata words [accepted]:**
