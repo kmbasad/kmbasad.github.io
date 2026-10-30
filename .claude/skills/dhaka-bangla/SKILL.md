@@ -36,8 +36,8 @@ The rules he has set most firmly, to check any text against:
 13. **Bangladeshi spelling, never the Indian:** **খিদা, ইচ্ছা, মুক্তা, পূজা, উল্টা, পুরানো, টুকরা, উঠান, পিছন, পনের, একশ**.
 14. **Long sentences:** a long sentence stays one sentence, unknotted into Bangla word order.
 15. **Punctuation:** **‘curly quotes’**, never italics.
-16. **Unfamiliar foreign words:** every little-known foreign word gets **a short meaning inside the sentence at its first
-    use** (‘অতো-দা-ফে’, মানে …). After that, the bare word.
+16. **Unfamiliar foreign words:** every little-known foreign word gets **a short meaning in brackets at its first use**,
+    ‘অতো-দা-ফে’ (ধর্মদ্রোহীদের প্রকাশ্যে পুড়ায়ে মারার উৎসব). After that, the bare word.
 
 ## The register
 
@@ -171,12 +171,14 @@ standard form with several rows has several readings, and the sentence decides b
 - **The first use of an unfamiliar foreign word carries its meaning [owner]:** "সব সময় অল্প পরিচিত বিদেশি শব্দের
   প্রথম ব্যবহারে একটা ছোট অর্থ বাক্যে জুড়ে দিতে হবে".
   - **Which words:** any word a Dhaka reader today would not know (সানবেনিতো, মাইটার, ডুশ, an old coin, an Ottoman title, the philosophers' Latin).
-  - **How, the auto-da-fé way [owner]:** the word in ‘…’, then ", মানে …," with a few words, inside the sentence.
-    For example: "একটা সুন্দর ‘অতো-দা-ফে’, মানে ধর্মদ্রোহীদের প্রকাশ্যে পুড়ায়ে মারার উৎসব, উপহার দেয়ার…". Never a footnote.
-    Now and then the meaning goes in brackets: ‘সানবেনিতো’ (ইনকুইজিশনের হলুদ জোব্বা) [owner], "ব্র্যাকেটের মধ্যেও
-    থাকতে পারে মাঝে মাঝে". Use brackets where a মানে-clause would clog the sentence, as in a list or a short line.
+  - **How: in brackets [owner]:** "most of these definitions within bracket as they are not part of the
+    original". The word goes in ‘…’ with its meaning in brackets right after: ‘সানবেনিতো’ (ইনকুইজিশনের দণ্ডিতদের
+    হলুদ জোব্বা), ‘ডুশ’ (এনিমা).
+    - A case ending stays outside the bracket, on the word or its noun: ‘থিয়েটাইন’ সন্ন্যাসীকে (ইতালির এক ক্যাথলিক সংঘের).
+    - Where the meaning has already become part of the sentence as Bangla, it stays there: his own "জয়ের জন্য খোদা-বন্দনার ‘তে দেউম’", "কোশনিইয়ের টকটকে লাল রং".
+    - Never a footnote.
   - **Once:** the word goes in ‘…’ that first time; every later use is bare.
-  - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ), and names.
+  - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ, ইনকুইজিশন, ইনকুইজিটর [owner]: "too familiar"), and names.
   - **Reuse:** `glosses.tsv` has the 40 glosses written for Candide (মাইটার, জানিসারি, পিস্তোল, ডোজ…). Use the same gloss when the word turns up elsewhere.
 - **A foreign rite, title or thing gets its meaning beside it [owner]:** his own "জয়ের জন্য
   খোদা-বন্দনার ‘তে দেউম’" keeps the name and says what it is; so does "কোশনিইয়ের টকটকে লাল রং"
