@@ -138,6 +138,12 @@ Look at the subject.
   - **খিদা, not খিদে [owner]:** "খিদা বা ক্ষুধা দুটাই হবে, তবে খিদে না". ক্ষুধা is fine where the register is higher.
   - **The same pair elsewhere [claude]:** ইচ্ছা, মিথ্যা, দিশাহারা, ফিতা.
   - **The -ও ending is [open]:** পুরোনো/পুরানো, টুকরো/টুকরা, মুক্তো/মুক্তা, কৌটো/কৌটা, ধুলো/ধুলা.
+- **A long sentence stays one sentence, but in Bangla order [owner]:** "এই ধরনের লম্বা বাক্য
+  আরো ভালো করা সম্ভব, মানে একই বাক্য রাখতে হবে অবশ্যই". Unknot the French relative clauses
+  (…, যারা …; যাদের … সেই …) into Bangla's own: participles before the noun (পেট চিরে ফেলা মেয়েরা),
+  a clause after দেখতেছিল, plain words (স্তন → বুক, স্ত্রী → বউ). Keep every clause and every
+  semicolon; don't split it into several sentences. His first example was `03.002.03`, the
+  battlefield.
 - **Say whose [owner]:** he made "কাছে একটা পয়সাও নাই" into "**তার** কাছে একটা পয়সাও নাই". Where
   the English or French drops a possessor or subject that Bangla speech would say, put it in.
 - **Old foreign coins: say what they are [owner]:** écu became রুপার মুদ্রা, not এক্যু (and
