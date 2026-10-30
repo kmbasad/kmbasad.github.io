@@ -36,6 +36,8 @@ The rules he has set most firmly, to check any text against:
 13. **Bangladeshi spelling, never the Indian:** **খিদা, ইচ্ছা, মুক্তা, পূজা, উল্টা, পুরানো, টুকরা, উঠান, পিছন, পনের, একশ**.
 14. **Long sentences:** a long sentence stays one sentence, unknotted into Bangla word order.
 15. **Punctuation:** **‘curly quotes’**, never italics.
+16. **Unfamiliar foreign words:** every little-known foreign word gets **a short meaning inside the sentence at its first
+    use** (‘অতো-দা-ফে’, মানে …). After that, the bare word.
 
 ## The register
 
@@ -166,6 +168,12 @@ standard form with several rows has several readings, and the sentence decides b
   সরাইখানা or শুঁড়িখানা. Use মদের দোকান only where the drinking is the point.
 - **Old foreign coins: say what they are [owner]:** écu became রুপার মুদ্রা, not এক্যু. Whether
   পিস্তোল, পিয়াস্তার and ফ্লোরিন go the same way is [open].
+- **The first use of an unfamiliar foreign word carries its meaning [owner]:** "সব সময় অল্প পরিচিত বিদেশি শব্দের
+  প্রথম ব্যবহারে একটা ছোট অর্থ বাক্যে জুড়ে দিতে হবে".
+  - **Which words:** any word a Dhaka reader today would not know (সানবেনিতো, মাইটার, ডুশ, an old coin, an Ottoman title, the philosophers' Latin).
+  - **How:** a few words inside the sentence itself, never a footnote. Either a modifier before the word, or ", মানে …," after it.
+  - **Once:** the word goes in ‘…’ that first time; every later use is bare.
+  - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ), and names.
 - **A foreign rite, title or thing gets its meaning beside it [owner]:** his own "জয়ের জন্য
   খোদা-বন্দনার ‘তে দেউম’" keeps the name and says what it is; so does "কোশনিইয়ের টকটকে লাল রং"
   (cochenille). Keep the name where it matters to the joke or the period; say what it is in
@@ -302,6 +310,7 @@ standard form with several rows has several readings, and the sentence decides b
   real people and known places in their established Bangla form.
 - **2026-10-30, chapter 4:** no Indian -ো spellings (মুক্তা, উল্টা, পুরানো, টুকরা, পনের, একশ); যুক্তবর্ণ
   wherever it can be; ডুশ kept.
+- **2026-10-30, chapters 5 and 6:** every little-known foreign word glossed in the sentence at its first use.
 - **2026-10-30, the conversion:** Candide converted with this skill gave the [claude] rows:
   রয়েছে → আছে, the blessing's করুক, the speech clashes and the homographs.
 
