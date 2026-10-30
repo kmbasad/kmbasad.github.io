@@ -140,7 +140,10 @@ Look at the subject.
   - **Numbers:** দুটো → দুইটা, তিনটে → তিনটা.
   - **Kolkata words:** ভাইপো → ভাতিজা, মাইনে → বেতন, পণ্ডিতমশাই → মাস্টার সাহেব, পাঠশালা → স্কুল, ছুতোর → কাঠমিস্ত্রি.
   - **Bangladeshi spellings:** ইচ্ছা, নাস্তা, ভিখারি, পূজা, চৌদ্দ, জুতা, খুচরা, তাড়াহুড়া, ন্যাংটা.
-  - **Old words:** সওদাগর → ব্যবসায়ী, শুঁড়িখানা → সরাইখানা.
+  - **Old words:** সওদাগর → ব্যবসায়ী.
+- **হোটেল [owner]:** for an inn, a tavern or an eating-house (cabaret, auberge, hôtellerie) alike,
+  since in Bangladesh হোটেল is both where you eat (ভাতের হোটেল) and where you stay. Not
+  সরাইখানা or শুঁড়িখানা. Use মদের দোকান only where the drinking is the point.
 
   Not generalised: পুরোনো, টুকরো, কৌটো and মুক্তো stay until he says otherwise.
 - **Homographs [claude]:** these look like verb forms but often aren't. The lint and

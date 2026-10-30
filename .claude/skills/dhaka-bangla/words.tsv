@@ -82,7 +82,7 @@
 তাড়াহুড়ো	তাড়াহুড়া		বাংলাদেশি বানান	claude	
 ন্যাংটো	ন্যাংটা		বাংলাদেশি বানান	claude	
 সওদাগর	ব্যবসায়ী		পুরোনো বা বইয়ের শব্দ	claude	
-শুঁড়িখানা	সরাইখানা		পুরোনো বা বইয়ের শব্দ	claude	মদের দোকান where the drinking matters
+শুঁড়িখানা	হোটেল		পুরোনো বা বইয়ের শব্দ	owner	মদের দোকান where the drinking is the point
 আস্তাবল	ঘোড়ার ঘর		পুরোনো বা বইয়ের শব্দ	owner	his example: no longer familiar
 সহিস	যারা ঘোড়া দেখাশোনা করে		পুরোনো বা বইয়ের শব্দ	owner	his example
 উঠোন	উঠান		বাংলাদেশি বানান	owner	
@@ -90,3 +90,4 @@
 কুনেগোন্দ	কুনেগোঁদ		নাম ও উপাধি	owner	French nasal vowel: ঁ
 পেছনে	পিছনে		বাংলাদেশি বানান	owner	
 পেছন	পিছন		বাংলাদেশি বানান	owner	
+সরাইখানা	হোটেল		পুরোনো বা বইয়ের শব্দ	owner	হোটেল is both where you eat (ভাতের হোটেল) and where you stay
