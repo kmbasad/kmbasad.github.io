@@ -6,7 +6,7 @@ import { AUTHOR_EN, LICENSE, DECLARATION } from '../data/site.js';
 
 /* The front door is one painting, after Mondrian's grids of 1913-14, filling
    the screen edge to edge, and the page is made of the painting itself: the
-   name and the four rooms are planes of it like any other, cut on the same
+   name and the five rooms are planes of it like any other, cut on the same
    grid, parted by the same charcoal lines, only larger and in their own
    tints. Nothing is laid on top. Every other plane is the painting's quiet
    matter (off-whites, greys, pale tints, a deeper note here and there), and
@@ -70,22 +70,24 @@ const dName = { x: 1, y: 2, w: 10, h: 4 };
 const dRooms = [
   { x: 12, y: 1, w: 7, h: 5 },
   { x: 19, y: 2, w: 5, h: 4 },
-  { x: 4, y: 7, w: 7, h: 4 },
+  { x: 1, y: 7, w: 5, h: 4 },
+  { x: 7, y: 7, w: 4, h: 4 },
   { x: 12, y: 7, w: 6, h: 4 },
 ];
 const dMeta = { x: 19, y: 8, w: 5, h: 3 };
 const desktop = compose({ ...D, reserved: [dName, ...dRooms, dMeta], maxW: 3, maxH: 2, seed: 1913 });
 
-// phones: 8 by 16, the same planes stacked two by two
-const P = { cols: 8, rows: 16 };
+// phones: 8 by 19, the same planes stacked two by two, the fifth alone
+const P = { cols: 8, rows: 19 };
 const pName = { x: 0, y: 1, w: 7, h: 4 };
 const pRooms = [
   { x: 0, y: 5, w: 4, h: 4 },
   { x: 4, y: 5, w: 4, h: 4 },
   { x: 0, y: 9, w: 4, h: 4 },
   { x: 4, y: 9, w: 4, h: 4 },
+  { x: 0, y: 13, w: 5, h: 3 },
 ];
-const pMeta = { x: 0, y: 13, w: 8, h: 3 };
+const pMeta = { x: 0, y: 16, w: 8, h: 3 };
 const phone = compose({ ...P, reserved: [pName, ...pRooms, pMeta], maxW: 3, maxH: 2, seed: 1914 });
 
 const both = (d, p) => `--d:${d.y + 1} / ${d.x + 1} / span ${d.h} / span ${d.w};--p:${p.y + 1} / ${p.x + 1} / span ${p.h} / span ${p.w}`;

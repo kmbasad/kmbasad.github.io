@@ -7,7 +7,7 @@ import { UI } from '../data/ui.js';
 interface Props {
   title?: string;
   description?: string;
-  section?: 'panthea' | 'pangea' | 'translations' | 'trellises' | '';
+  section?: 'panthea' | 'pangea' | 'translations' | 'gadya' | 'trellises' | '';
   bodyClass?: string;
   styles?: string[];
   navTitle?: string;            // this page's name: the rail's title, and the tab's
@@ -27,7 +27,7 @@ interface Props {
 
 const {
   title = '',
-  description = 'যৌথ অচেতন — খান মুহাম্মদ বিন আসাদ: প্যান্থিয়া, প্যাঞ্জিয়া, অনুবাদ, মাচা।',
+  description = 'যৌথ অচেতন — খান মুহাম্মদ বিন আসাদ: প্যান্থিয়া, প্যাঞ্জিয়া, কবিতা, গদ্য, মাচা।',
   section = '',
   bodyClass = '',
   styles = [],
@@ -68,10 +68,10 @@ const ancestors = [
 
 
 /* The selvedge: a thin band of the painting along the masthead's top edge,
-   the four rooms' tints among cream and lavender, irregular as in 1913. */
+   the five rooms' tints among cream and lavender, irregular as in 1913. */
 const STRIP = [
-  ['blue', 13], ['cream', 5], ['pink', 8], ['lav', 19], ['ochre', 4], ['sage', 10],
-  ['cream', 7], ['blue', 6], ['pink', 3], ['lav', 9], ['ochre', 9], ['sage', 4], ['blue', 3],
+  ['blue', 13], ['cream', 5], ['pink', 8], ['lav', 19], ['ochre', 4], ['clay', 3], ['sage', 10],
+  ['cream', 7], ['blue', 6], ['pink', 3], ['lav', 9], ['ochre', 9], ['clay', 6], ['sage', 4], ['blue', 3],
 ];
 const hasPager = !!(footPrev || footNext);
 const hasCrumbs = Astro.slots.has('rail-crumbs');
@@ -89,7 +89,8 @@ const band = (() => {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
   const t = room?.tint ?? 'blue';
-  const other = ROOMS.filter((r) => r.key !== room?.key)[Math.floor(rnd() * 3)]?.tint ?? 'pink';
+  const others = ROOMS.filter((r) => r.key !== room?.key);
+  const other = others[Math.floor(rnd() * others.length)]?.tint ?? 'pink';
   const fills = [`var(--t-${t}-d)`, 'var(--paper)', `var(--t-${t})`, 'var(--t-cream)',
                  `var(--t-${t}-d)`, 'var(--t-lav)', `var(--t-${other})`, 'var(--paper)'];
   // shuffle lightly, keep the room's deep tint first so it opens the strip

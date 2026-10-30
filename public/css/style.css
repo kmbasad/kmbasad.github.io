@@ -53,6 +53,7 @@ html {
   --t-pink: #dcc8d0;   --t-pink-d: #c8a5b3;
   --t-ochre: #e0c987;  --t-ochre-d: #cfae5a;
   --t-sage: #c2c597;   --t-sage-d: #a4a872;
+  --t-clay: #e3b9a0;   --t-clay-d: #d0977a;   /* the 1914 grids' brick, for the prose */
   --t-lav: #c9c5da;                /* chalk ground */
   --r: 8px;
   --r-sm: 4px;

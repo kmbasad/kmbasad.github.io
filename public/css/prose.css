@@ -1,0 +1,142 @@
+/* ── A prose translation, the whole book on one page (src/pages/gadya/) ──
+   One column in the reading voice, the site's one headline pattern above
+   it: the author and year as the kicker, the book's title, its old title
+   page as the standfirst, the credit small under them before the hairline.
+   Each chapter opens with its number in the room's ink over its title; the
+   rail lists the chapters as a grid of numbers. */
+
+.gd-page {
+  max-width: var(--read-measure);
+  padding: var(--page-top) 0 4rem;
+}
+
+.gd-head {
+  margin-bottom: 2.6rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gd-kicker {
+  margin: 0 0 0.6rem;
+  font-family: var(--bn-font);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--tint-ink);
+}
+
+.gd-title {
+  margin: 0;
+  font-family: var(--bn-display);
+  font-size: var(--title-fs);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  text-align: left;
+}
+
+.gd-standfirst {
+  margin: 1.1rem 0 0;
+  font-family: var(--bn-font);
+  font-size: var(--stand-fs);
+  line-height: 1.8;
+  color: var(--text-3);
+}
+
+.gd-credit {
+  margin: 0.9rem 0 0;
+  font-family: var(--bn-font);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-4, var(--text-3));
+}
+
+.gd-prose {
+  font-family: var(--bn-font);
+  font-size: var(--read-fs);
+  line-height: var(--read-lh);
+  letter-spacing: var(--read-ls);
+  color: var(--read-ink);
+}
+
+.gd-prose p {
+  margin: 0 0 var(--read-gap);
+  text-align: left;
+}
+
+.gd-ch { scroll-margin-top: 2rem; }
+.gd-ch + .gd-ch { margin-top: 4.2em; }
+
+/* the chapter's head: a short rule in the room's tint, its number, its title */
+.gd-ch-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  margin: 0 0 1.4em;
+  font-weight: 400;
+  text-align: left;
+}
+.gd-ch-head::before {
+  content: '';
+  display: block;
+  width: 2.6rem;
+  height: 3px;
+  margin-bottom: 0.75rem;
+  background: var(--tint-d);
+}
+.gd-ch-num {
+  font-family: var(--bn-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--tint-ink);
+}
+.gd-ch-title {
+  font-family: var(--bn-display);
+  font-size: var(--h2-fs);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* a letter read out in the story */
+.gd-prose blockquote {
+  margin: 0 0 var(--read-gap);
+  padding: 0.1rem 0 0.1rem 1.4rem;
+  border-left: 3px solid var(--tint-d);
+  color: var(--text-2);
+}
+.gd-prose blockquote p { margin: 0; }
+
+/* Voltaire's own note, at the foot of its chapter */
+.gd-fn { line-height: 0; font-size: 0.75em; }
+.gd-fn a, .gd-note a { color: var(--tint-ink); text-decoration: none; background-image: none; }
+.gd-note {
+  margin: 0 0 var(--read-gap);
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+  max-width: 34em;
+  font-size: 0.86em;
+  line-height: 1.8;
+  color: var(--text-3);
+}
+
+/* the last line of the book */
+.gd-end {
+  margin-top: 3em !important;
+  text-align: center !important;
+  font-family: var(--bn-display);
+  color: var(--text-3);
+}
+
+@media (max-width: 760px) {
+  .gd-page { padding: 24px var(--m-read-pad) 2rem; }
+  .gd-head { margin-bottom: 2rem; padding-bottom: 1.6rem; }
+  .gd-title { font-size: var(--m-title-fs); }
+  .gd-standfirst { font-size: 1.04rem; }
+  .gd-prose {
+    font-size: var(--m-read-fs);
+    line-height: var(--m-read-lh);
+  }
+  .gd-prose blockquote { padding-left: 0.9rem; }
+}

@@ -1,0 +1,82 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { gadyaWorks } from '../../../data/gadya-works.js';
+// The whole book, one row a sentence: id, kind, French, Bangla. Every
+// French sentence of Beuchot's text has exactly one Bangla sentence, so the
+// two columns are the same length by construction (see the file's head).
+import tsv from '../../../data/gadya/candide.tsv?raw';
+
+const work = gadyaWorks.find((w) => w.slug === 'candide')!;
+
+// the title page of 1759, said once
+const FRONT = {
+  author: 'ভলতেয়ার',
+  year: '১৭৫৯',
+  title: 'কাঁদিদ, অথবা আশাবাদ',
+  imprint: 'ডক্টর রাল্‌ফের জার্মান থেকে অনূদিত, সঙ্গে সেই সংযোজনগুলো যা ডক্টরের পকেটে পাওয়া গিয়েছিল, যখন তিনি ১৭৫৯ খ্রিস্টাব্দে মিন্ডেনে মারা যান।',
+  credit: 'ফরাসি মূল থেকে বাক্য ধরে ধরে বাংলায়: মূলের প্রতিটি বাক্য এখানেও একটি বাক্য।',
+};
+
+// the chapters' names, as the site counts its parts (cf. the Odyssey's books)
+const ORD = ['প্রথম', 'দ্বিতীয়', 'তৃতীয়', 'চতুর্থ', 'পঞ্চম', 'ষষ্ঠ', 'সপ্তম', 'অষ্টম', 'নবম', 'দশম',
+  'এগারোতম', 'বারোতম', 'তেরোতম', 'চৌদ্দতম', 'পনেরোতম', 'ষোলোতম', 'সতেরোতম', 'আঠারোতম', 'উনিশতম', 'বিশতম',
+  'একুশতম', 'বাইশতম', 'তেইশতম', 'চব্বিশতম', 'পঁচিশতম', 'ছাব্বিশতম', 'সাতাশতম', 'আঠাশতম', 'ঊনত্রিশতম', 'ত্রিশতম'];
+const BN = (n: number) => String(n).replace(/\d/g, (d) => String.fromCharCode(0x09e6 + +d));
+
+// _…_ is italic in the text, * is the mark of Voltaire's own note
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const inline = (s: string, n: number) => esc(s)
+  .replace(/_([^_]+)_/g, '<em>$1</em>')
+  .replace(/\*/g, `<sup class="gd-fn"><a href="#note-${n}" id="ref-${n}" aria-label="টীকা">*</a></sup>`);
+
+type Para = { quote: boolean; html: string };
+type Chapter = { n: number; title: string; paras: Para[]; note: string; end: string };
+const chapters: Chapter[] = [];
+for (const line of tsv.split('\n')) {
+  if (!line.trim() || line.startsWith('#')) continue;
+  const [id, kind, , bn] = line.split('\t');
+  const [c, p] = id.split('.').map(Number);
+  let ch = chapters[c - 1];
+  if (!ch) ch = chapters[c - 1] = { n: c, title: '', paras: [], note: '', end: '' };
+  const s = inline(bn.trim(), c);
+  if (kind === 'title') ch.title += (ch.title ? ' ' : '') + s;
+  else if (kind === 'note') ch.note += (ch.note ? ' ' : '') + s;
+  else if (p === 999) ch.end = s;
+  else if (kind === 'p' || kind === 'Q') ch.paras.push({ quote: kind === 'Q', html: s });
+  else ch.paras[ch.paras.length - 1].html += ' ' + s;
+}
+---
+
+<Base rail section="gadya" bodyClass="prose-page" styles={['/css/prose.css']} tocStyle="grid"
+  description={`${work.title}: ${FRONT.title}, ${FRONT.year}। পুরো বই এক পাতায়, ফরাসি মূলের প্রতিটি বাক্যের বদলে একটি বাংলা বাক্য।`}
+  navTitle={work.title} navParentHref="/gadya/" navParentLabel="গদ্য"
+>
+  <div class="gd-page">
+    <header class="gd-head">
+      <p class="gd-kicker">{FRONT.author} · {FRONT.year}</p>
+      <h1 class="gd-title">{FRONT.title}</h1>
+      <p class="gd-standfirst">{FRONT.imprint}</p>
+      <p class="gd-credit">{FRONT.credit}</p>
+    </header>
+
+    <article class="gd-prose">
+      {chapters.map((ch) => (
+        <section class="gd-ch" id={`ch-${ch.n}`} data-toc={BN(ch.n)}>
+          <h2 class="gd-ch-head">
+            <span class="gd-ch-num">{ORD[ch.n - 1]} অধ্যায়</span>
+            <span class="gd-ch-title" set:html={ch.title} />
+          </h2>
+          {ch.paras.map((p) => p.quote
+            ? <blockquote><p set:html={p.html} /></blockquote>
+            : <p set:html={p.html} />)}
+          {ch.note && (
+            <aside class="gd-note" id={`note-${ch.n}`}>
+              <a href={`#ref-${ch.n}`} aria-label="ফিরে যান">*</a> <span set:html={ch.note} />
+            </aside>
+          )}
+          {ch.end && <p class="gd-end" set:html={ch.end} />}
+        </section>
+      ))}
+    </article>
+  </div>
+</Base>

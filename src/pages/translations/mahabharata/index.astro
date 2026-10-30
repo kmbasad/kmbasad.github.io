@@ -10,9 +10,9 @@ const art = compositions['mahabharata'];
 ---
 
 <Base section="translations" bodyClass="painting-page" styles={['/css/painting.css']}
-  navTitle={work.title} navParentHref="/translations/" navParentLabel="অনুবাদ"
+  navTitle={work.title} navParentHref="/translations/" navParentLabel="কবিতা"
 >
-  <Painting parentHref="/translations/" parentLabel="অনুবাদ" planes={art.planes} sheet={art.sheet} gap={12} ground={INK} label={art.label}>
+  <Painting parentHref="/translations/" parentLabel="কবিতা" planes={art.planes} sheet={art.sheet} gap={12} ground={INK} label={art.label}>
     <h1>{work.title}</h1>
     <ul class="pt-list">
       {work.parts!.map((p, i) => (

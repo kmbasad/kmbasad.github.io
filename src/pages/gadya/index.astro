@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import Painting from '../../components/Painting.astro';
+import { gadyaWorks } from '../../data/gadya-works.js';
+
+// After Mondrian's grids of the early twenties: a tall column of grey planes
+// on the left, one red and one yellow low among them, a blue on the far
+// right, black lines between. The list of works lives in the long white
+// plane in the middle; each work wears a block of one of the colours.
+const TITLE = 'গদ্য';
+const R = '#c8302c', B = '#1f3f8a', Y = '#efc93a', K = '#141518';
+const W = '#f2efe6', W2 = '#ebe7dc', G = '#c9c8c2', G2 = '#d9d8d2';
+// a plane with no part in the phone composition is parked under the sheet
+const UNDER = [0, 0, 40, 40];
+const planes = [
+  { bg: G, d: [0, 0, 30, 42], p: UNDER },
+  { bg: R, d: [0, 42, 17, 33], p: [86, 0, 14, 34] },
+  { bg: W2, d: [17, 42, 13, 33], p: UNDER },
+  { bg: K, d: [0, 75, 9, 25], p: UNDER },
+  { bg: Y, d: [9, 75, 21, 25], p: [86, 34, 14, 14] },
+  { bg: W, d: [30, 0, 40, 100], p: UNDER },
+  { bg: G2, d: [70, 0, 30, 22], p: UNDER },
+  { bg: B, d: [70, 22, 17, 46], p: [86, 48, 14, 34] },
+  { bg: W2, d: [87, 22, 13, 46], p: UNDER },
+  { bg: W, d: [70, 68, 30, 32], p: [86, 82, 14, 18] },
+];
+const MARKS = [R, B, Y, K];
+// the works stand in Bengali alphabetical order of their titles
+const works = [...gadyaWorks].sort((a, b) => a.title.localeCompare(b.title, 'bn'));
+---
+
+<Base title={TITLE} section="gadya" bodyClass="painting-page" styles={['/css/painting.css']}>
+  <Painting planes={planes} sheet={{ d: [30, 40], p: [0, 86] }} gap={12} ground={K}
+            label="After Mondrian: grey planes, one red, one yellow and one blue, with a white column for the prose">
+    <h1>{TITLE}</h1>
+    <ul class="pt-list">
+      {works.map((w, i) => (
+        <li>
+          <a href={`/gadya/${w.slug}/`} style={`--m:${MARKS[i % MARKS.length]}`}>
+            <span class="pt-mark" aria-hidden="true"></span>
+            <span class="pt-name">{w.title}</span>
+            <span class="pt-go" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Painting>
+</Base>

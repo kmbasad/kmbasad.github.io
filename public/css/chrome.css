@@ -3,18 +3,19 @@
    sheets and the colophon (Base.astro, SiteFoot.astro, site.js).
 
    A magazine's frame, not an application's. The masthead opens the page and
-   scrolls away with it: the mark and the site's name on the left, the four
+   scrolls away with it: the mark and the site's name on the left, the five
    rooms on the right, nothing else. A long page carries its own furniture in
    the rail beside the text (where you are, what the page holds, the way on),
    which sticks while the masthead is gone. The colophon closes every page.
    One thing on the paper at a time: no boxes, space and hairlines only.
    ========================================================================= */
 
-/* ~ The four rooms' tints (Mondrian, "Composition in Blue, Gray and Pink") ~ */
+/* ~ The five rooms' tints (Mondrian, "Composition in Blue, Gray and Pink") ~ */
 .room-blue  { --tint: var(--t-blue);  --tint-d: var(--t-blue-d);  --tint-ink: #3d6a8e; }
 .room-pink  { --tint: var(--t-pink);  --tint-d: var(--t-pink-d);  --tint-ink: #8a5468; }
 .room-ochre { --tint: var(--t-ochre); --tint-d: var(--t-ochre-d); --tint-ink: #8a6a12; }
 .room-sage  { --tint: var(--t-sage);  --tint-d: var(--t-sage-d);  --tint-ink: #626734; }
+.room-clay  { --tint: var(--t-clay);  --tint-d: var(--t-clay-d);  --tint-ink: #8f4d2c; }
 
 body {
   background: var(--paper);
@@ -46,6 +47,7 @@ body:not(.home-page)::after { content: none; }
 .sv-pink  { background: var(--t-pink-d); }
 .sv-ochre { background: var(--t-ochre-d); }
 .sv-sage  { background: var(--t-sage-d); }
+.sv-clay  { background: var(--t-clay-d); }
 .sv-cream { background: var(--t-cream); }
 .sv-lav   { background: var(--t-lav); }
 
@@ -131,7 +133,7 @@ body:not(.home-page)::after { content: none; }
 .mast-burger { display: none; }
 
 /* =========================================================================
-   THE PHONE SHEET (the burger's): the home and the four rooms, large
+   THE PHONE SHEET (the burger's): the home and the five rooms, large
    ========================================================================= */
 
 .nav-sheet {

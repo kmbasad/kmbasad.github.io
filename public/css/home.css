@@ -211,12 +211,12 @@ body.home-page {
   .mc, .hp { animation: none; }
 }
 
-/* ~ phones, and tablets held upright: the painting of its own, 8 by 16,
-     the rooms two by two ~ */
+/* ~ phones, and tablets held upright: the painting of its own, 8 by 19,
+     the rooms two by two and the fifth alone ~ */
 @media (max-width: 760px), (orientation: portrait) and (max-width: 1099px) {
   .home-grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-rows: repeat(19, 1fr);
     gap: 2.5px;
   }
   .home-grid--d { display: none; }
