@@ -15,7 +15,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from lint import STOP, CONTEXT_WORDS, HOMOGRAPHS  # noqa: E402
+from lint import STOP, CONTEXT_WORDS, HOMOGRAPHS, NOT_ANO  # noqa: E402
 
 WORD = re.compile(r'[ঀ-৿‌‍]+')
 HON = re.compile(r'^(তাঁ|যাঁ)(র|কে|রা|দের|দেরকে)(ই|ও)?$')
@@ -55,7 +55,12 @@ def convert(text, forms, words, n):
         core, enc = w, ''
         if w not in forms and w[-1:] in ('ই', 'ও') and w[:-1] in forms:
             core, enc = w[:-1], w[-1]
-        if core in STOP or core in HOMOGRAPHS or core not in forms:
+        if core in STOP or core in HOMOGRAPHS:
+            return w
+        if core not in forms:
+            if core.endswith('িয়ে') and core not in NOT_ANO:
+                n['-ায়ে'] += 1
+                return core[:-4] + 'ায়ে' + enc   # তাকিয়ে → তাকায়ে
             return w
         outs = forms[core]
         if len(outs) != 1:
@@ -65,6 +70,7 @@ def convert(text, forms, words, n):
         if o != core:
             n['verb'] += 1
         return o + enc
+    text = re.sub(r'_([^_]+)_', r'‘\1’', text)  # no italics in Bangla
     return WORD.sub(one, text)
 
 

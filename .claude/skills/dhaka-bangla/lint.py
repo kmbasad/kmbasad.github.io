@@ -18,8 +18,10 @@ HERE = Path(__file__).resolve().parent
 WORD = re.compile(r'[ঀ-৿‌‍]+')
 # nouns and particles that look like a verb form
 STOP = set('ভেড়া ভেড়ার গলা গলায় গলার পরে পরা মেলা ভরা সাজা জমা লোটা বাছা কামান হেলা মোড়ে মানে বাড়ি চেয়ে'.split())
+# -িয়ে words that are not -আনো verbs: vowel roots, a marriage, a name
+NOT_ANO = {'দিয়ে', 'নিয়ে', 'গিয়ে', 'বিয়ে', 'কর্দেলিয়ে'}
 # words whose change depends on the sense: ভারি = very (খুব) or heavy (ভারী)
-CONTEXT_WORDS = {'ভারি', 'বটে', 'বৈকি', 'দিব্যি', 'খানিক', 'বাছা', 'ব্যারনপত্নী'}
+CONTEXT_WORDS = {'ভারি', 'বটে', 'বৈকি', 'দিব্যি', 'খানিক', 'বাছা', 'ব্যারনপত্নী', 'নও', 'নই'}  # নও/নই: না in speech only
 # forms that are also common nouns: দিন is "day" far more often than "please give"
 HOMOGRAPHS = {'দিন': 'দেন, only if it means "please give"', 'দিনই': 'দেনই, only if "please give"', 'দিনও': 'দেনও, only if "please give"',
               'দেবে': 'দিবে/দিবা, unless it means "sinks" (কাদায় দেবে গেল)',
@@ -52,6 +54,8 @@ def tables():
 
 
 def findings(text, forms, words):
+    for m in re.finditer(r'_([^_]+)_', text):
+        yield 'replace', m.group(0), '‘' + m.group(1) + '’ (no italics in Bangla)'
     for w in WORD.findall(text):
         core, enc = w, ''
         if w not in forms and w[-1:] in ('ই', 'ও') and w[:-1] in forms:
@@ -70,6 +74,8 @@ def findings(text, forms, words):
             own, dlg = words[w]
             if own != w:
                 yield 'replace', w, own + (f' (dialogue: {dlg})' if dlg else '')
+        elif re.search('িয়ে$', core) and core not in NOT_ANO and core not in forms:
+            yield 'check', w, core[:-4] + 'ায়ে' + enc + ' (an -আনো verb, unless it is a name)'
         elif core in forms and core not in STOP:
             outs = forms[core]
             if len(outs) == 1:
