@@ -177,6 +177,7 @@ standard form with several rows has several readings, and the sentence decides b
     থাকতে পারে মাঝে মাঝে". Use brackets where a মানে-clause would clog the sentence, as in a list or a short line.
   - **Once:** the word goes in ‘…’ that first time; every later use is bare.
   - **Not glossed:** words the reader knows (জেসুইট, পাশা, দরবেশ), and names.
+  - **Reuse:** `glosses.tsv` has the 40 glosses written for Candide (মাইটার, জানিসারি, পিস্তোল, ডোজ…). Use the same gloss when the word turns up elsewhere.
 - **A foreign rite, title or thing gets its meaning beside it [owner]:** his own "জয়ের জন্য
   খোদা-বন্দনার ‘তে দেউম’" keeps the name and says what it is; so does "কোশনিইয়ের টকটকে লাল রং"
   (cochenille). Keep the name where it matters to the joke or the period; say what it is in
