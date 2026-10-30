@@ -19,7 +19,7 @@ WORD = re.compile(r'[ঀ-৿‌‍]+')
 # nouns and particles that look like a verb form
 STOP = set('ভেড়া ভেড়ার গলা গলায় গলার পরে পরা মেলা ভরা সাজা জমা লোটা বাছা কামান হেলা মোড়ে মানে বাড়ি চেয়ে'.split())
 # words whose change depends on the sense: ভারি = very (খুব) or heavy (ভারী)
-CONTEXT_WORDS = {'ভারি', 'বটে', 'বৈকি', 'দিব্যি', 'খানিক', 'বাছা'}
+CONTEXT_WORDS = {'ভারি', 'বটে', 'বৈকি', 'দিব্যি', 'খানিক', 'বাছা', 'ব্যারনপত্নী'}
 # forms that are also common nouns: দিন is "day" far more often than "please give"
 HOMOGRAPHS = {'দিন': 'দেন, only if it means "please give"', 'দিনই': 'দেনই, only if "please give"', 'দিনও': 'দেনও, only if "please give"',
               'দেবে': 'দিবে/দিবা, unless it means "sinks" (কাদায় দেবে গেল)',
