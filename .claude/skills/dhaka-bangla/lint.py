@@ -20,6 +20,8 @@ WORD = re.compile(r'[ঀ-৿‌‍]+')
 STOP = set('ভেড়া ভেড়ার গলা গলায় গলার পরে পরা মেলা ভরা সাজা জমা লোটা বাছা কামান হেলা মোড়ে মানে বাড়ি চেয়ে'.split())
 # words whose change depends on the sense: ভারি = very (খুব) or heavy (ভারী)
 CONTEXT_WORDS = {'ভারি', 'বটে', 'বৈকি', 'দিব্যি', 'খানিক', 'বাছা'}
+# forms that are also common nouns: দিন is "day" far more often than "please give"
+HOMOGRAPHS = {'দিন': 'দেন, only if it means "please give"', 'দিনই': 'দেনই, only if "please give"', 'দিনও': 'দেনও, only if "please give"'}
 HON = re.compile(r'^(তাঁ|যাঁ)(র|কে|রা|দের|দেরকে)(ই|ও)?$')
 OE = re.compile(r'^(ওঁ|এঁ)(র|কে|রা|দের)(ই|ও)?$')
 
@@ -55,6 +57,8 @@ def findings(text, forms, words):
             yield 'replace', w, w.replace('ঁ', '', 1) + ' (only sarcastic honour keeps the chandrabindu)'
         elif OE.match(w):
             yield 'replace', w, 'উনা' + w[2:]
+        elif w in HOMOGRAPHS:
+            yield 'check', w, HOMOGRAPHS[w]
         elif w in CONTEXT_WORDS:
             yield 'check', w, words.get(w, ('',))[0] + ' (if the sense fits)'
         elif w in words:
