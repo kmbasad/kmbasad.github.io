@@ -136,9 +136,14 @@ standard form with several rows has several readings, and the sentence decides b
     alike. "In my Bangla this dot is a little comic": it may come back, rarely, as sarcastic
     honour. ওঁর, ওঁকে, এঁর become উনার, উনাকে [accepted]; উনি and ইনি stay.
 - **ণ্ড only in tatsama words [claude]:** পণ্ডিত, খণ্ড, কাণ্ড, but ঠান্ডা, গুন্ডা, লন্ডন (Bangla Academy).
-- **French names [owner]:**
-  - **কুনেগোঁদ**, not কুনেগোন্দ. French nasal vowels take a চন্দ্রবিন্দু, as in কাঁদিদ and মার্তাঁ [claude].
-  - **পাংলস** stays.
+- **Names [owner]:**
+  - **An author's characters follow the original pronunciation,** with French nasal vowels as
+    চন্দ্রবিন্দু: কাঁদিদ, কুনেগোঁদ, মার্তাঁ, **পাঁগ্লস** (pɑ̃.ɡlɔs), **কাকাঁবো**, **ভাঁদেরদাঁদুর**, পাকেত,
+    জিরোফ্লে. An Italian name keeps Italian (পোকোকুরান্তে).
+  - **A name that carries a joke in its spelling keeps it:** থান্ডার-টেন-ট্রংক stays, for the *thunder* in it.
+  - **Real people and well-known places keep their established Bangla names:** প্যারিস (not পারি),
+    ভেনিস, লিসবন, লন্ডন, হোমার, ভার্জিল, সিসেরো, সিজার, চার্লস-এডওয়ার্ড, থিওডোর.
+  - **A name that would collide with a common word keeps its other form:** আভার, not আবার (Abares).
 
 ## Words
 
@@ -281,6 +286,8 @@ standard form with several rows has several readings, and the sentence decides b
   - everyday English loans (ব্রেড, ব্যাপ্টিজম); রুটি and ব্রেড by turns;
   - দ্বিপদী; বউ; long sentences unknotted;
   - idioms read as idioms; ইয়ে.
+- **2026-10-30, names:** characters closer to the French (পাঁগ্লস, কাকাঁবো, ভাঁদেরদাঁদুর); থান্ডার kept;
+  real people and known places in their established Bangla form.
 - **2026-10-30, the conversion:** Candide converted with this skill gave the [claude] rows:
   রয়েছে → আছে, the blessing's করুক, the speech clashes and the homographs.
 
