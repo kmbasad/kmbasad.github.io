@@ -21,7 +21,10 @@ STOP = set('ভেড়া ভেড়ার গলা গলায় গল�
 # words whose change depends on the sense: ভারি = very (খুব) or heavy (ভারী)
 CONTEXT_WORDS = {'ভারি', 'বটে', 'বৈকি', 'দিব্যি', 'খানিক', 'বাছা'}
 # forms that are also common nouns: দিন is "day" far more often than "please give"
-HOMOGRAPHS = {'দিন': 'দেন, only if it means "please give"', 'দিনই': 'দেনই, only if "please give"', 'দিনও': 'দেনও, only if "please give"'}
+HOMOGRAPHS = {'দিন': 'দেন, only if it means "please give"', 'দিনই': 'দেনই, only if "please give"', 'দিনও': 'দেনও, only if "please give"',
+              'দেবে': 'দিবে/দিবা, unless it means "sinks" (কাদায় দেবে গেল)',
+              'পেতে': 'পাইতে, unless it is পাতা "to lay" (ওত পেতে)',
+              'করুন': 'করেন for আপনি; a blessing or wish (খোদা … করুন) is করুক'}
 HON = re.compile(r'^(তাঁ|যাঁ)(র|কে|রা|দের|দেরকে)(ই|ও)?$')
 OE = re.compile(r'^(ওঁ|এঁ)(র|কে|রা|দের)(ই|ও)?$')
 

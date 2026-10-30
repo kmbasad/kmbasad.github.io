@@ -13,6 +13,8 @@ this skill**), not only in the text in front of you.
 Each rule carries where it came from:
 - **[owner]**: he said it or wrote it himself.
 - **[accepted]**: Claude proposed it on the review page (see Sources) and he left it as it was.
+- **[claude]**: Claude chose it while converting a text, following the rules here; he has not
+  seen it as a rule yet. Treat it as a default and list it for him when you hand work over.
 - **[open]**: not decided yet; ask, or follow the default given and say so.
 
 ## The register
@@ -69,6 +71,8 @@ would be read as a perfect. Everything else follows from that.
 | আপনি's imperative | করুন, দিন, বসুন, শুনুন | **করেন, দেন, বসেন, শোনেন** | [accepted] |
 | negative past | করেনি, হয়নি, দেখিনি | **করে নাই, হয় নাই, দেখি নাই** | [accepted]; joined or apart is [open], he wrote "দাওনাই" in chat |
 | নেই | নেই | **নাই** | [accepted] |
+| রয়েছে meaning "is", "there is" | রয়েছে | **আছে** (রইছে only for "stayed") | [claude] |
+| a blessing or wish | খোদা … করুন | **করুক**, not আপনি's করেন | [claude] |
 | infinitive | করতে, হতে, যেতে | করতে, হতে; যেতে → **যাইতে**, খেতে → **খাইতে**, পেতে → **পাইতে** | [accepted]; হতে, not হইতে [owner] |
 | verbal noun | দেওয়া, নেওয়া | **দেয়া, নেয়া** | [accepted] |
 | first person present of দেওয়া, নেওয়া | দিই, নিই | **দেই, নেই** | [accepted] |
@@ -78,6 +82,11 @@ would be read as a perfect. Everything else follows from that.
 - **তুই [accepted, use open]:** the paradigm is in `forms.tsv`: করিস, করতেছিস, করছিস, করলি, করতি,
   করবি, কর, করিস নাই; আয়, যা, দে, নে. Where তুই belongs (master to servant, insults, close
   friends) is [open]. Follow the source text's own intimacy, and when unsure keep তুমি.
+- **The new progressive and perfect can clash in speech [claude]:**
+  - মানতেছি (j'avoue) reads oddly; মানলাম is how Dhaka concedes a point.
+  - দেখতেছ তো / দেখতেছেন তো become দেখলা তো / দেখলেন তো.
+  - Dhaka has no চলছি for "am going", since চলছি reads as a perfect: say যাচ্ছি.
+  - Where a progressive was used only for colour (সবসময়ই থাকতেছে), the plain present (সবসময়ই আছে) is better.
 - **Both may be right [owner]:** where Dhaka has two living forms (খাচ্ছি / খাইতেছি,
   হতে / হইতে), either is fine. Prefer the lighter one in narration. Don't make the text
   uniform by force.
@@ -104,6 +113,24 @@ Look at the subject.
 - **-টি → -টা:** একটি → একটা, দুটি → দুইটা, তিনটি → তিনটা, প্রতিটি → প্রতিটা, লোকটি → লোকটা. But রুটি, মাটি and
   খাঁটি are words, not -টি.
 - **Left as they are:** কোথায়, এখানে, সেখানে, হ্যাঁ, হুজুর, খোদা.
+- **Added while converting Candide [claude]** (`words.tsv` lists them with status `claude`):
+  - **Numbers:** দুটো → দুইটা, তিনটে → তিনটা.
+  - **Kolkata words:** ভাইপো → ভাতিজা, মাইনে → বেতন, পণ্ডিতমশাই → মাস্টার সাহেব, পাঠশালা → স্কুল, ছুতোর → কাঠমিস্ত্রি.
+  - **Bangladeshi spellings:** ইচ্ছা, নাস্তা, ভিখারি, পূজা, চৌদ্দ, জুতা, খুচরা, তাড়াহুড়া, ন্যাংটা.
+  - **Old words:** সওদাগর → ব্যবসায়ী, শুঁড়িখানা → সরাইখানা.
+
+  Not generalised: পুরোনো, টুকরো, কৌটো and মুক্তো stay until he says otherwise.
+- **Homographs [claude]:** these look like verb forms but often aren't. The lint and
+  `convert.py` leave them to you:
+  - দিন: "day", far more often than "please give".
+  - দেবে: "sinks" (কাদায় দেবে গেল), not only "will give".
+  - পেতে: in ওত পেতে it comes from পাতা.
+  - চেয়ে: "than".
+  - পরে: "after".
+  - মানে: "meaning".
+  - বাড়ি: "house".
+  - ভেড়া: "sheep".
+  - গলা: "throat".
 
 ## In dialogue
 
@@ -117,10 +144,9 @@ use it inside speech. Otherwise:
 
 ## Converting a standard text
 
-1. **First pass, by script:** change what is certain. Any form whose every reading has
-   the same Dhaka form, honorifics, the safe words. (`forms.tsv` is the map. Candide's
-   first pass lived in the session's scratchpad as `mech.py`; rebuild it from the tables
-   if you need one.)
+1. **First pass, by script:** `python3 -I .claude/skills/dhaka-bangla/convert.py FILE`
+   (`--col N` for a TSV). It changes only what is certain: forms whose every reading has
+   one Dhaka form, honorifics, and the safe words. It matches whole words only.
 2. **Read every sentence**, the original beside the first pass, and decide what needs the
    sentence:
    - তুমি forms (-তে, -লে, -বে)
@@ -170,6 +196,9 @@ use it inside speech. Otherwise:
   it was.
 - 2026-10-30: from his notes on Candide's review page: words must be familiar today (সহিস,
   আস্তাবল out); উঠান; the plain তার for everyone, তাঁর only as sarcasm.
+- 2026-10-30: Candide converted with this skill (first pass by script, then every sentence
+  read). That gave the [claude] rows: রয়েছে → আছে, the blessing's করুক, the speech clashes,
+  the homographs, and the words and spellings above. They await his reading of the draft.
 
 ## Sources
 
