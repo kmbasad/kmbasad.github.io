@@ -1000,3 +1000,31 @@ body.pn-home-page .colophon { margin-top: 0; }
 @media (max-width: 1099px) {
   .rail-seal { flex-direction: row-reverse; justify-content: flex-end; margin: 1rem 0 0 calc(-1.6rem - 8.5px); }
 }
+
+/* ~ Tablets, held either way (761–1099px): the rail has become a sheet and
+     the shell's left margin is gone, so the reading column keeps its own
+     margins from the screen's edges ~ */
+@media (min-width: 761px) and (max-width: 1099px) {
+  .shell .es-page, .shell .gd-page, .shell .pn-page, .shell .trellis-page {
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-left: max(40px, 6vw);
+    padding-right: max(40px, 6vw);
+  }
+  /* a reading column narrower than the screen stands in its middle */
+  .shell .es-page, .shell .gd-page { margin-left: auto; margin-right: auto; }
+}
+
+/* ~ Browsers without clamp() (older Safari on an iPad): a custom property
+     holding clamp() would make every padding built on it void, so they get
+     plain values here ~ */
+@supports not (width: clamp(1px, 2px, 3px)) {
+  :root {
+    --rail-gap: 3.5vw;
+    --shell-pad: 6vw;
+    --title-fs: 2.3rem;
+    --stand-fs: 1.15rem;
+    --h2-fs: 1.45rem;
+    --page-top: 4.5rem;
+  }
+}

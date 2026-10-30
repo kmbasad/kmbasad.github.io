@@ -105,23 +105,19 @@
     var coarse = matchMedia('(pointer: coarse)').matches;
     var mode = (!coarse && vw >= 900 && vw / vh >= 1.15) ? 'spread'
       : (Math.min(vw, vh) < 600 ? 'phone' : 'tablet');
-    var BAR = 48, pw, ph, fs;
-    if (mode === 'spread') {
-      ph = Math.min(vh - 2 * BAR - 36, 1040);
-      pw = Math.min(Math.round(ph * 0.7), Math.floor((vw - 56) / 2));
-      ph = Math.min(ph, Math.round(pw / 0.6));
-      fs = Math.max(14.5, Math.min(19, pw * 0.031));
-    } else if (mode === 'tablet') {
-      ph = vh - 44;
-      pw = Math.min(vw - 44, Math.round(ph * 0.75));
-      fs = Math.max(16, Math.min(20, pw * 0.031));
-    } else {
-      pw = vw; ph = vh; fs = 15;
-    }
+    // the book is the whole screen: a spread is two half screens, a
+    // tablet's or a phone's page the screen itself
+    var pw = mode === 'spread' ? Math.floor(vw / 2) : vw, ph = vh, fs;
+    if (mode === 'spread') fs = Math.max(14.5, Math.min(17, ph / 56));
+    else if (mode === 'tablet') fs = Math.max(14.5, Math.min(16.5, Math.min(vw, vh) / 50));
+    else fs = 15;
     fs = Math.round(fs * SCALES[scaleAt] * 10) / 10;
-    var px = Math.round(pw * (mode === 'phone' ? 0.065 : 0.095));
-    var pt = mode === 'phone' ? 40 : Math.round(ph * 0.078);
-    var pbm = mode === 'phone' ? 40 : Math.round(ph * 0.075);
+    // margins: a fair share of the page, and never a line longer than a
+    // reader's eye takes in (about forty ems)
+    var phone = mode === 'phone';
+    var px = Math.max(Math.round(pw * (phone ? 0.065 : 0.075)), Math.round((pw - fs * (phone ? 999 : 40)) / 2));
+    var pt = phone ? 40 : Math.max(46, Math.round(ph * 0.07));
+    var pbm = phone ? 40 : Math.max(46, Math.round(ph * 0.07));
     return { mode: mode, pw: pw, ph: ph, fs: fs, px: px, pt: pt, pbm: pbm, key: [mode, pw, ph, fs].join() };
   }
 
@@ -171,7 +167,9 @@
   /* ~ laying the book out ~ */
   var pages = [];
   var cur = 0;
-  var gen = 0;   // a newer layout cancels an older one still running
+  var gen = 0;        // a newer layout cancels an older one still running
+  var laying = false; // the last page is still being filled, out of reach
+  var lastReady = function () { return pages.length - (laying ? 2 : 1); };
 
   function makePage() {
     var p = el('div', 'pb-page');
@@ -209,9 +207,20 @@
     book.hidden = true;
     var span = wait.querySelector('span');
     var out = [titlePage(), versoPage()];
-    var page = null, body = null, bi = 0;
+    decorate(out[0], 0);
+    decorate(out[1], 1);
+    var page = null, body = null, bi = 0, opened = false;
+    laying = false;
+    // enough is laid when the reader's page and a spread beyond it are done
+    var enough = function () {
+      if (out.length < 8) return false;
+      if (!anchor) return true;
+      var a = out[out.length - 6]._at;
+      return !!a && (a[0] > anchor[0] || (a[0] === anchor[0] && a[1] > anchor[1]));
+    };
 
     function start(ch, opening, at) {
+      if (out.length > 2) decorate(out[out.length - 1], out.length - 1);
       page = makePage();
       page._ch = ch;
       page._open = opening;
@@ -245,6 +254,33 @@
       return lo;
     }
 
+    // where an overflowing block in place on the page must be cut: the
+    // last word whose line still ends inside the page, read from the
+    // words' own boxes (one layout, no trial cuts)
+    function lineCut(part) {
+      var lim = body.getBoundingClientRect().top + body.clientHeight + 0.5;
+      var lh = parseFloat(getComputedStyle(part).lineHeight) || 0;
+      var spots = [], walk = document.createTreeWalker(part, NodeFilter.SHOW_TEXT), t, m;
+      while ((t = walk.nextNode())) {
+        WORD.lastIndex = 0;
+        while ((m = WORD.exec(t.data))) spots.push([t, m.index, m.index + m[0].length]);
+      }
+      var r = document.createRange();
+      var ends = function (k) {
+        r.setStart(spots[k][0], spots[k][1]);
+        r.setEnd(spots[k][0], spots[k][2]);
+        var b = r.getBoundingClientRect();
+        return b.top + (b.height + Math.max(lh, b.height)) / 2;
+      };
+      var lo = 0, hi = spots.length;   // the first `lo` words fit
+      while (lo < hi) {
+        var mid = (lo + hi + 1) >> 1;
+        if (ends(mid - 1) <= lim) lo = mid; else hi = mid - 1;
+      }
+      return Math.min(lo, spots.length - 1);
+    }
+    function headOf(part, n) { var h = cut(part, n, 'head'); h.classList.add('pb-split'); return h; }
+
     function place(i) {
       var b = blocks[i];
       if (b.kind === 'ch') {
@@ -260,24 +296,28 @@
       if (!body.childNodes.length) page._at = [i, 0];
       body.appendChild(node);
       if (fits()) return;
-      body.removeChild(node);
       var part = node, done = 0;
       for (;;) {
         var total = words(part);
-        var n = most(part, total);
-        if (n === 0 && !body.childNodes.length) n = 1;   // a word wider than a page: it goes anyway
+        var n = lineCut(part);
+        body.removeChild(part);
+        var hd = null;
         if (n > 0) {
-          var hd = cut(part, n, 'head');
-          hd.classList.add('pb-split');
+          hd = headOf(part, n);
           body.appendChild(hd);
-          part = cut(part, n, 'tail');
-          done += n;
+          if (!fits()) {
+            // the boxes misjudged by a hair: search it out the slow way
+            body.removeChild(hd);
+            n = most(part, total);
+            if (n > 0) body.appendChild(headOf(part, n));
+          }
         }
+        if (n === 0 && !body.childNodes.length) { n = 1; body.appendChild(headOf(part, 1)); }   // a word wider than a page
+        if (n > 0) { part = cut(part, n, 'tail'); done += n; }
         start(b.ch, false, [i, done]);
         if (done > 0) part.classList.add('pb-cont');
         body.appendChild(part);
         if (fits()) return;
-        body.removeChild(part);
       }
     }
 
@@ -286,7 +326,9 @@
       var t0 = performance.now();
       while (bi < blocks.length && performance.now() - t0 < 16) place(bi++);
       if (bi < blocks.length) {
-        span.textContent = bn(Math.round(100 * bi / blocks.length)) + '%';
+        if (!opened && enough()) { opened = true; early(out, anchor); }
+        else if (!opened) span.textContent = bn(Math.round(100 * bi / blocks.length)) + '%';
+        else count.textContent = cur >= 2 ? 'পৃষ্ঠা ' + bn(cur - 1) : '';
         setTimeout(step, 0);
         return;
       }
@@ -296,18 +338,32 @@
     setTimeout(step, 0);
   }
 
-  function finish(out, anchor) {
+  // a finished page gets its side, folio and running head
+  function decorate(p, i) {
+    p.setAttribute('data-side', i % 2 ? 'left' : 'right');
+    if (i < 2) return;
+    p.querySelector('.pb-num').textContent = bn(i - 1);
+    var run = p.querySelector('.pb-run');
+    if (p._open) run.textContent = '';
+    else run.textContent = geo.mode === 'spread' && i % 2 ? bookTitle : chapters[p._ch].label;
+    if (p._open) chapters[p._ch].page = i;
+  }
+
+  // the first pages are in hand: open the book there while the rest is laid
+  function early(out, anchor) {
     pages = out;
-    var spread = geo.mode === 'spread';
-    pages.forEach(function (p, i) {
-      p.setAttribute('data-side', i % 2 ? 'left' : 'right');
-      if (i < 2) return;
-      p.querySelector('.pb-num').textContent = bn(i - 1);
-      var run = p.querySelector('.pb-run');
-      if (p._open) run.textContent = '';
-      else run.textContent = spread && i % 2 ? bookTitle : chapters[p._ch].label;
-      if (p._open) chapters[p._ch].page = i;
-    });
+    laying = true;
+    wait.hidden = true;
+    book.hidden = false;
+    pos = anchor || null;
+    go(anchor ? find(anchor) : 0, !!anchor);
+  }
+
+  function finish(out, anchor) {
+    var wasOpen = laying && pages === out;
+    pages = out;
+    laying = false;
+    pages.forEach(decorate);
     range.max = pages.length - 1;
     tocList.textContent = '';
     chapters.forEach(function (c) {
@@ -322,7 +378,7 @@
     });
     wait.hidden = true;
     book.hidden = false;
-    go(anchor ? find(anchor) : 0);
+    if (wasOpen) show(); else { pos = anchor || null; go(anchor ? find(anchor) : 0, !!anchor); }
   }
 
   // the page on which a place in the text falls
@@ -336,10 +392,17 @@
     return best;
   }
 
+  var pos = null;   // the reader's place in the text, kept across layouts
   function anchorNow() {
+    if (pos) return pos;
     var a = pages[visibleFirst()] && pages[visibleFirst()]._at;
     if (!a && pages[visibleFirst() + 1]) a = pages[visibleFirst() + 1]._at;
     return a || null;
+  }
+  // the place shown now: the first page in view that holds text
+  function placeShown() {
+    var f = visibleFirst();
+    return (pages[f] && pages[f]._at) || (geo.mode === 'spread' && pages[f + 1] && pages[f + 1]._at) || null;
   }
 
   /* ~ showing and turning ~ */
@@ -361,106 +424,131 @@
     range.value = cur;
     var p = pages[cur];
     where.innerHTML = p && p._ch != null ? chapters[p._ch].label : bookTitle;
-    count.textContent = cur >= 2 ? 'পৃষ্ঠা ' + bn(cur - 1) + ' / ' + bn(pages.length - 2) : '';
-    var a = anchorNow();
-    if (a) save('at', a);
+    count.textContent = cur >= 2 ? 'পৃষ্ঠা ' + bn(cur - 1) + (laying ? '' : ' / ' + bn(pages.length - 2)) : '';
+    if (pos) save('at', pos);
   }
 
-  function go(i) {
-    cur = Math.max(0, Math.min(pages.length - 1, i));
+  // the reader moved: the place is now what they see
+  function moved() { pos = placeShown(); if (pos) save('at', pos); }
+
+  function go(i, keep) {
+    cur = Math.max(0, Math.min(lastReady() - (laying && geo.mode === 'spread' ? 1 : 0), i));
     if (geo.mode === 'spread') cur = Math.max(0, 2 * spreadOf(cur) - 1);
     show();
+    if (!keep) moved();
   }
 
-  /* A turn is a leaf: a copy of the page that goes over, its back the
-     page that comes, hinged at the spine (a spread) or at the page's left
-     edge (one page), swung through rotateY. Under it the slots already show
-     what the turn uncovers. A tap swings it whole; a finger on a phone or
-     tablet carries it, its edge under the finger, and on letting go it
-     falls the way the drag was going. */
+  /* A turn is a leaf, a copy of the page that goes over. On the spread it is
+     hinged at the spine, its back the page that comes, and swings through
+     rotateY like paper. On one page it slides, as an e-reader's page does:
+     forward the page in hand slides off to the left over the next, back the
+     previous slides in from the left over the page in hand. Under the leaf
+     the slots already show what the turn uncovers. Every turn is a progress
+     p from 0 to 1: a tap runs it whole, a finger carries it one to one, and
+     on letting go it settles the way the finger was going. */
   var busy = false;
-  var EASE = 'cubic-bezier(.3,.1,.2,1)';
+  var EASE = 'cubic-bezier(.25,.1,.25,1)';
 
   function prepare(dir) {
     var spread = geo.mode === 'spread';
     var target;
+    var last = lastReady();
     if (spread) {
       var s1 = spreadOf(cur) + dir;
-      if (s1 < 0 || 2 * s1 - 1 > pages.length - 1) return null;
+      if (s1 < 0 || 2 * s1 - 1 > last || (laying && 2 * s1 > last)) return null;
       target = Math.max(0, 2 * s1 - 1);
     } else {
       target = cur + dir;
-      if (target < 0 || target >= pages.length) return null;
+      if (target < 0 || target > last) return null;
     }
-    var leaf = el('div', 'pb-leaf');
-    var front = el('div', 'pb-face pb-front'), back = el('div', 'pb-face pb-back');
-    var shades = [el('span', 'pb-shade'), el('span', 'pb-shade')];
+    var leaf = el('div', 'pb-leaf' + (spread ? '' : ' pb-slide'));
+    var front = el('div', 'pb-face pb-front');
     var clone = function (p) { return p ? p.cloneNode(true) : blank(); };
-    var s0 = spreadOf(cur), from, to, origin, left;
-    if (spread && dir > 0) {
-      front.appendChild(clone(pages[2 * s0]));
-      back.appendChild(clone(pages[2 * s0 + 1]));
-      put(slotR, pages[2 * s0 + 2]);
-      origin = 'left center'; left = 'var(--pw)'; from = 0; to = -180;
-    } else if (spread) {
-      front.appendChild(clone(s0 > 0 ? pages[2 * s0 - 1] : null));
-      back.appendChild(clone(pages[2 * s0 - 2]));
-      put(slotL, s0 - 1 > 0 ? pages[2 * s0 - 3] : null);
-      slotL.classList.toggle('pb-empty', s0 - 1 === 0);
-      origin = 'right center'; left = '0px'; from = 0; to = 180;
-    } else if (dir > 0) {
-      front.appendChild(clone(pages[cur]));
-      back.appendChild(blank());
-      put(slotR, pages[target]);
-      origin = 'left center'; left = '0px'; from = 0; to = -180;
+    var t = { leaf: leaf, dir: dir, target: target, spread: spread, p: 0, shades: [] };
+    var s0 = spreadOf(cur);
+    if (spread) {
+      var back = el('div', 'pb-face pb-back');
+      t.shades = [el('span', 'pb-shade'), el('span', 'pb-shade')];
+      if (dir > 0) {
+        front.appendChild(clone(pages[2 * s0]));
+        back.appendChild(clone(pages[2 * s0 + 1]));
+        put(slotR, pages[2 * s0 + 2]);
+        leaf.style.left = 'var(--pw)';
+        leaf.style.transformOrigin = 'left center';
+      } else {
+        front.appendChild(clone(s0 > 0 ? pages[2 * s0 - 1] : null));
+        back.appendChild(clone(pages[2 * s0 - 2]));
+        put(slotL, s0 - 1 > 0 ? pages[2 * s0 - 3] : null);
+        slotL.classList.toggle('pb-empty', s0 - 1 === 0);
+        leaf.style.left = '0px';
+        leaf.style.transformOrigin = 'right center';
+      }
+      front.appendChild(t.shades[0]);
+      back.appendChild(t.shades[1]);
+      leaf.appendChild(front);
+      leaf.appendChild(back);
     } else {
-      front.appendChild(clone(pages[target]));
-      back.appendChild(blank());
-      origin = 'left center'; left = '0px'; from = -180; to = 0;
+      if (dir > 0) { front.appendChild(clone(pages[cur])); put(slotR, pages[target]); }
+      else front.appendChild(clone(pages[target]));
+      leaf.appendChild(front);
+      leaf.style.left = '0px';
     }
-    front.appendChild(shades[0]);
-    back.appendChild(shades[1]);
-    leaf.appendChild(front);
-    leaf.appendChild(back);
-    leaf.style.left = left;
-    leaf.style.transformOrigin = origin;
-    leaf.style.transform = 'rotateY(' + from + 'deg)';
+    leaf.style.transform = transformAt(t, 0);
     book.appendChild(leaf);
-    return { leaf: leaf, shades: shades, from: from, to: to, target: target, dir: dir, angle: from };
+    return t;
   }
 
-  function setAngle(t, a) {
-    t.angle = a;
-    t.leaf.style.transform = 'rotateY(' + a + 'deg)';
-    var k = Math.sin(Math.abs(a) * Math.PI / 180);
-    t.shades[0].style.opacity = t.shades[1].style.opacity = k.toFixed(3);
+  // the leaf's place at progress p
+  function transformAt(t, p) {
+    if (t.spread) return 'rotateY(' + (t.dir > 0 ? -180 * p : 180 * p) + 'deg)';
+    var w = geo.pw + 30;   // and its shadow, clear of the screen
+    return 'translate3d(' + (t.dir > 0 ? -w * p : -w * (1 - p)) + 'px,0,0)';
   }
 
-  // the leaf swings from where it is to `end`; then the slots settle
-  function swing(t, end, dur, commit) {
-    var a0 = t.angle;
-    var anim = t.leaf.animate([{ transform: 'rotateY(' + a0 + 'deg)' }, { transform: 'rotateY(' + end + 'deg)' }],
-      { duration: dur, easing: EASE, fill: 'forwards' });
-    t.shades.forEach(function (s) {
-      var o = +s.style.opacity || 0;
-      var mid = Math.abs(end - a0) > 90 ? 1 : o;
-      s.animate([{ opacity: o }, { opacity: mid, offset: 0.5 }, { opacity: 0 }], { duration: dur, easing: EASE, fill: 'forwards' });
-    });
-    anim.onfinish = function () {
-      if (commit) cur = t.target;
-      show();
-      t.leaf.remove();
+  function setP(t, p) {
+    t.p = p;
+    t.leaf.style.transform = transformAt(t, p);
+    var k = Math.sin(Math.PI * p).toFixed(3);
+    t.shades.forEach(function (s) { s.style.opacity = k; });
+  }
+
+  // the leaf runs from where it is to `end` (0 or 1); then the slots settle
+  var canAnimate = !!Element.prototype.animate;
+  function settle(t, end, dur) {
+    var p0 = t.p;
+    var done = function () {
+      if (end === 1) { cur = t.target; show(); moved(); } else show();
+      if (t.leaf.parentNode) t.leaf.parentNode.removeChild(t.leaf);
       busy = false;
     };
+    if (!canAnimate) {
+      // a CSS transition does it where the animations API is missing
+      t.leaf.style.transition = 'transform ' + dur + 'ms ' + EASE;
+      t.shades.forEach(function (s) { s.style.transition = 'opacity ' + dur + 'ms ' + EASE; s.style.opacity = 0; });
+      t.leaf.getBoundingClientRect();
+      t.leaf.style.transform = transformAt(t, end);
+      setTimeout(done, dur + 30);
+      return;
+    }
+    var anim = t.leaf.animate([{ transform: transformAt(t, p0) }, { transform: transformAt(t, end) }],
+      { duration: dur, easing: EASE, fill: 'forwards' });
+    t.shades.forEach(function (s) {
+      var o = Math.sin(Math.PI * p0);
+      var crosses = (p0 < 0.5 && end > 0.5) || (p0 > 0.5 && end < 0.5);
+      var frames = crosses ? [{ opacity: o }, { opacity: 1, offset: Math.abs(0.5 - p0) / Math.abs(end - p0) }, { opacity: 0 }]
+        : [{ opacity: o }, { opacity: 0 }];
+      s.animate(frames, { duration: dur, easing: EASE, fill: 'forwards' });
+    });
+    anim.onfinish = done;
   }
 
   function turn(dir) {
     if (busy || !pages.length || !geo) return;
     var t = prepare(dir);
     if (!t) return;
-    if (reduceMotion) { cur = t.target; show(); t.leaf.remove(); return; }
+    if (reduceMotion) { cur = t.target; show(); moved(); book.removeChild(t.leaf); return; }
     busy = true;
-    swing(t, t.to, geo.mode === 'spread' ? 640 : 420, true);
+    settle(t, 1, t.spread ? 640 : 300);
   }
 
   /* ~ the frame's controls ~ */
@@ -468,7 +556,22 @@
   function setChrome(on) {
     clearTimeout(chromeTimer);
     pb.classList.toggle('pb-chrome-off', !on);
+    if (on) foldLater();
   }
+  // shown bars fold away by themselves, unless the reader is using them
+  function foldLater() {
+    clearTimeout(chromeTimer);
+    chromeTimer = setTimeout(function () {
+      if (!tocBox.hidden || pb.querySelector('.pb-bar:hover')) { foldLater(); return; }
+      pb.classList.add('pb-chrome-off');
+    }, 2800);
+  }
+  // a mouse at the screen's top or foot brings them
+  pb.addEventListener('mousemove', function (e) {
+    if (e.clientY < 64 || e.clientY > pb.clientHeight - 64) {
+      if (pb.classList.contains('pb-chrome-off')) setChrome(true); else foldLater();
+    }
+  });
   function setToc(on) {
     tocBox.hidden = !on;
     if (on) { setChrome(true); var a = tocList.querySelectorAll('.pb-toc-a')[pages[cur] && pages[cur]._ch || 0]; if (a) a.focus(); }
@@ -508,15 +611,13 @@
 
   // taps, clicks, drags and the wheel on the stage
   var down = null, drag = null, swallow = false;
-  var clamp1 = function (x) { return Math.max(-1, Math.min(1, x)); };
-  var acosDeg = function (x) { return Math.acos(clamp1(x)) * 180 / Math.PI; };
 
-  stage.addEventListener('pointerdown', function (e) {
+  function onDown(e) {
     if (e.button > 0 || !geo) return;
     down = { x: e.clientX, y: e.clientY, id: e.pointerId, type: e.pointerType };
     swallow = false;
-  });
-  stage.addEventListener('pointermove', function (e) {
+  }
+  function onMove(e) {
     if (!down || e.pointerId !== down.id) return;
     var dx = e.clientX - down.x, dy = e.clientY - down.y;
     if (!drag) {
@@ -526,15 +627,15 @@
       if (!t) { down = null; return; }
       busy = true;
       drag = { t: t, lx: e.clientX, lt: e.timeStamp, v: 0 };
-      try { stage.setPointerCapture(e.pointerId); } catch (err) {}
+      try { if (stage.setPointerCapture && window.PointerEvent) stage.setPointerCapture(e.pointerId); } catch (err) {}
     }
-    var w = geo.pw, a = drag.t.dir > 0 ? -acosDeg(1 + 2 * dx / w) : -acosDeg(-1 + 2 * dx / w);
-    setAngle(drag.t, a);
+    var p = Math.max(0, Math.min(1, drag.t.dir > 0 ? -dx / geo.pw : dx / geo.pw));
+    setP(drag.t, p);
     var dt = e.timeStamp - drag.lt;
     if (dt > 0) drag.v = 0.7 * ((e.clientX - drag.lx) / dt) + 0.3 * drag.v;
     drag.lx = e.clientX;
     drag.lt = e.timeStamp;
-  });
+  }
   function release(e) {
     if (!down || e.pointerId !== down.id) return;
     var dx = e.clientX - down.x, dy = e.clientY - down.y;
@@ -544,10 +645,11 @@
       var t = drag.t, v = drag.v;
       drag = null;
       swallow = true;
-      var goOn = t.dir > 0 ? (v < -0.35 || (t.angle < -90 && v < 0.35)) : (v > 0.35 || (t.angle > -90 && v > -0.35));
-      var end = goOn ? t.to : t.from;
-      var dur = Math.max(140, Math.min(420, 380 * Math.abs(end - t.angle) / 180));
-      swing(t, end, dur, goOn);
+      var fling = t.dir > 0 ? -v : v;   // px per ms, the way of the turn
+      var goOn = fling > 0.3 || (t.p > 0.5 && fling > -0.3);
+      var end = goOn ? 1 : 0;
+      var dur = Math.max(120, Math.min(320, 300 * Math.abs(end - t.p)));
+      settle(t, end, dur);
       return;
     }
     // a quick flick with a mouse, or on the spread, still turns
@@ -555,8 +657,33 @@
       if (!String(getSelection() || '').trim()) { swallow = true; turn(dx < 0 ? 1 : -1); }
     }
   }
-  stage.addEventListener('pointerup', release);
-  stage.addEventListener('pointercancel', release);
+  if (window.PointerEvent) {
+    stage.addEventListener('pointerdown', onDown);
+    stage.addEventListener('pointermove', onMove);
+    stage.addEventListener('pointerup', release);
+    stage.addEventListener('pointercancel', release);
+  } else {
+    var asPointer = function (e, type) {
+      var t = e.changedTouches[0];
+      return { clientX: t.clientX, clientY: t.clientY, pointerId: 1, pointerType: 'touch', button: 0, timeStamp: e.timeStamp || Date.now(), type: type };
+    };
+    // a turn takes the touched page out of the document, and a touch then
+    // reports only to the node it began on: listen there, not on the stage
+    stage.addEventListener('touchstart', function (e) {
+      var node = e.target;
+      var mv = function (ev) { if (drag) ev.preventDefault(); onMove(asPointer(ev, 'pointermove')); };
+      var end = function (ev) {
+        node.removeEventListener('touchmove', mv);
+        node.removeEventListener('touchend', end);
+        node.removeEventListener('touchcancel', end);
+        release(asPointer(ev, ev.type === 'touchend' ? 'pointerup' : 'pointercancel'));
+      };
+      node.addEventListener('touchmove', mv, { passive: false });
+      node.addEventListener('touchend', end);
+      node.addEventListener('touchcancel', end);
+      onDown(asPointer(e, 'pointerdown'));
+    }, { passive: true });
+  }
 
   stage.addEventListener('click', function (e) {
     if (swallow) { swallow = false; return; }
@@ -565,8 +692,9 @@
     if (!geo || String(getSelection() || '').trim()) return;
     if (!tocBox.hidden) { setToc(false); return; }
     if (geo.mode === 'spread') {
-      var r = book.getBoundingClientRect();
-      turn(e.clientX < r.left + r.width / 2 ? -1 : 1);
+      var r = book.getBoundingClientRect(), mid = r.left + r.width / 2;
+      if (Math.abs(e.clientX - mid) < r.width * 0.06) setChrome(pb.classList.contains('pb-chrome-off'));
+      else turn(e.clientX < mid ? -1 : 1);
       return;
     }
     var x = e.clientX / stage.clientWidth;
@@ -627,8 +755,12 @@
     if (!pb.hidden) return;
     pb.hidden = false;
     html.classList.add('pb-open');
+    var settled = Promise.resolve();
     if (full && fsTarget) {
-      try { var r = pb[fsTarget](); if (r && r.catch) r.catch(function () {}); } catch (e) {}
+      try {
+        var r = pb[fsTarget]();
+        if (r && r.then) settled = Promise.race([r.catch(function () {}), new Promise(function (ok) { setTimeout(ok, 600); })]);
+      } catch (e) {}
     }
     if (location.hash !== '#book') {
       history.pushState({ pb: 1 }, '', location.pathname + location.search + '#book');
@@ -636,9 +768,10 @@
     }
     setChrome(true);
     var at = load('at', null);
-    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function () {
-      layout(at);
-      if (pb.getAttribute('data-mode') !== 'spread') chromeTimer = setTimeout(function () { setChrome(false); }, 2600);
+    var fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    Promise.all([settled, fonts]).then(function () {
+      // a frame for the screen to take its new size
+      requestAnimationFrame(function () { layout(at); });
     });
     $('.pb-close').focus();
   }

@@ -1,6 +1,12 @@
 (function () {
   'use strict';
 
+  /* older Safari (an old iPad's) has only addListener on a media query; the
+     site's scripts speak addEventListener('change', …) */
+  if (window.MediaQueryList && !MediaQueryList.prototype.addEventListener) {
+    MediaQueryList.prototype.addEventListener = function (type, fn) { this.addListener(fn); };
+  }
+
   var reduceMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
