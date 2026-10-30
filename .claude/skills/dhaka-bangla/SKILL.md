@@ -134,6 +134,8 @@ Look at the subject.
     principle for an author's mock-learned coinage: keep it pompous, one compound, with the
     plain insult (গাধা) hidden inside, where the original hides it.
 - **পিছন, not পেছন [owner].**
+- **Old foreign coins: say what they are [owner]:** écu became রুপার মুদ্রা, not এক্যু (and
+  দশটা পাতাগোন এক্যু became দশটা রুপার মুদ্রা). Whether পিস্তোল, পিয়াস্তার and ফ্লোরিন go the same way is [open].
 - **Words coined by an earlier draft may stay [owner]:** he kept আড়ালপর্দা for paravent when
   offered ভাঁজ-করা পর্দা. Don't replace a working coinage only because it is new.
 - **Added while converting Candide [claude]** (`words.tsv` lists them with status `claude`):
