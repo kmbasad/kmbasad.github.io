@@ -17,8 +17,7 @@ import { AUTHOR_EN, LICENSE, DECLARATION, CREDIT } from '../data/site.js';
    so every unit is covered and every line runs through. Phones get a
    composition of their own on a narrower, taller grid. */
 
-const NAME = 'খান মুহাম্মদ বিন আসাদ';
-const TAGLINE = 'মানুষের যৌথ অচেতনে ব্যক্তিগত অভিযান';
+const TAGLINE = 'মানুষের প্রাকৃতিক যৌথ-অচেতনে কৃত্রিম অভিযান';
 
 const seeded = (seed) => () => {
   seed = (seed + 0x6d2b79f5) | 0;
@@ -111,8 +110,6 @@ const BN = (n) => String(n).padStart(2, '0').replace(/\d/g, (d) => String.fromCh
         <Mark class="home-mark" breathe />
         <h1 class="home-name">{SITE_NAME}</h1>
         <p class="home-tagline">{TAGLINE}</p>
-        <!-- whose journey it is -->
-        <p class="home-by">{NAME}</p>
       </section>
 
       {ROOMS.map((r, i) => (
@@ -127,8 +124,7 @@ const BN = (n) => String(n).padStart(2, '0').replace(/\d/g, (d) => String.fromCh
       <!-- who made it, and how to reach him -->
       <footer class="hp hp--meta" style={both(dMeta, pMeta)}>
         <span class="home-author">{AUTHOR_EN}</span>
-        <a href="mailto:kasad@iub.edu.bd">kasad@iub.edu.bd</a>
-        <a href="https://cassa.bd/people/asad/">cassa.bd/people/asad</a>
+        <a href="mailto:khanmuhammadbinasad@gmail.com">khanmuhammadbinasad@gmail.com</a>
         <a href="https://www.facebook.com/kmbasad">Facebook</a>
         <span class="home-declare">{DECLARATION}</span>
         <span class="home-declare">{CREDIT}</span>
