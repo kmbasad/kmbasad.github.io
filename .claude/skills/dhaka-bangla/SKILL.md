@@ -327,8 +327,11 @@ standard form with several rows has several readings, and the sentence decides b
 
 ## Sources
 
-The review pages on claude.ai keep his choices: the verb page
-(https://claude.ai/artifact/HacLRsBMWgyTXFJZwGXnRd) and Candide's sentence review
-(https://claude.ai/artifact/K2gn9GJuBeLZFUVHyY2ers). Their stores (notes, chapters, cells,
-forms, words, settings) hold every edit and comment he made. Read them when he says a chapter
-is done, and bring this skill up to date.
+- **The pages:** his choices were made on two claude.ai pages, the verb page and Candide's sentence review. Their
+  sources, the Dhaka draft and the latest export of their stores (every edit, comment and
+  verb choice he made) are in the repo at `tools/candide-review/`.
+- **Handover:** `tools/candide-review/HANDOVER.md` says how the review runs, where it stands, what is
+  still open, and how to republish the pages on another account.
+- **Links on his first account:** verb page https://claude.ai/artifact/HacLRsBMWgyTXFJZwGXnRd, review
+  https://claude.ai/artifact/K2gn9GJuBeLZFUVHyY2ers.
+- **When he says a chapter is done:** read the review page's store and bring this skill up to date.

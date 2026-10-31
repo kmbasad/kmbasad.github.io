@@ -1,0 +1,818 @@
+<title>Candide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600&family=EB+Garamond:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one chapter at a time in a reading column; the editor's desk
+   (French, the Bangla to mend, a comment) sits beside it on a wide screen
+   and rises from the foot as a sheet on a tablet held upright or a phone. */
+:root {
+  --paper: #fbfbfa;
+  --desk: #f1f3f6;
+  --ink: #15171c;
+  --ink-2: #4a505c;
+  --ink-3: #7a818e;
+  --rule: #dde1e8;
+  --lapis: #1d4f9b;
+  --lapis-soft: #e3ebf7;
+  --pencil: #b3311d;
+  --pencil-soft: #f9e8e4;
+  --ok: #2f6b3c;
+  --bn: 'Noto Serif Bengali', 'Kalpurush', 'SolaimanLipi', Georgia, serif;
+  --fr: 'EB Garamond', Garamond, Georgia, serif;
+  --ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --read: 1.15rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #13161c; --desk: #191d25; --ink: #e6e8ed; --ink-2: #b3b9c5; --ink-3: #858c99;
+    --rule: #2a303b; --lapis: #92b4ee; --lapis-soft: #1e2a40; --pencil: #ff8f78; --pencil-soft: #3a221e;
+    --ok: #86c995; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #13161c; --desk: #191d25; --ink: #e6e8ed; --ink-2: #b3b9c5; --ink-3: #858c99;
+  --rule: #2a303b; --lapis: #92b4ee; --lapis-soft: #1e2a40; --pencil: #ff8f78; --pencil-soft: #3a221e;
+  --ok: #86c995; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--paper); color: var(--ink); font-family: var(--ui); font-size: 15px; }
+button, select, textarea, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--lapis); outline-offset: 2px; }
+
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+
+/* ---------- top bar ---------- */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 10px;
+}
+.bar-in { max-width: 76rem; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.brand { display: flex; align-items: baseline; gap: 8px; margin-right: auto; min-width: 0; }
+.brand b { font-family: var(--bn); font-weight: 600; font-size: 1.1rem; }
+.brand span { color: var(--ink-3); font-size: 0.85rem; white-space: nowrap; }
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.btn {
+  border: 1px solid var(--rule); background: var(--paper); border-radius: 6px;
+  padding: 6px 10px; font-size: 0.85rem; line-height: 1.2; white-space: nowrap;
+}
+.btn:hover { border-color: var(--ink-3); }
+.btn[aria-pressed="true"] { background: var(--lapis-soft); border-color: var(--lapis); color: var(--lapis); }
+.btn.primary { background: var(--lapis); border-color: var(--lapis); color: var(--paper); }
+select.btn { padding-right: 6px; max-width: 15rem; font-family: var(--bn); }
+.status { font-size: 0.8rem; color: var(--ink-3); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.status i { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-3); display: inline-block; }
+.status.saved i { background: var(--ok); }
+.status.saving i { background: var(--lapis); }
+.status.err i, .status.local i { background: var(--pencil); }
+.status.err, .status.local { color: var(--pencil); }
+
+.banner {
+  max-width: 76rem; margin: 10px auto 0; padding: 10px 14px; border-radius: 6px;
+  background: var(--pencil-soft); color: var(--ink); font-size: 0.88rem; line-height: 1.5;
+}
+
+/* ---------- page ---------- */
+.wrap {
+  max-width: 76rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 40px;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px;
+}
+main { min-width: 0; max-width: 40rem; width: 100%; margin: 0 auto; }
+body.sheet-open main { padding-bottom: 60dvh; }
+
+.ch-head { margin: 34px 0 26px; text-align: center; }
+.ch-num { font-family: var(--bn); color: var(--ink-3); font-size: 0.95rem; letter-spacing: 0.02em; }
+.ch-title { font-family: var(--bn); font-weight: 600; font-size: calc(var(--read) * 1.3); line-height: 1.6; margin: 8px 0 0; text-wrap: balance; }
+
+.text { font-family: var(--bn); font-size: var(--read); line-height: 1.95; }
+.text p { margin: 0 0 1.05em; text-align: justify; hyphens: none; }
+.text blockquote { margin: 0 0 1.05em; padding-left: 1.2em; border-left: 2px solid var(--rule); }
+.text blockquote p { margin: 0; }
+.fr-p { font-family: var(--fr); font-size: calc(var(--read) * 1.02); line-height: 1.55; color: var(--ink-2); margin: -0.5em 0 1.4em !important; text-align: left !important; }
+.fr-p .s { border-radius: 2px; }
+.vnote { margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--rule); font-size: 0.92em; color: var(--ink-2); }
+.vnote-h { font-family: var(--ui); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.4em; }
+
+.s { cursor: pointer; border-radius: 3px; padding: 0.05em 0; transition: background-color 0.12s; -webkit-tap-highlight-color: transparent; }
+@media (hover: hover) { .s:hover { background: var(--lapis-soft); } }
+.chg { text-decoration: underline; text-decoration-color: var(--pencil); text-decoration-thickness: 2px; text-underline-offset: 0.4em; }
+.gap::before { content: "‸"; color: var(--pencil); font-family: var(--ui); font-size: 0.85em; margin: 0 0.05em; }
+.s.cm::after { content: ""; display: inline-block; width: 0.42em; height: 0.42em; border-radius: 50%; background: var(--lapis); vertical-align: super; margin-left: 0.18em; }
+.s.sel { background: var(--lapis-soft); box-shadow: 0 0 0 0.12em var(--lapis-soft); }
+.ch-title .s.cm::after { width: 0.32em; height: 0.32em; }
+sup.fn { font-size: 0.7em; line-height: 0; }
+
+.ch-end { margin-top: 40px; padding: 18px; border: 1px solid var(--rule); border-radius: 8px; background: var(--desk); display: grid; gap: 12px; font-size: 0.92rem; }
+.ch-end label.h { font-weight: 600; font-size: 0.85rem; }
+.ch-end textarea { min-height: 5.5rem; }
+.done { display: flex; align-items: center; gap: 8px; }
+.done input { width: 18px; height: 18px; accent-color: var(--lapis); }
+.ch-nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+textarea {
+  width: 100%; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper);
+  padding: 9px 11px; resize: vertical; line-height: 1.7;
+}
+textarea { resize: none; overflow: hidden; }
+textarea:focus { border-color: var(--lapis); outline: none; box-shadow: 0 0 0 3px var(--lapis-soft); }
+
+/* ---------- the desk (panel) ---------- */
+#desk {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 8;
+  max-height: min(68dvh, 36rem); overflow: auto; overscroll-behavior: contain;
+  background: var(--desk); border-top: 1px solid var(--rule); border-radius: 14px 14px 0 0;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+  padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  transform: translateY(105%); transition: transform 0.22s ease; visibility: hidden;
+}
+body.sheet-open #desk { transform: none; visibility: visible; }
+.desk-in { max-width: 40rem; margin: 0 auto; display: grid; gap: 10px; }
+.desk-top { display: flex; align-items: center; gap: 6px; }
+.desk-id { font-size: 0.8rem; color: var(--ink-3); margin-right: auto; font-variant-numeric: tabular-nums; }
+.icon { border: 1px solid var(--rule); background: var(--paper); border-radius: 6px; width: 34px; height: 32px; display: inline-grid; place-items: center; padding: 0; }
+.icon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lbl { font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; display: flex; justify-content: space-between; gap: 8px; }
+.lbl em { font-style: normal; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.fr { font-family: var(--fr); font-size: 1.12rem; line-height: 1.5; margin: 0; color: var(--ink); }
+#d-bn { font-family: var(--bn); font-size: 1.05rem; min-height: 6rem; }
+#d-cm { min-height: 4.2rem; }
+.reply { margin: 0; font-size: 0.85rem; line-height: 1.6; color: var(--ink-2); border-left: 3px solid var(--ok); padding-left: 10px; white-space: pre-wrap; }
+.reply b { color: var(--ok); font-weight: 600; }
+.prev { font-family: var(--bn); font-size: 0.9rem; color: var(--ink-3); line-height: 1.7; }
+.prev summary { font-family: var(--ui); font-size: 0.75rem; cursor: pointer; color: var(--ink-3); }
+.prev summary:hover { color: var(--ink); }
+.prev span { display: block; margin-top: 4px; }
+.orig { font-family: var(--bn); font-size: 0.92rem; color: var(--ink-2); line-height: 1.7; background: var(--paper); border: 1px dashed var(--rule); border-radius: 6px; padding: 8px 10px; }
+.orig s { text-decoration-color: var(--pencil); }
+.link { border: 0; background: none; color: var(--lapis); padding: 0; font-size: 0.82rem; text-decoration: underline; text-underline-offset: 2px; }
+.desk-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 0.8rem; color: var(--ink-3); }
+.danger { color: var(--pencil); }
+.g { display: grid; gap: 8px; min-width: 0; }
+.voice { display: grid; gap: 6px; }
+.voice-msg { font-size: 0.8rem; color: var(--pencil); }
+.speak {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  border: 0; border-radius: 12px; padding: 10px 14px 10px 10px;
+  background: var(--lapis); color: var(--paper);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 4px 14px -6px var(--lapis);
+  transition: transform 0.08s ease, filter 0.12s ease;
+}
+.speak:hover { filter: brightness(1.07); }
+.speak:active { transform: scale(0.98); }
+.mic { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--paper) 18%, transparent); }
+.mic svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.speak-t { display: grid; gap: 1px; line-height: 1.3; }
+.speak-t b { font-weight: 600; font-size: 0.98rem; }
+.speak-t small { font-size: 0.78rem; opacity: 0.85; }
+/* phone and upright tablet: the comment first, then the Bangla, then the French */
+@media (max-width: 999px) {
+  #desk { padding-top: 10px; }
+  .desk-in { gap: 14px; }
+  .g-cm { order: 1; background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 12px; }
+  .g-cm .lbl { display: none; }
+  .g-bn { order: 2; }
+  .g-fr { order: 3; }
+  .desk-foot { order: 4; }
+  .speak { padding-block: 12px; }
+  .mic { width: 44px; height: 44px; }
+  #d-cm { min-height: 3.2rem; }
+}
+.tell { flex-basis: 100%; order: 3; color: var(--ink-3); }
+.hint { font-size: 0.85rem; color: var(--ink-2); line-height: 1.6; }
+.hint kbd { font-family: var(--ui); font-size: 0.78rem; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--paper); }
+.legend { display: grid; gap: 8px; font-size: 0.85rem; }
+.legend .s { cursor: default; font-family: var(--bn); }
+.only-wide { display: none; }
+@media (max-width: 999px) { .bar { position: static; } }
+
+@media (min-width: 1000px) {
+  .wrap { grid-template-columns: minmax(0, 1fr) 25rem; }
+  main { margin: 0; justify-self: center; }
+  body.sheet-open main { padding-bottom: 0; }
+  #desk {
+    position: sticky; top: 76px; align-self: start; transform: none; visibility: visible;
+    max-height: calc(100dvh - 96px); border: 1px solid var(--rule); border-radius: 10px;
+    box-shadow: none; margin-top: 30px; padding: 16px; transition: none;
+  }
+  .only-wide { display: block; }
+  .only-narrow { display: none !important; }
+}
+
+/* ---------- marks view ---------- */
+#marks { display: grid; gap: 18px; padding-top: 26px; }
+#marks h2 { font-size: 1.25rem; margin: 0; }
+.m-sum { color: var(--ink-2); font-size: 0.9rem; }
+.m-ch { font-family: var(--bn); font-weight: 600; font-size: 1.02rem; margin: 14px 0 0; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+.m-item { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); text-align: left; width: 100%; }
+.m-item:hover { border-color: var(--lapis); }
+.m-id { font-size: 0.75rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.m-fr { font-family: var(--fr); font-size: 1rem; color: var(--ink-2); }
+.m-old { font-family: var(--bn); color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--pencil); }
+.m-new { font-family: var(--bn); }
+.m-new .chg { color: var(--pencil); }
+.m-cm { font-size: 0.9rem; border-left: 3px solid var(--lapis); padding-left: 10px; white-space: pre-wrap; }
+.m-chnote { font-size: 0.9rem; white-space: pre-wrap; background: var(--desk); padding: 10px 12px; border-radius: 6px; }
+.empty { color: var(--ink-3); font-size: 0.92rem; padding: 18px; border: 1px dashed var(--rule); border-radius: 8px; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="brand"><b>কাঁদিদ</b><span id="summary">Bangla review</span></div>
+    <div class="tools">
+      <button class="icon" id="prev-ch" aria-label="Previous chapter"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <select class="btn" id="ch-select" aria-label="Chapter"></select>
+      <button class="icon" id="next-ch" aria-label="Next chapter"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      <button class="btn" id="fr-toggle" aria-pressed="false">French</button>
+      <button class="btn" id="font-down" aria-label="Smaller text">A−</button>
+      <button class="btn" id="font-up" aria-label="Larger text">A+</button>
+      <button class="btn" id="marks-toggle" aria-pressed="false">Marks</button>
+    </div>
+    <div class="status" id="status"><i></i><span>Connecting…</span></div>
+  </div>
+  <div class="banner" id="banner" hidden></div>
+</header>
+
+<div class="wrap" data-uncommentable>
+  <main id="main">
+    <div id="reader"></div>
+    <section id="marks" hidden></section>
+  </main>
+
+  <aside id="desk" aria-label="Edit sentence">
+    <div class="desk-in" id="desk-empty">
+      <div class="lbl">How this works</div>
+      <p class="hint">Tap any sentence. Voltaire's French appears here; rewrite the Bangla, leave a comment, or both. Everything saves as you type.</p>
+      <div class="legend">
+        <div><span class="s">একটি <span class="chg">সংশোধিত</span> বাক্য</span> &nbsp;the words you changed</div>
+        <div><span class="s cm">মন্তব্যসহ বাক্য</span> &nbsp;has a comment</div>
+      </div>
+      <p class="hint"><kbd>j</kbd> <kbd>k</kbd> next / previous sentence, <kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>Enter</kbd> next while typing, <kbd>c</kbd> into the comment box, <kbd>Esc</kbd> close.</p>
+    </div>
+    <div class="desk-in" id="desk-full" hidden>
+      <div class="desk-top">
+        <span class="desk-id" id="d-id"></span>
+        <button class="icon" id="d-prev" aria-label="Previous sentence"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="icon" id="d-next" aria-label="Next sentence"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button class="icon only-narrow" id="d-close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="g g-fr">
+        <div class="lbl">Voltaire</div>
+        <p class="fr" id="d-fr" lang="fr"></p>
+      </div>
+      <div class="g g-bn">
+        <div class="lbl"><label for="d-bn">Bangla</label><em class="only-wide">_underscores_ = italics</em></div>
+        <textarea id="d-bn" lang="bn" rows="3"></textarea>
+        <div class="orig" id="d-orig" hidden>
+          <div class="lbl" style="margin-bottom:4px"><span>Was</span><button class="link" id="d-revert" type="button">Restore</button></div>
+          <span id="d-orig-text"></span>
+        </div>
+        <details class="prev" id="d-prev-box" hidden>
+          <summary>On the site now (standard Bangla)</summary>
+          <span id="d-prev-text"></span>
+        </details>
+      </div>
+      <div class="g g-cm">
+        <div class="lbl"><label for="d-cm">Comment</label><span class="c-anchor" id="c0" aria-hidden="true"></span></div>
+        <div class="voice" id="d-voice-row" hidden>
+          <button class="speak" id="d-voice" type="button">
+            <span class="mic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+            <span class="speak-t"><b>Comment in Claude's box</b><small>Speak or type, then press Comment: it saves at once</small></span>
+          </button>
+          <span class="voice-msg" id="d-voice-msg" hidden></span>
+        </div>
+        <textarea id="d-cm" rows="2" placeholder="What's wrong, what to check, an idea… (the keyboard's mic works here too)"></textarea>
+        <p class="reply" id="d-reply" hidden></p>
+      </div>
+      <div class="desk-foot">
+        <span id="d-stat"></span>
+        <span class="tell only-wide">Claude knows this one is selected: just dictate in the chat.</span>
+        <button class="link danger" id="d-clear" type="button" hidden>Clear this mark</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(() => {
+'use strict';
+const ROWS = JSON.parse(document.getElementById('data').textContent);
+const ORD = ['প্রথম', 'দ্বিতীয়', 'তৃতীয়', 'চতুর্থ', 'পঞ্চম', 'ষষ্ঠ', 'সপ্তম', 'অষ্টম', 'নবম', 'দশম',
+  'এগারোতম', 'বারোতম', 'তেরোতম', 'চৌদ্দতম', 'পনেরোতম', 'ষোলোতম', 'সতেরোতম', 'আঠারোতম', 'উনিশতম', 'বিশতম',
+  'একুশতম', 'বাইশতম', 'তেইশতম', 'চব্বিশতম', 'পঁচিশতম', 'ছাব্বিশতম', 'সাতাশতম', 'আঠাশতম', 'ঊনত্রিশতম', 'ত্রিশতম'];
+const BN = (n) => String(n).replace(/\d/g, (d) => String.fromCharCode(0x09e6 + +d));
+const $ = (id) => document.getElementById(id);
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const inline = (s) => esc(s).replace(/_([^_]+)_/g, '<em>$1</em>').replace(/\*/g, '<sup class="fn">*</sup>');
+// every box grows with what is written in it
+const grow = (el) => { if (!el) return; el.style.height = 'auto'; el.style.height = el.scrollHeight + 2 + 'px'; };
+const growAll = () => document.querySelectorAll('textarea').forEach(grow);
+const pad2 = (n) => String(n).padStart(2, '0');
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('candide-review:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('candide-review:' + k, JSON.stringify(v)); } catch {} },
+};
+
+// ---- the book: sentences in file order, grouped as the site groups them ----
+const S = ROWS.map(([id, kind, fr, bn, prev], i) => {
+  const [c, p, n] = id.split('.').map(Number);
+  return { i, id, kind, fr, bn, prev: prev || bn, ch: c, p, n };
+});
+const CH = [];
+for (const s of S) {
+  let ch = CH[s.ch - 1];
+  if (!ch) ch = CH[s.ch - 1] = { n: s.ch, title: [], paras: [], note: [], first: s.i, last: s.i };
+  ch.last = s.i;
+  if (s.kind === 'title') ch.title.push(s.i);
+  else if (s.kind === 'note') ch.note.push(s.i);
+  else if (s.kind === 'p' || s.kind === 'Q' || s.p === 999 || !ch.paras.length) ch.paras.push({ quote: s.kind === 'Q', idx: [s.i] });
+  else ch.paras[ch.paras.length - 1].idx.push(s.i);
+}
+const BY_ID = new Map(S.map((s) => [s.id, s]));
+
+// ---- state ----
+const notes = new Map();     // sentence id -> {bn|null, comment}
+const chNotes = new Map();   // '07' -> {note, done}
+let bookNote = '';
+let db = null;
+let cur = Math.min(Math.max(store.get('ch', 1), 1), 30);
+let sel = -1;
+let showFr = store.get('fr', false);
+let fontStep = store.get('font', 2);
+const FONTS = [0.98, 1.06, 1.15, 1.26, 1.38, 1.52];
+let view = 'read';
+let recent = [];
+
+// writes not yet confirmed by the store, kept in this browser as a safety net
+const pending = store.get('pending', {}); // path -> body | null (delete)
+const timers = {}, inflight = {}, again = {};
+let lastError = null;
+
+// ---- rendering ----
+const shown = (s) => { const m = notes.get(s.id); return m && m.bn != null ? m.bn : s.bn; };
+// the reader's rewrite against the text: only the words changed or added are marked,
+// and ‸ stands where words were taken out
+function diffHtml(a, b) {
+  const x = a.split(/\s+/).filter(Boolean), y = b.split(/\s+/).filter(Boolean);
+  const n = x.length, m = y.length, L = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--)
+    L[i][j] = x[i] === y[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const out = []; let i = 0, j = 0, cut = false;
+  while (j < m) {
+    if (i < n && x[i] === y[j]) { if (cut) { out.push('\u0003'); cut = false; } out.push(y[j]); i++; j++; }
+    else if (i < n && L[i + 1][j] >= L[i][j + 1]) { i++; cut = true; }
+    else { out.push('\u0001' + y[j] + '\u0002'); j++; cut = false; }
+  }
+  if (cut || i < n) out.push('\u0003');
+  return inline(out.join(' ')).replace(/\u0001/g, '<span class="chg">').replace(/\u0002/g, '</span>').replace(/\u0003/g, '<span class="gap" aria-label="removed"></span>');
+}
+const html = (s) => { const m = notes.get(s.id); return m && m.bn != null ? diffHtml(s.bn, m.bn) : inline(s.bn); };
+const cls = (s) => {
+  const m = notes.get(s.id);
+  return 's' + (m && m.bn != null ? ' ed' : '') + (m && m.comment ? ' cm' : '') + (s.i === sel ? ' sel' : '');
+};
+const span = (i, fr) => {
+  const s = S[i];
+  return `<span class="${fr ? 's' + (i === sel ? ' sel' : '') : cls(s)}" data-i="${i}"${fr ? ' data-fr="1" lang="fr"' : ` id="s${i}"`}>${fr ? inline(s.fr) : html(s)}</span>`;
+};
+const run = (idx, fr) => idx.map((i) => span(i, fr)).join(' ');
+
+function renderChapter() {
+  const ch = CH[cur - 1];
+  const cn = chNotes.get(pad2(cur)) || {};
+  let h = `<header class="ch-head"><div class="ch-num">${ORD[cur - 1]} অধ্যায়</div><h1 class="ch-title">${run(ch.title)}</h1></header><div class="text">`;
+  for (const p of ch.paras) {
+    const body = `<p>${run(p.idx)}</p>` + (showFr ? `<p class="fr-p">${run(p.idx, true)}</p>` : '');
+    h += p.quote ? `<blockquote>${body}</blockquote>` : body;
+  }
+  if (ch.note.length) {
+    h += `<div class="vnote"><div class="vnote-h">Voltaire's note</div><p>${run(ch.note)}</p>${showFr ? `<p class="fr-p">${run(ch.note, true)}</p>` : ''}</div>`;
+  }
+  h += `</div>
+  <section class="ch-end">
+    <label class="h" for="ch-note">Notes on chapter ${cur} as a whole</label>
+    <textarea id="ch-note" placeholder="Tone, a recurring word, anything that isn't about one sentence…"></textarea>
+    <label class="done"><input type="checkbox" id="ch-done"${cn.done ? ' checked' : ''}> I've finished reading this chapter</label>
+    <div class="ch-nav">
+      ${cur > 1 ? `<button class="btn" data-go="${cur - 1}">← Chapter ${cur - 1}</button>` : '<span></span>'}
+      ${cur < 30 ? `<button class="btn primary" data-go="${cur + 1}">Chapter ${cur + 1} →</button>` : ''}
+    </div>
+  </section>`;
+  $('reader').innerHTML = h;
+  $('ch-note').value = cn.note || '';
+  grow($('ch-note'));
+  $('ch-note').addEventListener('input', (e) => saveChapter({ note: e.target.value }));
+  $('ch-done').addEventListener('change', (e) => { saveChapter({ done: e.target.checked }); renderSelect(); });
+}
+
+function paint(i) {
+  const s = S[i];
+  if (s.ch !== cur || view !== 'read') return;
+  const el = document.querySelector(`.s[data-i="${i}"]:not([data-fr])`);
+  if (!el) return;
+  el.className = cls(s);
+  el.innerHTML = html(s);
+}
+
+function renderSelect() {
+  const opts = CH.map((ch) => {
+    const done = (chNotes.get(pad2(ch.n)) || {}).done;
+    const t = S[ch.title[0]].bn.replace(/_/g, '');
+    const short = t.length > 34 ? t.slice(0, 33) + '…' : t;
+    return `<option value="${ch.n}"${ch.n === cur ? ' selected' : ''}>${done ? '✓ ' : ''}${BN(ch.n)}. ${esc(short)}</option>`;
+  });
+  $('ch-select').innerHTML = opts.join('');
+  renderSummary();
+}
+
+function renderSummary() {
+  let ed = 0, cm = 0;
+  for (const m of notes.values()) { if (m.bn != null) ed++; if (m.comment) cm++; }
+  const read = [...chNotes.values()].filter((c) => c.done).length;
+  $('summary').textContent = `${read}/30 chapters read · ${ed} rewrites · ${cm} comments`;
+  $('marks-toggle').textContent = `Marks (${notes.size})`;
+}
+
+function applyFont() { document.documentElement.style.setProperty('--read', FONTS[fontStep] + 'rem'); }
+
+function goChapter(n, keepSel) {
+  cur = Math.min(Math.max(n, 1), 30);
+  store.set('ch', cur);
+  if (!keepSel) closeDesk();
+  if (view !== 'read') setView('read');
+  renderChapter(); renderSelect();
+  if (!keepSel) window.scrollTo({ top: 0 });
+}
+
+// ---- the desk ----
+const narrow = () => !matchMedia('(min-width: 1000px)').matches;
+
+function select(i, scroll = true) {
+  if (i < 0 || i >= S.length) return;
+  flushDesk();
+  const prev = sel;
+  sel = i;
+  const s = S[i];
+  if (s.ch !== cur) goChapter(s.ch, true);
+  else {
+    if (prev >= 0) document.querySelectorAll(`.s[data-i="${prev}"]`).forEach((e) => e.classList.remove('sel'));
+    document.querySelectorAll(`.s[data-i="${i}"]`).forEach((e) => e.classList.add('sel'));
+  }
+  store.set('sel', s.id);
+  recent = [s.id, ...recent.filter((x) => x !== s.id)].slice(0, 10);
+  queue('state/selected', { id: s.id, ch: s.ch, recent, at: new Date().toISOString() }, 400);
+  $('desk-empty').hidden = true; $('desk-full').hidden = false;
+  fillDesk();
+  document.body.classList.add('sheet-open');
+  if (scroll) requestAnimationFrame(() => reveal(i));
+}
+
+function reveal(i) {
+  const el = document.querySelector(`.s[data-i="${i}"]:not([data-fr])`);
+  if (!el) return;
+  const r = el.getBoundingClientRect();
+  const deskTop = narrow() ? innerHeight - $('desk').offsetHeight : innerHeight;
+  const barH = Math.max(0, document.querySelector('.bar').getBoundingClientRect().bottom);
+  if (r.top < barH + 10 || r.bottom > deskTop - 10) {
+    window.scrollBy({ top: r.top - barH - Math.min(80, (deskTop - barH) * 0.2), behavior: 'smooth' });
+  }
+}
+
+function fillDesk() {
+  const s = S[sel], m = notes.get(s.id) || {};
+  $('d-id').textContent = `Chapter ${s.ch} · ${s.kind === 'title' ? 'title' : s.kind === 'note' ? "Voltaire's note" : '¶' + s.p} · sentence ${s.n}   (${s.id})`;
+  $('d-fr').innerHTML = inline(s.fr);
+  $('d-bn').value = m.bn != null ? m.bn : s.bn;
+  $('d-cm').value = m.comment || '';
+  document.querySelector('.c-anchor').id = 'c' + sel;
+  // Claude's answer to the comment, written into the store when it acted on it
+  $('d-reply').hidden = !m.reply;
+  $('d-reply').innerHTML = m.reply ? '<b>Claude:</b> ' + esc(m.reply) : '';
+  // the Dhaka text is new; what the site says now stays one tap away
+  $('d-prev-box').hidden = s.prev === s.bn;
+  $('d-prev-text').innerHTML = inline(s.prev);
+  deskMeta();
+  grow($('d-bn')); grow($('d-cm'));
+}
+
+function deskMeta() {
+  const s = S[sel], m = notes.get(s.id);
+  const edited = m && m.bn != null;
+  $('d-orig').hidden = !edited;
+  if (edited) $('d-orig-text').innerHTML = inline(s.bn);
+  $('d-clear').hidden = !m;
+  $('d-clear').textContent = 'Clear this mark';
+  $('d-clear').dataset.arm = '';
+}
+
+function closeDesk() {
+  flushDesk();
+  if (sel >= 0) document.querySelectorAll(`.s[data-i="${sel}"]`).forEach((e) => e.classList.remove('sel'));
+  sel = -1;
+  document.body.classList.remove('sheet-open');
+  $('desk-empty').hidden = false; $('desk-full').hidden = true;
+}
+
+// read the desk into the note for the selected sentence
+function readDesk() {
+  if (sel < 0) return;
+  const s = S[sel];
+  const bnRaw = $('d-bn').value.replace(/\s*\n\s*/g, ' ');
+  const bn = bnRaw.trim() && bnRaw.trim() !== s.bn.trim() ? bnRaw.trim() : null;
+  const comment = $('d-cm').value.trim() ? $('d-cm').value : '';
+  setNote(s, bn, comment);
+}
+
+function setNote(s, bn, comment) {
+  const old = notes.get(s.id);
+  if (bn == null && !comment) {
+    if (!old) return;
+    notes.delete(s.id);
+    queue('notes/' + s.id, null);
+  } else {
+    if (old && old.bn === bn && old.comment === comment) return;
+    const reply = old && old.reply ? old.reply : '';
+    notes.set(s.id, { bn, comment, reply });
+    queue('notes/' + s.id, { id: s.id, ch: s.ch, bn, comment, reply, orig: s.bn, fr: s.fr, updated: new Date().toISOString() });
+  }
+  paint(s.i); renderSummary();
+  if (s.i === sel) deskMeta();
+}
+
+function flushDesk() { for (const k of Object.keys(timers)) { clearTimeout(timers[k]); delete timers[k]; flush(k); } }
+
+function saveChapter(patch) {
+  const k = pad2(cur);
+  const c = { note: '', done: false, ...(chNotes.get(k) || {}), ...patch };
+  chNotes.set(k, c);
+  queue('chapters/' + k, { ch: cur, note: c.note, done: !!c.done, updated: new Date().toISOString() }, patch.done !== undefined ? 0 : 700);
+  renderSummary();
+}
+
+// ---- saving: one write at a time per document, coalesced while typing ----
+function queue(path, body, delay = 700) {
+  pending[path] = body;
+  store.set('pending', pending);
+  clearTimeout(timers[path]);
+  timers[path] = setTimeout(() => { delete timers[path]; flush(path); }, delay);
+  status();
+}
+
+async function flush(path) {
+  if (!(path in pending)) return;
+  if (!db) { status(); return; }
+  if (inflight[path]) { again[path] = true; return; }
+  const body = pending[path];
+  inflight[path] = true; status();
+  try {
+    const ref = db.doc(path);
+    if (body === null) await ref.delete(); else await ref.set(body);
+    if (pending[path] === body) { delete pending[path]; store.set('pending', pending); }
+    lastError = null;
+  } catch (e) {
+    lastError = e && e.code ? e.code : 'unavailable';
+    setTimeout(() => flush(path), 4000 + Math.random() * 2000);
+  } finally {
+    inflight[path] = false;
+    if (again[path]) { again[path] = false; flush(path); }
+    status();
+  }
+}
+
+function status() {
+  const n = Object.keys(pending).length;
+  const el = $('status'), t = el.querySelector('span');
+  let c, msg;
+  if (!db) { c = n ? 'local' : ''; msg = n ? `${n} change${n > 1 ? 's' : ''} kept in this browser only` : 'Not connected'; }
+  else if (lastError === 'invalid_argument' || lastError === 'not_granted') { c = 'err'; msg = 'You can\'t save here (read-only)'; }
+  else if (lastError === 'quota_exceeded') { c = 'err'; msg = 'Storage is full'; }
+  else if (lastError) { c = 'err'; msg = 'Not saved yet, retrying…'; }
+  else if (n) { c = 'saving'; msg = 'Saving…'; }
+  else { c = 'saved'; msg = 'All saved'; }
+  el.className = 'status ' + c; t.textContent = msg;
+  if (sel >= 0) $('d-stat').textContent = n ? (db ? 'Saving…' : 'Kept in this browser') : (db ? 'Saved' : '');
+}
+
+// ---- marks view ----
+function setView(v) {
+  view = v;
+  $('marks-toggle').setAttribute('aria-pressed', v === 'marks');
+  $('reader').hidden = v !== 'read';
+  $('marks').hidden = v !== 'marks';
+  if (v === 'marks') { closeDesk(); renderMarks(); window.scrollTo({ top: 0 }); }
+  else renderChapter();
+}
+
+function renderMarks() {
+  const ids = [...notes.keys()].sort();
+  let ed = 0, cm = 0;
+  for (const m of notes.values()) { if (m.bn != null) ed++; if (m.comment) cm++; }
+  let h = `<h2>Your marks</h2>
+  <p class="m-sum">${ed} rewrites and ${cm} comments on ${ids.length} sentences. Tap one to go back to it in the text.</p>
+  ${dl ? '<div><button class="btn" id="backup" type="button">Download a backup (.json)</button> <span class="m-sum" id="backup-msg"></span></div>' : ''}
+  <label class="lbl" for="book-note">Notes on the whole book</label>
+  <textarea id="book-note" placeholder="Book-wide choices: a name, তুমি / আপনি, a word Voltaire keeps using…" style="min-height:6rem"></textarea>`;
+  let chap = 0, any = false;
+  const chaps = new Set([...ids.map((id) => BY_ID.get(id).ch), ...[...chNotes].filter(([, c]) => c.note && c.note.trim()).map(([k]) => +k)]);
+  for (const n of [...chaps].sort((a, b) => a - b)) {
+    any = true;
+    h += `<h3 class="m-ch">${ORD[n - 1]} অধ্যায় · ${inline(S[CH[n - 1].title[0]].bn)}</h3>`;
+    const cn = chNotes.get(pad2(n));
+    if (cn && cn.note && cn.note.trim()) h += `<div class="m-chnote"><b>Chapter note.</b> ${esc(cn.note)}</div>`;
+    for (const id of ids) {
+      const s = BY_ID.get(id); if (s.ch !== n) continue;
+      const m = notes.get(id);
+      h += `<button class="m-item" data-goto="${s.i}">
+        <span class="m-id">${id}</span>
+        <span class="m-fr" lang="fr">${inline(s.fr)}</span>
+        ${m.bn != null ? `<span class="m-old">${inline(s.bn)}</span><span class="m-new">${diffHtml(s.bn, m.bn)}</span>` : `<span class="m-new">${inline(s.bn)}</span>`}
+        ${m.comment ? `<span class="m-cm">${esc(m.comment)}</span>` : ''}
+      </button>`;
+    }
+    chap = n;
+  }
+  if (!any) h += `<div class="empty">No marks yet. Tap a sentence while reading to rewrite it or leave a comment; it will be listed here.</div>`;
+  $('marks').innerHTML = h;
+  $('book-note').value = bookNote;
+  grow($('book-note'));
+  if (dl) $('backup').addEventListener('click', backup);
+  $('book-note').addEventListener('input', (e) => {
+    bookNote = e.target.value;
+    queue('book/general', { note: bookNote, updated: new Date().toISOString() });
+  });
+}
+
+let dl = null;
+// Claude's own comment box opens in the sidebar, on a marker named for the
+// sentence (#c68), so its pin stays out of the text and says which sentence it is
+let cmts = null, composerFor = -1;
+function sentenceOf(anchor) {
+  const m = /#[sc](\d+)(?![\w-])/.exec(anchor);
+  if (m && S[+m[1]]) return +m[1];
+  return composerFor >= 0 ? composerFor : sel;
+}
+function onSend(req) {
+  const text = (req.text || '').trim();
+  if (!text || req.anchor == null) return { handled: false };
+  const i = sentenceOf(req.anchor);
+  if (i < 0) return { handled: false };
+  const s = S[i], m = notes.get(s.id) || { bn: null, comment: '' };
+  const comment = m.comment && m.comment.trim() ? m.comment.replace(/\s+$/, '') + '\n' + text : text;
+  setNote(s, m.bn, comment);
+  flush('notes/' + s.id);
+  if (sel === i) { $('d-cm').value = comment; grow($('d-cm')); }
+  return { handled: true, reply: `Saved as your comment on sentence ${s.id}.` };
+}
+async function backup() {
+  const out = {
+    book: 'Voltaire, Candide (1759), Bangla review', exported: new Date().toISOString(), bookNote,
+    chapters: Object.fromEntries([...chNotes].sort()),
+    notes: [...notes.keys()].sort().map((id) => { const s = BY_ID.get(id), m = notes.get(id); return { id, fr: s.fr, orig: s.bn, bn: m.bn, comment: m.comment }; }),
+  };
+  try {
+    const r = await dl.save({ filename: `candide-review-${out.exported.slice(0, 10)}.json`, data: JSON.stringify(out, null, 1) });
+    $('backup-msg').textContent = r && r.status === 'saved' ? 'Saved.' : '';
+  } catch (e) { $('backup-msg').textContent = e && e.code === 'cancelled' ? '' : 'The download didn\'t go through.'; }
+}
+
+// ---- events ----
+document.addEventListener('input', (e) => { if (e.target.matches('textarea')) grow(e.target); });
+addEventListener('resize', growAll);
+document.addEventListener('click', (e) => {
+  const sp = e.target.closest('.s[data-i]');
+  if (sp && sp.closest('#reader')) {
+    if (window.getSelection && String(window.getSelection()).length > 1) return;
+    select(+sp.dataset.i, narrow()); return;
+  }
+  const go = e.target.closest('[data-go]');
+  if (go) { goChapter(+go.dataset.go); return; }
+  const gt = e.target.closest('[data-goto]');
+  if (gt) { setView('read'); const i = +gt.dataset.goto; goChapter(S[i].ch, true); select(i); }
+});
+$('ch-select').addEventListener('change', (e) => goChapter(+e.target.value));
+$('prev-ch').addEventListener('click', () => goChapter(cur - 1));
+$('next-ch').addEventListener('click', () => goChapter(cur + 1));
+$('fr-toggle').addEventListener('click', () => {
+  showFr = !showFr; store.set('fr', showFr);
+  $('fr-toggle').setAttribute('aria-pressed', showFr);
+  if (view === 'read') renderChapter();
+});
+$('font-down').addEventListener('click', () => { fontStep = Math.max(0, fontStep - 1); store.set('font', fontStep); applyFont(); });
+$('font-up').addEventListener('click', () => { fontStep = Math.min(FONTS.length - 1, fontStep + 1); store.set('font', fontStep); applyFont(); });
+$('marks-toggle').addEventListener('click', () => setView(view === 'marks' ? 'read' : 'marks'));
+$('d-bn').addEventListener('input', readDesk);
+$('d-cm').addEventListener('input', readDesk);
+$('d-prev').addEventListener('click', () => select(sel - 1));
+$('d-next').addEventListener('click', () => select(sel + 1));
+$('d-close').addEventListener('click', closeDesk);
+$('d-voice').addEventListener('click', async () => {
+  if (sel < 0 || !cmts) return;
+  const el = document.querySelector('.c-anchor');
+  el.id = 'c' + sel;
+  if (!el) return;
+  composerFor = sel;
+  $('d-voice-msg').hidden = true;
+  try {
+    const r = await cmts.openComposer({ element: el });
+    if (!r.opened) { $('d-voice-msg').textContent = 'Claude\'s box is already open with text in it; send or close that one first.'; $('d-voice-msg').hidden = false; }
+  } catch (e) {
+    if (e && e.code === 'unavailable') $('d-voice-row').hidden = true;
+    else { $('d-voice-msg').textContent = 'The comment box didn\'t open; try again in a moment.'; $('d-voice-msg').hidden = false; }
+  }
+});
+$('d-revert').addEventListener('click', () => { $('d-bn').value = S[sel].bn; grow($('d-bn')); readDesk(); });
+$('d-clear').addEventListener('click', (e) => {
+  const b = e.currentTarget;
+  if (!b.dataset.arm) { b.dataset.arm = '1'; b.textContent = 'Tap again to clear the rewrite and comment'; return; }
+  const s = S[sel];
+  $('d-bn').value = s.bn; $('d-cm').value = '';
+  setNote(s, null, '');
+});
+document.addEventListener('keydown', (e) => {
+  const typing = e.target.matches('textarea, input, select');
+  if (e.key === 'Escape' && sel >= 0) { closeDesk(); return; }
+  if (sel >= 0 && (e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); select(sel + 1); return; }
+  if (typing || e.metaKey || e.ctrlKey || e.altKey || view !== 'read') return;
+  // c: straight into the comment box of the chosen sentence, ready for dictation or a paste
+  if (e.key === 'c' && sel >= 0) { e.preventDefault(); const c = $('d-cm'); c.focus(); c.setSelectionRange(c.value.length, c.value.length); return; }
+  if (e.key === 'j') { select(sel < 0 ? CH[cur - 1].first : sel + 1); }
+  else if (e.key === 'k') { select(sel < 0 ? CH[cur - 1].first : sel - 1); }
+});
+addEventListener('pagehide', flushDesk);
+document.addEventListener('visibilitychange', () => { if (document.hidden) flushDesk(); });
+
+// ---- start: the text renders at once; the notes arrive from the store ----
+$('fr-toggle').setAttribute('aria-pressed', showFr);
+applyFont();
+// what this browser still holds that the store hasn't confirmed shows straight away
+for (const [path, body] of Object.entries(pending)) {
+  const [col, id] = path.split('/');
+  if (col === 'notes' && body) notes.set(id, { bn: body.bn, comment: body.comment, reply: body.reply || '' });
+  if (col === 'chapters' && body) chNotes.set(id, { note: body.note, done: body.done });
+  if (col === 'book' && body) bookNote = body.note;
+}
+renderChapter(); renderSelect(); status();
+const lastSel = BY_ID.get(store.get('sel', ''));
+if (lastSel && lastSel.ch === cur && !narrow()) select(lastSel.i);
+
+function onErr(e) {
+  if (e && e.code === 'revoked') { db = null; status(); }
+}
+(async () => {
+  if (window.claude && window.claude.use) window.claude.use('downloads').then((d) => { dl = d; if (view === 'marks') renderMarks(); }).catch(() => {});
+  db = window.claude && window.claude.use ? await window.claude.use('db').catch(() => null) : null;
+  if (!db) {
+    status();
+    $('banner').hidden = false;
+    $('banner').textContent = 'This view can\'t reach the review store, so your marks are being kept in this browser only. Open the page on claude.ai, signed in, to save them where Claude can read them.';
+    return;
+  }
+  status();
+  const mine = (path) => path in pending;
+  const onNotes = (snap) => {
+    for (const ch of snap.docChanges()) {
+      const id = ch.doc.id, s = BY_ID.get(id);
+      if (!s || mine('notes/' + id)) continue;
+      if (ch.type === 'removed') notes.delete(id);
+      else { const d = ch.doc.data(); notes.set(id, { bn: d.bn == null ? null : d.bn, comment: d.comment || '', reply: d.reply || '' }); }
+      paint(s.i);
+      if (s.i === sel && !document.activeElement.matches('#d-bn, #d-cm')) fillDesk();
+    }
+    renderSummary();
+    if (view === 'marks' && !document.activeElement.matches('#book-note')) renderMarks();
+  };
+  db.collection('notes').where('ch', '<=', 15).onSnapshot(onNotes, onErr);
+  db.collection('notes').where('ch', '>', 15).onSnapshot(onNotes, onErr);
+  db.collection('chapters').onSnapshot((snap) => {
+    for (const ch of snap.docChanges()) {
+      if (mine('chapters/' + ch.doc.id)) continue;
+      if (ch.type === 'removed') chNotes.delete(ch.doc.id);
+      else { const d = ch.doc.data(); chNotes.set(ch.doc.id, { note: d.note || '', done: !!d.done }); }
+      if (+ch.doc.id === cur && view === 'read' && document.activeElement.id !== 'ch-note') {
+        const c = chNotes.get(ch.doc.id) || {};
+        if ($('ch-note')) $('ch-note').value = c.note || '';
+        if ($('ch-done')) $('ch-done').checked = !!c.done;
+      }
+    }
+    renderSelect();
+  }, onErr);
+  db.doc('book/general').onSnapshot((snap) => {
+    if (mine('book/general')) return;
+    bookNote = snap.exists ? snap.data().note || '' : '';
+    if (view === 'marks' && document.activeElement.id !== 'book-note') $('book-note').value = bookNote;
+  }, onErr);
+  for (const path of Object.keys(pending)) flush(path);
+})();
+})();
+</script>

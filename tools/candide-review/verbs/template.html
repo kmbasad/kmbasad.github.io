@@ -1,0 +1,534 @@
+<title>কাঁদিদের ক্রিয়া</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a style sheet for the translation's verbs. Two desks: the model
+   paradigms (one verb at a time, a card per tense), and every verb form the
+   book uses, verb by verb. Each form carries Claude's Dhaka guess in an
+   editable field; what the reader changes is saved and read back by Claude. */
+:root {
+  --paper: #fbfbfa;
+  --desk: #f1f3f6;
+  --ink: #15171c;
+  --ink-2: #4a505c;
+  --ink-3: #7a818e;
+  --rule: #dde1e8;
+  --lapis: #1d4f9b;
+  --lapis-soft: #e3ebf7;
+  --pencil: #b3311d;
+  --pencil-soft: #f9e8e4;
+  --ok: #2f6b3c;
+  --bn: 'Noto Serif Bengali', 'Kalpurush', 'SolaimanLipi', Georgia, serif;
+  --ui: 'DM Sans', 'Noto Serif Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #13161c; --desk: #191d25; --ink: #e6e8ed; --ink-2: #b3b9c5; --ink-3: #858c99;
+    --rule: #2a303b; --lapis: #92b4ee; --lapis-soft: #1e2a40; --pencil: #ff8f78; --pencil-soft: #3a221e;
+    --ok: #86c995; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #13161c; --desk: #191d25; --ink: #e6e8ed; --ink-2: #b3b9c5; --ink-3: #858c99;
+  --rule: #2a303b; --lapis: #92b4ee; --lapis-soft: #1e2a40; --pencil: #ff8f78; --pencil-soft: #3a221e;
+  --ok: #86c995; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--paper); color: var(--ink); font-family: var(--ui); font-size: 15px; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--lapis); outline-offset: 2px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+
+.wrap {
+  max-width: 62rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 56px;
+}
+header.top { padding-block: 26px 14px; display: grid; gap: 8px; }
+h1 { font-family: var(--bn); font-weight: 600; font-size: 1.6rem; margin: 0; line-height: 1.4; }
+.sub { color: var(--ink-2); font-family: var(--bn); line-height: 1.8; margin: 0; max-width: 46rem; }
+.status { font-size: 0.8rem; color: var(--ink-3); display: flex; align-items: center; gap: 6px; }
+.status i { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-3); }
+.status.saved i { background: var(--ok); }
+.status.saving i { background: var(--lapis); }
+.status.err, .status.local { color: var(--pencil); }
+.status.err i, .status.local i { background: var(--pencil); }
+
+.how { display: grid; gap: 6px; padding: 14px 16px; background: var(--desk); border-radius: 10px; font-family: var(--bn); font-size: 0.95rem; line-height: 1.75; color: var(--ink-2); }
+.how b { color: var(--ink); font-weight: 600; }
+
+.spell { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin-top: 14px; font-size: 0.88rem; color: var(--ink-2); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: var(--paper); padding: 6px 12px; font-family: var(--bn); font-size: 0.95rem; }
+.seg button + button { border-left: 1px solid var(--rule); }
+.seg button[aria-pressed="true"] { background: var(--lapis); color: var(--paper); }
+
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); display: flex; gap: 4px; border-bottom: 1px solid var(--rule); margin-top: 22px; overflow-x: auto; }
+nav.tabs button { border: 0; background: none; padding: 12px 14px 10px; font-family: var(--bn); font-size: 1rem; color: var(--ink-2); border-bottom: 2px solid transparent; white-space: nowrap; }
+nav.tabs button[aria-selected="true"] { color: var(--lapis); border-bottom-color: var(--lapis); font-weight: 600; }
+nav.tabs small { font-family: var(--ui); font-size: 0.75rem; color: var(--ink-3); margin-left: 4px; font-weight: 400; }
+
+section.pane { padding-top: 18px; display: grid; gap: 16px; }
+
+/* model verbs */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--rule); background: var(--paper); border-radius: 999px; padding: 5px 13px; font-family: var(--bn); font-size: 0.98rem; display: inline-flex; align-items: center; gap: 6px; }
+.chip[aria-pressed="true"] { background: var(--lapis-soft); border-color: var(--lapis); color: var(--lapis); font-weight: 600; }
+.chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pencil); }
+.mnote { font-family: var(--bn); color: var(--ink-2); font-size: 0.92rem; margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 27rem), 1fr)); gap: 12px; align-items: start; }
+.card { border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; min-width: 0; }
+.card h3 { margin: 0 0 4px; font-family: var(--bn); font-weight: 600; font-size: 0.98rem; color: var(--ink-2); }
+.row { display: grid; grid-template-columns: 5.6rem minmax(0, 1fr) minmax(0, 1.25fr) 1.9rem; gap: 8px; align-items: center; min-height: 40px; }
+.row .who { font-family: var(--bn); font-size: 0.85rem; color: var(--ink-3); }
+.row .std { font-family: var(--bn); color: var(--ink-2); overflow-wrap: anywhere; }
+
+.fld { width: 100%; min-width: 0; border: 1px solid var(--rule); border-radius: 7px; background: var(--paper); padding: 6px 9px; font-family: var(--bn); font-size: 1rem; }
+.fld:focus { border-color: var(--lapis); outline: none; box-shadow: 0 0 0 3px var(--lapis-soft); }
+.fld.same { color: var(--ink-3); }
+.fld.mine { border-color: var(--lapis); background: var(--lapis-soft); color: var(--ink); }
+.reset { border: 0; background: none; width: 1.9rem; height: 1.9rem; border-radius: 6px; color: var(--ink-3); display: grid; place-items: center; padding: 0; }
+.reset:hover { background: var(--desk); color: var(--ink); }
+.reset svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* every verb */
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.search { flex: 1 1 14rem; min-width: 0; border: 1px solid var(--rule); border-radius: 8px; padding: 8px 12px; font-family: var(--bn); background: var(--paper); }
+.count { font-size: 0.85rem; color: var(--ink-3); }
+.verb { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.verb > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 10px; padding: 12px 14px; }
+.verb > summary::-webkit-details-marker { display: none; }
+.verb > summary::before { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--ink-3); border-bottom: 2px solid var(--ink-3); transform: rotate(-45deg); margin-right: 2px; align-self: center; transition: transform 0.15s; }
+.verb[open] > summary::before { transform: rotate(45deg); }
+.verb > summary b { font-family: var(--bn); font-weight: 600; font-size: 1.08rem; }
+.verb > summary span { font-size: 0.82rem; color: var(--ink-3); }
+.verb > summary .mine-n { color: var(--lapis); }
+.forms { border-top: 1px solid var(--rule); padding: 6px 14px 12px; display: grid; }
+.frow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 1.9rem 1.9rem; gap: 4px 8px; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--rule); }
+.frow:last-child { border-bottom: 0; }
+.frow .tok { font-family: var(--bn); font-size: 1.02rem; overflow-wrap: anywhere; }
+.frow .tok small { font-family: var(--ui); font-size: 0.75rem; color: var(--ink-3); margin-left: 6px; }
+.frow .lab { grid-column: 1 / -1; font-family: var(--bn); font-size: 0.8rem; color: var(--ink-3); margin-top: -2px; }
+.frow .alt { grid-column: 1 / -1; font-family: var(--bn); font-size: 0.82rem; color: var(--ink-2); }
+.frow .alt b { font-weight: 600; color: var(--pencil); }
+.exs { grid-column: 1 / -1; display: grid; gap: 6px; padding: 8px 10px; background: var(--desk); border-radius: 8px; font-family: var(--bn); font-size: 0.92rem; line-height: 1.75; color: var(--ink-2); }
+.exs mark { background: var(--pencil-soft); color: var(--ink); border-radius: 3px; padding: 0 2px; }
+.exs small { font-family: var(--ui); font-size: 0.72rem; color: var(--ink-3); margin-right: 6px; }
+.more { border: 1px solid var(--rule); background: var(--paper); border-radius: 8px; padding: 8px 14px; justify-self: center; }
+.wrow { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) 1.9rem 1.9rem; gap: 4px 8px; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--rule); }
+.wrow:last-child { border-bottom: 0; }
+.wrow .tok { font-family: var(--bn); font-size: 1.02rem; overflow-wrap: anywhere; }
+.wrow .tok small { font-family: var(--ui); font-size: 0.75rem; color: var(--ink-3); margin-left: 6px; }
+.wrow .dlg { grid-column: 2; }
+.wrow .dlg-l { grid-column: 1; font-family: var(--bn); font-size: 0.8rem; color: var(--ink-3); text-align: right; }
+.wrow .wnote { grid-column: 1 / -1; font-family: var(--bn); font-size: 0.82rem; color: var(--ink-2); }
+.card .gnote { font-family: var(--bn); font-size: 0.85rem; color: var(--ink-2); margin: -2px 0 4px; line-height: 1.7; }
+.empty { color: var(--ink-3); font-family: var(--bn); padding: 18px; border: 1px dashed var(--rule); border-radius: 10px; text-align: center; }
+
+textarea.notes { width: 100%; min-height: 14rem; border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; font-family: var(--bn); font-size: 1rem; line-height: 1.8; background: var(--paper); resize: none; overflow: hidden; }
+textarea.notes:focus { border-color: var(--lapis); outline: none; box-shadow: 0 0 0 3px var(--lapis-soft); }
+
+@media (max-width: 560px) {
+  .row { grid-template-columns: 4.6rem minmax(0, 1fr) 1.9rem; }
+  .row .std { grid-column: 2 / 4; font-size: 0.9rem; }
+  .row .fld { grid-column: 2; }
+  .row .reset { grid-column: 3; }
+  .row .who { grid-row: span 2; align-self: start; padding-top: 4px; }
+  h1 { font-size: 1.35rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>কাঁদিদের ক্রিয়া: ঢাকার বাংলায়</h1>
+    <p class="sub" id="sub">অনুবাদের প্রতিটি ক্রিয়ার রূপ, পাশে আমার আন্দাজে ঢাকার রূপ। যেটা আপনি অন্যভাবে লিখবেন, সেটা বদলে দিন।</p>
+    <div class="status" id="status"><i></i><span>সংযোগ হচ্ছে…</span></div>
+  </header>
+
+  <div class="how">
+    <div><b>ঘরে আগে থেকে লেখা</b> আমার আন্দাজ। ঠিক থাকলে কিছু করতে হবে না; বদলালে সেটাই আপনার পছন্দ হিসেবে জমা থাকবে (নীল ঘর)। ↺ চাপলে আমার আন্দাজে ফিরে যাবে।</div>
+    <div><b>ছক</b> হলো নিয়ম: ১৬টি নমুনা ক্রিয়ার পুরো রূপ, তুই-সহ সব পুরুষে। অনুবাদে এখন তুই নেই; কোথাও আনতে চাইলে তুই-এর ঘরগুলো সেজন্য। <b>বইয়ের সব ক্রিয়া</b> হলো অনুবাদে যত রূপ আসলেই আছে; ছকের নিয়ম থেকে কোনোটা আলাদা হলে সেখানে বদলান। রূপান্তরের সময় দুটোই মিলিয়ে দেখব।</div>
+  </div>
+
+  <div class="spell">
+    <span>বানান:</span>
+    <span class="seg" role="group" aria-label="অতীতের -ল"><button type="button" data-spell="lo" data-v="0">করল</button><button type="button" data-spell="lo" data-v="1">করলো</button></span>
+    <span class="seg" role="group" aria-label="নিত্যবৃত্ত অতীতের -ত"><button type="button" data-spell="to" data-v="0">করত</button><button type="button" data-spell="to" data-v="1">করতো</button></span>
+  </div>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="model" aria-selected="true">ছক<small id="n-model"></small></button>
+    <button role="tab" data-tab="all" aria-selected="false">বইয়ের সব ক্রিয়া<small id="n-all"></small></button>
+    <button role="tab" data-tab="words" aria-selected="false">অন্য শব্দ<small id="n-words"></small></button>
+    <button role="tab" data-tab="notes" aria-selected="false">নোট</button>
+  </nav>
+
+  <section class="pane" id="pane-model">
+    <div class="chips" id="chips"></div>
+    <p class="mnote" id="mnote"></p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section class="pane" id="pane-all" hidden>
+    <div class="tools">
+      <input class="search" id="q" type="search" placeholder="ক্রিয়া খুঁজুন: করা, গেছে, বলছিল…" aria-label="ক্রিয়া খুঁজুন">
+      <span class="seg" role="group" aria-label="কোন রূপ দেখাবে">
+        <button type="button" id="f-changed" aria-pressed="true">যেগুলো বদলাবে</button><button type="button" id="f-every" aria-pressed="false">সব রূপ</button>
+      </span>
+    </div>
+    <div class="count" id="count"></div>
+    <div id="verbs" style="display:grid;gap:10px"></div>
+  </section>
+
+  <section class="pane" id="pane-words" hidden>
+    <p class="mnote">ক্রিয়ার বাইরে যেসব শব্দে ঢাকার রূপ আলাদা হতে পারে। প্রথম ঘর সব জায়গার জন্য; সংলাপে অন্যভাবে চাইলে দ্বিতীয় ঘরে লিখুন, না হলে ফাঁকা রাখুন। তাকে, আমাকে, তোমাকে যেমন আছে থাকবে।</p>
+    <div class="cards" id="wcards"></div>
+  </section>
+
+  <section class="pane" id="pane-notes" hidden>
+    <label class="mnote" for="notes">যে কথা কোনো একটা রূপে আটকায় না: সাধারণ পছন্দ, কোন চরিত্র কীভাবে কথা বলবে, কোন শব্দ একেবারেই চাই না…</label>
+    <textarea class="notes" id="notes" placeholder="যেমন: বর্ণনায় একটু শুদ্ধ, সংলাপে পুরো ঢাকার মুখের ভাষা"></textarea>
+  </section>
+</div>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(() => {
+'use strict';
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const BN = (n) => String(n).replace(/\d/g, (d) => String.fromCharCode(0x09e6 + +d));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('candide-verbs:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('candide-verbs:' + k, JSON.stringify(v)); } catch {} },
+};
+// a short stable id for a cell or a form (the store takes ASCII ids only)
+const hash = (s) => { let h = 0x811c9dc5; for (const c of s) { h ^= c.codePointAt(0); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, '0'); };
+const RESET = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>';
+
+// ---- state ----
+const mine = new Map();          // path -> the reader's own form
+let spell = { lo: true, to: true };
+let notes = '';
+let db = null, lastError = null;
+const pending = store.get('pending', {});
+const timers = {}, inflight = {}, again = {};
+
+// the guess as it is spelt with the chosen spelling
+const SPELL_L = new Set(['past.3', 'pprog.3', 'pperf.3']);
+function spelt(g, cat) {
+  if (spell.lo && SPELL_L.has(cat) && /ল$/.test(g)) return g + 'ো';
+  if (spell.to && cat === 'hab.3' && /ত$/.test(g)) return g + 'ো';
+  return g;
+}
+const norm = (s) => s.replace(/([লত])ো$/, '$1').replace(/([লত])ো(?=[ইও]$)/, '$1');
+
+// ---- the model paradigms ----
+const PERS = [['1', 'আমি'], ['t', 'তুই'], ['2', 'তুমি'], ['3', 'সে'], ['h', 'আপনি / তিনি']];
+const TENSES = [['pres', 'সাধারণ বর্তমান', 'করি, করে'], ['prog', 'ঘটমান বর্তমান', 'করছে'], ['perf', 'পুরাঘটিত বর্তমান', 'করেছে'],
+  ['past', 'সাধারণ অতীত', 'করল'], ['pprog', 'ঘটমান অতীত', 'করছিল'], ['pperf', 'পুরাঘটিত অতীত', 'করেছিল'],
+  ['hab', 'নিত্যবৃত্ত অতীত', 'করত'], ['fut', 'ভবিষ্যৎ', 'করবে'], ['imp', 'অনুজ্ঞা', 'করো, করুন'], ['neg', 'না-বাচক (-নি)', 'করেনি']];
+const NONFIN = [['inf', '-তে'], ['cond', '-লে'], ['conj', '-এ (করে, গিয়ে)'], ['vn', 'ক্রিয়াবিশেষ্য'], ['vn.gen', 'ক্রিয়াবিশেষ্য -র']];
+let curModel = store.get('model', 0);
+
+const cellPath = (m, cat) => 'cells/' + hash('c|' + m.name + '|' + cat);
+function field(path, std, guess, extra) {
+  const v = mine.has(path) ? mine.get(path) : guess;
+  const cls = mine.has(path) ? 'mine' : (norm(v) === norm(std) ? 'same' : '');
+  return `<input class="fld ${cls}" data-path="${path}" data-guess="${esc(guess)}" value="${esc(v)}" lang="bn" aria-label="${esc(std)}"${extra || ''}>` +
+    `<button class="reset" type="button" data-reset="${path}" aria-label="আমার আন্দাজে ফেরান"${mine.has(path) ? '' : ' hidden'}>${RESET}</button>`;
+}
+function renderChips() {
+  $('chips').innerHTML = D.model.map((m, i) => {
+    const n = Object.keys(m.c).filter((c) => mine.has(cellPath(m, c))).length;
+    return `<button class="chip" type="button" data-model="${i}" aria-pressed="${i === curModel}">${esc(m.name)}${n ? '<span class="dot" title="আপনার বদল আছে"></span>' : ''}</button>`;
+  }).join('');
+}
+function renderModel() {
+  const m = D.model[curModel];
+  $('mnote').textContent = m.note;
+  let h = '';
+  for (const [t, name, eg] of TENSES) {
+    const rows = PERS.map(([p, who]) => {
+      const cat = t === 'imp' && p === '1' ? null : t + '.' + p;
+      if (!cat || !m.c[cat]) return '';
+      const [s, g] = m.c[cat];
+      return `<div class="row"><span class="who">${who}</span><span class="std">${esc(s)}</span>${field(cellPath(m, cat), s, spelt(g, cat))}</div>`;
+    }).join('');
+    if (rows) h += `<div class="card"><h3>${name}</h3>${rows}</div>`;
+  }
+  const nf = NONFIN.filter(([c]) => m.c[c]).map(([c, name]) => {
+    const [s, g] = m.c[c];
+    return `<div class="row"><span class="who">${name}</span><span class="std">${esc(s)}</span>${field(cellPath(m, c), s, g)}</div>`;
+  }).join('');
+  if (nf) h += `<div class="card"><h3>অসমাপিকা ও বিশেষ্য</h3>${nf}</div>`;
+  $('cards').innerHTML = h;
+}
+
+// ---- every verb in the book ----
+const formPath = (f) => 'forms/' + hash('f|' + f.lex + '|' + f.t);
+const guessOf = (f) => spelt(f.g, f.cat) + (f.e || '');
+const changes = (f) => norm(guessOf(f)) !== norm(f.t) || mine.has(formPath(f));
+let showAll = false, query = '', limit = 30;
+const open = new Set(store.get('open', []));
+
+function verbRows(l) {
+  return l.f.map((i) => D.forms[i]).filter((f) => showAll || changes(f)).map((f) => {
+    const alt = f.alt ? `<div class="alt">${esc(f.altlab)} হলে: <b>${esc(spelt(f.alt, '') + (f.e || ''))}</b></div>` : '';
+    return `<div class="frow">
+      <span class="tok">${esc(f.t)}<small>${BN(f.n)} বার</small></span>
+      ${field(formPath(f), f.t, guessOf(f))}
+      <button class="reset" type="button" data-ex="${D.forms.indexOf(f)}" aria-label="উদাহরণ দেখুন" title="উদাহরণ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+      <span class="lab">${esc(f.lab)}</span>${alt}
+    </div>`;
+  }).join('');
+}
+function matches(l) {
+  if (!query) return true;
+  if (l.name.includes(query)) return true;
+  return l.f.some((i) => D.forms[i].t.includes(query));
+}
+function renderAll() {
+  const list = D.lex.filter((l) => matches(l) && (showAll || l.f.some((i) => changes(D.forms[i]))));
+  let nForms = 0;
+  for (const l of list) nForms += l.f.filter((i) => showAll || changes(D.forms[i])).length;
+  $('count').textContent = `${BN(list.length)}টি ক্রিয়া, ${BN(nForms)}টি রূপ` + (showAll ? '' : ' (যেগুলোতে আমার আন্দাজ মূল থেকে আলাদা)');
+  const shown = list.slice(0, limit);
+  $('verbs').innerHTML = shown.map((l) => {
+    const n = l.f.filter((i) => showAll || changes(D.forms[i])).length;
+    const m = l.f.filter((i) => mine.has(formPath(D.forms[i]))).length;
+    const isOpen = open.has(l.name) || (query && list.length <= 3);
+    return `<details class="verb" data-lex="${esc(l.name)}"${isOpen ? ' open' : ''}>
+      <summary><b>${esc(l.name)}</b><span>বইয়ে ${BN(l.n)} বার · ${BN(n)}টি রূপ</span>${m ? `<span class="mine-n">· আপনার ${BN(m)}টি বদল</span>` : ''}</summary>
+      <div class="forms">${isOpen ? verbRows(l) : ''}</div>
+    </details>`;
+  }).join('') + (list.length > limit ? `<button class="more" type="button" id="more">আরও ${BN(Math.min(30, list.length - limit))}টি ক্রিয়া দেখান</button>` : '')
+    + (list.length ? '' : '<div class="empty">এমন কোনো ক্রিয়া পাওয়া গেল না।</div>');
+}
+function showExamples(btn, f) {
+  const row = btn.closest('.frow, .wrow');
+  const old = row.querySelector('.exs');
+  if (old) { old.remove(); return; }
+  const div = document.createElement('div');
+  div.className = 'exs';
+  const re = new RegExp('(^|[^\\u0980-\\u09FF])(' + f.t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![\\u0980-\\u09FF])', 'g');
+  div.innerHTML = f.ex.map((i) => {
+    const [id, bn] = D.sent[i];
+    return `<div><small>${id}</small>${esc(bn).replace(re, '$1<mark>$2</mark>')}</div>`;
+  }).join('') + (f.n > f.ex.length ? `<div><small>আরও ${BN(f.n - f.ex.length)} বার</small></div>` : '');
+  row.appendChild(div);
+}
+
+// ---- other words ----
+const wordPath = (w, dlg) => 'words/' + hash('w|' + w.t + (dlg ? '|dialogue' : ''));
+function renderWords() {
+  $('wcards').innerHTML = D.words.map((g, gi) => `<div class="card"><h3>${esc(g.name)}</h3>${g.note ? `<p class="gnote">${esc(g.note)}</p>` : ''}` +
+    g.w.map((w, wi) => {
+      const dp = wordPath(w, true);
+      const dv = mine.has(dp) ? mine.get(dp) : '';
+      return `<div class="wrow">
+        <span class="tok">${esc(w.t)}<small>${BN(w.n)} বার</small></span>
+        ${field(wordPath(w), w.t, w.g)}
+        <button class="reset" type="button" data-wex="${gi}.${wi}" aria-label="উদাহরণ দেখুন" title="উদাহরণ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+        <span class="dlg-l">সংলাপে</span>
+        <input class="fld dlg${dv ? ' mine' : ''}" data-path="${dp}" data-guess="" value="${esc(dv)}" lang="bn" placeholder="আলাদা হলে" aria-label="${esc(w.t)}: সংলাপে">
+        ${w.note ? `<span class="wnote">${esc(w.note)}</span>` : ''}
+      </div>`;
+    }).join('') + '</div>').join('');
+}
+
+// ---- saving ----
+function queue(path, body, delay = 600) {
+  pending[path] = body; store.set('pending', pending);
+  clearTimeout(timers[path]);
+  timers[path] = setTimeout(() => { delete timers[path]; flush(path); }, delay);
+  status();
+}
+async function flush(path) {
+  if (!(path in pending)) return;
+  if (!db) { status(); return; }
+  if (inflight[path]) { again[path] = true; return; }
+  const body = pending[path];
+  inflight[path] = true; status();
+  try {
+    const ref = db.doc(path);
+    if (body === null) await ref.delete(); else await ref.set(body);
+    if (pending[path] === body) { delete pending[path]; store.set('pending', pending); }
+    lastError = null;
+  } catch (e) {
+    lastError = e && e.code ? e.code : 'unavailable';
+    setTimeout(() => flush(path), 4000 + Math.random() * 2000);
+  } finally {
+    inflight[path] = false;
+    if (again[path]) { again[path] = false; flush(path); }
+    status();
+  }
+}
+function flushAll() { for (const k of Object.keys(timers)) { clearTimeout(timers[k]); delete timers[k]; flush(k); } }
+function status() {
+  const n = Object.keys(pending).length, el = $('status'), t = el.querySelector('span');
+  let c, msg;
+  if (!db) { c = n ? 'local' : ''; msg = n ? `${BN(n)}টি বদল শুধু এই ব্রাউজারে আছে` : 'সংযোগ নেই'; }
+  else if (lastError === 'invalid_argument' || lastError === 'not_granted') { c = 'err'; msg = 'এখানে জমা করা যাচ্ছে না'; }
+  else if (lastError) { c = 'err'; msg = 'জমা হয়নি, আবার চেষ্টা করছি…'; }
+  else if (n) { c = 'saving'; msg = 'জমা হচ্ছে…'; }
+  else { c = 'saved'; msg = 'সব জমা আছে'; }
+  el.className = 'status ' + c; t.textContent = msg;
+}
+
+// what each saved document records, so Claude can read it without this page
+function bodyFor(path, val, inp) {
+  const [col] = path.split('/');
+  if (col === 'cells') {
+    const m = D.model[curModel];
+    const cat = Object.keys(m.c).find((c) => cellPath(m, c) === path);
+    return { kind: 'cell', verb: m.name, cat, std: m.c[cat][0], guess: inp.dataset.guess, val, b: parseInt(path.slice(-1), 16) & 1, updated: new Date().toISOString() };
+  }
+  if (col === 'words') {
+    for (const g of D.words) for (const w of g.w) {
+      if (wordPath(w) === path) return { kind: 'word', field: 'all', group: g.name, std: w.t, n: w.n, guess: w.g, val, updated: new Date().toISOString() };
+      if (wordPath(w, true) === path) return { kind: 'word', field: 'dialogue', group: g.name, std: w.t, n: w.n, guess: '', val, updated: new Date().toISOString() };
+    }
+  }
+  const f = D.forms.find((x) => formPath(x) === path);
+  return { kind: 'form', verb: f.lex, cat: f.cat, std: f.t, n: f.n, guess: inp.dataset.guess, val, b: parseInt(path.slice(-1), 16) & 1, updated: new Date().toISOString() };
+}
+function onField(inp) {
+  const path = inp.dataset.path, val = inp.value.trim();
+  const reset = inp.parentElement.querySelector(`[data-reset="${path}"]`);
+  if (!val || val === inp.dataset.guess) {
+    if (mine.has(path)) { mine.delete(path); queue(path, null); }
+    inp.classList.remove('mine'); if (reset) reset.hidden = true;
+  } else {
+    mine.set(path, val); queue(path, bodyFor(path, val, inp));
+    inp.classList.add('mine'); inp.classList.remove('same'); if (reset) reset.hidden = false;
+  }
+  marks();
+}
+function marks() {
+  const nCells = [...mine.keys()].filter((k) => k.startsWith('cells/')).length;
+  const nForms = [...mine.keys()].filter((k) => k.startsWith('forms/')).length;
+  const nWords = [...mine.keys()].filter((k) => k.startsWith('words/')).length;
+  $('n-words').textContent = nWords ? ` ${BN(nWords)}` : '';
+  $('n-model').textContent = nCells ? ` ${BN(nCells)}` : '';
+  $('n-all').textContent = nForms ? ` ${BN(nForms)}` : '';
+  const m = D.model[curModel];
+  const chip = document.querySelector(`.chip[data-model="${curModel}"]`);
+  if (chip) {
+    const has = Object.keys(m.c).some((c) => mine.has(cellPath(m, c)));
+    const dot = chip.querySelector('.dot');
+    if (has && !dot) chip.insertAdjacentHTML('beforeend', '<span class="dot"></span>');
+    if (!has && dot) dot.remove();
+  }
+}
+
+// ---- events ----
+document.addEventListener('input', (e) => {
+  if (e.target.matches('.fld')) onField(e.target);
+  if (e.target.id === 'notes') {
+    notes = e.target.value; grow(e.target);
+    queue('notes/main', { text: notes, updated: new Date().toISOString() }, 800);
+  }
+  if (e.target.id === 'q') { query = e.target.value.trim(); limit = 30; renderAll(); }
+});
+document.addEventListener('click', (e) => {
+  const r = e.target.closest('[data-reset]');
+  if (r) {
+    const inp = document.querySelector(`.fld[data-path="${r.dataset.reset}"]`);
+    if (inp) { inp.value = inp.dataset.guess; onField(inp); }
+    return;
+  }
+  const wx = e.target.closest('[data-wex]');
+  if (wx) { const [gi, wi] = wx.dataset.wex.split('.').map(Number); showExamples(wx, D.words[gi].w[wi]); return; }
+  const ex = e.target.closest('[data-ex]');
+  if (ex) { showExamples(ex, D.forms[+ex.dataset.ex]); return; }
+  const c = e.target.closest('[data-model]');
+  if (c) { curModel = +c.dataset.model; store.set('model', curModel); renderChips(); renderModel(); return; }
+  const t = e.target.closest('[data-tab]');
+  if (t) { tab(t.dataset.tab); return; }
+  const s = e.target.closest('[data-spell]');
+  if (s) {
+    spell[s.dataset.spell] = s.dataset.v === '1'; paintSpell();
+    queue('settings/main', { lo: spell.lo, to: spell.to, updated: new Date().toISOString() }, 0);
+    renderModel(); renderAll(); return;
+  }
+  if (e.target.id === 'more') { limit += 30; renderAll(); return; }
+  if (e.target.id === 'f-changed' || e.target.id === 'f-every') {
+    showAll = e.target.id === 'f-every';
+    $('f-changed').setAttribute('aria-pressed', !showAll); $('f-every').setAttribute('aria-pressed', showAll);
+    renderAll();
+  }
+});
+document.addEventListener('toggle', (e) => {
+  const d = e.target;
+  if (!d.matches || !d.matches('details.verb')) return;
+  const l = D.lex.find((x) => x.name === d.dataset.lex);
+  if (d.open) { open.add(l.name); const box = d.querySelector('.forms'); if (!box.innerHTML.trim()) box.innerHTML = verbRows(l); }
+  else open.delete(l.name);
+  store.set('open', [...open]);
+}, true);
+function tab(name) {
+  for (const b of document.querySelectorAll('[data-tab]')) b.setAttribute('aria-selected', b.dataset.tab === name);
+  for (const p of ['model', 'all', 'words', 'notes']) $('pane-' + p).hidden = p !== name;
+  store.set('tab', name);
+  if (name === 'notes') grow($('notes'));
+}
+function paintSpell() {
+  for (const b of document.querySelectorAll('[data-spell]')) b.setAttribute('aria-pressed', spell[b.dataset.spell] === (b.dataset.v === '1'));
+}
+const grow = (el) => { el.style.height = 'auto'; el.style.height = el.scrollHeight + 2 + 'px'; };
+addEventListener('pagehide', flushAll);
+document.addEventListener('visibilitychange', () => { if (document.hidden) flushAll(); });
+
+// ---- start ----
+for (const [path, body] of Object.entries(pending)) {
+  if (!body) continue;
+  if (path.startsWith('cells/') || path.startsWith('forms/') || path.startsWith('words/')) mine.set(path, body.val);
+  if (path === 'settings/main') spell = { lo: body.lo, to: body.to };
+  if (path === 'notes/main') notes = body.text;
+}
+$('sub').textContent = `অনুবাদে ${BN(D.lex.length)}টি ক্রিয়ার ${BN(D.forms.length)}টি রূপ আছে। প্রতিটির পাশে আমার আন্দাজে ঢাকার রূপ লেখা; যেটা আপনি অন্যভাবে লিখবেন, সেটা বদলে দিন।`;
+paintSpell(); renderChips(); renderModel(); renderAll(); renderWords(); marks(); status();
+$('notes').value = notes;
+tab(store.get('tab', 'model'));
+
+const refresh = () => {
+  const a = document.activeElement;
+  if (a && a.matches && a.matches('.fld')) return; // never redraw under the reader's cursor
+  renderChips(); renderModel(); renderAll(); renderWords(); marks();
+};
+(async () => {
+  db = window.claude && window.claude.use ? await window.claude.use('db').catch(() => null) : null;
+  status();
+  if (!db) return;
+  const onDocs = (col) => (snap) => {
+    for (const ch of snap.docChanges()) {
+      const path = col + '/' + ch.doc.id;
+      if (path in pending) continue;
+      if (ch.type === 'removed') mine.delete(path);
+      else mine.set(path, ch.doc.data().val);
+    }
+    refresh();
+  };
+  const onErr = (e) => { if (e && e.code === 'revoked') { db = null; status(); } };
+  for (const col of ['cells', 'forms']) for (const b of [0, 1]) db.collection(col).where('b', '==', b).onSnapshot(onDocs(col), onErr);
+  db.collection('words').onSnapshot(onDocs('words'), onErr);
+  db.doc('settings/main').onSnapshot((s) => {
+    if ('settings/main' in pending || !s.exists) return;
+    const d = s.data(); spell = { lo: !!d.lo, to: !!d.to }; paintSpell(); refresh();
+  }, onErr);
+  db.doc('notes/main').onSnapshot((s) => {
+    if ('notes/main' in pending || document.activeElement.id === 'notes') return;
+    notes = s.exists ? s.data().text || '' : ''; $('notes').value = notes; grow($('notes'));
+  }, onErr);
+  for (const p of Object.keys(pending)) flush(p);
+})();
+})();
+</script>
