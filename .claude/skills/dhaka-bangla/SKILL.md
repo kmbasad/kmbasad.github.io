@@ -332,6 +332,9 @@ standard form with several rows has several readings, and the sentence decides b
   verb choice he made) are in the repo at `tools/candide-review/`.
 - **Handover:** `tools/candide-review/HANDOVER.md` says how the review runs, where it stands, what is
   still open, and how to republish the pages on another account.
-- **Links on his first account:** verb page https://claude.ai/artifact/HacLRsBMWgyTXFJZwGXnRd, review
+- **Links on the current account (since 2026-10-31):** review https://claude.ai/artifact/ATW9iocMWJGuEE3XCLFGc6,
+  verb page https://claude.ai/artifact/2c7dusSUtPsUVvdQF1d4NQ. The review page's store was seeded
+  from `store/review/` (chapters 1–6).
+- **Links on his first account (no longer used):** verb page https://claude.ai/artifact/HacLRsBMWgyTXFJZwGXnRd, review
   https://claude.ai/artifact/K2gn9GJuBeLZFUVHyY2ers.
 - **When he says a chapter is done:** read the review page's store and bring this skill up to date.

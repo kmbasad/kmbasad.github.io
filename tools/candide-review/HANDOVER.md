@@ -69,10 +69,14 @@ account.** Another account cannot open them, and their stores do not move with t
 a new account you publish them again from this folder. Each publish gives a new URL and an
 empty store; this folder holds the latest export of the old stores.
 
-| page | URL (first account) | build | publish with |
+| page | URL (current account, since 2026-10-31) | build | publish with |
 |---|---|---|---|
-| Candide review | https://claude.ai/artifact/K2gn9GJuBeLZFUVHyY2ers | `python3 -I tools/candide-review/review/build.py` | `capabilities: {"db": {}, "downloads": true}` |
-| verb and word choices | https://claude.ai/artifact/HacLRsBMWgyTXFJZwGXnRd | `cd tools/candide-review/verbs && python3 -I build.py` | `capabilities: {"db": {}}` |
+| Candide review | https://claude.ai/artifact/ATW9iocMWJGuEE3XCLFGc6 | `python3 -I tools/candide-review/review/build.py` | `capabilities: {"db": {}, "downloads": true}` |
+| verb and word choices | https://claude.ai/artifact/2c7dusSUtPsUVvdQF1d4NQ | `cd tools/candide-review/verbs && python3 -I build.py` | `capabilities: {"db": {}}` |
+
+On the first account they were review https://claude.ai/artifact/K2gn9GJuBeLZFUVHyY2ers and
+verbs https://claude.ai/artifact/HacLRsBMWgyTXFJZwGXnRd. The new review page's store was seeded
+from `store/review/` on 2026-10-31; the verb page's store was left empty (that review is finished).
 
 Both builds write to `work/` (ignored by git). Today they reproduce the published pages
 byte for byte.
