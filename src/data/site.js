@@ -4,6 +4,4 @@ export const AUTHOR_EN = 'Khan Muhammad Bin Asad';
 export const LICENSE = { name: 'CC BY-NC-SA 4.0', href: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' };
 // The declaration: who made what. Said in the home's contact plane and the
 // colophon, in English like everything beside it.
-export const DECLARATION = 'Made with Claude. Asad takes full responsibility for his unconscious.';
-// The credit: who wrote the site and who paid for it.
-export const CREDIT = 'This website is written by Asad and funded by Zumi Hossain (Nisha).';
+export const DECLARATION = 'Written by Asad with Claude, funded by Zumi Hossain (Nisha). Asad takes full responsibility for his unconscious.';
