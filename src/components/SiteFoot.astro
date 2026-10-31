@@ -4,7 +4,7 @@
 // the selvedge of the painting along its top edge, then the site's name and
 // a few words about it, the five rooms each with its gloss, and the author:
 // his name, the ways to reach him, the licence.
-import { AUTHOR_EN, LICENSE, DECLARATION } from '../data/site.js';
+import { AUTHOR_EN, LICENSE, DECLARATION, CREDIT } from '../data/site.js';
 import { ROOMS, SITE_NAME, SITE_ABOUT } from '../data/rooms.js';
 import { UI } from '../data/ui.js';
 
@@ -43,6 +43,7 @@ const CONTACT = [
       <li class="colo-author">{AUTHOR_EN}</li>
       {CONTACT.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
       <li class="colo-declare">{DECLARATION}</li>
+      <li class="colo-declare">{CREDIT}</li>
       <li class="colo-license"><a href={LICENSE.href} rel="license">{LICENSE.name}</a></li>
     </ul>
   </div>

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Mark from '../components/Mark.astro';
 import { ROOMS, SITE_NAME } from '../data/rooms.js';
-import { AUTHOR_EN, LICENSE, DECLARATION } from '../data/site.js';
+import { AUTHOR_EN, LICENSE, DECLARATION, CREDIT } from '../data/site.js';
 
 /* The front door is one painting, after Mondrian's grids of 1913-14, filling
    the screen edge to edge, and the page is made of the painting itself: the
@@ -131,6 +131,7 @@ const BN = (n) => String(n).padStart(2, '0').replace(/\d/g, (d) => String.fromCh
         <a href="https://cassa.bd/people/asad/">cassa.bd/people/asad</a>
         <a href="https://www.facebook.com/kmbasad">Facebook</a>
         <span class="home-declare">{DECLARATION}</span>
+        <span class="home-declare">{CREDIT}</span>
         <a class="home-license" href={LICENSE.href} rel="license">{LICENSE.name}</a>
       </footer>
     </div>

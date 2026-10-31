@@ -5,3 +5,5 @@ export const LICENSE = { name: 'CC BY-NC-SA 4.0', href: 'https://creativecommons
 // The declaration: who made what. Said in the home's contact plane and the
 // colophon, in English like everything beside it.
 export const DECLARATION = 'Made with Claude. Asad takes full responsibility for his unconscious.';
+// The credit: who wrote the site and who paid for it.
+export const CREDIT = 'This website is written by Asad and funded by Zumi Hossain (Nisha).';
