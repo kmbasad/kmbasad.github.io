@@ -31,7 +31,7 @@ The rules he has set most firmly, to check any text against:
 8. **তাকে, আমাকে**; never তারে, আমারে.
 9. **তার for everyone:** no honorific চন্দ্রবিন্দু, except as mockery. But keep every চন্দ্রবিন্দু inside a word (পৌঁছা, কাঁদা).
 10. **Plurals and articles:** no **-গুলো** (reword; -গুলা rarely). **-টা** only when it is really needed.
-11. **In speech, না** for নও/নই/নয়.
+11. **না for নও/নই/নয়/নন,** in speech and in narration (never the number নয়-দশ).
 12. **Words:** words today's Dhaka uses, not old bookish ones (সহিস, সরাইখানা → হোটেল). Everyday English loans are fine (ব্রেড).
 13. **Bangladeshi spelling, never the Indian:** **খিদা, ইচ্ছা, মুক্তা, পূজা, উল্টা, পুরানো, টুকরা, উঠান, পিছন, পনের, একশ**.
 14. **Long sentences:** a long sentence stays one sentence, unknotted into Bangla word order.
@@ -90,7 +90,7 @@ would be read as a perfect. Everything else follows from that.
 | a blessing or wish | খোদা … করুন | **করুক**, not আপনি's করেন | [claude] |
 | negative past | করেনি, হয়নি, দেখিনি | **করে নাই, হয় নাই, দেখি নাই** | [accepted]; joined or apart is [open], he wrote "দাওনাই" in chat |
 | নেই | নেই | **নাই** | [accepted] |
-| negative copula, in speech | নও, নই, নয়, নন | **না** ("আমি সেরকম মানুষ না") | [owner]; narration keeps নয় |
+| negative copula | নও, নই, নয়, নন | **না** ("আমি সেরকম মানুষ না"; narration too: "যদিও সেটা রেওয়াজ না") | [owner]; his chapter 6 edit settled the narration |
 | রয়েছে meaning "is", "there is" | রয়েছে | **আছে** (রইছে only for "stayed") | [claude] |
 | infinitive, conditional | করতে, হতে, যেতে, খেতে, পেলে | unchanged: **যেতে, খেতে, পেতে, পেলে** (not যাইতে) | [owner]; হতে, not হইতে |
 | verbal noun | দেওয়া, নেওয়া | **দেয়া, নেয়া** | [accepted] |
@@ -174,7 +174,7 @@ standard form with several rows has several readings, and the sentence decides b
   - **How: in brackets [owner]:** "most of these definitions within bracket as they are not part of the
     original". The word goes in ‘…’ with its meaning in brackets right after: ‘সানবেনিতো’ (ইনকুইজিশনের দণ্ডিতদের
     হলুদ জোব্বা), ‘ডুশ’ (এনিমা).
-    - A case ending stays outside the bracket, on the word or its noun: ‘থিয়েটাইন’ সন্ন্যাসীকে (ইতালির এক ক্যাথলিক সংঘের).
+    - **The bracket holds a bare short phrase [owner]:** no case ending and no word the sentence already says, so ‘সানবেনিতো’ (হলুদ জোব্বা), ‘মাইটারে’ (উঁচু চোঙা টুপি), ‘মার্কিজের’ (খেতাবধারী অভিজাত মহিলা). The case ending stays on the word outside.
     - **Run it into the sentence where it flows [owner]:** "when it can be integrated within the flow you can omit
       bracket". Coins, officials and ships usually flow: হল্যান্ডের দুইটা রুপার মুদ্রা ‘ফ্লোরিন’, ভেনিসের প্রধান শাসক
       ‘ডোজের’, একটা দাঁড়টানা জাহাজ ‘গ্যালিতে’, his own "জয়ের জন্য খোদা-বন্দনার ‘তে দেউম’".
@@ -321,6 +321,7 @@ standard form with several rows has several readings, and the sentence decides b
 - **2026-10-30, chapter 4:** no Indian -ো spellings (মুক্তা, উল্টা, পুরানো, টুকরা, পনের, একশ); যুক্তবর্ণ
   wherever it can be; ডুশ kept.
 - **2026-10-30, chapters 5 and 6:** every little-known foreign word glossed in the sentence at its first use.
+- **2026-10-31, chapter 6:** the bracket holds a bare short phrase; না for নয় in narration too.
 - **2026-10-30, the conversion:** Candide converted with this skill gave the [claude] rows:
   রয়েছে → আছে, the blessing's করুক, the speech clashes and the homographs.
 
