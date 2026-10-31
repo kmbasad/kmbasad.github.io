@@ -7,14 +7,11 @@
 import { AUTHOR_EN, LICENSE, DECLARATION } from '../data/site.js';
 import { ROOMS, SITE_NAME, SITE_ABOUT } from '../data/rooms.js';
 import { UI } from '../data/ui.js';
+import ContactIcons from './ContactIcons.astro';
 
 const STRIP = [
   ['sage', 6], ['cream', 9], ['blue', 17], ['pink', 5], ['lav', 11], ['ochre', 8], ['clay', 4],
   ['blue', 4], ['cream', 4], ['pink', 12], ['clay', 6], ['sage', 7], ['lav', 5], ['ochre', 3],
-];
-const CONTACT = [
-  { href: 'mailto:khanmuhammadbinasad@gmail.com', label: 'khanmuhammadbinasad@gmail.com' },
-  { href: 'https://www.facebook.com/kmbasad', label: 'Facebook' },
 ];
 ---
 
@@ -40,7 +37,7 @@ const CONTACT = [
 
     <ul class="colo-contact">
       <li class="colo-author">{AUTHOR_EN}</li>
-      {CONTACT.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+      <li><ContactIcons /></li>
       <li class="colo-declare">{DECLARATION}</li>
       <li class="colo-license"><a href={LICENSE.href} rel="license">{LICENSE.name}</a></li>
     </ul>

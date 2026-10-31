@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Mark from '../components/Mark.astro';
+import ContactIcons from '../components/ContactIcons.astro';
 import { ROOMS, SITE_NAME } from '../data/rooms.js';
 import { AUTHOR_EN, LICENSE, DECLARATION } from '../data/site.js';
 
@@ -124,8 +125,7 @@ const BN = (n) => String(n).padStart(2, '0').replace(/\d/g, (d) => String.fromCh
       <!-- who made it, and how to reach him -->
       <footer class="hp hp--meta" style={both(dMeta, pMeta)}>
         <span class="home-author">{AUTHOR_EN}</span>
-        <a href="mailto:khanmuhammadbinasad@gmail.com">khanmuhammadbinasad@gmail.com</a>
-        <a href="https://www.facebook.com/kmbasad">Facebook</a>
+        <ContactIcons />
         <span class="home-declare">{DECLARATION}</span>
         <a class="home-license" href={LICENSE.href} rel="license">{LICENSE.name}</a>
       </footer>

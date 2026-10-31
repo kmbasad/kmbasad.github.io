@@ -1,0 +1,20 @@
+---
+// Email and Facebook as two icons side by side; shared by the home's contact
+// plane and the colophon. The address shows on hover (title) and to screen readers.
+const EMAIL = 'khanmuhammadbinasad@gmail.com';
+---
+
+<span class="contact-icons">
+  <a href={`mailto:${EMAIL}`} title={EMAIL} aria-label={`Email ${EMAIL}`}>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3.5 6.5l8.5 6.5 8.5-6.5" /></svg>
+  </a>
+  <a href="https://www.facebook.com/kmbasad" title="Facebook" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z" /></svg>
+  </a>
+</span>
+
+<style is:global>
+  .contact-icons { display: inline-flex; align-items: center; gap: 0.7rem; }
+  .contact-icons a { display: inline-flex; line-height: 0; }
+  .contact-icons svg { width: 1.15rem; height: 1.15rem; }
+</style>
